@@ -1,11 +1,7 @@
 <?php
-session_start();
-?>
-
-<?php
 class core
 {
-    protected $currentController = 'Pages';
+    protected $currentController = 'Index';
     protected $currentMethod = 'index';
     protected $params = [];
 
