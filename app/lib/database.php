@@ -63,17 +63,12 @@ class Database {
         return $this->stmt->rowCount();
     }
 
-    public function delete($table, $field, $value, $limit = 1){
-        $this->query("DELETE FROM $table WHERE $field = :value LIMIT $limit");
-        $this->bind(':value', $value);
-        return $this->execute();
-    }
-
+    //select a row from a given table given field
     public function selectOne($table, $field, $value, $limit = 1){
         $this->query("SELECT * FROM $table WHERE $field = :value LIMIT $limit");
         $this->bind(':value', $value);
 
-        $row = $this->single();
+        $row = $this->single(); 
 
         //Check row
         if ($this->rowCount() > 0) {
@@ -83,6 +78,23 @@ class Database {
         }
     }
 
+    // public function register($data){
+    //     $this->db->query('INSERT INTO individualdonor (username, email, password, type, status) 
+    //     VALUES (:username, :email, :password, :type, :status)');
+    //     //Bind values
+    //     $this->db->bind(':username', $data['username']);
+    //     $this->db->bind(':email', $data['email']);
+    //     $this->db->bind(':password', $data['password']);
+    //     $this->db->bind(':type', $data['type']);
+    //     $this->db->bind(':status', $data['status']);
 
-    
+    // }
+    //delete a row from a given table and a given field
+    public function delete($table, $field, $value, $limit = 1){
+        $this->query("DELETE FROM $table WHERE $field = :value LIMIT $limit");
+        $this->bind(':value', $value);
+        return $this->execute();
+    }
+
+   
 }

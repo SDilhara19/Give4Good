@@ -1,0 +1,143 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+* {
+  /* colours */
+  --primary-color: #4EB790;
+  --secondary-color: #CFF5E7;
+  --dark-green: #0E6F4B;
+  --black-sub: #2E353E;
+  --white-color: #FFFFFF;
+  --red-color: #FC0606;
+  --grey-color: #6E7175;
+  --yellow-color: #D09705;
+  --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+
+  /* text colors */
+  --text-color: #2E353E;
+}
+
+
+/* header css beginning */
+
+.nav-container {
+  z-index: 1000;
+  position: fixed;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* .nav-logo{
+  width: 10px;
+} */
+
+.nav-logo img {
+  height: 65px;
+}
+.dashboard{
+  flex-grow: 0;
+}
+
+.search-bar {}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  margin: 10px;
+  color: var(--black-sub);
+}
+
+.nav-links a:hover {
+  margin: 10px;
+  color: var(--dark-green);
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 40px;
+  width: 220px;
+  border-left: 3px solid var(--primary-color);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.star {
+  border: 3px solid gold;
+  border-radius: 50%;
+  margin-left: 15px;
+  padding-bottom: 3px;
+  color: var(--red-color);
+  overflow: hidden;
+}
+
+/* .user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+
+} */
+
+.user{
+  display: flex;
+  /* border: 2px solid black; */
+  background: var(--secondary-color);
+  color: var(--black-sub);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5rem;
+  height: 2.5rem;
+}
+
+
+/* 
+.user-row button {
+  
+  border: none;
+  padding: 5px 20px 5px 20px;
+  border-radius: 20px;
+  color: var(--black-sub);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+ 
+
+}
+*/
+.user-image {
+  border: none;
+  border-radius: 50%;
+  height: 100%;
+  margin-left: 1rem;
+} 
+.user-image img{
+  border-radius: 50%;
+  height: 100%;
+}
+
