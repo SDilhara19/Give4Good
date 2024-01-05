@@ -1,0 +1,112 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+* {
+    /* colours */
+    --primary-color: #4EB790;
+    --secondary-color: #CFF5E7;
+    --dark-green: #0E6F4B;
+    --black-sub: #2E353E;
+    --white-color: #FFFFFF;
+    --red-color: #FC0606;
+    --grey-color: #6E7175;
+    --yellow-color: #D09705;
+    --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+    --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+  
+    /* text colors */
+    --text-color: #2E353E;
+  }
+
+  .stories-container{
+    width: 700px;
+    border: none;
+    margin: 0 auto; 
+  }
+
+  .story-card{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 20px;
+    margin: 3rem;
+  }
+
+  .story-card-left{
+    flex: 50%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .story-card-img-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.story-card-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.story-card-right{
+    border-radius: 20px;
+    margin-left: -32px;
+    padding-left: 40px;
+    padding-top: 1rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.story-description h1{
+    margin: 0;
+}
+
+.story-description p{
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+.story-description .fundraiser-donee-name p{
+    margin: 0;
+}
+
+.story-contact{
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+
+
+}
+
+.story-contact table{
+    width: 100%
+}
+.story-contact td{
+    text-align: right;
+
+}
+
+.story-contact th{
+    text-align: left;
+
+}
+
+
