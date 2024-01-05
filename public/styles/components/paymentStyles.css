@@ -43,10 +43,31 @@ background: rgba(217, 217, 217, 0.00);
 
 }
 
+.my_box2 {
+    width: 343px;
+height: 106px;
+flex-shrink: 0;
+color: #000;
+font-family: "Poppins";
+font-size: 64.474px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
 .my_text2 {
     color: #585858;
 font-family: Poppins;
 font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.my_text3{
+    color: #000;
+font-family: "Poppins";
+font-size: 64.474px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
