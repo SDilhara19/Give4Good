@@ -17,41 +17,73 @@
 <body>
   <header>
     <nav class="nav-container">
-      <div class="dashboard">
-        <i class="fa-solid fa-bars fa-xl"></i>
-      </div>
-      <div class="nav-logo">
-        <img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="logo" />
-      </div>
-      <div class="search-box">
-        <div class="search-bar">
-          <form action="">
-            <input type="text" name="" id="" placeholder="Search Give4Good">
-            <label for=""></label>
-            <i class="fas fa-search"></i>
-          </form>
+      <div class="nav-left">
+        <div class="dashboard">
+          <i class="fa-solid fa-bars fa-xl"></i>
+        </div>
+        <div class="nav-logo">
+          <a href="<?php echo URLROOT ?>/index"><img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="logo" /></a>
         </div>
       </div>
+      
 
-      <ul class="nav-links">
-        <li>
-          <a href="<?php echo URLROOT ?>/Stories/V_Story-all">Stories</a>
-        </li>
-        <li>
-          <a href="">Start a Fundraiser</a>
-        </li>
-        <li>
-          <a href="">About</a>
-        </li>
-      </ul>
-
-      <div class="user-row">
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-bell fa-xl"></i>
-        <div class="user">
-          <div class="user-name">Sanduni</div>
-          <div class="user-image"> <img src="<?php echo URLROOT ?>/public/Assets/images/profile.jpeg" alt="yiq" /></div>
+      <div class="nav-right">
+        <div class="search-box">
+          <div class="search-bar">
+            <form action="">
+              <input type="text" name="" id="" placeholder="Search Give4Good">
+              <label for=""></label>
+              <i class="fas fa-search"></i>
+            </form>
+          </div>
+        </div>
+  
+        <ul class="nav-links">
+          <li>
+            <a href="<?php echo URLROOT ?>/Stories/V_Story-all">Stories</a>
+          </li>
+          <li>
+            <a href="">Start a Fundraiser</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+        </ul>
+  
+        <div class="user-row">
+          <?php if (isset($_SESSION['userId'])) { ?>
+            <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-bell fa-xl"></i>
+            <!-- <div class="user">
+                <div class="user-name">Sandundi</div>
+                <div class="user-image"> <img src="<?php echo URLROOT ?>/public/Assets/images/profile.jpeg" alt="yiq" />
+                </div>
+              </div> -->
+            <li><a href="<?php echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>
+            <li>
+              <?php
+              echo "Hi, " . explode(" ", $_SESSION["userName"])[0] . "!"; ?></a>
+              <?php
+          } else { ?>
+  
+              <div class="guest-user">
+                <button class="secondary-button"> Signup</button>
+                <button class="main-button"> Login</button>
+              </div>
+              <!-- <i class="fa-solid fa-star star"></i>
+              <i class="fa-solid fa-bell fa-xl"></i>
+                <div class="user">
+                    <div class="user-name">Sandundi</div>
+                    <div class="user-image"> <img src="<?php echo URLROOT ?>/public/Assets/images/profile.jpeg" alt="yiq" />
+                    </div>
+                  </div>  -->
+              
+              <?php
+          }
+          ?>
+  
         </div>
       </div>
+    
     </nav>
   </header>

@@ -104,31 +104,16 @@
     </div>
 
     <div class="more-button">
-      <button class="main-color-button">More>></button>
+      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/fundraiser'"> More>> </button>
     </div>
 
     <h1>Stories</h1>
 
     <div class="home-stories">
+      
       <article class="home-story-card">
         <div class="home-story-img">
-          <img src="public/Assets/Uploaded-Images/Stories/WhatsApp Image 2023-12-29 at 20.53.43.jpeg" alt="image">
-        </div>
-        <div class="home-story-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">LEO Club UOC</p>
-          </div>
-          <p class="text-1">Nisagini 6.0</p>
-        </div>
-
-        
-       
-
-      </article>
-      <article class="home-story-card">
-        <div class="home-story-img">
-          <img src="public/Assets/Uploaded-Images/Stories/WhatsApp Image 2023-12-30 at 19.09.42.jpeg" alt="image">
+        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
         </div>
         <div class="home-story-below">
           <div class="fundraiser-donee-name">
@@ -140,7 +125,7 @@
         </article>
         <article class="home-story-card">
           <div class="home-story-img">
-            <img src="public/Assets/Uploaded-Images/Stories/z.png" alt="image">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story2.png" alt="">
           </div>
           <div class="home-story-below">
             <div class="fundraiser-donee-name">
@@ -152,7 +137,7 @@
         </article>
         <article class="home-story-card">
           <div class="home-story-img">
-            <img src="public/Assets/Uploaded-Images/Stories/WhatsApp Image 2023-12-31 at 09.08.52.jpeg" alt="image">
+          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story3.jpeg" alt="">
           </div>
           <div class="home-story-below">
             <div class="fundraiser-donee-name">
@@ -166,24 +151,25 @@
          
   
         </article>
-      
-      
-
-        
-       
+        <article class="home-story-card">
+        <div class="home-story-img">
+        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story4.jpeg" alt="">
+        </div>
+        <div class="home-story-below">
+          <div class="fundraiser-donee-name">
+            <i class="fa-solid fa-building fa-sm text-3"></i>
+            <p class="text-4">LEO Club UOC</p>
+          </div>
+          <p class="text-1">Nisagini 6.0</p>
+</div>
 
       </article>
     
     </div>
 
     <div class="more-button">
-      <button class="main-color-button .wdth">More>></button>
+      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Stories'">More>></button>
     </div>
-
-
-   <p><a href="components.html">common components</a></p>
-  <p><a href="fundraiser.html">Fundraiser</a></p>
-
 
   </main>
 
