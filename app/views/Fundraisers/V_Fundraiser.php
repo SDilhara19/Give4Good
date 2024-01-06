@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="public/styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <header>
-        <nav class="nav-container">
-            <div class="dashboard">
-                <i class="fa-solid fa-bars fa-xl"></i>
-            </div>
-            <div class="nav-logo">
-                <img src="public/Assets/images/LogoBlack.png" alt="logo" />
-            </div>
-            <div class="search-box">
-                <div class="search-bar">
-                    <form action="">
-                        <input type="text" name="" id="" placeholder="Search Give4Good">
-                        <label for=""></label>
-                        <i class="fas fa-search"></i>
-                    </form>
-                </div>
-            </div>
-
-            <ul class="nav-links">
-                <li>
-                    <a href="">Stories</a>
-                </li>
-                <li>
-                    <a href="">Start a Fundraiser</a>
-                </li>
-                <li>
-                    <a href="">About</a>
-                </li>
-            </ul>
-
-            <div class="user-row">
-                <i class="fa-solid fa-star star"></i>
-                <i class="fa-solid fa-bell fa-xl"></i>
-                <div class="user">
-                    <div class="user-name">Sanduni</div>
-                    <div class="user-image"> <img src="public/Assets/images/profile.jpeg" alt="yiq" /></div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+<?php require APPROOT . '/views/includes/header.php' ?>
     <main>
         <h1>Help us to assist them walk</h1>
         <div class="fundraiser-container">
@@ -65,7 +8,7 @@
                         <i class="fa-solid fa-chevron-left fa-2xl"></i>
                     </div>
                     <div class="fundraiser-image">
-                        <img src="public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
                     </div>
                     <div class="right-arrow">
                         <i class="fa-solid fa-chevron-right fa-2xl"></i>
@@ -157,7 +100,7 @@
                 <div class="fundraiser-merch-container">
                     <div class="fundraiser-merch-left">
                         <div class="merch-img-container">
-                            <img src="public/Assets/Uploaded-Images/ tshirt.jpeg" alt="merch-image">
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg" alt="merch-image">
                         </div>
                     </div>
                     <div class="fundraiser-merch-right">
@@ -196,7 +139,12 @@
                             </div>
                             <div class="merch-description">
                                 <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. </p>
+                                    Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
+                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
+                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
+                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
+                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
+                                    Madw</p>
                             </div>
                         </div>
 
@@ -209,7 +157,7 @@
                 <div class="fundraiser-merch-container">
                     <div class="fundraiser-merch-left">
                         <div class="merch-img-container">
-                            <img src="public/Assets/Uploaded-Images/ tshirt.jpeg" alt="merch-image">
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/cap .webp" alt="merch-image">
                         </div>
                     </div>
                     <div class="fundraiser-merch-right">
@@ -263,7 +211,7 @@
             <div class="material-card-container">
                 <div class="material-card">
                     <div class="material-img-container">
-                        <img src="public/Assets/Uploaded-Images/Wheelchair.jpeg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Wheelchair.jpeg" alt="">
                         u
                     </div>
                     <div class="material-card-below">
@@ -275,7 +223,7 @@
             
                 <div class="material-card">
                     <div class="material-img-container">
-                        <img src="public/Assets/Uploaded-Images/Crutched.jpeg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Crutched.jpeg" alt="">
                     </div>
                     <div class="material-card-below">
                         <p class="text-1">Armpit Crutches</p>
@@ -284,7 +232,7 @@
                 </div>
                 <div class="material-card">
                     <div class="material-img-container">
-                        <img src="public/Assets/Uploaded-Images/Walker.png" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Walker.png" alt="">
                     </div>
                     <div class="material-card-below">
                         <p class="text-1">Walker</p>
@@ -302,7 +250,7 @@
             <div class="material-popup-container">
                 <div class="material-popup-left">
                     <div class="material-popup-img-container">
-                        <img src="public/Assets/Uploaded-Images/Wheelchair.jpeg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Wheelchair.jpeg" alt="">
                     </div>
                 </div>
                 <div class="material-popup-right">
@@ -332,7 +280,7 @@
             <div class="send-donation-card-container">
                 <div class="send-donation-card">
                     <div class="send-donation-img-container">
-                        <img src="public/Assets/Uploaded-Images/map.png" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
                     </div>
                     <div class="send-donation-text">
                         <p class="text-2">Colombo 7</p>
@@ -347,7 +295,7 @@
                 </div>
                 <div class="send-donation-card">
                     <div class="send-donation-img-container">
-                        <img src="public/Assets/Uploaded-Images/map.png" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
                     </div>
                     <div class="send-donation-text">
                         <p class="text-2">Colombo 7</p>
@@ -362,7 +310,7 @@
                 </div>
                 <div class="send-donation-card">
                     <div class="send-donation-img-container">
-                        <img src="public/Assets/Uploaded-Images/map.png" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
                     </div>
                     <div class="send-donation-text">
                         <p class="text-2">Colombo 7</p>
@@ -377,7 +325,7 @@
                 </div>
                 <div class="send-donation-card">
                     <div class="send-donation-img-container">
-                        <img src="public/Assets/Uploaded-Images/map.png" alt="">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
                     </div>
                     <div class="send-donation-text">
                         <p class="text-2">Colombo 7</p>
@@ -396,57 +344,9 @@
 
         </div>
 
-
-<!-- Popup box -->
-<!-- <div id="popup-box" class="popup">
-    <div class="modal-overlay" onclick="closePopup()"></div>
-    <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h2>Popup Title</h2>
-        <p>Popup content goes here...</p>
-    </div>
-</div> -->
-<!-- Popup end -->
-
-
     </main>
-    <footer class="footer">
-        <div class="footercontainer">
-          <div class="row">
-              <div class="footer-col">
-              <img src="public/Assets/icons/logo.svg" alt="Logo">
-            </div>
-            <div class="footer-col">
-              <h4>Give4Good</h4>
-              <ul>
-                <li><a href="#">about us</a></li>
-                <li><a href="#">our services</a></li>
-                <li><a href="#">privacy policy</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Get help</h4>
-              <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">payment options</a></li>
-                       <li><a href="#">About merchandise</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Follow us</h4>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-     </footer>          
+    <script src="public/js/material.js"></script>
+    <?php require APPROOT . '/views/includes/footer.php' ?>        
      
   
-     <script src="public/js/material.js"></script>
-</body>
-
-</html>
+   
