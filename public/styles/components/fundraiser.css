@@ -158,7 +158,6 @@
     text-align: justify;
   }
 
-
   /* Merch css begin */
 
   .fundraiser-merch-container{
@@ -167,10 +166,13 @@
     gap: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    height: 20rem;
+    
   }
 
   .fundraiser-merch-left{
     flex: 4;
+    height: 100%;
   }
 
   .merch-img-container{
@@ -200,6 +202,17 @@
     justify-content: space-between;
   }
 
+  .merch-right-top{
+    height: 7rem;
+    overflow: hidden;
+  }
+
+  .merch-right-bottom{
+    height: 13rem;
+    overflow: hidden;
+    justify-content: space-between;
+  }
+
   .merch-sizes, .merch-colors{
     display: flex;
     margin-bottom: 1rem;
@@ -220,7 +233,6 @@
   }
 
   .merch-price{
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -232,13 +244,11 @@
   }
 
 .merch-buy-button {
-  flex:1;
   margin: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
 }
 
 .merch-buy-button button {
@@ -246,6 +256,13 @@
   margin-bottom: 0;
 }
 
+.merch-description{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
 
   .material-card-container {
     margin-top: 2rem;
