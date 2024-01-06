@@ -212,7 +212,6 @@
                 <div class="material-card">
                     <div class="material-img-container">
                         <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Wheelchair.jpeg" alt="">
-                        u
                     </div>
                     <div class="material-card-below">
                         <p class="text-1">Wheel Chair</p>
@@ -345,7 +344,7 @@
         </div>
 
     </main>
-    <script src="public/js/material.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
     <?php require APPROOT . '/views/includes/footer.php' ?>        
      
   

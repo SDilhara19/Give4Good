@@ -1,8 +1,8 @@
 /* @import url('components/form-styles.css');
 @import url('components/login-styles.css');*/
-@import url('components/header-styles.css'); 
-@import url('components/footer.css');
-@import url('components/fundraiser.css');
+@import url('components/includes-styles/header-styles.css'); 
+@import url('components/includes-styles/footer.css');
+@import url('components/fundraiser-styles/fundraiser.css');
 @import url('components/fundriaser-cards.css'); 
 @import url('components/index.css'); 
 @import url('components/story.css'); 

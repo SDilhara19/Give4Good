@@ -22,7 +22,7 @@
           <i class="fa-solid fa-bars fa-xl"></i>
         </div>
         <div class="nav-logo">
-          <img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="logo" />
+          <a href="<?php echo URLROOT ?>/index"><img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="logo" /></a>
         </div>
       </div>
       
