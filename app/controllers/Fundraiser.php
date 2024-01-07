@@ -17,5 +17,10 @@ class Fundraiser extends controller
 
         $this->view('Fundraisers/V_Fundraiser');
   }
+
+  public function start(){
+
+    $this->view('Fundraisers/V_Start');
+}
 }
 ?>
