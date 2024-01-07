@@ -24,6 +24,14 @@
     --text-color: #2E353E;
   }
 
+  .story-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+
   .stories-container{
     width: 700px;
     border: none;
