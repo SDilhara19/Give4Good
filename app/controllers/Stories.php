@@ -13,5 +13,10 @@ class Stories extends controller
 
         $this->view('Stories/V_Story-all');
   }
+
+  public function add(){
+
+    $this->view('Stories/V_Add');
+}
 }
 ?>

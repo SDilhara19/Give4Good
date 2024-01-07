@@ -8,17 +8,17 @@
   	 		<div class="footer-col">
   	 			<h4>Give4Good</h4>
   	 			<ul>
-  	 				<li><a href="#">about us</a></li>
-  	 				<li><a href="#">our services</a></li>
-  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="<?php echo URLROOT ?>/Required">about us</a></li>
+  	 				<li><a href="<?php echo URLROOT ?>/Required/services">our services</a></li>
+  	 				<li><a href="<?php echo URLROOT ?>/Required/policy">privacy policy</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
   	 			<h4>Get help</h4>
   	 			<ul>
-  	 				<li><a href="#">FAQ</a></li>
-  	 				<li><a href="#">payment options</a></li>
-                    <li><a href="#">About merchandise</a></li>
+  	 				<li><a href="<?php echo URLROOT ?>/Required/faq">FAQ</a></li>
+  	 				<li><a href="<?php echo URLROOT ?>/Required/payments">payment options</a></li>
+                    <li><a href="<?php echo URLROOT ?>/Required/merchandise">About merchandise</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">

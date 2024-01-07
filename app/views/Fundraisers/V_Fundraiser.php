@@ -52,7 +52,7 @@
                         Donate
                     </button>
 
-                    <button class="main-dark-button">
+                    <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
                         Buy Merch
                     </button>
                     <button class="main-dark-button">
@@ -60,7 +60,7 @@
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
 
-                    <button class="main-white-button">
+                    <button class="main-white-button"onclick="window.location.href = '#donations-we-need'">
                         Send Donations
                     </button>
                 </div>
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="all-merchs">
+        <div class="all-merchs" id="all-merchs">
             <h2>Buy and Help</h2>
             <div class="fundraiser-merch">
                 <h3>Black short sleeve t-shirt</h3>
@@ -206,7 +206,7 @@
             </div>
         </div>
 
-        <div class="donations-we-need">
+        <div class="donations-we-need" id="donations-we-need">
             <h1>Donations we need</h1>
             <div class="material-card-container">
                 <div class="material-card">

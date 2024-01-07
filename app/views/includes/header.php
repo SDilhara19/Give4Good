@@ -40,13 +40,13 @@
   
         <ul class="nav-links">
           <li>
-            <a href="<?php echo URLROOT ?>/Stories/V_Story-all">Stories</a>
+            <a href="<?php echo URLROOT ?>/Stories">Stories</a>
           </li>
           <li>
-            <a href="">Start a Fundraiser</a>
+            <a href="<?php echo URLROOT ?>/Fundraiser/start">Start a Fundraiser</a>
           </li>
           <li>
-            <a href="">About</a>
+            <a href="<?php echo URLROOT ?>/Required">About</a>
           </li>
         </ul>
   
