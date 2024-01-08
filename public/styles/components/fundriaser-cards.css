@@ -1,4 +1,4 @@
-*,
+/* *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 }
 
 * {
-  /* colours */
+  /* colours 
   --primary-color: #4EB790;
   --secondary-color: #CFF5E7;
   --dark-green: #0E6F4B;
@@ -20,7 +20,7 @@
   --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
   --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
 
-  /* text colors */
+  /* text colors 
   --text-color: #2E353E;
 
 
@@ -49,7 +49,7 @@
   
   .grid-donations .card .image {
     height: 200px;
-    /* Set a fixed height for the image container */
+    /* Set a fixed height for the image container 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,9 +78,9 @@
   button.blue-button .card .caption {
   
     width: 100%;
-    /* Set a specific width for the button, 100% will make it as wide as the card */
+    /* Set a specific width for the button, 100% will make it as wide as the card 
     margin-top: 10px;
-    /* Adjust the margin to control the spacing between the caption and the button */
+    /* Adjust the margin to control the spacing between the caption and the button 
     align-self: flex-end;
   }
   
@@ -89,5 +89,5 @@
       grid-template-columns: repeat(3, 1fr);
     }
   
-  }
-   */
+  } */
+   
