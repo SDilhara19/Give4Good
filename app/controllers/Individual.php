@@ -29,7 +29,7 @@ class Individual extends controller
         } 
         else { 
             $data=[];
-        $this->view('Users/V_SuperIndividualSignup', $data);
+        $this->view('Super_Individual/V_Signup', $data);
         }
         
     }
