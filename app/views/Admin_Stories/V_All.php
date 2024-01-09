@@ -1,15 +1,6 @@
-<html>
-<html lang="en"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
-    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
-</head>
+<?php require APPROOT . '/views/includes/header.php' ?>
 
-<body>
+
     <div class="side-nav">
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -78,5 +69,6 @@
     </div>
 </div>
 </div>
+
 </body>
 </html>
