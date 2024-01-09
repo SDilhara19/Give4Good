@@ -132,6 +132,7 @@ margin: auto 1rem auto 1rem;
 
 .guest-user{
   display: flex;
+  align-items: baseline;
 
 }
 

@@ -1,6 +1,8 @@
 <?php require APPROOT . '/views/includes/header.php' ?>
 
 <main>
+<h1>Temporary Page</h1>
+
     <div class="form-container">
         <div class="right-col">
     <div class="form-container">
@@ -13,7 +15,7 @@
             <input type="hidden" name="type" value="Individual">
 
             <div class="form-input-title"> Username <span class="required">*</span></div>
-            <input type="text" name="username" id="username" class="text-input">
+            <input type="text" name="username" id="username" class="input">
             <span class="form-invalid"><?php if(!empty($data['username_err']))echo $data['username_err']; ?></span>
 
             <div class="form-input-title"> Email<span class="required">*</span></div>
