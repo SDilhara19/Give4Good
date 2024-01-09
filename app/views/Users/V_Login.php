@@ -1,5 +1,7 @@
 <?php require APPROOT . '/views/includes/header.php' ?>
 <main>
+<h1>Temporary Page</h1>
+
 <div class="right-col">
     <div class="form-container">
 

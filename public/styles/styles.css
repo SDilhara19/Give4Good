@@ -134,8 +134,7 @@ h1, h2, h3{
   font-weight: 500;
   border-radius: 100px;
   letter-spacing: 0.02rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  height: 2rem;
 }
 
 .secondary-button{
@@ -147,8 +146,7 @@ h1, h2, h3{
   font-weight: 500;
   border-radius: 100px;
   letter-spacing: 0.02rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+ height: 2rem;
   /* padding: 5px 40px 5px 30px; */
 }
 

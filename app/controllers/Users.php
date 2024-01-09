@@ -22,6 +22,10 @@ class Users extends controller
 
   }
 
+  public function select()
+{
+  $this->view('Users/V_Select_User');
+}
 
 
   public function login()

@@ -1,6 +1,8 @@
 <?php require APPROOT . '/views/includes/header.php' ?>
 
-<!-- <main>
+<main>
+<h1>Temporary Page</h1>
+
     <div class="form-container">
         <form action="SuperIndividual " method="post" enctype="multipart/form-data">
              <h1 class="form-topic"> Super User Sign Up </h1>
@@ -89,4 +91,4 @@
 <script src="<?php echo URLROOT ?>/public/js/districts.js"></script>
 </body>
 
-</html> -->
+</html> 
