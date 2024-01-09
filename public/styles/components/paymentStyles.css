@@ -1,5 +1,5 @@
 body {
-    font-family: "Poppins" , sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #333333;
     margin: 0;
     overflow: hidden;
@@ -8,72 +8,74 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh; /* Set the height of the body to the viewport height */
+    height: 100vh;
 }
 
 .gradient-rectangle {
-    position: absolute ;
+    position: absolute;
     top: 100%;
     left: 100%;
     width: 100%;
-    height: 100% ;
-    background: linear-gradient(to bottom, rgba(32, 228, 186, 1), rgba(182, 255, 255, 0)); /* Example gradient colors */
-    z-index: 1; /* Set a positive z-index to place it above the background */
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(32, 228, 186, 1), rgba(182, 255, 255, 0));
+    z-index: 1;
 }
 
-
-
-.my_text {
-    color: #000;
-font-family: Poppins;
-font-size: 70.499px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+.content {
+    text-align: center;
 }
 
-.my_box {
-
-width: 467px;
-height: 106px;
-flex-shrink: 0;
-border-radius: 35px;
-border: 1px solid #000;
-background: rgba(217, 217, 217, 0.00);
-
+*{
+    box-sizing: border-box;
+    size: 40px;
 }
-
-.my_box2 {
-    width: 343px;
-height: 106px;
-flex-shrink: 0;
-color: #000;
-font-family: "Poppins";
-font-size: 64.474px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 20px;
+    padding: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
 }
-
-.my_text2 {
-    color: #585858;
-font-family: Poppins;
-font-size: 25px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.container{
+    background-color: rgba(168, 222, 243, 0.516);
+    padding: 5px 20px 15px 20px;
+    border: 1px solid rgb(109, 109, 177);
+    border-radius: 7px;
+    box-shadow: darkgray;
 }
-
-.my_text3{
-    color: #000;
-font-family: "Poppins";
-font-size: 64.474px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: solid rgba(128, 128, 128, 0.801);
+    border-radius: 18px;
+    margin: 10px;
 }
-
-
-
-
-
+fieldset{
+    background-color: whitesmoke;
+    border: solid 2px coral;
+    border-radius: 18px;
+}
+.main_heading{
+    text-align: center;
+}
+input[type="submit"]{
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="submit"]:hover{
+    background-color: darkblue;
+}
+.pf{
+    text-align: center;
+  size: 200px;
+}
