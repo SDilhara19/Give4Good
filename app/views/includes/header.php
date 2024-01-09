@@ -54,15 +54,13 @@
           <?php if (isset($_SESSION['userId'])) { ?>
             <i class="fa-solid fa-star star"></i>
           <i class="fa-solid fa-bell fa-xl"></i>
-            <!-- <div class="user">
+            <div class="user">
                 <div class="user-name">Sandundi</div>
                 <div class="user-image"> <img src="<?php echo URLROOT ?>/public/Assets/images/profile.jpeg" alt="yiq" />
                 </div>
-              </div> -->
-            <li><a href="<?php echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>
+              </div>
+            <!-- <li><a href="<?php echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>
             <li>
-              <?php
-              echo "Hi, " . explode(" ", $_SESSION["userName"])[0] . "!"; ?></a>
               <?php
           } else { ?>
   
