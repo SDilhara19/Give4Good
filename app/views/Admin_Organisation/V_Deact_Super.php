@@ -56,6 +56,7 @@
       <table>
         <thead>
           <tr>
+  
             <th>ID</th>
             <th>About</th>
             <th>Contact No</th>
@@ -81,6 +82,7 @@
             <th>Treasurer Contact</th>
             <th>Treasurer Email</th>
             <th>Treasurer NIC Image</th>
+ 
             <th>Actions</th>
           </tr>
         </thead>
@@ -115,9 +117,11 @@
             <td>-</td>
             <td>-</td>
             <td>-</td>
+ 
             <td>-</td>
             <td><button onclick class="data_view">View</button>
               <button onclick class="data_reactivate">Reactivate</button>
+ 
             </td>
           </tr>   
         </tbody>

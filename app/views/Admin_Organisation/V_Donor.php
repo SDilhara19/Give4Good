@@ -50,6 +50,7 @@
       <table>
         <thead>
           <tr>
+ 
             <th>ID</th>
             <th>User Name</th>
             <th>Type</th>
@@ -58,6 +59,7 @@
             <th>Password</th>
             <th>Status</th>
             <th>Actions</th>
+ 
         </thead>
         <tbody>
           <tr>
@@ -72,11 +74,13 @@
             <td>122/rt/21</td>
             <td>rotract001@gmail.com</td>
             <td>A@3ghd</td>
+ 
             <td>Active</td>
             <td>
               <button onclick class="data_view">View</button>
                <button onclick class="data_deactivate">Deactivate</button>
             </td>
+ 
           </tr>
           <tr>
             <td>
@@ -90,11 +94,13 @@
             <td>122/ad/21</td>
             <td>abc32@gmail.com</td>
             <td>A@3ghd</td>
+ 
             <td>Active</td>
             <td>
               <button onclick class="data_view">View</button>
                <button onclick class="data_deactivate">Deactivate</button>
             </td>
+ 
           </tr>
         </tbody>
       </table>
