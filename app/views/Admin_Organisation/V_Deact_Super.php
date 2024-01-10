@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
   </head>
 
 <body>
-  <div class="side-nav">
+<?php require APPROOT . '/views/includes/header.php' ?>
+   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
     </a>
@@ -33,7 +35,7 @@
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Donee Organizations (Active)</span>
+        <span>Donee Organizations (Deactivated)</span>
       </div>
       <div class="header--buttons">
         <a href="AdmindoneeOrganizations.html"><button class="all-button">All</button></a>
@@ -48,8 +50,8 @@
         </div>  
       </div>   
     </div>
-  <div class ="dashDetails">
-<div class="container">
+    <div class ="dashDetails">
+  <div class="container">
     <div class="table-wrapper">
       <table>
         <thead>
@@ -72,7 +74,7 @@
             <th>Executive Address</th>
             <th>Executive Contact</th>
             <th>Executive Email</th>
-            <th>Executive NIC Image</th>
+            <th>Executive NIC image</th>
             <th>Treasurer Name</th>
             <th>Treasurer NIC</th>
             <th>Treasurer Address</th>
@@ -115,11 +117,11 @@
             <td>-</td>
             <td>-</td>
             <td><button onclick class="data_view">View</button>
-              <button onclick class="data_deactivate">Deactivate</button>
-          </td>
-          </tr>
+              <button onclick class="data_reactivate">Reactivate</button>
+            </td>
+          </tr>   
         </tbody>
       </table>
-   </div>
+      </div>
   </body>
 </html>
