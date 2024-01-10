@@ -1,15 +1,26 @@
-<html>
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
-    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIVE4GOOD</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
+<?php require APPROOT . '/views/includes/header.php' ?>
+
+
     <div class="side-nav">
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -33,7 +44,12 @@
         <div class="header--wrapper">
           <div class="header--title">
             <i class="fa-solid fa-bars"></i>
-            <span>Stories (Deactivated)</span>
+            <span>Stories</span>
+          </div>
+          <div class="header--buttons">
+            <a href="AdminStories-active.html"><button class="active-button">Active</button></a>
+            <a href="AdminStories-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
+            <a href="AdminStories-pending.html"><button class="pending-button">Pending</button></a>
           </div>
           <div class="user--info">
             <div class="search--box">
@@ -48,13 +64,14 @@
         <table>
         <thead>
         <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>title</th>
-            <th>decription</th>
-            <th>contact</th>
-            <th>image</th>
-            <th>indvOrOrg</th>
+            <th>Id</th>
+            <th>User name</th>
+            <th>Title</th>
+            <th>Decription</th>
+            <th>Contact No</th>
+            <th>Image</th>
+            <th>IndvOrOrg</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -66,10 +83,12 @@
             <td>0779887745</td>
             <td>blood.png</td>
             <td>Org</td>
+            <td>Active</td>
         </tr>
     </table>
     </div>
 </div>
 </div>
+
 </body>
 </html>

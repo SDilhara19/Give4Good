@@ -1,5 +1,5 @@
 <?php
-class SignupIndividual extends controller
+class SignupInd extends controller
 {
     // private $prototypeModel;
     // public function __construct()

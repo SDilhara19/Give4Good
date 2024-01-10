@@ -1,12 +1,15 @@
-/* @import url('components/form-styles.css');
-@import url('components/login-styles.css');*/
 @import url('components/includes-styles/header-styles.css'); 
 @import url('components/includes-styles/footer.css');
-@import url('components/fundraiser-styles/fundraiser.css');
+@import url('components/fundraiser.css');
 @import url('components/forms.css');
 @import url('components/index.css'); 
 @import url('components/story.css'); 
 @import url('components/profile.css');
+/* @import url('components/Admin_style.css'); */
+/* @import url('components/login-styles.css'); */
+/* @import url('components/signup-styles.css'); */
+/* @import url('components/form-styles.css'); */
+/* @import url('components/paymentStyles.css'); */
 
 * {
   box-sizing: border-box;
