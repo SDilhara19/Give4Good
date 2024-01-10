@@ -36,10 +36,10 @@
         <span>Individual Donees</span>
       </div>
       <div class="header--buttons">
-        <a href="AdmindoneeOrganizations.html"><button class="all-button">All</button></a>
-        <a href="AdmindoneeOrganizations-active.html"><button class="active-button">Active</button></a>
-        <a href="AdmindoneeOrganizations-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdmindoneeOrganizations-pending.html"><button class="pending-button">Pending</button></a>
+        <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
+        <a href="AdmindoneeIndividuals-active.html"><button class="active-button">Active</button></a>
+        <a href="AdmindoneeIndividuals-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
+        <a href="AdmindoneeIndividuals-pending.html"><button class="pending-button">Pending</button></a>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -52,6 +52,7 @@
     <div class ="dashDetails">
    <div class="container">
     <div class="table-wrapper">
+     <div class="data_table">
       <table>
         <thead>
           <tr>
@@ -66,6 +67,7 @@
             <th>Bank Account No</th>
             <th>Passbook Photo</th>
             <th>User ID</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -87,7 +89,11 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td><i class="fa-solid fa-lock fa-lg"></i></td>
+            <td>Active</td>
+            <td>
+               <button onclick class="data_view">View</button>
+              <button onclick class="data_reactivate">Reactivate</button>
+            </td>
           </tr>
           <tr>
             <td>
@@ -106,7 +112,11 @@
                 <td>7276464</td>
                 <td>shalinipb.png</td>
                 <td>2</td>
-                <td><i class="fa-solid fa-lock fa-lg"></i></td>
+                <td>Deactived</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
+                </td>
           </tr>
           <tr>
             <td>
@@ -125,7 +135,11 @@
                 <td>7276464</td>
                 <td>sanduni.png</td>
                 <td>3</td>
-                <td><i class="fa-solid fa-lock fa-lg"></i></td>
+                <td>Pending</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
+                </td>
           </tr>
           <tr>
             <td>
@@ -144,10 +158,15 @@
                 <td>7276364</td>
                 <td>bhagyapb.png</td>
                 <td>4</td>
-                <td><i class="fa-solid fa-lock fa-lg"></i></td>
+                <td>Active</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
+                </td>
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </div>   
