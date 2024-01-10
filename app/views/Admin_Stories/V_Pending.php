@@ -56,13 +56,14 @@
         <table>
         <thead>
         <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>title</th>
-            <th>decription</th>
-            <th>contact</th>
-            <th>image</th>
-            <th>indvOrOrg</th>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Contact</th>
+            <th>Image</th>
+            <th>Indvidual Or Organization</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -74,6 +75,12 @@
             <td>0779887745</td>
             <td>blood.png</td>
             <td>Org</td>
+            <td>
+               <button onclick class="data_view">View</button>
+               <button onclick class="data_activate">Activate</button>
+          </td>
+          </td>
+            </tr>
         </tr>
     </table>
     </div>
