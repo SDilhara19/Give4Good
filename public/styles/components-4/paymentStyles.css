@@ -1,0 +1,81 @@
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333333;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background-image: url('C:/xampp/htdocs/Closeup of diverse people joining their hands.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.gradient-rectangle {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(32, 228, 186, 1), rgba(182, 255, 255, 0));
+    z-index: 1;
+}
+
+.content {
+    text-align: center;
+}
+
+*{
+    box-sizing: border-box;
+    size: 40px;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 20px;
+    padding: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+}
+.container{
+    background-color: rgba(168, 222, 243, 0.516);
+    padding: 5px 20px 15px 20px;
+    border: 1px solid rgb(109, 109, 177);
+    border-radius: 7px;
+    box-shadow: darkgray;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: solid rgba(128, 128, 128, 0.801);
+    border-radius: 18px;
+    margin: 10px;
+}
+fieldset{
+    background-color: whitesmoke;
+    border: solid 2px coral;
+    border-radius: 18px;
+}
+.main_heading{
+    text-align: center;
+}
+input[type="submit"]{
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="submit"]:hover{
+    background-color: darkblue;
+}
+.pf{
+    text-align: center;
+  size: 200px;
+}
