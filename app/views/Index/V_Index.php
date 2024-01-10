@@ -53,7 +53,7 @@
        
 
       </article>
-    </a>
+ 
       <article class="home-fundraiser-card">
         <div class="home-fundraiser-img">
           <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
