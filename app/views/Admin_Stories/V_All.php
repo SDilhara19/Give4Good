@@ -19,8 +19,6 @@
 
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
-
-
     <div class="side-nav">
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -64,14 +62,15 @@
         <table>
         <thead>
         <tr>
-            <th>Id</th>
-            <th>User name</th>
+            <th>ID</th>
+            <th>User Name</th>
             <th>Title</th>
-            <th>Decription</th>
-            <th>Contact No</th>
+            <th>Description</th>
+            <th>Contact</th>
             <th>Image</th>
-            <th>IndvOrOrg</th>
+            <th>Indvidual Or Organization</th>
             <th>Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -83,7 +82,12 @@
             <td>0779887745</td>
             <td>blood.png</td>
             <td>Org</td>
-            <td>Active</td>
+            <td>Deactive</td>
+            <td>
+                <button onclick class="data_view">View</button>
+                <button onclick class="data_reactivate">Reactivate</button>
+            </td>
+            </td>
         </tr>
     </table>
     </div>

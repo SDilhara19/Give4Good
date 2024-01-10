@@ -219,14 +219,6 @@ body{
     padding-bottom: 290px;
     justify-content: space-between;
 }
-
-.dashUnit{
-  margin-left: 0.01rem;
-  margin-top: 1rem;
-  background:#CFF5E7;
-  padding: 1rem;
-  border-radius: 2rem; 
-}
   
 .header--buttons {
     display: flex;
@@ -242,6 +234,30 @@ body{
     border-radius: 20px;
 }
 
+.header--buttons :hover{
+   color: white;
+}
+
+.data_table{
+  color: rgb(0, 0, 0);
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+.data_table tbody{
+  background: #ffffff(249, 246, 246);  
+}
+
+.data_table td{
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.data_table tr:nth-child(odd){
+  background: rgb(234, 232, 232);
+}
+
 .dashUnit{
   margin-left: 0.01rem;
   margin-top: 1rem;
@@ -250,7 +266,7 @@ body{
   border-radius: 2rem; 
 }
 
-.table{
+.dash_table{
   background: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -258,31 +274,18 @@ body{
   margin-bottom: 0.6rem;  
 }
 
-table{
-  width: 100%;
-  border-collapse: collapse; 
-}
-
-tbody{
+.dash_table tbody{
   background: #ffffff(249, 246, 246);  
 }
 
-td{
+.dash_table td{
   padding: 10px;
   font-size: 14px;
   color: black;
 }
 
-tr:nth-child(odd){
+.dash_table tr:nth-child(odd){
   background: rgb(234, 232, 232);
-}
-
-.table button{   
-    cursor: pointer;
-    color: #353434;
-    border: none;
-    font-weight: bold;
-    background-color: None;
 }
 
 .table-wrapper {
@@ -299,7 +302,7 @@ tr:nth-child(odd){
 }
 
 .table-wrapper::-webkit-scrollbar-track {
-  background: var(--white-);
+  background: var(--white-color);
   border-radius: 40px;
 }
 
@@ -346,3 +349,44 @@ tr:nth-child(odd){
   text-align: center;
   border-radius: 20px;
 }
+
+.dash_view{
+  background-color: #4EB790;
+  cursor: pointer;
+  text-align: center;
+  border-color: none;
+}
+
+.data_view{
+  background-color: #cbcd57;
+  cursor: pointer;
+  text-align: center;
+  border-color: none;
+  color: rgb(0, 0, 0);
+}
+
+.data_deactivate{
+  background-color: #633cce;
+  cursor: pointer;
+  text-align: center;
+  border-color: none;
+  color: rgb(0, 0, 0);
+}
+
+.data_activate{
+  background-color: #ce3ca2;
+  cursor: pointer;
+  text-align: center;
+  border-color: none;
+  color: black;
+}
+
+.data_reactivate{
+  background-color: #3cbfce;
+  cursor: pointer;
+  text-align: center;
+  border-color: none;
+  color: black;
+}
+
+

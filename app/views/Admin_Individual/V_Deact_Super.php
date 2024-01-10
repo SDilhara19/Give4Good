@@ -4,11 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
-  </head>
+ </head>
 
-  <body>
+<body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -28,12 +30,11 @@
       <div class="active"></div>
     </ul>
   </div>
-
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Donee Individuals (Active)</span>
+        <span>Donee Individuals (Deactived)</span>
       </div>
       <div class="header--buttons">
         <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
@@ -48,24 +49,23 @@
         </div>  
       </div>
     </div>
-
-    <div class="dashDetails">
+    <div class ="dashDetails">
     <div class="container">
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Fullname</th>
-            <th>Nic</th>
-            <th>Nic_image</th>
-            <th>Bank_code</th>
-            <th>Bank_name</th>
-            <th>Branch_code</th>
-            <th>Branch_name</th>
-            <th>Bank_acc_no</th>
-            <th>Bank_pbook</th>
-            <th>User_id</th>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>NIC No</th>
+            <th>NIC Image</th>
+            <th>Bank Code</th>
+            <th>Bank Name</th>
+            <th>Branch Code</th>
+            <th>Branch Name</th>
+            <th>Bank Account No</th>
+            <th>Passbook Photo</th>
+            <th>User ID</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -87,8 +87,8 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td><button onclick>View</button>
-                <button onclick>Deactivate</button>
+            <td><button onclick class="data_view">View</button>
+              <button onclick class="data_deactivate">Deactivate</button>
             </td>
           </tr>
           <tr>
@@ -108,8 +108,8 @@
                 <td>7276464</td>
                 <td>shalinipb.png</td>
                 <td>2</td>
-                <td><button onclick>View</button>
-                  <button onclick>Deactivate</button>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
                 </td>
           </tr>
           <tr>
@@ -129,9 +129,9 @@
                 <td>7276464</td>
                 <td>sanduni.png</td>
                 <td>3</td>
-                <td><button onclick>View</button>
-                  <button onclick>Deactivate</button>
-              </td>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
+                </td>
           </tr>
           <tr>
             <td>
@@ -150,14 +150,12 @@
                 <td>7276364</td>
                 <td>bhagyapb.png</td>
                 <td>4</td>
-                <td><button onclick>View</button>
-                  <button onclick>Deactivate</button>
-              </td>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
+                </td>
           </tr>
         </tbody>
       </table>
-</div>
-</div>
-</div>
+</div>   
 </body>
 </html>

@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -56,13 +55,14 @@
         <table>
         <thead>
         <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>title</th>
-            <th>decription</th>
-            <th>contact</th>
-            <th>image</th>
-            <th>indvOrOrg</th>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Contact</th>
+            <th>Image</th>
+            <th>Indvidual Or Organization</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -74,6 +74,10 @@
             <td>0779887745</td>
             <td>blood.png</td>
             <td>Org</td>
+            <td>
+               <button onclick class="data_view">View</button>
+               <button onclick class="data_reactivate">Reactivate</button>
+            </td>
         </tr>
     </table>
     </div>

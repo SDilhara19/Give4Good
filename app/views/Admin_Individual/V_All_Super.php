@@ -1,15 +1,17 @@
-<html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
-    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIVE4GOOD</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -33,7 +35,7 @@
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Donee Individuals (Pending)</span>
+        <span>Individual Donees</span>
       </div>
       <div class="header--buttons">
         <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
@@ -46,25 +48,28 @@
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search Name"/>
         </div>  
-      </div>
+      </div>   
     </div>
+
     <div class ="dashDetails">
-    <div class="container">
+   <div class="container">
     <div class="table-wrapper">
+     <div class="data_table">
       <table>
         <thead>
           <tr>
-            <th>id</th>
-            <th>fullname</th>
-            <th>nic</th>
-            <th>nic_image</th>
-            <th>bank_code</th>
-            <th>bank_name</th>
-            <th>branch_code</th>
-            <th>branch_name</th>
-            <th>bank_acc_no</th>
-            <th>bank_pbook</th>
-            <th>user_id</th>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>NIC No</th>
+            <th>NIC Image</th>
+            <th>Bank Code</th>
+            <th>Bank Name</th>
+            <th>Branch Code</th>
+            <th>Branch Name</th>
+            <th>Bank Account No</th>
+            <th>Passbook Photo</th>
+            <th>User ID</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -86,8 +91,10 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td><button onclick>View</button>
-              <button onclick>Activate</button>
+            <td>Active</td>
+            <td>
+               <button onclick class="data_view">View</button>
+              <button onclick class="data_reactivate">Reactivate</button>
             </td>
           </tr>
           <tr>
@@ -107,8 +114,10 @@
                 <td>7276464</td>
                 <td>shalinipb.png</td>
                 <td>2</td>
-                <td><button onclick>View</button>
-                  <button onclick>Activate</button>
+                <td>Deactived</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
                 </td>
           </tr>
           <tr>
@@ -128,8 +137,10 @@
                 <td>7276464</td>
                 <td>sanduni.png</td>
                 <td>3</td>
-                <td><button onclick>View</button>
-                  <button onclick>Activate</button>
+                <td>Pending</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
                 </td>
           </tr>
           <tr>
@@ -149,14 +160,17 @@
                 <td>7276364</td>
                 <td>bhagyapb.png</td>
                 <td>4</td>
-                <td><button onclick>View</button>
-                  <button onclick>Activate</button>
+                <td>Active</td>
+                <td>
+                   <button onclick class="data_view">View</button>
+                   <button onclick class="data_reactivate">Reactivate</button>
                 </td>
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
-</div>
+</div>   
 </body>
 </html>

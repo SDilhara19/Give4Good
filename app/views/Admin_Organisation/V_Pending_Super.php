@@ -56,30 +56,34 @@
       <table>
         <thead>
           <tr>
-            <th>id</th>
-            <th>about</th>
-            <th>contact</th>
-            <th>address</th>
-            <th>reg_cer_img</th>
-            <th>logo</th>
-            <th>cover_img</th>
-            <th>bank_code</th>
-            <th>bank_name</th>
-            <th>branch_code</th>
-            <th>branch_name</th>
-            <th>bank_acc_no</th>
-            <th>bank_pbook</th>
-            <th>executive_name</th>
-            <th>executive_nic</th>
-            <th>executive_address</th>
-            <th>executive_contact</th>
-            <th>executive_email</th>
-            <th>executive_nic_img</th>
-            <th>treasurer_name</th>
-            <th>treasurer_nic</th>
-            <th>treasurer_address</th>
-            <th>treasurer_contact</th>
-            <th>treasurer_email</th>
+ 
+            <th>ID</th>
+            <th>About</th>
+            <th>Contact No</th>
+            <th>Address</th>
+            <th>Registration Certificate Photo</th>
+            <th>Logo</th>
+            <th>Cover Image</th>
+            <th>Bank Code</th>
+            <th>Bank Name</th>
+            <th>Branch Code</th>
+            <th>Branch Name</th>
+            <th>Bank Account No</th>
+            <th>Passbook Photo</th>
+            <th>Executive Name</th>
+            <th>Executive  NIC</th>
+            <th>Executive Address</th>
+            <th>Executive Contact</th>
+            <th>Executive Email</th>
+            <th>Executive NIC image</th>
+            <th>Treasurer Name</th>
+            <th>Treasurer NIC</th>
+            <th>Treasurer Address</th>
+            <th>Treasurer Contact</th>
+            <th>Treasurer Email</th>
+            <th>Treasurer NIC Image</th>
+ </th>
+             
             <th>Actions</th>
           </tr>
         </thead>
@@ -114,8 +118,11 @@
             <td>-</td>
             <td>-</td>
             <td>-</td>
-            <td><button onclick>View</button>
-              <button onclick>Activate</button>
+ 
+            <td>-</td>
+            <td><button onclick class="data_view">View</button>
+              <button onclick class="data_activate">Activate</button>
+ 
             </td>
           </tr>
           
