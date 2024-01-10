@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/header.php' ?>        
+<?php //require APPROOT . '/views/includes/header.php' ?>        
     <main>
     <body>
     <div class="container">
