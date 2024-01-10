@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIVE4GOOD</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="admin_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
@@ -33,35 +35,58 @@
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Donations</span>
+        <span>Fundraisers (Active)</span>
+      </div>
+      <div class="header--buttons">
+        <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
+        <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
+        <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
+        <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
       </div>
       <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search Name"/>
         </div>  
-      </div> 
+      </div>   
     </div>
-    <div class="dashDetails">
+    <div class ="dashDetails"> 
     <div class="container">
         <div class="table-wrapper">
         <table>
         <thead>
         <tr>
-            <th>Donor ID</th>
-            <th>Donor Name</th>
+            <th>View ID</th>
+            <th>Donee ID</th>
             <th>Title</th>
-            <th>Amount</th>
+            <th>Category</th>
+            <th>Story</th>
+            <th>Story Images</th>
+            <th>Required Amount</th>
+            <th>Created Date</th>
+            <th>Modified Date</th>
+            <th>Requirement End Date</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>004</td>
-            <td>Sujith</td>
-            <td>-</td>
-            <td>1,500</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Fundraisers</td>
+            <td>Category Value</td>
+            <td>Sport</td>
+            <td>1.jpg</td>
+            <td>10,000</td>
+            <td>2023/10/28</td>
+            <td></td>
+            <td>2023/11/30</td>
+            <td>  
+              <button onclick class="data_view">View</button>
+              <button onclick class="data_deactivate">Deactivate</button>
+          </td>
         </tr>
-    </table>  
+    </table>
   </div>
 </div>
 </div>

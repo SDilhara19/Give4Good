@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+<html lang="en"> 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIVE4GOOD</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="admin_style.css">
-  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVE4GOOD</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -29,27 +31,27 @@
       <div class="active"></div>
     </ul>
   </div>
-  <div class="main--content">
-    <div class="header--wrapper">
-      <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Fundraisers (Active)</span>
-      </div>
-      <div class="header--buttons">
-        <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
-        <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
-        <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
-      </div>
-      <div class="user--info">
-        <div class="search--box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div>   
-    </div>
-    <div class ="dashDetails"> 
-    <div class="container">
+      <div class="main--content">
+        <div class="header--wrapper">
+          <div class="header--title">
+            <i class="fa-solid fa-bars"></i>
+            <span>Fundraisers (Deactivated)</span>
+          </div>
+          <div class="header--buttons">
+            <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
+            <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
+            <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
+            <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
+          </div>
+          <div class="user--info">
+            <div class="search--box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search Name"/>
+            </div>  
+          </div>   
+        </div>
+     <div class ="dashDetails"> 
+     <div class="container">
         <div class="table-wrapper">
         <table>
         <thead>
@@ -79,14 +81,13 @@
             <td>2023/10/28</td>
             <td></td>
             <td>2023/11/30</td>
-            <td>  
+            <td>
               <button onclick class="data_view">View</button>
-              <button onclick class="data_deactivate">Deactivate</button>
+              <button onclick class="data_reactivate">Reactivate</button>
           </td>
+            </td>
         </tr>
     </table>
-  </div>
-</div>
-</div>
+    </div>
 </body>
 </html>

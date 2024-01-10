@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIVE4GOOD</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="admin_style.css">
-  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
-</head>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVE4GOOD</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+  </head>
 
-<body>
+  <body>
+    <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -29,11 +28,12 @@
       <div class="active"></div>
     </ul>
   </div>
+
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Individual Donees</span>
+        <span>Donee Individuals (Active)</span>
       </div>
       <div class="header--buttons">
         <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
@@ -46,14 +46,13 @@
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search Name"/>
         </div>  
-      </div>   
+      </div>
     </div>
 
-    <div class ="dashDetails">
-   <div class="container">
+    <div class="dashDetails">
+    <div class="container">
     <div class="table-wrapper">
-     <div class="data_table">
-      <table>
+      <table class="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -67,7 +66,6 @@
             <th>Bank Account No</th>
             <th>Passbook Photo</th>
             <th>User ID</th>
-            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -89,10 +87,8 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td>Active</td>
-            <td>
-               <button onclick class="data_view">View</button>
-              <button onclick class="data_reactivate">Reactivate</button>
+            <td><button onclick class="data_view">View</button>
+                <button onclick class="data_deactivate">Deactivate</button>
             </td>
           </tr>
           <tr>
@@ -112,10 +108,8 @@
                 <td>7276464</td>
                 <td>shalinipb.png</td>
                 <td>2</td>
-                <td>Deactived</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
                 </td>
           </tr>
           <tr>
@@ -135,11 +129,9 @@
                 <td>7276464</td>
                 <td>sanduni.png</td>
                 <td>3</td>
-                <td>Pending</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
+              </td>
           </tr>
           <tr>
             <td>
@@ -158,17 +150,14 @@
                 <td>7276364</td>
                 <td>bhagyapb.png</td>
                 <td>4</td>
-                <td>Active</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
+                <td><button onclick class="data_view">View</button>
+                  <button onclick class="data_deactivate">Deactivate</button>
+              </td>
           </tr>
         </tbody>
       </table>
-      </div>
-    </div>
-  </div>
-</div>   
+</div>
+</div>
+</div>
 </body>
 </html>

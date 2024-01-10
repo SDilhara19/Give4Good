@@ -1,14 +1,17 @@
 <html>
+  <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+<body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -28,12 +31,11 @@
       <div class="active"></div>
     </ul>
   </div>
-
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Donee Individuals (Active)</span>
+        <span>Donee Individuals (Pending)</span>
       </div>
       <div class="header--buttons">
         <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
@@ -48,11 +50,10 @@
         </div>  
       </div>
     </div>
-
-    <div class="dashDetails">
+    <div class ="dashDetails">
     <div class="container">
     <div class="table-wrapper">
-      <table class="table">
+      <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -66,7 +67,7 @@
             <th>Bank Account No</th>
             <th>Passbook Photo</th>
             <th>User ID</th>
-            <th>Actions</th>
+            <th>Actions</th>>
           </tr>
         </thead>
         <tbody>
@@ -88,7 +89,7 @@
             <td>janithpb.png</td>
             <td>1</td>
             <td><button onclick class="data_view">View</button>
-                <button onclick class="data_deactivate">Deactivate</button>
+              <button onclick class="data_activate">Activate</button>
             </td>
           </tr>
           <tr>
@@ -109,7 +110,7 @@
                 <td>shalinipb.png</td>
                 <td>2</td>
                 <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
+                  <button onclick class="data_activate">Activate</button>
                 </td>
           </tr>
           <tr>
@@ -130,34 +131,35 @@
                 <td>sanduni.png</td>
                 <td>3</td>
                 <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
-              </td>
+                  <button onclick class="data_activate">Activate</button>
+                </td>
           </tr>
           <tr>
             <td>
                 <span>
                     <span class="fi fi-af"></span>
-                  </span>
+                </span>
                   <span>004</span>
-                </td>
-                <td>hansini bhagya</td>
-                <td>1233</td>
-                <td>bhagyanic.jpg</td>
-                <td>155</td>
-                <td>boc</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276364</td>
-                <td>bhagyapb.png</td>
-                <td>4</td>
-                <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
-              </td>
+            </td>
+            <td>hansini bhagya</td>
+            <td>1233</td>
+            <td>bhagyanic.jpg</td>
+            <td>155</td>
+            <td>boc</td>
+            <td>78</td>
+            <td>colombo07</td>
+            <td>7276364</td>
+            <td>bhagyapb.png</td>
+            <td>4</td>
+            <td>
+                <button onclick class="data_view">View</button>
+                <button onclick class="data_activate">Activate</button>
+            </td>
           </tr>
         </tbody>
       </table>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 </body>
 </html>

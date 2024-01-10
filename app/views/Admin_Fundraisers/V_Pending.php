@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
     <div class="side-nav">
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -33,7 +35,7 @@
         <div class="header--wrapper">
           <div class="header--title">
             <i class="fa-solid fa-bars"></i>
-            <span>Fundraisers</span>
+            <span>Fundraisers (Pending)</span>
           </div>
           <div class="header--buttons">
             <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
@@ -64,7 +66,6 @@
             <th>Created Date</th>
             <th>Modified Date</th>
             <th>Requirement End Date</th>
-            <th>Status</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -80,10 +81,10 @@
             <td>2023/10/28</td>
             <td></td>
             <td>2023/11/30</td>
-            <td>Active</td>
             <td>
-                <button onclick class="data_view">View</button>
-                <button onclick class="data_deactivate">Deactivate</button>
+              <button onclick class="data_view">View</button>
+              <button onclick class="data_activate">Activate</button>
+          </td> 
             </td>
         </tr>
     </table>

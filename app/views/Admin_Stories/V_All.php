@@ -19,8 +19,6 @@
 
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
-
-
     <div class="side-nav">
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
