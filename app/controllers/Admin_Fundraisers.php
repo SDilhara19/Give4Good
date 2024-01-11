@@ -1,5 +1,5 @@
 <?php
-class Index extends controller
+class Admin_Fundraisers extends controller
 {
     // private $prototypeModel;
     // public function __construct()
@@ -13,15 +13,15 @@ class Index extends controller
         
         $this->view('Admin_Fundraisers/V_All');
     }
-    public function index(){
+    public function active(){
 
         $this->view('Admin_Fundraisers/V_Active');
     }
-    public function index(){
+    public function deactive(){
 
         $this->view('Admin_Fundraisers/V_Deact');
     }
-    public function index(){
+    public function pending(){
 
         $this->view('Admin_Fundraisers/V_Pending');
     }
