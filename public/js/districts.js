@@ -1,29 +1,36 @@
-console.log("sd")
 
 function selectedProvince() {
-var selectedProvince = document.querySelector("#province")
-var districtOptions = document.querySelector("#district")
-var province = selectedProvince.value
-console.log(province)
+  var selectedProvince = document.querySelector("#province")
+  var districtOptions = document.querySelector("#district")
+  var province = selectedProvince.value
 
-if (province === "Western") {
-          console.log("hi")
-        // Options for Option 1
-        var option = document.createElement("option");
-        option.text = "Colombo";
-        option.value = "Colombo";
-        districtOptions.appendChild(option);
+  districtOptions.innerHTML = "";
+
+  if (province === "Western") {
+    addOption("Select district", "sede", districtOptions, true);
+    addOption("Colombo", "Colombo", districtOptions);
+    addOption("Gampaha", "Gampaha", districtOptions);
+    addOption("Kaluthara", "Kaluthara", districtOptions);
+
+
+  }
+  else if (province === "Central") {
     
-        // Add more options as needed
-      } else if (province === "Central") {
-        // Options for Option 2
-        var option = document.createElement("option");
-        option.text = "Kandy";
-        option.value = "Kandy";
-        districtOptions.appendChild(option);
+    addOption("Kandy", "Kandy", districtOptions);
     
-        // Add more options as needed
-      }
+  }
 
 }
 
+
+function addOption(text, value, selectElement, isDisabled = false) {
+  var option = document.createElement("option");
+  option.text = text;
+  option.value = value;
+
+  if (isDisabled) {
+    option.disabled = true;
+  }
+
+  selectElement.appendChild(option);
+}
