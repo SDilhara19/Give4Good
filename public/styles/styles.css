@@ -1,5 +1,6 @@
 @import url('components/includes-styles/header-styles.css'); 
 @import url('components/includes-styles/footer.css');
+@import url('components/forms.css');
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -33,6 +34,14 @@
   box-sizing: inherit;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box; 
+}
+
+li,
+a,
+button {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
 }
 
 .text-1{
