@@ -12,7 +12,7 @@
 
 <body>
 <?php require APPROOT . '/views/includes/admin-header.php' ?>
-  <div class="side-nav">
+<?php require APPROOT . '/views/includes/admin-dashboard.php' ?><div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
     </a>
