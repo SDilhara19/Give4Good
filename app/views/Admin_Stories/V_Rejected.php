@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/admin-header.php' ?>
 
     <div class="side-nav">
         <a href="#" class="logo">
