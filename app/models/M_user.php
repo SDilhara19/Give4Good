@@ -45,6 +45,33 @@ class M_User {
         }
     }
 
+    public function validateUser($usernameOrEmail){
+        if ($this->findbyUsername($usernameOrEmail))
+        {
+            return $this->findbyUsername($usernameOrEmail);
+        }
+        elseif ($this->findbyEmail($usernameOrEmail))
+        {
+            return $this->findbyEmail($usernameOrEmail);
+        } 
+    }
+
+    public function login($usernameOrEmail, $password){
+
+        $row = $this->validateUser($usernameOrEmail);
+        if($row == false) return false;
+
+        $hashedPassword = $row->password;
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else{
+            return false;
+        }
+        
+    }
+
    
 
 }
+
+?>

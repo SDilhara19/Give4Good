@@ -1,13 +1,6 @@
-/* @import url('components/form-styles.css');
-@import url('components/login-styles.css');*/
 @import url('components/includes-styles/header-styles.css'); 
 @import url('components/includes-styles/footer.css');
-@import url('components/fundraiser-styles/fundraiser.css');
 @import url('components/forms.css');
-@import url('components/index.css'); 
-@import url('components/story.css'); 
-@import url('components/profile.css');
-
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -43,34 +36,12 @@
   -webkit-box-sizing: border-box; 
 }
 
-body {
-  color: var(--black-sub);
-  font-size: 14px;
-  font-style: normal;
-}
-
-main{
-  margin-top: 115px;
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-
 li,
 a,
 button {
   text-decoration: none;
   list-style: none;
   color: inherit;
-}
-
-p{
-  margin:0;
-}
-
-h1, h2, h3{
-  font-weight: 600;
-  letter-spacing: 0.05rem;
-  margin-bottom: 1rem;
 }
 
 .text-1{
@@ -125,45 +96,44 @@ h1, h2, h3{
   color: var(--black-sub);
 }
 
-.main-button{
+.main-button, .secondary-button, .button-3{
+  margin: 10px;
+  width: 8rem;
+ font-weight: 500;
+ border-radius: 100px;
+ letter-spacing: 0.02rem;
+}
+
+.main-button, .button-submit{
   background: var(--primary-color);
   border: none;
   color: var(--white-color);
-  margin: 10px;
-   width: 8rem;
-  font-weight: 500;
-  border-radius: 100px;
-  letter-spacing: 0.02rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  height: 2rem;
 }
 
 .secondary-button{
   background: var(--white-color);
   border: 2px solid var(--primary-color);
   color: var(--black-sub);
-  margin: 10px;
-  width: 8rem;
-  font-weight: 500;
-  border-radius: 100px;
-  letter-spacing: 0.02rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  height: 2rem;
   /* padding: 5px 40px 5px 30px; */
 }
 
 .button-3{
   background: var(--white-color);
   border: 1px solid #6E7175;
-border-radius: 50px;
-  color: var(--black-sub);
-  margin: 10px;
-  width: 8rem;
-  font-weight: 500;  
-  letter-spacing: 0.02rem;
+  color: var(--black-sub); 
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   /* padding: 5px 40px 5px 30px; */
+}
+
+.button-submit{
+  margin: 10px;
+  width: 8rem;
+ font-weight: 500;
+ border-radius: 5px;
+ letter-spacing: 0.02rem;
 }
 
 
@@ -196,16 +166,5 @@ border-radius: 50px;
 
 }
 
-@media (max-width: 992px){
-  main{
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-}
-@media (max-width: 576px){
-  main{
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-}
+
 
