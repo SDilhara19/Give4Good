@@ -54,7 +54,7 @@
                 </div>
                 <a href="#" class="login__forgot">Forgot Password?</a>
             </div>
-            <button class="form-button" type="submit">Signup</button>
+            <button class="button-submit" type="submit">Signup</button>
             <p class="login__register">
                 Already have an account? <a href="#">Login</a>
             </p>

@@ -16,19 +16,7 @@
 </head>
 
 <body>
-  <?php require APPROOT . '/views/includes/side-dash.php' ?>
-  <section class="home-section">
-  <?php require APPROOT . '/views/includes/header.php' ?>
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Drop Down Sidebar</span>
-      <main>
-        <h1>FAQ Page</h1>
-        <h1>FAQ Page</h1>
-        <h1>FAQ Page</h1>
-        <h1>FAQ Page</h1>
-        <h1>FAQ Page</h1>
-        <h1>FAQ Page</h1>
+        <h1>Contributions Page</h1>
     </main>
     </div>
   </section>

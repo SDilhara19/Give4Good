@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        <ul class="nav-links">
+        <ul class="header-nav-links">
           <li>
             <a href="<?php echo URLROOT ?>/Stories">Stories</a>
           </li>

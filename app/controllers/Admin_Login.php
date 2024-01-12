@@ -2,7 +2,7 @@
 
 require APPROOT . '/lib/validation.php';
 
-class Users extends controller
+class Admin_Login extends controller
 {
   private $UserModel;
   public function __construct()
@@ -17,15 +17,11 @@ class Users extends controller
       $this->login();
     } else {
       $data = [];
-      $this->view('Users/V_Login', $data);
+      $this->view('Admin/V_Login', $data);
     }
 
   }
 
-  public function select()
-{
-  $this->view('Users/V_Select_User');
-}
 
 
   public function login()
@@ -42,7 +38,7 @@ class Users extends controller
     
 
     if ($obj->flag == 1) {
-      $this->view('Users/V_Login', $obj->data);
+      $this->view('Admin/V_Login', $obj->data);
     } else {
       $loggedInUser = $this->UserModel->login($obj->data['username/email'], $obj->data['password']);
       if ($loggedInUser) {
@@ -51,7 +47,7 @@ class Users extends controller
         $this->createUserSession($loggedInUser);
       } else {
         $obj->data['password_err'] = 'Invalid password';
-        $this->view('Users/V_Login', $obj->data);
+        $this->view('Admin/V_Login', $obj->data);
       }
     }
   }
@@ -63,10 +59,8 @@ class Users extends controller
     $_SESSION['userType'] = $user->type;
     $_SESSION['userStatus'] = $user->status;
 
-    if ($_SESSION['userType'] == "admin"){
-      redirect(URLROOT . '/Index');
-    }
-    redirect(URLROOT . '/Index');
+
+    redirect(URLROOT . '/Admin');
 
 }
 
@@ -77,7 +71,7 @@ public function logout(){
     unset ($_SESSION['userType']);        
     unset ($_SESSION['userStatus']);
     session_destroy();
-    redirect(URLROOT . '/Index');
+    redirect(URLROOT . '/Admin_Login');
 }
 
 

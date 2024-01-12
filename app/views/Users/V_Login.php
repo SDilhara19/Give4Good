@@ -18,7 +18,7 @@
 <main>
 <h1>Temporary Page</h1>
 
-<div class="right-col">
+<div>
     <div class="form-container">
 
         <form action="Users" method="post" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
 
             <br><br>
             
-            <button class="form-button" type="submit">Login</button>
+            <button class="button-submit" type="submit">Login</button>
             <p class="login__register">
             Don't have an account? <a href="<?php echo URLROOT ?>/Individual">Register</a>
             </p>
