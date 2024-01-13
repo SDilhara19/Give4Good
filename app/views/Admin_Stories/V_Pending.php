@@ -18,8 +18,8 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/header.php' ?>
-    <div class="side-nav">
+<?php require APPROOT . '/views/includes/admin-header.php' ?>
+<?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         <a href="#" class="logo">
           <img src="LogoBlack.png" alt="" class="LOGO-img">
         </a>
