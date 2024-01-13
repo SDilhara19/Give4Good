@@ -7,6 +7,8 @@
   <title>GIVE4GOOD</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/login-styles.css"> -->
+  <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/form-styles.css"> -->
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-2/signup-styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

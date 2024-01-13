@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<?php require APPROOT . '/views/includes/header.php' ?>
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -55,6 +56,7 @@
             <table>
               <thead>
                 <tr>
+ 
                   <th>ID</th>
                   <th>About</th>
                   <th>Contact No</th>
@@ -81,6 +83,7 @@
                   <th>Treasurer Email</th>
                   <th>Treasurer NIC Image</th>
                   <th>Status</th>
+ 
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -101,7 +104,9 @@
                   <td>sampath</td>
                   <td>78</td>
                   <td>colombo07</td>
+ 
                   <td>7542276464</td>
+ 
                   <td>janithpb.png</td>
                   <td>1</td>
                   <td>-</td>
@@ -115,10 +120,12 @@
                   <td>-</td>
                   <td>-</td>
                   <td>-</td>
+ 
                   <td>-</td>
                   <td>Active</td>
                   <td><button onclick class="data_view">View</button>
                       <button onclick class="data_deactivate">Deactivate</button>
+ 
                 </tr>
                 
               </tbody>

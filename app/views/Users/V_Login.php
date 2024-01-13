@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-2/signup-styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
 <main>
 <h1>Temporary Page</h1>
 
-<div class="right-col">
+<div>
     <div class="form-container">
 
         <form action="Users" method="post" enctype="multipart/form-data">
@@ -39,7 +38,7 @@
 
             <br><br>
             
-            <button class="form-button" type="submit">Login</button>
+            <button class="button-submit" type="submit">Login</button>
             <p class="login__register">
             Don't have an account? <a href="<?php echo URLROOT ?>/Individual">Register</a>
             </p>

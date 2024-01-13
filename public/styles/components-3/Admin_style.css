@@ -21,13 +21,20 @@
   margin :0;
   padding : 0;
   box-sizing:border-box;
-  font-family: 'Brawler', serif;
+  /* font-family: 'Brawler', serif;
   font-family: 'Poppins', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; */
 }
+
+/* main{
+  margin-top: 115px;
+   margin-left: 6rem; 
+   margin-right: 6rem; 
+} */
 
 body{
   display: flex; 
+  margin-top: 115px;
 }
 
 .side-nav{

@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="admin_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
   </head>
-
+ 
 <body>
+<?php require APPROOT . '/views/includes/header.php' ?>
+  
   <div class="side-nav">
     <a href="#" class="logo">
       <img src="LogoBlack.png" alt="" class="LOGO-img">
@@ -54,6 +57,7 @@
       <table>
         <thead>
           <tr>
+ 
             <th>ID</th>
             <th>About</th>
             <th>Contact No</th>
@@ -79,6 +83,7 @@
             <th>Treasurer Contact</th>
             <th>Treasurer Email</th>
             <th>Treasurer NIC Image</th>
+
             <th>Actions</th>
           </tr>
         </thead>
@@ -113,9 +118,11 @@
             <td>-</td>
             <td>-</td>
             <td>-</td>
+ 
             <td>-</td>
             <td><button onclick class="data_view">View</button>
               <button onclick class="data_deactivate">Deactivate</button>
+
           </td>
           </tr>
         </tbody>
