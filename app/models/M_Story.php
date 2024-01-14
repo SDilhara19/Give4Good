@@ -27,6 +27,12 @@ class M_Story {
         }
     }
 
+    public function viewPending(){
+        
+    }
+
+    
+
 
 }
 ?>
