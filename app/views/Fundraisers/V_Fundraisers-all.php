@@ -36,9 +36,6 @@
               <p class="text-1">Rs.20 000 raised</p>
             </div>
     
-            
-           
-    
           </article></a>
           <article class="home-fundraiser-card">
             <div class="home-fundraiser-img">

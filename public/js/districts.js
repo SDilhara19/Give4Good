@@ -1,4 +1,3 @@
-
 function selectedProvince() {
   var selectedProvince = document.querySelector("#province")
   var districtOptions = document.querySelector("#district")

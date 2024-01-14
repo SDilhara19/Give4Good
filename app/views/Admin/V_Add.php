@@ -16,24 +16,7 @@
 <body>
 <?php require APPROOT . '/views/includes/admin-header.php' ?>
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-    <a href="#" class="logo">
-      <img src="LogoBlack.png" alt="" class="LOGO-img">
-    </a>
-    <ul class="nav-links">
-      <li><a href="Admindashboard.html"><i class="fa-brands fa-windows"></i><p>Dashboard</p></a></li>
-      <li><a href="AdmindoneeIndividuals.html"><i class="fa-solid fa-people-group"></i><p>Individual Donees</p></a></li>
-      <li><a href="AdmindonorIndividuals.html"><i class="fa-solid fa-people-group"></i><p>Individual Donors</p></a></li>
-      <li><a href="AdmindonorOrganizations.html"><i class="fa-solid fa-people-roof"></i><p>Donor Organizations</p></a></li>
-      <li><a href="AdmindoneeOrganizations.html"><i class="fa-solid fa-people-roof"></i><p>Donee Organizations</p></a></li>
-      <li><a href="AdminFundraisers-active.html"><i class="fa-solid fa-table"></i><p></p>Fundraisers</a></li>
-      <li><a href="AdminDonations.html"><i class="fa-solid fa-table"></i></i><p>Donations</p></a></li>
-      <li><a href="AdminStories.html"><i class="fa-solid fa-table"></i><p></p>Stories</a></li>
-      <li><a href="AdminComplaigns.html"><i class="fa-regular fa-comments"></i><p>Complaigns</p></a></li>
-      <li><a href="AdminaddAdmin.html"><i class="fa-solid fa-user-plus"></i><p>Add an admin</p></a></li>
-      <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i><p>Log out</p></a></li>
-      <div class="active"></div>
-    </ul>
-  </div>
+    
       <div class="main--content">
         <div class="header--wrapper">
           <div class="header--title">
@@ -48,15 +31,42 @@
             </div>  
           </div>  
         </div>
-  <h3>Add an Admin</h3>
-  <form>
-    <label for="adminUsername">Admin Username:</label>
-    <input type="text" id="adminUsername" name="adminUsername" required>
 
-    <label for="adminPassword">Admin Password:</label>
-    <input type="password" id="adminPassword" name="adminPassword" required>
+  <div class="form-container">
+        <div class="right-col">
+    <div class="form-container">
 
-    <button type="submit">Add Admin</button>
-  </form>
+        <form action="Admin/add" method="post" enctype="multipart/form-data">
+
+
+            <h1 class="form-topic"> Add Admin </h1>
+ 
+            <input type="hidden" name="type" value="admin">
+
+            <div class="form-input-title"> Username <span class="required">*</span></div>
+            <input type="text" name="username" id="username" class="input">
+            <span class="form-invalid"><?php if(!empty($data['username_err']))echo $data['username_err']; ?></span>
+
+            <div class="form-input-title"> Email<span class="required">*</span></div>
+            <input type="email" name="email" id="email" class="input">
+            <span class="form-invalid"><?php if(!empty($data['email_err']))echo $data['email_err']; ?></span>
+
+            <div class="form-input-title"> Password<span class="required">*</span></div>
+            <input type="password" name="password" id="password" class="input">
+            <span class="form-invalid"><?php if(!empty($data['password_err']))echo $data['password_err']; ?></span>
+
+            <div class="form-input-title"> Confirm Password<span class="required">*</span></div>
+            <input type="password" name="confirmpassword" id="confirmpassword" class="input">
+            <span class="form-invalid"><?php if(!empty($data['confirmpassword_err']))echo $data['confirmpassword_err']; ?></span>
+            <br><br>
+            
+            </div>
+            <button class="button-submit" type="submit">Signup</button>
+           
+        </form>
+      
+    </div>
+</div>
+</div>
 </body>
 </html>
