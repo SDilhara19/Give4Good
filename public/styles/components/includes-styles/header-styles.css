@@ -75,19 +75,19 @@ margin: auto 1rem auto 1rem;
 
 }
 
-.nav-links {
+.header-nav-links {
   margin: auto 4rem auto 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-links a {
+.header-nav-links a {
   margin: 10px;
   color: var(--black-sub);
 }
 
-.nav-links a:hover {
+.header-nav-links a:hover {
   color: var(--dark-green);
 }
 
@@ -103,6 +103,10 @@ margin: auto 1rem auto 1rem;
   border-right: none;
   border-bottom: none;
   padding-left: 1rem;
+}
+
+.user-row i{
+  margin: 0.3rem;
 }
 
 .star {
@@ -121,17 +125,21 @@ margin: auto 1rem auto 1rem;
   /* border: 2px solid black; */
   background: var(--secondary-color);
   color: var(--black-sub);
+  width: 8rem;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-left: 0.5rem;
   height: 2.5rem;
-  margin: auto 1rem auto 0.75rem;
+  margin: auto 1rem auto 0.4rem;
+ 
 }
+
 
 .guest-user{
   display: flex;
+  align-items: baseline;
 
 }
 
