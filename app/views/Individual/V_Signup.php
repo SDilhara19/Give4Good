@@ -29,7 +29,7 @@
 
             <h1 class="form-topic"> Sign Up </h1>
  
-            <input type="hidden" name="type" value="Individual">
+            <input type="hidden" name="type" value="individual">
 
             <div class="form-input-title"> Username <span class="required">*</span></div>
             <input type="text" name="username" id="username" class="input">
