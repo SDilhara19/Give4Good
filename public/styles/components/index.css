@@ -101,7 +101,7 @@
 }
 
 .home-fundraiser-card {
-    height: 280px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

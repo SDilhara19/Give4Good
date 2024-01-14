@@ -17,7 +17,7 @@ class Individual extends controller
         } 
         else { 
             $data=[];
-        $this->view('Users/V_IndividualSignup', $data);
+        $this->view('Individual/V_Signup');
         }
         
     }
@@ -29,7 +29,7 @@ class Individual extends controller
         } 
         else { 
             $data=[];
-        $this->view('Super_Individual/V_Signup', $data);
+        $this->view('Individual/V_Super_Signup', $data);
         }
         
     }
@@ -54,13 +54,13 @@ class Individual extends controller
         }
 
         if($obj->flag==1){
-            $this->view('Users/V_IndividualSignup', $obj->data);  
+            $this->view('Individual/V_Signup', $obj->data);  
         }    
         else{
             $obj->data['password'] = password_hash($obj->data['password'], PASSWORD_DEFAULT);
     
             if ($this->IndividualModel ->register($obj->data)) {
-                redirect(URLROOT . '/Login');
+                redirect(URLROOT . '/Users');
             } else {
                 die("Something went wrong");
             }
@@ -81,7 +81,7 @@ class Individual extends controller
         }    
         else{    
             if ($this->IndividualModel ->register($obj->data)) {
-                redirect(URLROOT . '/Login');
+                redirect(URLROOT . '/Index');
             } else {
                 die("Something went wrong");
             }
@@ -92,5 +92,6 @@ class Individual extends controller
     
 
 }
+
 
 

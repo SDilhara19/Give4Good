@@ -1,5 +1,5 @@
 <?php
-class M_User {
+class M_user {
     private $db;
     public function __construct() 
     {
@@ -9,6 +9,16 @@ class M_User {
 
     public function findbyEmail($email){
         $row = $this->db->selectOne('users', 'email', $email);
+ 
+        if($this->db->rowCount() > 0){
+            return $row;
+        }else{
+            return false;
+        }
+    }
+
+    public function findbyRegNo($regno){
+        $row = $this->db->selectOne('organisation_users', 'regno', $regno);
  
         if($this->db->rowCount() > 0){
             return $row;
@@ -28,13 +38,25 @@ class M_User {
     }
 
     public function register($data){
-        $this->db->query('INSERT INTO users (username, email, password, type) 
+        if ($data['type'] == 'organisation'){
+$this->db->query('INSERT INTO users (username, email, password, type) 
+        VALUES (:username, :email, :password, :type)');
+        $this->db->query('SET @last_user_id = LAST_INSERT_ID()');
+        $this->db->query('INSERT INTO organisation_users (user_id, regno, website)
+        VALUES (@last_user_id, :regno, :website)');
+        }
+        else{
+            $this->db->query('INSERT INTO users (username, email, password, type) 
         VALUES (:username, :email, :password, :type)');
         //Bind values
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':email', $data['email']);
+        $this->db->bind(':regno', $data['regno']);
+        $this->db->bind(':website', $data['website']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':type', $data['type']);
+        }
+        
 
 
         //Execute
@@ -45,6 +67,35 @@ class M_User {
         }
     }
 
+    public function validateUser($usernameOrEmail){
+        if ($this->findbyUsername($usernameOrEmail))
+        {
+            return $this->findbyUsername($usernameOrEmail);
+        }
+        elseif ($this->findbyEmail($usernameOrEmail))
+        {
+            return $this->findbyEmail($usernameOrEmail);
+        } 
+    }
+
+    
+
+    public function login($usernameOrEmail, $password){
+
+        $row = $this->validateUser($usernameOrEmail);
+        if($row == false) return false;
+
+        $hashedPassword = $row->password;
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else{
+            return false;
+        }
+        
+    }
+
    
 
 }
+
+?>
