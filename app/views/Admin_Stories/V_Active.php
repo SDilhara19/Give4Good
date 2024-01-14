@@ -20,18 +20,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
     
   <div class="main--content">
-    <div class="header--wrapper">
-      <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Stories (Active)</span>
-      </div>
-      <div class="user--info">
-        <div class="search--box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div>
-    </div>
+  <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
     <div class ="dashDetails">
     <div class="container">
         <div class="table-wrapper">
