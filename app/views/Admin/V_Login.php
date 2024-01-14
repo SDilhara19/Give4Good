@@ -16,6 +16,7 @@
 
 <body>
   <?php require APPROOT . '/views/includes/admin-header.php' ?>
+  <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
 
 
   <div>

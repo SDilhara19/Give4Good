@@ -16,6 +16,8 @@
 </head>
 
 <body>
+<?php require APPROOT . '/views/includes/admin-header.php' ?>
+<?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         <h1>Contributions Page</h1>
     </main>
     </div>
