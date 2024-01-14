@@ -1,18 +1,19 @@
 <?php
 class Admin_Stories extends controller
 {
-    // private $prototypeModel;
-    // public function __construct()
-    // {
-    //     $this->prototypeModel = $this->model('M_model')
+    private $AdminStoryModel;
+    public function __construct()
+    {
+        $this->AdminStoryModel = $this->model('M_Admin_Story');
   
-    //}
-
+    }
 
     public function index(){
-
-        $this->view('Admin_Stories/V_All');
-  }
+        $data = $this->AdminStoryModel -> getAllStories(); 
+  
+          $this->view('Admin_Stories/V_all', $data);
+    }
+    
 
   public function active(){
 

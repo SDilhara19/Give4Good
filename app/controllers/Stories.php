@@ -12,8 +12,9 @@ class Stories extends controller
 
 
     public function index(){
+      $data = $this->StoryModel -> getAllStories(); 
 
-        $this->view('Stories/V_Story-all');
+        $this->view('Stories/V_Story-all', $data);
   }
 
   public function add(){
