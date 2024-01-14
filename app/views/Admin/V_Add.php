@@ -31,15 +31,42 @@
             </div>  
           </div>  
         </div>
-  <h3>Add an Admin</h3>
-  <form>
-    <label for="adminUsername">Admin Username:</label>
-    <input type="text" id="adminUsername" name="adminUsername" required>
 
-    <label for="adminPassword">Admin Password:</label>
-    <input type="password" id="adminPassword" name="adminPassword" required>
+  <div class="form-container">
+        <div class="right-col">
+    <div class="form-container">
 
-    <button type="submit">Add Admin</button>
-  </form>
+        <form action="Admin/add" method="post" enctype="multipart/form-data">
+
+
+            <h1 class="form-topic"> Add Admin </h1>
+ 
+            <input type="hidden" name="type" value="admin">
+
+            <div class="form-input-title"> Username <span class="required">*</span></div>
+            <input type="text" name="username" id="username" class="input">
+            <span class="form-invalid"><?php if(!empty($data['username_err']))echo $data['username_err']; ?></span>
+
+            <div class="form-input-title"> Email<span class="required">*</span></div>
+            <input type="email" name="email" id="email" class="input">
+            <span class="form-invalid"><?php if(!empty($data['email_err']))echo $data['email_err']; ?></span>
+
+            <div class="form-input-title"> Password<span class="required">*</span></div>
+            <input type="password" name="password" id="password" class="input">
+            <span class="form-invalid"><?php if(!empty($data['password_err']))echo $data['password_err']; ?></span>
+
+            <div class="form-input-title"> Confirm Password<span class="required">*</span></div>
+            <input type="password" name="confirmpassword" id="confirmpassword" class="input">
+            <span class="form-invalid"><?php if(!empty($data['confirmpassword_err']))echo $data['confirmpassword_err']; ?></span>
+            <br><br>
+            
+            </div>
+            <button class="button-submit" type="submit">Signup</button>
+           
+        </form>
+      
+    </div>
+</div>
+</div>
 </body>
 </html>
