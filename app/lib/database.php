@@ -96,5 +96,5 @@ class Database {
         return $this->execute();
     }
 
-   
+
 }
