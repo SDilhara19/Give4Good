@@ -19,24 +19,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
     
   <div class="main--content">
-    <div class="header--wrapper">
-      <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Fundraisers (Active)</span>
-      </div>
-      <div class="header--buttons">
-        <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
-        <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
-        <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
-      </div>
-      <div class="user--info">
-        <div class="search--box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div>   
-    </div>
+  <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
     <div class ="dashDetails"> 
     <div class="container">
         <div class="table-wrapper">
