@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +21,10 @@
         <span>Donee Organizations</span>
       </div>
       <div class="header--buttons">
-        <a href="AdmindoneeOrganizations.html"><button class="all-button">All</button></a>
-        <a href="AdmindoneeOrganizations-active.html"><button class="active-button">Active</button></a>
-        <a href="AdmindoneeOrganizations-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdmindoneeOrganizations-pending.html"><button class="pending-button">Pending</button></a>
+        <a href="?php echo URLROOT?>/Admin_Organisation/index"><button class="all-button">All</button></a>
+        <a href="?php echo URLROOT?>/Admin_Organisation/active"><button class="active-button">Active</button></a>
+        <a href="?php echo URLROOT?>/Admin_Organisation/deactive"><button class="deactivated-button">Deactivated</button></a>
+        <a href="?php echo URLROOT?>/Admin_Organisation/pending"><button class="pending-button">Pending</button></a>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -117,4 +117,4 @@
         </div>
       </div> 
       </body>
-</html>
+</php>

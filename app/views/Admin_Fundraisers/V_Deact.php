@@ -25,10 +25,10 @@
             <span>Fundraisers (Deactivated)</span>
           </div>
           <div class="header--buttons">
-            <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
-            <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
-            <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-            <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
+            <a href="?php echo URLROOT?>/Admin_Fundraisers/index"><button class="all-button">All</button></a>
+            <a href="?php echo URLROOT?>/Admin_Fundraisers/active"><button class="active-button">Active</button></a>
+            <a href="?php echo URLROOT?>/Admin_Fundraisers/deactive"><button class="deactivated-button">Deactivated</button></a>
+            <a href="?php echo URLROOT?>/Admin_Fundraisers/pending"><button class="pending-button">Pending</button></a>
           </div>
           <div class="user--info">
             <div class="search--box">

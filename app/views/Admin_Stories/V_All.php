@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -26,9 +26,10 @@
             <span>Stories</span>
           </div>
           <div class="header--buttons">
-            <a href="AdminStories-active.html"><button class="active-button">Active</button></a>
-            <a href="AdminStories-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-            <a href="AdminStories-pending.html"><button class="pending-button">Pending</button></a>
+            <a href="?php echo URLROOT?>/Admin_Stories/index"><button class="all-button">All</button></a>
+            <a href="?php echo URLROOT?>/Admin_Stories/active"><button class="eactive-button">Active</button></a>
+            <a href="?php echo URLROOT?>/Admin_Stories/pending"><button class="pending-button">Pending</button></a>
+            <a href="?php echo URLROOT?>/Admin_Stories/reject"><button class="deactivated-button">Rejected</button></a>
           </div>
           <div class="user--info">
             <div class="search--box">
@@ -76,4 +77,4 @@
 </div>
 
 </body>
-</html>
+</php>

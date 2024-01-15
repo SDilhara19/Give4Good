@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,10 +27,10 @@
         <span>Individual Donees</span>
       </div>
       <div class="header--buttons">
-        <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
-        <a href="AdmindoneeIndividuals-active.html"><button class="active-button">Active</button></a>
-        <a href="AdmindoneeIndividuals-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdmindoneeIndividuals-pending.html"><button class="pending-button">Pending</button></a>
+        <a href="?php echo URLROOT?>/Admin_Individuals/index"><button class="all-button">All</button></a>
+        <a href="?php echo URLROOT?>/Admin_Individuals/active"><button class="active-button">Active</button></a>
+        <a href="?php echo URLROOT?>/Admin_Individuals/deactive"><button class="deactivated-button">Deactivated</button></a>
+        <a href="?php echo URLROOT?>/Admin_Individuals/pending"><button class="pending-button">Pending</button></a>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -162,4 +162,4 @@
   </div>
 </div>   
 </body>
-</html>
+</php>
