@@ -1,5 +1,5 @@
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -20,24 +20,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         
       <div class="main--content">
-        <div class="header--wrapper">
-          <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Stories</span>
-          </div>
-          <div class="header--buttons">
-            <a href="?php echo URLROOT?>/Admin_Stories/index"><button class="active-button">Active</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/active"><button class="active-button">Active</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/reject"><button class="deactivated-button">Deactivated</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/pending"><button class="pending-button">Pending</button></a>
-          </div>
-          <div class="user--info">
-            <div class="search--box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Search Name"/>
-            </div>  
-          </div>
-        </div>
+        <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">
@@ -86,4 +69,4 @@
 </div>
 
 </body>
-</php>
+</html>
