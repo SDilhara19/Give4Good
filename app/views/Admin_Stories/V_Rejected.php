@@ -19,6 +19,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         
       <div class="main--content">
+<<<<<<< HEAD
         <div class="header--wrapper">
           <div class="header--title">
             <i class="fa-solid fa-bars"></i>
@@ -37,6 +38,9 @@
             </div>  
           </div>
         </div>
+=======
+      <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
+>>>>>>> aa6a886476bc786920e5a7a86d6e1542a9fc89f6
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">

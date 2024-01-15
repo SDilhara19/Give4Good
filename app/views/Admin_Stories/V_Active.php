@@ -25,12 +25,6 @@
         <i class="fa-solid fa-bars"></i>
         <span>Stories (Active)</span>
       </div>
-      <div class="header--buttons">
-            <a href="?php echo URLROOT?>/Admin_Stories/index"><button class="all-button">All</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/active"><button class="eactive-button">Active</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/pending"><button class="pending-button">Pending</button></a>
-            <a href="?php echo URLROOT?>/Admin_Stories/reject"><button class="deactivated-button">Rejected</button></a>
-          </div>
       <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -68,6 +62,7 @@
                <button onclick class="data_deactivate">Deactivate</button>
             </td>
         </tr>
+
     </table>
  </div>   
 </body>

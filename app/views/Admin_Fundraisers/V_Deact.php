@@ -37,6 +37,8 @@
             </div>  
           </div>   
         </div>
+      <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
+
      <div class ="dashDetails"> 
      <div class="container">
         <div class="table-wrapper">

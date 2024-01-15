@@ -25,7 +25,7 @@
         <span>Fundraisers (Active)</span>
       </div>
       <div class="header--buttons">
-        <a href="?php echo URLROOT?>/Admin_Fundraisers/index"><button class="all-button">All</button></a>
+            <a href="?php echo URLROOT?>/Admin_Fundraisers/index"><button class="all-button">All</button></a>
             <a href="?php echo URLROOT?>/Admin_Fundraisers/active"><button class="active-button">Active</button></a>
             <a href="?php echo URLROOT?>/Admin_Fundraisers/deactive"><button class="deactivated-button">Deactivated</button></a>
             <a href="?php echo URLROOT?>/Admin_Fundraisers/pending"><button class="pending-button">Pending</button></a>

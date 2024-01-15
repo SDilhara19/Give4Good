@@ -8,11 +8,11 @@ class Validation
   {
     $postArray = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     foreach ($postArray as $key => $value) {
-      if (strpos($this->data[$key],  "Image") !== true)
+      if (strpos($this->data[$key], "image") === false)
       {
         $this->data[$key] = trim($value);
       }
-      else if (strpos($this->data[$key],  "Image") !== false)
+      else 
       {
         $this->data[$key] = $value;
       }
@@ -68,13 +68,20 @@ class Validation
     }
   }
 
-  private function IMAGE($value)
-  {
-    $check = getimagesize($value["image"]["tmp_name"]);
-    if ($check !== true) {
-      $this->data[$value . '_err'] = 'Upload an image';
-    }
-  }
+  // private function imageUpload($uploadDir, $uploadedFile, $uploadedFileName, $user, $title, $target, $value)
+  // {
+  //   $fileExtension = pathinfo($uploadedFileName, PATHINFO_EXTENSION);
+  //   $newFileName = $user . '_' . $title . '.' . $fileExtension;
+  //   $target = $uploadDir . $newFileName;
+
+  //   if (move_uploaded_file($uploadedFile, $target)){
+  //     return true;
+  //   }
+  //   else{
+  //     $this->flag = 1;
+  //     $this->$this->data[$value . '_err'] = 'Error in uploading file';
+  //   }
+  // }
 
   public function validate($value, $criteria)
   {

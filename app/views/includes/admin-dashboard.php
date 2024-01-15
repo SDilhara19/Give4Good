@@ -13,7 +13,6 @@
       <li><a href="?php echo URLROOT?>/Admin_Stories/index"><i class="fa-solid fa-table"></i><p>Stories</p></a></li>
       <li><a href="?php echo URLROOT?>/Admin/complaints"><i class="fa-regular fa-comments"></i><p>Complaints</p></a></li>
       <li><a href="views/Admin/V_Add.php"><i class="fa-solid fa-user-plus"></i><p>Add an admin</p></a></li>
-      <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i><p>Log out</p></a></li>
       <div class="active"></div>
     </ul>
   </div>
