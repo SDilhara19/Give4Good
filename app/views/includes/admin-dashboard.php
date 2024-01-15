@@ -3,7 +3,7 @@
       <img src="LogoBlack.png" alt="" class="LOGO-img">
     </a>
     <ul class="nav-links">
-      <li><a href="Admindashboard.html"><i class="fa-brands fa-windows"></i><p>Dashboard</p></a></li>
+      <li><a href="<?php echo URLROOT ?>/Admin/index"><i class="fa-brands fa-windows"></i><p>Dashboard</p></a></li>
       <li><a href="AdmindoneeIndividuals.html"><i class="fa-solid fa-people-group"></i><p>Individual Donees</p></a></li>
       <li><a href="AdmindonorIndividuals.html"><i class="fa-solid fa-people-group"></i><p>Individual Donors</p></a></li>
       <li><a href="AdmindonorOrganizations.html"><i class="fa-solid fa-people-roof"></i><p>Donor Organizations</p></a></li>

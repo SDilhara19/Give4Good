@@ -49,6 +49,7 @@
             <td>
                <button onclick class="data_view">View</button>
                <button onclick class="data_activate">Activate</button>
+               <button onclick class="data_deactivate">Deactivate</button>
           </td>
           </td>
             </tr>
