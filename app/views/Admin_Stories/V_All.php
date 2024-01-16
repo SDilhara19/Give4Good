@@ -20,7 +20,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         
       <div class="main--content">
-      <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
+        <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">
@@ -51,7 +51,7 @@
             <td><?php echo $story->contact; ?></td>
             <td>blood.png</td>
             <td><?php echo $story->type; ?></td>
-            <td>Deactive</td>
+            <td><?php echo $story->status; ?></td>
             <td>
                 <button onclick class="data_view">View</button>
                 <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>'" class="data_view">Deactive</button>
