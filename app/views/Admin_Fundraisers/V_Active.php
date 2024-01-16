@@ -19,7 +19,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
     
   <div class="main--content">
-  <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
+    <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
     <div class ="dashDetails"> 
     <div class="container">
         <div class="table-wrapper">
