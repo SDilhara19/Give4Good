@@ -38,14 +38,18 @@
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $story) {
+            ?>
         <tr>
-            <td>1</td>
-            <td>rotract</td>
-            <td>Blood Donation</td>
+            <td><?php echo $story->id; ?></td>
+            <td><?php echo $story->username; ?></td>
+            <td><?php echo $story->title; ?></td>
             <td>-</td>
-            <td>0779887745</td>
+            <td><?php echo $story->contact; ?></td>
             <td>blood.png</td>
-            <td>Org</td>
+            <td><?php echo $story->type; ?></td>
+            <td><?php echo $story->status; ?></td>
             <td>
                <button onclick class="data_view">View</button>
                <button onclick class="data_activate">Activate</button>
@@ -53,6 +57,9 @@
           </td>
             </tr>
         </tr>
+        <?php
+        }
+        ?>
     </table>
     </div>
 </div>

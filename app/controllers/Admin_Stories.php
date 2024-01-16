@@ -16,18 +16,23 @@ class Admin_Stories extends controller
     
 
   public function active(){
+    $data = $this->AdminStoryModel -> getActiveStories();
 
-    $this->view('Admin_Stories/V_Active');
+    $this->view('Admin_Stories/V_Active', $data);
 }
 
 public function reject(){
 
-    $this->view('Admin_Stories/V_Rejected');
+    $data = $this->AdminStoryModel -> viewRejected();
+
+    $this->view('Admin_Stories/V_Rejected', $data);
 }
 
 public function pending(){
 
-    $this->view('Admin_Stories/V_Pending');
+    $data = $this->AdminStoryModel -> viewPending();
+
+    $this->view('Admin_Stories/V_Pending',$data);
 }
 }
 ?>
