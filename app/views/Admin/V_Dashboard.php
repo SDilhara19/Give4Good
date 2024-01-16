@@ -55,7 +55,14 @@
             </tbody>
            </table>
            <div class="viewall">
-              <button>View All</button>
+              <button>                   
+                
+                
+                <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+
+
+                
+              </button>
             </div>
             </div>      
         </div>
@@ -82,7 +89,13 @@
               </tbody>
              </table>
              <div class="viewall">
-                <button>View All</button>
+                <button>
+
+
+                   <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+                
+                
+                </button>
               </div>
               </div>      
           </div>
@@ -109,7 +122,9 @@
               </tbody>
              </table>
              <div class="viewall">
-                <button>View All</button>
+                <button>
+                   <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+                </button>
               </div>
               </div>      
           </div>
@@ -136,7 +151,9 @@
               </tbody>
              </table>
              <div class="viewall">
-                <button>View All</button>
+                <button>
+                   <a href="<?php echo base_url('Admin_Storiess/V_Pending'); ?>">View All</a>
+                </button>
               </div>
               </div>      
           </div>
