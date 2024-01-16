@@ -88,4 +88,16 @@ public function viewRejected(){
         }
 
     }
+
+    public function deactivateStory($id){
+        $this->db->query('UPDATE stories SET status = "deactive" WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

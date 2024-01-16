@@ -55,9 +55,6 @@
                <button onclick class="data_deactivate">Deactivate</button>
             </td>
         </tr>
-        <?php
-        }
-        ?>
     </table>
  </div>   
 </body>

@@ -34,5 +34,15 @@ public function pending(){
 
     $this->view('Admin_Stories/V_Pending',$data);
 }
+
+public function setDeactive($id){
+    if($this->AdminStoryModel -> deactivateStory($id)){
+        echo '<script>alert("Story deactivated successfully!");</script>';
+    } else {
+        // Deactivation failed, handle the error
+        echo '<script>alert("Error deactivating the story.");</script>';
+    }
+    redirect(URLROOT . '/Admin_Stories/index');
+}
 }
 ?>
