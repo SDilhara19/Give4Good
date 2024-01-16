@@ -55,9 +55,9 @@
                <button onclick class="data_deactivate">Deactivate</button>
             </td>
         </tr>
-        <?php 
-        foreach ($data as $story) {
-            ?>
+        <?php
+        }
+        ?>
     </table>
  </div>   
 </body>
