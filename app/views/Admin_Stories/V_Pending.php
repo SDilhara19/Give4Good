@@ -21,7 +21,6 @@
 
       <div class="main--content">
         <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
-      <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">

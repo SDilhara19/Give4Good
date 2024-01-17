@@ -6,6 +6,7 @@
 @import url('index.css'); 
 @import url('story.css'); 
 @import url('profile.css');
+@import url('signup.css');
 /* @import url('components/Admin_style.css'); */
 /* @import url('components/login-styles.css'); */
 /* @import url('components/signup-styles.css'); */
@@ -151,6 +152,12 @@ h1, h2, h3{
   color: var(--grey-color);
 }
 
+.text-5{
+  margin:0;
+  font-size: 0.75rem;
+  color: var(--black-sub);
+}
+
 .color-red{
   color: var(--red-color);
 }
@@ -219,6 +226,10 @@ h1, h2, h3{
  font-weight: 500;
  border-radius: 5px;
  letter-spacing: 0.02rem;
+}
+
+.button-submit:hover{
+  color: var(--black-sub)
 }
 
 

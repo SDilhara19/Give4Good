@@ -19,7 +19,7 @@
 
   <?php require APPROOT . '/views/includes/header.php' ?>
   <div class="under-header">
-    <?php require APPROOT . '/views/includes/side-bar.php' ?>
+    <?php // require APPROOT . '/views/includes/side-bar.php' ?>
    
     <main>
 
