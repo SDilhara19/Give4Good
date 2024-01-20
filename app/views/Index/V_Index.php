@@ -11,135 +11,142 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
-  
-<?php require APPROOT . '/views/includes/header.php' ?>
 
-<main>
+  <?php require APPROOT . '/views/includes/header.php' ?>
+  <div class="under-header">
+    <?php // require APPROOT . '/views/includes/side-bar.php' ?>
    
+    <main>
 
-    <div class="home-box">
-      <div class="left-home-box">
-        <p class="large-text">Join Us</p>
-        <p class="medium-text">To make a</p>
-        <p class="xlarge-text">Better World</p>
-        <button class="highlighted-button" onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/fundraiser'">Donate Now!</button>
+
+      <div class="home-box">
+        <div class="left-home-box">
+          <p class="large-text">Join Us</p>
+          <p class="medium-text">To make a</p>
+          <p class="xlarge-text">Better World</p>
+          <button class="highlighted-button"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/fundraiser'">Donate Now!</button>
+        </div>
+        <div class="right-home-box">
+          <img src="public/Assets/images/child.jpg" alt="img">
+        </div>
+
       </div>
-      <div class="right-home-box">
-        <img src="public/Assets/images/child.jpg" alt="img">
+      <h1>Featured Topics..</h1>
+      <div class="home-fundraisers">
+        <article class="home-fundraiser-card"
+          onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser'">
+          <div class="home-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="home-fundraiser-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">Manusath Derana</p>
+            </div>
+            <p class="text-1">Help Andrew to travel for work</p>
+            <div class="progress-bar text-4">
+              progress-bar
+            </div>
+            <p class="text-1">Rs.20 000 raised</p>
+          </div>
+
+
+
+
+        </article>
+
+        <article class="home-fundraiser-card">
+          <div class="home-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="home-fundraiser-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">Manusath Derana</p>
+            </div>
+            <p class="text-1">Help Andrew to travel for work</p>
+            <div class="progress-bar text-4">
+              progress-bar
+            </div>
+            <p class="text-1">Rs.20 000 raised</p>
+          </div>
+        </article>
+        <article class="home-fundraiser-card">
+          <div class="home-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="home-fundraiser-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">Manusath Derana</p>
+            </div>
+            <p class="text-1">Help Andrew to travel for work</p>
+            <div class="progress-bar text-4">
+              progress-bar
+            </div>
+            <p class="text-1">Rs.20 000 raised</p>
+          </div>
+        </article>
+        <article class="home-fundraiser-card">
+          <div class="home-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="home-fundraiser-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">Manusath Derana</p>
+            </div>
+            <p class="text-1">Help Andrew to travel for work</p>
+            <div class="progress-bar text-4">
+              progress-bar
+            </div>
+            <p class="text-1">Rs.20 000 raised</p>
+          </div>
+        </article>
+        <article class="home-fundraiser-card">
+          <div class="home-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="home-fundraiser-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">Manusath Derana</p>
+            </div>
+            <p class="text-1">Help Andrew to travel for work</p>
+            <div class="progress-bar text-4">
+              progress-bar
+            </div>
+            <p class="text-1">Rs.20 000 raised</p>
+          </div>
+        </article>
       </div>
 
-    </div>
-    <h1>Featured Topics..</h1>
-    <div class="home-fundraisers">
-      <article class="home-fundraiser-card" onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser'">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
+      <div class="more-button">
+        <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/fundraiser'"> More>>
+        </button>
+      </div>
 
-        
-       
+      <h1>Stories</h1>
 
-      </article>
- 
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-    </div>
+      <div class="home-stories">
 
-    <div class="more-button">
-      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/fundraiser'"> More>> </button>
-    </div>
-
-    <h1>Stories</h1>
-
-    <div class="home-stories">
-      
-      <article class="home-story-card">
-        <div class="home-story-img">
-        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
-        </div>
-        <div class="home-story-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">LEO Club UOC</p>
+        <article class="home-story-card">
+          <div class="home-story-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
           </div>
-          <p class="text-1">Aarogya 6.0</p>
-        </div>
+          <div class="home-story-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">LEO Club UOC</p>
+            </div>
+            <p class="text-1">Aarogya 6.0</p>
+          </div>
         </article>
         <article class="home-story-card">
           <div class="home-story-img">
@@ -155,7 +162,7 @@
         </article>
         <article class="home-story-card">
           <div class="home-story-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story3.jpeg" alt="">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story3.jpeg" alt="">
           </div>
           <div class="home-story-below">
             <div class="fundraiser-donee-name">
@@ -164,35 +171,41 @@
             </div>
             <p class="text-1">Sahurda Wiyamana</p>
           </div>
-  
-          
-         
-  
+
+
+
+
         </article>
         <article class="home-story-card">
-        <div class="home-story-img">
-        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story4.jpeg" alt="">
-        </div>
-        <div class="home-story-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">LEO Club UOC</p>
+          <div class="home-story-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story4.jpeg" alt="">
           </div>
-          <p class="text-1">Nisagini 6.0</p>
-</div>
+          <div class="home-story-below">
+            <div class="fundraiser-donee-name">
+              <i class="fa-solid fa-building fa-sm text-3"></i>
+              <p class="text-4">LEO Club UOC</p>
+            </div>
+            <p class="text-1">Nisagini 6.0</p>
+          </div>
 
-      </article>
-    
-    </div>
+        </article>
 
-    <div class="more-button">
-      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Stories'">More>></button>
-    </div>
+      </div>
 
-  </main>
+      <div class="more-button">
+        <button class="main-color-button"
+          onclick="window.location.href = '<?php echo URLROOT ?>/Stories'">More>></button>
+      </div>
+
+    </main>
+
+  </div>
 
 
 
-  <?php require APPROOT . '/views/includes/footer.php' ?>       
+  <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
-</html>              
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
+
+</html>

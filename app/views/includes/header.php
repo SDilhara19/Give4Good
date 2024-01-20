@@ -2,7 +2,7 @@
     <nav class="nav-container">
       <div class="nav-left">
         <div class="dashboard">
-          <i class="fa-solid fa-bars fa-xl"></i>
+          <i class="fa-solid fa-bars fa-xl" id="btn"></i>
         </div>
         <div class="nav-logo">
           <a href="<?php echo URLROOT ?>/index"><img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png"

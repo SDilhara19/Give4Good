@@ -7,7 +7,7 @@
         <button class="active-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/active'">Active</button>
         <button class="deactivated-button"
-            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/deactive'">Deactivated</button>
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/reject'">Deactivated</button>
         <button class="pending-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/pending'">Pending</button>
     </div>

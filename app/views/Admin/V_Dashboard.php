@@ -58,7 +58,7 @@
               <button>                   
                 
                 
-                <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+                <a href="<?php echo URLROOT?>/Admin_Fundraisers/index">View All</a>
 
 
                 
@@ -92,7 +92,7 @@
                 <button>
 
 
-                   <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+                   <a href="">View All</a>
                 
                 
                 </button>
@@ -123,7 +123,7 @@
              </table>
              <div class="viewall">
                 <button>
-                   <a href="<?php echo base_url('Admin_Fundraisers/V_Pending'); ?>">View All</a>
+                   <a href="<?php echo URLROOT?>/Admin_Fundraisers/pending">View All</a>
                 </button>
               </div>
               </div>      
@@ -152,7 +152,7 @@
              </table>
              <div class="viewall">
                 <button>
-                   <a href="<?php echo base_url('Admin_Storiess/V_Pending'); ?>">View All</a>
+                   <a href="<?php echo URLROOT?>/Admin_Stories/pending">View All</a>
                 </button>
               </div>
               </div>      
