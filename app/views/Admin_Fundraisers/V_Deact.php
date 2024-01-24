@@ -19,24 +19,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
     
       <div class="main--content">
-        <div class="header--wrapper">
-          <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Fundraisers (Deactivated)</span>
-          </div>
-          <div class="header--buttons">
-            <a href="AdminFundraisers.html"><button class="all-button">All</button></a>
-            <a href="AdminFundraisers-active.html"><button class="active-button">Active</button></a>
-            <a href="AdminFundraisers-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-            <a href="AdminFundraisers-pending.html"><button class="pending-button">Pending</button></a>
-          </div>
-          <div class="user--info">
-            <div class="search--box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Search Name"/>
-            </div>  
-          </div>   
-        </div>
+      <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
      <div class ="dashDetails"> 
      <div class="container">
         <div class="table-wrapper">
@@ -57,23 +40,27 @@
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $fundraiser) {
+            ?>
         <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>Fundraisers</td>
-            <td>Category Value</td>
-            <td>Sport</td>
-            <td>1.jpg</td>
-            <td>10,000</td>
-            <td>2023/10/28</td>
-            <td></td>
-            <td>2023/11/30</td>
+            <td><?php echo $fundraiser->id; ?></td>
+            <td><?php echo $fundraiser->username; ?></td>
+            <td><?php echo $fundraiser->title; ?></td>
+            <td>-</td>
+            <td><?php echo $fundraiser->contact; ?></td>
+            <td>blood.png</td>
+            <td><?php echo $fundraiser->type; ?></td>
+            <td><?php echo $fundraiser->status; ?></td>
             <td>
               <button onclick class="data_view">View</button>
               <button onclick class="data_reactivate">Reactivate</button>
           </td>
             </td>
         </tr>
+        <?php
+        }
+        ?>
     </table>
     </div>
 </body>

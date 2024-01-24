@@ -20,23 +20,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         
       <div class="main--content">
-        <div class="header--wrapper">
-          <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Stories</span>
-          </div>
-          <div class="header--buttons">
-            <a href="AdminStories-active.html"><button class="active-button">Active</button></a>
-            <a href="AdminStories-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-            <a href="AdminStories-pending.html"><button class="pending-button">Pending</button></a>
-          </div>
-          <div class="user--info">
-            <div class="search--box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Search Name"/>
-            </div>  
-          </div>
-        </div>
+        <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">
@@ -67,10 +51,12 @@
             <td><?php echo $story->contact; ?></td>
             <td>blood.png</td>
             <td><?php echo $story->type; ?></td>
-            <td>Deactive</td>
+            <td><?php echo $story->status; ?></td>
             <td>
                 <button onclick class="data_view">View</button>
-                <button onclick class="data_reactivate">Reactivate</button>
+                <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>'" class="data_view">Deactive</button>
+               
+                <!-- <button onclick class="data_reactivate">Reactivate</button> -->
             </td>
             </td>
         </tr>

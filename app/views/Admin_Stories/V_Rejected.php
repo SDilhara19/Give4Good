@@ -19,18 +19,7 @@
 <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
         
       <div class="main--content">
-        <div class="header--wrapper">
-          <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Stories (Deactivated)</span>
-          </div>
-          <div class="user--info">
-            <div class="search--box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Search Name"/>
-            </div>  
-          </div>
-        </div>
+       <?php require APPROOT . '/views/Admin_Stories/stories-header.php' ?>
         <div class ="dashDetails">
         <div class="container">
         <div class="table-wrapper">
@@ -48,19 +37,26 @@
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $story) {
+            ?>
         <tr>
-            <td>1</td>
-            <td>rotract</td>
-            <td>Blood Donation</td>
+            <td><?php echo $story->id; ?></td>
+            <td><?php echo $story->username; ?></td>
+            <td><?php echo $story->title; ?></td>
             <td>-</td>
-            <td>0779887745</td>
+            <td><?php echo $story->contact; ?></td>
             <td>blood.png</td>
-            <td>Org</td>
-            <td>
+            <td><?php echo $story->type; ?></td>
+            <td><?php echo $story->status; ?></td>
+    <td>
                <button onclick class="data_view">View</button>
                <button onclick class="data_reactivate">Reactivate</button>
             </td>
         </tr>
+        <?php
+        }
+        ?>
     </table>
     </div>
 </div>

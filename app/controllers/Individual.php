@@ -6,7 +6,7 @@ class Individual extends controller
     private $IndividualModel;
     public function __construct()
     {
-        $this->IndividualModel = $this->model('M_User');
+        $this->IndividualModel = $this->model('M_user');
   
     }
 
