@@ -5,8 +5,6 @@ class M_Admin_Story {
     {
         $this->db = new Database;
     }
-
-
     
 
     public function viewPending(){
