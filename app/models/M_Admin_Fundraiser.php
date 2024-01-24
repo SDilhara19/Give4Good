@@ -59,8 +59,7 @@ public function viewActive(){
         
     // }
 
-    public function getAllFundraisers() 
-    {
+    public function getAllFundraisers(){
         $this->db->query('SELECT fundraiser.*, users.username, type FROM fundraiser JOIN users ON fundraiser.user_id = users.id;
         ');
 
@@ -90,4 +89,17 @@ public function viewActive(){
         }
         
     }
+
+    public function viewMerch(){
+
+    }
+    
+    public function viewFundOne(){
+
+    }
+
+    public function viewFundDoc(){
+
+    }    
+
 }
