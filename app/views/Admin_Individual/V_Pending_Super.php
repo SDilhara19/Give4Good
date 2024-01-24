@@ -58,12 +58,16 @@
           </tr>
         </thead>
         <tbody>
+        <?php 
+        foreach ($data as $super_individual) {
+            ?>
+
           <tr>
             <td>
               <span>
                 <span class="fi fi-af"></span>
               </span>
-              <span>001</span>
+              <span><?php echo $super_individual->user_id; ?></span>
             </td>
             <td>janith thenuja</td>
             <td>1233</td>
@@ -79,6 +83,9 @@
               <button onclick class="data_activate">Activate</button>
             </td>
           </tr>
+          <?php
+        }
+        ?>
           <tr>
             <td>
                 <span>
@@ -86,7 +93,7 @@
                   </span>
                   <span>002</span>
                 </td>
-                <td>shalini imasha</td>
+                <td>shaliniiiii imasha</td>
                 <td>1233</td>
                 <td>shalininic.jpg</td>
                 <td>1255</td>

@@ -1,6 +1,12 @@
 <?php
 class Admin_Individual extends controller
 {
+    private $AdminIndividualModel;
+    public function __construct()
+    {
+        $this->AdminStoryModel = $this->model('M_Admin_Individual');
+  
+    }
     // private $prototypeModel;
     // public function __construct()
     // {
@@ -28,8 +34,8 @@ class Admin_Individual extends controller
   }
   
     public function pending(){
-
-        $this->view('Admin_Individual/V_Pending_Super');
+        $data = $this->AdminIndividualModel -> viewPending();
+        $this->view('Admin_Individual/V_Pending_Super',$data);
 
   }
   
