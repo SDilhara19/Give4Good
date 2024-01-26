@@ -16,8 +16,11 @@
 
 <body>
     <?php require APPROOT . '/views/includes/header.php' ?>
-    <main>
-        <h1>Help us to assist them walk</h1>
+
+
+    <main class="admin-fundraiser">
+        <h1 class="margin-bottom-0">Help us to assist them walk</h1>
+        <p class="text-3">Category: Health</p>
         <div class="fundraiser-container">
             <div class="fundraiser-left">
                 <div class="fundraiser-image-container">
@@ -25,7 +28,8 @@
                         <i class="fa-solid fa-chevron-left fa-2xl"></i>
                     </div>
                     <div class="fundraiser-image">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+                        <!-- <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image"> -->
+                        <img src="public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
                     </div>
                     <div class="right-arrow">
                         <i class="fa-solid fa-chevron-right fa-2xl"></i>
@@ -57,6 +61,21 @@
             </div>
 
             <div class="fundraiser-right">
+                <div class="fundraiser-button-list">
+                    <button class="button-1-green">
+                        Activate
+                    </button>
+
+                    <button class="button-2-yellow" onclick="window.location.href = '#all-merchs'">
+                        Set pending
+                    </button>
+                    <button class="button-3-red">
+                        Deactivate
+                    </button>
+                    
+                </div>
+                <p class="text-3">Current status: Pending</p>
+
                 <div class="fundraiser-amount">
                     <p class="text-2">Rs. 20 000</p>
                     <p class="text-3">raised of RS. 60 000</p>
@@ -64,167 +83,77 @@
                 <div class="fundraiser-progress-bar">
                     Progress bar
                 </div>
-                <div class="fundraiser-button-list">
-                    <button class="main-color-button">
-                        Donate
-                    </button>
-
-                    <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
-                        Buy Merch
-                    </button>
-                    <button class="main-dark-button">
-                        Share
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </button>
-
-                    <button class="main-white-button"onclick="window.location.href = '#donations-we-need'">
-                        Send Donations
-                    </button>
-                </div>
+               <hr>
                 <div class="fundraiser-info">
                     <div class="info-box">
-                        <p class="text-1">Payment methods</p>
-                        <ul>
-                            <li class="text-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et</li>
-                            <li class="text-3">Secure payments</li>
-                        </ul>
+                        <table class="info-table">
+                            <tr>
+                                <th>Created date</th>
+                                <td class="text-3">23-02-2023</td>
+                            </tr>
+                            <tr>
+                                <th>Modified date</th>
+                                <td class="text-3">23-02-2023</td>
+                            </tr>
+                            <tr>
+                                <th>End date</th>
+                                <td class="text-3">23-02-2024</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="info-box">
-                        <p class="text-1">Buy Merch</p>
-                        <ul>
-                            <li class="text-3">Buy merch to assist the fundraiser</li>
-                            <li class="text-3">Delivery estimated within 5 to 10 business days</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <p class="text-1">Send Donations</p>
-                        <ul>
-                            <li class="text-3">Good donations can be send to our given locations</li>
-                            <li class="text-3">Contact to send donations</li>
-                        </ul>
-                    </div>
-
+                    
 
                 </div>
             </div>
         </div>
-        <div class="all-merchs" id="all-merchs">
-            <h2>Buy and Help</h2>
-            <div class="fundraiser-merch">
-                <h3>Black short sleeve t-shirt</h3>
-                <div class="fundraiser-merch-container">
-                    <div class="fundraiser-merch-left">
-                        <div class="merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg" alt="merch-image">
-                        </div>
-                    </div>
-                    <div class="fundraiser-merch-right">
-                        <div class="merch-right-top">
-                            <div class="merch-sizes">
-                                <p class="text-2">Available Sizes:</p>
-                                <div class="merch-sizes-right">
-                                    <p>XS</p>
-                                    <p>S</p>
-                                    <p>M</p>
-                                    <p>L</p>
-                                    <p>XL</p>
-                                    <p>XXL</p>
-                                    <p>XXXL</p>
-                                </div>
-                            </div>
-                            <div class="merch-colors">
-                                <p class="text-2">Available Colours:</p>
-                                <div class="merch-colors-right">
-                                    <p>Red</p>
-                                    <p>Black</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="merch-right-bottom">
-                            <div class="merch-price">
-                                <h1>Rs. 2200.00</h1>
-                                <p class="text-4 color-green">12% of this product is for the fundraiser</p>
-                            </div>
-                            <div class="merch-buy-button">
-                                <button class="main-color-button">
-                                    Buy NOW!
-                                </button>
-                                <p class="text-4 color-red"> Stock not Available</p>
-                            </div>
-                            <div class="merch-description">
-                                <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Madw</p>
-                            </div>
-                        </div>
-
-                    </div>
+    
+<div class="reports">
+    <h1>Reports & Documents</h1>
+    <div class="all-report-container">
+        <div class="report-container">
+            <div class="report-container-top">
+                <div class="report-image-container">
+                    <img src="" alt="image">
                 </div>
-
             </div>
-            <div class="fundraiser-merch">
-                <h3>Black short sleeve t-shirt</h3>
-                <div class="fundraiser-merch-container">
-                    <div class="fundraiser-merch-left">
-                        <div class="merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/cap .webp" alt="merch-image">
-                        </div>
-                    </div>
-                    <div class="fundraiser-merch-right">
-                        <div class="merch-right-top">
-                            <!-- <div class="merch-sizes">
-                                <p class="text-2">Available Sizes:</p>
-                                <div class="merch-sizes-right">
-                                    <p>XSMall</p>
-                                    <p>Small</p>
-                                    <p>Medium</p>
-                                    <p>L</p>
-                                    <p>XL</p>
-                                    <p>XXL</p>
-                                    <p>XXXL</p>
-                                </div>
-                            </div> -->
-                            <div class="merch-colors">
-                                <p class="text-2">Available Colours:</p>
-                                <div class="merch-colors-right">
-                                    <p>Red</p>
-                                    <p>Black</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="merch-right-bottom">
-                            <div class="merch-price">
-                                <h1>Rs. 1000.00</h1>
-                                <p class="text-4 color-green">15% of this product is for the fundraiser</p>
-                            </div>
-                            <div class="merch-buy-button">
-                                <button class="main-color-button">
-                                    Buy NOW!
-                                </button>
-                                <p class="text-4 color-yellow"> Stock Available</p>
-                            </div>
-                            <div class="merch-description">
-                                <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+            <div class="report-container-bottom">
+                <p>Medical Report</p>
             </div>
         </div>
-
+        <div class="report-container">
+            <div class="report-container-top">
+                <div class="report-image-container">
+                    <img src="" alt="image">
+                </div>
+            </div>
+            <div class="report-container-bottom">
+                <p>Medical Report</p>
+            </div>
+        </div>
+        <div class="report-container">
+            <div class="report-container-top">
+                <div class="report-image-container">
+                    <img src="" alt="image">
+                </div>
+            </div>
+            <div class="report-container-bottom">
+                <p>Medical Report</p>
+            </div>
+        </div>
+        <div class="report-container">
+            <div class="report-container-top">
+                <div class="report-image-container">
+                    <img src="" alt="image">
+                </div>
+            </div>
+            <div class="report-container-bottom">
+                <p>Medical Report</p>
+            </div>
+        </div>
+    </div>
+</div>
         <div class="donations-we-need" id="donations-we-need">
-            <h1>Donations we need</h1>
+            <h1>Donations Expected</h1>
             <div class="material-card-container">
                 <div class="material-card">
                     <div class="material-img-container">
@@ -292,7 +221,7 @@
         </dialog>
 
         <div class="send-donations">
-            <h1>Send Donations</h1>
+            <h1>Locations</h1>
             <div class="send-donation-card-container">
                 <div class="send-donation-card">
                     <div class="send-donation-img-container">
@@ -366,5 +295,3 @@
 </body>
 </html>       
      
-  
-   
