@@ -8,6 +8,7 @@
 @import url('profile.css');
 @import url('signup.css');
 @import url('admin.css');
+@import url('category.css');
 /* @import url('components/Admin_style.css'); */
 /* @import url('components/login-styles.css'); */
 /* @import url('components/signup-styles.css'); */
@@ -81,25 +82,28 @@ body {
 }
 
 .side-bar-main{
-  position: absolute;
+  position: fixed;
   top: 70px;
-  left: 0;
+  left: -250px;
   height: calc(100vh - 70px);
   width: 80px;
   background-color: var(--secondary-color);
   padding: 0.4rem 0.8rem;
-  transition: all 0.5s ease;
-
+  transition: left 0.5s ease;
+  z-index: 2000;
 }
 
-.side-bar-main.active ~ main{
+/* .side-bar-main.active ~ main{
   left: 250px;
   width: calc(100% - 250px);
-}
+} */
 
 .side-bar-main.active{
 width: 250px;
+left: 0;
 }
+
+
 
 .user-img-side-bar{
   width: 50px;

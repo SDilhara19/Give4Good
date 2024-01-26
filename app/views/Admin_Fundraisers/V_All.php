@@ -26,13 +26,13 @@
         <table>
         <thead>
         <tr>
-            <th>View ID</th>
-            <th>Donee ID</th>
-            <th>Title</th>
+            <th>Fundraiser ID</th>
+            <th>Username</th>
             <th>Category</th>
-            <th>Story</th>
-            <th>Story Images</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>Required Amount</th>
+            <th>Amount Collected</th>
             <th>Created Date</th>
             <th>Modified Date</th>
             <th>Requirement End Date</th>
@@ -48,6 +48,7 @@
         <tr>
             <td><?php echo $fundraiser->id; ?></td>
             <td><?php echo $fundraiser->username; ?></td>
+            <td><?php echo $fundraiser->category; ?></td>
             <td><?php echo $fundraiser->title; ?></td>
             <td>-</td>
             <td><?php echo $fundraiser->contact; ?></td>
