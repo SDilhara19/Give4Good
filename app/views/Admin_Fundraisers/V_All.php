@@ -41,6 +41,31 @@
         </tr>
     </thead>
     <tbody>
+
+        <tr>
+            <td>
+                <span>
+                    <span class="fi fi-af"></span>
+                </span>
+                <span>010</span>
+                </td>
+                <td>14</td>
+            <td></td>
+            <td>Health</td>
+            <td>............</td>
+            <td>1.jpg</td>
+            <td>43000.00</td>
+            <td>2023-12-24</td>
+            <td>2024-01-01</td>
+            <td>2024-02-05</td>
+            <td>deactive</td>
+            <td>
+                <button class="data_view"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one'">View</button>
+        
+                <button onclick class="data_reactivate">Reactivate</button>
+            </td>
+            </tr>
     <?php 
         foreach ($data as $fundraiser) {
             ?>
@@ -56,7 +81,7 @@
             <td><?php echo $fundraiser->status; ?></td>
             <td>
             <td>
-                <button onclick class="data_view">View</button>
+                <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $story->id ?>'" class="data_view">Deactive</button>
                 <button onclick class="data_reactivate">Reactivate</button>
             </td>
         </tr>

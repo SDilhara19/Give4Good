@@ -90,16 +90,16 @@ public function viewActive(){
         
     }
 
-    public function viewMerch(){
+  //  public function viewMerch(){
 
-    }
+  //  }
     
-    public function viewFundOne(){
+  //  public function viewFundOne(){
 
-    }
+  //  }
 
-    public function viewFundDoc(){
+  //  public function viewFundDoc(){
 
-    }    
+ //   }    
 
 }

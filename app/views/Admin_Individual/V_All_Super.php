@@ -83,7 +83,7 @@
             <td>Active</td>
             <td>
                <button onclick class="data_view">View</button>
-              <button onclick class="data_reactivate">Reactivate</button>
+              <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setReactive/<?php echo $story->id ?>'" class="data_view">Reactive</button>
             </td>
           </tr>
           <tr>

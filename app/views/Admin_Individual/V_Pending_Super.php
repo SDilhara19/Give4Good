@@ -79,8 +79,9 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td><button onclick class="data_view">View</button>
-              <button onclick class="data_activate">Activate</button>
+            <td>
+              <button onclick class="data_view">View</button>
+              <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setActive/<?php echo $story->id ?>'" class="data_view">Active</button>
             </td>
           </tr>
           <?php

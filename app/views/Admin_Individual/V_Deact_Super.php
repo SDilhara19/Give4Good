@@ -74,8 +74,9 @@
             <td>7276464</td>
             <td>janithpb.png</td>
             <td>1</td>
-            <td><button onclick class="data_view">View</button>
-              <button onclick class="data_deactivate">Deactivate</button>
+            <td>
+              <button onclick class="data_view">View</button>
+              <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setDeactive/<?php echo $story->id ?>'" class="data_view">Deactive</button>
             </td>
           </tr>
           <tr>

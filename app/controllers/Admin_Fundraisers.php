@@ -38,23 +38,23 @@ class Admin_Fundraisers extends controller
 
     public function merchandise(){
 
-        $data = $this->AdminFundraisersModel -> viewMerch();
+       // $data = $this->AdminFundraisersModel -> viewMerch();
 
-        $this->view('Admin_Fundraisers/V_Admin_Merchandise' , $data);
+        $this->view('Admin_Fundraisers/V_Admin_Merchandise');
     }
 
     public function fundraiser_one(){
 
-        $data = $this->AdminFundraisersModel -> viewFundOne();
+      //  $data = $this->AdminFundraisersModel -> viewFundOne();
 
-        $this->view('Admin_Fundraisers/V_Fundraisers_One' , $data);
+        $this->view('Admin_Fundraisers/V_Fundraiser_One');
     }
 
     public function fundraiser_doc(){
 
-        $data = $this->AdminFundraisersModel -> viewFundDoc();
+      //  $data = $this->AdminFundraisersModel -> viewFundDoc();
 
-        $this->view('Admin_Fundraisers/V_Fundraiser-document' , $data);
+        $this->view('Admin_Fundraisers/V_Fundraiser-document');
     }
 }
 ?>

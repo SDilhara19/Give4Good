@@ -52,8 +52,9 @@
             <td><?php echo $story->status; ?></td>
             <td>
                <button onclick class="data_view">View</button>
-               <button onclick class="data_activate">Activate</button>
-               <button onclick class="data_deactivate">Deactivate</button>
+               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>'" class="data_view">Active</button>
+               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>'" class="data_view">Deactive</button>
+               
           </td>
           </td>
             </tr>
