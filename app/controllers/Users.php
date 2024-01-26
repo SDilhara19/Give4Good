@@ -7,7 +7,7 @@ class Users extends controller
   private $UserModel;
   public function __construct()
   {
-    $this->UserModel = $this->model('M_User');
+    $this->UserModel = $this->model('M_user');
 
   }
 
