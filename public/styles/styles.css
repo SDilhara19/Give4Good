@@ -167,4 +167,36 @@ button {
 }
 
 
+/* popup-css */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.popup{
+  margin: auto;
+  width: 60vw;
+  height: 60vh;
+  padding-bottom: 6rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+}
+.popup-container{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap:1rem;
+}
 
+
+.popup::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
+
+/* popup-css-end */
