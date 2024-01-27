@@ -358,11 +358,15 @@ body{
 }
 
 .data_view{
-  background-color: #cbcd57;
+  background-color: var(--black-sub);
   cursor: pointer;
+  font-size: 0.75rem;
   text-align: center;
-  border-color: none;
-  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 4rem;
+  color:var(--white-color);
+  padding: 0.2rem 0;
 }
 
 .data_deactivate{
