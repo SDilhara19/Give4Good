@@ -19,14 +19,14 @@
                 <i class="bx bxs-grid-alt"></i>
                 <span class="nav-item-side-bar">Dashboard</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">Dashxxboard</span>
         </li>
         <li>
             <a href="#">
                 <i class="bx bxs-grid-alt"></i>
                 <span class="nav-item-side-bar">Dashboard</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">bbbb</span>
         </li>
         <li>
             <a href="#">

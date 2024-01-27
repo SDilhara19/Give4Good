@@ -16,6 +16,7 @@
     --white-color: #FFFFFF;
     --red-color: #FC0606;
     --grey-color: #6E7175;
+    --border-grey: #e1e4e8;;
     --yellow-color: #E9AB0E;
     --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
     --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
@@ -326,6 +327,8 @@ td {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .edit-document-left{
@@ -335,19 +338,32 @@ td {
 
 .add-container, .remove-container{
     width: 100%;
+    padding: 2rem;
 }
 
 .edit-document-right{
     flex: 1;
-    border-left: 1px solid var(--grey-color);
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
+    border: 1px solid #e1e4e8;
+  border-radius: 6px; 
+  margin: 8px; 
+  padding: 1rem;
+}
+.admin-document .edit-document-right .text-2{
+    margin-bottom: 1.3rem;
 }
 
-.admin-add-remove
-/* , .admin-current-documents */
-{
-    display: inline-block;
-    width: 100%
+.admin-current-documents{
+    padding-bottom: 1rem;
+    padding-left: 3rem;
 }
+
+.admin-add-remove p{
+    margin-bottom: 0.5rem;
+}
+
+.edit-document-left .submit-button-div{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin: 0;
+  }
