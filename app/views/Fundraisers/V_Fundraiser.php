@@ -361,7 +361,10 @@
         </div>
 
     </main>
-    <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+        setupPopup('#open-material-popup', '.material-popup', '.close-material-popup');
+    </script>
     <?php require APPROOT . '/views/includes/footer.php' ?> 
 </body>
 </html>       

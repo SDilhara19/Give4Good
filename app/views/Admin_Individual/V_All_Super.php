@@ -51,12 +51,7 @@
             <th>Full Name</th>
             <th>NIC No</th>
             <th>NIC Image</th>
-            <th>Bank Code</th>
-            <th>Bank Name</th>
-            <th>Branch Code</th>
-            <th>Branch Name</th>
-            <th>Bank Account No</th>
-            <th>Passbook Photo</th>
+            <th>Bank Details
             <th>User ID</th>
             <th>Status</th>
             <th>Actions</th>
@@ -76,12 +71,7 @@
             <td><?php echo $super_individual->username; ?></td>
             <td>1233</td>
             <td>janithnic.jpg</td>
-            <td>1255</td>
-            <td>sampath</td>
-            <td>78</td>
-            <td>colombo07</td>
-            <td>7276464</td>
-            <td>janithpb.png</td>
+            <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
             <td>1</td>
             <td>Active</td>
             <td>
@@ -89,14 +79,23 @@
               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setReactive/<?php echo $story->id ?>'" class="data_view">Reactive</button>
             </td>
           </tr>
+<<<<<<< HEAD
            <?php
         }
         ?>
+=======
+         
+
+>>>>>>> 931676240eacbd547a3c1dbc2f5407b08858744a
         </tbody>
       </table>
       </div>
     </div>
   </div>
 </div>   
+<script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+      setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
+    </script>
 </body>
 </html>
