@@ -63,14 +63,17 @@
           </tr>
         </thead>
         <tbody>
+        <?php 
+        foreach ($data as $super_individual) {
+            ?>
           <tr>
             <td>
               <span>
                 <span class="fi fi-af"></span>
               </span>
-              <span>001</span>
+              <span><?php echo $super_individual->user_id; ?></span>
             </td>
-            <td>janith thenuja</td>
+            <td><?php echo $super_individual->username; ?></td>
             <td>1233</td>
             <td>janithnic.jpg</td>
             <td>1255</td>
@@ -86,75 +89,9 @@
               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setReactive/<?php echo $story->id ?>'" class="data_view">Reactive</button>
             </td>
           </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>002</span>
-                </td>
-                <td>shalini imasha</td>
-                <td>1233</td>
-                <td>shalininic.jpg</td>
-                <td>1255</td>
-                <td>sampath</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>shalinipb.png</td>
-                <td>2</td>
-                <td>Deactived</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>003</span>
-                </td>
-                <td>sanduni dilhara</td>
-                <td>1233</td>
-                <td>sanduninic.jpg</td>
-                <td>125</td>
-                <td>commercial</td>
-                <td>28</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>sanduni.png</td>
-                <td>3</td>
-                <td>Pending</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>004</span>
-                </td>
-                <td>hansini bhagya</td>
-                <td>1233</td>
-                <td>bhagyanic.jpg</td>
-                <td>155</td>
-                <td>boc</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276364</td>
-                <td>bhagyapb.png</td>
-                <td>4</td>
-                <td>Active</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
+           <?php
+        }
+        ?>
         </tbody>
       </table>
       </div>

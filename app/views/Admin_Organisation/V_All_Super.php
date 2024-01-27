@@ -66,17 +66,19 @@
                   <th>Treasurer Email</th>
                   <th>Treasurer NIC Image</th>
                   <th>Status</th>
- 
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
+                <?php 
+                 foreach ($data as $super_organisation) {
+                ?>
                 <tr>
                   <td>
                     <span>
                       <span class="fi fi-af"></span>
                     </span>
-                    <span>001</span>
+                    <span><?php echo $super_organisation->user_id; ?></span>
                   </td>
                   <td>Non-profit organization</td>
                   <td>0112458654</td>
@@ -110,6 +112,9 @@
                       <button onclick class="data_deactivate">Deactivate</button>
  
                 </tr>
+                <?php
+               }
+             ?>
                 
               </tbody>
             </table>

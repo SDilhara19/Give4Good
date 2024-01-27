@@ -3,7 +3,7 @@ class Admin_Individual extends controller
 {
     private $AdminIndividualModel;
     public function __construct(){
-        $this->AdminStoryModel = $this->model('M_Admin_Individual');
+        $this->AdminIndividualModel = $this->model('M_Admin_Individual');
     }
 
     // private $prototypeModel;
@@ -15,7 +15,7 @@ class Admin_Individual extends controller
 
     public function index(){
         $data = $this->AdminIndividualModel -> viewAll();
-        $this->view('Admin_Individual/V_All_Super', $data);
+        $this->view('Admin_Individual/V_All_Super',$data);
     }
   
     public function active(){
