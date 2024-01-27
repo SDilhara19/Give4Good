@@ -51,12 +51,7 @@
             <th>Full Name</th>
             <th>NIC No</th>
             <th>NIC Image</th>
-            <th>Bank Code</th>
-            <th>Bank Name</th>
-            <th>Branch Code</th>
-            <th>Branch Name</th>
-            <th>Bank Account No</th>
-            <th>Passbook Photo</th>
+            <th>Bank Details
             <th>User ID</th>
             <th>Status</th>
             <th>Actions</th>
@@ -73,12 +68,7 @@
             <td>janith thenuja</td>
             <td>1233</td>
             <td>janithnic.jpg</td>
-            <td>1255</td>
-            <td>sampath</td>
-            <td>78</td>
-            <td>colombo07</td>
-            <td>7276464</td>
-            <td>janithpb.png</td>
+            <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
             <td>1</td>
             <td>Active</td>
             <td>
@@ -86,80 +76,17 @@
               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Individual/setReactive/<?php echo $story->id ?>'" class="data_view">Reactive</button>
             </td>
           </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>002</span>
-                </td>
-                <td>shalini imasha</td>
-                <td>1233</td>
-                <td>shalininic.jpg</td>
-                <td>1255</td>
-                <td>sampath</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>shalinipb.png</td>
-                <td>2</td>
-                <td>Deactived</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>003</span>
-                </td>
-                <td>sanduni dilhara</td>
-                <td>1233</td>
-                <td>sanduninic.jpg</td>
-                <td>125</td>
-                <td>commercial</td>
-                <td>28</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>sanduni.png</td>
-                <td>3</td>
-                <td>Pending</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>004</span>
-                </td>
-                <td>hansini bhagya</td>
-                <td>1233</td>
-                <td>bhagyanic.jpg</td>
-                <td>155</td>
-                <td>boc</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276364</td>
-                <td>bhagyapb.png</td>
-                <td>4</td>
-                <td>Active</td>
-                <td>
-                   <button onclick class="data_view">View</button>
-                   <button onclick class="data_reactivate">Reactivate</button>
-                </td>
-          </tr>
+         
+
         </tbody>
       </table>
       </div>
     </div>
   </div>
 </div>   
+<script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+      setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
+    </script>
 </body>
 </html>
