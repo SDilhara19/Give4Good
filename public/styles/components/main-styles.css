@@ -299,6 +299,39 @@ h1, h2, h3{
   background: rgb(0 0 0 / 0.4);
 }
 
+
+/* popup-2 */
+.close-popup-2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup-2{
+  margin: auto;
+  width: 40vw;
+  height: 36vw;
+  padding-bottom: 6rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+}
+.popup-2-container{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+
+.popup-2::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
 /* popup-css-end */
 
 @media (max-width: 992px){
