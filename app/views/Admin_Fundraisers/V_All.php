@@ -29,15 +29,14 @@
             <th>Fundraiser ID</th>
             <th>Username</th>
             <th>Category</th>
-            <th>Title</th>
-            <th>Description</th>
+            <th class="action-th">Title</th>
             <th>Required Amount</th>
             <th>Amount Collected</th>
             <th>Created Date</th>
             <th>Modified Date</th>
             <th>Requirement End Date</th>
             <th>Status</th>
-            <th>Actions</th>
+            <th class="action-th">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -50,19 +49,16 @@
                 <span>010</span>
                 </td>
                 <td>14</td>
-            <td></td>
             <td>Health</td>
-            <td>............</td>
-            <td>1.jpg</td>
-            <td>43000.00</td>
+            <td>Help John travel for work</td>
+            <td>80000</td>
+            <td>20500</td>
             <td>2023-12-24</td>
             <td>2024-01-01</td>
             <td>2024-02-05</td>
-            <td>deactive</td>
-            <td>
-                <button class="data_view"
-            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one'">View</button>
-                <button onclick class="data_reactivate">Reactivate</button>
+            <td>Deactive</td>
+            <td class="action-td">
+            <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one" class="action-icons"><i class="fa-solid fa-info"></i></a>
             </td>
             </tr>
     <?php 

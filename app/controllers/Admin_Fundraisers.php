@@ -17,23 +17,23 @@ class Admin_Fundraisers extends controller
     }
 
     public function active(){
-        $data = $this->AdminFundraisersModel -> viewActive();
+        // $data = $this->AdminFundraisersModel -> viewActive();
 
 
-        $this->view('Admin_Fundraisers/V_Active', $data);
+        $this->view('Admin_Fundraisers/V_Active');
     }
 
     public function deactive(){
-        $data = $this->AdminFundraisersModel -> viewDeactivated();
+        // $data = $this->AdminFundraisersModel -> viewDeactivated();
 
-        $this->view('Admin_Fundraisers/V_Deact', $data);
+        $this->view('Admin_Fundraisers/V_Deact');
     }
 
     public function pending(){
 
-        $data = $this->AdminFundraisersModel -> viewPending();
+        // $data = $this->AdminFundraisersModel -> viewPending();
 
-        $this->view('Admin_Fundraisers/V_Pending' , $data);
+        $this->view('Admin_Fundraisers/V_Pending');
     }
 
     public function merchandise(){
