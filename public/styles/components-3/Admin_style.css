@@ -254,9 +254,9 @@ body{
   color: black;
 }
 
-.data_table tr:nth-child(odd){
+/* .data_table tr:nth-child(odd){
   background: rgb(234, 232, 232);
-}
+} */
 
 .dashUnit{
   margin-left: 0.01rem;
@@ -275,7 +275,7 @@ body{
 }
 
 .dash_table tbody{
-  background: #ffffff(249, 246, 246);  
+  background: var(--white-color);  
 }
 
 .dash_table td{
@@ -362,14 +362,14 @@ body{
   cursor: pointer;
   font-size: 0.75rem;
   text-align: center;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid var(--black-sub);
+  border-radius: 15px;
   width: 4rem;
   color:var(--white-color);
   padding: 0.2rem 0;
 }
 
-.data_deactivate{
+/* .data_deactivate{
   background-color: #633cce;
   cursor: pointer;
   text-align: center;
@@ -383,15 +383,15 @@ body{
   text-align: center;
   border-color: none;
   color: black;
-}
-
+} */
+/* 
 .data_reactivate{
   background-color: #3cbfce;
   cursor: pointer;
   text-align: center;
   border-color: none;
   color: black;
-}
+} */
 /* 
 .table-wrapper td .action-icons{
   margin: 0.1rem

@@ -59,11 +59,12 @@
                 <td><button onclick class="data_view" id="open-executive-popup">View</button></td>
                 <td><button onclick class="data_view" id="open-treasurer-popup">View</button></td>
                 <td><a href=""><i class="fa-solid fa-check"></i></a></td>
-                <td>Active</td>
+                <td>Deactive</td>
                 <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-eye"></i></a>
+                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  <a href="" class="action-icons"><i class="fa-solid fa-hourglass-half"></i></a>
+                  <a href="" class="action-icons"> <i class="fa-solid fa-lock"></i></a>
                 </td>
-
                 <td>
                   <dialog class="popup" id='executive-popup'>
                     <span class="close-popup" id="close-executive-popup">&times;</span>
