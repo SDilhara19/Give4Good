@@ -1,6 +1,6 @@
 <div class="header--wrapper">
           <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
+            <!-- <i class="fa-solid fa-bars"></i> -->
             <span>Fundraisers</span>
           </div>
           <div class="header--buttons">

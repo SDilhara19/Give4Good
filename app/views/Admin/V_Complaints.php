@@ -21,8 +21,8 @@
       <div class="main--content">
         <div class="header--wrapper">
           <div class="header--title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Complaigns</span>
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <span>Complaints</span>
           </div>
           <div class="user--info">
             <div class="search--box">
