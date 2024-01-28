@@ -5,17 +5,60 @@ class M_Admin_Story {
     {
         $this->db = new Database;
     }
-
-
     
 
     public function viewPending(){
-        
+        $this->db->query('SELECT stories.*, users.username, users.type
+        FROM stories
+        JOIN users ON stories.user_id = users.id
+        WHERE stories.status = "pending";');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+           return $row;
+        } else {
+           return false;
+        }
     }
 
-    public function getAllStories() 
-    {
-        $this->db->query('SELECT stories.*, users.username, type FROM stories JOIN users ON stories.user_id = users.id;
+    public function viewRejected(){
+        $this->db->query('SELECT stories.*, users.username, users.type 
+        FROM stories 
+        JOIN users ON stories.user_id = users.id 
+        WHERE stories.status = "deactive";');
+
+        //Check row
+        $row = $this->db->resultSet();
+
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+
+    // public function makeActive(){
+    //     $this->db->query('SELECT stories.*, users.username, users.type
+    //     FROM stories
+    //     JOIN users ON stories.user_id = users.id
+    //     WHERE stories.status = "pending";');
+
+    //     //Check row
+    //     if ($this->db->rowCount() > 0) {
+    //         return $row;
+    //     } else {
+    //         return false;
+    //     }
+        
+    // }
+
+    public function getAllStories() {
+        $this->db->query('SELECT stories.*, users.username, users.type 
+        FROM stories 
+        JOIN users ON stories.user_id = users.id;
         ');
 
         $row = $this->db->resultSet();
@@ -26,11 +69,27 @@ class M_Admin_Story {
         } else {
             return false;
         }
+    }
 
+    public function getActiveStories() {
+        $this->db->query('SELECT stories.*, users.username, users.type
+        FROM stories
+        JOIN users ON stories.user_id = users.id
+        WHERE stories.status = "active";');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
     }
 
     public function deactivateStory($id){
-        $this->db->query('UPDATE stories SET status = "deactive" WHERE id = :id;');
+        $this->db->query('UPDATE stories SET status = "deactive" 
+        WHERE id = :id;');
 
         $this->db->bind(':id', $id);
 

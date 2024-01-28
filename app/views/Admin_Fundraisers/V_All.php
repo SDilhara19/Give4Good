@@ -26,13 +26,13 @@
         <table>
         <thead>
         <tr>
-            <th>View ID</th>
-            <th>Donee ID</th>
-            <th>Title</th>
+            <th>Fundraiser ID</th>
+            <th>Username</th>
             <th>Category</th>
-            <th>Story</th>
-            <th>Story Images</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>Required Amount</th>
+            <th>Amount Collected</th>
             <th>Created Date</th>
             <th>Modified Date</th>
             <th>Requirement End Date</th>
@@ -41,23 +41,53 @@
         </tr>
     </thead>
     <tbody>
+
         <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>Fundraisers</td>
-            <td>Category Value</td>
-            <td>Sport</td>
-            <td>1.jpg</td>
-            <td>10,000</td>
-            <td>2023/10/28</td>
-            <td></td>
-            <td>2023/11/30</td>
-            <td>Active</td>
             <td>
-                <button onclick class="data_view">View</button>
-                <button onclick class="data_deactivate">Deactivate</button>
+                <span>
+                    <span class="fi fi-af"></span>
+                </span>
+                <span>010</span>
+                </td>
+                <td>14</td>
+            <td></td>
+            <td>Health</td>
+            <td>............</td>
+            <td>1.jpg</td>
+            <td>43000.00</td>
+            <td>2023-12-24</td>
+            <td>2024-01-01</td>
+            <td>2024-02-05</td>
+            <td>deactive</td>
+            <td>
+                <button class="data_view"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one'">View</button>
+                <button onclick class="data_reactivate">Reactivate</button>
+            </td>
+            </tr>
+    <?php 
+        foreach ($data as $fundraiser) {
+            ?>
+
+        <tr>
+            <td><?php echo $fundraiser->id; ?></td>
+            <td><?php echo $fundraiser->username; ?></td>
+            <td><?php echo $fundraiser->category; ?></td>
+            <td><?php echo $fundraiser->title; ?></td>
+            <td>-</td>
+            <td><?php echo $fundraiser->contact; ?></td>
+            <td>blood.png</td>
+            <td><?php echo $fundraiser->type; ?></td>
+            <td><?php echo $fundraiser->status; ?></td>
+            <td>
+            <td>
+                <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $story->id ?>'" class="data_view">Deactive</button>
+                <button onclick class="data_reactivate">Reactivate</button>
             </td>
         </tr>
+        <?php
+        }
+        ?>
     </table>
   </div>
 </body>

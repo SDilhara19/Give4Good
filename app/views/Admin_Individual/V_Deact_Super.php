@@ -1,148 +1,147 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
- </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIVE4GOOD</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/admin.css">
+  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
-<?php require APPROOT . '/views/includes/admin-header.php' ?>
-<?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-    
+  <?php require APPROOT . '/views/includes/admin-header.php' ?>
+  <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
+
   <div class="main--content">
-    <div class="header--wrapper">
-      <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Donee Individuals (Deactived)</span>
-      </div>
-      <div class="header--buttons">
-        <a href="AdmindoneeIndividuals.html"><button class="all-button">All</button></a>
-        <a href="AdmindoneeIndividuals-active.html"><button class="active-button">Active</button></a>
-        <a href="AdmindoneeIndividuals-deactivated.html"><button class="deactivated-button">Deactivated</button></a>
-        <a href="AdmindoneeIndividuals-pending.html"><button class="pending-button">Pending</button></a>
-      </div>
-      <div class="user--info">
-        <div class="search--box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
+    <?php require APPROOT . '/views/Admin_Individual/Individual-header.php' ?>
+
+
+    <div class="dashDetails">
+      <div class="container">
+        <div class="table-wrapper">
+          <div class="data_table">
+            <table>
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Username</th>
+                  <th>Contact</th>
+                  <th>Address</th>
+                  <th>Identity Verification</th>
+                  <th>NIC Details</th>
+                  <th>Bank Details</th>
+                  <th>Identity Status</th>
+                  <th>Status</th>
+                  <th class="action-th">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span>001</span>
+                  </td>
+                  <td>SanduniD</td>
+                  <td>1233</td>
+                  <td>Balangoda</td>
+                  <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                  <td><button onclick class="data_view" id="open-nic-popup">View</button></td>
+                  <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
+                  <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
+                  <td>Deactive</td>
+                  <td class="action-td">
+                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  </td>
+
+                  <td>
+                    <dialog class="popup" id='nic-popup'>
+                      <span class="close-popup" id="close-nic-popup">&times;</span>
+                      <p class="text-2">NIC Verification: SanduniD</p>
+                      <div class="popup-container nic-container">
+                        <table class="info-table">
+                          <tr>
+                            <th>Name</th>
+                            <td class="text-3">John Doe</td>
+                          </tr>
+                          <tr>
+                            <th>NIC No</th>
+                            <td class="text-3">200121229939</td>
+                          </tr>
+                          <tr>
+                            <th>Address</th>
+                            <td class="text-3">Ratnapura</td>
+                          </tr>
+
+
+                        </table>
+                        <div class="nic-front">
+
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                        </div>
+                        <div class="nic-back">
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+                        </div>
+                      </div>
+
+                    </dialog>
+                    <dialog class="popup" id='bank-popup'>
+                      <span class="close-popup" id="close-bank-popup">&times;</span>
+                      <p class="text-2">Bank Details: Youth Society of Thimbirigasyaya</p>
+                      <div class="popup-container bank-container">
+                        <table class="info-table">
+                          <tr>
+                            <th>Bank Name</th>
+                            <td class="text-3">Bank of Ceylon</td>
+                          </tr>
+                          <tr>
+                            <th>Bank Code</th>
+                            <td class="text-3">367</td>
+                          </tr>
+
+                          <tr>
+                            <th>Branch Name</th>
+                            <td class="text-3">Thimbirigasyaya</td>
+                          </tr>
+                          <tr>
+                            <th>Branch Code</th>
+                            <td class="text-3">12</td>
+                          </tr>
+                          <tr>
+                            <th>Account holder</th>
+                            <td class="text-3">Youth Society of Thimbirigasyaya</td>
+                          </tr>
+                          <tr>
+                            <th>Account No</th>
+                            <td class="text-3">5526362</td>
+                          </tr>
+
+                        </table>
+                        <div class="bank-passbook">
+
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Bank-passbook/1.webp" alt="">
+                        </div>
+                      </div>
+
+                    </dialog>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-    <div class ="dashDetails">
-    <div class="container">
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Full Name</th>
-            <th>NIC No</th>
-            <th>NIC Image</th>
-            <th>Bank Code</th>
-            <th>Bank Name</th>
-            <th>Branch Code</th>
-            <th>Branch Name</th>
-            <th>Bank Account No</th>
-            <th>Passbook Photo</th>
-            <th>User ID</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>001</span>
-            </td>
-            <td>janith thenuja</td>
-            <td>1233</td>
-            <td>janithnic.jpg</td>
-            <td>1255</td>
-            <td>sampath</td>
-            <td>78</td>
-            <td>colombo07</td>
-            <td>7276464</td>
-            <td>janithpb.png</td>
-            <td>1</td>
-            <td><button onclick class="data_view">View</button>
-              <button onclick class="data_deactivate">Deactivate</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>002</span>
-                </td>
-                <td>shalini imasha</td>
-                <td>1233</td>
-                <td>shalininic.jpg</td>
-                <td>1255</td>
-                <td>sampath</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>shalinipb.png</td>
-                <td>2</td>
-                <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>003</span>
-                </td>
-                <td>sanduni dilhara</td>
-                <td>1233</td>
-                <td>sanduninic.jpg</td>
-                <td>125</td>
-                <td>commercial</td>
-                <td>28</td>
-                <td>colombo07</td>
-                <td>7276464</td>
-                <td>sanduni.png</td>
-                <td>3</td>
-                <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
-                </td>
-          </tr>
-          <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                  </span>
-                  <span>004</span>
-                </td>
-                <td>hansini bhagya</td>
-                <td>1233</td>
-                <td>bhagyanic.jpg</td>
-                <td>155</td>
-                <td>boc</td>
-                <td>78</td>
-                <td>colombo07</td>
-                <td>7276364</td>
-                <td>bhagyapb.png</td>
-                <td>4</td>
-                <td><button onclick class="data_view">View</button>
-                  <button onclick class="data_deactivate">Deactivate</button>
-                </td>
-          </tr>
-        </tbody>
-      </table>
-</div>   
+
+    <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+      setupPopup('#open-nic-popup', '#nic-popup', '#close-nic-popup');
+      setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
+    </script>
+
 </body>
+
 </html>

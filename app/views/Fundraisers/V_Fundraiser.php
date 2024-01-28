@@ -125,13 +125,13 @@
                             <div class="merch-sizes">
                                 <p class="text-2">Available Sizes:</p>
                                 <div class="merch-sizes-right">
-                                    <p>XSMall</p>
-                                    <p>Small</p>
-                                    <p>Medium</p>
-                                    <p>Large</p>
-                                    <p>XLarge</p>
-                                    <p>XXLarge</p>
-                                    <p>XXXLarge</p>
+                                    <p>XS</p>
+                                    <p>S</p>
+                                    <p>M</p>
+                                    <p>L</p>
+                                    <p>XL</p>
+                                    <p>XXL</p>
+                                    <p>XXXL</p>
                                 </div>
                             </div>
                             <div class="merch-colors">
@@ -185,10 +185,10 @@
                                     <p>XSMall</p>
                                     <p>Small</p>
                                     <p>Medium</p>
-                                    <p>Large</p>
-                                    <p>XLarge</p>
-                                    <p>XXLarge</p>
-                                    <p>XXXLarge</p>
+                                    <p>L</p>
+                                    <p>XL</p>
+                                    <p>XXL</p>
+                                    <p>XXXL</p>
                                 </div>
                             </div> -->
                             <div class="merch-colors">
@@ -361,7 +361,10 @@
         </div>
 
     </main>
-    <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+        setupPopup('#open-material-popup', '.material-popup', '.close-material-popup');
+    </script>
     <?php require APPROOT . '/views/includes/footer.php' ?> 
 </body>
 </html>       

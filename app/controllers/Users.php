@@ -7,7 +7,7 @@ class Users extends controller
   private $UserModel;
   public function __construct()
   {
-    $this->UserModel = $this->model('M_User');
+    $this->UserModel = $this->model('M_user');
 
   }
 
@@ -24,6 +24,7 @@ class Users extends controller
 
   public function select()
 {
+  // $this->view('Logins/V_Signup');
   $this->view('Users/V_Select_User');
 }
 
