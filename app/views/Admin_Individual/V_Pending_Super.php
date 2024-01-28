@@ -17,6 +17,7 @@
   <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
 
   <div class="main--content">
+
     <?php require APPROOT . '/views/Admin_Individual/Individual-header.php' ?>
 
 
@@ -40,9 +41,12 @@
                 </tr>
               </thead>
               <tbody>
+                 <?php 
+        foreach ($data as $super_individual) {
+            ?>
                 <tr>
                   <td>
-                    <span>001</span>
+                     <span><?php echo $super_individual->user_id; ?></span>
                   </td>
                   <td>SanduniD</td>
                   <td>1233</td>
@@ -54,7 +58,8 @@
                   <td>Pending</td>
                   <td class="action-td">
                   <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-                  <a href="" class="action-icons"> <i class="fa-solid fa-play"></i></a>
+                  <a href="<?php echo URLROOT ?>/Admin_Individual/setActive/<?php echo $super_individual->user_id; ?>" class="action-icons"> <i class="fa-solid fa-play"></i></a>
+
                 </td>
                   <td>
                     <dialog class="popup" id='nic-popup'>
@@ -128,7 +133,9 @@
                     </dialog>
                 </tr>
 
-
+ <?php
+        }
+        ?>
               </tbody>
             </table>
           </div>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +14,18 @@
 <body>
   <?php require APPROOT . '/views/includes/admin-header.php' ?>
   <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
+    
 
-  <div class="main--content admin-organization ">
-    <?php require APPROOT . '/views/Admin_Organisation/Organisation-header.php' ?>
-    <div class="dashDetails">
+    <div class="main--content admin-organization ">
+     <?php require APPROOT . '/views/Admin_Organisation/Organisation-header.php' ?>
+     <div class ="dashDetails">
       <div class="container">
+
       <div class="table-wrapper">
           <table class="tablemain">
             <thead>
-              <tr>
+           
+                <tr>
 
                 <th>User ID</th>
                 <th>Username</th>
@@ -41,12 +43,15 @@
               </tr>
             </thead>
             <tbody>
+               <?php 
+                 foreach ($data as $super_organisation) {
+                ?>
               <tr>
                 <td>
                   <!-- <span>
                     <span class="fi fi-af"></span>
                   </span> -->
-                  <span>001</span>
+                   <span><?php echo $super_organisation->user_id; ?></span>
                 </td>
                 <td>Youth Society of Thimbirigasyaya</td>
                 <td>Non-profit organization</td>
@@ -201,7 +206,9 @@
                   </dialog>
               </tr>
 
-
+<?php
+               }
+             ?>
             </tbody>
           </table>
         </div>
@@ -218,3 +225,4 @@
 </body>
 
 </html>
+

@@ -40,11 +40,15 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <span>001</span>
-                  </td>
-                  <td>SanduniD</td>
+                  <?php 
+        foreach ($data as $super_individual) {
+            ?>
+          <tr>
+                   <td>
+             
+              <span><?php echo $super_individual->user_id; ?></span>
+            </td>
+            <td><?php echo $super_individual->username; ?></td>
                   <td>1233</td>
                   <td>Balangoda</td>
                   <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
@@ -75,6 +79,14 @@
                             <td class="text-3">Ratnapura</td>
                           </tr>
 
+
+      
+
+
+         
+
+
+  
 
                         </table>
                         <div class="nic-front">
@@ -128,11 +140,14 @@
                     </dialog>
                 </tr>
 
-
+   <?php
+        }
+        ?>
               </tbody>
             </table>
           </div>
         </div>
+
       </div>
     </div>
     <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>

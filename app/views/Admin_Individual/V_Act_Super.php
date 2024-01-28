@@ -21,6 +21,7 @@
 
 
     <div class="dashDetails">
+
       <div class="container">
         <div class="table-wrapper">
           <div class="data_table">
@@ -55,7 +56,8 @@
                   <td class="action-td">
                   <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
                   <a href="" class="action-icons"><i class="fa-solid fa-hourglass-half"></i></a>
-                  <a href="" class="action-icons"> <i class="fa-solid fa-lock"></i></a>
+                  <a href="<?php echo URLROOT ?>/Admin_Individual/setDeactive/<?php echo $super_individual->user_id ?>" class="action-icons"> <i class="fa-solid fa-lock"></i></a>
+
                 </td>
 
                   <td>

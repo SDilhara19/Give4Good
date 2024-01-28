@@ -135,11 +135,13 @@
         </div>
       </div>
     </div>
+
     <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
     <script>
       setupPopup('#open-nic-popup', '#nic-popup', '#close-nic-popup');
       setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
     </script>
+
 </body>
 
 </html>
