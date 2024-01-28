@@ -57,8 +57,8 @@
                   <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
                   <td>Pending</td>
                   <td class="action-td">
-                  <a href="<?php echo URLROOT ?>/Admin_Individual/setActive/<?php echo $super_individual->user_id; ?>" class="action-icons"><i class="fa-solid fa-info"></i></a>
-                  <a href="" class="action-icons"> <i class="fa-solid fa-play"></i></a>
+                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  <a href="<?php echo URLROOT ?>/Admin_Individual/setActive/<?php echo $super_individual->user_id; ?>" class="action-icons"> <i class="fa-solid fa-play"></i></a>
 
                 </td>
                   <td>
