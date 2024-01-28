@@ -16,7 +16,8 @@
     --white-color: #FFFFFF;
     --red-color: #FC0606;
     --grey-color: #6E7175;
-    --border-grey: #e1e4e8;;
+    --border-grey: #e1e4e8;
+    ;
     --yellow-color: #E9AB0E;
     --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
     --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
@@ -66,28 +67,22 @@
 .info-table {
     width: 100%;
 }
- .info-table table {
+
+.info-table table {
     width: 100%;
 }
 
- .info-table th {
+.info-table th {
     text-align: left;
 }
+
 .info-table td {
     text-align: right;
 }
 
- .info-table th,
+.info-table th,
 td {
     padding: 0.5rem;
-}
-
- .info-table th{
-    text-align: left;
-}
-
-.info-table td{
-    text-align: right;
 }
 
 .admin-fundraiser .reports {
@@ -189,25 +184,26 @@ td {
 
 }
 
-.admin-merchandise .ad-merch-image-gallery{
+.admin-merchandise .ad-merch-image-gallery {
     display: flex;
     width: 100%;
     margin: 1rem 0.3rem;
 }
 
-.admin-merchandise .ad-merch-image{
+.admin-merchandise .ad-merch-image {
     /* border: 1px solid var(--black-sub); */
     height: 80px;
     width: 60px;
     margin-right: 1.5rem;
     border-radius: 2px;
-     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
-.ad-merch-right-bottom{
+.ad-merch-right-bottom {
     display: flex;
     flex-direction: column;
 }
+
 .admin-merchandise .ad-fundraiser-merch-right {
     flex: 5;
     display: flex;
@@ -247,7 +243,7 @@ td {
     padding-left: 3rem;
 }
 
-.admin-merchandise .ad-merch-stock{
+.admin-merchandise .ad-merch-stock {
     margin-top: 1.5rem;
     display: flex;
     align-items: center;
@@ -260,17 +256,17 @@ td {
 }
 
 
-.admin-merchandise .ad-merch-button-list{
+.admin-merchandise .ad-merch-button-list {
     margin: 1rem;
     display: flex;
     width: 80%;
-    justify-content:space-around;
-    align-self:center;
+    justify-content: space-around;
+    align-self: center;
 
 }
 
-.admin-merchandise .ad-merch-button-list button{
-    flex:1;
+.admin-merchandise .ad-merch-button-list button {
+    flex: 1;
 }
 
 
@@ -281,7 +277,7 @@ td {
 
 /* .admin-document */
 
-.admin-document .document-container{
+.admin-document .document-container {
     display: flex;
     align-items: flex-start;
     margin-top: 1rem;
@@ -289,7 +285,7 @@ td {
 
 }
 
-.admin-document .document-left{
+.admin-document .document-left {
     /* flex: 2; */
     width: 49rem;
     border-radius: 0;
@@ -300,29 +296,29 @@ td {
     margin-right: 3rem;
     border: 0.5px solid var(--grey-color);
     height: 70rem;
-   
+
 }
 
-.admin-document .document-left img{
+.admin-document .document-left img {
     flex: 2;
     object-fit: contain;
     border-radius: 0;
 }
 
-.admin-document .document-right{
+.admin-document .document-right {
     flex: 1;
     border-left: 1px solid var(--grey-color);
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  height: 70rem;
-  padding: 2rem 0 2rem 2rem;
-  width: 100%;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    height: 70rem;
+    padding: 2rem 0 2rem 2rem;
+    width: 100%;
 
 }
 
 /* edit-document */
-.edit-document-container{
+.edit-document-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -330,107 +326,122 @@ td {
     margin-top: 2rem;
 }
 
-.edit-document-left{
+.edit-document-left {
     flex: 1;
 
 }
 
-.add-container, .remove-container{
+.add-container,
+.remove-container {
     width: 100%;
     padding: 2rem;
 }
 
-.edit-document-right{
+.edit-document-right {
     flex: 1;
     border: 1px solid #e1e4e8;
-  border-radius: 6px; 
-  margin: 8px; 
-  padding: 1rem;
+    border-radius: 6px;
+    margin: 8px;
+    padding: 1rem;
 }
-.admin-document .edit-document-right .text-2{
+
+.admin-document .edit-document-right .text-2 {
     margin-bottom: 1.3rem;
 }
 
-.admin-current-documents{
+.admin-current-documents {
     padding-bottom: 1rem;
     padding-left: 3rem;
 }
 
-.admin-add-remove p{
+.admin-add-remove p {
     margin-bottom: 0.5rem;
 }
 
-.edit-document-left .submit-button-div{
+.edit-document-left .submit-button-div {
     width: 100%;
     display: flex;
     justify-content: end;
     margin: 0;
-  }
+}
 
 
 
 
-  .nic-container, .bank-container{
+.nic-container,
+.bank-container {
     display: flex;
-  
 
 
 
-  }
-  .nic-container table{
+
+}
+
+.nic-container table {
     width: 21vw;
     margin-top: 1rem;
+    background: var(--white-color);
 
-    
-  }
 
-  .nic-front, .nic-back{
 
-   border: 1px solid var(--border-grey);
-   width: 15vw;
-   height: 90%;
-   margin-top: 3rem;
-   
-  }
+}
 
-  .bank-container table{
-    width: 30vw;
-    margin-top: 1rem;
 
-    
-  }
+.nic-container table th {
+    background: var(--white-color);
+}
 
-  .bank-passbook{
+.nic-front,
+.nic-back {
 
     border: 1px solid var(--border-grey);
-    width: 30vw; 
+    width: 15vw;
     height: 90%;
     margin-top: 3rem;
-   }
 
-  .nic-container img{
+}
+
+.bank-container table {
+    width: 30vw;
+    margin-top: 1rem;
+    background: var(--white-color);
+}
+
+.bank-container table th{
+    background: var(--white-color);
+}
+
+.bank-passbook {
+
+    border: 1px solid var(--border-grey);
+    width: 30vw;
+    height: 90%;
+    margin-top: 3rem;
+}
+
+.nic-container img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 0;
 
-  }
+}
 
-  .bank-container img{
+.bank-container img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 0;
 
-  }
+}
 
-  /* .organisation-logo-container{
+/* .organisation-logo-container{
    
 
    } */
 
 
-  .organisation-logo{
+.organisation-logo {
     border: 1px solid var(--border-grey);
     height: 90%;
     width: 100%;
@@ -440,17 +451,17 @@ td {
     align-items: center;
     margin-top: 2rem;
 
-   }
+}
 
 
 
-   .organisation-logo img{
+.organisation-logo img {
     object-fit: contain;
     max-width: 100%;
     /* Ensure the image doesn't exceed the container width */
     max-height: 100%;
     border-radius: 0;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 
