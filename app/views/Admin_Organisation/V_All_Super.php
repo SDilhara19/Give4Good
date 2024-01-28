@@ -61,7 +61,7 @@
                 <td><a href=""><i class="fa-solid fa-check"></i></a></td>
                 <td>Active</td>
                 <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-eye"></i></a>
+                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
                 </td>
 
                 <td>
