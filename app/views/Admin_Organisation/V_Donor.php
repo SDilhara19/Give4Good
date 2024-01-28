@@ -17,8 +17,8 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Donor Organizations</span>
+        <!-- <i class="fa-solid fa-bars"></i> -->
+        <span>Organizational Users</span>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -35,13 +35,12 @@
           <tr>
  
             <th>ID</th>
-            <th>User Name</th>
-            <th>Type</th>
+            <th>Username</th>
             <th>Registration No</th>
             <th>Email</th>
-            <th>Password</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>Phone</th>
+            <th>Account Status</th>
+            <th class="action-th">Actions</th>
  
         </thead>
         <tbody>
@@ -53,15 +52,12 @@
               <span>001</span>
             </td>
             <td>rotract</td>
-            <td></td>
-            <td>122/rt/21</td>
+            <td>Ra-12-121</td>
             <td>rotract001@gmail.com</td>
-            <td>A@3ghd</td>
- 
-            <td>Active</td>
+            <td>+94 702392992</td>
+            <td>Super</td>
             <td>
-              <button onclick class="data_view">View</button>
-               <button onclick class="data_deactivate">Deactivate</button>
+            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
             </td>
  
           </tr>
@@ -72,16 +68,45 @@
               </span>
               <span>002</span>
             </td>
-            <td>abc</td>
-            <td></td>
-            <td>122/ad/21</td>
-            <td>abc32@gmail.com</td>
-            <td>A@3ghd</td>
- 
-            <td>Active</td>
+            <td>rotract</td>
+            <td>Ra-12-121</td>
+            <td>rotract001@gmail.com</td>
+            <td>+94 702392992</td>
+            <td>Super</td>
             <td>
-              <button onclick class="data_view">View</button>
-               <button onclick class="data_deactivate">Deactivate</button>
+            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+            </td>
+ 
+          </tr><tr>
+            <td>
+              <span>
+                <span class="fi fi-af"></span>
+              </span>
+              <span>003</span>
+            </td>
+            <td>rotract</td>
+            <td>Ra-12-121</td>
+            <td>rotract001@gmail.com</td>
+            <td>+94 702392992</td>
+            <td>Super</td>
+            <td>
+            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+            </td>
+ 
+          </tr><tr>
+            <td>
+              <span>
+                <span class="fi fi-af"></span>
+              </span>
+              <span>004</span>
+            </td>
+            <td>rotract</td>
+            <td>Ra-12-121</td>
+            <td>rotract001@gmail.com</td>
+            <td>+94 702392992</td>
+            <td>Super</td>
+            <td>
+            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
             </td>
  
           </tr>
