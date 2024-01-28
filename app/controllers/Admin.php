@@ -45,4 +45,18 @@ class Admin extends controller
         $this->view('Admin/V_Contributions');
 
     }
+
+    public function category()
+    {
+
+        $this->view('Admin/V_Categories');
+
+    }
+
+    public function documents()
+    {
+
+        $this->view('Admin/V_Edit_Required_Documents');
+
+    }
 }

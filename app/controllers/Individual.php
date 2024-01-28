@@ -14,10 +14,11 @@ class Individual extends controller
     {  
         if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
             $this->signup();
+            // var_dump($_POST);
         } 
         else { 
             $data=[];
-        $this->view('Individual/V_Signup');
+        $this->view('Individual/V_Signup', $data);
         }
         
     }
@@ -58,8 +59,11 @@ class Individual extends controller
         }    
         else{
             $obj->data['password'] = password_hash($obj->data['password'], PASSWORD_DEFAULT);
-    
+
+
             if ($this->IndividualModel ->register($obj->data)) {
+   
+
                 redirect(URLROOT . '/Users');
             } else {
                 die("Something went wrong");
