@@ -1,5 +1,6 @@
 <html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,76 +16,86 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/admin-header.php' ?>
-<?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-        
-      <div class="main--content">
-      <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
-     <div class ="dashDetails"> 
-     <div class="container">
-        <div class="table-wrapper">
-        <table>
-        <thead>
-        <tr>
-            <th>Fundraiser ID</th>
-            <th>Username</th>
-            <th>Category</th>
-            <th class="action-th">Title</th>
-            <th>Required Amount</th>
-            <th>Amount Collected</th>
-            <th>Created Date</th>
-            <th>Modified Date</th>
-            <th>Requirement End Date</th>
-            <th>Status</th>
-            <th class="action-th">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+    <?php require APPROOT . '/views/includes/admin-header.php' ?>
+    <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
 
-        <tr>
-            <td>
-                <span>
-                    <span class="fi fi-af"></span>
-                </span>
-                <span>010</span>
-                </td>
-                <td>14</td>
-            <td>Health</td>
-            <td>Help John travel for work</td>
-            <td>80000</td>
-            <td>20500</td>
-            <td>2023-12-24</td>
-            <td>2024-01-01</td>
-            <td>2024-02-05</td>
-            <td>Deactive</td>
-            <td class="action-td">
-            <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
-            </tr>
-    <?php 
-        foreach ($data as $fundraiser) {
-            ?>
+    <div class="main--content">
+        <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
+        <div class="dashDetails">
+            <div class="container">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fundraiser ID</th>
+                                <th>Username</th>
+                                <th>Category</th>
+                                <th class="action-th">Title</th>
+                                <th>Required Amount</th>
+                                <th>Amount Collected</th>
+                                <th>Created Date</th>
+                                <th>Modified Date</th>
+                                <th>Requirement End Date</th>
+                                <th>Features Used</th>
+                                <th>Merchs</th>
+                                <th>User Type</th>
+                                <th>Status</th>
+                                <th class="action-th">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($data as $fundraiser) {
+                                ?>
 
-        <tr>
-            <td><?php echo $fundraiser->id; ?></td>
-            <td><?php echo $fundraiser->username; ?></td>
-            <td><?php echo $fundraiser->category; ?></td>
-            <td><?php echo $fundraiser->title; ?></td>
-            <td>-</td>
-            <td><?php echo $fundraiser->contact; ?></td>
-            <td>blood.png</td>
-            <td><?php echo $fundraiser->type; ?></td>
-            <td><?php echo $fundraiser->status; ?></td>
-            <td>
-            <td>
-                <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $story->id ?>'" class="data_view">Deactive</button>
-                <button onclick class="data_reactivate">Reactivate</button>
-            </td>
-        </tr>
-        <?php
-        }
-        ?>
-    </table>
-  </div>
+                                <tr>
+                                    <td>
+                                        <span>
+                                            <span class="fi fi-af"></span>
+                                        </span>
+                                        <span>
+                                            <?php echo $fundraiser->id; ?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->username; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->category; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->title; ?>
+                                    </td>
+                                    <td>80000</td>
+                                    <td>20500</td>
+                                    <td>2023-12-24</td>
+                                    <td>2024-01-01</td>
+                                    <td>2024-02-05</td>
+                                    <td>Merch + Material</td>
+                                    <td>
+                                        <a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->type; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->status; ?>
+                                    </td>
+                                    <td class="action-td">
+                                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->id ?>"
+                                            class="action-icons"><i class="fa-solid fa-info"></i></a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
