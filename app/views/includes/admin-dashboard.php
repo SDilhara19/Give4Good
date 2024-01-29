@@ -9,7 +9,7 @@
       <li><a href="<?php echo URLROOT?>/Admin_Organisation/index"><i class="fa-solid fa-people-roof"></i><p>Super Organisationas</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Organisation/donor"><i class="fa-solid fa-people-roof"></i><p>Organisational Users</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Fundraisers/index"><i class="fa-solid fa-table"></i><p>Fundraisers</p></a></li>
-      <li><a href="<?php echo URLROOT?>/Admin_Fundraisers/merchandise"><i class="fa-solid fa-table"></i><p>Merchandise</p></a></li>
+      <li><a href="<?php echo URLROOT?>/Admin_Merchandise"><i class="fa-solid fa-table"></i><p>Merchandise</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin/donations"><i class="fa-solid fa-table"></i><p>Donations</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin/contributions"><i class="fa-solid fa-table"></i><p>Contributions</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Stories/index"><i class="fa-solid fa-table"></i><p>Stories</p></a></li>
