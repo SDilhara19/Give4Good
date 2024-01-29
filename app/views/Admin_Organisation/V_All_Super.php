@@ -44,13 +44,11 @@
             </thead>
             <tbody>
                <?php 
-                 foreach ($data as $super_organisation) {
+                 //foreach ($data as $super_organisation) {
                 ?>
               <tr>
                 <td>
-                  <!-- <span>
-                    <span class="fi fi-af"></span>
-                  </span> -->
+                  
                    <span><?php echo $super_organisation->user_id; ?></span>
                 </td>
                 <td>Youth Society of Thimbirigasyaya</td>
@@ -207,7 +205,7 @@
               </tr>
 
 <?php
-               }
+              //  }
              ?>
             </tbody>
           </table>

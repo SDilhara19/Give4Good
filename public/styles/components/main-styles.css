@@ -81,7 +81,7 @@ body {
 
 }
 
-.side-bar-main{
+.home-side-bar-main{
   position: fixed;
   top: 70px;
   left: -250px;
@@ -98,7 +98,7 @@ body {
   width: calc(100% - 250px);
 } */
 
-.side-bar-main.active{
+.home-side-bar-main.active{
 width: 250px;
 left: 0;
 }

@@ -20,7 +20,7 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
+        <!-- <i class="fa-solid fa-bars"></i> -->
         <span>Donations</span>
       </div>
       <div class="user--info">
