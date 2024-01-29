@@ -21,7 +21,7 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
+        <!-- <i class="fa-solid fa-bars"></i> -->
         <span>Dashboard</span>
       </div>
       <div class="user--info">
@@ -35,7 +35,40 @@
       <div class="dashDetails">
         <div class="dashUnit">
           <div class="client">
-            <span>Pending Sign Ups<strong>  05</strong></span>
+            <span>Pending Individual Signups<strong>  05</strong></span>
+          </div>   
+          <div class="dash_table">
+            <table>
+          <tbody>
+            <tr>           
+              <td>RotractUOC</td>            
+              <td><button class="dash_view">View</button></td>
+            </tr>
+            <tr>           
+              <td>Friends98</td>            
+              <td><button class="dash_view">View</button></td>
+            </tr> 
+            <tr>           
+              <td>SAC</td>            
+              <td><button class="dash_view">View</button></td>
+            </tr>
+            </tbody>
+           </table>
+           <div class="viewall">
+              <button>                   
+                
+                
+                <a href="<?php echo URLROOT?>/Admin_Fundraisers/index">View All</a>
+
+
+                
+              </button>
+            </div>
+            </div>      
+        </div>
+        <div class="dashUnit">
+          <div class="client">
+            <span>Pending Organisational Signups<strong>  05</strong></span>
           </div>   
           <div class="dash_table">
             <table>
@@ -68,7 +101,7 @@
         </div>
         <div class="dashUnit">
             <div class="client">
-              <span>Pending Reactivations <strong>  13</strong></span>
+              <span>Pending Merchandise <strong>  13</strong></span>
             </div>
             <div class="dash_table">
               <table>

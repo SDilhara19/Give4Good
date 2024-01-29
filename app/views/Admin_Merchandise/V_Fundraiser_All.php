@@ -1,4 +1,3 @@
-
 <html lang="en"> 
 <head>
     <meta charset="UTF-8">
@@ -21,9 +20,10 @@
       <div class="main--content">
         <div class="header--wrapper">
           <div class="header--title">
-            <!-- <i class="fa-solid fa-bars"></i> -->
-            <span>Complaints</span>
+            <i class="fa-solid fa-bars"></i>
+            <span>Contributions</span>
           </div>
+          <p>Temp table</p> //merch of oone fundraiser
           <div class="user--info">
             <div class="search--box">
               <i class="fa-solid fa-magnifying-glass"></i>

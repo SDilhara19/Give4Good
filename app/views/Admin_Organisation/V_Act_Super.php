@@ -43,9 +43,7 @@
             <tbody>
               <tr>
                 <td>
-                  <!-- <span>
-                    <span class="fi fi-af"></span>
-                  </span> -->
+                
                   <span>001</span>
                 </td>
                 <td>Youth Society of Thimbirigasyaya</td>

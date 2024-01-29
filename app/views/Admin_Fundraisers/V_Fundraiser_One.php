@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIVE4GOOD</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVE4GOOD</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <?php require APPROOT . '/views/includes/header.php' ?>
-
-
+    <?php require APPROOT . '/views/includes/admin-header.php' ?>
+    <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
     <main class="admin-fundraiser">
         <h1 class="margin-bottom-0">Help us to assist them walk</h1>
         <p class="text-3">Category: Health</p>
@@ -28,8 +28,7 @@
                         <i class="fa-solid fa-chevron-left fa-2xl"></i>
                     </div>
                     <div class="fundraiser-image">
-                        <!-- <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image"> -->
-                        <img src="public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
                     </div>
                     <div class="right-arrow">
                         <i class="fa-solid fa-chevron-right fa-2xl"></i>
@@ -72,7 +71,7 @@
                     <button class="button-3-red">
                         Deactivate
                     </button>
-                    
+
                 </div>
                 <p class="text-3">Current status: Pending</p>
 
@@ -83,7 +82,7 @@
                 <div class="fundraiser-progress-bar">
                     Progress bar
                 </div>
-               <hr>
+                <hr>
                 <div class="fundraiser-info">
                     <div class="info-box">
                         <table class="info-table">
@@ -101,57 +100,63 @@
                             </tr>
                         </table>
                     </div>
-                    
+
 
                 </div>
             </div>
         </div>
-    
-<div class="reports">
-    <h1>Reports & Documents</h1>
-    <div class="all-report-container">
-        <div class="report-container">
-            <div class="report-container-top">
-                <div class="report-image-container">
-                    <img src="" alt="image">
+
+        <div class="reports">
+            <h1>Reports & Documents</h1>
+            <div class="all-report-container">
+                <div class="report-container">
+                    <div class="report-container-top">
+                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_doc">
+                            <div class="report-image-container">
+                                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp"
+                                    alt="image">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="report-container-bottom">
+                        <p>Medical Report</p>
+                    </div>
+                </div>
+                <div class="report-container">
+                    <div class="report-container-top">
+                        <div class="report-image-container">
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp"
+                                alt="image">
+                        </div>
+                    </div>
+                    <div class="report-container-bottom">
+                        <p>Medical Report</p>
+                    </div>
+                </div>
+                <div class="report-container">
+                    <div class="report-container-top">
+                        <div class="report-image-container">
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp"
+                                alt="image">
+                        </div>
+                    </div>
+                    <div class="report-container-bottom">
+                        <p>Medical Report</p>
+                    </div>
+                </div>
+                <div class="report-container">
+                    <div class="report-container-top">
+                        <div class="report-image-container">
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp"
+                                alt="image">
+                        </div>
+                    </div>
+                    <div class="report-container-bottom">
+                        <p>Medical Report</p>
+                    </div>
                 </div>
             </div>
-            <div class="report-container-bottom">
-                <p>Medical Report</p>
-            </div>
         </div>
-        <div class="report-container">
-            <div class="report-container-top">
-                <div class="report-image-container">
-                    <img src="" alt="image">
-                </div>
-            </div>
-            <div class="report-container-bottom">
-                <p>Medical Report</p>
-            </div>
-        </div>
-        <div class="report-container">
-            <div class="report-container-top">
-                <div class="report-image-container">
-                    <img src="" alt="image">
-                </div>
-            </div>
-            <div class="report-container-bottom">
-                <p>Medical Report</p>
-            </div>
-        </div>
-        <div class="report-container">
-            <div class="report-container-top">
-                <div class="report-image-container">
-                    <img src="" alt="image">
-                </div>
-            </div>
-            <div class="report-container-bottom">
-                <p>Medical Report</p>
-            </div>
-        </div>
-    </div>
-</div>
         <div class="donations-we-need" id="donations-we-need">
             <h1>Donations Expected</h1>
             <div class="material-card-container">
@@ -165,7 +170,7 @@
                     </div>
                 </div>
 
-            
+
                 <div class="material-card">
                     <div class="material-img-container">
                         <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Crutched.jpeg" alt="">
@@ -200,7 +205,9 @@
                 </div>
                 <div class="material-popup-right">
                     <p class="text-2">Description</p>
-                    <p class="text-3">Patient chair with commode arm decline. Convenient commode arm for easy toileting access. With sturdy construction for patient safety. Designed for those who need assistance with mobility.</p>
+                    <p class="text-3">Patient chair with commode arm decline. Convenient commode arm for easy toileting
+                        access. With sturdy construction for patient safety. Designed for those who need assistance with
+                        mobility.</p>
                     <p class="text-2">Number of units required</p>
                     <p class="text-3">35</p>
                     <p class="text-2">Contact information for more details</p>
@@ -214,10 +221,10 @@
                             <td class="text-3">+9470 5643233</td>
                         </tr>
                     </table>
-    
+
                 </div>
             </div>
-            
+
         </dialog>
 
         <div class="send-donations">
@@ -283,15 +290,18 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
 
 
         </div>
 
     </main>
-    <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
-    <?php require APPROOT . '/views/includes/footer.php' ?> 
+    <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+    <script>
+    setupPopup('#open-material-popup', '.material-popup', '.close-material-popup');
+  </script>
+    <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
-</html>       
-     
+
+</html>
