@@ -1,6 +1,6 @@
 // console.log("Yes")
 let btn = document.querySelector('#btn')
-let sidebar = document.querySelector('.side-bar-main')
+let sidebar = document.querySelector('.home-side-bar-main')
 let body = document.querySelector('body');
 
 btn.onclick = function () {

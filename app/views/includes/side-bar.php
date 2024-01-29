@@ -1,4 +1,4 @@
-<div class="side-bar-main">
+<div class="home-side-bar-main">
     <div class="top-side-bar">
         <div class="logo-side-bar">
             <i class="bx bxl-xodepen"></i>
