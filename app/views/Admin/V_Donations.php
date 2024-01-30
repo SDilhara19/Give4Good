@@ -20,7 +20,7 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <!-- <i class="fa-solid fa-bars"></i> -->
+        <i class="fa-solid fa-bars"></i>
         <span>Donations</span>
       </div>
       <div class="user--info">
@@ -38,21 +38,33 @@
         <tr>
             <th>Date</th>
             <th>Payment ID</th>
-            <th>User ID</th>
-            <th>Username</th>
+            <th>Donor ID</th>
+            <th>Donor Username</th>
+            <th>Fundraiser ID</th>
             <th>Fundraiser Title</th>
             <th>Amount(Rs.)</th>
+            <th>Contribution(Rs.)</th>
+
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $donations) {
+            ?>
         <tr>
             <td>23/02/2024</td>
-            <td>0011</td>
-            <td>12</td>
-            <td>SanduniDM</td>
-            <td>Help John travel for work</td>
-            <td>200</td>
+            <td><?php echo $donations->payment_id; ?></td>
+            <td><?php echo $donations->user_id; ?></td>
+            <td><?php echo $donations->username; ?></td>
+            <td><?php echo $donations->fundraiser_id; ?></td>
+            <td><?php echo $donations->title; ?></td>
+            <td><?php echo $donations->donated_amount; ?></td>
+            <td><?php echo $donations->contribution_amount; ?></td>
         </tr>
+        <?php
+        }
+        ?>
+        </tbody>
     </table>  
   </div>
 </div>

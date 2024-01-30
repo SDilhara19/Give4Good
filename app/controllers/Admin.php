@@ -18,43 +18,34 @@ class Admin extends controller
         }
     }
 
-    public function add()
-    {
-
+    public function add(){
+        
         $this->view('Admin/V_Add');
 
     }
 
-    public function complaints()
-    {
-
-        $this->view('Admin/V_Complaints');
-
+    public function complaints(){
+        $data = $this->AdminModel -> viewComplaints();
+        $this->view('Admin/V_Complaints',$data);
     }
 
-    public function donations()
-    {
-
-        $this->view('Admin/V_Donations');
-
+    public function donations(){
+        $data = $this->AdminModel -> viewDonations();
+        $this->view('Admin/V_Donations',$data);
     }
 
-    public function contributions()
-    {
-
-        $this->view('Admin/V_Contributions');
-
+    public function contributions(){
+        $data = $this->AdminModel -> viewContributions();
+        $this->view('Admin/V_Contributions',$data);
     }
 
-    public function category()
-    {
+    public function category(){
 
         $this->view('Admin/V_Categories');
 
     }
 
-    public function documents()
-    {
+    public function documents(){
 
         $this->view('Admin/V_Edit_Required_Documents');
 
