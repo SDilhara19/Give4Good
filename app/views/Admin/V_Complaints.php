@@ -21,8 +21,8 @@
       <div class="main--content">
         <div class="header--wrapper">
           <div class="header--title">
-            <!-- <i class="fa-solid fa-bars"></i> -->
-            <span>Complaints</span>
+            <i class="fa-solid fa-bars"></i>
+            <span>Complaigns</span>
           </div>
           <div class="user--info">
             <div class="search--box">
@@ -37,25 +37,34 @@
         <table>
         <thead>
         <tr>
-            <th>Id</th>
+            <th>Complaign ID</th>
+            <th>User ID</th>
             <th>User name</th>
-            <th>Email</th>
-            <th>Description</th>
+            <th>Fundraiser ID</th>
+            <th>Title</th>
             <th>Contact No</th>
-            <th></th>
-            <th></th>
+            <th>Reason</th>
+            <th>Other Details</th>
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $complaints) {
+            ?>
         <tr>
-            <td>1</td>
-            <td>rotract</td>
-            <td>abc123@gmail.com</td>
-            <td></td>
-            <td>0779887745</td>
-            <td></td>
-            <td></td>
+            <td><?php echo $complaints->complaint_id; ?></td>
+            <td><?php echo $complaints->user_id; ?></td>
+            <td><?php echo $complaints->username; ?></td>
+            <td><?php echo $complaints->fundraiser_id; ?></td>
+            <td><?php echo $complaints->title; ?></td>
+            <td><?php echo $complaints->phone; ?></td>
+            <td><?php echo $complaints->reason; ?></td>
+            <td><?php echo $complaints->others; ?></td>
         </tr>
+        <?php
+        }
+        ?>
+        </tbody>
     </table>
     </div>
     </div>

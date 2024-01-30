@@ -37,25 +37,30 @@
         <table>
         <thead>
         <tr>
-            <th>Id</th>
-            <th>User name</th>
-            <th>Email</th>
-            <th>Description</th>
-            <th>Contact No</th>
-            <th></th>
-            <th></th>
+            <th>Payment ID</th>
+            <th>Donor ID</th>
+            <th>Donor Name</th>
+            <th>Fundraiser ID</th>
+            <th>Title</th>
+            <th>Amount</th>
         </tr>
     </thead>
     <tbody>
+    <?php 
+        foreach ($data as $contributions) {
+            ?>
         <tr>
-            <td>1</td>
-            <td>rotract</td>
-            <td>abc123@gmail.com</td>
-            <td></td>
-            <td>0779887745</td>
-            <td></td>
-            <td></td>
+            <td><?php echo $contributions->payment_id; ?></td>
+            <td><?php echo $contributions->user_id; ?></td>
+            <td><?php echo $contributions->username; ?></td>
+            <td><?php echo $contributions->fundraiser_id; ?></td>
+            <td><?php echo $contributions->title; ?></td>
+            <td><?php echo $contributions->contribution_amount; ?></td>
         </tr>
+        <?php
+        }
+        ?>
+    <tbody>
     </table>
     </div>
     </div>
