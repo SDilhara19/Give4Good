@@ -7,15 +7,18 @@
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
 
 <body>
-    <?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/admin-header.php' ?>
+    <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
    
 
     <main class="admin-merchandise">
@@ -26,15 +29,15 @@
                 <div class="fundraiser-ad-merch-container">
                     <div class="fundraiser-ad-merch-left">
                         <div class="ad-merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg"
+                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt.jpeg"
                                 alt="merch-image">
                         </div>
                         <div class="ad-merch-image-gallery">
                             <div class="ad-merch-image">
-                                <img src="" alt="">
+                                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt.jpeg" alt="">
                             </div>
                             <div class="ad-merch-image">
-                                <img src="" alt="">
+                                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt merch.jpeg" alt="">
                             </div>
                             <div class="ad-merch-image">
                                 <img src="" alt="">
@@ -91,9 +94,9 @@
                                 <button class="button-1-green">
                                     Verify
                                 </button>
-                                <button class="button-2-yellow" onclick="window.location.href = '#all-merchs'">
+                                <!-- <button class="button-2-yellow" onclick="window.location.href = '#all-merchs'">
                                     Pending
-                                </button>
+                                </button> -->
                                 <button class="button-3-red">
                                     Reject
                                 </button>
