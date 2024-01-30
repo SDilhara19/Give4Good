@@ -81,6 +81,10 @@ body {
 
 }
 
+a:hover{
+  cursor: pointer;
+}
+
 .home-side-bar-main{
   position: fixed;
   top: 70px;

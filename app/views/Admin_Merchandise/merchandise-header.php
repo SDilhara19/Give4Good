@@ -1,7 +1,6 @@
 <div class="header--wrapper">
     <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Stories</span>
+        <span>Fundraiser Merchandise</span>
     </div>
     <div class="header--buttons">
         <button class="active-button"

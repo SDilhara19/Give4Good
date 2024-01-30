@@ -26,34 +26,47 @@
         <table>
         <thead>
         <tr>
-            <th>ID</th>
-            <th>User Name</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Contact</th>
-            <th>Image</th>
-            <th>Indvidual Or Organization</th>
-            <th>Actions</th>
-        </tr>
+                        <th>Story ID</th>
+                                <th>Username</th>
+                                <th class="action-th">Title</th>
+                                <th>Contact</th>
+                                <th>User Type</th>
+                                <th>Status</th>
+                                <th class="action-th">Actions</th>
+                            </tr>
     </thead>
     <tbody>
     <?php 
         foreach ($data as $story) {
             ?>
-        <tr>
-            <td><?php echo $story->id; ?></td>
-            <td><?php echo $story->username; ?></td>
-            <td><?php echo $story->title; ?></td>
-            <td>-</td>
-            <td><?php echo $story->contact; ?></td>
-            <td>blood.png</td>
-            <td><?php echo $story->type; ?></td>
-            <td><?php echo $story->status; ?></td>
-    <td>
-               <button onclick class="data_view">View</button>
-               <button onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/setReactive/<?php echo $story->id ?>'" class="data_view">Reactive</button>
-            </td>
-        </tr>
+         <tr>
+                                    <td>
+                                        <?php echo $story->id; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $story->username; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $story->title; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $story->contact; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $story->type; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $story->status; ?>
+                                    </td>
+                                    <td class="action-td">
+                                        <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>"
+                                            class="action-icons">
+                                            <i class="fa-solid fa-info"></i>
+                                        </a>
+
+                                    </td>
+                                    
+                                </tr>
         <?php
         }
         ?>
