@@ -12,7 +12,7 @@ class M_Story {
         // $this->db->query('INSERT INTO stories (user_id, title, description, contact, email, status) 
         // VALUES ("12", "wq", "dw", "1", "sw@s", "pending")'); 
         $this->db->query('INSERT INTO stories (user_id, title, description, contact, email, image, status) 
-        VALUES (:user_id, :title, :description, :contact, :email, :image, "pending")');
+        VALUES (:user_id, :title, :description, :contact, :email, :image, "Pending")');
         //Bind values
         $this->db->bind(':user_id', $data['user_id']);
         $this->db->bind(':title', $data['story_title']);

@@ -5,9 +5,9 @@
     <ul class="nav-links">
       <li><a href="<?php echo URLROOT?>/Admin/index"><i class="fa-brands fa-windows"></i><p>Dashboard</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Individual/index"><i class="fa-solid fa-people-group"></i><p>Super Individuals</p></a></li>
-      <li><a href="<?php echo URLROOT?>/Admin_Individual/donor"><i class="fa-solid fa-people-group"></i><p>Individual Users</p></a></li>
+      <li><a href="<?php echo URLROOT?>/Admin_Individual/donor"><i class="fa-solid fa-people-group"></i><p>Individuals</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Organisation/index"><i class="fa-solid fa-people-roof"></i><p>Super Organisationas</p></a></li>
-      <li><a href="<?php echo URLROOT?>/Admin_Organisation/donor"><i class="fa-solid fa-people-roof"></i><p>Organisational Users</p></a></li>
+      <li><a href="<?php echo URLROOT?>/Admin_Organisation/donor"><i class="fa-solid fa-people-roof"></i><p>Organisations</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Fundraisers/index"><i class="fa-solid fa-table"></i><p>Fundraisers</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin_Merchandise"><i class="fa-solid fa-table"></i><p>Merchandise</p></a></li>
       <li><a href="<?php echo URLROOT?>/Admin/donations"><i class="fa-solid fa-table"></i><p>Donations</p></a></li>

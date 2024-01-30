@@ -207,7 +207,7 @@ td {
     max-height: 100%;
     object-fit: contain;
     border-radius: 0.5rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 }
 
@@ -294,6 +294,7 @@ td {
     display: flex;
     align-items: flex-start;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     /* gap: 2rem; */
 
 }
@@ -308,6 +309,7 @@ td {
     justify-content: center;
     margin-right: 3rem;
     border: 0.5px solid var(--grey-color);
+    border-radius: 3px;
     height: 70rem;
 
 }
@@ -320,7 +322,7 @@ td {
 
 .admin-document .document-right {
     flex: 1;
-    border-left: 1px solid var(--grey-color);
+    border-left: 2px solid var(--border-grey);
     border-top: none;
     border-right: none;
     border-bottom: none;

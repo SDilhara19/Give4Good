@@ -36,13 +36,15 @@
         <table>
         <thead>
         <tr>
+            <th>Date</th>
             <th>Payment ID</th>
             <th>Donor ID</th>
-            <th>Donor Name</th>
+            <th>Donor Username</th>
             <th>Fundraiser ID</th>
-            <th>Title</th>
-            <th>Amount</th>
-            <th>Contribution</th>
+            <th>Fundraiser Title</th>
+            <th>Amount(Rs.)</th>
+            <th>Contribution(Rs.)</th>
+
         </tr>
     </thead>
     <tbody>
@@ -50,6 +52,7 @@
         foreach ($data as $donations) {
             ?>
         <tr>
+            <td>23/02/2024</td>
             <td><?php echo $donations->payment_id; ?></td>
             <td><?php echo $donations->user_id; ?></td>
             <td><?php echo $donations->username; ?></td>
