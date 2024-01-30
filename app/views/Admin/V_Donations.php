@@ -36,18 +36,22 @@
         <table>
         <thead>
         <tr>
-            <th>Donor ID</th>
-            <th>Donor Name</th>
-            <th>Title</th>
-            <th>Amount</th>
+            <th>Date</th>
+            <th>Payment ID</th>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Fundraiser Title</th>
+            <th>Amount(Rs.)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>004</td>
-            <td>Sujith</td>
-            <td>-</td>
-            <td>1,500</td>
+            <td>23/02/2024</td>
+            <td>0011</td>
+            <td>12</td>
+            <td>SanduniDM</td>
+            <td>Help John travel for work</td>
+            <td>200</td>
         </tr>
     </table>  
   </div>

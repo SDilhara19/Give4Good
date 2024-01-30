@@ -43,7 +43,9 @@ button {
   list-style: none;
   color: inherit;
 }
-
+a:hover{
+  cursor: pointer;
+}
 .text-1{
   margin:0
 

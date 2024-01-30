@@ -34,7 +34,7 @@
                                 <th>Price of Merch</th>
                                 <th>Amount for Fund</th>
                                 <th>Status</th>
-                                <th class="action-td">Actions</th>
+                                <th class="action-th">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
