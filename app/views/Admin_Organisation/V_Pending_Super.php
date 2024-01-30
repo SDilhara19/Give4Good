@@ -61,8 +61,15 @@
                 <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
                 <td>Pending</td>
                 <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-                  <a href="" class="action-icons"> <i class="fa-solid fa-play"></i></a>
+                  <a href="" class="action-icons">
+                    <i class="fa-solid fa-info"></i>
+                  </a>
+                  <a href="" class="action-icons">
+                    <i class="fa-solid fa-play"></i>
+                  </a>
+                  <a href="" class="action-icons">
+                    <i class="fa-solid fa-lock"></i>
+                  </a>
                 </td>
 
                 <td>
@@ -205,7 +212,7 @@
 
             </tbody>
           </table>
-          </div>
+        </div>
       </div>
     </div>
   </div>
