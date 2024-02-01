@@ -7,9 +7,9 @@ class M_Admin_Individual {
     }
 
     public function viewPending(){
-        $this->db->query('SELECT super_individual.*, users.username
+        $this->db->query('SELECT super_individual.*, users.*
         FROM super_individual
-        JOIN users ON super_individual.user_id = users.id;
+        JOIN users ON super_individual.user_id = users.id
         WHERE super_individual.status = "pending";');
         
         $row = $this->db->resultSet();
@@ -23,7 +23,7 @@ class M_Admin_Individual {
     }
 
     public function viewActive(){
-        $this->db->query('SELECT super_individual.*, users.username
+        $this->db->query('SELECT super_individual.*, users.*
         FROM super_individual 
         JOIN users ON super_individual.user_id = users.id 
         WHERE super_individual.status = "active";');
@@ -39,7 +39,7 @@ class M_Admin_Individual {
     } 
 
     public function viewDeactive(){
-        $this->db->query('SELECT super_individual.*, users.username
+        $this->db->query('SELECT super_individual.*, users.*
         FROM super_individual 
         JOIN users ON super_individual.user_id = users.id 
         WHERE super_individual.status = "deactive";');
@@ -55,9 +55,23 @@ class M_Admin_Individual {
     } 
 
     public function viewAll(){
-        $this->db->query('SELECT super_individual.*, users.username
+        $this->db->query('SELECT super_individual.*, users.*
         FROM super_individual 
-        JOIN users ON super_individual.user_id = users.id ;');
+        JOIN users ON super_individual.user_id = users.id;');
+
+        //Check row
+        $row = $this->db->resultSet();
+
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public function viewIndividuals(){
+        $this->db->query('SELECT users.*
+        FROM users;');
 
         //Check row
         $row = $this->db->resultSet();
