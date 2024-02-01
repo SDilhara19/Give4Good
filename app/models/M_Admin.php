@@ -6,6 +6,12 @@ class M_Admin {
         $this->db = new Database;
     }
 
+    public function viewPendings() {
+        return 0;
+
+    }
+
+
 
 
 
