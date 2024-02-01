@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +10,24 @@
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/admin.css">
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
+  <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
 </head>
 
 <body>
   <?php require APPROOT . '/views/includes/admin-header.php' ?>
   <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-    
 
-    <div class="main--content admin-organization ">
-     <?php require APPROOT . '/views/Admin_Organisation/Organisation-header.php' ?>
-     <div class ="dashDetails">
+
+  <div class="main--content admin-organization ">
+    <?php require APPROOT . '/views/Admin_Organisation/Organisation-header.php' ?>
+    <div class="dashDetails">
       <div class="container">
 
-      <div class="table-wrapper">
+        <div class="table-wrapper">
           <table class="tablemain">
             <thead>
-           
-                <tr>
+
+              <tr>
 
                 <th>User ID</th>
                 <th>Username</th>
@@ -44,13 +45,15 @@
               </tr>
             </thead>
             <tbody>
-               <?php 
-                 //foreach ($data as $super_organisation) {
-                ?>
+              <?php
+              foreach ($data as $super_organisation) {
+              ?>
               <tr>
                 <td>
-                  
-                   <span><?php echo $super_organisation->user_id; ?></span>
+
+                  <span>
+                    <?php echo $super_organisation->user_id; ?>
+                  </span>
                 </td>
                 <td>Youth Society of Thimbirigasyaya</td>
                 <td>Non-profit organization</td>
@@ -58,19 +61,22 @@
                 <td>No 78, Galle Rd, Dehiwala</td>
                 <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                 <!-- if a popup remember to remove <a> -->
-                <td><i class="fa-solid fa-image" id="open-logo-popup"></i></td>
-                <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
-                <td><button onclick class="data_view" id="open-executive-popup">View</button></td>
-                <td><button onclick class="data_view" id="open-treasurer-popup">View</button></td>
+                <td><i class="fa-solid fa-image open-logo-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>"></i></td>
+                <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
+                <td><button onclick class="data_view open-executive-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
+                <td><button onclick class="data_view open-treasurer-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                 <td><a href=""><i class="fa-solid fa-check"></i></a></td>
                 <td>Active</td>
                 <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  <span class="action-icons open-info-popup"
+                    data-popup-id="<?php echo $super_organisation->user_id; ?>">
+                    <i class="fa-solid fa-info"></i>
+                  </span>
                 </td>
 
                 <td>
-                  <dialog class="popup" id='executive-popup'>
-                    <span class="close-popup" id="close-executive-popup">&times;</span>
+                  <dialog class="popup" id='executive-popup-<?php echo $super_organisation->user_id; ?>'>
+                    <span class="close-popup" id="close-executive-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                     <p class="text-2">Executive: Youth Society of Thimbirigasyaya</p>
                     <div class="popup-container nic-container">
                       <table class="info-table">
@@ -111,8 +117,8 @@
                     </div>
 
                   </dialog>
-                  <dialog class="popup" id='treasurer-popup'>
-                    <span class="close-popup" id="close-treasurer-popup">&times;</span>
+                  <dialog class="popup" id='treasurer-popup-<?php echo $super_organisation->user_id; ?>'>
+                    <span class="close-popup" id="close-treasurer-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                     <p class="text-2">Treasurer: Youth Society of Thimbirigasyaya</p>
                     <div class="popup-container nic-container">
                       <table class="info-table">
@@ -153,8 +159,8 @@
                     </div>
 
                   </dialog>
-                  <dialog class="popup" id='bank-popup'>
-                    <span class="close-popup" id="close-bank-popup">&times;</span>
+                  <dialog class="popup" id='bank-popup-<?php echo $super_organisation->user_id; ?>'>
+                    <span class="close-popup" id="close-bank-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                     <p class="text-2">Bank Details: Youth Society of Thimbirigasyaya</p>
                     <div class="popup-container bank-container">
                       <table class="info-table">
@@ -193,8 +199,8 @@
 
                   </dialog>
 
-                  <dialog class="popup-2" id='logo-popup'>
-                    <span class="close-popup-2" id="close-logo-popup">&times;</span>
+                  <dialog class="popup-2" id='logo-popup-<?php echo $super_organisation->user_id; ?>'>
+                    <span class="close-popup-2" id="close-logo-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                     <p class="text-2">Logo: Youth Society of Thimbirigasyaya</p>
                     <div class="popup-2-container organisation-logo-container">
                       <div class="organisation-logo">
@@ -203,25 +209,25 @@
                     </div>
 
                   </dialog>
+                </td>
               </tr>
-
-<?php
-              //  }
-             ?>
+              <script>
+    setupPopup('.open-executive-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#executive-popup-<?php echo $super_organisation->user_id; ?>', '#close-executive-popup-<?php echo $super_organisation->user_id; ?>');
+    setupPopup('.open-treasurer-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#treasurer-popup-<?php echo $super_organisation->user_id; ?>', '#close-treasurer-popup-<?php echo $super_organisation->user_id; ?>');
+    setupPopup('.open-bank-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#bank-popup-<?php echo $super_organisation->user_id; ?>', '#close-bank-popup-<?php echo $super_organisation->user_id; ?>');
+    setupPopup('.open-logo-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#logo-popup-<?php echo $super_organisation->user_id; ?>', '#close-logo-popup-<?php echo $super_organisation->user_id; ?>');
+  </script>
+              <?php
+               }
+              ?>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-  <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
-  <script>
-    setupPopup('#open-executive-popup', '#executive-popup', '#close-executive-popup');
-    setupPopup('#open-treasurer-popup', '#treasurer-popup', '#close-treasurer-popup');
-    setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
-    setupPopup('#open-logo-popup', '#logo-popup', '#close-logo-popup');
-  </script>
+  
+  
 </body>
 
 </html>
-
