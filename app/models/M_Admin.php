@@ -6,12 +6,20 @@ class M_Admin {
         $this->db = new Database;
     }
 
+    public function viewPendings() {
+        return 0;
+
+    }
 
 
 
-    public function viewDonations() 
-    {
-        $this->db->query('SELECT stories.*, users.username, type FROM stories JOIN users ON stories.user_id = users.id;
+
+
+    public function viewDonations() {
+        $this->db->query('SELECT donationpayments.*, users.username 
+        FROM donationpayments 
+        JOIN users 
+        ON donationpayments.user_id = users.id;
         ');
 
         $row = $this->db->resultSet();
@@ -40,6 +48,39 @@ class M_Admin {
 
     }
 
+    public function viewComplaints() {
+        $this->db->query('SELECT fundraiser_complain.*, users.username, users.phone
+        FROM fundraiser_complain 
+        JOIN users 
+        ON fundraiser_complain.user_id = users.id ;
+        ');
 
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function viewContributions() {
+        $this->db->query('SELECT donationpayments.*, users.username 
+        FROM donationpayments 
+        JOIN users 
+        ON donationpayments.user_id = users.id;
+        ');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
     
 }

@@ -25,12 +25,12 @@ public function active(){
     $this->view('Admin_Merchandise/V_Active');
 
 }
-public function deactive(){
+public function rejected(){
 
     $this->view('Admin_Merchandise/V_Rejected');
 
 }
-public function fundmerchs($id){
+public function fundmerchs(){
     // $data;
     $this->view('Admin_Merchandise/V_Fundraiser_All');
 

@@ -19,6 +19,7 @@
   --red-color: #FC0606;
   --grey-color: #6E7175;
   --yellow-color: #E9AB0E;
+  --border-grey: #e1e4e8;
 
   --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
@@ -43,7 +44,9 @@ button {
   list-style: none;
   color: inherit;
 }
-
+a:hover{
+  cursor: pointer;
+}
 .text-1{
   margin:0
 
@@ -229,5 +232,9 @@ button {
 
 .popup-2::backdrop{
   background: rgb(0 0 0 / 0.4);
+}
+
+dialog .story-card{
+  margin: 0;
 }
 /* popup-css-end */

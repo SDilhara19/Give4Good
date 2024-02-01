@@ -4,7 +4,7 @@ class Admin_Stories extends controller
     private $AdminStoryModel;
     public function __construct(){
         $this->AdminStoryModel = $this->model('M_Admin_Story');
-    }
+}
 
     public function index(){
         $data = $this->AdminStoryModel -> getAllStories(); 

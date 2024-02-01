@@ -87,8 +87,21 @@ class M_Admin_Story {
         }
     }
 
+    public function activateStory($id){
+        $this->db->query('UPDATE stories SET status = "Active" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function deactivateStory($id){
-        $this->db->query('UPDATE stories SET status = "deactive" 
+        $this->db->query('UPDATE stories SET status = "Deactive" 
         WHERE id = :id;');
 
         $this->db->bind(':id', $id);
