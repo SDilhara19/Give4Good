@@ -43,7 +43,7 @@ class M_Admin {
     }
 
     public function viewComplaints() {
-        $this->db->query('SELECT fundraiser_complain.*, users.username, users.phone
+        $this->db->query('SELECT fundraiser_complain.*, users.*
         FROM fundraiser_complain 
         JOIN users 
         ON fundraiser_complain.user_id = users.id ;

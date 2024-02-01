@@ -34,6 +34,7 @@ class Admin_Individual extends controller
     }
   
     public function donor(){
+        $data = $this->AdminIndividualModel -> viewIndividuals();
         $this->view('Admin_Individual/V_Donor');
     }
 

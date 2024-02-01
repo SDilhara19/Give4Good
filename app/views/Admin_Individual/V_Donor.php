@@ -46,71 +46,27 @@
               </tr>
             </thead>
             <tbody>
-             
+            <?php 
+            foreach ($data as $individual) {
+            ?>
               <tr>
                 <td>
                   <span>
                     <span class="fi fi-al"></span>
                   </span>
-                  <span>001</span>
+                  <span><?php echo $deact_super_individual->id; ?></span>
                 </td>
-                <td>janith</td>
-                <td>janith001@gmail.com</td>
-                <td>+94 704329918</td>
-                <td>Super</td>
+                <td><?php echo $deact_super_individual->username; ?></td>
+                <td><?php echo $deact_super_individual->email; ?></td>
+                <td><?php echo $deact_super_individual->phone; ?></td>
+                <td>super/no; ?></td>
                 <td class="action-td">
                   <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <span>
-                    <span class="fi fi-al"></span>
-                  </span>
-                  <span>001</span>
-                </td>
-                <td>janith</td>
-                <td>janith001@gmail.com</td>
-                <td>+94 704329918</td>
-                <td>Super</td>
-                <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span>
-                    <span class="fi fi-al"></span>
-                  </span>
-                  <span>001</span>
-                </td>
-                <td>janith</td>
-                <td>janith001@gmail.com</td>
-                <td>+94 704329918</td>
-                <td>Super</td>
-                <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span>
-                    <span class="fi fi-al"></span>
-                  </span>
-                  <span>001</span>
-                </td>
-                <td>janith</td>
-                <td>janith001@gmail.com</td>
-                <td>+94 704329918</td>
-                <td>Super</td>
-                <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-
-                </td>
-              </tr>
+              <?php
+                }
+                ?>
             </tbody>
           </table>
         </div>
