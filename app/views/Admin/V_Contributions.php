@@ -42,7 +42,7 @@
             <th>Donor ID</th>
             <th>Donor username</th>
             <th>Fundraiser ID</th>
-          <th>Fundraiser Title</th>
+            <th>Fundraiser Title</th>
             <th>Amount(Rs.)</th>
         </tr>
     </thead>
