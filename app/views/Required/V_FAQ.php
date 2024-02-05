@@ -7,70 +7,11 @@
   <title>GIVE4GOOD</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/includes-styles/faq_style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
- }
-
- body{
-    background:#CFF5E7;
- }
-
- #accordion{
-     margin:100px auto;
-     width: 600px;
- }
- 
- #accordion li{
-    list-style: none;
-    width: 100%;
-    margin-bottom: 10px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 4px;
- }
-
- #accordion li label{
-    padding:10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    color:#black;
- }
-
- #accordion li label span{
-    transform: rotate(90deg);
-    font-size: 22px;
-    color: #333;
- }
-
- #accordion label + input[type="radio"]{
-    display: none;
- }
-
- #accordion .content{
-    padding: 0 10px;
-    line-height:26px;
-    max-height:0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s;
- }
-
- #accordion label + input[type="radio"]:checked + .content{
-    max-height:400px;
- }
-  </style>
 </head>
 
 <body>
