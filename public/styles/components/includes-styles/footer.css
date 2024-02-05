@@ -26,9 +26,16 @@
 
 /* footer css begginning */
 
+/* footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+} */
 .footercontainer {
   max-width: 1170px;
   margin-top: 80px;
+
 }
 
 .row {

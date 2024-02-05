@@ -19,10 +19,10 @@
         <div class="signup-container">
             <div class="signup-left">
                 <div class="signup-background-container">
-                    <img src="public/Assets/images/signup-photo.jpg" alt="image">
+                    <img src="<?php echo URLROOT ?>/public/Assets/images/signup-photo.jpg" alt="image">
                 </div>
                 <div class="signup-logo-container">
-                    <img src="public/Assets/images/LogoBlack.png" alt="image">
+                    <img src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="image">
                 </div>
             </div>
             <div class="signup-right">
@@ -30,10 +30,10 @@
                     <h1>Signup</h1>
                     <div class="space"></div>
                 </div>
-
                 <div class="form-container">
-                    <div class="login-form-top">
-                        <form action="Individual" method="post" enctype="multipart/form-data">
+                        <div class="login-form-top">
+                    <form action="Individual" method="post" enctype="multipart/form-data">
+
 
                             <input type="hidden" name="type" value="individual">
 
@@ -68,25 +68,24 @@
                                 </span></div>
                             <input type="password" name="confirmpassword" id="confirmpassword" class="input">
 
-                    </div>
-                    <div class="login-form-bottom">
-                        <div class="submit-button-div">
-                            <button class="button-submit" type="submit">Signup</button>
                         </div>
+                        <div class="login-form-bottom">
+                            <div class="submit-button-div">
+                                <button class="button-submit" type="submit">Signup</button>
+                            </div>
 
-                        <p class="login-register text-5">
-                            Already have an account? <a href="<?php echo URLROOT ?>/Users">Login</a>
-                        </p>
-                    </div>
-
-
+                            <p class="login-register text-5">
+                                Already have an account? <a href="<?php echo URLROOT ?>/Users">Login</a>
+                            </p>
+                        </div>
                 </div>
                 </form>
+
             </div>
         </div>
     </div>
 
-    </div>
+
 </body>
 
 </html>
