@@ -51,8 +51,8 @@ $this->db->query('INSERT INTO users (username, email, password, type)
         //Bind values
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':email', $data['email']);
-        $this->db->bind(':regno', $data['regno']);
-        $this->db->bind(':website', $data['website']);
+        // $this->db->bind(':regno', $data['regno']);
+        // $this->db->bind(':website', $data['website']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':type', $data['type']);
         }

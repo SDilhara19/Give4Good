@@ -10,8 +10,6 @@
 @import url('admin.css');
 @import url('category.css');
 /* @import url('components/Admin_style.css'); */
-/* @import url('components/login-styles.css'); */
-/* @import url('components/signup-styles.css'); */
 /* @import url('components/form-styles.css'); */
 /* @import url('components/paymentStyles.css'); */
 
@@ -34,6 +32,7 @@
   --grey-color: #6E7175;
   --yellow-color: #E9AB0E;
 
+  --border-grey: #e1e4e8;
   --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
 
@@ -165,6 +164,19 @@ h1, h2, h3{
   margin:0;
   font-size: 0.75rem;
   color: var(--black-sub);
+}
+
+
+
+.text-info-div{
+  color: var(--grey-color);
+  /* display: inline-block; */
+}
+
+.text-info{
+  display: inline-block;
+  font-size: 0.65rem;
+  color: var(--grey-color);
 }
 
 .color-red{
