@@ -29,6 +29,7 @@
         <div class="story-card">
             <div class="story-card-left">
                 <div class="story-card-img-container">
+                    
                     <img src="<?php echo $story->image; ?>" alt="">
                 </div>
             </div>

@@ -65,9 +65,9 @@ class Users extends controller
     $_SESSION['userStatus'] = $user->status;
     $_SESSION['userImage'] = $user->profile_image;
 
-    if ($_SESSION['userType'] == "admin"){
-      redirect(URLROOT . '/Admin');
-    }
+    // if ($_SESSION['userType'] == "admin"){
+    //   redirect(URLROOT . '/Admin');
+    // }
     redirect(URLROOT . '/Index');
 
 }

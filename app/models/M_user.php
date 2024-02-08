@@ -44,8 +44,8 @@ class M_user
     public function register($data)
     {
         if ($data['type'] == 'organisation') {
-            $this->db->query('INSERT INTO users (username, email, password, type) 
-        VALUES (:username, :email, :password, :type)');
+            $this->db->query('INSERT INTO users (username, email, password, type, profile_image) 
+        VALUES (:username, :email, :password, :type, "public/Assets/images/default-org-profile.webp")');
 
             $this->db->bind(':username', $data['name']);
             $this->db->bind(':email', $data['email']);
