@@ -35,7 +35,7 @@
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="form_image">
 
                     <div class="form-image-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg" alt="image here">
+                        <img src="https://placehold.co/600x150?text=Upload+Image" alt="image here">
                     </div>
                     <span class="form-invalid"><?php if(!empty($data['story_image_err']))echo $data['story_image_err']; ?></span>
 
@@ -93,6 +93,8 @@
 
     <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/toggleFormPart.js"></script>
+    <script>setupImagePreview("#form_image", ".form-image-container img");</script>
+
     <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
 

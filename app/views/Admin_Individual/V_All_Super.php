@@ -30,7 +30,7 @@
                   <th>User ID</th>
                   <th>Username</th>
                   <th>Contact</th>
-                  <th>Address</th>
+                  <th>Email</th>
                   <th>Identity Verification</th>
                   <th>NIC Details</th>
                   <th>Bank Details</th>
@@ -41,21 +41,20 @@
               </thead>
               <tbody>
                   <?php 
-        foreach ($data as $super_individual) {
-            ?>
-          <tr>
-                   <td>
-             
-              <span><?php echo $super_individual->user_id; ?></span>
-            </td>
-            <td><?php echo $super_individual->username; ?></td>
-                  <td>1233</td>
-                  <td>Balangoda</td>
+                  foreach ($data as $super_individual) {
+                  ?>
+                  <tr>
+                  <td>
+                    <span><?php echo $super_individual->user_id; ?></span>
+                  </td>
+                  <td><?php echo $super_individual->username; ?></td>
+                  <td><?php echo $super_individual->phone; ?></td>
+                  <td><?php echo $super_individual->email; ?></td>
                   <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                   <td><button onclick class="data_view" id="open-nic-popup">View</button></td>
                   <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
                   <td><a href=""><i class="fa-solid fa-check"></i></a></td>
-                  <td>Active</td>
+                  <td><?php echo $super_individual->status; ?></td>
                   <td class="action-td">
                     <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
                   </td>
@@ -63,31 +62,25 @@
                   <td>
                     <dialog class="popup" id='nic-popup'>
                       <span class="close-popup" id="close-nic-popup">&times;</span>
-                      <p class="text-2">NIC Verification: SanduniD</p>
+                      <p class="text-2">NIC Verification : <?php echo $super_individual->username; ?></p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
+                        <tr>
+                            <th>ID</th>
+                            <td class="text-3"><?php echo $super_individual->id; ?></td>
+                          </tr>
                           <tr>
                             <th>Name</th>
-                            <td class="text-3">John Doe</td>
+                            <td class="text-3"><?php echo $super_individual->username; ?></td>
                           </tr>
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3">200121229939</td>
+                            <td class="text-3"><?php echo $super_individual->nic_no; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3">Ratnapura</td>
+                            <td class="text-3"><?php echo $super_individual->address; ?></td>
                           </tr>
-
-
-      
-
-
-         
-
-
-  
-
                         </table>
                         <div class="nic-front">
 
@@ -140,7 +133,7 @@
                     </dialog>
                 </tr>
 
-   <?php
+       <?php
         }
         ?>
               </tbody>

@@ -40,7 +40,7 @@ class Validation
   private function FORMAT($value)
   {
 
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $this->data[$value])) {
+    if (!preg_match("/^[a-zA-Z0-9\s]*$/", $this->data[$value])) {
       $this->data[$value . '_err'] = 'invalid ' . $value . ' format';
     }
   }

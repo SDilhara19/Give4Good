@@ -41,45 +41,50 @@
                 </tr>
               </thead>
               <tbody>
+              <?php 
+                  foreach ($data as $act_super_individual) {
+                  ?>
                 <tr>
                   <td>
-                    <span>001</span>
+                    <span><?php echo $act_super_individual->user_id; ?></span>
                   </td>
-                  <td>SanduniD</td>
-                  <td>1233</td>
-                  <td>Balangoda</td>
+                  <td><?php echo $act_super_individual->username; ?></td>
+                  <td><?php echo $act_super_individual->phone; ?></td>
+                  <td><?php echo $act_super_individual->address; ?></td>
                   <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                   <td><button onclick class="data_view" id="open-nic-popup">View</button></td>
                   <td><button onclick class="data_view" id="open-bank-popup">View</button></td>
                   <td><a href=""><i class="fa-solid fa-check"></i></a></td>
-                  <td>Active</td>
+                  <td><?php echo $act_super_individual->status; ?></td>
                   <td class="action-td">
                   <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
                   <a href="" class="action-icons"><i class="fa-solid fa-hourglass-half"></i></a>
-                  <a href="<?php echo URLROOT ?>/Admin_Individual/setDeactive/<?php echo $super_individual->user_id ?>" class="action-icons"> <i class="fa-solid fa-lock"></i></a>
+                  <a href="<?php echo URLROOT ?>/Admin_Individual/setDeactive/<?php echo $act_super_individual->user_id ?>" class="action-icons"> <i class="fa-solid fa-lock"></i></a>
 
                 </td>
 
                   <td>
                     <dialog class="popup" id='nic-popup'>
                       <span class="close-popup" id="close-nic-popup">&times;</span>
-                      <p class="text-2">NIC Verification: SanduniD</p>
+                      <p class="text-2">NIC Verification: <?php echo $act_super_individual->username; ?></p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
+                        <tr>
+                            <th>ID</th>
+                            <td class="text-3"><?php echo $act_super_individual->id; ?></td>
+                          </tr>
                           <tr>
                             <th>Name</th>
-                            <td class="text-3">John Doe</td>
+                            <td class="text-3"><?php echo $act_super_individual->username; ?></td>
                           </tr>
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3">200121229939</td>
+                            <td class="text-3"><?php echo $act_super_individual->nic_no; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3">Ratnapura</td>
+                            <td class="text-3"><?php echo $act_super_individual->address; ?></td>
                           </tr>
-
-
                         </table>
                         <div class="nic-front">
 
@@ -131,7 +136,9 @@
 
                     </dialog>
                 </tr>
-
+                <?php
+               }
+               ?>
 
               </tbody>
             </table>
