@@ -57,15 +57,17 @@ class Stories extends controller
       // var_dump($obj->data);
 
       $uploadDir = '../public/Assets/Uploaded-Images/Stories/';
+      $uploadDirName = 'public/Assets/Uploaded-Images/Stories/';
 
       $uploadedFile = $_FILES['story_image']['tmp_name'];
       $uploadedFileName = $_FILES['story_image']['name'];
 
       $fileExtension = pathinfo($uploadedFileName, PATHINFO_EXTENSION);
       $newFileName = $obj->data['user_id'] . '_' . $obj->data['story_title'] . '.' . $fileExtension;
-      $obj->data['story_image'] = $uploadDir . $newFileName;
+      $location = $uploadDir . $newFileName;
+      $obj->data['story_image'] = $uploadDirName . $newFileName;
 
-      if (move_uploaded_file($uploadedFile, $obj->data['story_image'])) {
+      if (move_uploaded_file($uploadedFile, $location)) {
 
         if ($this->StoryModel->pendingStory($obj->data)) {
           redirect(URLROOT . '/Index');

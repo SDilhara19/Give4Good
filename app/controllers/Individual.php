@@ -7,6 +7,7 @@ class Individual extends controller
     public function __construct()
     {
         $this->IndividualModel = $this->model('M_user');
+        // $this->IndividualModel = $this->model('M_Individual');
   
     }
 
@@ -23,6 +24,7 @@ class Individual extends controller
         
     }
 
+  
     public function super()
     {  
         if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
@@ -30,6 +32,7 @@ class Individual extends controller
         } 
         else { 
             $data=[];
+            // var_dump($_SESSION['userId']);
         $this->view('Individual/V_Super_Signup', $data);
         }
         
@@ -75,23 +78,18 @@ class Individual extends controller
     public function super_signup()
     {
         $obj = new Validation($_POST);
-        $obj->validate('username', ['EMPTY', 'FORMAT']);
-        $obj->validate('email', ['EMPTY', 'EMAIL']);
-        $obj->validate('password', ['EMPTY', 'PASSWORD']);
-        $obj->validate('confirmpassword', ['CONFIRMPASSWORD']);
+        $obj->validate('fullname', ['EMPTY', 'FORMAT']);
+        $obj->validate('nicNo', ['EMPTY']);
+        $obj->validate('dob', ['EMPTY']);
 
         if($obj->flag==1){
-            $this->view('Users/V_IndividualSignup', $obj->data);  
+            $this->view('Individual/V_Super_Signup', $obj->data);  
         }    
         else{    
-            if ($this->IndividualModel ->register($obj->data)) {
-                redirect(URLROOT . '/Index');
-            } else {
-                die("Something went wrong");
-            }
-        }
+            echo($_POST);
 
     }
+}
 
     
 
