@@ -16,13 +16,10 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/side-dash.php' ?>
-
-<!-- <?php //require APPROOT . '/views/includes/header.php' ?> 
-<?php //require APPROOT . '/views/includes/side-dash.php' ?>       
+<?php require APPROOT . '/views/includes/header.php' ?>        
     <main>
-        <h1>About Page</h1>
+        <h1>About Us</h1>
     </main>
-<?php //require APPROOT . '/views/includes/footer.php' ?>  -->
+<?php require APPROOT . '/views/includes/footer.php' ?>  
 </body>
 </html>       
