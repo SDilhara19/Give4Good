@@ -61,11 +61,18 @@
                                         <?php echo $story->status; ?>
                                     </td>
                                     <td class="action-td">
-                                        <span class="action-icons open-story-popup"
+                                    <span class="action-icons open-story-popup"
                                             data-popup-id="<?php echo $story->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
-                                    </td>
+                                    <a href="<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>" class="action-icons">
+                                        <i class="fa-solid fa-play"></i>
+                                    </a>
+                                    <a href="" class="action-icons">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </a>
+
+                                </td>
                                     <td>
 
                                         <dialog class="popup-story" id='story-popup-<?php echo $story->id; ?>'>
@@ -82,7 +89,7 @@
                                                     </div>
                                                     <div class="story-card-right">
                                                         <div class="story-description">
-                                                            <h1>Sahurda Wiyamana</h1>
+                                                            <h1>Hard coded Sahurda Wiyamana</h1>
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
                                                                 <p class="text-4">LEO Club UOC</p>
