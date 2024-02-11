@@ -23,8 +23,9 @@
   font-weight: 400;
 
   /* colous */
-  --primary-color: #4EB790;
+  --primary-color: #36CF97;
   --secondary-color: #CFF5E7;
+  --tertiary-color: #daf2e9;
   --dark-green: #0E6F4B;
   --black-sub: #2E353E;
   --white-color: #FFFFFF;
@@ -80,6 +81,8 @@ body {
 
 }
 
+
+
 a:hover{
   cursor: pointer;
 }
@@ -90,10 +93,12 @@ a:hover{
   left: -250px;
   height: calc(100vh - 70px);
   width: 80px;
-  background-color: var(--secondary-color);
-  padding: 0.4rem 0.8rem;
+  background-color: var(--white-color);
+  padding: 0.4rem 0 0.4rem 0;
   transition: left 0.5s ease;
   z-index: 2000;
+  border-radius:  0 0 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 /* .side-bar-main.active ~ main{
@@ -108,12 +113,71 @@ left: 0;
 
 
 
-.user-img-side-bar{
+/* .user-img-side-bar{
   width: 50px;
   border-radius: 100%;
   border: 1px solid #eee;
+} */
+
+
+.home-side-bar-main ul li {
+  /* gap: 1rem; */
+   display: flex;
+  align-items:center; 
+  padding: 0.6rem;
+  width: 100%;
+
 }
 
+.home-side-bar-main ul li:hover{
+  background: var(--black-sub);
+  color: var(--secondary-color);
+  border-radius: 0 10px 10px 0;
+  
+}
+
+.home-side-bar-main ul li i{
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+
+}
+
+.home-side-bar-main ul li:last-child {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+.side-fundraiser-categories{
+  margin-left: 2.5rem;
+  display: none;
+}
+
+
+
+.side-fundraiser-categories ul li:last-child{
+  position: relative;
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li {
+  padding: 0.5rem;
+  /* width: 100%; */
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li:hover{
+  background: var(--border-grey);
+  color: var(--secondary-color);
+  border-radius: 10px;
+  
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li i{
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+
+}
 main{
   margin-top: 115px;
   margin-left: 6rem;
@@ -218,7 +282,7 @@ h1, h2, h3{
 }
 
 .main-button, .button-submit{
-  background: var(--primary-color);
+  background: #36CF97;
   border: none;
   color: var(--white-color);
   height: 2rem;
