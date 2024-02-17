@@ -32,6 +32,7 @@ class Stories extends controller
   private function process_story()
   {
     $obj = new Validation($_POST);
+    $obj->data['user_id'] = $_SESSION['userId'];
     $obj->validate('story_title', ['EMPTY']);
     $obj->validate('story_description', ['EMPTY']);
     // $obj->validate('story_image', ['EMPTY']);
@@ -53,7 +54,7 @@ class Stories extends controller
        
     } else {
       
-      $obj->data['user_id'] = $_SESSION['userId'];
+      
       // var_dump($obj->data);
 
       $uploadDir = '../public/Assets/Uploaded-Images/Stories/';
