@@ -31,8 +31,8 @@
                     <div class="space"></div>
                 </div>
                 <div class="form-container">
-                        <div class="login-form-top">
-                    <form action="Individual" method="post" enctype="multipart/form-data">
+                    <div class="login-form-top">
+                        <form action="Individual" method="post" enctype="multipart/form-data">
 
 
                             <input type="hidden" name="type" value="individual">
@@ -68,16 +68,16 @@
                                 </span></div>
                             <input type="password" name="confirmpassword" id="confirmpassword" class="input">
 
+                    </div>
+                    <div class="login-form-bottom">
+                        <div class="submit-button-div">
+                            <button class="button-submit" type="submit">Signup</button>
                         </div>
-                        <div class="login-form-bottom">
-                            <div class="submit-button-div">
-                                <button class="button-submit" type="submit">Signup</button>
-                            </div>
 
-                            <p class="login-register text-5">
-                                Already have an account? <a href="<?php echo URLROOT ?>/Users">Login</a>
-                            </p>
-                        </div>
+                        <p class="login-register text-5">
+                            Already have an account? <a href="<?php echo URLROOT ?>/Users">Login</a>
+                        </p>
+                    </div>
                 </div>
                 </form>
 

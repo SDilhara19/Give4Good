@@ -1,17 +1,16 @@
 <?php
 class Index extends controller
 {
-    // private $prototypeModel;
-    // public function __construct()
-    // {
-    //     $this->prototypeModel = $this->model('M_model')
+    private $IndexModel;
+    public function __construct()
+    {
+        $this->IndexModel = $this->model('M_Index');
   
-    //}
+    }
 
 
     public function index(){
-
-        $this->view('Index/V_Index');
+      $data= $this->IndexModel->getAllFundriasers();
+      $this->view('Index/V_Index', $data);
   }
 }
-?>

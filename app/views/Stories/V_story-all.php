@@ -23,22 +23,24 @@
             <a href="<?php echo URLROOT ?>/Stories/add"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
         </div>
        <div class="stories-container">
+       <?php 
+                  foreach ($data as $story) {
+                  ?>
         <div class="story-card">
             <div class="story-card-left">
                 <div class="story-card-img-container">
-                    <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
+                    
+                    <img src="<?php echo $story->image; ?>" alt="">
                 </div>
             </div>
             <div class="story-card-right">
                 <div class="story-description">
-                    <h1>Sahurda Wiyamana</h1>
+                    <h1><?php echo $story->title; ?></h1>
                     <div class="fundraiser-donee-name">
                         <i class="fa-solid fa-building fa-sm text-3"></i>
-                        <p class="text-4">LEO Club UOC</p>
+                        <p class="text-4"><?php echo $story->username; ?></p>
                       </div>
-                    <p>ොළඹ විශ්ව විද්‍යාලයීය ලියෝ සමාජය මගින් සංවිධානය කල සහෘද වියමන අදියර 6කින් යුතු ව්‍යාපෘතියේ දෙවන අදියර ඉතා සාර්ථකව නිමකරන කරන ලදී.  එම කටයුතු සාර්ථක කර ගැනීම උදෙසා උපකාර කළ ඔබ සැමට ස්තූතියි.❤
-
-                        Facebook: https://bit.ly/3udizp5
+                    <p><?php echo $story->decription; ?>
                        
                         
                         </p>
@@ -47,17 +49,20 @@
                     <table>
                         <tr>
                             <th>email:</th>
-                            <td class="text-3">leos@gmail.com</td>
+                            <td class="text-3"><?php echo $story->email; ?></td>
                         </tr>
                         <tr>
                             <th>Contact:</th>
-                            <td class="text-3">+9470 576 0021</td>
+                            <td class="text-3"><?php echo $story->phone; ?></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
 
+        <?php 
+                  }
+                  ?>
         <div class="story-card">
             <div class="story-card-left">
                 <div class="story-card-img-container">

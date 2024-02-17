@@ -15,6 +15,7 @@
   --black-sub: #2E353E;
   --white-color: #FFFFFF;
   --red-color: #FC0606;
+  --border-grey: #e1e4e8;
   --grey-color: #6E7175;
   --yellow-color: #D09705;
   --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
@@ -27,26 +28,27 @@
 
 .form-container {
   width: 700px;
-
   margin: 0 auto;
   border-radius: 20px;
 }
 
 .form-container fieldset {
-  border: 2px solid var(--black-sub);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--secondary-color);
   width: 100%;
   border-radius: 20px;
   padding: 2rem 3rem 2rem 3rem;
 }
 
-.form-container legend {
+/* .form-container legend {
   margin: 0 1rem 0 -2rem;
   padding: 0 1rem 0 1rem;
-}
+} */
 
 .form-container ::placeholder{
   /* padding-left: 0.5rem; */
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  color: #c7c7c7;
 }
 
 .form-flex {
@@ -128,4 +130,26 @@
     height: auto;
     /* object-fit: contain;   */
     border-radius: 8px;
+}
+
+.super-signup-profile-image{
+  border-radius: 50%;
+  border: 1px solid var(--border-grey);
+  height: 25vh;
+  width: 25vh;
+  margin: auto;
+}
+
+.nic-form-image-container{
+  /* border: 1px solid var(--border-grey); */
+  height: 120px;
+  width: 200px;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.nic-form-image-container img{
+  max-width: 100%;
+  max-height: 100%;
+   object-fit: contain;
 }
