@@ -50,14 +50,14 @@ class Stories extends controller
 
     if ($obj->flag == 1) {
       $this->view('Stories/V_Add', $obj->data);
-      // var_dump($_POST);  
+       
     } else {
-      // var_dump($_POST); 
+      
       $obj->data['user_id'] = $_SESSION['userId'];
       // var_dump($obj->data);
 
       $uploadDir = '../public/Assets/Uploaded-Images/Stories/';
-      $uploadDirName = 'public/Assets/Uploaded-Images/Stories/';
+      $uploadDirName = '/public/Assets/Uploaded-Images/Stories/';
 
       $uploadedFile = $_FILES['story_image']['tmp_name'];
       $uploadedFileName = $_FILES['story_image']['name'];
