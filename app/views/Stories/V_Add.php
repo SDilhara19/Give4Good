@@ -35,7 +35,7 @@
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="form_image">
 
                     <div class="form-image-container">
-                        <img src="https://placehold.co/600x150?text=Upload+Image" alt="image here">
+                        <img src="https://placehold.co/600x70?text=Upload+Image" alt="image here">
                     </div>
                     <span class="form-invalid"><?php if(!empty($data['story_image_err']))echo $data['story_image_err']; ?></span>
 
