@@ -30,7 +30,7 @@
             <div class="story-card-left">
                 <div class="story-card-img-container">
                     
-                    <img src="<?php echo $story->image; ?>" alt="">
+                    <img src="<?php echo URLROOT . $story->image; ?>" alt="">
                 </div>
             </div>
             <div class="story-card-right">
@@ -38,9 +38,12 @@
                     <h1><?php echo $story->title; ?></h1>
                     <div class="fundraiser-donee-name">
                         <i class="fa-solid fa-building fa-sm text-3"></i>
-                        <p class="text-4"><?php echo $story->username; ?></p>
+                        <p class="text-4">
+    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+</p>
+
                       </div>
-                    <p><?php echo $story->decription; ?>
+                    <p><?php echo $story->description; ?>
                        
                         
                         </p>
@@ -63,7 +66,7 @@
         <?php 
                   }
                   ?>
-        <div class="story-card">
+       <div class="story-card">
             <div class="story-card-left">
                 <div class="story-card-img-container">
                     <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story2.png" alt="">
@@ -166,7 +169,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> 
        </div>
     </main>
 </body>
