@@ -19,8 +19,8 @@
     <main>
         <h1>Featured Topics..</h1>
         <div class="home-fundraisers">
-          <a href="<?php echo URLROOT ?>/Fundraiser/fundraiser">
-          <article class="home-fundraiser-card">
+          
+          <article class="home-fundraiser-card" onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser'">
             <div class="home-fundraiser-img">
               <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
             </div>
@@ -36,7 +36,7 @@
               <p class="text-1">Rs.20 000 raised</p>
             </div>
     
-          </article></a>
+          </article>
           <article class="home-fundraiser-card">
             <div class="home-fundraiser-img">
               <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">

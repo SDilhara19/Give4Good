@@ -15,20 +15,33 @@
 </head>
 
 <body>
-    <?php // require APPROOT . '/views/includes/header.php' ?>
+    <?php // require APPROOT . '/views/includes/header.php'   ?>
     <div class="form-body">
         <main class="form-main">
             <div class="form-container-left">
                 <div class="form-progress-bar-container">
-                    <div class="form-progress-bar">
-                        <div class="progress-step active">
-                        </div>
-                        <div class="progress-step">
-                        </div>
-                        <div class="progress-step">
-                        </div>
-
+                    <div class="form-inactive-progress-bar-container">
+                        <div class="form-inactive-progress-bar"></div>
+                        <div class="inactive-progress-mark"></div>
                     </div>
+                    <div class="form-progress-bar">
+                        <div class="progress-step">
+                        <div class="progress active"></div>
+                            <div class="progress-mark active"></div>
+                            <p class="progress-text active">Bank Details</p>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress"></div>
+                            <div class="progress-mark"></div>
+                            <p class="progress-text">Bank Details</p>
+                        </div>
+                        <div class="progress-step">
+                        <div class="progress"></div>
+                            <div class="progress-mark"></div>
+                            <p class="progress-text">Bank Details</p>
+                        </div>
+                    </div>
+
 
                 </div>
 
@@ -56,7 +69,9 @@
                                         </div>
                                     </div>
                                     <div class="super-signup-username-con">
-                                        <p class="text-2"><?php echo $_SESSION["userName"] ?></p>
+                                        <p class="text-2">
+                                            <?php echo $_SESSION["userName"] ?>
+                                        </p>
                                         <div class="edit-icon">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </div>
@@ -121,6 +136,8 @@
                                         </div>
 
                                         <div class="form-flex-right">
+
+
                                             <div class="form-input-title">NIC Image-Back<span class="required">*</span>
                                             </div>
                                             <label for="nic_back_image" class="custom-file-input">
@@ -129,12 +146,10 @@
                                                     id="nic_back_image">
                                             </label>
 
-
-                                            <div class="nic-form-image-container" id="nic-back">
+                                            <div class="nic-form-image-container">
                                                 <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
-                                                    alt="image here">
+                                                    alt="image here" id="nic-back">
                                                 <span class="fade-effect"></span>
-
                                             </div>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['nic_back_image_err']))
@@ -142,7 +157,6 @@
                                             </span>
 
                                         </div>
-
 
                                     </div>
                                     <br>
@@ -240,6 +254,13 @@
                                             echo $data['name_err']; ?>
                                     </span>
 
+                                    <div class="form-input-title">Account No.<span class="required">*</span></div>
+                                    <input type="text" name="accountNo" id="accountNo" class="input" placeholder="Account No">
+                                    <span class="form-invalid">
+                                        <?php if (!empty($data['accountNo_err']))
+                                            echo $data['accountNo_err']; ?>
+                                    </span>
+
                                     <div class="form-flex">
                                         <div class="form-flex-left">
                                             <div class="form-input-title">Bank Code<span class="required">*</span></div>
@@ -258,6 +279,7 @@
                                                     echo $data['bank_err']; ?>
                                             </span>
                                         </div>
+
 
                                     </div>
 
@@ -284,6 +306,34 @@
 
                                     </div>
 
+                                    <div class="form-flex">
+                                        <div class="form-flex-left">
+
+
+                                            <div class="form-input-title">Bank Pass Book <span class="required">*</span>
+                                            </div>
+                                            <label for="pass_book" class="custom-file-input">
+                                                <span>Choose Image</span>
+                                                <input type="file" accept="image/png, image/jpeg" name="pass_book"
+                                                    id="pass_book_image">
+                                            </label>
+
+                                            <div class="nic-form-image-container">
+                                                <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                    alt="image here" id="pass_book">
+                                                <span class="fade-effect"></span>
+                                            </div>
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['pass_book_err']))
+                                                    echo $data['pass_book_err']; ?>
+                                            </span>
+
+                                        </div>
+
+                                    
+
+
+                                    </div>
                                     <br>
                                 </div>
                                 <div class="step-container-bottom">
@@ -311,6 +361,8 @@
         // setupImagePreview("#form_image", ".form-image-container img");
         setupImagePreview("#nic_front_image", "#nic-front");
         setupImagePreview("#nic_back_image", "#nic-back");
+        setupImagePreview("#pass_book_image", "#pass_book");
+        
     </script>
 
 </body>
