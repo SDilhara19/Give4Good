@@ -85,7 +85,7 @@
         </div>
     </div>
 
-
+    <script src="<?php // echo URLROOT ?>/public/js/form-validation.js"></script>
 </body>
 
 </html>
