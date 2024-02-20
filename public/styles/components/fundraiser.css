@@ -146,10 +146,7 @@
     width: 100%;
   }
 
-  .fundraiser-button-list button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-}
+
 
   .info-box{
     margin-bottom: 1rem;

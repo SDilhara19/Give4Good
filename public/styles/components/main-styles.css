@@ -9,6 +9,8 @@
 @import url('signup.css');
 @import url('admin.css');
 @import url('category.css');
+@import url('fundraiser-forms.css');
+@import url('user-select.css');
 /* @import url('components/Admin_style.css'); */
 /* @import url('components/form-styles.css'); */
 /* @import url('components/paymentStyles.css'); */
@@ -87,6 +89,25 @@ a:hover{
   cursor: pointer;
 }
 
+
+
+.flx-2{
+  flex: 2;
+}
+
+.flx-1{
+  flex: 1;
+}
+
+.flx-dir-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flx-dir-row{
+  display: flex;
+  flex-direction: row;
+}
 .home-side-bar-main{
   position: fixed;
   top: 70px;
@@ -271,6 +292,12 @@ h1, h2, h3{
   background: var(--white-color);
   border: 2px solid var(--primary-color);
   color: var(--black-sub);
+}
+
+.main-color-button:hover, .main-dark-button:hover, .main-white-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transform: scale(1.03);
 }
 
 .main-button, .secondary-button, .button-3{
