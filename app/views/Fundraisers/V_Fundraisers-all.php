@@ -15,7 +15,8 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/header.php' ?>        
+<?php require APPROOT . '/views/includes/header.php' ?>  
+<?php require APPROOT . '/views/includes/side-bar.php' ?>      
     <main>
         <h1>Featured Topics..</h1>
         <div class="home-fundraisers">
@@ -272,6 +273,8 @@
 
         </div>
     </main>
-    <?php require APPROOT . '/views/includes/footer.php' ?>    
+    <?php require APPROOT . '/views/includes/footer.php' ?>   
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 </html>    

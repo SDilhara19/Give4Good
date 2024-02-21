@@ -16,6 +16,7 @@
 
 <body>
     <?php require APPROOT . '/views/includes/header.php' ?>
+    <?php require APPROOT . '/views/includes/side-bar.php' ?>
     <main>
         <h1>Help us to assist them walk</h1>
         <div class="fundraiser-container">
@@ -366,6 +367,8 @@
         setupPopup('#open-material-popup', '.material-popup', '.close-material-popup');
     </script>
     <?php require APPROOT . '/views/includes/footer.php' ?> 
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 </html>       
      

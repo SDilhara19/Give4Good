@@ -16,6 +16,7 @@
 <body>
 
 <?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/side-bar.php' ?>
 
     <main>
         <div class="story-heading">
@@ -172,6 +173,8 @@
         </div> 
        </div>
     </main>
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 
 </html>

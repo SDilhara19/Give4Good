@@ -16,6 +16,7 @@
 
 <body>
     <?php require APPROOT . '/views/includes/header.php' ?>
+    <?php require APPROOT . '/views/includes/side-bar.php' ?>
     <div class="profile-side-bar">
         <ul class="profile-list">
             
@@ -61,7 +62,9 @@
     <!-- <script src="../../../public/js/profile.js"></script> -->
 <script src="<?php echo URLROOT ?>/public/js/profile.js"></script>
     
-    <?php require APPROOT . '/views/includes/footer.php' ?> 
+    <?php require APPROOT . '/views/includes/footer.php' ?>
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 </html>       
      
