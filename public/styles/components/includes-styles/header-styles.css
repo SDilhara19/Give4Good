@@ -87,8 +87,9 @@ margin: auto 1rem auto 1rem;
   color: var(--black-sub);
 }
 
-.header-nav-links a:hover {
+.nav-left .dashboard:hover, .header-nav-links a:hover {
   color: var(--dark-green);
+  cursor: pointer;
 }
 
 .user-row {

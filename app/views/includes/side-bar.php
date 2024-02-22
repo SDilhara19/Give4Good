@@ -8,7 +8,7 @@
     </div>
     <ul>
         <li>
-            <a href="#">
+            <a href="<?php echo URLROOT ?>/index">
             <i class='bx bxs-home bx-sm'></i>
                 <span class="nav-item-side-bar">Home</span>
             </a>
@@ -79,13 +79,15 @@
             </a>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
+        <a href="<?php echo URLROOT?>/users/logout">
         <li>
-            <a href="<?php echo URLROOT?>/users/logout">
+            <!-- <a href="<? //php echo URLROOT?>/users/logout"> -->
             <i class='bx bxs-exit bx-sm'></i>
                 <span class="nav-item-side-bar">Logout</span>
-            </a>
+          
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
 
+        </a>
     </ul>
 </div>
