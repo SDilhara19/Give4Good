@@ -11,11 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
-    <?php // require APPROOT . '/views/includes/header.php'   ?>
+    <?php // require APPROOT . '/views/includes/header.php'    ?>
     <div class="form-body">
         <main class="form-main">
             <div class="form-container-left">
@@ -26,7 +27,7 @@
                     </div>
                     <div class="form-progress-bar">
                         <div class="progress-step">
-                        <div class="progress active"></div>
+                            <div class="progress active"></div>
                             <div class="progress-mark active"></div>
                             <p class="progress-text active">Bank Details</p>
                         </div>
@@ -36,13 +37,11 @@
                             <p class="progress-text">Bank Details</p>
                         </div>
                         <div class="progress-step">
-                        <div class="progress"></div>
+                            <div class="progress"></div>
                             <div class="progress-mark"></div>
                             <p class="progress-text">Bank Details</p>
                         </div>
                     </div>
-
-
                 </div>
 
             </div>
@@ -87,7 +86,7 @@
 
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
                                             <div class="form-input-title">National ID<span class="required">*</span>
                                             </div>
                                             <input type="text" name="nicNo" id="nicNo" class="input"
@@ -98,7 +97,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Date of Birth<span class="required">*</span>
                                             </div>
                                             <input type="date" name="dob" id="dob" class="input">
@@ -112,7 +111,7 @@
                                     </div>
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
 
 
                                             <div class="form-input-title">NIC Image-Front<span class="required">*</span>
@@ -135,7 +134,7 @@
 
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
 
 
                                             <div class="form-input-title">NIC Image-Back<span class="required">*</span>
@@ -182,7 +181,7 @@
                                     </span>
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Province<span class="required">*</span></div>
                                             <select name="province" id="province" onchange="selectedProvince()"
                                                 class="input">
@@ -197,7 +196,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
                                             <div class="form-input-title">District<span class="required">*</span></div>
                                             <select name="district" id="district" class="input">
                                                 <option value="none">None</option>
@@ -210,7 +209,7 @@
 
                                     </div>
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Zip Code<span class="required">*</span></div>
                                             <input type="text" name="zipcode" id="zipcode" class="input"
                                                 placeholder="Zip code">
@@ -220,7 +219,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Contact<span class="required">*</span></div>
                                             <input type="tel" name="contact" id="contact" class="input">
                                             <span class="form-invalid">
@@ -255,14 +254,15 @@
                                     </span>
 
                                     <div class="form-input-title">Account No.<span class="required">*</span></div>
-                                    <input type="text" name="accountNo" id="accountNo" class="input" placeholder="Account No">
+                                    <input type="text" name="accountNo" id="accountNo" class="input"
+                                        placeholder="Account No">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['accountNo_err']))
                                             echo $data['accountNo_err']; ?>
                                     </span>
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Bank Code<span class="required">*</span></div>
                                             <input type="number" name="bankcode" id="bankcode" class="input">
                                             <span class="form-invalid">
@@ -271,7 +271,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Bank<span class="required">*</span></div>
                                             <input type="text" name="bank" id="bank" class="input">
                                             <span class="form-invalid">
@@ -285,7 +285,7 @@
 
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Branch Code<span class="required">*</span>
                                             </div>
                                             <input type="number" name="branchcode" id="branchcode" class="input">
@@ -295,7 +295,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="form-flex-right">
+                                        <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Branch<span class="required">*</span></div>
                                             <input type="text" name="branch" id="branch" class="input">
                                             <span class="form-invalid">
@@ -307,7 +307,7 @@
                                     </div>
 
                                     <div class="form-flex">
-                                        <div class="form-flex-left">
+                                        <div class="form-flex-left flx-1">
 
 
                                             <div class="form-input-title">Bank Pass Book <span class="required">*</span>
@@ -330,7 +330,7 @@
 
                                         </div>
 
-                                    
+
 
 
                                     </div>
@@ -362,7 +362,7 @@
         setupImagePreview("#nic_front_image", "#nic-front");
         setupImagePreview("#nic_back_image", "#nic-back");
         setupImagePreview("#pass_book_image", "#pass_book");
-        
+
     </script>
 
 </body>

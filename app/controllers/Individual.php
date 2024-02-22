@@ -77,23 +77,23 @@ class Individual extends controller
         try {
             $obj = new Validation($_POST);
             $obj->data['user_id'] = $_SESSION['userId'];
-            // $obj->validate('fullname', ['EMPTY', 'FORMAT']);
-            // $obj->validate('nicNo', ['EMPTY']);
-            // $obj->validate('dob', ['EMPTY']);
+            $obj->validate('fullname', ['EMPTY', 'FORMAT']);
+            $obj->validate('nicNo', ['EMPTY']);
+            $obj->validate('dob', ['EMPTY']);
             $obj->validate('address', ['EMPTY']);
             $obj->validate('province', ['EMPTY']);
             $obj->validate('district', ['EMPTY']);
             $obj->validate('zipcode', ['EMPTY']);
-            // $obj->validate('contact', ['EMPTY']);
-            // $obj->validate('name', ['EMPTY']);
-            // $obj->validate('accountNo', ['EMPTY']);
-            // $obj->validate('bankcode', ['EMPTY']);
-            // $obj->validate('bank', ['EMPTY']);
-            // $obj->validate('branchcode', ['EMPTY']);
-            // $obj->validate('branch', ['EMPTY']);
-            // $obj->imageUpload('NIC-front', $_FILES['nic_front_image'], $obj->data['nic_front_image'], 'nic_front_image');
-            // $obj->imageUpload('NIC-back', $_FILES['nic_back_image'], $obj->data['nic_back_image'], 'nic_back_image');
-            // $obj->imageUpload('Bank-passbook', $_FILES['pass_book'], $obj->data['pass_book'], 'pass_book');
+            $obj->validate('contact', ['EMPTY']);
+            $obj->validate('name', ['EMPTY']);
+            $obj->validate('accountNo', ['EMPTY']);
+            $obj->validate('bankcode', ['EMPTY']);
+            $obj->validate('bank', ['EMPTY']);
+            $obj->validate('branchcode', ['EMPTY']);
+            $obj->validate('branch', ['EMPTY']);
+            $obj->imageUpload('NIC-front', $_FILES['nic_front_image'], $obj->data['nic_front_image'], 'nic_front_image');
+            $obj->imageUpload('NIC-back', $_FILES['nic_back_image'], $obj->data['nic_back_image'], 'nic_back_image');
+            $obj->imageUpload('Bank-passbook', $_FILES['pass_book'], $obj->data['pass_book'], 'pass_book');
 
 
             if ($obj->flag == 1) {

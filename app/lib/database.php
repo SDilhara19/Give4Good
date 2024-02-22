@@ -63,6 +63,22 @@ class Database {
         return $this->stmt->rowCount();
     }
 
+
+    //my modification
+    public function beginTransaction() {
+        return $this->dbh->beginTransaction();
+    }
+
+    public function commit() {
+        return $this->dbh->commit();
+    }
+
+    public function rollBack() {
+        return $this->dbh->rollBack();
+    }
+
+    //over
+
     //select a row from a given table given field
     public function selectOne($table, $field, $value, $limit = 1){
         $this->query("SELECT * FROM $table WHERE $field = :value LIMIT $limit");
