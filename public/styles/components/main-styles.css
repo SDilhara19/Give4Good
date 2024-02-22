@@ -251,6 +251,14 @@ h1, h2, h3{
   color: var(--black-sub);
 }
 
+.text-6{
+  margin:0;
+  color:#bcbdbe;
+  font-weight: 500;
+
+  
+}
+
 
 
 .text-info-div{
