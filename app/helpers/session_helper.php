@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 
     if (isset($_SESSION['userId']) && $_SESSION['userType'] == 'admin') {
-        $timeout = 10; // 10 minutes = 600s
+        $timeout = 600; // 10 minutes = 600s
 
         if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $timeout)) {
             unset($_SESSION['userId']);

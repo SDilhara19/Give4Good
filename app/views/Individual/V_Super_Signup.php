@@ -163,7 +163,7 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
 
-                                        <div class="js-next" onclick="nextStep()">Next</div>
+                                        <div class="js-next" onclick="nextStep(3)">Next</div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -236,7 +236,7 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
                                         <div class="js-prev" onclick="prevStep()">Previous</div>
-                                        <div class="js-next" onclick="nextStep()">Next</div>
+                                        <div class="js-next" onclick="nextStep(3)">Next</div>
                                     </div>
                                 </div>
                             </fieldset>

@@ -47,6 +47,16 @@ class M_Story {
         }
 
     }
+
+    // public function test($variable_that_has_the_id) {
+    //     try {
+    //         $temp_data = $this->db->query2("SELECT * FROM users WHERE id = :id", ['id' => $variable_that_has_the_id]);
+    //         return $temp_data;
+    //     } catch (\Exception $e) {
+    //         // Handle the exception (log, rethrow, or other appropriate action)
+    //         throw new \Exception("Error executing database query: " . $e->getMessage());
+    //     }
+    // }
   
 
 

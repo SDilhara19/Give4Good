@@ -113,4 +113,22 @@ class Database {
     }
 
 
+    public function query2($query, $data = []): false|array
+    {
+        $con = $this->dbh;
+
+        $stm = $con->prepare($query);
+        
+        if($stm) {
+            $check = $stm->execute($data);
+
+            if($check){
+                $result = $stm->fetchAll(PDO::FETCH_OBJ);
+                if($result && count($result) > 0) return $result;
+            }
+        }
+
+        return false;
+    }
+
 }
