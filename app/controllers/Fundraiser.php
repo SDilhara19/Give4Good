@@ -1,26 +1,37 @@
 <?php
 class Fundraiser extends controller
 {
-    // private $prototypeModel;
-    // public function __construct()
-    // {
-    //     $this->prototypeModel = $this->model('M_model')
+    private $fundraiserModel;
+    public function __construct()
+    {
+        $this->fundraiserModel = $this->model('M_Fundraiser');
   
-    //}
+    }
 
     public function index(){
-
-        $this->view('Fundraisers/V_Fundraisers-all');
+      $data = $this->fundraiserModel->getAllFundriasers();
+        $this->view('Fundraisers/V_Fundraisers-all', $data);
   }
 
-    public function fundraiser(){
+  public function fundraiser($id)
+  {
+      try {
+          $data['fundraiser'] = $this->fundraiserModel->getAFundraiser($id);
+          $data['images'] = $this->fundraiserModel->getImages($id);
+          $data['merchandise'] = $this->fundraiserModel->getMerchandise($id);
+          $data['materials'] = $this->fundraiserModel->getMaterials($id);
+          $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
 
-        $this->view('Fundraisers/V_Fundraiser');
+          // var_dump($data);
+          $this->view('Fundraisers/V_Fundraiser', $data);
+      } catch (Exception $e) {
+          error_log('Error in fundraiser: ' . $e->getMessage());
+          echo "Error: " . $e->getMessage();
+      }
   }
-
+  
   public function start(){
 
     $this->view('Fundraisers/V_Start');
 }
 }
-?>

@@ -30,7 +30,7 @@
           <p class="medium-text">To make a</p>
           <p class="xlarge-text">Better World</p>
           <button class="highlighted-button"
-            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/fundraiser'">Donate Now!</button>
+            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser'">Donate Now!</button>
         </div>
         <div class="right-home-box">
           <img src="public/Assets/images/child.jpg" alt="img">

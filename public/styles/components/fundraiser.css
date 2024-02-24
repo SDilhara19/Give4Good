@@ -384,6 +384,13 @@
   height: 100%;
 }
 
+.material-popup-right .text-2{
+  margin: 5px 0 5px 0;
+}
+
+.material-popup-right table{
+  width: 100%;
+}
 .material-popup-right td{
   text-align: right;
 }
