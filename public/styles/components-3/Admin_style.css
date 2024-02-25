@@ -214,6 +214,16 @@ body {
   background: rgb(234, 232, 232);
 } */
 
+.dash-main{
+  background-color: #0E6F4B;
+  border-radius: 5px;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding: 1rem;
+  width: 400px;
+  height: auto;
+}
+
 .dashUnit {
   margin-left: 0.01rem;
   margin-top: 1rem;
