@@ -317,7 +317,9 @@ h1, h2, h3{
   color: var(--black-sub)
 }
 
-
+.margin-top{
+  margin-top: 0;
+}
 .main-color-button, .main-dark-button, .main-white-button{
   font: var(--large-font-size);
   font-weight: 700;
