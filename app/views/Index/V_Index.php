@@ -43,7 +43,7 @@
         foreach ($data as $fundraiser) {
           ?>
           <article class="home-fundraiser-card"
-            onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser'">
+            onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
             <div class="home-fundraiser-img">
               <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
             </div>
@@ -57,9 +57,11 @@
               <p class="text-1">
                 <?php echo $fundraiser->title; ?>
               </p>
-              <div class="progress-bar text-4">
-                progress-bar
-              </div>
+              <div class="fundraiser-small-progress-bar-container">
+                <div class="fundraiser-small-progress-bar">
+                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> "> </div>
+                </div>
+                </div>
               <p class="text-1">Rs.
                 <?php echo $fundraiser->amount; ?> raised
               </p>

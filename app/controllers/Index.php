@@ -11,6 +11,14 @@ class Index extends controller
 
     public function index(){
       $data= $this->IndexModel->getAllFundriasers();
+
+      foreach ($data as $fundraiser){
+        $progress = $fundraiser->amount_collected;
+        $total = $fundraiser->amount;
+        $fundraiser->progress = ($progress/$total)*100;
+
+      }
+      
       $this->view('Index/V_Index', $data);
   }
 }

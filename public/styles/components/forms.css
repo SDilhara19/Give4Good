@@ -294,7 +294,7 @@ textarea::placeholder, .input::placeholder{
   height: 1.75rem;
   width: 100%;
   background-color: #f7feff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   border-radius: 8px;
   border: 1px solid #ececec;
   padding: 0.3rem;
@@ -331,7 +331,7 @@ textarea{
   border-radius: 8px;
   border: 1px solid #ececec;
   padding: 0.3rem;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   width: 100%;
 }
 
@@ -608,3 +608,7 @@ textarea{
 /* 2 172034325 */
 
 
+
+.d-none{
+  display: none;
+}

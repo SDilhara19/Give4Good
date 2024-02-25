@@ -10,6 +10,13 @@ class Fundraiser extends controller
 
     public function index(){
       $data = $this->fundraiserModel->getAllFundriasers();
+
+      foreach ($data as $fundraiser){
+        $progress = $fundraiser->amount_collected;
+        $total = $fundraiser->amount;
+        $fundraiser->progress = ($progress/$total)*100;
+
+      }
         $this->view('Fundraisers/V_Fundraisers-all', $data);
   }
 
@@ -21,6 +28,10 @@ class Fundraiser extends controller
           $data['merchandise'] = $this->fundraiserModel->getMerchandise($id);
           $data['materials'] = $this->fundraiserModel->getMaterials($id);
           $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
+
+          $progress = $data['fundraiser'][0]->amount_collected;
+          $total = $data['fundraiser'][0]->amount;
+          $data['fundraiser'][0]->progress = ($progress/$total)*100;
 
           // var_dump($data);
           $this->view('Fundraisers/V_Fundraiser', $data);

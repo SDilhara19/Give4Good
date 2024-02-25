@@ -62,6 +62,11 @@
             </div>
 
             <div class="fundraiser-right">
+            <div class="fundraiser-progress-bar-container">
+                <div class="fundraiser-progress-bar">
+                    <div class="fundraiser-progress" style="width: <?php echo $data['fundraiser'][0]->progress . '%' ?>"></div>
+                </div>
+                </div>
                 <div class="fundraiser-amount">
                     <p class="text-2">
                         <?php echo $data['fundraiser'][0]->amount_collected; ?>
@@ -70,9 +75,8 @@
                         <?php echo $data['fundraiser'][0]->amount; ?>
                     </p>
                 </div>
-                <div class="fundraiser-progress-bar">
-                    Progress bar
-                </div>
+                
+                
                 <div class="fundraiser-button-list">
                     <button class="main-color-button">
                         Donate

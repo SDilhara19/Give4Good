@@ -30,4 +30,12 @@ function redirect($location){
     header("location: ".$location);
     exit();
 }
-?>
+
+function isloggedIn(){
+    if (isset($_SESSION['userId'])){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

@@ -46,9 +46,11 @@
             <p class="text-1">
               <?php echo $fundraiser->title; ?>
             </p>
-            <div class="progress-bar text-4">
-              progress-bar
-            </div>
+            <div class="fundraiser-small-progress-bar-container">
+                <div class="fundraiser-small-progress-bar">
+                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%;' ?> "></div>
+                </div>
+                </div>
             <p class="text-1">
               <?php echo "Rs. " . $fundraiser->amount . " raised"; ?>
             </p>
