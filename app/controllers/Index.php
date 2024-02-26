@@ -10,7 +10,24 @@ class Index extends controller
 
 
     public function index(){
-      $data= $this->IndexModel->getAllFundriasers();
+      try{
+        $data[0]= $this->IndexModel->getAllFundriasers();
+      $data[1]= $this->IndexModel->getAllStories();
+
+      foreach ($data[0] as $fundraiser){
+        $progress = $fundraiser->amount_collected;
+        $total = $fundraiser->amount;
+        $fundraiser->progress = ($progress/$total)*100;
+
+      }
+      
       $this->view('Index/V_Index', $data);
+      }
+      catch (PDOException $e) {
+    
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+      
   }
 }

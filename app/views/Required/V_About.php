@@ -16,7 +16,8 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/side-dash.php' ?>
+<?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/side-bar.php' ?>
 
 <!-- <?php //require APPROOT . '/views/includes/header.php' ?> 
 <?php //require APPROOT . '/views/includes/side-dash.php' ?>       
@@ -24,5 +25,7 @@
         <h1>About Page</h1>
     </main>
 <?php //require APPROOT . '/views/includes/footer.php' ?>  -->
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 </html>       
