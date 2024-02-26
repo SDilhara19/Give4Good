@@ -2,38 +2,51 @@
 class Admin_Organisation extends controller
 {
     // private $prototypeModel;
-    // public function __construct()
-    // {
-    //     $this->prototypeModel = $this->model('M_model')
-  
-    //}
+    public function __construct()
+    {
+        // $this->prototypeModel = $this->model('M_model');
+        $this->checkAdminLogin();
 
+    }
 
-    public function index(){
+    private function checkAdminLogin()
+    {
+        if (!isloggedIn() || (isset($_SESSION['userType']) && $_SESSION['userType'] !== 'admin')) {
+            logOut();
+            redirect(URLROOT . '/Admin_Login');
+        }
+    }
+
+    public function index()
+    {
 
         $this->view('Admin_Organisation/V_All_Super');
 
-  }
+    }
 
-  public function pending(){
+    public function pending()
+    {
 
-    $this->view('Admin_Organisation/V_Pending_Super');
+        $this->view('Admin_Organisation/V_Pending_Super');
 
-}
-public function active(){
+    }
+    public function active()
+    {
 
-    $this->view('Admin_Organisation/V_Act_Super');
+        $this->view('Admin_Organisation/V_Act_Super');
 
-}
-public function deactive(){
+    }
+    public function deactive()
+    {
 
-    $this->view('Admin_Organisation/V_Deact_Super');
+        $this->view('Admin_Organisation/V_Deact_Super');
 
-}
-public function donor(){
+    }
+    public function donor()
+    {
 
-    $this->view('Admin_Organisation/V_Donor');
+        $this->view('Admin_Organisation/V_Donor');
 
-}
+    }
 }
 ?>

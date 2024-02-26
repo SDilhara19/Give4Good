@@ -5,9 +5,17 @@ class Admin_Fundraisers extends controller
     public function __construct()
     {
         $this->AdminFundraisersModel = $this->model('M_Admin_Fundraiser');
+        $this->checkAdminLogin();
   
     }
 
+    private function checkAdminLogin()
+  {
+    if (!isloggedIn() || (isset($_SESSION['userType']) && $_SESSION['userType'] !== 'admin')) {
+        logOut();
+        redirect(URLROOT . '/Admin_Login');
+    }
+  }
 
     public function index(){
 
