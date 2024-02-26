@@ -34,8 +34,12 @@ class M_Story {
 
     public function getAllStories() 
     {
-        $this->db->query('SELECT stories.*, users.username, users.type FROM stories JOIN users ON stories.user_id = users.id
-        WHERE stories.status = "Active";');
+        $this->db->query('SELECT stories.*, users.username, users.type 
+        FROM stories 
+        JOIN users ON stories.user_id = users.id
+        WHERE stories.status = "Active"
+        ORDER BY stories.id DESC;
+        ');
 
         $row = $this->db->resultSet();
 

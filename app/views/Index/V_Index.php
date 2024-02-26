@@ -40,7 +40,7 @@
       <h1>Featured Topics..</h1>
       <div class="home-fundraisers">
         <?php
-        foreach ($data as $fundraiser) {
+        foreach ($data[0] as $fundraiser) {
           ?>
           <article class="home-fundraiser-card"
             onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
@@ -49,9 +49,14 @@
             </div>
             <div class="home-fundraiser-below">
               <div class="fundraiser-donee-name">
+              <?php
+              if ($fundraiser->type == "individual") { ?>
+                <i class="fa-solid fa-user fa-sm text-3"></i>
+              <?php } elseif ($fundraiser->type == "organisation") { ?>
                 <i class="fa-solid fa-building fa-sm text-3"></i>
+              <?php } ?>
                 <p class="text-4">
-                  <?php echo $fundraiser->username; ?>
+                <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
                 </p>
               </div>
               <p class="text-1">
@@ -86,60 +91,33 @@
       <h1>Stories</h1>
 
       <div class="home-stories">
-
-        <article class="home-story-card">
+      <?php
+        foreach ($data[1] as $story) {
+          ?>
+        <article class="home-story-card"onclick="window.location.href = href='<?php echo URLROOT ?>/Stories/Index#<?php echo $story->id; ?>'" >
           <div class="home-story-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
+            <img src="<?php echo URLROOT . $story->image; ?>" alt="">
           </div>
           <div class="home-story-below">
             <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">LEO Club UOC</p>
+            <?php
+              if ($story->type == "individual") { ?>
+                <i class="fa-solid fa-user fa-sm text-3"></i>
+              <?php } elseif ($story->type == "organisation") { ?>
+                <i class="fa-solid fa-building fa-sm text-3"></i>
+              <?php } ?>
+              <p class="text-4">
+    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+
+              </p>
             </div>
-            <p class="text-1">Aarogya 6.0</p>
+            <p class="text-1"><?php echo $story->title; ?></p>
           </div>
         </article>
-        <article class="home-story-card">
-          <div class="home-story-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story2.png" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">John Dave</p>
-            </div>
-            <p class="text-1">In need of a O+ kidney</p>
-          </div>
-        </article>
-        <article class="home-story-card">
-          <div class="home-story-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story3.jpeg" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">LEO Club UOC</p>
-            </div>
-            <p class="text-1">Sahurda Wiyamana</p>
-          </div>
-
-
-
-
-        </article>
-        <article class="home-story-card">
-          <div class="home-story-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story4.jpeg" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">LEO Club UOC</p>
-            </div>
-            <p class="text-1">Nisagini 6.0</p>
-          </div>
-
-        </article>
+        <?php
+        }
+        ?>
+      
 
       </div>
 

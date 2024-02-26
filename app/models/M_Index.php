@@ -30,7 +30,39 @@ class M_Index {
             return false;
         }
     }
+
+    public function getAllStories() 
+    {
+        try{
+            $this->db->query('SELECT stories.*, users.username, users.type 
+            FROM stories 
+            JOIN users ON stories.user_id = users.id
+            WHERE stories.status = "Active"
+            ORDER BY stories.id DESC
+            LIMIT 4;
+            
+            ');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+    catch (PDOException $e) {
+    
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+        
+
+    }
 }
+
+
 
 
 
