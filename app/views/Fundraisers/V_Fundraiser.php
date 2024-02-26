@@ -78,7 +78,8 @@
                 
                 
                 <div class="fundraiser-button-list">
-                    <button class="main-color-button">
+                
+                    <button onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/pay/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'" class="main-color-button">
                         Donate
                     </button>
 
@@ -123,265 +124,20 @@
                 </div>
             </div>
         </div>
-        <div class="all-merchs" id="all-merchs">
-            <h2>Buy and Help</h2>
-            <div class="fundraiser-merch">
-                <h3>Black short sleeve t-shirt</h3>
-                <div class="fundraiser-merch-container">
-                    <div class="fundraiser-merch-left">
-                        <div class="merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg"
-                                alt="merch-image">
-                        </div>
-                    </div>
-                    <div class="fundraiser-merch-right">
-                        <div class="merch-right-top">
-                            <div class="merch-sizes">
-                                <p class="text-2">Available Sizes:</p>
-                                <div class="merch-sizes-right">
-                                    <p>XS</p>
-                                    <p>S</p>
-                                    <p>M</p>
-                                    <p>L</p>
-                                    <p>XL</p>
-                                    <p>XXL</p>
-                                    <p>XXXL</p>
-                                </div>
-                            </div>
-                            <div class="merch-colors">
-                                <p class="text-2">Available Colours:</p>
-                                <div class="merch-colors-right">
-                                    <p>Red</p>
-                                    <p>Black</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="merch-right-bottom">
-                            <div class="merch-price">
-                                <h1>Rs. 2200.00</h1>
-                                <p class="text-4 color-green">12% of this product is for the fundraiser</p>
-                            </div>
-                            <div class="merch-buy-button">
-                                <button class="main-color-button">
-                                    Buy NOW!
-                                </button>
-                                <p class="text-4 color-red"> Stock not Available</p>
-                            </div>
-                            <div class="merch-description">
-                                <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex
-                                    gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="fundraiser-merch">
-                <h3>Black short sleeve t-shirt</h3>
-                <div class="fundraiser-merch-container">
-                    <div class="fundraiser-merch-left">
-                        <div class="merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/cap .webp" alt="merch-image">
-                        </div>
-                    </div>
-                    <div class="fundraiser-merch-right">
-                        <div class="merch-right-top">
-                            <!-- <div class="merch-sizes">
-                                <p class="text-2">Available Sizes:</p>
-                                <div class="merch-sizes-right">
-                                    <p>XSMall</p>
-                                    <p>Small</p>
-                                    <p>Medium</p>
-                                    <p>L</p>
-                                    <p>XL</p>
-                                    <p>XXL</p>
-                                    <p>XXXL</p>
-                                </div>
-                            </div> -->
-                            <div class="merch-colors">
-                                <p class="text-2">Available Colours:</p>
-                                <div class="merch-colors-right">
-                                    <p>Red</p>
-                                    <p>Black</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="merch-right-bottom">
-                            <div class="merch-price">
-                                <h1>Rs. 1000.00</h1>
-                                <p class="text-4 color-green">15% of this product is for the fundraiser</p>
-                            </div>
-                            <div class="merch-buy-button">
-                                <button class="main-color-button">
-                                    Buy NOW!
-                                </button>
-                                <p class="text-4 color-yellow"> Stock Available</p>
-                            </div>
-                            <div class="merch-description">
-                                <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="donations-we-need" id="donations-we-need">
-            <h1>Donations we need</h1>
-            <div class="material-card-container">
-                <?php
-                foreach ($data['materials'] as $material) { ?>
-                    <div class="material-card">
-                        <div class="material-img-container">
-                            <img src="<?php echo URLROOT . $material->image; ?>">
-                            <!-- <p><?php // echo URLROOT . $material->image; ?></p> -->
-                        </div>
-                        <div class="material-card-below">
-                            <p class="text-1">
-                                <?php echo $material->name; ?>
-                            </p>
-                            <button class="button-3 open-material-popup"
-                                data-popup-id="<?php echo $material->material_id; ?>">View Details</button>
-                        </div>
-                    </div>
-                    <dialog class="material-popup" id='material-popup-<?php echo $material->material_id; ?>'>
-                        <span class="close-popup"
-                            id='close-material-popup-<?php echo $material->material_id; ?>'>&times;</span>
-                        <h2>
-                            <?php echo $material->name; ?>
-                        </h2>
-                        <div class="material-popup-container">
-                            <div class="material-popup-left">
-                                <div class="material-popup-img-container">
-                                    <img src="<?php echo URLROOT . $material->image; ?>" alt="">
-                                </div>
-                            </div>
-                            <div class="material-popup-right">
-                                <div>
-                                    <p class="text-2">Description</p>
-                                    <p class="text-3">
-                                        <?php echo $material->description; ?>
-                                    </p>
-                                    <p class="text-2">Number of units required</p>
-                                    <p class="text-3">
-                                        <?php echo $material->units; ?>
-                                    </p>
-                                </div>
-                                <div>
-                                    <p class="text-2">Contact information for more details</p>
-                                    <table class="material-table">
-                                        <tr>
-                                            <th>email</th>
-                                            <td class="text-3">dialog@gmail.com</td>
-                                        </tr>
-                                        <tr>
-                                            <th>phone</th>
-                                            <td class="text-3">+9470 5643233</td>
-                                        </tr>
-                                    </table>
-                                </div>
+        <?php 
+    if (!empty($data['merchandise'])){
+        require_once APPROOT . '/views/fundraisers/merchandise.php';
+    }
+?>
 
 
-                            </div>
-                        </div>
+       <?php 
+    if (!empty($data['materials'])){
+        require_once APPROOT . '/views/fundraisers/material.php';
+    }
+?>
 
-                    </dialog>
-                    <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
-
-                    <script>
-                        setupPopup('.open-material-popup[data-popup-id="<?php echo $material->material_id; ?>"]', '#material-popup-<?php echo $material->material_id; ?>', '#close-material-popup-<?php echo $material->material_id; ?>');
-                    </script>
-                    <?php
-                } ?>
-            </div>
-        </div>
-
-
-
-        <div class="send-donations">
-            <h1>Send Donations</h1>
-            <div class="send-donation-card-container">
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2">Colombo 7</p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3">+9470 3420012</p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2">Colombo 7</p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3">+9470 3420012</p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2">Colombo 7</p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3">+9470 3420012</p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2">Colombo 7</p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3">+9470 3420012</p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
+      
 
     </main>
     <?php require APPROOT . '/views/includes/footer.php' ?>
