@@ -27,9 +27,9 @@
                     </div>
                     <div class="form-progress-bar">
                         <div class="progress-step">
-                            <div class="progress active"></div>
-                            <div class="progress-mark active"></div>
-                            <p class="progress-text active">Bank Details</p>
+                            <div class="progress"></div>
+                            <div class="progress-mark"></div>
+                            <p class="progress-text">Bank Details</p>
                         </div>
                         <div class="progress-step">
                             <div class="progress"></div>
@@ -339,7 +339,7 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
                                         <div class="js-prev" onclick="prevStep()">Previous</div>
-                                        <button class="js-next" type="submit">Submit</button>
+                                        <button class="js-next" onclick="nextStep(3)" type="submit" >Submit</button>
                                     </div>
                                 </div>
                             </fieldset>

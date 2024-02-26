@@ -49,7 +49,7 @@
   overflow: hidden;
   width: 800px;
   display: flex;
-  height: 600px;
+  height: 620px;
   min-height: 580px;
   padding: 0;
   
@@ -167,8 +167,9 @@ fieldset{
   right: 30px;
 }
 
-.progress.active{
+.progress-step.active .progress{
   display: block;
+  animation: slideFromTop .5s ease-in-out;
 }
 
 .progress-mark{
@@ -181,7 +182,7 @@ fieldset{
   bottom: -25px;
 }
 
-.progress-mark.active{
+.progress-step.active .progress-mark{
   background-color: var(--new-blue);
 }
 
@@ -189,7 +190,7 @@ fieldset{
   display: none;
 }
 
-.progress-text.active{
+.progress-step.active .progress-text{
   display: block;
 }
 
@@ -303,10 +304,7 @@ textarea:focus, .input:focus {
   border: 1.5px solid var(--primary-color);
   outline: none;
 }
-input[type="date"] {
-  color: #999; /* Set the color you desire */
-  opacity: 0.7; /* Set the opacity level you desire */
-}
+
 /* input.invalid {
   border-color: #900;
   background-color: #fdd;
@@ -513,11 +511,12 @@ textarea{
   height: 100%;
   width: 100%;
   margin: auto;
+  overflow: hidden;
 }
 
 .super-signup-profile-image img{
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -583,7 +582,7 @@ textarea{
   padding: 0;
   margin: 0;
   border-radius: 5px;
-}
+  }
 
 .nic-form-image-container img{
   width: 100%;

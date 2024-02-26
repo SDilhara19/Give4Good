@@ -1,7 +1,9 @@
 let currentStep = 1;
 
-function nextStep(){
-    if (currentStep < 3){
+
+
+function nextStep(noOfSteps){
+    if (currentStep < noOfSteps){
         currentStep++;
         updateStep();
     }
