@@ -127,5 +127,38 @@ class M_Fundraiser {
             return "Error" . $e->getMessage();
         }
     }
+
+    function updateViews($newViews, $fundraiserId){
+        try{
+            $this->db->query("UPDATE fundraiser SET view_counts = :view_counts WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':view_counts', $newViews);
+            $this->db->bind(':fundraiser_id', $fundraiserId);
+
+    return $this->db->execute();
+        }
+        catch(Exception $e){
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    function payForm($id){
+        try{
+            $this->db->query("SELECT fundraiser.fundraiser_id, fundraiser.title, users.username, users.id FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+            $row = $this->db->resultSet();
+    
+            //Check row
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+            }
+            catch(Exception $e)
+            {
+                return "Error" . $e->getMessage();
+            }
+    }
 }
 

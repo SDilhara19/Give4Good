@@ -254,9 +254,18 @@ h1, h2, h3{
 .text-6{
   margin:0;
   color:#bcbdbe;
-  font-weight: 500;
+  font-weight: 500; 
+}
 
-  
+.text-7{
+  margin:0;
+  color:#bcbdbe;
+}
+
+.text-8{
+  margin:0;
+  color:#bcbdbe; 
+  font-size: 0.75rem;
 }
 
 
