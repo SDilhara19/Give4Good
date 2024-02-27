@@ -1,5 +1,5 @@
 <?php
-class SignupInd extends controller
+class Profile extends controller
 {
     // private $prototypeModel;
     // public function __construct()
@@ -11,7 +11,6 @@ class SignupInd extends controller
 
     public function index(){
 
-        $this->view('Logins/V_IndSignup');
+        $this->view('Profiles/V_Profile');
   }
 }
-?>

@@ -7,7 +7,7 @@ class Admin_Login extends controller
   private $UserModel;
   public function __construct()
   {
-    $this->UserModel = $this->model('M_User');
+    $this->UserModel = $this->model('M_user');
 
   }
 
@@ -58,6 +58,8 @@ class Admin_Login extends controller
     $_SESSION['userEmail'] = $user->email;
     $_SESSION['userType'] = $user->type;
     $_SESSION['userStatus'] = $user->status;
+    $_SESSION['userImage'] = $user->profile_image;
+    $_SESSION['last_activity'] = time();
 
 
     redirect(URLROOT . '/Admin');
@@ -70,6 +72,8 @@ public function logout(){
     unset($_SESSION['userEmail']);
     unset ($_SESSION['userType']);        
     unset ($_SESSION['userStatus']);
+    unset($_SESSION['userImage']);
+
     session_destroy();
     redirect(URLROOT . '/Admin_Login');
 }

@@ -1,13 +1,17 @@
 @import url('includes-styles/header-styles.css'); 
 @import url('includes-styles/footer.css');
+@import url('includes-styles/side-bar.css');
 @import url('fundraiser.css');
 @import url('forms.css');
 @import url('index.css'); 
 @import url('story.css'); 
 @import url('profile.css');
+@import url('signup.css');
+@import url('admin.css');
+@import url('category.css');
+@import url('fundraiser-forms.css');
+@import url('user-select.css');
 /* @import url('components/Admin_style.css'); */
-/* @import url('components/login-styles.css'); */
-/* @import url('components/signup-styles.css'); */
 /* @import url('components/form-styles.css'); */
 /* @import url('components/paymentStyles.css'); */
 
@@ -21,15 +25,17 @@
   font-weight: 400;
 
   /* colous */
-  --primary-color: #4EB790;
+  --primary-color: #36CF97;
   --secondary-color: #CFF5E7;
+  --tertiary-color: #daf2e9;
   --dark-green: #0E6F4B;
   --black-sub: #2E353E;
   --white-color: #FFFFFF;
   --red-color: #FC0606;
   --grey-color: #6E7175;
-  --yellow-color: #D09705;
+  --yellow-color: #E9AB0E;
 
+  --border-grey: #e1e4e8;
   --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
 
@@ -52,6 +58,147 @@ body {
   font-style: normal;
 }
 
+* {
+  /* colours */
+  --primary-color: #4EB790;
+  --secondary-color: #CFF5E7;
+  --dark-green: #0E6F4B;
+  --black-sub: #2E353E;
+  --white-color: #FFFFFF;
+  --red-color: #FC0606;
+  --grey-color: #6E7175;
+  --yellow-color: #D09705;
+  --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+
+  /* text colors */
+  --text-color: #2E353E;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+
+
+a:hover{
+  cursor: pointer;
+}
+
+
+
+.flx-2{
+  flex: 2;
+}
+
+.flx-1{
+  flex: 1;
+}
+
+.flx-dir-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flx-dir-row{
+  display: flex;
+  flex-direction: row;
+}
+.home-side-bar-main{
+  position: fixed;
+  top: 70px;
+  left: -250px;
+  height: calc(100vh - 70px);
+  width: 80px;
+  background-color: var(--white-color);
+  padding: 0.4rem 0 0.4rem 0;
+  transition: left 0.5s ease;
+  z-index: 2000;
+  border-radius:  0 0 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* .side-bar-main.active ~ main{
+  left: 250px;
+  width: calc(100% - 250px);
+} */
+
+.home-side-bar-main.active{
+width: 250px;
+left: 0;
+}
+
+
+
+/* .user-img-side-bar{
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid #eee;
+} */
+
+
+.home-side-bar-main ul li {
+  /* gap: 1rem; */
+   display: flex;
+  align-items:center; 
+  padding: 0.6rem;
+  width: 100%;
+
+}
+
+.home-side-bar-main ul li:hover{
+  background: var(--black-sub);
+  color: var(--secondary-color);
+  border-radius: 0 10px 10px 0;
+  
+}
+
+.home-side-bar-main ul li i{
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+
+}
+
+.home-side-bar-main ul li:last-child {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+.side-fundraiser-categories{
+  margin-left: 2.5rem;
+  display: none;
+}
+
+
+
+.side-fundraiser-categories ul li:last-child{
+  position: relative;
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li {
+  padding: 0.5rem;
+  /* width: 100%; */
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li:hover{
+  background: var(--border-grey);
+  color: var(--secondary-color);
+  border-radius: 10px;
+  
+}
+
+.home-side-bar-main .side-fundraiser-categories ul li i{
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+
+}
 main{
   margin-top: 115px;
   margin-left: 6rem;
@@ -98,6 +245,42 @@ h1, h2, h3{
   color: var(--grey-color);
 }
 
+.text-5{
+  margin:0;
+  font-size: 0.75rem;
+  color: var(--black-sub);
+}
+
+.text-6{
+  margin:0;
+  color:#bcbdbe;
+  font-weight: 500; 
+}
+
+.text-7{
+  margin:0;
+  color:#bcbdbe;
+}
+
+.text-8{
+  margin:0;
+  color:#bcbdbe; 
+  font-size: 0.75rem;
+}
+
+
+
+.text-info-div{
+  color: var(--grey-color);
+  /* display: inline-block; */
+}
+
+.text-info{
+  display: inline-block;
+  font-size: 0.65rem;
+  color: var(--grey-color);
+}
+
 .color-red{
   color: var(--red-color);
 }
@@ -128,6 +311,12 @@ h1, h2, h3{
   color: var(--black-sub);
 }
 
+.main-color-button:hover, .main-dark-button:hover, .main-white-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
 .main-button, .secondary-button, .button-3{
   margin: 10px;
   width: 8rem;
@@ -137,7 +326,7 @@ h1, h2, h3{
 }
 
 .main-button, .button-submit{
-  background: var(--primary-color);
+  background: #36CF97;
   border: none;
   color: var(--white-color);
   height: 2rem;
@@ -168,7 +357,13 @@ h1, h2, h3{
  letter-spacing: 0.02rem;
 }
 
+.button-submit:hover{
+  color: var(--black-sub)
+}
 
+.margin-top{
+  margin-top: 0;
+}
 .main-color-button, .main-dark-button, .main-white-button{
   font: var(--large-font-size);
   font-weight: 700;
@@ -197,6 +392,73 @@ h1, h2, h3{
   letter-spacing: 1px;
 
 }
+
+/* popup-css */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.popup{
+  margin: auto;
+  width: 60vw;
+  height: 60vh;
+  padding-bottom: 6rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+}
+.popup-container{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+
+.popup::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
+
+
+/* popup-2 */
+.close-popup-2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup-2{
+  margin: auto;
+  width: 40vw;
+  height: 36vw;
+  padding-bottom: 6rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+}
+.popup-2-container{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+
+.popup-2::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
+/* popup-css-end */
 
 @media (max-width: 992px){
   main{

@@ -11,188 +11,130 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
-  
-<?php require APPROOT . '/views/includes/header.php' ?>
 
-<main>
-   
+  <?php require APPROOT . '/views/includes/header.php' ?>
+  <div class="under-header">
+    <?php require APPROOT . '/views/includes/side-bar.php' ?>
 
-    <div class="home-box">
-      <div class="left-home-box">
-        <p class="large-text">Join Us</p>
-        <p class="medium-text">To make a</p>
-        <p class="xlarge-text">Better World</p>
-        <button class="highlighted-button" onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/fundraiser'">Donate Now!</button>
-      </div>
-      <div class="right-home-box">
-        <img src="public/Assets/images/child.jpg" alt="img">
-      </div>
+    <main>
 
-    </div>
-    <h1>Featured Topics..</h1>
-    <div class="home-fundraisers">
-      <article class="home-fundraiser-card" onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser'">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+
+      <div class="home-box">
+        <div class="left-home-box">
+          <p class="large-text">Join Us</p>
+          <p class="medium-text">To make a</p>
+          <p class="xlarge-text">Better World</p>
+          <button class="highlighted-button"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser'">Donate Now!</button>
         </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
+        <div class="right-home-box">
+          <img src="public/Assets/images/child.jpg" alt="img">
         </div>
+
+      </div>
+      <h1>Featured Topics..</h1>
+      <div class="home-fundraisers">
+        <?php
+        foreach ($data[0] as $fundraiser) {
+          ?>
+          <article class="home-fundraiser-card"
+            onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
+            <div class="home-fundraiser-img">
+              <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+            </div>
+            <div class="home-fundraiser-below">
+              <div class="fundraiser-donee-name">
+              <?php
+              if ($fundraiser->type == "individual") { ?>
+                <i class="fa-solid fa-user fa-sm text-3"></i>
+              <?php } elseif ($fundraiser->type == "organisation") { ?>
+                <i class="fa-solid fa-building fa-sm text-3"></i>
+              <?php } ?>
+                <p class="text-4">
+                <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
+                </p>
+              </div>
+              <p class="text-1">
+                <?php echo $fundraiser->title; ?>
+              </p>
+              <div class="fundraiser-small-progress-bar-container">
+                <div class="fundraiser-small-progress-bar">
+                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> "> </div>
+                </div>
+                </div>
+              <p class="text-1">Rs.
+                <?php echo $fundraiser->amount; ?> raised
+              </p>
+            </div>
+
+
+
+
+          </article>
 
         
-       
+          <?php
+        }
+        ?>
+      </div>
 
-      </article>
- 
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-    </div>
+      <div class="more-button">
+        <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/fundraiser'"> More>>
+        </button>
+      </div>
 
-    <div class="more-button">
-      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/fundraiser'"> More>> </button>
-    </div>
+      <h1>Stories</h1>
 
-    <h1>Stories</h1>
+      <div class="home-stories">
+      <?php
+        foreach ($data[1] as $story) {
+          ?>
+        <article class="home-story-card"onclick="window.location.href = href='<?php echo URLROOT ?>/Stories/Index#<?php echo $story->id; ?>'" >
+          <div class="home-story-img">
+            <img src="<?php echo URLROOT . $story->image; ?>" alt="">
+          </div>
+          <div class="home-story-below">
+            <div class="fundraiser-donee-name">
+            <?php
+              if ($story->type == "individual") { ?>
+                <i class="fa-solid fa-user fa-sm text-3"></i>
+              <?php } elseif ($story->type == "organisation") { ?>
+                <i class="fa-solid fa-building fa-sm text-3"></i>
+              <?php } ?>
+              <p class="text-4">
+    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
 
-    <div class="home-stories">
+              </p>
+            </div>
+            <p class="text-1"><?php echo $story->title; ?></p>
+          </div>
+        </article>
+        <?php
+        }
+        ?>
       
-      <article class="home-story-card">
-        <div class="home-story-img">
-        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
-        </div>
-        <div class="home-story-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">LEO Club UOC</p>
-          </div>
-          <p class="text-1">Aarogya 6.0</p>
-        </div>
-        </article>
-        <article class="home-story-card">
-          <div class="home-story-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story2.png" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">John Dave</p>
-            </div>
-            <p class="text-1">In need of a O+ kidney</p>
-          </div>
-        </article>
-        <article class="home-story-card">
-          <div class="home-story-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story3.jpeg" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-              <i class="fa-solid fa-building fa-sm text-3"></i>
-              <p class="text-4">LEO Club UOC</p>
-            </div>
-            <p class="text-1">Sahurda Wiyamana</p>
-          </div>
-  
-          
-         
-  
-        </article>
-        <article class="home-story-card">
-        <div class="home-story-img">
-        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story4.jpeg" alt="">
-        </div>
-        <div class="home-story-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">LEO Club UOC</p>
-          </div>
-          <p class="text-1">Nisagini 6.0</p>
-</div>
 
-      </article>
-    
-    </div>
+      </div>
 
-    <div class="more-button">
-      <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Stories'">More>></button>
-    </div>
+      <div class="more-button">
+        <button class="main-color-button"
+          onclick="window.location.href = '<?php echo URLROOT ?>/Stories'">More>></button>
+      </div>
 
-  </main>
+    </main>
+
+  </div>
 
 
 
-  <?php require APPROOT . '/views/includes/footer.php' ?>       
+  <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
-</html>              
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
+
+</html>

@@ -7,7 +7,7 @@ class Users extends controller
   private $UserModel;
   public function __construct()
   {
-    $this->UserModel = $this->model('M_User');
+    $this->UserModel = $this->model('M_user');
 
   }
 
@@ -24,6 +24,7 @@ class Users extends controller
 
   public function select()
 {
+  // $this->view('Logins/V_Signup');
   $this->view('Users/V_Select_User');
 }
 
@@ -62,10 +63,11 @@ class Users extends controller
     $_SESSION['userEmail'] = $user->email;
     $_SESSION['userType'] = $user->type;
     $_SESSION['userStatus'] = $user->status;
+    $_SESSION['userImage'] = URLROOT . $user->profile_image;
 
-    if ($_SESSION['userType'] == "admin"){
-      redirect(URLROOT . '/Index');
-    }
+    // if ($_SESSION['userType'] == "admin"){
+    //   redirect(URLROOT . '/Admin');
+    // }
     redirect(URLROOT . '/Index');
 
 }
@@ -76,6 +78,8 @@ public function logout(){
     unset($_SESSION['userEmail']);
     unset ($_SESSION['userType']);        
     unset ($_SESSION['userStatus']);
+    unset ($_SESSION['userImage']);
+
     session_destroy();
     redirect(URLROOT . '/Index');
 }

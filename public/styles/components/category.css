@@ -1,0 +1,139 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+
+* {
+    /* colours */
+    --primary-color: #4EB790;
+    --secondary-color: #CFF5E7;
+    --dark-green: #0E6F4B;
+    --black-sub: #2E353E;
+    --white-color: #FFFFFF;
+    --red-color: #FC0606;
+    --grey-color: #6E7175;
+    --border-grey: #e1e4e8;;
+    --yellow-color: #E9AB0E;
+    --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+    --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+
+    /* text colors */
+    --text-color: #2E353E;
+}
+
+.category-row-1, .category-row-2{
+  width: 70vw;
+  margin: auto;
+
+}
+
+.category-row-2{
+    padding-left: 3rem;
+}
+
+.category-row-1{
+    padding-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+.category-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 5rem;
+
+}
+
+.category{
+    height: 12vw;
+    width: 12vw;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+
+
+.category img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+
+}
+
+.category:hover {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+    transform: scale(1.1);
+
+}
+
+@media (max-width: 992px) {
+
+    .category-row-1, .category-row-2{
+        width: 80vw;
+        margin: auto;
+      
+      }
+      
+      .category-row-2{
+          padding-left: 1rem;
+      }
+      
+      .category-row-1{
+          padding-right: 1rem;
+          margin-bottom: 3rem;
+      }
+      
+      .category-row{
+          display: grid;
+          grid-template-columns: repeat(3, 1fr) auto;
+          gap: 5rem;
+      
+      }
+      .category{
+        height: 15vw;
+        width: 15vw;
+
+      }
+
+
+}
+
+@media (max-width: 576px) {
+
+        .category-row-1, .category-row-2{
+            width: 80vw;
+            margin: auto;
+          
+          }
+          
+          .category-row-2{
+              padding-left: 0;
+          }
+          
+          .category-row-1{
+              padding-right: 0;
+              margin-bottom: 3rem;
+          }
+          
+          .category-row{
+              display: grid;
+              grid-template-columns: repeat(1, 1fr) auto;
+              gap: 3rem;
+          
+          }
+          .category{
+            height: 25vw;
+            width: 25vw;
+    
+          }
+    }
+    

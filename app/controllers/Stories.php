@@ -32,6 +32,7 @@ class Stories extends controller
   private function process_story()
   {
     $obj = new Validation($_POST);
+    $obj->data['user_id'] = $_SESSION['userId'];
     $obj->validate('story_title', ['EMPTY']);
     $obj->validate('story_description', ['EMPTY']);
     // $obj->validate('story_image', ['EMPTY']);
@@ -39,54 +40,26 @@ class Stories extends controller
       $obj->validate('phone', ['EMPTY']);
       $obj->validate('email', ['EMPTY', 'EMAIL']);
     }
+    
 
-    if (!($_FILES['story_image']['error'] == UPLOAD_ERR_OK)) {
-      $obj->data['story_image_err'] = 'Upload image';
-      $obj->flag = 1;
-    }
 
-    // $obj->imageUpload('../public/Assets/Uploaded-Images/Stories/', $_FILES['story_image']['tmp_name'], $_FILES['story_image']['name'], $_SESSION['userId'], $obj->data['story_title'], $obj->data['story_image'], 'story_image');
-
+    $obj->imageUpload('Stories', $_FILES['story_image'], $obj->data['story_title'], 'story_image');
+    
 
     if ($obj->flag == 1) {
       $this->view('Stories/V_Add', $obj->data);
-      // var_dump($_POST);  
+       
     } else {
-      // var_dump($_POST); 
-      $obj->data['user_id'] = $_SESSION['userId'];
-      // var_dump($obj->data);
-
-      $uploadDir = '../public/Assets/Uploaded-Images/Stories/';
-
-      $uploadedFile = $_FILES['story_image']['tmp_name'];
-      $uploadedFileName = $_FILES['story_image']['name'];
-
-      $fileExtension = pathinfo($uploadedFileName, PATHINFO_EXTENSION);
-      $newFileName = $obj->data['user_id'] . '_' . $obj->data['story_title'] . '.' . $fileExtension;
-      $obj->data['story_image'] = $uploadDir . $newFileName;
-
-      if (move_uploaded_file($uploadedFile, $obj->data['story_image'])) {
-
-        if ($this->StoryModel->pendingStory($obj->data)) {
-          redirect(URLROOT . '/Index');
-        } else {
-          die("Something went wrong");
+      if ($this->StoryModel->pendingStory($obj->data)) {
+            redirect(URLROOT . '/Index');
+          } else {
+            die("Something went wrong");
+          }
+      
         }
-
-      } else {
-        // Handle file upload error
-        if (!is_dir($uploadDir)) {
-          echo "Error: The upload directory does not exist.";
-        } elseif (!is_writable($uploadDir)) {
-          echo "Error: The upload directory is not writable.";
-        } else {
-          echo "File upload failed!";
-        }
-      }
 
 
     }
 
   }
-}
-?>
+

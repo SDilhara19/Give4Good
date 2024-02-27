@@ -11,11 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
     <?php require APPROOT . '/views/includes/header.php' ?>
+    <?php require APPROOT . '/views/includes/side-bar.php' ?>
 
     <main>
         <div class="form-container">
@@ -35,13 +37,13 @@
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="form_image">
 
                     <div class="form-image-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/ tshirt.jpeg" alt="image here">
+                        <img src="https://placehold.co/600x70?text=Upload+Image" alt="image here">
                     </div>
                     <span class="form-invalid"><?php if(!empty($data['story_image_err']))echo $data['story_image_err']; ?></span>
 
                     <div class="form-input-title">DESCRIPTION<span class="required">*</span></div>
                     <textarea name="story_description" id="story_description" class="story_description" rows="3"
-                        maxlength="700" placeholder="Description to be displayed"></textarea>
+                        maxlength="500" placeholder="Description to be displayed"></textarea>
                     <span class="form-invalid"><?php if(!empty($data['story_description_err']))echo $data['story_description_err']; ?></span>
 
 
@@ -93,7 +95,11 @@
 
     <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/toggleFormPart.js"></script>
+    <script>setupImagePreview("#form_image", ".form-image-container img");</script>
+
     <?php require APPROOT . '/views/includes/footer.php' ?>
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 
 </html>
