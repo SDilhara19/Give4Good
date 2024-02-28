@@ -43,7 +43,7 @@
                 <span class="nav-item-side-bar">Merchandise</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-        <li onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/start'">
+        <li onclick="window.location.href = '<?php echo URLROOT ?>/Fundraisersuper/'">
             <i class='bx bxs-caret-up-square bx-sm' onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/start'"></i>
                 <span class="nav-item-side-bar">Start Fundraising</span>
             <!-- <span class="tooltip">Create a story</span> -->

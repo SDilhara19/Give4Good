@@ -46,11 +46,7 @@ class Fundraiser extends controller
         }
     }
 
-    public function start()
-    {
-
-        $this->view('Fundraisers/V_Start');
-    }
+  
 
     private function paymentHash()
     {

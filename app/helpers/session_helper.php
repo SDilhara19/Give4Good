@@ -39,3 +39,17 @@ function isloggedIn(){
         return false;
     }
 }
+
+function logOut(){
+    if (isset($_SESSION['userId'])){
+        unset($_SESSION['userId']);
+            unset($_SESSION['userName']);
+            unset($_SESSION['userEmail']);
+            unset($_SESSION['userType']);
+            unset($_SESSION['userStatus']);
+            session_unset();
+            session_destroy();
+    }
+    
+}
+

@@ -8,8 +8,8 @@ class M_Index {
 
     public function getAllFundriasers() 
     {
-        $this->db->query('SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id;
-        ');
+        $this->db->query('SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id
+        WHERE fundraiser.status = "Active";');
 
         $row = $this->db->resultSet();
 
