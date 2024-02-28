@@ -89,57 +89,9 @@ public function viewActive(){
         } else {
             return false;
         }
-
-    
         
     }
 
-    public function activateStory($id){
-        $this->db->query('UPDATE fundraiser SET status = "Active" 
-        WHERE id = :id;');
-
-        $this->db->bind(':id', $id);
-
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function deactivateStory($id){
-        $this->db->query('UPDATE fundraiser SET status = "Deactive" 
-        WHERE id = :id;');
-
-        $this->db->bind(':id', $id);
-
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-
-    public function activateFundraiser($id){
-       try{
-        $this->db->query('UPDATE fundraiser SET status = "Active" 
-        WHERE fundraiser_id = :id;');
-
-        $this->db->bind(':id', $id);
-
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-       } 
-       catch(Exception $e)
-       {
-           return "Error" . $e->getMessage();
-       }
-       
-    }
   //  public function viewMerch(){
 
   //  }
