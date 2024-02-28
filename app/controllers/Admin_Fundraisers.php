@@ -25,16 +25,16 @@ class Admin_Fundraisers extends controller
     }
 
     public function active(){
-        // $data = $this->AdminFundraisersModel -> viewActive();
+        $data = $this->AdminFundraisersModel -> viewActive();
 
 
-        $this->view('Admin_Fundraisers/V_Active');
+        $this->view('Admin_Fundraisers/V_Active', $data);
     }
 
     public function deactive(){
-        // $data = $this->AdminFundraisersModel -> viewDeactivated();
+        $data = $this->AdminFundraisersModel -> viewDeactivated();
 
-        $this->view('Admin_Fundraisers/V_Deact');
+        $this->view('Admin_Fundraisers/V_Deact',$data);
     }
 
     public function pending(){
@@ -43,6 +43,26 @@ class Admin_Fundraisers extends controller
 
         $this->view('Admin_Fundraisers/V_Pending', $data);
     }
+
+    public function setDeactive($id){
+        if($this->AdminFundraisersModel -> deactivateStory($id)){
+          echo '<script>alert("Story deactivated successfully!");</script>';
+        } else {
+          // Deactivation failed, handle the error
+          echo '<script>alert("Error deactivating the story.");</script>';
+        }
+        redirect(URLROOT . '/Admin_Fundraiser/index');
+     }
+ 
+     public function setActive($id){
+        if($this->AdminFundraisersModel -> activateStory($id)){
+          echo '<script>alert("Story activated successfully!");</script>';
+        } else {
+          // Deactivation failed, handle the error
+          echo '<script>alert("Error activating the story.");</script>';
+        }
+        redirect(URLROOT . '/Admin_Fundraiser/index');
+     }
 
     public function merchandise(){
 
