@@ -92,7 +92,7 @@ public function viewActive(){
         
     }
 
-    public function activateStoryFundraiser($id){
+    public function activateFundraiser($id){
         $this->db->query('UPDATE fundraiser SET status = "Active" 
         WHERE id = :id;');
 
