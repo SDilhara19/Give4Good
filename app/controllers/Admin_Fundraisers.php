@@ -39,9 +39,9 @@ class Admin_Fundraisers extends controller
 
     public function pending(){
 
-        // $data = $this->AdminFundraisersModel -> viewPending();
+        $data = $this->AdminFundraisersModel -> viewPending();
 
-        $this->view('Admin_Fundraisers/V_Pending');
+        $this->view('Admin_Fundraisers/V_Pending', $data);
     }
 
     public function merchandise(){
@@ -64,5 +64,19 @@ class Admin_Fundraisers extends controller
 
         $this->view('Admin_Fundraisers/V_Fundraiser-document');
     }
+
+
+
+public function setActive($id){
+
+    if($this->AdminFundraisersModel -> activateFundraiser($id)){
+      echo '<script>alert("Story activated successfully!");</script>';
+    } else {
+      // Deactivation failed, handle the error
+      echo '<script>alert("Error activating the story.");</script>';
+     
+    }
+    // var_dump($id);
+    redirect(URLROOT . '/Admin_Fundraisers/index');
+ }
 }
-?>
