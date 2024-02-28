@@ -1,5 +1,5 @@
 <?php
-class Profile extends controller
+class Profile_org extends controller
 {
     // private $prototypeModel;
     // public function __construct()
