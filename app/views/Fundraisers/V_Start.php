@@ -35,7 +35,7 @@
             <div class="progress-step-hori">
               <div class="progress-hori"></div>
               <div class="progress-mark-hori"></div>
-              <p class="progress-text-hori">Bank Details</p>
+              <p class="progress-text-hori">Residential Details</p>
             </div>
             <div class="progress-step-hori">
               <div class="progress-hori"></div>
@@ -50,7 +50,7 @@
       </div>
       <div class="fundraiser-form">
         <form action="" method="post" enctype="multipart/form-data">
-          <fieldset>
+          <fieldset class="">
             <div class="form-set">
               <p class="text-6">Fundraiser Info</p>
               <div class="form-row">
@@ -58,9 +58,8 @@
                 </div>
                 <input type="text" name="title" id="title" class="input" placeholder="">
                 <span class="form-invalid">
-                  <?php // if (!empty($data['fullname_err']))
-                  // echo $data['fullname_err'];          ?>
-                  Required field
+                  <?php if (!empty($data['title_err']))
+                  echo $data['title_err'];?>
                 </span>
               </div>
               <div class="form-row">
@@ -68,7 +67,7 @@
                 <textarea name="fund_story" id="fund_story" class="fund_story" rows="5" maxlength="2000"
                   placeholder=""></textarea>
                 <span class="form-invalid">
-                  <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];          ?>Error
+                  <?php if(!empty($data['fund_story_err']))echo $data['fund_story_err']; ?>
                 </span>
 
               </div>
@@ -78,7 +77,7 @@
                   <img src="<?php echo URLROOT ?>/public/Assets/images/heart.png" alt="">
                 </div>
                 <span class="form-invalid">
-                  <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];          ?>Error
+                  <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];              ?>Error
                 </span>
 
               </div>
@@ -88,9 +87,9 @@
                   </div>
                   <input type="text" name="amount" id="amount" class="input" placeholder="">
                   <span class="form-invalid">
-                    <?php // if (!empty($data['amount_err']))
-                    // echo $data['amount_err'];          ?>
-                    Required field
+                    <?php  if (!empty($data['amount_err']))
+                    echo $data['amount_err'];              ?>
+               
                   </span>
                 </div>
                 <div class="flx-1">
@@ -98,11 +97,17 @@
                   </div>
                   <input type="date" name="end_date" id="end_date" class="input">
                   <span class="form-invalid">
-                    <?php // if (!empty($data['end_date_err']))
-                    // echo $data['end_date_err'];          ?>
-                    Required field
+                    <?php  if (!empty($data['end_date_err']))
+                     echo $data['end_date_err'];?>            
                   </span>
                 </div>
+                </div>
+                <div class="form-row form-flex">
+                <div class="form-input-title2">Would you prefer to stay anonymous during the fundraiser</div>
+                <div class="checkbox-wrapper-2">
+                  <input type="checkbox" class="sc-gJwTLC ikxBAC" name="anonymous" id="anonymous" >
+                </div>
+              
               </div>
 
             </div>
@@ -121,7 +126,7 @@
                   <input type="text" name="dependent_name" id="dependent_name" class="input" placeholder="">
                   <span class="form-invalid">
                     <?php // if (!empty($data['dependent_name_err']))
-                    // echo $data['dependent_name_err'];          ?>
+                    // echo $data['dependent_name_err'];              ?>
                     Required field
                   </span>
                 </div>
@@ -131,7 +136,7 @@
                   <input type="text" name="dependent_birthdate" id="dependent_birthdate" class="input" placeholder="">
                   <span class="form-invalid">
                     <?php // if (!empty($data['dependent_birthdate_err']))
-                    // echo $data['dependent_birthdate_err'];          ?>
+                    // echo $data['dependent_birthdate_err'];              ?>
                     Required field
                   </span>
                 </div>
@@ -141,7 +146,7 @@
                   <input type="text" name="relationship" id="relationship" class="input" placeholder="XXXXX">
                   <span class="form-invalid">
                     <?php // if (!empty($data['amount_err']))
-                    // echo $data['amount_err'];          ?>
+                    // echo $data['amount_err'];              ?>
                     Required field
                   </span>
                 </div>
@@ -154,7 +159,7 @@
                     placeholder="">
                   <span class="form-invalid">
                     <?php // if (!empty($data['dependent_edu_ins/work_err']))
-                    // echo $data['dependent_edu_ins/work_err'];         ?>
+                    // echo $data['dependent_edu_ins/work_err'];             ?>
 
                   </span>
                 </div>
@@ -165,7 +170,7 @@
                     class="input" placeholder="">
                   <span class="form-invalid">
                     <?php // if (!empty($data['dependent_edu_ins/work_contact_err']))
-                    // echo $data['dependent_edu_ins/work_contact_err'];         ?>
+                    // echo $data['dependent_edu_ins/work_contact_err'];             ?>
 
                   </span>
                 </div>
@@ -176,7 +181,7 @@
                     <div class="form-input-title">Birth Certificate<span class="required">*</span>
                     </div>
                     <label for="birth_certificate" class="custom-file-input2">
-                      <span>Choose Image</span>
+                      <span>Upload</span>
                       <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
                     </label>
                   </div>
@@ -199,7 +204,7 @@
                   <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
                     placeholder=""></textarea>
                   <span class="form-invalid">
-                    <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];          ?>Error
+                    <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];              ?>Error
                   </span>
 
 
@@ -207,19 +212,167 @@
               </div>
 
             </div>
+            <div class="js-next-prev-button">
+              <div class="js-prev" onclick="prevStep()">Previous</div>
+              <div class="js-next" onclick="nextStep()">Next</div>
+            </div>
           </fieldset>
+          <fieldset class="">
+            <div class="form-set">
+              <div class="form-row">
+                <div class="form-flex img-label">
+                  <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
+                  </div>
+                  <label for="birth_certificate" class="custom-file-input2">
+                    <span>Choose Image</span>
+                    <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
+                  </label>
+                </div>
+                <div class="document-image-container">
+                  <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
+                    id="birth_certificate_preview">
+                  <span class="fade-effect"></span>
+                </div>
+                <span class="form-invalid">
+                  <?php if (!empty($data['birth_certificate_err']))
+                    echo $data['birth_certificate_err']; ?>
+                </span>
+              </div>
+              <div class="form-row">
+                <div class="form-flex img-label">
+                  <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
+                  </div>
+                  <label for="birth_certificate" class="custom-file-input2">
+                    <span>Choose Image</span>
+                    <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
+                  </label>
+                </div>
+                <div class="document-image-container">
+                  <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
+                    id="birth_certificate_preview">
+                  <span class="fade-effect"></span>
+                </div>
+                <span class="form-invalid">
+                  <?php if (!empty($data['birth_certificate_err']))
+                    echo $data['birth_certificate_err']; ?>
+                </span>
+              </div>
+              <div class="form-row">
+                <div class="form-flex img-label">
+                  <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
+                  </div>
+                  <label for="birth_certificate" class="custom-file-input2">
+                    <span>Choose Image</span>
+                    <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
+                  </label>
+                </div>
+                <div class="document-image-container">
+                  <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
+                    id="birth_certificate_preview">
+                  <span class="fade-effect"></span>
+                </div>
+                <span class="form-invalid">
+                  <?php if (!empty($data['birth_certificate_err']))
+                    echo $data['birth_certificate_err']; ?>
+                </span>
+              </div>
+            </div>
 
+          </fieldset>
+          <fieldset>
+            <div class="form-set">
+              <div class="form-row form-flex">
+                <div class="form-input-title2">IWould you like to receive materials/goods as donations?</div>
+                <div class="checkbox-wrapper-2">
+                  <input type="checkbox" class="sc-gJwTLC ikxBAC" name="child" id="child">
+                </div>
+              </div>
+              <div class="story-heading">
+                <h1>Materials you hope to receive</h1>
+                <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
+              </div>
+              <div id="material-display-tags"></div>
+
+              <div id="material-form-container"></div>
+
+              <!-- <div class="form-row form-flex">
+                <div class="flx-1">
+                  <div class="form-input-title2">Item Name
+                  </div>
+                  <input type="text" name="item_name" id="item_name" class="input" placeholder="">
+                  <span class="form-invalid">
+                    <?php // if (!empty($data['item_name_err']))
+                    // echo $data['item_name_err'];             ?>
+
+                  </span>
+                </div>
+                <div class="flx-1">
+                  <div class="form-input-title2">No of units required
+                  </div>
+                  <input type="text" name="required_unit_count" id="required_unit_count" class="input" placeholder="">
+                  <span class="form-invalid">
+                    <?php // if (!empty($data['required_unit_count_err']))
+                    // echo $data['required_unit_count_err'];             ?>
+
+                  </span>
+                </div>
+              </div> -->
+          </fieldset>
+          <fieldset>
+            <div class="form-set">
+              <div class="form-row form-flex">
+                <div class="form-input-title2">Would you like to receive materials/goods as donations?</div>
+                <div class="checkbox-wrapper-2">
+                  <input type="checkbox" class="sc-gJwTLC ikxBAC" name="child" id="child">
+                </div>
+              </div>
+              <div class="story-heading">
+                <h1>Materials you hope to receive</h1>
+                <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
+              </div>
+              <div id="material-display-tags"></div>
+
+              <div id="material-form-container"></div>
+
+              <!-- <div class="form-row form-flex">
+                <div class="flx-1">
+                  <div class="form-input-title2">Item Name
+                  </div>
+                  <input type="text" name="item_name" id="item_name" class="input" placeholder="">
+                  <span class="form-invalid">
+                    <?php // if (!empty($data['item_name_err']))
+                    // echo $data['item_name_err'];             ?>
+
+                  </span>
+                </div>
+                <div class="flx-1">
+                  <div class="form-input-title2">No of units required
+                  </div>
+                  <input type="text" name="required_unit_count" id="required_unit_count" class="input" placeholder="">
+                  <span class="form-invalid">
+                    <?php // if (!empty($data['required_unit_count_err']))
+                    // echo $data['required_unit_count_err'];             ?>
+
+                  </span>
+                </div>
+              </div> -->
+              <div class="js-next-prev-button">
+              <div class="js-prev" onclick="prevStep()">Previous</div>
+              <button class="js-next" onclick="nextStep(3)" type="submit" >Submit</button>
+            </div>
+          </fieldset>
         </form>
       </div>
     </div>
   </main>
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+  <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
   <script>
     // setupImagePreview("#form_image", ".form-image-container img");
-    setupImagePreview("#birth_certificate", "#birth_certificate_preview");
+   addForm(3, "#add-material-btn", "#material-display-tags", "#material-form-container", "material");
   </script>
 </body>
 

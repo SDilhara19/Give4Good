@@ -8,7 +8,9 @@ class M_Fundraiser {
 
     public function getAllFundriasers() 
     {
-        $this->db->query('SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.status = "Active";
+        $this->db->query('SELECT fundraiser.*, users.username, users.type 
+        FROM fundraiser JOIN users ON fundraiser.user_id = users.id 
+        WHERE fundraiser.status = "Active";
         ');
 
         $row = $this->db->resultSet();
