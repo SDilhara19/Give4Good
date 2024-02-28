@@ -7,6 +7,7 @@ class M_Admin_Story {
     }
     
 
+
     public function viewPending(){
         $this->db->query('SELECT stories.*, users.username, users.type
         FROM stories
