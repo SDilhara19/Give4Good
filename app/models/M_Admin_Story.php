@@ -114,3 +114,4 @@ class M_Admin_Story {
         }
     }
 }
+?>
