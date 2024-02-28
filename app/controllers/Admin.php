@@ -9,7 +9,16 @@ class Admin extends controller
     {
         $this->AdminModel = $this->model('M_Admin');
         $this->UserModel = $this->model('M_user');
+        $this->checkAdminLogin();
 
+    }
+
+    private function checkAdminLogin()
+    {
+        if (!isloggedIn() || (isset($_SESSION['userType']) && $_SESSION['userType'] !== 'admin')) {
+            logOut();
+            redirect(URLROOT . '/Admin_Login');
+        }
     }
 
 

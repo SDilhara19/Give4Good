@@ -27,7 +27,7 @@
           <a href="<?php echo URLROOT ?>/Stories">Stories</a>
         </li>
         <li>
-          <a href="<?php echo URLROOT ?>/Fundraiser/start">Start a Fundraiser</a>
+          <a href="<?php echo URLROOT ?>/Fundraisersuper/">Start a Fundraiser</a>
         </li>
         <li>
           <a href="<?php echo URLROOT ?>/Required">About</a>

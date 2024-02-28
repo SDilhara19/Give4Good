@@ -8,7 +8,9 @@ class M_Fundraiser {
 
     public function getAllFundriasers() 
     {
-        $this->db->query('SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id;
+        $this->db->query('SELECT fundraiser.*, users.username, users.type 
+        FROM fundraiser JOIN users ON fundraiser.user_id = users.id 
+        WHERE fundraiser.status = "Active";
         ');
 
         $row = $this->db->resultSet();
@@ -21,5 +23,144 @@ class M_Fundraiser {
         }
 
     } 
+
+    public function getAFundraiser($id) 
+    {
+
+        try{
+        $this->db->query("SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+
+        $this->db->bind(':fundraiser_id', $id);
+        // $rows = $this->db->resultSet();
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
+        
+        error_log('Error in getAFundraiser: ' . $e->getMessage());
+        $err = "Error: " . $e->getMessage();
+        return $err;
+    }
+
+    } 
+
+    public function getImages($id){
+        try{
+            $this->db->query("SELECT * FROM fundraiser_images WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    public function getMerchandise($id){
+        try{
+            $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    public function getMaterials($id){
+        try{
+            $this->db->query("SELECT * FROM material WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    public function getMaterialLocation($id){
+        try{
+            $this->db->query("SELECT * FROM material_location WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    function updateViews($newViews, $fundraiserId){
+        try{
+            $this->db->query("UPDATE fundraiser SET view_counts = :view_counts WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':view_counts', $newViews);
+            $this->db->bind(':fundraiser_id', $fundraiserId);
+
+    return $this->db->execute();
+        }
+        catch(Exception $e){
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    function payForm($id){
+        try{
+            $this->db->query("SELECT fundraiser.fundraiser_id, fundraiser.title, users.username, users.id FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+            $row = $this->db->resultSet();
+    
+            //Check row
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+            }
+            catch(Exception $e)
+            {
+                return "Error" . $e->getMessage();
+            }
+    }
 }
 
