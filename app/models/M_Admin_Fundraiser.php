@@ -92,6 +92,32 @@ public function viewActive(){
         
     }
 
+    public function activateStoryFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Active" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function deactivateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Deactive" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
   //  public function viewMerch(){
 
   //  }
