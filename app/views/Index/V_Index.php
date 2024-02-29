@@ -45,7 +45,7 @@
           <article class="home-fundraiser-card"
             onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
             <div class="home-fundraiser-img">
-              <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+              <img src="<?php echo URLROOT . $fundraiser->img ?>" alt="image">
             </div>
             <div class="home-fundraiser-below">
               <div class="fundraiser-donee-name">

@@ -29,7 +29,7 @@
                         <i class="fa-solid fa-chevron-left fa-2xl"></i>
                     </div>
                     <div class="fundraiser-image">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+                        <img src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
                     </div>
                     <div class="right-arrow">
                         <i class="fa-solid fa-chevron-right fa-2xl"></i>
