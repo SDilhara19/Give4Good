@@ -72,7 +72,14 @@
 
               </div>
               <div class="form-row">
-                <div class="form-input-title2">Add images<span class="required">*</span></div>
+              <div class="form-flex img-label">
+                  <div class="form-input-title">Add images related to the fundraiser<span class="required">*</span>
+                  </div>
+                  <label for="fund_images" class="custom-file-input2">
+                    <span>Choose Image</span>
+                    <input type="file" accept="image/png, image/jpeg" name="fundraiser_image_1" id="fundraiser_image_1">
+                  </label>
+                </div>
                 <div class="fund-images-con">
                   <img src="<?php echo URLROOT ?>/public/Assets/images/heart.png" alt="">
                 </div>

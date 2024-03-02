@@ -31,40 +31,55 @@ class Admin extends controller
         }
     }
 
-    public function add(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // var_dump($_POST);
-            $this->signup();
-          } else {
-            $data = [];
-        $this->view('Admin/V_Add', $data);
+    public function add()
+    {
+        if ($_SESSION['userLevel'] !== 2) {
+            redirect(URLROOT . '/Admin_Login');
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // var_dump($_POST);
+                $this->signup();
+            } else {
+                $data = [];
+                $this->view('Admin/V_Add', $data);
 
-          }
+            }
+        }
+
+
+
+
+
 
     }
 
-    public function complaints(){
-        $data = $this->AdminModel -> viewComplaints();
-        $this->view('Admin/V_Complaints',$data);
+    public function complaints()
+    {
+        $data = $this->AdminModel->viewComplaints();
+        $this->view('Admin/V_Complaints', $data);
     }
 
-    public function donations(){
-        $data = $this->AdminModel -> viewDonations();
-        $this->view('Admin/V_Donations',$data);
+    public function donations()
+    {
+        $data = $this->AdminModel->viewDonations();
+        $this->view('Admin/V_Donations', $data);
     }
 
-    public function contributions(){
-        $data = $this->AdminModel -> viewContributions();
-        $this->view('Admin/V_Contributions',$data);
+    public function contributions()
+    {
+        $data = $this->AdminModel->viewContributions();
+        $this->view('Admin/V_Contributions', $data);
     }
 
-    public function category(){
+    public function category()
+    {
 
         $this->view('Admin/V_Categories');
 
     }
 
-    public function documents(){
+    public function documents()
+    {
 
         $this->view('Admin/V_Edit_Required_Documents');
 
@@ -73,7 +88,7 @@ class Admin extends controller
 
     public function signup()
     {
-     
+
 
         $obj = new Validation($_POST);
         $obj->validate('username', ['EMPTY', 'FORMAT']);
@@ -82,26 +97,25 @@ class Admin extends controller
         $obj->validate('confirmpassword', ['CONFIRMPASSWORD']);
 
         if ($this->UserModel->findbyUsername($obj->data['username'])) {
-            $obj->flag==1;
+            $obj->flag == 1;
             $obj->data['username_err'] = 'This username already exists';
         }
-            var_dump($_POST);
+        var_dump($_POST);
         if ($this->UserModel->findbyEmail($obj->data['email'])) {
-            $obj->flag==1;
+            $obj->flag == 1;
             $obj->data['email_err'] = 'This email already registered';
         }
 
-        if($obj->flag==1){
-            $this->view('Admin/V_Add', $obj->data);  
-        }    
-        else{
+        if ($obj->flag == 1) {
+            $this->view('Admin/V_Add', $obj->data);
+        } else {
             $obj->data['password'] = password_hash($obj->data['password'], PASSWORD_DEFAULT);
 
 
-            if ($this->UserModel ->register($obj->data)) {
-   
+            if ($this->UserModel->register($obj->data)) {
 
-                redirect(URLROOT . '/Admin');
+
+                redirect(URLROOT . '/Admin_Login');
             } else {
                 die("Something went wrong");
             }
@@ -109,8 +123,8 @@ class Admin extends controller
 
     }
 
-   
-    
+
+
 
 
 }

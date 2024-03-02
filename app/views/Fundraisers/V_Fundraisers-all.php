@@ -28,270 +28,42 @@
         <article class="home-fundraiser-card"
           onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
           <div class="home-fundraiser-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+            <img src="<?php echo URLROOT . $fundraiser->img ?>" alt="image">
           </div>
           <div class="home-fundraiser-below">
-            <div class="fundraiser-donee-name">
-              <?php
-              if ($fundraiser->type == "individual") { ?>
-                <i class="fa-solid fa-user fa-sm text-3"></i>
-              <?php } elseif ($fundraiser->type == "organisation") { ?>
-                <i class="fa-solid fa-building fa-sm text-3"></i>
-              <?php } ?>
-
-              <p class="text-4">
-                <?php echo $fundraiser->username; ?>
-              </p>
+              <div class="right-fade-effect"> </div>
+              <div class="home-fundraiser-below-container">
+                <div class="fundraiser-donee-name">
+                  <?php
+                  if ($fundraiser->type == "individual") { ?>
+                    <i class="fa-solid fa-user fa-sm text-3"></i>
+                  <?php } elseif ($fundraiser->type == "organisation") { ?>
+                    <i class="fa-solid fa-building fa-sm text-3"></i>
+                  <?php } ?>
+                  <p class="text-4">
+                    <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
+                  </p>
+                </div>
+                <p class="text-1">
+                  <?php echo $fundraiser->title; ?>
+                </p>
+                <div class="fundraiser-small-progress-bar-container">
+                  <div class="fundraiser-small-progress-bar">
+                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> ">
+                    </div>
+                  </div>
+                </div>
+                <p class="text-1">Rs.
+                  <?php echo $fundraiser->amount; ?> raised
+                </p>
+              </div>
             </div>
-            <p class="text-1">
-              <?php echo $fundraiser->title; ?>
-            </p>
-            <div class="fundraiser-small-progress-bar-container">
-                <div class="fundraiser-small-progress-bar">
-                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%;' ?> "></div>
-                </div>
-                </div>
-            <p class="text-1">
-              <?php echo "Rs. " . $fundraiser->amount . " raised"; ?>
-            </p>
-          </div>
 
         </article>
         <?php
       }
       ?>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-
-
-
-
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-
-
-
-
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
-      <article class="home-fundraiser-card">
-        <div class="home-fundraiser-img">
-          <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-        </div>
-        <div class="home-fundraiser-below">
-          <div class="fundraiser-donee-name">
-            <i class="fa-solid fa-building fa-sm text-3"></i>
-            <p class="text-4">Manusath Derana</p>
-          </div>
-          <p class="text-1">Help Andrew to travel for work</p>
-          <div class="progress-bar text-4">
-            progress-bar
-          </div>
-          <p class="text-1">Rs.20 000 raised</p>
-        </div>
-      </article>
+   
 
     </div>
   </main>
