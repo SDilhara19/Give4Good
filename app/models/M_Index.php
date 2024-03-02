@@ -12,13 +12,14 @@ class M_Index
         $this->db->query('SELECT fundraiser.*, users.username, users.type, i.imgid, i.img
         FROM fundraiser
         JOIN users ON fundraiser.user_id = users.id
-        JOIN (
+        LEFT JOIN (
             SELECT fundraiser_id, MIN(imgid) AS imgid
             FROM fundraiser_images
             GROUP BY fundraiser_id
         ) AS first_image ON fundraiser.fundraiser_id = first_image.fundraiser_id
-        JOIN fundraiser_images i ON first_image.imgid = i.imgid
-        WHERE fundraiser.status = "Active";');
+        LEFT JOIN fundraiser_images i ON first_image.imgid = i.imgid
+        WHERE fundraiser.status = "Active";
+        ');
     
 
         $row = $this->db->resultSet();
