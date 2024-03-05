@@ -10,6 +10,8 @@ class Fundraisersuper extends controller
 
     }
 
+    
+
     public function index()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -40,6 +42,7 @@ class Fundraisersuper extends controller
             $obj->validate('child', ['CHECKBOX']);
             $obj->validate('end_date', ['EMPTY']);
 
+    // $obj->imageUpload('Fundraisers', $_FILES['fundraiser_image_1'], $obj->data['fundraiser_title_1'], 'fundraiser_image_1');
 
 
             if ($obj->flag == 1) {
@@ -51,7 +54,7 @@ class Fundraisersuper extends controller
                 if ($this->superFundraiserModel->fundraiserStart($obj->data)) {
                     //change redirection
 
-                    redirect(URLROOT . '/Users');
+                    redirect(URLROOT . '/Index');
                 } else {
                     die("Something went wrong");
                 }

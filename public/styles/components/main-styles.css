@@ -460,6 +460,18 @@ h1, h2, h3{
 }
 /* popup-css-end */
 
+
+.right-fade-effect {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  pointer-events: none; /* Ensure the fading effect doesn't interfere with content */
+}
+
 @media (max-width: 992px){
   main{
     margin-left: 0.5rem;

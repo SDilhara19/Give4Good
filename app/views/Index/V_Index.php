@@ -29,8 +29,8 @@
           <p class="large-text">Join Us</p>
           <p class="medium-text">To make a</p>
           <p class="xlarge-text">Better World</p>
-          <button class="highlighted-button"
-            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser'">Donate Now!</button>
+          <button class="highlighted-button" onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser'">Donate
+            Now!</button>
         </div>
         <div class="right-home-box">
           <img src="public/Assets/images/child.jpg" alt="img">
@@ -45,39 +45,39 @@
           <article class="home-fundraiser-card"
             onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $fundraiser->fundraiser_id; ?>'">
             <div class="home-fundraiser-img">
-              <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+              <img src="<?php echo URLROOT . $fundraiser->img ?>" alt="image">
             </div>
             <div class="home-fundraiser-below">
-              <div class="fundraiser-donee-name">
-              <?php
-              if ($fundraiser->type == "individual") { ?>
-                <i class="fa-solid fa-user fa-sm text-3"></i>
-              <?php } elseif ($fundraiser->type == "organisation") { ?>
-                <i class="fa-solid fa-building fa-sm text-3"></i>
-              <?php } ?>
-                <p class="text-4">
-                <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
+              <div class="right-fade-effect"> </div>
+              <div class="home-fundraiser-below-container">
+                <div class="fundraiser-donee-name">
+                  <?php
+                  if ($fundraiser->type == "individual") { ?>
+                    <i class="fa-solid fa-user fa-sm text-3"></i>
+                  <?php } elseif ($fundraiser->type == "organisation") { ?>
+                    <i class="fa-solid fa-building fa-sm text-3"></i>
+                  <?php } ?>
+                  <p class="text-4">
+                    <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
+                  </p>
+                </div>
+                <p class="text-1">
+                  <?php echo $fundraiser->title; ?>
+                </p>
+                <div class="fundraiser-small-progress-bar-container">
+                  <div class="fundraiser-small-progress-bar">
+                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> ">
+                    </div>
+                  </div>
+                </div>
+                <p class="text-1">Rs.
+                  <?php echo $fundraiser->amount; ?> raised
                 </p>
               </div>
-              <p class="text-1">
-                <?php echo $fundraiser->title; ?>
-              </p>
-              <div class="fundraiser-small-progress-bar-container">
-                <div class="fundraiser-small-progress-bar">
-                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> "> </div>
-                </div>
-                </div>
-              <p class="text-1">Rs.
-                <?php echo $fundraiser->amount; ?> raised
-              </p>
             </div>
-
-
-
-
           </article>
 
-        
+
           <?php
         }
         ?>
@@ -91,33 +91,36 @@
       <h1>Stories</h1>
 
       <div class="home-stories">
-      <?php
+        <?php
         foreach ($data[1] as $story) {
           ?>
-        <article class="home-story-card"onclick="window.location.href = href='<?php echo URLROOT ?>/Stories/Index#<?php echo $story->id; ?>'" >
-          <div class="home-story-img">
-            <img src="<?php echo URLROOT . $story->image; ?>" alt="">
-          </div>
-          <div class="home-story-below">
-            <div class="fundraiser-donee-name">
-            <?php
-              if ($story->type == "individual") { ?>
-                <i class="fa-solid fa-user fa-sm text-3"></i>
-              <?php } elseif ($story->type == "organisation") { ?>
-                <i class="fa-solid fa-building fa-sm text-3"></i>
-              <?php } ?>
-              <p class="text-4">
-    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+          <article class="home-story-card"
+            onclick="window.location.href = href='<?php echo URLROOT ?>/Stories/Index#<?php echo $story->id; ?>'">
+            <div class="home-story-img">
+              <img src="<?php echo URLROOT . $story->image; ?>" alt="">
+            </div>
+            <div class="home-story-below">
+              <div class="fundraiser-donee-name">
+                <?php
+                if ($story->type == "individual") { ?>
+                  <i class="fa-solid fa-user fa-sm text-3"></i>
+                <?php } elseif ($story->type == "organisation") { ?>
+                  <i class="fa-solid fa-building fa-sm text-3"></i>
+                <?php } ?>
+                <p class="text-4">
+                  <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
 
+                </p>
+              </div>
+              <p class="text-1">
+                <?php echo $story->title; ?>
               </p>
             </div>
-            <p class="text-1"><?php echo $story->title; ?></p>
-          </div>
-        </article>
-        <?php
+          </article>
+          <?php
         }
         ?>
-      
+
 
       </div>
 
