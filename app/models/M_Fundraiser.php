@@ -161,7 +161,7 @@ class M_Fundraiser {
             if ($this->db->rowCount() > 0) {
                 return $row;
             } else {
-                return false;
+               return false;
             }
             }
             catch(Exception $e)
@@ -169,5 +169,10 @@ class M_Fundraiser {
                 return "Error" . $e->getMessage();
             }
     }
+
+    //public function sendEmail($to, $subject, $message){
+        //
+    //}
+
 }
 

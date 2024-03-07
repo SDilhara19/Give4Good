@@ -1,4 +1,10 @@
 <?php
+
+require 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 class Fundraiser extends controller
 {
     private $fundraiserModel;
@@ -80,4 +86,28 @@ class Fundraiser extends controller
     
         $this->view('Fundraisers/V_Pay', $data);
     }
+
+    public function sendEmail($to, $subject, $message){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $donorName = $_POST["name"];
+            $donorEmail = $_POST["email"];
+            $amount = $_POST["amount"];
+        
+            $donationModel = new DonationModel();
+            $donationSaved = $donationModel->saveDonation($donorName, $donorEmail, $amount);
+        
+            if ($donationSaved) {
+                // Send email to fundraiser
+                $fundraiserEmail = "fundraiser@example.com";
+                $subject = "New Donation Received";
+                $message = "Hello Fundraiser,\n\nYou have received a new donation of $amount from $donorName ($donorEmail).";
+        
+                mail($fundraiserEmail, $subject, $message);
+        
+                echo "Thank you for your donation!";
+            } else {
+                echo "Sorry, there was a problem processing your donation.";
+            }
+        }
+}
 }
