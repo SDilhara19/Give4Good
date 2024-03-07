@@ -7,11 +7,12 @@ class M_Admin_Story {
     }
     
 
+
     public function viewPending(){
         $this->db->query('SELECT stories.*, users.username, users.type
         FROM stories
         JOIN users ON stories.user_id = users.id
-        WHERE stories.status = "pending";');
+        WHERE stories.status = "Pending";');
 
         $row = $this->db->resultSet();
 
@@ -27,7 +28,7 @@ class M_Admin_Story {
         $this->db->query('SELECT stories.*, users.username, users.type 
         FROM stories 
         JOIN users ON stories.user_id = users.id 
-        WHERE stories.status = "deactive";');
+        WHERE stories.status = "Deactive";');
 
         //Check row
         $row = $this->db->resultSet();
@@ -75,7 +76,7 @@ class M_Admin_Story {
         $this->db->query('SELECT stories.*, users.username, users.type
         FROM stories
         JOIN users ON stories.user_id = users.id
-        WHERE stories.status = "active";');
+        WHERE stories.status = "Active";');
 
         $row = $this->db->resultSet();
 
@@ -113,3 +114,4 @@ class M_Admin_Story {
         }
     }
 }
+?>

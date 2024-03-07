@@ -8,18 +8,7 @@ class Validation
   {
     $postArray = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     foreach ($postArray as $key => $value) {
-      if (strpos($this->data[$key], "image") === false)
-      {
-        $this->data[$key] = trim($value);
-      }
-      else 
-      {
-        $this->data[$key] = $value;
-      }
-
-    }
-
-    foreach ($postArray as $key => $value) {
+      $this->data[$key] = trim($value);
       $this->data[$key . '_err'] = '';
 
     }
@@ -40,12 +29,20 @@ class Validation
   private function FORMAT($value)
   {
 
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $this->data[$value])) {
+    if (!preg_match("/^[a-zA-Z0-9\s]*$/", $this->data[$value])) {
       $this->data[$value . '_err'] = 'invalid ' . $value . ' format';
     }
   }
 
-  private function EMAIL($value)   
+  private function CHECKBOX($value)
+  {
+
+    if ($this->data[$value] == 'on') {
+      $this->data[$value] = 1;
+    }
+  }
+
+  private function EMAIL($value)
   {
     if (!filter_var($this->data[$value], FILTER_VALIDATE_EMAIL)) {
       $this->data[$value . '_err'] = 'Invalid ' . $value . ' format';
@@ -68,20 +65,43 @@ class Validation
     }
   }
 
-  // private function imageUpload($uploadDir, $uploadedFile, $uploadedFileName, $user, $title, $target, $value)
-  // {
-  //   $fileExtension = pathinfo($uploadedFileName, PATHINFO_EXTENSION);
-  //   $newFileName = $user . '_' . $title . '.' . $fileExtension;
-  //   $target = $uploadDir . $newFileName;
+  public function imageUpload($Dir, $FileArray, $name, $dataKey)
+  {
+    
+    if (!($FileArray['error'] == UPLOAD_ERR_OK)) {
+      $this->data[$dataKey . '_err'] = 'Upload image';
+      $this->flag = 1;
+    } else {
+      $uploadDir = '../public/Assets/Uploaded-Images/' . $Dir . '/';
+      $uploadDirName = '/public/Assets/Uploaded-Images/' . $Dir . '/';
 
-  //   if (move_uploaded_file($uploadedFile, $target)){
-  //     return true;
-  //   }
-  //   else{
-  //     $this->flag = 1;
-  //     $this->$this->data[$value . '_err'] = 'Error in uploading file';
-  //   }
-  // }
+      $uploadedFile = $FileArray['tmp_name'];
+      $uploadedFileName = $FileArray['name'];
+
+      $fileExtension = pathinfo($uploadedFileName, PATHINFO_EXTENSION);
+      $newFileName = $this->data['user_id'] . '_' . $name . '.' . $fileExtension;
+      $location = $uploadDir . $newFileName;
+      $this->data[$dataKey] = $uploadDirName . $newFileName;
+
+      if (move_uploaded_file($uploadedFile, $location)) {
+
+        return true;
+
+      } else {
+        // Handle file upload error
+        if (!is_dir($uploadDir)) {
+          echo "Error: The upload directory does not exist.";
+        } elseif (!is_writable($uploadDir)) {
+          echo "Error: The upload directory is not writable.";
+        } else {
+          $this->data[$dataKey . '_err'] = "File upload failed";
+          $this->flag = 1;
+        }
+      }
+    }
+
+
+  }
 
   public function validate($value, $criteria)
   {
@@ -97,4 +117,3 @@ class Validation
   }
 }
 
-?>

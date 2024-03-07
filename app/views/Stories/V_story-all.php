@@ -11,11 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
 
 <?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/side-bar.php' ?>
 
     <main>
         <div class="story-heading">
@@ -23,22 +25,32 @@
             <a href="<?php echo URLROOT ?>/Stories/add"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
         </div>
        <div class="stories-container">
-        <div class="story-card">
+       <?php 
+                  foreach ($data as $story) {
+                  ?>
+        <div class="story-card" id="<?php echo $story->id; ?>">
             <div class="story-card-left">
                 <div class="story-card-img-container">
-                    <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story1.jpeg" alt="">
+                    
+                    <img src="<?php echo URLROOT . $story->image; ?>" alt="">
                 </div>
             </div>
             <div class="story-card-right">
                 <div class="story-description">
-                    <h1>Sahurda Wiyamana</h1>
+                    <h1><?php echo $story->title; ?></h1>
                     <div class="fundraiser-donee-name">
-                        <i class="fa-solid fa-building fa-sm text-3"></i>
-                        <p class="text-4">LEO Club UOC</p>
-                      </div>
-                    <p>ොළඹ විශ්ව විද්‍යාලයීය ලියෝ සමාජය මගින් සංවිධානය කල සහෘද වියමන අදියර 6කින් යුතු ව්‍යාපෘතියේ දෙවන අදියර ඉතා සාර්ථකව නිමකරන කරන ලදී.  එම කටයුතු සාර්ථක කර ගැනීම උදෙසා උපකාර කළ ඔබ සැමට ස්තූතියි.❤
+                    <?php
+              if ($story->type == "individual") { ?>
+                <i class="fa-solid fa-user fa-sm text-3"></i>
+              <?php } elseif ($story->type == "organisation") { ?>
+                <i class="fa-solid fa-building fa-sm text-3"></i>
+              <?php } ?>
+                        <p class="text-4">
+    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+</p>
 
-                        Facebook: https://bit.ly/3udizp5
+                      </div>
+                    <p><?php echo $story->description; ?>
                        
                         
                         </p>
@@ -47,18 +59,21 @@
                     <table>
                         <tr>
                             <th>email:</th>
-                            <td class="text-3">leos@gmail.com</td>
+                            <td class="text-3"><?php echo $story->email; ?></td>
                         </tr>
                         <tr>
                             <th>Contact:</th>
-                            <td class="text-3">+9470 576 0021</td>
+                            <td class="text-3"><?php echo $story->phone; ?></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
 
-        <div class="story-card">
+        <?php 
+                  }
+                  ?>
+       <div class="story-card">
             <div class="story-card-left">
                 <div class="story-card-img-container">
                     <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Stories/Story2.png" alt="">
@@ -161,9 +176,11 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> 
        </div>
     </main>
+<script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+
 </body>
 
 </html>

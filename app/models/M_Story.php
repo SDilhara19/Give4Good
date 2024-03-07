@@ -34,7 +34,11 @@ class M_Story {
 
     public function getAllStories() 
     {
-        $this->db->query('SELECT stories.*, users.username, type FROM stories JOIN users ON stories.user_id = users.id;
+        $this->db->query('SELECT stories.*, users.username, users.type 
+        FROM stories 
+        JOIN users ON stories.user_id = users.id
+        WHERE stories.status = "Active"
+        ORDER BY stories.id DESC;
         ');
 
         $row = $this->db->resultSet();
@@ -47,6 +51,16 @@ class M_Story {
         }
 
     }
+
+    // public function test($variable_that_has_the_id) {
+    //     try {
+    //         $temp_data = $this->db->query2("SELECT * FROM users WHERE id = :id", ['id' => $variable_that_has_the_id]);
+    //         return $temp_data;
+    //     } catch (\Exception $e) {
+    //         // Handle the exception (log, rethrow, or other appropriate action)
+    //         throw new \Exception("Error executing database query: " . $e->getMessage());
+    //     }
+    // }
   
 
 

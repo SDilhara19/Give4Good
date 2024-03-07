@@ -9,8 +9,10 @@
 
 * {
   /* colours */
-  --primary-color: #4EB790;
+  /* --primary-color: #4EB790; */
+  --primary-color: #36CF97;
   --secondary-color: #CFF5E7;
+  --tertiary-color: #daf2e9;
   --dark-green: #0E6F4B;
   --black-sub: #2E353E;
   --white-color: #FFFFFF;

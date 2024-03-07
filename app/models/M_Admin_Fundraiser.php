@@ -59,6 +59,8 @@ public function viewActive(){
         
     // }
 
+
+
     public function getAllFundraisers(){
         $this->db->query('SELECT fundraiser.*, users.username, type FROM fundraiser JOIN users ON fundraiser.user_id = users.id;
         ');
@@ -88,6 +90,32 @@ public function viewActive(){
             return false;
         }
         
+    }
+
+    public function activateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Active" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function deactivateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Deactive" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
   //  public function viewMerch(){

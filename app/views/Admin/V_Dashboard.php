@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 <body>
   <?php require APPROOT . '/views/includes/admin-header.php' ?>
   <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-  
+
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
@@ -27,170 +28,145 @@
       <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div>  
-    </div>
-
-      <div class="dashDetails">
-        <div class="dashUnit">
-          <div class="client">
-            <span>Pending Individual Signups<strong>  05</strong></span>
-          </div>   
-          <div class="dash_table">
-            <table>
-          <tbody>
-            <tr>           
-              <td>RotractUOC</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr>
-            <tr>           
-              <td>Friends98</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr> 
-            <tr>           
-              <td>SAC</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr>
-            </tbody>
-           </table>
-           <div class="viewall">
-              <button>                   
-                
-                
-                <a href="<?php echo URLROOT?>/Admin_Fundraisers/index">View All</a>
-
-
-                
-              </button>
-            </div>
-            </div>      
+          <input type="text" placeholder="Search Name" />
         </div>
-        <div class="dashUnit">
-          <div class="client">
-            <span>Pending Organisational Signups<strong>  05</strong></span>
-          </div>   
-          <div class="dash_table">
-            <table>
-          <tbody>
-            <tr>           
-              <td>RotractUOC</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr>
-            <tr>           
-              <td>Friends98</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr> 
-            <tr>           
-              <td>SAC</td>            
-              <td><button class="dash_view">View</button></td>
-            </tr>
-            </tbody>
-           </table>
-           <div class="viewall">
-              <button>                   
-                
-                
-                <a href="<?php echo URLROOT?>/Admin_Fundraisers/index">View All</a>
-
-
-                
-              </button>
-            </div>
-            </div>      
-        </div>
-        <div class="dashUnit">
-            <div class="client">
-              <span>Pending Merchandise <strong>  13</strong></span>
-            </div>
-            <div class="dash_table">
-              <table>
-              
-            <tbody>
-              <tr>           
-                <td>SarathWK</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>KDPathma</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>MCGroup</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              </tbody>
-             </table>
-             <div class="viewall">
-                <button>
-
-
-                   <a href="">View All</a>
-                
-                
-                </button>
-              </div>
-              </div>      
-          </div>
-          <div class="dashUnit">
-            <div class="client">
-              <span>Pending Fundraisers <strong>  13</strong></span>
-            </div>   
-            <div class="dash_table">
-              <table>
-              
-            <tbody>
-              <tr>           
-                <td>Educational help</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>Build a library</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>Help for building a house</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              </tbody>
-             </table>
-             <div class="viewall">
-                <button>
-                   <a href="<?php echo URLROOT?>/Admin_Fundraisers/pending">View All</a>
-                </button>
-              </div>
-              </div>      
-          </div>
-          <div class="dashUnit">
-            <div class="client">
-              <span>Pending Stories <strong>  13</strong></span>
-            </div>  
-            <div class="dash_table">
-              <table>
-              
-            <tbody> 
-              <tr>           
-                <td>Blood Donation Camp</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>Request kidney</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              <tr>           
-                <td>Health Camp</td>            
-                <td><button class="dash_view">View</button></td>
-              </tr>
-              </tbody>
-             </table>
-             <div class="viewall">
-                <button>
-                   <a href="<?php echo URLROOT?>/Admin_Stories/pending">View All</a>
-                </button>
-              </div>
-              </div>      
-          </div>
       </div>
     </div>
+    <div class="dashDetails">
+      <div class="dash-main">
+        <div class="dashUnit">
+          <span>Individual Signups<strong> 05</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>RotractUOC</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Friends98</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>SAC</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/index">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dashUnit">
+          <span>Organisational Signups<strong> 05</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>RotractUOC</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Friends98</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>SAC</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/index">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dashUnit">
+          <span>Merchandise <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>SarathWK</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>KDPathma</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>MCGroup</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dashUnit">
+          <span>Fundraisers <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Educational help</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Build a library</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Help for building a house</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/pending">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dashUnit">
+          <span>Stories <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Blood Donation Camp</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Request kidney</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+                <tr>
+                  <td>Health Camp</td>
+                  <td><button class="dash_view">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT ?>/Admin_Stories/pending">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
