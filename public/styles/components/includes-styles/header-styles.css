@@ -155,9 +155,21 @@ margin: auto 1rem auto 1rem;
   border-radius: 50%;
   height: 100%;
   margin-left: 1rem;
+  position: relative;
 } 
 .user-image img{
   border-radius: 50%;
   height: 100%;
 }
 
+.star-mini{
+  padding-bottom: 2px;
+  /* border: 1px solid rgb(17, 0, 255); */
+  /* border-radius: 50%; */
+  color: var(--red-color);
+  position: absolute;
+  top: 0px;
+  right: -8px;
+}
+
+ 
