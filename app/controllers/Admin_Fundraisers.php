@@ -25,16 +25,16 @@ class Admin_Fundraisers extends controller
     }
 
     public function active(){
-        // $data = $this->AdminFundraisersModel -> viewActive();
+        $data = $this->AdminFundraisersModel -> viewActive();
 
 
-        $this->view('Admin_Fundraisers/V_Active');
+        $this->view('Admin_Fundraisers/V_Active', $data);
     }
 
     public function deactive(){
-        // $data = $this->AdminFundraisersModel -> viewDeactivated();
+        $data = $this->AdminFundraisersModel -> viewDeactivated();
 
-        $this->view('Admin_Fundraisers/V_Deact');
+        $this->view('Admin_Fundraisers/V_Deact',$data);
     }
 
     public function pending(){
@@ -43,6 +43,26 @@ class Admin_Fundraisers extends controller
 
         $this->view('Admin_Fundraisers/V_Pending', $data);
     }
+
+    public function setDeactive($id){
+        if($this->AdminFundraisersModel -> deactivateFundraiser($id)){
+          echo '<script>alert("Story deactivated successfully!");</script>';
+        } else {
+          // Deactivation failed, handle the error
+          echo '<script>alert("Error deactivating the Fundraiser.");</script>';
+        }
+        redirect(URLROOT . '/Admin_Fundraiser/index');
+     }
+ 
+     public function setActive($id){
+        if($this->AdminFundraisersModel -> activateFundraiser($id)){
+          echo '<script>alert("Story activated successfully!");</script>';
+        } else {
+          // Deactivation failed, handle the error
+          echo '<script>alert("Error activating the Fundraiser.");</script>';
+        }
+        redirect(URLROOT . '/Admin_Fundraiser/index');
+     }
 
     public function merchandise(){
 
@@ -65,18 +85,4 @@ class Admin_Fundraisers extends controller
         $this->view('Admin_Fundraisers/V_Fundraiser-document');
     }
 
-
-
-public function setActive($id){
-
-    if($this->AdminFundraisersModel -> activateFundraiser($id)){
-      echo '<script>alert("Story activated successfully!");</script>';
-    } else {
-      // Deactivation failed, handle the error
-      echo '<script>alert("Error activating the story.");</script>';
-     
-    }
-    // var_dump($id);
-    redirect(URLROOT . '/Admin_Fundraisers/index');
- }
 }
