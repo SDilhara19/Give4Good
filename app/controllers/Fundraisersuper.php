@@ -36,7 +36,8 @@ class Fundraisersuper extends controller
 
     public function index()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // var_dump($_POST);
             $this->fundraiser_start();
         } else {
             $data = [];

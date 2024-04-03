@@ -88,7 +88,7 @@
                     <img src="<?php echo URLROOT ?>/public/Assets/images/heart.png" alt="">
                   </div>
                   <span class="form-invalid">
-                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];                ?>Error
+                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];                 ?>Error
                   </span>
 
                 </div>
@@ -129,13 +129,13 @@
                   <div class="checkbox-wrapper-2">
                     <input type="checkbox" class="sc-gJwTLC ikxBAC" name="child" id="child" value="on">
                     <script>
-                      function formDisplay(form1) {
-                        var form = document.getElementById(form1)
-                        if (form.value == "on") {
-                          console.log("df")
-                          form.style.display = 'style';
-                        }
-                      }
+                      // function formDisplay(form1) {
+                      //   var form = document.getElementById(form1)
+                      //   if (form.value == "on") {
+                      //     console.log("df")
+                      //     form.style.display = 'style';
+                      //   }
+                      // }
                     </script>
                   </div>
                 </div>
@@ -148,7 +148,7 @@
                       <input type="text" name="dependent_name" id="dependent_name" class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_name_err']))
-                        // echo $data['dependent_name_err'];                ?>
+                        // echo $data['dependent_name_err'];                 ?>
                         Required field
                       </span>
                     </div>
@@ -159,7 +159,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_birthdate_err']))
-                        // echo $data['dependent_birthdate_err'];                ?>
+                        // echo $data['dependent_birthdate_err'];                 ?>
                         Required field
                       </span>
                     </div>
@@ -169,7 +169,7 @@
                       <input type="text" name="relationship" id="relationship" class="input" placeholder="XXXXX">
                       <span class="form-invalid">
                         <?php // if (!empty($data['amount_err']))
-                        // echo $data['amount_err'];                ?>
+                        // echo $data['amount_err'];                 ?>
                         Required field
                       </span>
                     </div>
@@ -182,7 +182,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_err']))
-                        // echo $data['dependent_edu_ins/work_err'];               ?>
+                        // echo $data['dependent_edu_ins/work_err'];                ?>
 
                       </span>
                     </div>
@@ -193,7 +193,7 @@
                         class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_contact_err']))
-                        // echo $data['dependent_edu_ins/work_contact_err'];               ?>
+                        // echo $data['dependent_edu_ins/work_contact_err'];                ?>
 
                       </span>
                     </div>
@@ -228,7 +228,7 @@
                       <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
                         placeholder=""></textarea>
                       <span class="form-invalid">
-                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                ?>Error
+                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                 ?>Error
                       </span>
 
 
@@ -301,7 +301,7 @@
                       echo $data['birth_certificate_err']; ?>
                   </span>
                 </div>
-                
+
               </div>
               <div class="js-next-prev-button">
                 <div class="js-prev" onclick="prevStep()">Previous</div>
@@ -326,48 +326,24 @@
 
                 <div id="material-form-container"></div>
 
-                <!-- <div class="form-row form-flex">
-                <div class="flx-1">
-                  <div class="form-input-title2">Item Name
-                  </div>
-                  <input type="text" name="item_name" id="item_name" class="input" placeholder="">
-                  <span class="form-invalid">
-                    <?php // if (!empty($data['item_name_err']))
-                    // echo $data['item_name_err'];               ?>
-
-                  </span>
-                </div>
-                <div class="flx-1">
-                  <div class="form-input-title2">No of units required
-                  </div>
-                  <input type="text" name="required_unit_count" id="required_unit_count" class="input" placeholder="">
-                  <span class="form-invalid">
-                    <?php // if (!empty($data['required_unit_count_err']))
-                    // echo $data['required_unit_count_err'];               ?>
-
-                  </span>
-                </div>-->
-              </div> 
+              
+              </div>
               <div class="js-next-prev-button">
                 <div class="js-prev" onclick="prevStep()">Previous</div>
-                <div class="js-next" onclick="nextStep(3)" type="submit" >Submit</div>
+                <button class="js-next" onclick="nextStep(3)" type="submit" >Submit</button>
               </div>
             </fieldset>
           </div>
-         
+
         </form>
       </div>
     </div>
   </main>
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
-  <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
-  <script>
-    // setupImagePreview("#form_image", ".form-image-container img");
-    addForm(3, "#add-material-btn", "#material-display-tags", "#material-form-container", "material");
-  </script>
+
 </body>
 
 </html>
