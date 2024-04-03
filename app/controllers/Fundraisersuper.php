@@ -7,14 +7,37 @@ class Fundraisersuper extends controller
     public function __construct()
     {
         $this->superFundraiserModel = $this->model('M_Super_Fundraiser');
-
+        $this->checkUserLogin();
     }
 
-    
+    private function checkUserLogin()
+    {
+        if (isloggedIn()) {
+            if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'individual')) {
+                if ($_SESSION['userLevel'] == 1) {
+                    redirect(URLROOT . '/Individual/super');
+                }
+            } else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'organisation')) {
+                if ($_SESSION['userLevel'] == 1) {
+                    redirect(URLROOT . '/Organisation/super');
+                }
+            } else {
+                logOut();
+                redirect(URLROOT . '/Users');
+            }
+
+
+        } else {
+            logOut();
+            redirect(URLROOT . '/Users');
+        }
+    }
+
 
     public function index()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // var_dump($_POST);
             $this->fundraiser_start();
         } else {
             $data = [];
@@ -32,17 +55,17 @@ class Fundraisersuper extends controller
             $obj->validate('title', ['EMPTY']);
             $obj->validate('fund_story', ['EMPTY']);
             $obj->validate('amount', ['EMPTY']);
-            if (!isset($_POST['anonymous'])){
-                $obj->data['anonymous']= 0;
+            if (!isset($_POST['anonymous'])) {
+                $obj->data['anonymous'] = 0;
             }
             $obj->validate('anonymous', ['CHECKBOX']);
-            if (!isset($_POST['child'])){
-                $obj->data['child']= 0;
+            if (!isset($_POST['child'])) {
+                $obj->data['child'] = 0;
             }
             $obj->validate('child', ['CHECKBOX']);
             $obj->validate('end_date', ['EMPTY']);
 
-    // $obj->imageUpload('Fundraisers', $_FILES['fundraiser_image_1'], $obj->data['fundraiser_title_1'], 'fundraiser_image_1');
+            // $obj->imageUpload('Fundraisers', $_FILES['fundraiser_image_1'], $obj->data['fundraiser_title_1'], 'fundraiser_image_1');
 
 
             if ($obj->flag == 1) {

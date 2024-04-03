@@ -79,7 +79,7 @@
                 
                 <div class="fundraiser-button-list">
                 
-                    <button onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/pay/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'" class="main-color-button">
+                    <button onclick="window.location.href = '<?php echo URLROOT ?>/Donate/pay/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'" class="main-color-button">
                         Donate
                     </button>
 
