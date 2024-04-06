@@ -22,5 +22,11 @@ class Fundraiser extends controller
 
     $this->view('Fundraisers/V_Start');
 }
+
+
+public function complaints(){
+
+    $this->view('Fundraisers/V_complaint');
+}
 }
 ?>

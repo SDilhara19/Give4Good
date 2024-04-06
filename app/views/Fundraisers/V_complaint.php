@@ -19,18 +19,18 @@
     <main>
         <div class="form-container">
             <form action="add" method="post" enctype="multipart/form-data">
-                <h1 class="form-topic"> Add your story </h1>
+                <h1 class="form-topic">Report fundraiser</h1>
 
                 <fieldset>
                     <!-- <legend class="text-2"> </legend> -->
 
 
-                    <div class="form-input-title">STORY TITLE<span class="required">*</span></div>
+                    <div class="form-input-title">Fundraiser Title<span class="required">*</span></div>
                     <input type="text" name="story_title" id="story_title" class="input"
                         placeholder="Title to be displayed">
                     <span class="form-invalid"><?php if(!empty($data['story_title_err']))echo $data['story_title_err']; ?></span>
 
-                    <div class="form-input-title">IMAGE<span class="required">*</span></div>
+                    <div class="form-input-title">IMAGE</div>
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="form_image">
 
                     <div class="form-image-container">
@@ -77,7 +77,7 @@
 
                     <br><br>
                     <div class="submit-button-div">
-                        <button class="button-submit" type="submit">Add Story</button>
+                        <button class="button-3-red" type="submit">Report</button>
                     </div>
 
                 </fieldset>

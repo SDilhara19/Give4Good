@@ -22,7 +22,7 @@
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Your Complaigns</span>
+        <span>Your Complaints</span>
       </div>
       <div class="user--info">
         <div class="search--box">

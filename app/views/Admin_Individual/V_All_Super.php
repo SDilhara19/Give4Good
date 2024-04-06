@@ -22,9 +22,7 @@
 
   <div class="main--content">
     <?php require APPROOT . '/views/Admin_Individual/Individual-header.php' ?>
-
-
-    <div class="dashDetails">
+<div class="dashDetails">
       <div class="container">
         <div class="table-wrapper">
           <div class="data_table">

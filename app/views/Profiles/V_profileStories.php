@@ -45,18 +45,22 @@
             <th>Fundraiser Title</th>
             <th>Amount(Rs.)</th>
             <th>Contribution(Rs.)</th>
+            <th>Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-        <td>2023-12-04</td>
-          <td>205</td>
-          <td>13</td>
-          <td> cpplpvjvjnjv</td>
+          <td>2023-12-04</td>
+          <td>25</td>
+          <td>Sanduni</td>
+          <td>1</td>
+          <td>Help.....</td>
           <td>2000.00</td>
-          <td></td>
-        </tr>
-        
+          <td>500.00</td>
+          <td>Status</td>
+          <td>view, edit, delete, </td>
+        </tr>   
         </tbody>
     </table>  
   </div>

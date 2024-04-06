@@ -15,7 +15,7 @@ class Individual extends controller
     {  
         if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
             $this->signup();
-            // var_dump($_POST);
+            //var_dump($_POST);
         } 
         else { 
             $data=[];

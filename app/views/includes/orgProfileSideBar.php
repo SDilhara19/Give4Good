@@ -10,6 +10,7 @@
       <li><a href="<?php echo URLROOT?>/Profile/stories"><i class="fa-solid fa-people-roof"></i><p>Stories</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/complaigns"><i class="fa-solid fa-table"></i><p>Complaigns</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/merchandises"><i class="fa-light fa-shirt"></i></i><p>Merchandises</p></a></li>
+      <li><a href="<?php echo URLROOT?>/Profile/subpayments"><i class="fa-light fa-shirt"></i></i><p>Subscription payments</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/change_pwd"><i class="fa-solid fa-gears"></i><p>Change password</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/notifications"><i class="fa-regular fa-bell"></i><p>Notifications</p></a></li>
       <div class="active"></div>

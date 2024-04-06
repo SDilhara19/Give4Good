@@ -1,15 +1,17 @@
 <?php
 class Profile extends controller
 {
-    // private $prototypeModel;
-    // public function __construct()
-    // {
-    //     $this->prototypeModel = $this->model('M_model')
+     private $profileModel;
+     public function __construct()
+     {
+        $this->profileModel = $this->model('M_Profile');
   
-    //}
+    }
   
-  public function index(){
-    $this->view('Profiles/V_indvProfile');
+  public function index($id){
+   $data = $this->profileModel->getUserDetails($id);
+    $this->view('Profiles/V_indvProfile', $data);
+   //var_dump($this->profileModel->getUserDetails());
   }
    
   public function edit_indv(){

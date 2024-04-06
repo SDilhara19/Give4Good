@@ -1,47 +1,46 @@
 <?php
-class M_Admin_Fundraiser {
+class M_Admin_Fundraiser{
     private $db;
-    public function __construct() 
+    public function __construct()
     {
         $this->db = new Database;
     }
 
 
-    
+
 
     public function viewPending(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type
         FROM fundraiser
         JOIN users ON fundraiser.user_id = users.id
-        WHERE fundraiser.status = "pending";');
+        WHERE fundraiser.status = "Pending";');
 
-$row = $this->db->resultSet();
+        $row = $this->db->resultSet();
 
-//Check row
-$row = $this->db->resultSet();
-if ($this->db->rowCount() > 0) {
-    return $row;
-} else {
-    return false;
-        
+        //Check row
+        $row = $this->db->resultSet();
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
     }
 
-}
-public function viewActive(){
-    $this->db->query('SELECT fundraiser.*, users.username, users.type
+    public function viewActive(){
+        $this->db->query('SELECT fundraiser.*, users.username, users.type
     FROM fundriaser
     JOIN users ON fundraiser.user_id = users.id
-    WHERE fundraiser.status = "active";');
+    WHERE fundraiser.status = "Active";');
 
-    //Check row
-    $row = $this->db->resultSet();
-    if ($this->db->rowCount() > 0) {
-        return $row;
-    } else {
-        return false;
+        //Check row
+        $row = $this->db->resultSet();
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+
     }
-    
-}
 
 
     // public function makeActive(){
@@ -56,11 +55,14 @@ public function viewActive(){
     //     } else {
     //         return false;
     //     }
-        
+
     // }
 
-    public function getAllFundraisers(){
-        $this->db->query('SELECT fundraiser.*, users.username, type FROM fundraiser JOIN users ON fundraiser.user_id = users.id;
+    public function getAllFundraisers()
+    {
+        $this->db->query('SELECT fundraiser.*, users.username, users.type 
+        FROM fundraiser 
+        JOIN users ON fundraiser.user_id = users.id;
         ');
 
         $row = $this->db->resultSet();
@@ -74,12 +76,13 @@ public function viewActive(){
 
     }
 
-    public function viewDeactivated(){
+    public function viewDeactivated()
+    {
         $this->db->query('SELECT fundraiser.*, users.username, users.type
         FROM fundriaser
         JOIN users ON fundraiser.user_id = users.id
-        WHERE fundraiser.status = "deactive";');
-    
+        WHERE fundraiser.status = "Deactive";');
+
         //Check row
         $row = $this->db->resultSet();
         if ($this->db->rowCount() > 0) {
@@ -87,19 +90,62 @@ public function viewActive(){
         } else {
             return false;
         }
-        
+
+    }
+    
+
+public function getActiveFundraisers() {
+        $this->db->query('SELECT fundraiser.*, users.username, users.type
+        FROM fundraiser
+        JOIN users ON fundraiser.user_id = users.id
+        WHERE fundraiser.status = "Active";');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
     }
 
-  //  public function viewMerch(){
+    public function activateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Active" 
+        WHERE id = :id;');
 
-  //  }
-    
-  //  public function viewFundOne(){
+        $this->db->bind(':id', $id);
 
-  //  }
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-  //  public function viewFundDoc(){
+    public function deactivateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Deactive" 
+        WHERE id = :id;');
 
- //   }    
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //  public function viewMerch(){
+
+    //  }
+
+    //  public function viewFundOne(){
+
+    //  }
+
+    //  public function viewFundDoc(){
+
+    //   }    
 
 }

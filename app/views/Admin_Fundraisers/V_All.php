@@ -18,7 +18,6 @@
 <body>
     <?php require APPROOT . '/views/includes/admin-header.php' ?>
     <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-
     <div class="main--content">
         <?php require APPROOT . '/views/Admin_Fundraisers/fundraiser-header.php' ?>
         <div class="dashDetails">
@@ -73,7 +72,8 @@
                                     <td>2024-02-05</td>
                                     <td>Merch + Material</td>
                                     <td>
-                                        <a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">
+                                        <a
+                                            href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">
                                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                         </a>
                                     </td>

@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIVE4GOOD</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -52,10 +53,12 @@
                         with these communities. You can offer your skills, whether it's teaching classes, organizing
                         workshops, or providing mentorship. Your presence and support</p>
                 </div>
-
-
+                <div class="ad-merch-button-list">
+                    <button class="button-3-red"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
+                </div>
+                
             </div>
-
             <div class="fundraiser-right">
                 <div class="fundraiser-amount">
                     <p class="text-2">Rs. 20 000</p>
@@ -76,7 +79,6 @@
                         Share
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
-
                     <button class="main-white-button"onclick="window.location.href = '#donations-we-need'">
                         Send Donations
                     </button>
@@ -105,8 +107,6 @@
                             <li class="text-3">Contact to send donations</li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
         </div>

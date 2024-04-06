@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,56 +14,46 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
-<body>
-<?php require APPROOT . '/views/includes/header.php' ?>
-<?php require APPROOT . '/views/includes/indvProfileSideBar.php' ?>
 
-    
+<body>
+  <?php require APPROOT . '/views/includes/header.php' ?>
+  <?php require APPROOT . '/views/includes/indvProfileSideBar.php' ?>
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
         <span>Your Fundraisers</span>
       </div>
-      <div class="user--info">
-        <div class="search--box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div> 
     </div>
-    <div class="dashDetails">
-    <div class="container">
-        <div class="table-wrapper">
-        <table>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Payment ID</th>
-            <th>Donor ID</th>
-            <th>Donor Username</th>
-            <th>Fundraiser ID</th>
-            <th>Fundraiser Title</th>
-            <th>Amount(Rs.)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>2023-12-04</td>
-          <td>205</td>
-          <td>05</td>
-          <td>cpplpvjvjnjv</td>
-          <td>13</td>
-          <td> cnhc v </td>
-          <td>2000.00</td>
-        </tr>
-        
-        </tbody>
-    </table>  
+
+    <div class="dashDetails1">
+      <div class="profile-fundraisers-container">
+        <div class="profile-fundraiser-one">
+          <div class="profile-fundraiser-img">
+            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
+          </div>
+          <div class="profile-fundraiser-details">
+          <p class="text-1">Help Andrew to travel for work</p>
+              <div class="progress-bar text-4">
+                progress-bar
+              </div>
+              <div class="progress-bar text-4">
+                 Active
+              </div>
+              <p class="text-1">Rs.20 000 raised</p>
+              </div>
+        </div>
+        <div class="profile-fundraiser-one"></div>
+        <div class="profile-fundraiser-one"></div>
+        <div class="profile-fundraiser-one"></div>
+        <div class="IMG-CON">
+          <img src="" alt="">
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<?php require APPROOT . '/views/includes/footer.php' ?>
+  <?php require APPROOT . '/views/includes/footer.php' ?>
 
 </body>
+
 </html>
