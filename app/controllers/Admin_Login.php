@@ -57,8 +57,9 @@ class Admin_Login extends controller
     $_SESSION['userName'] = $user->username;
     $_SESSION['userEmail'] = $user->email;
     $_SESSION['userType'] = $user->type;
+    $_SESSION['userLevel'] = $user->user_level;
     $_SESSION['userStatus'] = $user->status;
-    $_SESSION['userImage'] = $user->profile_image;
+    $_SESSION['userImage'] = URLROOT . $user->profile_image;
     $_SESSION['last_activity'] = time();
 
 
@@ -80,4 +81,4 @@ public function logout(){
 
 
 }
-?>
+

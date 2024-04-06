@@ -25,6 +25,7 @@
   /* text colors */
   --text-color: #2E353E;
 }
+
 .form-body{
   /* background: linear-gradient(45deg, var(--secondary-color),  #dbfdf1); */
   background: linear-gradient(135deg, #CFF5E7 0%, #CFF5E7 35%, #CFF5E7 79%, rgba(207, 245, 231, 0) 100%);
@@ -48,12 +49,38 @@
   overflow: hidden;
   width: 800px;
   display: flex;
-  height: 600px;
+  height: 620px;
   min-height: 580px;
   padding: 0;
   
 }
 
+fieldset{
+  border: none;
+}
+
+.checkbox-label{
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--black-sub);
+}
+
+
+.styled-checkbox {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 20px;
+  outline: none;
+}
+
+.styled-checkbox:checked {
+  background-color: #333;
+}
 
 
 .form-container-left{
@@ -69,38 +96,103 @@
 }
 
 .form-progress-bar-container{
-  width: 10px;
+  width: 100%;
   margin: auto;
-  /* border: 2px solid black; */
   height: 80%;
+  position: relative;
+}
+
+.form-inactive-progress-bar-container{
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.form-inactive-progress-bar{
+  width: 10px;
+  height: 100%;
   background-color: var(--border-grey);
   border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  /* z-index: 20; */
+}
 
+.inactive-progress-mark{
+  background-color: var(--new-blue);
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: -25px;
+  /* z-index: 10; */
 }
 
 .form-progress-bar{
   width: 100%;
   height: 100%;
-  background-color: var(--new-blue);
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   
 
 }
 
 .progress-step{
+  flex: 1;
+  width: 100%;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  color: var(--new-blue);
+}
+
+
+.progress-step.active{
+  color: var(--new-blue);
+}
+
+.progress{
+  display: none;
+  height: 100%;
+  background-color: var(--new-blue);
+  width: 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+}
+
+.progress-step.active .progress{
+  display: block;
+  animation: slideFromTop .5s ease-in-out;
+}
+
+.progress-mark{
   background-color: var(--border-grey);
   width: 50px;
   border-radius: 50%;
   height: 50px;
+  position: absolute;
+  right: 10px;
+  bottom: -25px;
 }
 
-.progress-step.active{
+.progress-step.active .progress-mark{
   background-color: var(--new-blue);
 }
 
+.progress-text{
+  display: none;
+}
+
+.progress-step.active .progress-text{
+  display: block;
+}
 
 .form-container-right {
   width: 600px;
@@ -159,6 +251,15 @@
 
 
 
+textarea::placeholder, .input::placeholder{
+  /* padding-left: 0.5rem; */
+  font-size: 0.65rem;
+  color: var(--grey-color);
+}
+
+
+
+
 
 
 
@@ -179,10 +280,10 @@
   gap: 2rem;
 }
 
-.form-flex-left,
+/* .form-flex-left,
 .form-flex-right {
   flex: 1;
-}
+} */
 
 .form-input-title{
   margin-top: 1rem;
@@ -194,12 +295,12 @@
   height: 1.75rem;
   width: 100%;
   background-color: #f7feff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   border-radius: 8px;
   border: 1px solid #ececec;
   padding: 0.3rem;
 }
-.input:focus {
+textarea:focus, .input:focus {
   border: 1.5px solid var(--primary-color);
   outline: none;
 }
@@ -224,7 +325,77 @@ input:focus:invalid {
   box-sizing: border-box;
 } */
 
+textarea{
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  padding: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  width: 100%;
+}
 
+
+  .checkbox-wrapper-2 .ikxBAC {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 72px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    width: 30px;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC,
+  .checkbox-wrapper-2 .ikxBAC::after {
+    transition: all 100ms ease-out;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 14px;
+  }
+
+  .checkbox-wrapper-2 input[type=checkbox] {
+    cursor: default;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC:hover {
+    background-color: #c9cbcd;
+    transition-duration: 0s;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC:checked {
+    background-color: var(--primary-color);
+  }
+
+  .checkbox-wrapper-2 .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 13px;
+  }
+
+  .checkbox-wrapper-2 :focus:not(.focus-visible) {
+    outline: 0;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC:checked:hover {
+    background-color:var(--primary-color);
+  }
 
 .story_description{
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
@@ -289,7 +460,7 @@ input:focus:invalid {
   }
 
 .form-invalid{
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   color: var(--red-color);
   margin-top: 0px;
   margin-bottom: 0px;
@@ -340,11 +511,12 @@ input:focus:invalid {
   height: 100%;
   width: 100%;
   margin: auto;
+  overflow: hidden;
 }
 
 .super-signup-profile-image img{
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -410,7 +582,7 @@ input:focus:invalid {
   padding: 0;
   margin: 0;
   border-radius: 5px;
-}
+  }
 
 .nic-form-image-container img{
   width: 100%;
@@ -435,3 +607,7 @@ input:focus:invalid {
 /* 2 172034325 */
 
 
+
+.d-none{
+  display: none;
+}

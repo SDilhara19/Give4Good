@@ -34,6 +34,14 @@ class Validation
     }
   }
 
+  private function CHECKBOX($value)
+  {
+
+    if ($this->data[$value] == 'on') {
+      $this->data[$value] = 1;
+    }
+  }
+
   private function EMAIL($value)
   {
     if (!filter_var($this->data[$value], FILTER_VALIDATE_EMAIL)) {

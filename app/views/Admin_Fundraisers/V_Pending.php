@@ -45,53 +45,52 @@
                         </thead>
                         <tbody>
                             <?php
-                            // foreach ($data as $fundraiser) {
-                            ?>
+                            foreach ($data as $fundraiser) {
+                                ?>
 
-                            <tr>
-                                <td>
-                                    <span>
-                                        <span class="fi fi-af"></span>
-                                    </span>
-                                    <span>
-                                        <?php echo $fundraiser->id; ?>
-                                    </span>
-                                </td>
-                                <td>
-                                    <?php echo $fundraiser->username; ?>
-                                </td>
-                                <td>
-                                    <?php echo $fundraiser->category; ?>
-                                </td>
-                                <td>
-                                    <?php echo $fundraiser->title; ?>
-                                </td>
-                                <td>80000</td>
-                                <td>20500</td>
-                                <td>2023-12-24</td>
-                                <td>2024-01-01</td>
-                                <td>2024-02-05</td>
-                                <td>Merch + Material</td>
-                                <td>
-                                    <a
-                                        href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <?php echo $fundraiser->type; ?>
-                                </td>
-
-                                <td>
-                                    <?php echo $fundraiser->status; ?>
-                                </td>
-                                <td class="action-td">
-                                    <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->id ?>"
+                                <tr>
+                                    <td>
+                                        <span>
+                                            <span class="fi fi-af"></span>
+                                        </span>
+                                        <span>
+                                            <?php echo $fundraiser->fundraiser_id; 89?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->username; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->Category; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->title; ?>
+                                    </td>
+                                    <td><?php echo $fundraiser->amount; ?></td>
+                                    <td><?php echo $fundraiser->amount_collected; ?></td>
+                                    <td><?php echo $fundraiser->created_date; ?></td>
+                                    <td><?php echo $fundraiser->modified_date; ?></td>
+                                    <td><?php echo $fundraiser->end_date; ?></td>
+                                    <td>**Merch + Material</td>
+                                    <td>
+                                        <a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->type; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $fundraiser->status; ?>
+                                    </td>
+                                    <td class="action-td">
+                                    <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->fundraiser_id ?>"
                                         class="action-icons">
                                         <i class="fa-solid fa-info"></i>
                                     </a>
                                     <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setActive/<?php echo $fundraiser->id ?>"
                                         class="action-icons">
+                                    <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setActive/<?php echo $fundraiser->fundraiser_id ?>" class="action-icons">
                                         <i class="fa-solid fa-play"></i>
                                     </a>
                                     <a href="" class="action-icons">
@@ -99,9 +98,9 @@
                                     </a>
 
                                 </td>
-                            </tr>
-                            <?php
-                            // }
+                                </tr>
+                                <?php
+                            }
                             ?>
                     </table>
                 </div>

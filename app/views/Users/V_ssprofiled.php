@@ -15,6 +15,7 @@
 </head>
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
+<?php require APPROOT . '/views/includes/side-bar.php' ?>
 
     <main>
         

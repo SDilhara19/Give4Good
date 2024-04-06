@@ -1,4 +1,4 @@
-console.log("ds")
+// console.log("ds")
 // const image = document.querySelector(".form-image-container img"), 
 // input = document.querySelector("#form_image");
 
@@ -16,4 +16,4 @@ function setupImagePreview(inputSelector, imageSelector) {
     });
 }
 
-// Example of usage:
+
