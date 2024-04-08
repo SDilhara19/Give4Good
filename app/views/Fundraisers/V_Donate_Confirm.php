@@ -27,32 +27,25 @@
                     <p class="text-4">Small to difference to change their life for the better</p>
                 </div>
                 <div class="payment-form-container">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div class="form-row">
-                            <div class="form-input-title2">Donate
-                            </div>
-                            <input type="text" name="donate" id="donate" class="input" placeholder="">
-                           
-                        </div>
-                        <div class="form-row form-flex">
-                            <div class="form-input-title2">Would you like to contribute to Give4Good</div>
-                            <div class="checkbox-wrapper-2">
-                                <input type="checkbox" class="sc-gJwTLC ikxBAC" name="contributeCheck" id="contributeCheck">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-input-title2">Amount
-                            </div>
-                            <input type="text" name="contribute" id="contribute" class="input" placeholder="">
-                         
-                        </div>
-
-                    </form>
+                <div class="story-contact">
+                    <table>
+                        <tr>
+                            <th>Donation Amount:</th>
+                            <td class="text-3"><?php echo $data->donate; ?></td>
+                            <!-- <td class="text-3">23</td> -->
+                        </tr>
+                        <tr>
+                            <th>Contribution Amount:</th>
+                            <td class="text-3"><?php echo $data->contribute; ?></td>
+                            <!-- <td class="text-3">32</td> -->
+                        </tr>
+                    </table>
+                </div>
                 </div>
             </div>
             <div class="payment-container-bottom">
                 <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
-                <button class="main-color-button" type="submit" onclick="paymentGateway()">Donate</button>
+                <button id ="donateBtn" class="main-color-button" type="submit" onclick="paymentGateway()">Donate</button>
             </div>
         </div>
     </main>
