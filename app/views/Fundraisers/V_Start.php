@@ -74,21 +74,21 @@
                   </span>
 
                 </div>
-                <div class="form-row">
+                <div class="form-row" id="input_image">
                   <div class="form-flex img-label">
                     <div class="form-input-title">Add images related to the fundraiser<span class="required">*</span>
                     </div>
-                    <label for="fund_images" class="custom-file-input2">
-                      <span>Choose Image</span>
-                      <input type="file" accept="image/png, image/jpeg" name="fundraiser_image_1"
-                        id="fundraiser_image_1">
-                    </label>
+                    <input type="file" accept="image/png, image/jpeg" name="fundraiser_image" id="fundraiser_image"
+                      multiple="" style="display: none;" onchange="image_select()">
+                    <button class="custom-file-input3" type="button"
+                      onclick="document.getElementById('fundraiser_image').click()">Choose Images
+                    </button>
                   </div>
-                  <div class="fund-images-con">
-                    <img src="<?php echo URLROOT ?>/public/Assets/images/heart.png" alt="">
+                  <div class="fund-images-box" id="fund-images-box">
+
                   </div>
                   <span class="form-invalid">
-                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];                 ?>Error
+                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];     ?>Error
                   </span>
 
                 </div>
@@ -148,7 +148,7 @@
                       <input type="text" name="dependent_name" id="dependent_name" class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_name_err']))
-                        // echo $data['dependent_name_err'];                 ?>
+                        // echo $data['dependent_name_err'];                      ?>
                         Required field
                       </span>
                     </div>
@@ -159,7 +159,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_birthdate_err']))
-                        // echo $data['dependent_birthdate_err'];                 ?>
+                        // echo $data['dependent_birthdate_err'];                      ?>
                         Required field
                       </span>
                     </div>
@@ -169,7 +169,7 @@
                       <input type="text" name="relationship" id="relationship" class="input" placeholder="XXXXX">
                       <span class="form-invalid">
                         <?php // if (!empty($data['amount_err']))
-                        // echo $data['amount_err'];                 ?>
+                        // echo $data['amount_err'];                      ?>
                         Required field
                       </span>
                     </div>
@@ -182,7 +182,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_err']))
-                        // echo $data['dependent_edu_ins/work_err'];                ?>
+                        // echo $data['dependent_edu_ins/work_err'];                     ?>
 
                       </span>
                     </div>
@@ -193,7 +193,7 @@
                         class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_contact_err']))
-                        // echo $data['dependent_edu_ins/work_contact_err'];                ?>
+                        // echo $data['dependent_edu_ins/work_contact_err'];                     ?>
 
                       </span>
                     </div>
@@ -228,7 +228,7 @@
                       <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
                         placeholder=""></textarea>
                       <span class="form-invalid">
-                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                 ?>Error
+                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                      ?>Error
                       </span>
 
 
@@ -326,11 +326,11 @@
 
                 <div id="material-form-container"></div>
 
-              
+
               </div>
               <div class="js-next-prev-button">
                 <div class="js-prev" onclick="prevStep()">Previous</div>
-                <button class="js-next" onclick="nextStep(3)" type="submit" >Submit</button>
+                <button class="js-next" onclick="nextStep(3)" type="submit">Submit</button>
               </div>
             </fieldset>
           </div>
@@ -339,6 +339,60 @@
       </div>
     </div>
   </main>
+  <script type="text/javascript">
+    var images = [];
+
+    function image_select() {
+      console.log("select");
+      var image = document.getElementById('fundraiser_image').files;
+      for (var i = 0; i < image.length; i++) {
+        if (check_duplicate(image[i].name)) {
+          images.push({
+            "name": image[i].name,
+            "url": URL.createObjectURL(image[i]),
+            "file": image[i],
+          });
+        }
+        else {
+          alert(image[i].name + " is already added");
+        }
+
+      }
+      // document.getElementById('input_image').reset();/\
+      document.getElementById('fundraiser_image').value = "";
+      document.getElementById("fund-images-box").innerHTML = image_show()
+    }
+
+    function image_show() {
+      var image = "";
+      images.forEach((i) => {
+        image += `<div class="fund-images-con">
+                      <img src="`+ i.url + `" alt="">
+                      <span onclick="delete_image(`+ images.indexOf(i) + `)">&times;</span>
+                    </div>`;
+      })
+      return image;
+    }
+
+    function delete_image(e) {
+      images.splice(e, 1);
+      document.getElementById('fund-images-box').innerHTML = image_show();
+    }
+
+    function check_duplicate(name) {
+      var image = true;
+      if (images.length > 0) {
+        for (e = 0; e < images.length; e++) {
+          if (images[e].name == name) {
+            image = false;
+            break;
+          }
+        }
+      }
+      return image
+    }
+  </script>
+
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
