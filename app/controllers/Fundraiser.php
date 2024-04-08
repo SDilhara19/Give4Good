@@ -84,7 +84,7 @@ class Fundraiser extends controller
         $data['details'] = $this->fundraiserModel->payForm($id);
         $data['hash'] = $this->paymentHash();
     
-        $this->view('Fundraisers/V_Pay', $data);
+        $this->view('Fundraisers/V_Pay');
     }
 
     public function sendEmail($to, $subject, $message){

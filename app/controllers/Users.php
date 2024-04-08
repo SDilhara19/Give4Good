@@ -62,12 +62,10 @@ class Users extends controller
     $_SESSION['userName'] = $user->username;
     $_SESSION['userEmail'] = $user->email;
     $_SESSION['userType'] = $user->type;
-    $_SESSION['userStatus'] = $user->status;
+    $_SESSION['userLevel'] = $user->user_level;
     $_SESSION['userImage'] = URLROOT . $user->profile_image;
 
-    // if ($_SESSION['userType'] == "admin"){
-    //   redirect(URLROOT . '/Admin');
-    // }
+    
     redirect(URLROOT . '/Index');
 
 }
@@ -77,7 +75,7 @@ public function logout(){
     unset($_SESSION['userName']);
     unset($_SESSION['userEmail']);
     unset ($_SESSION['userType']);        
-    unset ($_SESSION['userStatus']);
+    unset ($_SESSION['userLevel']);
     unset ($_SESSION['userImage']);
 
     session_destroy();
