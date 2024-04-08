@@ -46,7 +46,8 @@ class Admin_Individual extends controller
   public function donor()
   {
     $data = $this->AdminIndividualModel->viewIndividuals();
-    $this->view('Admin_Individual/V_Donor');
+    $this->view('Admin_Individual/V_Donor', $data);
+    //var_dump($data);
   }
 
   public function setDeactive($id)

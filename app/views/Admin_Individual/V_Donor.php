@@ -47,18 +47,18 @@
             </thead>
             <tbody>
             <?php 
-            foreach ($data as $individual) {
+            foreach ($data as $users_individual) {
             ?>
               <tr>
                 <td>
                   <span>
                     <span class="fi fi-al"></span>
                   </span>
-                  <span><?php echo $deact_super_individual->id; ?></span>
+                  <span><?php echo $users_individual->id; ?></span>
                 </td>
-                <td><?php echo $deact_super_individual->username; ?></td>
-                <td><?php echo $deact_super_individual->email; ?></td>
-                <td><?php echo $deact_super_individual->phone; ?></td>
+                <td><?php echo $users_individual->username; ?></td>
+                <td><?php echo $users_individual->email; ?></td>
+                <td><?php echo $users_individual->phone; ?></td>
                 <td>super/no; ?></td>
                 <td class="action-td">
                   <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
