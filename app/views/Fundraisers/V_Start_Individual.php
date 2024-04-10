@@ -16,6 +16,8 @@
 </head>
 
 <body class="fundraiser-form-bg">
+<script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
+
   <?php require APPROOT . '/views/includes/header.php' ?>
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
   <main>
@@ -52,7 +54,7 @@
         <form action="" method="post" enctype="multipart/form-data" id="fundraiser-form">
 
           <div class="step-container active">
-            <fieldset class="">
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
                 <p class="text-6">Fundraiser Info</p>
                 <div class="form-row">
@@ -256,7 +258,7 @@
             </fieldset>
           </div>
           <div class="step-container">
-            <fieldset class="">
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
 
                 <?php foreach ($data['documents'] as $row){
@@ -266,15 +268,17 @@
                   <div class="form-flex img-label">
                     <div class="form-input-title"><?php echo $row->document; ?><span class="required">*</span>
                     </div>
-                    <label for="birth_certificate" class="custom-file-input2">
+                    <label for="<?php echo $row->document; ?>" class="custom-file-input2">
                       <span>Choose Image</span>
-                      <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
+                      <input type="file" accept="image/png, image/jpeg" name="<?php echo $row->document; ?>" class="document" data-popup-id="<?php echo $row->document; ?>">
                     </label>
                   </div>
                   <div class="document-image-container">
                     <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/Sample-document.png" alt="image here"
-                      id="birth_certificate_preview">
+                      class="document_preview"  data-popup-id="<?php echo $row->document; ?>">
                     <span class="fade-effect"></span>
+  <script>setupImagePreview('.document[data-popup-id="<?php echo $row->document; ?>"]', ".document_preview[data-popup-id='<?php echo $row->document; ?>']");</script>
+
                   </div>
                   <span class="form-invalid">
                     <?php if (!empty($data['birth_certificate_err']))
@@ -292,7 +296,7 @@
             </fieldset>
           </div>
           <div class="step-container">
-            <fieldset>
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
                 <div class="form-row form-flex">
                   <div class="form-input-title2">Would you like to receive materials/goods as donations?</div>
@@ -403,7 +407,6 @@
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
-  <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
   <script>setupImagePreview("#birth_certificate", "#birth_certificate_preview");</script>
 </body>
 
