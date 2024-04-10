@@ -1,4 +1,5 @@
 <?php
+
 class Fundraiser extends controller
 {
     private $fundraiserModel;
@@ -80,4 +81,6 @@ class Fundraiser extends controller
     
         $this->view('Fundraisers/V_Pay');
     }
+
+    
 }

@@ -70,8 +70,9 @@ class M_Admin_Individual {
     }
 
     public function viewIndividuals(){
-        $this->db->query('SELECT users.*
-        FROM users;');
+        $this->db->query('SELECT users_individual.*, users.*
+        FROM users_individual
+        JOIN users ON users_individual.user_id = users.id;');
 
         //Check row
         $row = $this->db->resultSet();

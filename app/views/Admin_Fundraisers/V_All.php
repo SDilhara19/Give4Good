@@ -42,6 +42,7 @@
                                 <th>Status</th>
                                 <th class="action-th">Actions</th>
                             </tr>
+                            </tr>
                         </thead>
                         <tbody>
                             <?php
@@ -50,12 +51,7 @@
 
                                 <tr>
                                     <td>
-                                        <span>
-                                            <span class="fi fi-af"></span>
-                                        </span>
-                                        <span>
-                                            <?php echo $fundraiser->id; ?>
-                                        </span>
+                                            <?php echo $fundraiser->fundraiser_id; ?>
                                     </td>
                                     <td>
                                         <?php echo $fundraiser->username; ?>
