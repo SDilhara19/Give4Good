@@ -35,7 +35,7 @@ class M_Fundraiser {
     {
 
         try{
-        $this->db->query("SELECT fundraiser.*, users.username, users.type FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+        $this->db->query("SELECT fundraiser.*, users.username, users.type, users.address FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
 
         $this->db->bind(':fundraiser_id', $id);
         // $rows = $this->db->resultSet();

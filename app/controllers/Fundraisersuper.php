@@ -33,8 +33,17 @@ class Fundraisersuper extends controller
         }
     }
 
-
     public function index()
+    {
+        if ($_SESSION['userType'] == 'individual') {
+            $this->view('Fundraisers/V_Category_Individual');
+        }
+        else if ($_SESSION['userType'] == 'organisation') {
+            $this->view('Fundraisers/V_Category_Organisation');
+        }
+    }
+
+    public function istart($category)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             var_dump($_POST);
@@ -43,8 +52,9 @@ class Fundraisersuper extends controller
             // $this->fundraiser_start();
         } else {
             $data = [];
-            // var_dump($_SESSION['userId']);
-            $this->view('Fundraisers/V_Start', $data);
+            $data['documents'] = $this->superFundraiserModel->iFindDocuments($category);
+            // var_dump($data['documents'][0]->document);
+            $this->view('Fundraisers/V_Start_Individual', $data);
         }
 
     }
