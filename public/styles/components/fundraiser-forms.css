@@ -217,6 +217,12 @@
   margin: 1rem 0 1rem 0;
 }
 
+.start-fundraiser-fieldset{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
 
 .form-set{
   border: 1px solid var(--new-blue);
@@ -225,6 +231,9 @@
   padding: 1rem;
   position: relative;
   min-height: 200px;
+  max-width: 940px;
+  width: 90%;
+  
 
 }
 
@@ -293,20 +302,27 @@
   position: relative;
   height: 140px;
   width: 100%;
-  /* margin: auto; */
-  margin-top: 1rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   overflow: hidden;
   display: flex;
   align-items:flex-start;
   justify-content:flex-start;
   padding: 0;
-  margin: 0;
   border-radius: 5px;
+  border: 1px solid #ececec;
+  margin-top: 1rem;
+
 }
 
-.child-form{
-  display: none;
+.document-image-container img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
+
+/* .child-form{
+  display: none;
+} */
 
 
 @media (max-width: 992px) {

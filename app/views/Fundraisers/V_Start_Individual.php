@@ -16,6 +16,8 @@
 </head>
 
 <body class="fundraiser-form-bg">
+<script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
+
   <?php require APPROOT . '/views/includes/header.php' ?>
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
   <main>
@@ -49,10 +51,10 @@
         <p class="text-2"> A few steps away from starting your fundraiser</p>
       </div>
       <div class="fundraiser-form">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" id="fundraiser-form">
 
           <div class="step-container active">
-            <fieldset class="">
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
                 <p class="text-6">Fundraiser Info</p>
                 <div class="form-row">
@@ -88,7 +90,7 @@
 
                   </div>
                   <span class="form-invalid">
-                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];     ?>Error
+                    <?php // if(!empty($data['story_description_err']))echo $data['story_description_err'];        ?>Error
                   </span>
 
                 </div>
@@ -128,15 +130,6 @@
                   <div class="form-input-title2">Is the fund requirer below age 18</div>
                   <div class="checkbox-wrapper-2">
                     <input type="checkbox" class="sc-gJwTLC ikxBAC" name="child" id="child" value="on">
-                    <script>
-                      // function formDisplay(form1) {
-                      //   var form = document.getElementById(form1)
-                      //   if (form.value == "on") {
-                      //     console.log("df")
-                      //     form.style.display = 'style';
-                      //   }
-                      // }
-                    </script>
                   </div>
                 </div>
 
@@ -148,7 +141,7 @@
                       <input type="text" name="dependent_name" id="dependent_name" class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_name_err']))
-                        // echo $data['dependent_name_err'];                      ?>
+                        // echo $data['dependent_name_err'];                         ?>
                         Required field
                       </span>
                     </div>
@@ -159,7 +152,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_birthdate_err']))
-                        // echo $data['dependent_birthdate_err'];                      ?>
+                        // echo $data['dependent_birthdate_err'];                         ?>
                         Required field
                       </span>
                     </div>
@@ -169,7 +162,7 @@
                       <input type="text" name="relationship" id="relationship" class="input" placeholder="XXXXX">
                       <span class="form-invalid">
                         <?php // if (!empty($data['amount_err']))
-                        // echo $data['amount_err'];                      ?>
+                        // echo $data['amount_err'];                         ?>
                         Required field
                       </span>
                     </div>
@@ -182,7 +175,7 @@
                         placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_err']))
-                        // echo $data['dependent_edu_ins/work_err'];                     ?>
+                        // echo $data['dependent_edu_ins/work_err'];                        ?>
 
                       </span>
                     </div>
@@ -193,7 +186,7 @@
                         class="input" placeholder="">
                       <span class="form-invalid">
                         <?php // if (!empty($data['dependent_edu_ins/work_contact_err']))
-                        // echo $data['dependent_edu_ins/work_contact_err'];                     ?>
+                        // echo $data['dependent_edu_ins/work_contact_err'];                        ?>
 
                       </span>
                     </div>
@@ -211,7 +204,7 @@
                       </div>
 
                       <div class="nic-form-image-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
+                      <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/Sample-document.png" alt="image here"
                           id="birth_certificate_preview">
                         <span class="fade-effect"></span>
                       </div>
@@ -228,13 +221,36 @@
                       <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
                         placeholder=""></textarea>
                       <span class="form-invalid">
-                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                      ?>Error
+                        <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                         ?>Error
                       </span>
 
 
                     </div>
                   </div>
                 </div>
+
+                <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+    const childCheckbox = document.getElementById('child');
+    const childForm = document.querySelector('.child-form');
+
+    // Function to show or hide the child form based on checkbox state
+    function toggleChildForm() {
+        if (childCheckbox.checked) {
+            childForm.style.display = 'block';
+        } else {
+            childForm.style.display = 'none';
+        }
+    }
+
+    // Initial state check and toggle
+    toggleChildForm();
+
+    // Add event listener to the checkbox
+    childCheckbox.addEventListener('change', toggleChildForm);
+});
+
+                </script>
               </div>
               <div class="js-next-prev-button">
                 <div class="js-next" onclick="nextStep(3)">Next</div>
@@ -242,65 +258,35 @@
             </fieldset>
           </div>
           <div class="step-container">
-            <fieldset class="">
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
+
+                <?php foreach ($data['documents'] as $row){
+                  ?>
+
                 <div class="form-row">
                   <div class="form-flex img-label">
-                    <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
+                    <div class="form-input-title"><?php echo $row->document; ?><span class="required">*</span>
                     </div>
-                    <label for="birth_certificate" class="custom-file-input2">
+                    <label for="<?php echo $row->document; ?>" class="custom-file-input2">
                       <span>Choose Image</span>
-                      <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
+                      <input type="file" accept="image/png, image/jpeg" name="<?php echo $row->document; ?>" class="document" data-popup-id="<?php echo $row->document; ?>">
                     </label>
                   </div>
                   <div class="document-image-container">
-                    <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
-                      id="birth_certificate_preview">
+                    <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/Sample-document.png" alt="image here"
+                      class="document_preview"  data-popup-id="<?php echo $row->document; ?>">
                     <span class="fade-effect"></span>
+  <script>setupImagePreview('.document[data-popup-id="<?php echo $row->document; ?>"]', ".document_preview[data-popup-id='<?php echo $row->document; ?>']");</script>
+
                   </div>
                   <span class="form-invalid">
                     <?php if (!empty($data['birth_certificate_err']))
                       echo $data['birth_certificate_err']; ?>
                   </span>
                 </div>
-                <div class="form-row">
-                  <div class="form-flex img-label">
-                    <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
-                    </div>
-                    <label for="birth_certificate" class="custom-file-input2">
-                      <span>Choose Image</span>
-                      <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
-                    </label>
-                  </div>
-                  <div class="document-image-container">
-                    <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
-                      id="birth_certificate_preview">
-                    <span class="fade-effect"></span>
-                  </div>
-                  <span class="form-invalid">
-                    <?php if (!empty($data['birth_certificate_err']))
-                      echo $data['birth_certificate_err']; ?>
-                  </span>
-                </div>
-                <div class="form-row">
-                  <div class="form-flex img-label">
-                    <div class="form-input-title">Approval by Educational Institute<span class="required">*</span>
-                    </div>
-                    <label for="birth_certificate" class="custom-file-input2">
-                      <span>Choose Image</span>
-                      <input type="file" accept="image/png, image/jpeg" name="birth_certificate" id="birth_certificate">
-                    </label>
-                  </div>
-                  <div class="document-image-container">
-                    <img src="<?php echo URLROOT ?>/public/Assets/images/user-individual.png" alt="image here"
-                      id="birth_certificate_preview">
-                    <span class="fade-effect"></span>
-                  </div>
-                  <span class="form-invalid">
-                    <?php if (!empty($data['birth_certificate_err']))
-                      echo $data['birth_certificate_err']; ?>
-                  </span>
-                </div>
+
+                <?php } ?>
 
               </div>
               <div class="js-next-prev-button">
@@ -310,10 +296,10 @@
             </fieldset>
           </div>
           <div class="step-container">
-            <fieldset>
+            <fieldset class="start-fundraiser-fieldset">
               <div class="form-set">
                 <div class="form-row form-flex">
-                  <div class="form-input-title2">IWould you like to receive materials/goods as donations?</div>
+                  <div class="form-input-title2">Would you like to receive materials/goods as donations?</div>
                   <div class="checkbox-wrapper-2">
                     <input type="checkbox" class="sc-gJwTLC ikxBAC" name="child" id="child">
                   </div>
@@ -345,6 +331,7 @@
     function image_select() {
       console.log("select");
       var image = document.getElementById('fundraiser_image').files;
+      console.log(image)
       for (var i = 0; i < image.length; i++) {
         if (check_duplicate(image[i].name)) {
           images.push({
@@ -359,8 +346,12 @@
 
       }
       // document.getElementById('input_image').reset();/\
+      console.log(images)
       document.getElementById('fundraiser_image').value = "";
       document.getElementById("fund-images-box").innerHTML = image_show()
+      console.log("*****************")
+      console.log(images)
+
     }
 
     function image_show() {
@@ -391,13 +382,32 @@
       }
       return image
     }
-  </script>
+  
+    // document.getElementById('fundraiser-form').addEventListener('submit', function(event) {
+    //     event.preventDefault(); // Prevent the default form submission
+
+    //     // Send the selected files to the server using AJAX
+    //     var formData = new FormData(this);
+    //     // var formData = 2;
+    //     images.forEach(function(image) {
+    //         formData.append('images[]', image.file);
+            
+    //     });
+
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', 'http://localhost/give4good/fundraisersuper/index');
+    //     xhr.onload = function() {
+    //         // Handle response from the server
+
+    //     };
+    //     xhr.send(formData);
+    // });
+</script>
 
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
-  <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
-
+  <script>setupImagePreview("#birth_certificate", "#birth_certificate_preview");</script>
 </body>
 
 </html>
