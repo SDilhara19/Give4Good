@@ -170,9 +170,5 @@ class M_Fundraiser {
             }
     }
 
-    //public function sendEmail($to, $subject, $message){
-        //
-    //}
-
 }
 
