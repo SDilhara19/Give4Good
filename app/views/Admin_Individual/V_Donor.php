@@ -46,27 +46,42 @@
               </tr>
             </thead>
             <tbody>
-            <?php 
-            foreach ($data as $users_individual) {
-            ?>
-              <tr>
-                <td>
-                  <span>
-                    <span class="fi fi-al"></span>
-                  </span>
-                  <span><?php echo $users_individual->id; ?></span>
-                </td>
-                <td><?php echo $users_individual->username; ?></td>
-                <td><?php echo $users_individual->email; ?></td>
-                <td><?php echo $users_individual->phone; ?></td>
-                <td>super/no; ?></td>
-                <td class="action-td">
-                  <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-                </td>
-              </tr>
               <?php
-                }
+              foreach ($data as $users_individual) {
                 ?>
+                <tr>
+                  <td>
+                    <span>
+                      <span class="fi fi-al"></span>
+                    </span>
+                    <span>
+                      <?php echo $users_individual->id; ?>
+                    </span>
+                  </td>
+                  <td>
+                    <?php echo $users_individual->username; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_individual->email; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_individual->phone; ?>
+                  </td>
+                  <?php
+                  if ($users_individual->user_level == 2) {
+                    echo '<td> Super</td>';
+                  } else if ($users_individual->user_level == 1) {
+                    echo '<td> Initial</td>';
+                  }
+                  ?>
+
+                  <td class="action-td">
+                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  </td>
+                </tr>
+                <?php
+              }
+              ?>
             </tbody>
           </table>
         </div>
