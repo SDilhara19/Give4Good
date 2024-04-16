@@ -11,7 +11,7 @@
 
       <div class="material-form">
         <div class="story-heading">
-          <h1>Materials you hope to receive</h1>
+          <h2>Materials you hope to receive</h2>
           <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
         </div>
         <div class="dynamic-form-tag-con" id="dynamic-form-tag-con" style='display: none;'>
@@ -24,7 +24,7 @@
         <div class="dynamic-form">
           <div class="form-row form-flex">
             <div class="flx-1">
-              <div class="form-input-title2">Material/item name
+              <div class="form-input-title2">Material/item name<span class="required">*</span>
               </div>
               <input type="text" name="material/item_name" id="material/item_name" class="input" placeholder="">
               <span class="form-invalid">
@@ -34,11 +34,11 @@
               </span>
             </div>
             <div class="flx-1">
-              <div class="form-input-title2">Number of units required
+              <div class="form-input-title2">Number of units required<span class="required">*</span>
               </div>
               <input type="text" name="no_required" id="no_required" class="input" placeholder="">
               <span class="form-invalid">
-                <?php // if (!empty($data['dno_required_err']))
+                <?php // if (!empty($data['no_required_err']))
                 // echo $data['no_required_err'];                        ?>
 
               </span>
@@ -52,14 +52,14 @@
               <textarea name="material_description" id="material_description" class="fund_story" rows="3"
                 maxlength="500" placeholder=""></textarea>
               <span class="form-invalid">
-                <?php // if(!empty($data['material_description_err']))echo $data['material_description_err'];                         ?>Error
+                <?php // if(!empty($data['material_description_err']))echo $data['material_description_err'];                         ?>
               </span>
 
 
             </div>
             <div class="flx-1">
               <div class="form-flex img-label">
-                <div class="form-input-title">Image<span class="required">*</span>
+                <div class="form-input-title">Image
                 </div>
                 <label for="material_image" class="custom-file-input2">
                   <span>Upload</span>
@@ -84,7 +84,79 @@
           </div>
         </div>
       </div>
-      
+      <div class="location-form">
+        <div class="story-heading">
+          <h2>Locations you can collect the materials</h2>
+          <i id="add-location-icon" class=" fa-solid fa-circle-plus fa-2xl"></i>
+        </div>
+        <div class="dynamic-form-tag-con" id="dynamic-location-tag-con" style='display: block;'>
+
+        </div>
+
+        <div id="location-form-container">
+        <div class="dynamic-form">
+          <div class="form-row form-flex">
+            <div class="flx-1">
+              <div class="form-input-title2">Town/city<span class="required">*</span>
+              </div>
+              <input type="text" name="town/city" id="town/city" class="input" placeholder="ex: Piliyandala">
+              <span class="form-invalid">
+                <?php // if (!empty($data['town/city_err']))
+                // echo $data['town/city_err'];                        ?>
+
+              </span>
+            </div>
+            <div class="flx-1">
+              <div class="form-input-title2">Contact<span class="required">*</span>
+              </div>
+              <input type="text" name="contact" id="contact" class="input" placeholder="ex: 0703436154">
+              <span class="form-invalid">
+                <?php // if (!empty($data['contact_err']))
+                // echo $data['contact_err'];                        ?>
+
+              </span>
+            </div>
+          </div>
+          <div class="form-row form-flex">
+
+            <div class="flx-1">
+
+              <div class="form-input-title2">Address<span class="required">*</span></div>
+              <input type="text" name="address" id="address" class="input" placeholder="" maxlength="200" placeholder="">
+              <span class="form-invalid">
+                <?php // if(!empty($data['address_err']))echo $data['address_err'];                         ?>
+              </span>
+
+
+            </div>
+            <div class="flx-1">
+              <div class="form-flex img-label">
+                <div class="form-input-title">Location<span class="required">*</span>
+                </div>
+                <label for="location" class="custom-file-input2">
+                  <span>Add</span>
+                  <input type="file" accept="image/png, image/jpeg" name="material_image" id="material_image">
+                </label>
+              </div>
+
+              <div class="nic-form-image-container">
+                <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/sample-image.jpeg" alt="image here"
+                  id="location_image_preview">
+                <span class="fade-effect"></span>
+              </div>
+              <span class="form-invalid">
+                <?php if (!empty($data['location_err']))
+                  echo $data['location_err']; ?>
+              </span>
+
+            </div>
+          </div>
+          <div class="submit-button-div">
+            <button class="add-button secondary-button" id="add-button" type="button">Add</button>
+          </div>
+        </div>
+        </div>
+      </div>
       <script>
         let materials = [];
 
@@ -181,11 +253,7 @@
             isValid = false;
           }
 
-          // Validate image
-          if (!imageInput.value) {
-            imageInput.closest('.flx-1').querySelector('.form-invalid').textContent = 'An image is required';
-            isValid = false;
-          }
+         
 
           // If all fields are valid, proceed with adding the item
           if (isValid) {
