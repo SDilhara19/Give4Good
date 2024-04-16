@@ -13,6 +13,7 @@ class Individual extends controller
 
     public function index()
     {
+        $this->checkUserLogin();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->signup();
             // var_dump($_POST);
@@ -23,19 +24,40 @@ class Individual extends controller
 
     }
 
+    private function checkUserLogin()
+    {
+  
+      if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
+        logOut();
+      }
+      else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'organisation')) {
+        logOut();
+      }
+    }
 
     public function super()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->super_signup();
-        } else {
-            $data = [];
-            // var_dump($_SESSION['userId']);
-            $this->view('Individual/V_Super_Signup', $data);
+        if (!isloggedIn()) {
+            redirect(URLROOT . '/Users');
+        } else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'organisation')) {
+            redirect(URLROOT . '/Organisation/super');
+        } else if (isset($_SESSION['userType']) && ($_SESSION['userType'] !== 'individual')) {
+            logOut();
+            redirect(URLROOT . '/Users');
+        }
+         else {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $this->super_signup();
+            } else {
+                $data = [];
+                // var_dump($_SESSION['userId']);
+                $this->view('Individual/V_Super_Signup', $data);
+            }
         }
 
     }
 
+    
 
     public function signup()
     {
@@ -110,8 +132,7 @@ class Individual extends controller
                     die("Something went wrong");
                 }
             }
-        }
-        catch(Error $e){
+        } catch (Error $e) {
             echo "Caught exception: " . $e->getMessage();
         }
     }
