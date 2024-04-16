@@ -204,7 +204,7 @@
 
 }
 
-.fund-images-con span{
+.fund-images-con span, .dynamic-form-tag span{
   position: absolute;
   top: 0px;
   right: 6px;
@@ -221,6 +221,7 @@
   display: flex;
   align-items:center;
   justify-content:center;
+  width:100%;
 }
 
 
@@ -325,6 +326,60 @@
 } */
 
 
+
+/* material form css */
+
+.material-form{
+  width: 100%;
+}
+.dynamic-form{
+  padding: 1rem;
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  margin: 1rem;
+
+}
+
+.dynamic-form #add-button{
+  cursor: pointer;
+}
+
+.dynamic-form #add-button:hover{
+  opacity: 0.9;
+}
+.dynamic-form-tag-con{
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(6, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 8px;
+  background-color: var(--new-blue);
+  width: 100%; 
+  margin-bottom: 1.5rem;
+}
+
+.dynamic-form-tag{
+  width: 120px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.dynamic-form-tag div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
 @media (max-width: 992px) {
   .fund-images-con{
   display: grid;

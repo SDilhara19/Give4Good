@@ -13,6 +13,9 @@ class Stories extends controller
 
   public function index()
   {
+    if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
+      logOut();
+  }
     $data = $this->StoryModel->getAllStories();
 
     $this->view('Stories/V_Story-all', $data);
@@ -20,6 +23,7 @@ class Stories extends controller
 
   public function add()
   {
+    $this->checkUserLogin();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       // var_dump($_SESSION['userId']);
       $this->process_story();
@@ -61,5 +65,20 @@ class Stories extends controller
 
     }
 
+  
+
+  private function checkUserLogin()
+    {
+      if (!isloggedIn()){
+        redirect(URLROOT . '/Users');
+      }
+  else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
+        logOut();
+        redirect(URLROOT . '/Users');
+
+      }
+
   }
+
+}
 

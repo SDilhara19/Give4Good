@@ -44,26 +44,25 @@ class Admin_Fundraisers extends controller
         $this->view('Admin_Fundraisers/V_Pending', $data);
     }
 
-    public function setDeactive($id){
-        if($this->AdminFundraisersModel -> deactivateFundraiser($id)){
-          echo '<script>alert("Story deactivated successfully!");</script>';
-        } else {
-          // Deactivation failed, handle the error
-          echo '<script>alert("Error deactivating the Fundraiser.");</script>';
-        }
-        redirect(URLROOT . '/Admin_Fundraiser/index');
-     }
- 
-     public function setActive($id){
-        if($this->AdminFundraisersModel -> activateFundraiser($id)){
-          echo '<script>alert("Story activated successfully!");</script>';
-        } else {
-          // Deactivation failed, handle the error
-          echo '<script>alert("Error activating the Fundraiser.");</script>';
-        }
-        redirect(URLROOT . '/Admin_Fundraiser/index');
-     }
+       public function setDeactive($id){
+         if($this->AdminFundraisersModel -> deactivateFundraiser($id)){
+           echo '<script>alert("Story deactivated successfully!");</script>';
+         } else {
+           // Deactivation failed, handle the error
+           echo '<script>alert("Error deactivating the Fundraiser.");</script>';
+         }
+         redirect(URLROOT . '/Admin_Fundraiser/index');
+      }
 
+      public function setActive($id){
+         if($this->AdminFundraisersModel -> activateFundraiser($id)){
+           echo '<script>alert("Story activated successfully!");</script>';
+         } else {
+           // Deactivation failed, handle the error
+           echo '<script>alert("Error activating the Fundraiser.");</script>';
+         }
+         redirect(URLROOT . '/Admin_Fundraiser/index');
+      }
     public function merchandise(){
 
        // $data = $this->AdminFundraisersModel -> viewMerch();

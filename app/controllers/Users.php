@@ -13,6 +13,9 @@ class Users extends controller
 
   public function index()
   {
+    if (isloggedIn()) {
+    logOut();
+  }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $this->login();
     } else {
@@ -23,7 +26,9 @@ class Users extends controller
   }
 
   public function select()
-{
+{if (isloggedIn()) {
+  logOut();
+}
   // $this->view('Logins/V_Signup');
   $this->view('Users/V_Select_User');
 }
@@ -52,6 +57,8 @@ class Users extends controller
         $this->createUserSession($loggedInUser);
       } else {
         $obj->data['password_err'] = 'Invalid password';
+      $obj->data['username/email_err'] = 'The given username or email is invalid';
+
         $this->view('Users/V_Login', $obj->data);
       }
     }

@@ -39,8 +39,8 @@
 
                             <div class="form-input-title"> USERNAME OR EMAIL <span class="required">*</span> <span
                                     class="form-invalid">
-                                    <?php if (!empty($data['username/emai_err']))
-                                        echo $data['username_err']; ?>
+                                    <?php if (!empty($data['username/email_err']))
+                                        echo $data['username/email_err']; ?>
                                 </span></div>
                             <input type="text" name="username/email" id="username/email" class="input">
 
@@ -57,7 +57,7 @@
                         </div>
 
                         <p class="login-register text-5">
-                            Don't have an account? <a href="<?php echo URLROOT ?>/Individual">Register</a>
+                            Don't have an account? <a href="<?php echo URLROOT ?>/Users/select">Register</a>
                         </p>
                     </div>
                 </div>
