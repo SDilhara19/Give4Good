@@ -50,6 +50,7 @@ class M_Fundraiser {
         }else{
             return false;
         }
+    }
     public function getAFundraiser($id) 
     {
 

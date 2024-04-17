@@ -30,7 +30,13 @@
                         placeholder="Title to be displayed">
                     <span class="form-invalid"><?php if(!empty($data['story_title_err']))echo $data['story_title_err']; ?></span>
 
-                    <div class="form-input-title">IMAGE</div>
+                    
+                    <div class="form-input-title">Reason<span class="required">*</span></div>
+                    <textarea name="story_description" id="story_description" class="story_description" rows="3"
+                        maxlength="500" placeholder="Reason to be displayed"></textarea>
+                    <span class="form-invalid"><?php if(!empty($data['story_description_err']))echo $data['story_description_err']; ?></span>
+
+                    <div class="form-input-title">Others</div>
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="form_image">
 
                     <div class="form-image-container">
@@ -38,14 +44,9 @@
                     </div>
                     <span class="form-invalid"><?php if(!empty($data['story_image_err']))echo $data['story_image_err']; ?></span>
 
-                    <div class="form-input-title">DESCRIPTION<span class="required">*</span></div>
-                    <textarea name="story_description" id="story_description" class="story_description" rows="3"
-                        maxlength="500" placeholder="Description to be displayed"></textarea>
-                    <span class="form-invalid"><?php if(!empty($data['story_description_err']))echo $data['story_description_err']; ?></span>
-
 
                     <div class="contact">
-                        <div class="form-input-title">CONTACT<span class="required">*</span></div>
+                        <div class="form-input-title">Contact<span class="required">*</span></div>
                         <div class="form-flex">
                             <div class="form-flex-left">
                                 <input type="radio" id="default_contact" name="contact" value="option1" checked

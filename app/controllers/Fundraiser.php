@@ -80,12 +80,11 @@ class Fundraiser extends controller
     
         $this->view('Fundraisers/V_Pay', $data);
     }
-}
 
-
-public function complaints(){
+    public function complaints(){
 
     $this->view('Fundraisers/V_complaint');
+    }
 }
-}
+
 ?>

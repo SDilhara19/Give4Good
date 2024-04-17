@@ -112,7 +112,6 @@ body {
   gap: 1rem;
   padding-bottom: 290px;
   justify-content: space-between;
-  align-items: center;
   
 }
 
@@ -120,6 +119,7 @@ body {
   height: 100%;
   width: 100%;
   border: 1px solid green;
+  justify-content: center;
 }
 
 .profile-fundraisers-container{
@@ -160,7 +160,6 @@ body {
 }
 
 section{
-  height:68vh;
   width:100%;
   display: flex;
   flex-direction: column;
@@ -187,7 +186,7 @@ section::before{
   width: 900px;
   min-height: 480px;
   background-color: white;
-max-height: 900px;
+  max-height: 900px;
   filter: blur(0.2px);
 }
 
@@ -216,7 +215,7 @@ max-height: 900px;
   height:100%;
   padding: 10px;
   margin: 30px;
-  border-right: 1px solid #4EB790;
+  border-right: 2px solid #4EB790;
 }
 
 .nic-front{
@@ -448,4 +447,9 @@ margin-top: 70px;
     padding: 10px;
     min-width: 100px;
   }
+  
+ .button-set{
+    display: flex;
+    justify-content: center;
+ }
   

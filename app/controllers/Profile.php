@@ -9,16 +9,18 @@ class Profile extends controller
     }
   
   public function index($id){
-   $data = $this->profileModel->getUserDetails($id);
-    $this->view('Profiles/V_indvProfile', $data);
+    $data = $this->profileModel->getUserDetails($id);
+    $this->view('Profiles/V_indvProfile',$data);
    //var_dump($this->profileModel->getUserDetails());
   }
    
-  public function edit_indv(){
-    $this->view('Profiles/V_editIndvProfile');
+  public function edit_indv($id){
+    $data = $this->profileModel->editUserDetails($id);
+    $this->view('Profiles/V_editIndvProfile',$data);
   }
 
-  public function orgProfile(){
+  public function orgProfile($id){
+    $data = $this->profileModel->getOrgDetails($id);
      $this->view('Profiles/V_orgProfile');
   }
 
@@ -26,20 +28,29 @@ class Profile extends controller
     $this->view('Profiles/V_editOrgProfile');
  }
 
- public function donations(){
-    $this->view('Profiles/V_profileDonations');
+ public function donations($id){
+    $data = $this->profileModel->getUserDonations($id);
+    $this->view('Profiles/V_profileDonations',$data);
+   //var_dump($data);
  }
 
- public function fundraisers(){
-    $this->view('Profiles/V_profileFundraisers');
+ public function fundraisers($id){
+    $data = $this->profileModel->getUserFundraisers($id);
+    $this->view('Profiles/V_profileFundraisers',$data);
+    //var_dump($data);
  }
 
- public function stories(){
-    $this->view('Profiles/V_profileStories');
+ public function stories($id){
+   $data = $this->profileModel->getUserStories($id);
+   $this->view('Profiles/V_profileStories',$data);
+//   var_dump($data);
+
  }
 
- public function complaigns(){
-    $this->view('Profiles/V_profileComplaigns');
+ public function complaints($id){
+    $data = $this->profileModel->getUserComplaints($id);
+    $this->view('Profiles/V_profileComplaints',$data);
+   //var_dump($data);
  }
  
  public function notifications(){

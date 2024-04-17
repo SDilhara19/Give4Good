@@ -16,7 +16,12 @@
 
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
-  <?php require APPROOT . '/views/includes/indvProfileSideBar.php' ?>
+  <?php if ($_SESSION['userType']=='individual') { 
+  require APPROOT . '/views/includes/indvProfileSideBar.php';
+}else if($_SESSION['userType']=='organisation'){ 
+require APPROOT . '/views/includes/orgProfileSideBar.php';
+} 
+?> 
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
@@ -37,22 +42,24 @@
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Fundraiser ID</th>
-                <th>Fundraiser Title</th>
-                <th>Amount</th>
-                <th></th>
-                <th>Actions</th>
+                <a href="Fundraiser/fundraiser"><th>Fundraiser Title</th></a>
+                <th>Donated Amount</th>
+                <th>Contribution Amount</th>
               </tr>
             </thead>
             <tbody>
+            <?php 
+                  foreach ($data as $profileDonations) {
+                  ?>
               <tr>
-                <td>2023-12-04</td>
-                <td>13</td>
-                <td>Help for .......</td>
-                <td>2000.00</td>
-                <td></td>
-                <td>view fundraiser</td>
-              </tr>
+                <td><?php echo $profileDonations->payment_date; ?></td>
+                <td><?php echo $profileDonations->title; ?></td>
+                <td><?php echo $profileDonations->donated_amount; ?></td>
+                <td><?php echo $profileDonations->contribution_amount; ?></td>
+                 </tr>
+              <?php
+         }
+        ?>
             </tbody>
           </table>
         </div>

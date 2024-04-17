@@ -1,14 +1,9 @@
 <?php
 class M_Admin_Fundraiser{
     private $db;
-    public function __construct()
-    {
+    public function __construct(){
         $this->db = new Database;
     }
-
-
-
-
     public function viewPending(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type
         FROM fundraiser
@@ -58,8 +53,7 @@ class M_Admin_Fundraiser{
 
     // }
 
-    public function getAllFundraisers()
-    {
+    public function getAllFundraisers(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type 
         FROM fundraiser 
         JOIN users ON fundraiser.user_id = users.id;
@@ -73,11 +67,9 @@ class M_Admin_Fundraiser{
         } else {
             return false;
         }
-
     }
 
-    public function viewDeactivated()
-    {
+    public function viewDeactivated(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type
         FROM fundriaser
         JOIN users ON fundraiser.user_id = users.id
@@ -111,10 +103,6 @@ public function getActiveFundraisers() {
     }
 
     public function activateFundraiser($id){
-        $this->db->query('UPDATE fundraiser SET status = "Active" 
-        WHERE id = :id;');
-
-    public function activateFundraiser($id){
        try{
         $this->db->query('UPDATE fundraiser SET status = "Active" 
         WHERE fundraiser_id = :id;');
@@ -133,7 +121,7 @@ public function getActiveFundraisers() {
        }
        
     }
-  //  public function viewMerch(){
+    public function viewMerch(){
 
         $this->db->bind(':id', $id);
 

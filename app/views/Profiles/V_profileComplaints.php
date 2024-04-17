@@ -15,17 +15,19 @@
 </head>
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
-<?php if ($_SESSION['userType']=='individual') { 
+<<?php if ($_SESSION['userType']=='individual') { 
   require APPROOT . '/views/includes/indvProfileSideBar.php';
 }else if($_SESSION['userType']=='organisation'){ 
 require APPROOT . '/views/includes/orgProfileSideBar.php';
 } 
-?>   
+?> 
+
+    
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Your Stories</span>
+        <span>Your Complaints</span>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -40,27 +42,23 @@ require APPROOT . '/views/includes/orgProfileSideBar.php';
         <table>
         <thead>
         <tr>
-            <th>Title</th>
-            <th>Decription</th>
-            <th>Image</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>Fundraiser Title</th>
+            <th>Reason</th>
+            <th>Others</th>
         </tr>
     </thead>
     <tbody>
     <?php 
-       foreach ($data as $profileStories) {
+                  foreach ($data as $profileComplaints) {
                   ?>
         <tr>
-          <td><?php echo $profileStories->title; ?></td>
-          <td><?php echo $profileStories->description; ?></td>
-          <td><img src=<?php echo $profileStories->image; ?>></td>
-          <td><?php echo $profileStories->status; ?></td>
-          <td>button view, edit, delete </td>
-        </tr> 
+          <td><?php echo $profileComplaints->fundraiser_name; ?></td>
+          <td><?php echo $profileComplaints->reason; ?></td>
+          <td><?php echo $profileComplaints->others; ?></td>
+        </tr>
         <?php
         }
-        ?>  
+        ?>
         </tbody>
     </table>  
   </div>

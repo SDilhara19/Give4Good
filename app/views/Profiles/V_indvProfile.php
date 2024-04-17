@@ -24,6 +24,7 @@
         <span>Your Profile</span>
       </div>
     </div>
+    
     <div class="dashDetails">
       <section class="section">
         <div class="card">
@@ -83,7 +84,7 @@
               </tr>
               <tr>
                 <td>NIC No :</td>
-                <td>955252535V</td>
+                <td><?php echo $data[0]->nic_no; ?></td>
               </tr>
               <tr>
                 <td>Bank Name :</td>
@@ -128,15 +129,15 @@
               </tr>
               <tr>
                 <td>NIC No :</td>
-                <td>955252535V</td>
+                <td><?php echo $data[0]->nic_no; ?></td>
               </tr>
               <tr>
                 <td>Address :</td>
-                <td>BOC</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Reg. Date :</td>
-                <td>2002-12-14</td>
+                <td></td>
               </tr>
             </table>
 

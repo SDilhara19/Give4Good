@@ -34,7 +34,8 @@
     border: none;
     color: var(--black-sub);
     font-weight: 600;
-    width: 70%;
+    height:40px;
+    width: 100px;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
     border-radius: 5px;

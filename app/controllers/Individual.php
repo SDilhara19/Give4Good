@@ -21,11 +21,7 @@ class Individual extends controller
             $data=[];
         $this->view('Individual/V_Signup', $data);
             // var_dump($_POST);
-        } else {
-            $data = [];
-            $this->view('Individual/V_Signup', $data);
         }
-
     }
 
 
