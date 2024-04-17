@@ -46,9 +46,8 @@ class Fundraisersuper extends controller
     public function istart($category)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            var_dump($_POST);
-            var_dump("___________________");
-            var_dump($_FILES);
+            
+            $this->view('test');
             // $this->fundraiser_start();
         } else {
             $data = [];
