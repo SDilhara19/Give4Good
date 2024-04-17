@@ -2,7 +2,6 @@
 class Admin_Organisation extends controller
 {
     private $AdminOrganisationModel;
-    //private $prototypeModel;
     public function __construct()
     {
         $this->AdminOrganisationModel = $this->model('M_Admin_Organisations');
@@ -46,8 +45,8 @@ class Admin_Organisation extends controller
     public function donor()
     {
         $data = $this->AdminOrganisationModel->viewOrganisations();
-        //$this->view('Admin_Organisation/V_Donor', $data);
-        var_dump($data);
+        $this->view('Admin_Organisation/V_Donor', $data);
+        //var_dump($data);
 
 
     }

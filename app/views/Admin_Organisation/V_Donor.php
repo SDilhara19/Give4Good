@@ -49,7 +49,7 @@
         </thead>
         <tbody>
               <?php
-              foreach ($data as $users_organisations) {
+              foreach ($data as $users_organisation) {
                 ?>
                 <tr>
                   <td>
@@ -57,22 +57,22 @@
                       <span class="fi fi-al"></span>
                     </span>
                     <span>
-                      <?php echo $users_organisations->id; ?>
+                      <?php echo $users_organisation->id; ?>
                     </span>
                   </td>
                   <td>
-                    <?php echo $users_organisations->username; ?>
+                    <?php echo $users_organisation->username; ?>
                   </td>
                   <td>
-                    <?php echo $users_organisations->email; ?>
+                    <?php echo $users_organisation->email; ?>
                   </td>
                   <td>
-                    <?php echo $users_organisations->phone; ?>
+                    <?php echo $users_organisation->phone; ?>
                   </td>
                   <?php
-                  if ($users_organisations->user_level == 2) {
+                  if ($users_organisation->user_level == 2) {
                     echo '<td> Super</td>';
-                  } else if ($users_organisations->user_level == 1) {
+                  } else if ($users_organisation->user_level == 1) {
                     echo '<td> Initial</td>';
                   }
                   ?>

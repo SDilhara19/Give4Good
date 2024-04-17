@@ -96,9 +96,9 @@ class M_Admin_Organisations {
     //}
 
     public function viewOrganisations(){
-        $this->db->query('SELECT users_organisations.*, users.*
-        FROM users_organisations
-        JOIN users ON users_organisations.user_id = users.id;');
+        $this->db->query('SELECT users_organisation.*, users.*
+        FROM users_organisation
+        JOIN users ON users_organisation.user_id = users.id;');
 
         //Check row
         $row = $this->db->resultSet();
