@@ -109,8 +109,9 @@
   top: 30px;
 }
 
-.progress.active{
+.progress-step-hori.active .progress{
   display: block;
+  animation: slideFromLeft .5s ease-in-out;
 }
 
 .progress-mark-hori{
@@ -122,7 +123,7 @@
   top: 10px;
   right: -25px;
 }
-.progress-mark.active{
+.progress-step-hori.active .progress-mark{
   background-color: var(--new-blue);
 }
 
@@ -133,7 +134,7 @@
   right: -50px;
 }
 
-.progress-text-hori.active{
+.progress-step-hori.active .progress-text-hori{
   display: block;
 }
 .fundraiser-form-title {
@@ -167,31 +168,60 @@
   color: var(--black-sub);
 }
 
-.fund-images-con {
-  border-radius: 8px;
-  border: 1px solid #ececec;
+.fund-images-box {
   padding: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   width: 100%;
+  height: auto;
   display: grid;
   gap: 0.3rem;
   grid-template-columns: repeat(4, 1fr);
+  background-color: #f7feff;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  min-height: 130px;
+
+}
+
+.fund-images-con{
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  position:relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 
 }
 
 .fund-images-con img {
-  width: 150px;
-  height: 100%;
-  border: 0.5px solid var(--border-grey);
-  object-fit: contain;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 
+}
+
+.fund-images-con span, .dynamic-form-tag span{
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  cursor: pointer;
+  color: var(--red-color);
 
 }
 
 .form-row{
   margin: 1rem 0 1rem 0;
+}
+
+.start-fundraiser-fieldset{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
 }
 
 
@@ -202,6 +232,9 @@
   padding: 1rem;
   position: relative;
   min-height: 200px;
+  max-width: 940px;
+  width: 90%;
+  
 
 }
 
@@ -246,23 +279,107 @@
   cursor: pointer;
 }
 
+.custom-file-input3{
+  position: relative;
+  cursor: pointer;
+  padding: 0.1rem 0;
+  width: 7rem;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  /* border: 1px solid var(--primary-color); */
+  color: var(--black-sub);
+  margin: 0.5rem 0 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  border: none;
+  
+}
+
+
 .document-image-container{
   /* border: 1px solid var(--border-grey); */
   position: relative;
   height: 140px;
   width: 100%;
-  /* margin: auto; */
-  margin-top: 1rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   overflow: hidden;
   display: flex;
   align-items:flex-start;
   justify-content:flex-start;
   padding: 0;
-  margin: 0;
   border-radius: 5px;
+  border: 1px solid #ececec;
+  margin-top: 1rem;
+
 }
 
+.document-image-container img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
+/* .child-form{
+  display: none;
+} */
+
+
+
+/* material form css */
+
+.material-form{
+  width: 100%;
+}
+.dynamic-form{
+  padding: 1rem;
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  margin: 1rem;
+
+}
+
+.dynamic-form #add-button{
+  cursor: pointer;
+}
+
+.dynamic-form #add-button:hover{
+  opacity: 0.9;
+}
+.dynamic-form-tag-con{
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(6, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 8px;
+  background-color: var(--new-blue);
+  width: 100%; 
+  margin-bottom: 1.5rem;
+}
+
+.dynamic-form-tag{
+  width: 120px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.dynamic-form-tag div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
 @media (max-width: 992px) {
   .fund-images-con{
   display: grid;

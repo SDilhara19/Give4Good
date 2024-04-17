@@ -23,12 +23,14 @@ class Admin_Individual extends controller
   {
     $data = $this->AdminIndividualModel->viewAll();
     $this->view('Admin_Individual/V_All_Super', $data);
+    //var_dump($data);
   }
 
   public function active()
   {
     $data = $this->AdminIndividualModel->viewActive();
     $this->view('Admin_Individual/V_Act_Super', $data);
+    //var_dump($data);
   }
 
   public function deactive()
@@ -46,7 +48,8 @@ class Admin_Individual extends controller
   public function donor()
   {
     $data = $this->AdminIndividualModel->viewIndividuals();
-    $this->view('Admin_Individual/V_Donor');
+    $this->view('Admin_Individual/V_Donor', $data);
+    //var_dump($data);
   }
 
   public function setDeactive($id)

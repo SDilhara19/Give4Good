@@ -334,3 +334,15 @@ td .action-td {
   background-color: #ffffff;
   border: 2px solid var(--black-sub);
 }
+
+.data_view {
+  background-color: var(--black-sub);
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--black-sub);
+  border-radius: 15px;
+  width: 4rem;
+  color: var(--white-color);
+  padding: 0.2rem 0;
+}

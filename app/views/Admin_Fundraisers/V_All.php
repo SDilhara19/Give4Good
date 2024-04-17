@@ -41,6 +41,7 @@
                                 <th>Status</th>
                                 <th class="action-th">Actions</th>
                             </tr>
+                            </tr>
                         </thead>
                         <tbody>
                             <?php
@@ -49,12 +50,7 @@
 
                                 <tr>
                                     <td>
-                                        <span>
-                                            <span class="fi fi-af"></span>
-                                        </span>
-                                        <span>
-                                            <?php echo $fundraiser->id; ?>
-                                        </span>
+                                            <?php echo $fundraiser->fundraiser_id; ?>
                                     </td>
                                     <td>
                                         <?php echo $fundraiser->username; ?>
@@ -65,12 +61,14 @@
                                     <td>
                                         <?php echo $fundraiser->title; ?>
                                     </td>
-                                    <td>80000</td>
-                                    <td>20500</td>
-                                    <td>2023-12-24</td>
-                                    <td>2024-01-01</td>
-                                    <td>2024-02-05</td>
-                                    <td>Merch + Material</td>
+                                    <td>
+                                        <?php echo $fundraiser->amount; ?>
+                                    </td>
+                                    <td><?php echo $fundraiser->amount_collected; ?></td>
+                                    <td><?php echo $fundraiser->created_date; ?></td>
+                                    <td><?php echo $fundraiser->modified_date; ?></td>
+                                    <td><?php echo $fundraiser->end_date; ?></td>
+                                    
                                     <td>
                                         <a
                                             href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>">

@@ -53,6 +53,8 @@ class M_Admin_Fundraiser{
 
     // }
 
+
+
     public function getAllFundraisers(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type 
         FROM fundraiser 
@@ -103,9 +105,8 @@ public function getActiveFundraisers() {
     }
 
     public function activateFundraiser($id){
-       try{
         $this->db->query('UPDATE fundraiser SET status = "Active" 
-        WHERE fundraiser_id = :id;');
+        WHERE id = :id;');
 
         $this->db->bind(':id', $id);
 

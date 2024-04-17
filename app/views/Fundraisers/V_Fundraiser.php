@@ -27,14 +27,17 @@
             <div class="fundraiser-left">
                 <div class="fundraiser-image-container">
                     <div class="left-arrow">
-                        <i class="fa-solid fa-chevron-left fa-2xl"></i>
+                        <i class="fa-solid fa-chevron-left fa-2xl" style="font-size: 3em;" onclick="showPrevImage()"></i>
                     </div>
                     <div class="fundraiser-image">
-                        <img src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
+
+                        <img id="current-image" src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
                     </div>
                     <div class="right-arrow">
-                        <i class="fa-solid fa-chevron-right fa-2xl"></i>
+                        <i class="fa-solid fa-chevron-right fa-2xl" onclick="showNextImage()" style="font-size: 3em;"></i>
                     </div>
+
+
                 </div>
                 <div class="fundraiser-count-row">
                     <p class="text-2">
@@ -51,7 +54,9 @@
                             <?php echo $data['fundraiser'][0]->username; ?>
                         </p>
                     </div>
-                    <p class="text-3">Hardcoded No.21, UCSC, Reid Avenue, Colombo 7</p>
+                    <p class="text-3">
+                    <?php echo $data['fundraiser'][0]->address; ?>
+                    </p>
                 </div>
                 <div class="fundriaser-description">
                     <p class="text-1">
@@ -65,10 +70,11 @@
                 
             </div>
             <div class="fundraiser-right">
-            <div class="fundraiser-progress-bar-container">
-                <div class="fundraiser-progress-bar">
-                    <div class="fundraiser-progress" style="width: <?php echo $data['fundraiser'][0]->progress . '%' ?>"></div>
-                </div>
+                <div class="fundraiser-progress-bar-container">
+                    <div class="fundraiser-progress-bar">
+                        <div class="fundraiser-progress"
+                            style="width: <?php echo $data['fundraiser'][0]->progress . '%' ?>"></div>
+                    </div>
                 </div>
                 <div class="fundraiser-amount">
                     <p class="text-2">
@@ -78,11 +84,13 @@
                         <?php echo $data['fundraiser'][0]->amount; ?>
                     </p>
                 </div>
-                
-                
+
+
                 <div class="fundraiser-button-list">
-                
-                    <button onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/pay/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'" class="main-color-button">
+
+                    <button
+                        onclick="window.location.href = '<?php echo URLROOT ?>/Donate/pay/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'"
+                        class="main-color-button">
                         Donate
                     </button>
 
@@ -125,23 +133,39 @@
                 </div>
             </div>
         </div>
-        <?php 
-    if (!empty($data['merchandise'])){
-        require_once APPROOT . '/views/fundraisers/merchandise.php';
-    }
-?>
+        <?php
+        if (!empty($data['merchandise'])) {
+            require_once APPROOT . '/views/fundraisers/merchandise.php';
+        }
+        ?>
 
 
-       <?php 
-    if (!empty($data['materials'])){
-        require_once APPROOT . '/views/fundraisers/material.php';
-    }
-?>
+        <?php
+        if (!empty($data['materials'])) {
+            require_once APPROOT . '/views/fundraisers/material.php';
+        }
+        ?>
 
-      
+
+       
 
     </main>
     <?php require APPROOT . '/views/includes/footer.php' ?>
+
+    <script>
+            var currentImageIndex = 0;
+            var images = <?php echo json_encode($data['images']); ?>;
+
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
+            }
+
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
+            }
+        </script>
     <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
 
 </body>

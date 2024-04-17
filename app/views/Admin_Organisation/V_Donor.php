@@ -48,73 +48,43 @@
  
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>001</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr>
-          <tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>002</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr><tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>003</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr><tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>004</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr>
-        </tbody>
+              <?php
+              foreach ($data as $users_organisations) {
+                ?>
+                <tr>
+                  <td>
+                    <span>
+                      <span class="fi fi-al"></span>
+                    </span>
+                    <span>
+                      <?php echo $users_organisations->id; ?>
+                    </span>
+                  </td>
+                  <td>
+                    <?php echo $users_organisations->username; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_organisations->email; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_organisations->phone; ?>
+                  </td>
+                  <?php
+                  if ($users_organisations->user_level == 2) {
+                    echo '<td> Super</td>';
+                  } else if ($users_organisations->user_level == 1) {
+                    echo '<td> Initial</td>';
+                  }
+                  ?>
+
+                  <td class="action-td">
+                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </tbody>
       </table>
       </div>
     </div>

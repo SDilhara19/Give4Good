@@ -9,6 +9,9 @@
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/reject'">Deactivated</button>
         <button class="pending-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/pending'">Pending</button>
+        <button class="all-button"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Stories/all'">All</button>
+
     </div>
     <div class="user--info">
         <div class="search--box">
