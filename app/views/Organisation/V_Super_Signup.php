@@ -29,7 +29,7 @@
                         <div class="progress-step">
                             <div class="progress"></div>
                             <div class="progress-mark"></div>
-                            <p class="progress-text">Info</p>
+                            <p class="progress-text">General Info</p>
                         </div>
                         <div class="progress-step">
                             <div class="progress"></div>
@@ -66,19 +66,27 @@
                                 <div class="step-container-top">
                                     <div class="super-signup-profile-img-con">
                                         <div class="super-signup-profile-image">
-                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="">
+                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="" id="logo_preview">
                                         </div>
                                         <div class="edit-icon">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <input type="file" accept="image/png, image/jpeg" name="logo" id="logo"
+                                                style="display: none;">
+                                            <i class="fa-solid fa-pen-to-square"
+                                                onclick="document.getElementById('logo').click()"></i>
                                         </div>
                                     </div>
-                                    <div class="super-signup-username-con">
+                                    <div class="super-signup-username-con" id="super-signup-username">
                                         <p class="text-2">
                                             <?php echo $_SESSION["userName"] ?>
                                         </p>
                                         <div class="edit-icon">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <i class="fa-solid fa-pen-to-square" onclick=usernameEdit()></i>
                                         </div>
+                                        <script>
+                                            function usernameEdit() {
+                                                document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Company Name" value="<?php echo $_SESSION["userName"] ?>">'
+                                            }
+                                        </script>
                                     </div>
                                     <div class="form-input-title margin-top">About
                                     </div>
@@ -165,17 +173,18 @@
                                     </div>
                                     <br>
                                 </div>
+                                <div class="donee-name text-8">
+                                    <i class='bx bxs-info-circle'></i>
+                                    <span style="font-size: 0.65rem;">Certification: Authorisation to fundraise from a
+                                        govt. officer equal or higher than a AG not older than a month</span>
+                                </div>
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
 
                                         <div class="js-next" onclick="nextStep(4)">Next</div>
                                     </div>
                                 </div>
-                                <div class="donee-name text-8">
-                                    <i class='bx bxs-info-circle'></i>
-                                    <span style="font-size: 0.65rem;">Certification: Authorisation to fundraise from a
-                                        govt. officer equal or higher than a AG not older than a month</span>
-                                </div>
+
 
                             </fieldset>
                         </div>
@@ -183,9 +192,14 @@
                             <fieldset>
                                 <div class="step-container-top">
                                     <!-- <legend class="text-2"> Personal Info</legend> -->
-                                    <div class="form-input-title">Address<span class="required">*</span></div>
+                                    <div class="form-input-title">Location<span class="required">*</span></div>
+                                    <div class="donee-name text-8">
+                                        <i class='bx bxs-info-circle'></i>
+                                        <span style="font-size: 0.65rem;">If not located physically provide location
+                                            details of the president of the organisation</span>
+                                    </div>
                                     <input type="text" name="address" id="address" class="input"
-                                        placeholder="Permanent residence address">
+                                        placeholder="Permanent location address">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['address_err']))
                                             echo $data['address_err']; ?>
@@ -196,10 +210,15 @@
                                             <div class="form-input-title">Province<span class="required">*</span></div>
                                             <select name="province" id="province" onchange="selectedProvince()"
                                                 class="input">
-                                                <option value="none">None</option>
                                                 <option value="Western">Western Province</option>
                                                 <option value="Central">Central Province</option>
-                                                <option value="Westedrn">Western</option>
+                                                <option value="Eastern">Eastern Province</option>
+                                                <option value="Southern">Southern Province</option>
+                                                <option value="Northern">North Province</option>
+                                                <option value="North Western">North Western Province</option>
+                                                <option value="North Western">North Central Province</option>
+                                                <option value="Sabaragamuwa">Sabaragamuwa Province</option>
+                                                <option value="Uva">Uva Province</option>
                                             </select>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['province_err']))
@@ -257,8 +276,12 @@
                             <fieldset>
                                 <div class="step-container-top">
                                     <!-- <legend class="text-2"> Personal Info</legend> -->
-                                    <div class="form-input-title">Account Holder(Bank account should be registered under
-                                        the business name)<span class="required">*</span></div>
+                                    <div class="form-input-title">Account Holder<span class="required">*</span></div>
+                                    <div class="donee-name text-8">
+                                        <i class='bx bxs-info-circle'></i>
+                                        <span style="font-size: 0.65rem;">Bank account should be registered under
+                                            the business name</span>
+                                    </div>
                                     <input type="text" name="name" id="name" class="input" placeholder="Name">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['name_err']))
@@ -276,7 +299,7 @@
                                     <div class="form-flex">
                                         <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Bank Code<span class="required">*</span></div>
-                                            <input type="number" name="bankcode" id="bankcode" class="input">
+                                            <input type="text" name="bankcode" id="bankcode" class="input">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['bankcode_err']))
                                                     echo $data['bankcode_err']; ?>
@@ -300,7 +323,7 @@
                                         <div class="form-flex-left flx-1">
                                             <div class="form-input-title">Branch Code<span class="required">*</span>
                                             </div>
-                                            <input type="number" name="branchcode" id="branchcode" class="input">
+                                            <input type="text" name="branchcode" id="branchcode" class="input">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['branchcode_err']))
                                                     echo $data['branchcode_err']; ?>
@@ -331,7 +354,7 @@
                                             </label>
 
                                             <div class="nic-form-image-container">
-                                                <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/Sample-document.png"
                                                     alt="image here" id="pass_book">
                                                 <span class="fade-effect"></span>
                                             </div>
@@ -357,76 +380,261 @@
                                 </div>
                             </fieldset>
                         </div>
-
+                        <!-- member details -->
                         <div class="step-container">
                             <fieldset>
                                 <div class="step-container-top">
-                                    <!-- <legend class="text-2"> Personal Info</legend> -->
-                                    <div class="form-input-title">Address<span class="required">*</span></div>
-                                    <input type="text" name="address" id="address" class="input"
-                                        placeholder="Permanent residence address">
-                                    <span class="form-invalid">
-                                        <?php if (!empty($data['address_err']))
-                                            echo $data['address_err']; ?>
-                                    </span>
-
-                                    <div class="form-flex">
-                                        <div class="form-flex-left flx-1">
-                                            <div class="form-input-title">Province<span class="required">*</span></div>
-                                            <select name="province" id="province" onchange="selectedProvince()"
-                                                class="input">
-                                                <option value="none">None</option>
-                                                <option value="Western">Western Province</option>
-                                                <option value="Central">Central Province</option>
-                                                <option value="Westedrn">Western</option>
-                                            </select>
-                                            <span class="form-invalid">
-                                                <?php if (!empty($data['province_err']))
-                                                    echo $data['province_err']; ?>
-                                            </span>
+                                    <div class="executive-details">
+                                        <p class='text-2'>Executive Details<i class="fa-solid fa-caret-down"
+                                                id="ex-drop-down"></i></p>
+                                        <div class="donee-name text-8">
+                                            <i class='bx bxs-info-circle'></i>
+                                            <span style="font-size: 0.65rem;">Details of a executive in your
+                                                organisation</span>
                                         </div>
-
-                                        <div class="form-flex-right flx-1">
-                                            <div class="form-input-title">District<span class="required">*</span></div>
-                                            <select name="district" id="district" class="input">
-                                                <option value="none">None</option>
-                                            </select>
+                                        <div class="executive-details-form" id="ex-form">
+                                            <div class="form-input-title">Fullname<span class="required">*</span></div>
+                                            <input type="text" name="ex-fullname" id="ex-fullname" class="input"
+                                                placeholder="">
                                             <span class="form-invalid">
-                                                <?php if (!empty($data['district_err']))
-                                                    echo $data['district_err']; ?>
+                                                <?php if (!empty($data['ex-fullname_err']))
+                                                    echo $data['ex-fullname_err']; ?>
                                             </span>
-                                        </div>
 
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Designation<span
+                                                            class="required">*</span></div>
+                                                    <input type="text" name="ex-designation" id="ex-designation"
+                                                        class="input" placeholder="title">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex-designation_err']))
+                                                            echo $data['ex-designation_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">National ID<span
+                                                            class="required">*</span></div>
+                                                    <input type="tel" name="ex_nicNo" id="ex_nicNo" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex_nicNo_err']))
+                                                            echo $data['ex_nicNo_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-input-title">Address<span class="required">*</span></div>
+                                            <input type="text" name="ex-address" id="ex-address" class="input"
+                                                placeholder="">
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['ex-address_err']))
+                                                    echo $data['ex-address_err']; ?>
+                                            </span>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Email<span class="required">*</span>
+                                                    </div>
+                                                    <input type="text" name="ex-email" id="ex-email" class="input"
+                                                        placeholder="title">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex-email_err']))
+                                                            echo $data['ex-email_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">Contact<span class="required">*</span>
+                                                    </div>
+                                                    <input type="tel" name="ex_contact" id="ex_contact" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex_contact_err']))
+                                                            echo $data['ex_contact_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+
+
+                                                    <div class="form-input-title">NIC Image-Front<span
+                                                            class="required">*</span>
+                                                    </div>
+                                                    <label for="ex-nic_front_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="ex-nic_front_image" id="ex-nic_front_image">
+                                                    </label>
+
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="ex-nic_front_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex-nic_front_image_err']))
+                                                            echo $data['ex-nic_front_image_err']; ?>
+                                                    </span>
+
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+
+
+                                                    <div class="form-input-title">NIC Image-Back<span
+                                                            class="required">*</span>
+                                                    </div>
+                                                    <label for="ex-nic_back_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="ex-nic_back_image" id="ex-nic_back_image">
+                                                    </label>
+
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="ex-nic_back_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['ex-nic_back_image_err']))
+                                                            echo $data['ex-nic_back_image_err']; ?>
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-flex">
-                                        <div class="form-flex-left flx-1">
-                                            <div class="form-input-title">Zip Code<span class="required">*</span></div>
-                                            <input type="text" name="zipcode" id="zipcode" class="input"
-                                                placeholder="Zip code">
-                                            <span class="form-invalid">
-                                                <?php if (!empty($data['zipcode_err']))
-                                                    echo $data['zipcode_err']; ?>
-                                            </span>
-                                        </div>
 
-                                        <div class="form-flex-right flx-1">
-                                            <div class="form-input-title">Contact<span class="required">*</span></div>
-                                            <input type="tel" name="contact" id="contact" class="input">
-                                            <span class="form-invalid">
-                                                <?php if (!empty($data['contact_err']))
-                                                    echo $data['contact_err']; ?>
-                                            </span>
+                                    <div class="treasurer-details">
+                                        <p class='text-2'>Treasurer Details<i class="fa-solid fa-caret-down"
+                                                id="tr-drop-down"></i></p>
+                                        <div class="donee-name text-8">
+                                            <i class='bx bxs-info-circle'></i>
+                                            <span style="font-size: 0.65rem;">Details of a treasurer or a person with
+                                                equal responsibilities in your
+                                                organisation</span>
                                         </div>
+                                        <div class="treasurer-details-form" id="tr-form">
+                                            <div class="form-input-title">Fullname<span class="required">*</span></div>
+                                            <input type="text" name="tr-fullname" id="tr-fullname" class="input"
+                                                placeholder="">
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['tr-fullname_err']))
+                                                    echo $data['tr-fullname_err']; ?>
+                                            </span>
 
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Designation<span
+                                                            class="required">*</span></div>
+                                                    <input type="text" name="tr-designation" id="tr-designation"
+                                                        class="input" placeholder="title">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr-designation_err']))
+                                                            echo $data['tr-designation_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">National ID<span
+                                                            class="required">*</span></div>
+                                                    <input type="tel" name="tr_nicNo" id="tr_nicNo" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr_nicNo_err']))
+                                                            echo $data['tr_nicNo_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-input-title">Address<span class="required">*</span></div>
+                                            <input type="text" name="tr-address" id="tr-address" class="input"
+                                                placeholder="">
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['tr-address_err']))
+                                                    echo $data['tr-address_err']; ?>
+                                            </span>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Email<span class="required">*</span>
+                                                    </div>
+                                                    <input type="text" name="tr-email" id="tr-email" class="input"
+                                                        placeholder="title">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr-email_err']))
+                                                            echo $data['tr-email_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">Contact<span class="required">*</span>
+                                                    </div>
+                                                    <input type="tel" name="tr_contact" id="tr_contact" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr_contact_err']))
+                                                            echo $data['tr_contact_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">NIC Image-Front<span
+                                                            class="required">*</span></div>
+                                                    <label for="tr-nic_front_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="tr-nic_front_image" id="tr-nic_front_image">
+                                                    </label>
+
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="tr-nic_front_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr-nic_front_image_err']))
+                                                            echo $data['tr-nic_front_image_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">NIC Image-Back<span
+                                                            class="required">*</span></div>
+                                                    <label for="tr-nic_back_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="tr-nic_back_image" id="tr-nic_back_image">
+                                                    </label>
+
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="tr-nic_back_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['tr-nic_back_image_err']))
+                                                            echo $data['tr-nic_back_image_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
+
 
 
                                     <br>
                                 </div>
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
-                                        <div class="js-prev" onclick="prevStep()">Previous</div>                                       
-                                         <button class="js-next" onclick="nextStep(4)" type="submit" >Submit</button>
+                                        <div class="js-prev" onclick="prevStep()">Previous</div>
+                                        <button class="js-next" onclick="nextStep(4)" type="submit">Submit</button>
 
                                     </div>
                                 </div>
@@ -451,7 +659,45 @@
         setupImagePreview("#certification", "#certification_preview");
         setupImagePreview("#pass_book_image", "#pass_book");
 
+        setupImagePreview("#logo", "#logo_preview");
+
     </script>
+
+    <script>
+
+        let exDropdown = document.querySelector('#ex-drop-down')
+        let exForm = document.querySelector('#ex-form')
+
+        exDropdown.onclick = function () {
+            exForm.classList.toggle('active')
+            exForm.classList.toggle('inactive')
+
+            if (trForm.classList.contains('active')) {
+                trForm.classList.remove('active');
+            };
+
+
+            setupImagePreview("#ex-nic_front_image", "#ex-nic_front_preview");
+            setupImagePreview("#ex-nic_back_image", "#ex-nic_back_preview");
+        }
+        let trDropdown = document.querySelector('#tr-drop-down')
+        let trForm = document.querySelector('#tr-form')
+
+
+        trDropdown.onclick = function () {
+            trForm.classList.toggle('active')
+            trForm.classList.toggle('inactive')
+
+            if (exForm.classList.contains('active')) {
+                exForm.classList.remove('active');
+            }
+            setupImagePreview("#tr-nic_back_image", "#tr-nic_back_preview");
+            setupImagePreview("#tr-nic_front_image", "#tr-nic_front_preview");
+        };
+
+
+    </script>
+
 
 </body>
 

@@ -14,7 +14,6 @@ class Index extends controller
 
     if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
       logOut();
-      redirect(URLROOT . '/Users');
     }
   }
 

@@ -43,7 +43,8 @@ class Organisation extends controller
             redirect(URLROOT . '/Users');
         } else {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $this->super_signup();
+                // $this->super_signup();
+                $this->view('test');
             } else {
                 $data = [];
                 $this->view('Organisation/V_Super_Signup', $data);
