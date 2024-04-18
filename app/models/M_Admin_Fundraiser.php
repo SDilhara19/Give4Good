@@ -105,6 +105,7 @@ public function getActiveFundraisers() {
     }
 
     public function activateFundraiser($id){
+        try{
         $this->db->query('UPDATE fundraiser SET status = "Active" 
         WHERE id = :id;');
 
@@ -116,22 +117,21 @@ public function getActiveFundraisers() {
             return false;
         }
        } 
-       catch(Exception $e)
-       {
+       catch(Exception $e){
            return "Error" . $e->getMessage();
        }
        
     }
-    public function viewMerch(){
+    // public function viewMerch(){
 
-        $this->db->bind(':id', $id);
+    //     $this->db->bind(':id', $id);
 
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
+    //     if($this->db->execute()){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
 
     public function deactivateFundraiser($id){
         $this->db->query('UPDATE fundraiser SET status = "Deactive" 
