@@ -78,7 +78,7 @@
                                         </div>
                                         <script>
                                             function usernameEdit(){
-                                                document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Username">'
+                                                document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Username"  value="<?php echo $_SESSION["userName"] ?>">'
                                             }
                                         </script>
                                     </div>
@@ -192,7 +192,6 @@
                                             <div class="form-input-title">Province<span class="required">*</span></div>
                                             <select name="province" id="province" onchange="selectedProvince()"
                                                 class="input">
-                                                <option value="none">None</option>
                                                 <option value="Western">Western Province</option>
                                                 <option value="Central">Central Province</option>
                                                 <option value="Eastern">Eastern Province</option>
@@ -333,7 +332,7 @@
                                             </label>
 
                                             <div class="nic-form-image-container">
-                                                <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/Sample-document.png"
                                                     alt="image here" id="pass_book">
                                                 <span class="fade-effect"></span>
                                             </div>
