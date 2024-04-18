@@ -83,7 +83,13 @@
                 </td>
                 <td class="action-td">
                   <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->id ?>"
-                    class="action-icons"><i class="fa-solid fa-info"></i></a>
+                    class="action-icons">
+                    <i class="fa-solid fa-info"></i>
+                  </a>
+                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraise->id ?>"
+                    class="action-icons">
+                    <i class="fa-solid fa-lock"></i>
+                  </a>
                 </td>
               </tr>
               <?php

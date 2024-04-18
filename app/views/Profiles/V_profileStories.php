@@ -15,9 +15,12 @@
 </head>
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
-<?php require APPROOT . '/views/includes/indvProfileSideBar.php' ?>
-
-    
+<?php if ($_SESSION['userType']=='individual') { 
+  require APPROOT . '/views/includes/indvProfileSideBar.php';
+}else if($_SESSION['userType']=='organisation'){ 
+require APPROOT . '/views/includes/orgProfileSideBar.php';
+} 
+?>   
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
@@ -37,26 +40,27 @@
         <table>
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Payment ID</th>
-            <th>Donor ID</th>
-            <th>Donor Username</th>
-            <th>Fundraiser ID</th>
-            <th>Fundraiser Title</th>
-            <th>Amount(Rs.)</th>
-            <th>Contribution(Rs.)</th>
+            <th>Title</th>
+            <th>Decription</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
+    <?php 
+       foreach ($data as $profileStories) {
+                  ?>
         <tr>
-        <td>2023-12-04</td>
-          <td>205</td>
-          <td>13</td>
-          <td> cpplpvjvjnjv</td>
-          <td>2000.00</td>
-          <td></td>
-        </tr>
-        
+          <td><?php echo $profileStories->title; ?></td>
+          <td><?php echo $profileStories->description; ?></td>
+          <td><img src=<?php echo $profileStories->image; ?>></td>
+          <td><?php echo $profileStories->status; ?></td>
+          <td>button view, edit, delete </td>
+        </tr> 
+        <?php
+        }
+        ?>  
         </tbody>
     </table>  
   </div>

@@ -82,5 +82,10 @@ class Fundraiser extends controller
         $this->view('Fundraisers/V_Pay');
     }
 
-    
+    public function complaints(){
+
+    $this->view('Fundraisers/V_complaint');
+    }
 }
+
+?>

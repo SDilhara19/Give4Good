@@ -22,9 +22,9 @@
     <?php require APPROOT . '/views/includes/side-bar.php' ?>
 
     <main>
-
-
-      <div class="home-box">
+    
+    
+    <div class="home-box">
         <div class="left-home-box">
           <p class="large-text">Join Us</p>
           <p class="medium-text">To make a</p>

@@ -67,7 +67,7 @@
                 <td><button onclick class="data_view open-executive-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                 <td><button onclick class="data_view open-treasurer-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                 <td><a href=""><i class="fa-solid fa-check"></i></a></td>
-                <td>Active</td>
+                <td><?php echo $super_organisation->status; ?></td>
                 <td class="action-td">
                   <span class="action-icons open-info-popup"
                     data-popup-id="<?php echo $super_organisation->user_id; ?>">
