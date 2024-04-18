@@ -66,13 +66,13 @@
                                 <div class="step-container-top">
                                     <div class="super-signup-profile-img-con">
                                         <div class="super-signup-profile-image">
-                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="" id="logo_preview">
+                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="" id="profile_image_preview">
                                         </div>
                                         <div class="edit-icon">
-                                            <input type="file" accept="image/png, image/jpeg" name="logo" id="logo"
+                                            <input type="file" accept="image/png, image/jpeg" name="profile_image" id="profile_image"
                                                 style="display: none;">
                                             <i class="fa-solid fa-pen-to-square"
-                                                onclick="document.getElementById('logo').click()"></i>
+                                                onclick="document.getElementById('profile_image').click()"></i>
                                         </div>
                                     </div>
                                     <div class="super-signup-username-con" id="super-signup-username">
@@ -91,7 +91,7 @@
                                     <div class="form-input-title margin-top">About
                                     </div>
                                     <textarea name="about" id="about" class="fund_story" rows="2" maxlength="300"
-                                        placeholder=""></textarea>
+                                        placeholder="About your organisation"></textarea>
 
 
 
@@ -416,10 +416,10 @@
                                                 <div class="form-flex-right flx-1">
                                                     <div class="form-input-title">National ID<span
                                                             class="required">*</span></div>
-                                                    <input type="tel" name="ex_nicNo" id="ex_nicNo" class="input">
+                                                    <input type="tel" name="ex-nicNo" id="ex-nicNo" class="input">
                                                     <span class="form-invalid">
-                                                        <?php if (!empty($data['ex_nicNo_err']))
-                                                            echo $data['ex_nicNo_err']; ?>
+                                                        <?php if (!empty($data['ex-nicNo_err']))
+                                                            echo $data['ex-nicNo_err']; ?>
                                                     </span>
                                                 </div>
 
@@ -438,7 +438,7 @@
                                                     <div class="form-input-title">Email<span class="required">*</span>
                                                     </div>
                                                     <input type="text" name="ex-email" id="ex-email" class="input"
-                                                        placeholder="title">
+                                                        placeholder="">
                                                     <span class="form-invalid">
                                                         <?php if (!empty($data['ex-email_err']))
                                                             echo $data['ex-email_err']; ?>
@@ -448,10 +448,10 @@
                                                 <div class="form-flex-right flx-1">
                                                     <div class="form-input-title">Contact<span class="required">*</span>
                                                     </div>
-                                                    <input type="tel" name="ex_contact" id="ex_contact" class="input">
+                                                    <input type="tel" name="ex-contact" id="ex-contact" class="input">
                                                     <span class="form-invalid">
-                                                        <?php if (!empty($data['ex_contact_err']))
-                                                            echo $data['ex_contact_err']; ?>
+                                                        <?php if (!empty($data['ex-contact_err']))
+                                                            echo $data['ex-contact_err']; ?>
                                                     </span>
                                                 </div>
 
@@ -543,10 +543,10 @@
                                                 <div class="form-flex-right flx-1">
                                                     <div class="form-input-title">National ID<span
                                                             class="required">*</span></div>
-                                                    <input type="tel" name="tr_nicNo" id="tr_nicNo" class="input">
+                                                    <input type="tel" name="tr-nicNo" id="tr-nicNo" class="input">
                                                     <span class="form-invalid">
-                                                        <?php if (!empty($data['tr_nicNo_err']))
-                                                            echo $data['tr_nicNo_err']; ?>
+                                                        <?php if (!empty($data['tr-nicNo_err']))
+                                                            echo $data['tr-nicNo_err']; ?>
                                                     </span>
                                                 </div>
                                             </div>
@@ -574,10 +574,10 @@
                                                 <div class="form-flex-right flx-1">
                                                     <div class="form-input-title">Contact<span class="required">*</span>
                                                     </div>
-                                                    <input type="tel" name="tr_contact" id="tr_contact" class="input">
+                                                    <input type="tel" name="tr-contact" id="tr-contact" class="input">
                                                     <span class="form-invalid">
-                                                        <?php if (!empty($data['tr_contact_err']))
-                                                            echo $data['tr_contact_err']; ?>
+                                                        <?php if (!empty($data['tr-contact_err']))
+                                                            echo $data['tr-contact_err']; ?>
                                                     </span>
                                                 </div>
                                             </div>
@@ -659,7 +659,7 @@
         setupImagePreview("#certification", "#certification_preview");
         setupImagePreview("#pass_book_image", "#pass_book");
 
-        setupImagePreview("#logo", "#logo_preview");
+        setupImagePreview("#profile_image", "#profile_image_preview");
 
     </script>
 
