@@ -19,27 +19,27 @@ class Admin_Organisation extends controller
 
     public function index()
     {
-
-        $this->view('Admin_Organisation/V_All_Super');
+        $data = $this->AdminOrganisationModel->viewAll();
+        $this->view('Admin_Organisation/V_All_Super',$data);
 
     }
 
     public function pending()
     {
-
-        $this->view('Admin_Organisation/V_Pending_Super');
+        $data = $this->AdminOrganisationModel->viewPending();
+        $this->view('Admin_Organisation/V_Pending_Super', $data);
 
     }
     public function active()
     {
-
-        $this->view('Admin_Organisation/V_Act_Super');
+        $data = $this->AdminOrganisationModel->viewActive();
+        $this->view('Admin_Organisation/V_Act_Super', $data);
 
     }
     public function deactive()
     {
-
-        $this->view('Admin_Organisation/V_Deact_Super');
+        $data = $this->AdminOrganisationModel->viewDeactive();
+        $this->view('Admin_Organisation/V_Deact_Super', $data);
 
     }
     public function donor()

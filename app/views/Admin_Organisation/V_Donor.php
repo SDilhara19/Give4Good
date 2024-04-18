@@ -64,6 +64,9 @@
                     <?php echo $users_organisation->username; ?>
                   </td>
                   <td>
+                    <?php echo $users_organisation->regno; ?>
+                  </td>
+                  <td>
                     <?php echo $users_organisation->email; ?>
                   </td>
                   <td>
