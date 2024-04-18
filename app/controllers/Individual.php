@@ -16,12 +16,13 @@ class Individual extends controller
         $this->checkUserLogin();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->signup();
+            //var_dump($_POST);
+        } 
+        else { 
+            $data=[];
+        $this->view('Individual/V_Signup', $data);
             // var_dump($_POST);
-        } else {
-            $data = [];
-            $this->view('Individual/V_Signup', $data);
         }
-
     }
 
     private function checkUserLogin()

@@ -91,6 +91,8 @@
                                         class="action-icons">
                                         <i class="fa-solid fa-info"></i>
                                     </a>
+                                    <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setActive/<?php echo $fundraiser->id ?>"
+                                        class="action-icons">
                                     <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setActive/<?php echo $fundraiser->fundraiser_id ?>" class="action-icons">
                                         <i class="fa-solid fa-play"></i>
                                     </a>
