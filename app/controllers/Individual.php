@@ -26,13 +26,12 @@ class Individual extends controller
 
     private function checkUserLogin()
     {
-  
-      if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
-        logOut();
-      }
-      else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'organisation')) {
-        logOut();
-      }
+
+        if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
+            logOut();
+        } else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'organisation')) {
+            logOut();
+        }
     }
 
     public function super()
@@ -44,20 +43,24 @@ class Individual extends controller
         } else if (isset($_SESSION['userType']) && ($_SESSION['userType'] !== 'individual')) {
             logOut();
             redirect(URLROOT . '/Users');
-        }
-         else {
+        } else {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $this->super_signup();
+                // $this->view('test');
+
             } else {
                 $data = [];
-                // var_dump($_SESSION['userId']);
+                $data['basic-data'] = $this->IndividualModel->basicData($_SESSION['userId']);
+                // var_dump($data);
                 $this->view('Individual/V_Super_Signup', $data);
+                // $this->view('test', $data['basic-data']);
+
             }
         }
 
     }
 
-    
+
 
     public function signup()
     {
@@ -99,6 +102,9 @@ class Individual extends controller
         try {
             $obj = new Validation($_POST);
             $obj->data['user_id'] = $_SESSION['userId'];
+            if ($obj->data['username']){
+                $obj->validate('username', ['EMPTY', 'FORMAT']);
+            }
             $obj->validate('fullname', ['EMPTY', 'FORMAT']);
             $obj->validate('nicNo', ['EMPTY']);
             $obj->validate('dob', ['EMPTY']);
@@ -113,10 +119,15 @@ class Individual extends controller
             $obj->validate('bank', ['EMPTY']);
             $obj->validate('branchcode', ['EMPTY']);
             $obj->validate('branch', ['EMPTY']);
+
+            if ($_FILES['profile_image']){
+                $obj->imageUpload('Profile-image', $_FILES['profile_image'], $obj->data['profile_image'], 'profile_image');
+            }
             $obj->imageUpload('NIC-front', $_FILES['nic_front_image'], $obj->data['nic_front_image'], 'nic_front_image');
             $obj->imageUpload('NIC-back', $_FILES['nic_back_image'], $obj->data['nic_back_image'], 'nic_back_image');
             $obj->imageUpload('Bank-passbook', $_FILES['pass_book'], $obj->data['pass_book'], 'pass_book');
 
+                // $this->view('test', $obj);
 
             if ($obj->flag == 1) {
                 $this->view('Individual/V_Super_Signup', $obj->data);
