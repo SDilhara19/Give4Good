@@ -68,7 +68,8 @@
                       <?php echo $super_individual->status; ?>
                     </td>
                     <td class="action-td">
-                      <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                      <a href="<?php echo URLROOT ?>/Admin_Individual/individual_one/<?php echo $super_individual->id ?>"
+                       class="action-icons"><i class="fa-solid fa-info"></i></a>
                     </td>
 
                     <td>
