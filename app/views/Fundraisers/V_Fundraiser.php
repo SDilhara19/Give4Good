@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIVE4GOOD</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIVE4GOOD</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -62,10 +63,12 @@
                         <?php echo $data['fundraiser'][0]->story; ?>
                     </p>
                 </div>
-
-
+                <div class="ad-merch-button-list">
+                    <button class="button-3-red"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
+                </div>
+                
             </div>
-
             <div class="fundraiser-right">
                 <div class="fundraiser-progress-bar-container">
                     <div class="fundraiser-progress-bar">
@@ -127,8 +130,6 @@
                             <li class="text-3">Contact to send donations</li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
         </div>

@@ -34,7 +34,8 @@
     border: none;
     color: var(--black-sub);
     font-weight: 600;
-    width: 70%;
+    height:40px;
+    width: 100px;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
     border-radius: 5px;
@@ -122,8 +123,6 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .admin-fundraiser .report-image-container img {
@@ -149,7 +148,6 @@ td {
 
 }
 
-
 .admin-merchandise .fundraiser-ad-merch-container {
     display: flex;
     gap: 3rem;
@@ -157,11 +155,9 @@ td {
     margin-bottom: 3rem;
 }
 
-
 .admin-merchandise .fundraiser-ad-merch-left {
     flex: 4;
 }
-
 
 .admin-merchandise .ad-merch-img-container {
     width: 100%;
@@ -172,7 +168,6 @@ td {
     justify-content: center;
     border: 0.5px solid var(--grey-color);
     height: 20rem;
-
 }
 
 
@@ -181,7 +176,6 @@ td {
     max-height: 100%;
     object-fit: contain;
     border-radius: 0.5rem;
-
 }
 
 .admin-merchandise .ad-merch-image-gallery {
@@ -208,9 +202,7 @@ td {
     object-fit: contain;
     border-radius: 0.5rem;
     /* border: 1px solid black; */
-
 }
-
 
 .ad-merch-right-bottom {
     display: flex;
@@ -223,22 +215,16 @@ td {
     flex-direction: column;
 }
 
-
-
-
 .admin-merchandise .ad-merch-sizes,
 .ad-merch-colors {
     display: flex;
     margin-bottom: 1rem;
-
 }
-
 
 .admin-merchandise .ad-merch-sizes,
 .ad-merch-colors p {
     flex: 10%;
 }
-
 
 .admin-merchandise .ad-merch-sizes-right,
 .ad-merch-colors-right {
@@ -248,7 +234,6 @@ td {
     margin-left: 1.5rem;
     grid-template-columns: repeat(8, 1fr);
 }
-
 
 .admin-merchandise .ad-merch-price {
     display: flex;
@@ -263,11 +248,9 @@ td {
     justify-content: space-between;
 }
 
-
 .admin-merchandise .ad-merch-price h1 {
     margin-bottom: -0.5rem;
 }
-
 
 .admin-merchandise .ad-merch-button-list {
     margin: 1rem;
@@ -275,13 +258,11 @@ td {
     width: 80%;
     justify-content: space-around;
     align-self: center;
-
 }
 
 .admin-merchandise .ad-merch-button-list button {
     flex: 1;
 }
-
 
 .admin-merchandise .ad-merch-full-description {
     margin: 1rem 0;
@@ -289,14 +270,12 @@ td {
 }
 
 /* .admin-document */
-
 .admin-document .document-container {
     display: flex;
     align-items: flex-start;
     margin-top: 1rem;
     margin-bottom: 3rem;
     /* gap: 2rem; */
-
 }
 
 .admin-document .document-left {
@@ -311,7 +290,6 @@ td {
     border: 0.5px solid var(--grey-color);
     border-radius: 3px;
     height: 70rem;
-
 }
 
 .admin-document .document-left img {
@@ -329,7 +307,6 @@ td {
     height: 70rem;
     padding: 2rem 0 2rem 2rem;
     width: 100%;
-
 }
 
 /* edit-document */
@@ -343,7 +320,6 @@ td {
 
 .edit-document-left {
     flex: 1;
-
 }
 
 .add-container,
@@ -380,27 +356,16 @@ td {
     margin: 0;
 }
 
-
-
-
 .nic-container,
 .bank-container  {
     display: flex;
-
-
-
-
 }
 
 .nic-container table {
     width: 21vw;
     margin-top: 1rem;
     background: var(--white-color);
-
-
-
 }
-
 
 .nic-container table th {
     background: var(--white-color);
@@ -408,12 +373,10 @@ td {
 
 .nic-front,
 .nic-back {
-
     border: 1px solid var(--border-grey);
     width: 15vw;
     height: 90%;
     margin-top: 3rem;
-
 }
 
 .bank-container table {
@@ -426,7 +389,6 @@ td {
 .story-popup-container table th{
     background: var(--white-color);
 }
-
 
 .popup-story{
     margin: auto;
@@ -445,9 +407,7 @@ td {
     background: rgb(0 0 0 / 0.4);
   }
 
-.bank-passbook
-{
-
+.bank-passbook{
     border: 1px solid var(--border-grey);
     width: 30vw;
     height: 90%;
@@ -467,7 +427,6 @@ td {
     max-height: 100%;
     object-fit: contain;
     border-radius: 0;
-
 }
 
 /* .organisation-logo-container{
@@ -485,7 +444,6 @@ td {
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-
 }
 
 

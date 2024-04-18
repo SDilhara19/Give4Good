@@ -29,17 +29,17 @@
                         <div class="progress-step">
                             <div class="progress"></div>
                             <div class="progress-mark"></div>
-                            <p class="progress-text">Bank Details</p>
+                            <p class="progress-text">Personal Info</p>
                         </div>
                         <div class="progress-step">
                             <div class="progress"></div>
                             <div class="progress-mark"></div>
-                            <p class="progress-text">Bank Details</p>
+                            <p class="progress-text">Location</p>
                         </div>
                         <div class="progress-step">
                             <div class="progress"></div>
                             <div class="progress-mark"></div>
-                            <p class="progress-text">Bank Details</p>
+                            <p class="progress-text">Payments</p>
                         </div>
                     </div>
                 </div>
@@ -61,24 +61,31 @@
                                 <div class="step-container-top">
                                     <div class="super-signup-profile-img-con">
                                         <div class="super-signup-profile-image">
-                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="">
+                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="" id="profile_image_preview">
                                         </div>
                                         <div class="edit-icon">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        <input type="file" accept="image/png, image/jpeg" name="profile_image" id="profile_image"
+                      style="display: none;">
+                                            <i class="fa-solid fa-pen-to-square" onclick="document.getElementById('profile_image').click()"></i>
                                         </div>
                                     </div>
-                                    <div class="super-signup-username-con">
+                                    <div class="super-signup-username-con" id = "super-signup-username">
                                         <p class="text-2">
                                             <?php echo $_SESSION["userName"] ?>
                                         </p>
                                         <div class="edit-icon">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <i class="fa-solid fa-pen-to-square" onclick=usernameEdit()></i>
                                         </div>
+                                        <script>
+                                            function usernameEdit(){
+                                                document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Username">'
+                                            }
+                                        </script>
                                     </div>
                                     <div class="form-input-title margin-top">Fullname<span class="required">*</span>
                                     </div>
                                     <input type="text" name="fullname" id="fullname" class="input"
-                                        placeholder="Full name as in National Identity Card">
+                                        placeholder="Full name as in National Identity Card" value="<?php echo $data['basic-data'][0]->fullname; ?>">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['fullname_err']))
                                             echo $data['fullname_err']; ?>
@@ -100,7 +107,7 @@
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Date of Birth<span class="required">*</span>
                                             </div>
-                                            <input type="date" name="dob" id="dob" class="input">
+                                            <input type="date" name="dob" id="dob" class="input" value="<?php echo $data['basic-data'][0]->dob; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['dob_err']))
                                                     echo $data['dob_err']; ?>
@@ -174,7 +181,7 @@
                                     <!-- <legend class="text-2"> Personal Info</legend> -->
                                     <div class="form-input-title">Address<span class="required">*</span></div>
                                     <input type="text" name="address" id="address" class="input"
-                                        placeholder="Permanent residence address">
+                                        value="<?php echo $data['basic-data'][0]->Address; ?>">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['address_err']))
                                             echo $data['address_err']; ?>
@@ -188,7 +195,14 @@
                                                 <option value="none">None</option>
                                                 <option value="Western">Western Province</option>
                                                 <option value="Central">Central Province</option>
-                                                <option value="Westedrn">Western</option>
+                                                <option value="Eastern">Eastern Province</option>
+                                                <option value="Southern">Southern Province</option>
+                                                <option value="Northern">North Province</option>
+                                                <option value="North Western">North Western Province</option>
+                                                <option value="North Western">North Central Province</option>
+                                                <option value="Sabaragamuwa">Sabaragamuwa Province</option>
+                                                <option value="Uva">Uva Province</option>
+                                                
                                             </select>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['province_err']))
@@ -221,7 +235,7 @@
 
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Contact<span class="required">*</span></div>
-                                            <input type="tel" name="contact" id="contact" class="input">
+                                            <input type="tel" name="contact" id="contact" class="input" value="<?php echo $data['basic-data'][0]->phone; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['contact_err']))
                                                     echo $data['contact_err']; ?>
@@ -362,6 +376,7 @@
         setupImagePreview("#nic_front_image", "#nic-front");
         setupImagePreview("#nic_back_image", "#nic-back");
         setupImagePreview("#pass_book_image", "#pass_book");
+        setupImagePreview("#profile_image", "#profile_image_preview");
 
     </script>
 

@@ -57,5 +57,24 @@
     ?>
 </table>
 
+
+<h2>Data</h2>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>File Details</th>
+    </tr>
+    <?php
+    foreach ($data as $fieldName => $fileDetails) {
+        echo "<tr><td>$fieldName</td><td>";
+        foreach ($fileDetails as $key => $value) {
+            echo "$key: $value <br>";
+        }
+        echo "</td></tr>";
+    }
+    ?>
+</table>
+
 </body>
 </html>
+
