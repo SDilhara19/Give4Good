@@ -58,6 +58,23 @@ class Fundraisersuper extends controller
 
     }
 
+    public function ostart($category)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+            $this->view('test');
+            // $this->fundraiser_start();
+        } else {
+            $data = [];
+            // $data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
+            // var_dump($data['documents'][0]->document);
+            $this->view('Fundraisers/V_Start_Organisation', $data);
+        }
+
+    }
+
+
+
     private function fundraiser_start()
     {
         try {
