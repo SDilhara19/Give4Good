@@ -134,9 +134,14 @@ margin: auto 1rem auto 1rem;
   padding-left: 0.5rem;
   height: 2.5rem;
   margin: auto 1rem auto 0.4rem;
+  overflow: hidden;
  
 }
 
+.user-name{
+  /* max-width: 8rem; */
+  overflow: hidden; 
+}
 
 .guest-user{
   display: flex;
