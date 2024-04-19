@@ -66,11 +66,12 @@
                                 <div class="step-container-top">
                                     <div class="super-signup-profile-img-con">
                                         <div class="super-signup-profile-image">
-                                            <img src=<?php echo $_SESSION['userImage'] ?> alt="" id="profile_image_preview">
+                                            <img src=<?php echo $_SESSION['userImage'] ?> alt=""
+                                                id="profile_image_preview">
                                         </div>
                                         <div class="edit-icon">
-                                            <input type="file" accept="image/png, image/jpeg" name="profile_image" id="profile_image"
-                                                style="display: none;">
+                                            <input type="file" accept="image/png, image/jpeg" name="profile_image"
+                                                id="profile_image" style="display: none;">
                                             <i class="fa-solid fa-pen-to-square"
                                                 onclick="document.getElementById('profile_image').click()"></i>
                                         </div>
@@ -91,7 +92,7 @@
                                     <div class="form-input-title margin-top">About
                                     </div>
                                     <textarea name="about" id="about" class="fund_story" rows="2" maxlength="300"
-                                        placeholder="About your organisation"></textarea>
+                                        placeholder="About your organisation"><?php echo $data['basic-data'][0]->about; ?></textarea>
 
 
 
@@ -101,7 +102,8 @@
                                                     class="required">*</span>
                                             </div>
                                             <input type="text" name="regNo" id="regNo" class="input"
-                                                placeholder="Business Registration Number">
+                                                placeholder="Business Registration Number"
+                                                value="<?php echo $data['basic-data'][0]->regno; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['regNo_err']))
                                                     echo $data['regNo_err']; ?>
@@ -199,6 +201,7 @@
                                             details of the president of the organisation</span>
                                     </div>
                                     <input type="text" name="address" id="address" class="input"
+                                        value="<?php echo $data['basic-data'][0]->Address; ?>"
                                         placeholder="Permanent location address">
                                     <span class="form-invalid">
                                         <?php if (!empty($data['address_err']))
@@ -251,7 +254,8 @@
 
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Contact<span class="required">*</span></div>
-                                            <input type="tel" name="contact" id="contact" class="input">
+                                            <input type="tel" name="contact" id="contact" class="input"
+                                                value="<?php echo $data['basic-data'][0]->phone; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['contact_err']))
                                                     echo $data['contact_err']; ?>
@@ -626,7 +630,118 @@
                                         </div>
                                     </div>
 
+                                    <div class="secretary-details">
+                                        <p class='text-2'>Secretary Details<i class="fa-solid fa-caret-down"
+                                                id="sec-drop-down"></i></p>
+                                        <div class="donee-name text-8">
+                                            <i class='bx bxs-info-circle'></i>
+                                            <span style="font-size: 0.65rem;">Details of a secretary in your
+                                                organisation</span>
+                                        </div>
+                                        <div class="secretary-details-form" id="sec-form">
+                                            <div class="form-input-title">Fullname<span class="required">*</span></div>
+                                            <input type="text" name="sec-fullname" id="sec-fullname" class="input"
+                                                placeholder="">
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['sec-fullname_err']))
+                                                    echo $data['sec-fullname_err']; ?>
+                                            </span>
 
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Designation<span
+                                                            class="required">*</span></div>
+                                                    <input type="text" name="sec-designation" id="sec-designation"
+                                                        class="input" placeholder="title">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-designation_err']))
+                                                            echo $data['sec-designation_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">National ID<span
+                                                            class="required">*</span></div>
+                                                    <input type="tel" name="sec-nicNo" id="sec-nicNo" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-nicNo_err']))
+                                                            echo $data['sec-nicNo_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-input-title">Address<span class="required">*</span></div>
+                                            <input type="text" name="sec-address" id="sec-address" class="input"
+                                                placeholder="">
+                                            <span class="form-invalid">
+                                                <?php if (!empty($data['sec-address_err']))
+                                                    echo $data['sec-address_err']; ?>
+                                            </span>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">Email<span class="required">*</span>
+                                                    </div>
+                                                    <input type="text" name="sec-email" id="sec-email" class="input"
+                                                        placeholder="">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-email_err']))
+                                                            echo $data['sec-email_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">Contact<span class="required">*</span>
+                                                    </div>
+                                                    <input type="tel" name="sec-contact" id="sec-contact" class="input">
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-contact_err']))
+                                                            echo $data['sec-contact_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-flex">
+                                                <div class="form-flex-left flx-1">
+                                                    <div class="form-input-title">NIC Image-Front<span
+                                                            class="required">*</span></div>
+                                                    <label for="sec-nic_front_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="sec-nic_front_image" id="sec-nic_front_image">
+                                                    </label>
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="sec-nic_front_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-nic_front_image_err']))
+                                                            echo $data['sec-nic_front_image_err']; ?>
+                                                    </span>
+                                                </div>
+
+                                                <div class="form-flex-right flx-1">
+                                                    <div class="form-input-title">NIC Image-Back<span
+                                                            class="required">*</span></div>
+                                                    <label for="sec-nic_back_image" class="custom-file-input">
+                                                        <span>Choose Image</span>
+                                                        <input type="file" accept="image/png, image/jpeg"
+                                                            name="sec-nic_back_image" id="sec-nic_back_image">
+                                                    </label>
+                                                    <div class="nic-form-image-container">
+                                                        <img src="<?php echo URLROOT ?>/public/Assets/images/nic.jpg"
+                                                            alt="image here" id="sec-nic_back_preview">
+                                                        <span class="fade-effect"></span>
+                                                    </div>
+                                                    <span class="form-invalid">
+                                                        <?php if (!empty($data['sec-nic_back_image_err']))
+                                                            echo $data['sec-nic_back_image_err']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                                     <br>
@@ -675,6 +790,9 @@
             if (trForm.classList.contains('active')) {
                 trForm.classList.remove('active');
             };
+            if (secForm.classList.contains('active')) {
+                secForm.classList.remove('active');
+            }
 
 
             setupImagePreview("#ex-nic_front_image", "#ex-nic_front_preview");
@@ -691,9 +809,31 @@
             if (exForm.classList.contains('active')) {
                 exForm.classList.remove('active');
             }
+            if (secForm.classList.contains('active')) {
+                secForm.classList.remove('active');
+            }
             setupImagePreview("#tr-nic_back_image", "#tr-nic_back_preview");
             setupImagePreview("#tr-nic_front_image", "#tr-nic_front_preview");
         };
+
+        let secDropdown = document.querySelector('#sec-drop-down');
+        let secForm = document.querySelector('#sec-form');
+
+        secDropdown.onclick = function () {
+            secForm.classList.toggle('active');
+            secForm.classList.toggle('inactive');
+
+            if (trForm.classList.contains('active')) {
+                trForm.classList.remove('active');
+            }
+            if (exForm.classList.contains('active')) {
+                exForm.classList.remove('active');
+            }
+
+            setupImagePreview("#sec-nic_front_image", "#sec-nic_front_preview");
+            setupImagePreview("#sec-nic_back_image", "#sec-nic_back_preview");
+        };
+
 
 
     </script>

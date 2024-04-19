@@ -49,7 +49,7 @@
   overflow: hidden;
   width: 800px;
   display: flex;
-  height: 680px;
+  height: 710px;
   min-height: 580px;
   padding: 0;
   
@@ -615,20 +615,20 @@ textarea{
 
 /* super-organisation-signup-form */
 
-.executive-details, .treasurer-details{
+.executive-details, .treasurer-details, .secretary-details{
   margin-top: 1rem;
 }
 
-.executive-details p, .treasurer-details p{
+.executive-details p, .treasurer-details p, .secretary-details p{
   font-size: 1.2rem;
 }
 
-.executive-details i, .treasurer-details i{
+.executive-details i, .treasurer-details i, .secretary-details i{
   margin-left: 2rem;
   cursor: pointer;
 } 
 
-.executive-details-form, .treasurer-details-form{
+.executive-details-form, .treasurer-details-form, .secretary-details-form{
   border: 1px solid var(--border-grey);
   border-radius: 20px;
   padding: 1rem;
@@ -637,6 +637,6 @@ textarea{
   transition: top 0.5s ease;
 }
 
-.executive-details-form.active, .treasurer-details-form.active{
+.executive-details-form.active, .treasurer-details-form.active, .secretary-details-form.active{
  display: block;
 }
