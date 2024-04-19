@@ -329,6 +329,26 @@ class M_user
                 return false;
             }
 
+            $this->db->query('INSERT INTO secretary (user_id, fullname, designation, nic_no, address, email, contact, nic_front, nic_back)
+            VALUES (:user_id, :fullname, :designation, :nic_no, :address, :email, :contact, :nic_front, :nic_back)');
+
+$this->db->bind(':user_id', $data['user_id']);
+$this->db->bind(':fullname', $data['sec-fullname']);
+$this->db->bind(':designation', $data['sec-designation']);
+$this->db->bind(':nic_no', $data['sec-nicNo']);
+$this->db->bind(':address', $data['sec-address']);
+$this->db->bind(':email', $data['sec-email']);
+$this->db->bind(':contact', $data['sec-contact']);
+$this->db->bind(':nic_front', $data['sec-nic_front_image']);
+$this->db->bind(':nic_back', $data['sec-nic_back_image']);
+
+
+if (!$this->db->execute()) {
+    // Rollback the transaction if the second INSERT fails
+    $this->db->rollBack();
+    return false;
+}
+
             if ($data['username']){
                 $this->db->query('UPDATE users SET username = :username WHERE id=:user_id');
     
@@ -443,6 +463,33 @@ class M_user
         }
     }
 
+
+    public function basicDataOrg($user_id){
+        try{
+            $this->db->query("SELECT uo.about, uo.regno, u.Address, u.phone
+            FROM users_organisation uo
+            JOIN users u ON uo.user_id = u.id
+            WHERE u.id = :user_id;
+            ");
+    
+            $this->db->bind(':user_id', $user_id);
+            // $rows = $this->db->resultSet();
+    
+            $row = $this->db->resultSet();
+    
+            //Check row
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            
+            error_log('Error in getAFundraiser: ' . $e->getMessage());
+            $err = "Error: " . $e->getMessage();
+            return $err;
+        }
+    }
 }
 
 

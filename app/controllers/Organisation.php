@@ -46,6 +46,7 @@ class Organisation extends controller
                 $this->super_signup();
             } else {
                 $data = [];
+                $data['basic-data'] = $this->OrganisationModel->basicDataOrg($_SESSION['userId']);
                 $this->view('Organisation/V_Super_Signup', $data);
             }
         }
@@ -123,7 +124,15 @@ class Organisation extends controller
             $obj->validate('tr-email', ['EMPTY', 'EMAIL']);
             $obj->validate('tr-contact', ['EMPTY']);
 
-            if ($_FILES['profile-image']){
+            $obj->validate('sec-fullname', ['EMPTY']);
+            $obj->validate('sec-designation', ['EMPTY']);
+            $obj->validate('sec-nicNo', ['EMPTY']);
+            $obj->validate('sec-address', ['EMPTY']);
+            $obj->validate('sec-email', ['EMPTY', 'EMAIL']);
+            $obj->validate('sec-contact', ['EMPTY']);
+
+
+            if ($_FILES['profile-image']) {
                 $obj->imageUpload('Profile-image', $_FILES['profile_image'], '', 'profile_image');
             }
 
@@ -134,6 +143,8 @@ class Organisation extends controller
             $obj->imageUpload('Organisation/Executive_nic_back', $_FILES['ex-nic_back_image'], '', 'ex-nic_back_image');
             $obj->imageUpload('Organisation/Treasurer_nic_front', $_FILES['tr-nic_front_image'], '', 'tr-nic_front_image');
             $obj->imageUpload('Organisation/Treasurer_nic_back', $_FILES['tr-nic_back_image'], '', 'tr-nic_back_image');
+            $obj->imageUpload('Organisation/Secretary_nic_front', $_FILES['sec-nic_front_image'], '', 'sec-nic_front_image');
+            $obj->imageUpload('Organisation/Secretary_nic_back', $_FILES['sec-nic_back_image'], '', 'sec-nic_back_image');
 
 
 
@@ -144,8 +155,7 @@ class Organisation extends controller
             if ($obj->flag == 1) {
                 // var_dump("flahg");
                 $this->view('Organisation/V_Super_Signup', $obj->data);
-            }
-             else {
+            } else {
 
                 // var_dump($obj->data);
 
