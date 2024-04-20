@@ -54,6 +54,8 @@
         <form action="" method="post" enctype="multipart/form-data" id="fundraiser-form">
 
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.2.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.3.php' ?>
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-2.php' ?>
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-3.php' ?>
 

@@ -168,7 +168,7 @@
   color: var(--black-sub);
 }
 
-.fund-images-box {
+.fund-images-box,  .merch-images-box{
   padding: 0.5rem;
   width: 100%;
   height: auto;
@@ -329,7 +329,7 @@
 
 /* material form css */
 
-.material-form{
+.material-form, .merchandise-form, .variations-form .location-form{
   width: 100%;
 }
 .dynamic-form{
@@ -340,17 +340,18 @@
 
 }
 
-.dynamic-form #add-button{
+.dynamic-form #add-button, .dynamic-form .add-location-button{
   cursor: pointer;
 }
 
-.dynamic-form #add-button:hover{
+.dynamic-form #add-button:hover, .dynamic-form .add-location-button:hover{
   opacity: 0.9;
 }
 .dynamic-form-tag-con{
   padding: 0.5rem;
   width: 100%;
   height: auto;
+  min-height: 1rem;
   display: grid;
   gap: 0.3rem;
   grid-template-columns: repeat(6, 1fr);
