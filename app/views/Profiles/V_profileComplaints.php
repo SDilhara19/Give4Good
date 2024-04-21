@@ -15,14 +15,19 @@
 </head>
 <body>
 <?php require APPROOT . '/views/includes/header.php' ?>
-<?php require APPROOT . '/views/includes/indvProfileSideBar.php' ?>
+<<?php if ($_SESSION['userType']=='individual') { 
+  require APPROOT . '/views/includes/indvProfileSideBar.php';
+}else if($_SESSION['userType']=='organisation'){ 
+require APPROOT . '/views/includes/orgProfileSideBar.php';
+} 
+?> 
 
     
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Your Complaigns</span>
+        <span>Your Complaints</span>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -37,26 +42,23 @@
         <table>
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Payment ID</th>
-            <th>Donor ID</th>
-            <th>Donor Username</th>
-            <th>Fundraiser ID</th>
             <th>Fundraiser Title</th>
-            <th>Amount(Rs.)</th>
-            <th>Contribution(Rs.)</th>
+            <th>Reason</th>
+            <th>Others</th>
         </tr>
     </thead>
     <tbody>
+    <?php 
+                  foreach ($data as $profileComplaints) {
+                  ?>
         <tr>
-        <td>2023-12-04</td>
-          <td>205</td>
-          <td>13</td>
-          <td> cpplpvjvjnjv</td>
-          <td>2000.00</td>
-          <td></td>
+          <td><?php echo $profileComplaints->fundraiser_name; ?></td>
+          <td><?php echo $profileComplaints->reason; ?></td>
+          <td><?php echo $profileComplaints->others; ?></td>
         </tr>
-        
+        <?php
+        }
+        ?>
         </tbody>
     </table>  
   </div>

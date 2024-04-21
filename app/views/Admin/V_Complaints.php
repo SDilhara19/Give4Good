@@ -32,64 +32,80 @@
         </div>
       </div>
 
-        </div>
-        <div class="dashDetails">
-        <div class="container">
-        <div class="table-wrapper">
-        <table>
-        <thead>
-        <tr>
-          <th>Date</th>
-          <th>Complaint ID</th>
-          <th>Reporter ID</th>
-          <th>Reporter Username</th>
-          <th>Fundraiser ID</th>
-          <th>Fundraiser Title</th>
-          <th>Fundraiser User ID</th>
-          <th>Fundraiser Username</th>
-          <th>Report</th>
-          <th>Other Details</th>
-          <th>Reporter details</th>
-          <th>Fundraiser details</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-    <?php 
-        foreach ($data as $complaints) {
-            ?>
-        <tr>
-            <td>23/02/2024</td>
-            <td><?php echo $complaints->complaint_id; ?></td>
-            <td><?php echo $complaints->user_id; ?></td>
-            <td><?php echo $complaints->username; ?></td>
-            <td><?php echo $complaints->fundraiser_id; ?></td>
-            <td><?php echo $complaints->title; ?></td>
-            <td><?php echo $complaints->user_id; ?></td>
-            <td>DiliniDM</td>
-            <td><?php echo $complaints->reason; ?></td>
-            <td><?php echo $complaints->others; ?></td>
-            <td class="action-td">
-                  <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>"
-                    class="action-icons">
-                    <i class="fa-solid fa-info"></i>
-                  </a>
-            </td>
-            <td>
-                  <a href="<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>"
-                    class="action-icons">
-                    <i class="fa-solid fa-info"></i>
-                  </a>
-
-                </td>
-        </tr>
-        <?php
-        }
-        ?>
-        </tbody>
-    </table>
     </div>
-        
+    <div class="dashDetails">
+      <div class="container">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Complaint ID</th>
+                <th>Reporter ID</th>
+                <th>Reporter Username</th>
+                <th>Fundraiser ID</th>
+                <th>Fundraiser Title</th>
+                <th>Fundraiser User ID</th>
+                <th>Fundraiser Username</th>
+                <th>Report</th>
+                <th>Other Details</th>
+                <th>Reporter details</th>
+                <th>Fundraiser details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $complaints) {
+                ?>
+                <tr>
+                  <td>
+                  hhhg
+                  </td>
+                  <td>
+                    <?php echo $complaints->complaint_id; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->user_id; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->username; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->fundraiser_id; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->title; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->user_id; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->reason; ?>
+                  </td>
+                  <td>
+                    <?php echo $complaints->others; ?>
+                  </td>
+                  <td class="action-td">
+                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+
+                  </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
 </body>
