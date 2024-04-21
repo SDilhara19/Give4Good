@@ -50,5 +50,27 @@ class Admin_Organisation extends controller
 
 
     }
+
+    public function setDeactive($id)
+    {
+      if ($this->AdminOrganisationModel->viewDeactivate($id)) {
+        echo '<script>alert(".................");</script>';
+      } else {
+        // Deactivation failed, handle the error
+        echo '<script>alert("................");</script>';
+      }
+      redirect(URLROOT . '/Admin_Individual/index');
+    }
+  
+    public function setReactive($id)
+    {
+      if ($this->AdminOrganisationModel->viewReactivate($id)) {
+        echo '<script>alert("Story deactivated successfully!");</script>';
+      } else {
+        // Deactivation failed, handle the error
+        echo '<script>alert("Error deactivating the story.");</script>';
+      }
+      redirect(URLROOT . '/Admin_Individual/index');
+    }
 }
 ?>
