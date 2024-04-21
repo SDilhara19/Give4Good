@@ -47,41 +47,7 @@ class Fundraiser extends controller
             echo "Error: " . $e->getMessage();
         }
     }
-
-  
-
-    private function paymentHash()
-    {
-        try {
-            $merchant_id = 1226076;
-            $order_id = 2;
-            $amount = 100;
-            $currency = "LKR";
-            $merchant_secret = "Mzg3MTExODE5MTc1Mzk3NDM4MTM0MzIwNTAzMzUyNjg3ODgwMDA=";
-            $hash = strtoupper(
-                md5(
-                    $merchant_id .
-                    $order_id .
-                    number_format($amount, 2, '.', '') .
-                    $currency .
-                    strtoupper(md5($merchant_secret))
-                )
-            ); 
-            return $hash;
-        } catch (Exception $e) {
-            return $e;
-        }
-
-    }
-
-    public function pay($id)
-    {
-        $data['details'] = $this->fundraiserModel->payForm($id);
-        $data['hash'] = $this->paymentHash();
-    
-        $this->view('Fundraisers/V_Pay');
-    }
-
+ 
     public function complaints(){
 
     $this->view('Fundraisers/V_complaint');

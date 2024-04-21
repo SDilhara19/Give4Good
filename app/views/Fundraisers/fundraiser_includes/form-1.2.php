@@ -23,7 +23,7 @@
           <div class="flx-1">
             <div class="form-input-title2">Birthdate<span class="required">*</span>
             </div>
-            <input type="text" name="dependent_birthdate" id="dependent_birthdate" class="input" placeholder="">
+            <input type="date" name="dependent_birthdate" id="dependent_birthdate" class="input" placeholder="">
             <span class="form-invalid">
               <?php  if (!empty($data['dependent_birthdate_err']))
                echo $data['dependent_birthdate_err'];                         ?>
@@ -77,12 +77,9 @@
 
           <div class="flx-1">
 
-            <div class="form-input-title2">Note from dependent<span class="required">*</span></div>
+            <div class="form-input-title2">Note from dependent</div>
             <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
               placeholder=""></textarea>
-            <span class="form-invalid">
-              <?php if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                         ?>
-            </span>
 
 
           </div>
