@@ -14,9 +14,8 @@
             </div>
             <input type="text" name="dependent_name" id="dependent_name" class="input" placeholder="">
             <span class="form-invalid">
-              <?php // if (!empty($data['dependent_name_err']))
-              // echo $data['dependent_name_err'];                         ?>
-              Required field
+              <?php  if (!empty($data['dependent_name_err']))
+               echo $data['dependent_name_err'];                         ?>
             </span>
           </div>
         </div>
@@ -26,9 +25,8 @@
             </div>
             <input type="text" name="dependent_birthdate" id="dependent_birthdate" class="input" placeholder="">
             <span class="form-invalid">
-              <?php // if (!empty($data['dependent_birthdate_err']))
-              // echo $data['dependent_birthdate_err'];                         ?>
-              Required field
+              <?php  if (!empty($data['dependent_birthdate_err']))
+               echo $data['dependent_birthdate_err'];                         ?>
             </span>
           </div>
           <div class="flx-1">
@@ -36,9 +34,9 @@
             </div>
             <input type="text" name="relationship" id="relationship" class="input" placeholder="XXXXX">
             <span class="form-invalid">
-              <?php // if (!empty($data['amount_err']))
-              // echo $data['amount_err'];                         ?>
-              Required field
+              <?php  if (!empty($data['relationship_err']))
+               echo $data['relationship_err'];                         ?>
+              
             </span>
           </div>
         </div>
@@ -48,8 +46,8 @@
             </div>
             <input type="text" name="dependent_edu_ins/work" id="dependent_edu_ins/work" class="input" placeholder="">
             <span class="form-invalid">
-              <?php // if (!empty($data['dependent_edu_ins/work_err']))
-              // echo $data['dependent_edu_ins/work_err'];                        ?>
+              <?php  if (!empty($data['dependent_edu_ins/work_err']))
+              echo $data['dependent_edu_ins/work_err'];                        ?>
 
             </span>
           </div>
@@ -83,7 +81,7 @@
             <textarea name="note_dependent" id="note_dependent" class="fund_story" rows="3" maxlength="200"
               placeholder=""></textarea>
             <span class="form-invalid">
-              <?php // if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                         ?>Error
+              <?php if(!empty($data['note_dependent_err']))echo $data['note_dependent_err'];                         ?>
             </span>
 
 

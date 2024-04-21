@@ -92,7 +92,7 @@
         <div id="location-form-container">
         </div>
         <div id='map-container' style="display: none;">
-         
+
           <span class="text-2">Mark the locations in the map</span>
 
           <div class="nic-form-image-container" id="map" style="height: 350px;">
@@ -463,9 +463,23 @@
         const latitudes = document.getElementById('latitude');
         const longitudes = document.getElementById('longitude');
 
-        latitudes.value = JSON.stringify(latCoor); // Assuming you want to store markers as a JSON string
-        longitudes.value = JSON.stringify(lngCoor); // Assuming you want to store markers as a JSON string
+        latitudes.value = JSON.stringify(latCoor);
+        longitudes.value = JSON.stringify(lngCoor);
 
+        google.maps.event.addListener(marker, 'dblclick', function () {
+          marker.setMap(null);
+
+        const index = latCoor.indexOf(lat)
+
+          if (index !== -1) {
+            latCoor.splice(index, 1);
+            lngCoor.splice(index, 1);
+          }
+          latitudes.value = JSON.stringify(latCoor);
+          longitudes.value = JSON.stringify(lngCoor);
+
+          console.log(latitudes.value)
+        })
       }
 
 
@@ -488,5 +502,5 @@
 </div>
 
 
-<<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap&v=weekly"
-        defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap&v=weekly" defer>
+  </script>

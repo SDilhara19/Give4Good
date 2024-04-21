@@ -57,8 +57,8 @@ class M_Super_Fundraiser
     public function fundraiserStart($data)
     {
         try {
-            // var_dump($data);
-            $this->db->query('INSERT INTO fundraiser (title, story, Category, amount, user_id, anonymous, parent_funding, end_date) VALUES (:title, :story, "Health", :amount, :user_id, :anonymous, :parent_funding, :end_date)');
+            $query1 = 'INSERT INTO fundraiser (title, story, Category, amount, user_id, anonymous, parent_funding, end_date) VALUES (:title, :story, "health", :amount, :user_id, :anonymous, :parent_funding, :end_date)'; 
+            $this->db->query($query1);
 
             // //Bind values
             $this->db->bind(':title', $data['title']);
@@ -75,6 +75,7 @@ class M_Super_Fundraiser
             } else {
                 return false;
             }
+           
         } catch (Exception $e) {
             return "Error" . $e->getMessage();
         }
