@@ -103,11 +103,11 @@ class Validation
 
   }
 
-  public function countKeys($keyName)
+  public function countKeys($keyName, $arr)
   {
     $count = 0;
 
-    foreach ($_FILES as $key => $value) {
+    foreach ($arr as $key => $value) {
       if (strpos($key, $keyName) === 0) {
         $count++;
       }

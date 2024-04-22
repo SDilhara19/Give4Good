@@ -12,7 +12,7 @@
       <div class="material-form">
         <div class="story-heading">
           <h2>Add materials you hope to receive</h2>
-          <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
+          <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl" style="cursor: pointer;"></i>
         </div>
         <div class="dynamic-form-tag-con" id="dynamic-form-tag-con" style='display: none;'>
         </div>
@@ -85,7 +85,7 @@
       <div class="location-form">
         <div class="story-heading">
           <h2>Locations you can collect the materials</h2>
-          <i id="add-location-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
+          <i id="add-location-btn" class=" fa-solid fa-circle-plus fa-2xl" style="cursor: pointer;"></i>
         </div>
         <div class="dynamic-form-tag-con" id="location-form-tag-con" style='display: none;'>
         </div>
@@ -197,9 +197,6 @@
               addButtonClicked(event.target);
             }
           });
-
-
-
         });
 
         function addButtonClicked(button) {

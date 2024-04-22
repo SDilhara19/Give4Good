@@ -26,8 +26,8 @@
 
                   </div>
                   <span class="form-invalid">
-                    <?php if (!empty($data['birth_certificate_err']))
-                      echo $data['birth_certificate_err']; ?>
+                    <?php if (!empty($row->document . '_err'))
+                      echo $row->document . '_err'; ?>
                   </span>
                 </div>
 
