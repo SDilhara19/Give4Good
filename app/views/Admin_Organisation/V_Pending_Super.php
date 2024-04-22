@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
   <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
 </head>
@@ -63,7 +67,7 @@
                 <td><button onclick class="data_view open-executive-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                 <td><button onclick class="data_view open-treasurer-popup" data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                 <td><a href=""><i class="fa-solid fa-check"></i></a></td>
-                <td>Active</td>
+                <td><?php echo $super_organisation->status; ?></td>
                 <td class="action-td">
                   <span class="action-icons open-info-popup"
                     data-popup-id="<?php echo $super_organisation->user_id; ?>">

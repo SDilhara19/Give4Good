@@ -69,9 +69,36 @@ class M_Admin_Individual {
         }
     }
 
+    public function activateSuperIndividual($id){
+        $this->db->query('UPDATE super_individual SET status = "Active"
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function deactivateSuperIndividual($id){
+        $this->db->query('UPDATE super_individual SET status = "Deactive"
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function viewIndividuals(){
-        $this->db->query('SELECT users.*
-        FROM users;');
+        $this->db->query('SELECT users_individual.*, users.*
+        FROM users_individual
+        JOIN users ON users_individual.user_id = users.id;');
 
         //Check row
         $row = $this->db->resultSet();

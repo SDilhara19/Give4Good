@@ -4,8 +4,16 @@ class Admin_Stories extends controller
     private $AdminStoryModel;
     public function __construct(){
         $this->AdminStoryModel = $this->model('M_Admin_Story');
+        $this->checkAdminLogin();
 }
 
+private function checkAdminLogin()
+{
+    if (!isloggedIn() || (isset($_SESSION['userType']) && $_SESSION['userType'] !== 'admin')) {
+        logOut();
+        redirect(URLROOT . '/Admin_Login');
+    }
+}
     public function index(){
         $data = $this->AdminStoryModel -> getAllStories(); 
         $this->view('Admin_Stories/V_all', $data);

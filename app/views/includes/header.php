@@ -27,7 +27,7 @@
           <a href="<?php echo URLROOT ?>/Stories">Stories</a>
         </li>
         <li>
-          <a href="<?php echo URLROOT ?>/Fundraiser/start">Start a Fundraiser</a>
+          <a href="<?php echo URLROOT ?>/Fundraisersuper/">Start a Fundraiser</a>
         </li>
         <li>
           <a href="<?php echo URLROOT ?>/Required">About</a>
@@ -35,7 +35,9 @@
       </ul>
 
       <div class="user-row">
-        <?php if (isset($_SESSION['userId'])) { ?>
+        <?php if (isset($_SESSION['userId'])) { 
+          if ($_SESSION['userLevel'] == 1){
+          ?>
           <i class="fa-solid fa-star star" onclick="window.location.href = '<?php echo URLROOT ?>/Individual/super'"></i>
           <i class="fa-solid fa-bell fa-xl"></i>
           <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile'">
@@ -50,6 +52,26 @@
           <!-- <li><a href="<?php //echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>
             <li>-->
           <?php
+          }
+          if ($_SESSION['userLevel'] == 2){
+            ?>
+            <i class="fa-solid fa-bell fa-xl"></i>
+            <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile'">
+              <div class="user-name">
+                <?php echo explode(" ", $_SESSION["userName"])[0]; ?>
+              </div>
+              <div class="user-image">
+                <img src="<?php echo $_SESSION['userImage']; ?>" alt="img" />
+            <i class="fa-solid fa-star fa-xs star-mini"></i>
+
+              </div>
+  
+            </div>
+            <!-- <li><a href="<?php //echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>
+              <li>-->
+            <?php
+            }
+
         } else { ?>
 
           <div class="guest-user">

@@ -7,6 +7,10 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components-3/Admin_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
@@ -44,73 +48,46 @@
  
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>001</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr>
-          <tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>002</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr><tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>003</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr><tr>
-            <td>
-              <span>
-                <span class="fi fi-af"></span>
-              </span>
-              <span>004</span>
-            </td>
-            <td>rotract</td>
-            <td>Ra-12-121</td>
-            <td>rotract001@gmail.com</td>
-            <td>+94 702392992</td>
-            <td>Super</td>
-            <td>
-            <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
-            </td>
- 
-          </tr>
-        </tbody>
+              <?php
+              foreach ($data as $users_organisation) {
+                ?>
+                <tr>
+                  <td>
+                    <span>
+                      <span class="fi fi-al"></span>
+                    </span>
+                    <span>
+                      <?php echo $users_organisation->id; ?>
+                    </span>
+                  </td>
+                  <td>
+                    <?php echo $users_organisation->username; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_organisation->regno; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_organisation->email; ?>
+                  </td>
+                  <td>
+                    <?php echo $users_organisation->phone; ?>
+                  </td>
+                  <?php
+                  if ($users_organisation->user_level == 2) {
+                    echo '<td> Super</td>';
+                  } else if ($users_organisation->user_level == 1) {
+                    echo '<td> Initial</td>';
+                  }
+                  ?>
+
+                  <td class="action-td">
+                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </tbody>
       </table>
       </div>
     </div>

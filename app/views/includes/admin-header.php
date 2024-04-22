@@ -47,7 +47,7 @@
               echo explode(" ", $_SESSION["userName"])[0] . ""; ?>
             </div>
             <div class="user-image">
-              <img src="<?php echo $_SESSION['userImage']; ?>" alt="img" />
+              <img src="<?php echo $_SESSION['userImage']; ?>" alt="i" />
             </div>
           </div>
           <!-- <li><a href="<?php echo URLROOT ?>/profile"><i class="fa-solid fa-user"></i></li>

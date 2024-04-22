@@ -13,6 +13,9 @@ class Users extends controller
 
   public function index()
   {
+    if (isloggedIn()) {
+      logOut();
+    }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $this->login();
     } else {
@@ -23,10 +26,13 @@ class Users extends controller
   }
 
   public function select()
-{
-  // $this->view('Logins/V_Signup');
-  $this->view('Users/V_Select_User');
-}
+  {
+    if (isloggedIn()) {
+      logOut();
+    }
+    // $this->view('Logins/V_Signup');
+    $this->view('Users/V_Select_User');
+  }
 
 
   public function login()
@@ -35,12 +41,12 @@ class Users extends controller
     $obj = new Validation($_POST);
     $obj->validate('username/email', ['EMPTY']);
     $obj->validate('password', ['EMPTY']);
-    
+
     if ((($this->UserModel->findbyUsername($obj->data['username/email'])) == false) || (($this->UserModel->findbyEmail($obj->data['username/email'])) == false)) {
       $obj->flag == 1;
       $obj->data['username/email_err'] = 'The given username or email is invalid';
     }
-    
+
 
     if ($obj->flag == 1) {
       $this->view('Users/V_Login', $obj->data);
@@ -48,41 +54,49 @@ class Users extends controller
       $loggedInUser = $this->UserModel->login($obj->data['username/email'], $obj->data['password']);
       if ($loggedInUser) {
         
+  
+        $user_id = $loggedInUser->id;
         //Create session
-        $this->createUserSession($loggedInUser);
+        if ($this->UserModel->UpdateLoggin($user_id)) {
+          $this->createUserSession($loggedInUser);
+
+        }
+
       } else {
         $obj->data['password_err'] = 'Invalid password';
+        $obj->data['username/email_err'] = 'The given username or email is invalid';
+
         $this->view('Users/V_Login', $obj->data);
       }
     }
   }
 
-  public function createUserSession($user){
+  public function createUserSession($user)
+  {
     $_SESSION['userId'] = $user->id;
     $_SESSION['userName'] = $user->username;
     $_SESSION['userEmail'] = $user->email;
     $_SESSION['userType'] = $user->type;
-    $_SESSION['userStatus'] = $user->status;
+    $_SESSION['userLevel'] = $user->user_level;
     $_SESSION['userImage'] = URLROOT . $user->profile_image;
 
-    // if ($_SESSION['userType'] == "admin"){
-    //   redirect(URLROOT . '/Admin');
-    // }
+
     redirect(URLROOT . '/Index');
 
-}
+  }
 
-public function logout(){
-    unset ($_SESSION['userId']);
+  public function logout()
+  {
+    unset($_SESSION['userId']);
     unset($_SESSION['userName']);
     unset($_SESSION['userEmail']);
-    unset ($_SESSION['userType']);        
-    unset ($_SESSION['userStatus']);
-    unset ($_SESSION['userImage']);
+    unset($_SESSION['userType']);
+    unset($_SESSION['userLevel']);
+    unset($_SESSION['userImage']);
 
     session_destroy();
     redirect(URLROOT . '/Index');
-}
+  }
 
 
 }

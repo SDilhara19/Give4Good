@@ -19,7 +19,7 @@
     --yellow-color: #D09705;
     --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
     --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
-  
+    --border-grey: #e1e4e8;
     /* text colors */
     --text-color: #2E353E;
   }
@@ -27,7 +27,7 @@
   .fundraiser-container{
     display: flex;
     justify-content: space-around;
-    /* margin: 0rem 3rem 0rem 3rem; */
+    margin: 0 0 5rem 0;
     align-items: start;
     gap: 3rem;
   }
@@ -81,6 +81,8 @@
 
   .fundraiser-image-container .right-arrow:hover, .left-arrow:hover {
     transform: scale(1.2);
+    cursor: pointer;
+
 }
 
 
@@ -132,12 +134,34 @@
 
   .fundraiser-amount .text-2{
     margin-right: 0.6rem;
+    font-size: 1.5rem;
   }
 
-  .fundraiser-progress-bar{
+  .fundraiser-progress-bar-container{
     margin: 1rem;
+    height: 30px;
+    width: 90%;
+    margin: auto;
+    position: relative;
   }
 
+.fundraiser-progress-bar{
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  background-color: var(--border-grey);
+  border-radius: 5px;
+}
+
+.fundraiser-progress{
+  width: 50%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+
+}
   .fundraiser-button-list{
     display: flex;
     padding: 0.5rem;
@@ -146,10 +170,7 @@
     width: 100%;
   }
 
-  .fundraiser-button-list button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-}
+
 
   .info-box{
     margin-bottom: 1rem;
@@ -164,8 +185,8 @@
     display: flex;
     align-items: flex-start;
     gap: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     height: 20rem;
     
   }
@@ -274,8 +295,8 @@
   .material-card-container {
     margin-top: 2rem;
     margin-left: 3rem;
-    margin-right: 3rem;
-    margin-bottom: 3rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
     display: grid;
     gap: 2.5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -387,6 +408,13 @@
   height: 100%;
 }
 
+.material-popup-right .text-2{
+  margin: 5px 0 5px 0;
+}
+
+.material-popup-right table{
+  width: 100%;
+}
 .material-popup-right td{
   text-align: right;
 }
@@ -463,6 +491,59 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
+
+.payment-container{
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--secondary-color);
+  width: 476px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:  0 2rem 2rem 2rem;
+  align-items: center;
+  
+}
+
+.payment-container-top{
+width: 100%;
+}
+
+.payment-heading{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.payment-heading .text-7{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-heading h2{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-heading .text-4{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-form-container{
+  max-height: 150px;
+}
+.payment-container-bottom{
+width: 100%;
+}
+
+
+
   @media (max-width: 992px){
     .fundraiser-container{
       display: flex;
@@ -559,6 +640,14 @@
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(1, 1fr);
+}
+
+.payment-container{
+  margin: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  
 }
   }
   

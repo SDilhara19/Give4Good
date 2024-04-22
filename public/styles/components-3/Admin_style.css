@@ -36,7 +36,7 @@ body {
   left: -270px;
   height: calc(100vh - 70px);
   width: 300px;
-  background: #dee3e7;
+  background-color: #dee3e7;
   padding: 12px 1px;
   transition: left 0.5s ease;
   z-index: 2000;
@@ -214,6 +214,16 @@ body {
   background: rgb(234, 232, 232);
 } */
 
+.dash-main{
+  background-color: #0E6F4B;
+  border-radius: 5px;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding: 1rem;
+  width: 400px;
+  height: auto;
+}
+
 .dashUnit {
   margin-left: 0.01rem;
   margin-top: 1rem;
@@ -295,64 +305,6 @@ body {
   margin-top: 10px;
 }
 
-.viewall {
-  background-color: #4EB790;
-  padding: 7px;
-  width: 100px;
-  margin-top: 20px;
-  margin-left: 100px;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.dash_view {
-  background-color: #4EB790;
-  cursor: pointer;
-  text-align: center;
-  border-color: none;
-}
-
-.data_view {
-  background-color: var(--black-sub);
-  cursor: pointer;
-  font-size: 0.75rem;
-  text-align: center;
-  border: 1px solid var(--black-sub);
-  border-radius: 15px;
-  width: 4rem;
-  color: var(--white-color);
-  padding: 0.2rem 0;
-}
-
-/* .data_deactivate{
-  background-color: #633cce;
-  cursor: pointer;
-  text-align: center;
-  border-color: none;
-  color: rgb(0, 0, 0);
-}
-
-.data_activate{
-  background-color: #ce3ca2;
-  cursor: pointer;
-  text-align: center;
-  border-color: none;
-  color: black;
-} */
-/* 
-.data_reactivate{
-  background-color: #3cbfce;
-  cursor: pointer;
-  text-align: center;
-  border-color: none;
-  color: black;
-} */
-/* 
-.table-wrapper td .action-icons{
-  margin: 0.1rem
-} */
-
 .table-wrapper .action-th {
   padding: 0 4.5rem 0 3.5rem;
 }
@@ -381,4 +333,16 @@ td .action-td {
   color: var(--black-sub);
   background-color: #ffffff;
   border: 2px solid var(--black-sub);
+}
+
+.data_view {
+  background-color: var(--black-sub);
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--black-sub);
+  border-radius: 15px;
+  width: 4rem;
+  color: var(--white-color);
+  padding: 0.2rem 0;
 }

@@ -87,8 +87,9 @@ margin: auto 1rem auto 1rem;
   color: var(--black-sub);
 }
 
-.header-nav-links a:hover {
+.nav-left .dashboard:hover, .header-nav-links a:hover {
   color: var(--dark-green);
+  cursor: pointer;
 }
 
 .user-row {
@@ -133,9 +134,14 @@ margin: auto 1rem auto 1rem;
   padding-left: 0.5rem;
   height: 2.5rem;
   margin: auto 1rem auto 0.4rem;
+  overflow: hidden;
  
 }
 
+.user-name{
+  /* max-width: 8rem; */
+  overflow: hidden; 
+}
 
 .guest-user{
   display: flex;
@@ -154,9 +160,21 @@ margin: auto 1rem auto 1rem;
   border-radius: 50%;
   height: 100%;
   margin-left: 1rem;
+  position: relative;
 } 
 .user-image img{
   border-radius: 50%;
   height: 100%;
 }
 
+.star-mini{
+  padding-bottom: 2px;
+  /* border: 1px solid rgb(17, 0, 255); */
+  /* border-radius: 50%; */
+  color: var(--red-color);
+  position: absolute;
+  top: 0px;
+  right: -8px;
+}
+
+ 
