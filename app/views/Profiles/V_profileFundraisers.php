@@ -8,6 +8,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/profile_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,90 +18,72 @@
 
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
-  <?php if ($_SESSION['userType']=='individual') { 
-  require APPROOT . '/views/includes/indvProfileSideBar.php';
-}else if($_SESSION['userType']=='organisation'){ 
-require APPROOT . '/views/includes/orgProfileSideBar.php';
-} 
-?> 
+  <?php if ($_SESSION['userType'] == 'individual') {
+    require APPROOT . '/views/includes/indvProfileSideBar.php';
+  } else if ($_SESSION['userType'] == 'organisation') {
+    require APPROOT . '/views/includes/orgProfileSideBar.php';
+  }
+  ?>
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <span>Your Fundraisers</span>
       </div>
-  <!-- </div>
-
-     <div class="dashDetails1">
-      <div class="profile-fundraisers-container">
-        <div class="profile-fundraiser-one">
-          <div class="profile-fundraiser-img">
-            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/fundraiser1.jpg" alt="image">
-          </div>
-          <div class="profile-fundraiser-details">
-          <p class="text-1">Help Andrew to travel for work</p>
-              <div class="progress-bar text-4">
-                progress-bar
-              </div>
-              <div class="progress-bar text-4">
-                 Active
-              </div>
-              <p class="text-1">Rs.20 000 raised</p>
-              </div>
-        </div>
-        <div class="profile-fundraiser-one"></div>
-        <div class="profile-fundraiser-one"></div>
-        <div class="profile-fundraiser-one"></div>
-        <div class="IMG-CON">
-          <img src="" alt="">
-        </div>
-
-      </div>
-    </div>
-  </div> -->
-  <div class="user--info">
+      <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name"/>
-        </div>  
-      </div> 
+          <input type="text" placeholder="Search Name" />
+        </div>
+      </div>
     </div>
     <div class="dashDetails">
-    <div class="container">
+      <div class="container">
         <div class="table-wrapper">
-        <table>
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Story</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Amount Collected</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php 
-       foreach ($data as $profileFundraisers) {
-                  ?>
-        <tr>
-          <td><?php echo $profileFundraisers->title; ?></td>
-          <td><?php echo $profileFundraisers->story; ?></td>
-          <td><?php echo $profileFundraisers->category; ?></td>
-          <td><?php echo $profileFundraisers->amount; ?></td>
-          <td><?php echo $profileFundraisers->amount_collected; ?></td>
-          <td><?php echo $profileFundraisers->status; ?></td>
-          <td>button view, edit, delete </td>
-        </tr> 
-        <?php
-        }
-        ?>  
-        </tbody>
-    </table>  
-  </div>
-</div>
-</div>
-  <?php require APPROOT . '/views/includes/footer.php' ?>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Story</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Amount Collected</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data as $profileFundraisers) {
+                ?>
+                <tr>
+                  <td><?php echo $profileFundraisers->title; ?></td>
+                  <td><?php echo $profileFundraisers->story; ?></td>
+                  <td><?php echo $profileFundraisers->Category; ?></td>
+                  <td><?php echo $profileFundraisers->amount; ?></td>
+                  <td><?php echo $profileFundraisers->amount_collected; ?></td>
+                  <td><?php echo $profileFundraisers->status; ?></td>
+                  <td><div class="submit-button-div">
+                        <!-- <button class="button-1-green" type="submit">View
+                      
+                        </button> -->
+                        <button class="button-1-green">View</button>
+                </div>
+                        </div>
+                        
+                        <div class="submit-button-div">
+                        <button class="button-3-red" type="submit">End</button>
+                    </div>
+                    </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <?php require APPROOT . '/views/includes/footer.php' ?>
 
 </body>
 
