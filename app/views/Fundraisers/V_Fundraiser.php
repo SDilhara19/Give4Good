@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -52,12 +53,19 @@
                 <div class="fundraiser-donee">
                     <?php if ($data['fundraiser'][0]->anonymous == 1) { ?>
                         <div class="fundraiser-donee-name">
-                            <i class="fa-solid fa-building"></i>
+                        <i class="fas fa-user-secret"></i>
+
                             <p class="text-2">Anonymous </p>
                         </div>
             <?php        } else { ?>
                         <div class="fundraiser-donee-name">
+                            <?php if ($data['fundraiser'][0]->type == 'organisation'){ ?>
                             <i class="fa-solid fa-building"></i>
+
+                            <?php } if ($data['fundraiser'][0]->type == 'individual'){ ?>
+                            <i class="fa-solid fa-user"></i>
+
+                            <?php }?>
                             <p class="text-2">
                                 <?php echo $data['fundraiser'][0]->username; ?>
                             </p>

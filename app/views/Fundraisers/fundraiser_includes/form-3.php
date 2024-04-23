@@ -94,7 +94,10 @@
         <div id='map-container' style="display: none;">
 
           <span class="text-2">Mark the locations in the map</span>
-
+          <div class="donee-name text-8">
+            <i class='bx bxs-info-circle'></i>
+            <span style="font-size: 0.65rem;">Double click to remove a marker</span>
+          </div>
           <div class="nic-form-image-container" id="map" style="height: 350px;">
           </div>
           <input type="hidden" name="latitude" id="latitude">
@@ -466,7 +469,7 @@
         google.maps.event.addListener(marker, 'dblclick', function () {
           marker.setMap(null);
 
-        const index = latCoor.indexOf(lat)
+          const index = latCoor.indexOf(lat)
 
           if (index !== -1) {
             latCoor.splice(index, 1);
@@ -500,4 +503,4 @@
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap&v=weekly" defer>
-  </script>
+</script>

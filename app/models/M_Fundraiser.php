@@ -157,6 +157,26 @@ class M_Fundraiser {
         }
     }
 
+    public function getMapLocation($id){
+        try{
+            $this->db->query("SELECT * FROM material_map_location WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
     function updateViews($newViews, $fundraiserId){
         try{
             $this->db->query("UPDATE fundraiser SET view_counts = :view_counts WHERE fundraiser_id = :fundraiser_id");
