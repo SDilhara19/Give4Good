@@ -28,7 +28,7 @@
       <div class="container">
 
         <div class="table-wrapper">
-          <table class="tablemain">
+        <table class="tablemain">
             <thead>
 
               <tr>
@@ -92,33 +92,33 @@
                     <dialog class="popup" id='executive-popup-<?php echo $super_organisation->user_id; ?>'>
                       <span class="close-popup"
                         id="close-executive-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Executive: Youth Society of Thimbirigasyaya</p>
+                      <p class="text-2">Executive: <?php echo $super_organisation->username; ?><</p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
                           <tr>
                             <th>Name</th>
-                            <td class="text-3">John Doe</td>
+                            <td class="text-3"><?php echo $super_organisation->fullname; ?></td>
                           </tr>
                           <tr>
                             <th>Position</th>
-                            <td class="text-3">Vice-President</td>
+                            <td class="text-3"><?php echo $super_organisation->designation; ?></td>
                           </tr>
 
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3">23-02-2024</td>
+                            <td class="text-3"><?php echo $super_organisation->nic_no; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3">Ratnapura</td>
+                            <td class="text-3"><?php echo $super_organisation->address; ?></td>
                           </tr>
                           <tr>
                             <th>Contact</th>
-                            <td class="text-3">+94 704332324</td>
+                            <td class="text-3"><?php echo $super_organisation->contact; ?></td>
                           </tr>
                           <tr>
                             <th>Email</th>
-                            <td class="text-3">2johndoe@hmail.com</td>
+                            <td class="text-3"><?php echo $super_organisation->email; ?></td>
                           </tr>
 
                         </table>
@@ -135,33 +135,33 @@
                     <dialog class="popup" id='treasurer-popup-<?php echo $super_organisation->user_id; ?>'>
                       <span class="close-popup"
                         id="close-treasurer-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Treasurer: Youth Society of Thimbirigasyaya</p>
+                      <p class="text-2">Treasurer: <?php echo $super_organisation->username; ?></p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
                           <tr>
                             <th>Name</th>
-                            <td class="text-3">John Doe</td>
+                            <td class="text-3"><?php echo $super_organisation->fullname; ?></td>
                           </tr>
                           <tr>
                             <th>Position</th>
-                            <td class="text-3">Treasurer</td>
+                            <td class="text-3"><?php echo $super_organisation->designation; ?></td>
                           </tr>
 
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3">23-02-2024</td>
+                            <td class="text-3"><?php echo $super_organisation->nic_no; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3">Ratnapura</td>
+                            <td class="text-3"><?php echo $super_organisation->address; ?></td>
                           </tr>
                           <tr>
                             <th>Contact</th>
-                            <td class="text-3">+94 704332324</td>
+                            <td class="text-3"><?php echo $super_organisation->contact; ?></td>
                           </tr>
                           <tr>
                             <th>Email</th>
-                            <td class="text-3">2johndoe@hmail.com</td>
+                            <td class="text-3"><?php echo $super_organisation->email; ?></td>
                           </tr>
 
                         </table>
@@ -178,33 +178,33 @@
                     <dialog class="popup" id='bank-popup-<?php echo $super_organisation->user_id; ?>'>
                       <span class="close-popup"
                         id="close-bank-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Bank Details: Youth Society of Thimbirigasyaya</p>
+                      <p class="text-2"><?php echo $super_organisation->bank_name; ?></p>
                       <div class="popup-container bank-container">
                         <table class="info-table">
                           <tr>
                             <th>Bank Name</th>
-                            <td class="text-3">Bank of Ceylon</td>
+                            <td class="text-3"><?php echo $super_organisation->bank_name; ?></td>
                           </tr>
                           <tr>
                             <th>Bank Code</th>
-                            <td class="text-3">367</td>
+                            <td class="text-3"><?php echo $super_organisation->bank_code; ?></td>
                           </tr>
 
                           <tr>
                             <th>Branch Name</th>
-                            <td class="text-3">Thimbirigasyaya</td>
+                            <td class="text-3"><?php echo $super_organisation->branch_name; ?></td>
                           </tr>
                           <tr>
                             <th>Branch Code</th>
-                            <td class="text-3">12</td>
+                            <td class="text-3"><?php echo $super_organisation->branch_code; ?></td>
                           </tr>
                           <tr>
                             <th>Account holder</th>
-                            <td class="text-3">Youth Society of Thimbirigasyaya</td>
+                            <td class="text-3"><?php echo $super_organisation->acc_holder; ?></td>
                           </tr>
                           <tr>
                             <th>Account No</th>
-                            <td class="text-3">5526362</td>
+                            <td class="text-3"><?php echo $super_organisation->account_no; ?></td>
                           </tr>
 
                         </table>
