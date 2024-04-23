@@ -42,7 +42,12 @@
             <div class="progress-step-hori">
               <div class="progress-hori"></div>
               <div class="progress-mark-hori"></div>
-              <p class="progress-text-hori">Materials</p>
+              <p class="progress-text-hori">Material Donation</p>
+            </div>
+            <div class="progress-step-hori">
+              <div class="progress-hori"></div>
+              <div class="progress-mark-hori"></div>
+              <p class="progress-text-hori">Merchandise</p>
             </div>
           </div>
         </div>
@@ -54,10 +59,10 @@
         <form action="" method="post" enctype="multipart/form-data" id="fundraiser-form">
 
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.php' ?>
-          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.2.php' ?>
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.3.php' ?>
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-2.php' ?>
           <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-3.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-4.php' ?>
 
 
 
@@ -70,7 +75,6 @@
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
-  <script>setupImagePreview("#birth_certificate", "#birth_certificate_preview");</script>
 </body>
 
 </html>
