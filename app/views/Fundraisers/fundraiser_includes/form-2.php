@@ -7,7 +7,7 @@
 
                 <div class="form-row">
                   <div class="form-flex img-label">
-                    <div class="form-input-title"><?php echo $row->document; ?><span class="required">*</span>
+                    <div class="form-input-title"><?php echo $row->document_name; ?><span class="required">*</span>
                     </div>
                     <label for="<?php echo $row->document; ?>" class="custom-file-input2">
                       <span>Choose Image</span>
@@ -26,8 +26,8 @@
 
                   </div>
                   <span class="form-invalid">
-                    <?php if (!empty($row->document . '_err'))
-                      echo $row->document . '_err'; ?>
+                    <?php if (!empty($data[ $row->document . '_err']))
+                      echo $data[ $row->document . '_err']; ?>
                   </span>
                 </div>
 

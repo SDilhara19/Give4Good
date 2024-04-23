@@ -65,7 +65,7 @@ class Fundraisersuper extends controller
             $this->fundraiser_start($category);
         } else {
             $data = [];
-            // $data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
+            $data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
             // var_dump($data['documents'][0]->document);
             $this->view('Fundraisers/V_Start_Organisation', $data);
         }
@@ -76,6 +76,7 @@ class Fundraisersuper extends controller
     private function fundraiser_start($category)
     {
         try {
+
             $obj = new Validation($_POST);
             $obj->data['user_id'] = $_SESSION['userId'];
             $obj->data['category'] = $category;
@@ -95,52 +96,95 @@ class Fundraisersuper extends controller
                 $obj->validate('dependent_birthdate', ['EMPTY']);
                 $obj->validate('relationship', ['EMPTY']);
                 $obj->validate('dependent_edu_ins/work', ['EMPTY']);
-                $obj->validate('note_dependent', ['EMPTY']);
-
+                $obj->imageUpload('Fundraisers/Birth-Certificates', $_FILES['birth_certificate'], $obj->data['title'], 'birth_certificate');
             }
 
-            $imagesCount = $obj->countKeys('fundraiser_image_');
-            // var_dump($imagesCount);
+            $imagesCount = $obj->countKeys('fundraiser_image_', $_FILES);
+            $obj->data['imageCount'] = $imagesCount;
 
             for ($i = 1; $i <= $imagesCount; $i++) {
                 $obj->imageUpload('Fundraisers/Images', $_FILES['fundraiser_image_' . $i], $obj->data['title'] . '_' . $i, 'fundraiser_image_' . $i);
             }
 
             //document meta check
+            if ($_SESSION['userType'] == 'individual') {
+                $documents = $this->superFundraiserModel->iFindDocuments($category);
+                foreach ($documents as $document) {
+                    $obj->imageUpload('Fundraisers/Document', $_FILES[$document->document], $obj->data['title'] . '_' . $document->document, $document->document);
 
+                }
+            } else if ($_SESSION['userType'] == 'organisation') {
+                $documents = $this->superFundraiserModel->oFindDocuments($category);
+                foreach ($documents as $document) {
+                    $obj->imageUpload('Fundraisers/Document', $_FILES[$document->document], $obj->data['title'] . '_' . $document->document, $document->document);
+                }
+            }
+
+            //material check
             if (!isset($_POST['material'])) {
                 $obj->data['material'] = 0;
             } else {
                 $obj->validate('material', ['CHECKBOX']);
-                $materialCount = $obj->countKeys('material/item_name_');
+                $materialCount = $obj->countKeys('material/item_name_', $_POST);
+                $obj->data['materialCount'] = $materialCount;
                 for ($i = 1; $i <= $materialCount; $i++) {
                     $obj->validate('material/item_name_' . $i, ['EMPTY']);
                     $obj->validate('no_required_' . $i, ['EMPTY']);
                     $obj->validate('material_description_' . $i, ['EMPTY']);
-                    $obj->validate('material/item_name_' . $i, ['EMPTY']);
                     $obj->imageUpload('Fundraisers/Materials', $_FILES['material_image_' . $i], $obj->data['title'] . '_' . $i, 'material_image_' . $i);
                 }
-                $locationCount = $obj->countKeys('town/city_');
+                $locationCount = $obj->countKeys('town/city_', $_POST);
+                $obj->data['locationCount'] = $locationCount;
                 for ($i = 1; $i <= $locationCount; $i++) {
                     $obj->validate('town/city_' . $i, ['EMPTY']);
                     $obj->validate('contact_' . $i, ['EMPTY']);
                     $obj->validate('address_' . $i, ['EMPTY']);
                 }
 
+                $obj->validate('latitude', ['EMPTY']);
+                $obj->validate('longitude', ['EMPTY']);
+
             }
 
-            // $this->view('test', $obj);
+            if ($_SESSION['userType'] == 'organisation') {
+                if (!isset($_POST['merchandise'])) {
+                    $obj->data['merchandise'] = 0;
+                } else {
+                    $obj->validate('merchandise', ['CHECKBOX']);
+                    $merchandiseCount = $obj->countKeys('merch_name_', $_POST);
+                    $obj->data['merchandiseCount'] = $merchandiseCount;
+                    for ($i = 1; $i <= $merchandiseCount; $i++) {
+                        $obj->validate('merch_name_' . $i, ['EMPTY']);
+                        $obj->validate('merch_price_' . $i, ['EMPTY']);
+                        $obj->validate('amount_to_fund_' . $i, ['EMPTY']);
+                        $obj->validate('stock_' . $i, ['EMPTY']);
+                        $obj->validate('merch_description_' . $i, ['EMPTY']);
+                        $obj->imageUpload('Fundraisers/Merchandise', $_FILES['merch_image_' . $i], $obj->data['title'] . '_' . $i, 'merch_image_' . $i);
+                    }
+                }
+            }
+
+
+
 
             if ($obj->flag == 1) {
-                $this->view('Fundraisers/V_Start_Individual', $obj->data);
+                print_r($obj->data);
+                if ($_SESSION['userType' == 'individual']) {
+                    $obj->data['documents'] = $this->superFundraiserModel->iFindDocuments($category);
+                    $this->view('Fundraisers/V_Start_Individual', $obj->data);
+                } else if
+                ($_SESSION['userType' == 'organisation']) {
+                    $obj->data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
+                    $this->view('Fundraisers/V_Start_Organisation', $obj->data);
+                }
+
             } else {
 
-                // var_dump($obj->data);
-
                 if ($this->superFundraiserModel->fundraiserStart($obj->data)) {
-                    //change redirection
-
-                    redirect(URLROOT . '/Index');
+                    $this->view('test', $obj);
+                    //     // redirect(URLROOT . '/Index');
+                    //     //  $this->view('test', $obj->data);
+                    //     // var_dump($obj->data);
                 } else {
                     die("Something went wrong");
                 }
