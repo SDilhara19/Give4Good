@@ -12,29 +12,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
-  <?php if ($_SESSION['userType'] == 'individual') {
-    require APPROOT . '/views/includes/indvProfileSideBar.php';
-  } else if ($_SESSION['userType'] == 'organisation') {
-    require APPROOT . '/views/includes/orgProfileSideBar.php';
-  }
-  ?>
-
+  <?php require APPROOT . '/views/includes/orgProfileSideBar.php'?>
 
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Your Complaints</span>
+        <span>Your Merchandises</span>
       </div>
       <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search Name" />
+          <input type="text" placeholder="Search Name"/>
         </div>
       </div>
     </div>
@@ -44,36 +37,29 @@
           <table>
             <thead>
               <tr>
-                <th>Fundraiser Title</th>
-                <th>Reason</th>
-                <th>Others</th>
-                <th>Actions</th>
+                <th>Date</th>
+                <th>Amount</th>
+                
               </tr>
             </thead>
             <tbody>
+            <?php 
+                  foreach ($data as $profileSubPay) {
+                  ?>
+              <tr>
+                <td><?php echo $profileSubPay->Date; ?></td>
+                <td><?php echo $profileSubPay->Amount; ?></td>
+                
+                 </tr>
               <?php
-              foreach ($data as $profileComplaints) {
-                ?>
-                <tr>
-                  <td><?php echo $profileComplaints->fundraiser_name; ?></td>
-                  <td><?php echo $profileComplaints->reason; ?></td>
-                  <td><?php echo $profileComplaints->others; ?></td>
-                  <td>
-                  <td>
-                    <div class="submit-button-div">
-                      <button class="button-1-green">View</button>
-                    </div>
-                  </td>
-                </tr>
-                <?php
-              }
-              ?>
+         }
+        ?>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
-<?php require APPROOT . '/views/includes/footer.php' ?>
 
 </html>
