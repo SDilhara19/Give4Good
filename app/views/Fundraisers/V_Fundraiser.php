@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIVE4GOOD</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVE4GOOD</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -27,14 +27,16 @@
             <div class="fundraiser-left">
                 <div class="fundraiser-image-container">
                     <div class="left-arrow">
-                        <i class="fa-solid fa-chevron-left fa-2xl" style="font-size: 3em;" onclick="showPrevImage()"></i>
+                        <i class="fa-solid fa-chevron-left fa-2xl" style="font-size: 3em;"
+                            onclick="showPrevImage()"></i>
                     </div>
                     <div class="fundraiser-image">
 
                         <img id="current-image" src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
                     </div>
                     <div class="right-arrow">
-                        <i class="fa-solid fa-chevron-right fa-2xl" onclick="showNextImage()" style="font-size: 3em;"></i>
+                        <i class="fa-solid fa-chevron-right fa-2xl" onclick="showNextImage()"
+                            style="font-size: 3em;"></i>
                     </div>
 
 
@@ -48,15 +50,25 @@
                     </p>
                 </div>
                 <div class="fundraiser-donee">
-                    <div class="fundraiser-donee-name">
-                        <i class="fa-solid fa-building"></i>
-                        <p class="text-2">
-                            <?php echo $data['fundraiser'][0]->username; ?>
+                    <?php if ($data['fundraiser'][0]->anonymous == 1) { ?>
+                        <div class="fundraiser-donee-name">
+                            <i class="fa-solid fa-building"></i>
+                            <p class="text-2">Anonymous </p>
+                        </div>
+            <?php        } else { ?>
+                        <div class="fundraiser-donee-name">
+                            <i class="fa-solid fa-building"></i>
+                            <p class="text-2">
+                                <?php echo $data['fundraiser'][0]->username; ?>
+                            </p>
+                        </div>
+                        <p class="text-3">
+                            <?php echo $data['fundraiser'][0]->address; ?>
                         </p>
-                    </div>
-                    <p class="text-3">
-                    <?php echo $data['fundraiser'][0]->address; ?>
-                    </p>
+
+                    <?php }
+                    ?>
+
                 </div>
                 <div class="fundriaser-description">
                     <p class="text-1">
@@ -65,9 +77,9 @@
                 </div>
                 <div class="ad-merch-button-list">
                     <button class="button-3-red"
-            onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
+                        onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
                 </div>
-                
+
             </div>
             <div class="fundraiser-right">
                 <div class="fundraiser-progress-bar-container">
@@ -147,25 +159,25 @@
         ?>
 
 
-       
+
 
     </main>
     <?php require APPROOT . '/views/includes/footer.php' ?>
 
     <script>
-            var currentImageIndex = 0;
-            var images = <?php echo json_encode($data['images']); ?>;
+        var currentImageIndex = 0;
+        var images = <?php echo json_encode($data['images']); ?>;
 
-            function showNextImage() {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
-            }
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
+        }
 
-            function showPrevImage() {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
-            }
-        </script>
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('current-image').src = "<?php echo URLROOT ?>" + images[currentImageIndex].img;
+        }
+    </script>
     <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
 
 </body>

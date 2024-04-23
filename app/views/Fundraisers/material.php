@@ -38,16 +38,24 @@
                                 <?php echo $material->units; ?>
                             </p>
                         </div>
+                        <div class="donee-name text-8">
+                                        <i class='bx bxs-info-circle'></i>
+                                        <span style="font-size: 0.65rem;">Required amount can vary. Its best to contact for updated details</span>
+                                    </div>
                         <div>
                             <p class="text-2">Contact information for more details</p>
                             <table class="material-table">
                                 <tr>
                                     <th>email</th>
-                                    <td class="text-3">dialog@gmail.com</td>
+                                    <td class="text-3">
+                                    <?php echo $data['fundraiser'][0]->email; ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>phone</th>
-                                    <td class="text-3">+9470 5643233</td>
+                                    <td class="text-3">
+                                    <?php echo $data['fundraiser'][0]->phone; ?>
+        </td>
                                 </tr>
                             </table>
                         </div>
