@@ -1,4 +1,4 @@
-<div class="step-container active">
+<div class="step-container">
   <fieldset class="start-fundraiser-fieldset">
     <div class="form-set">
       <div class="form-row form-flex">
@@ -11,13 +11,11 @@
 
       <div class="material-form">
         <div class="story-heading">
-          <h2>Materials you hope to receive</h2>
-          <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl"></i>
+          <h2>Add materials you hope to receive</h2>
+          <i id="add-material-btn" class=" fa-solid fa-circle-plus fa-2xl" style="cursor: pointer;"></i>
         </div>
         <div class="dynamic-form-tag-con" id="dynamic-form-tag-con" style='display: none;'>
-
         </div>
-
         <div id="dynamic-form-container"></div>
       </div>
       <div id="dynamic-form-template" style="display: none;">
@@ -87,13 +85,27 @@
       <div class="location-form">
         <div class="story-heading">
           <h2>Locations you can collect the materials</h2>
-          <i id="add-location-icon" class=" fa-solid fa-circle-plus fa-2xl"></i>
+          <i id="add-location-btn" class=" fa-solid fa-circle-plus fa-2xl" style="cursor: pointer;"></i>
         </div>
-        <div class="dynamic-form-tag-con" id="dynamic-location-tag-con" style='display: block;'>
-
+        <div class="dynamic-form-tag-con" id="location-form-tag-con" style='display: none;'>
         </div>
-
         <div id="location-form-container">
+        </div>
+        <div id='map-container' style="display: none;">
+
+          <span class="text-2">Mark the locations in the map</span>
+
+          <div class="nic-form-image-container" id="map" style="height: 350px;">
+          </div>
+          <input type="hidden" name="latitude" id="latitude">
+          <input type="hidden" name="longitude" id="longitude">
+          <span class="form-invalid">
+            <?php if (!empty($data['location_err']))
+              echo $data['location_err']; ?>
+          </span>
+        </div>
+      </div>
+      <div id="location-form-template" style="display: none;">
         <div class="dynamic-form">
           <div class="form-row form-flex">
             <div class="flx-1">
@@ -101,8 +113,8 @@
               </div>
               <input type="text" name="town/city" id="town/city" class="input" placeholder="ex: Piliyandala">
               <span class="form-invalid">
-                <?php // if (!empty($data['town/city_err']))
-                // echo $data['town/city_err'];                        ?>
+                <?php if (!empty($data['town/city_err']))
+                  echo $data['town/city_err']; ?>
 
               </span>
             </div>
@@ -111,52 +123,26 @@
               </div>
               <input type="text" name="contact" id="contact" class="input" placeholder="ex: 0703436154">
               <span class="form-invalid">
-                <?php // if (!empty($data['contact_err']))
-                // echo $data['contact_err'];                        ?>
+                <?php if (!empty($data['contact_err']))
+                  echo $data['contact_err']; ?>
 
               </span>
             </div>
           </div>
-          <div class="form-row form-flex">
-
-            <div class="flx-1">
-
-              <div class="form-input-title2">Address<span class="required">*</span></div>
-              <input type="text" name="address" id="address" class="input" placeholder="" maxlength="200" placeholder="">
-              <span class="form-invalid">
-                <?php // if(!empty($data['address_err']))echo $data['address_err'];                         ?>
-              </span>
-
-
-            </div>
-            <div class="flx-1">
-              <div class="form-flex img-label">
-                <div class="form-input-title">Location<span class="required">*</span>
-                </div>
-                <label for="location" class="custom-file-input2">
-                  <span>Add</span>
-                  <input type="file" accept="image/png, image/jpeg" name="material_image" id="material_image">
-                </label>
-              </div>
-
-              <div class="nic-form-image-container">
-                <img src="<?php echo URLROOT ?>/public/Assets/images/default-images/sample-image.jpeg" alt="image here"
-                  id="location_image_preview">
-                <span class="fade-effect"></span>
-              </div>
-              <span class="form-invalid">
-                <?php if (!empty($data['location_err']))
-                  echo $data['location_err']; ?>
-              </span>
-
-            </div>
+          <div class="form-row">
+            <div class="form-input-title2">Address<span class="required">*</span></div>
+            <input type="text" name="address" id="address" class="input" placeholder="" maxlength="200" placeholder="">
+            <span class="form-invalid">
+              <?php // if(!empty($data['address_err']))echo $data['address_err'];                         ?>
+            </span>
           </div>
+
           <div class="submit-button-div">
-            <button class="add-button secondary-button" id="add-button" type="button">Add</button>
+            <button class="add-location-button secondary-button" id="add-location-button" type="button">Add</button>
           </div>
-        </div>
         </div>
       </div>
+
       <script>
         let materials = [];
 
@@ -211,9 +197,6 @@
               addButtonClicked(event.target);
             }
           });
-
-
-
         });
 
         function addButtonClicked(button) {
@@ -253,7 +236,7 @@
             isValid = false;
           }
 
-         
+
 
           // If all fields are valid, proceed with adding the item
           if (isValid) {
@@ -263,7 +246,7 @@
 
             var elements = document.getElementById("dynamic-form-tag-con");
 
-            elements.style.display = 'block';
+            elements.style.display = 'grid';
 
 
             document.getElementById("dynamic-form-tag-con").innerHTML = material_tag_show()
@@ -278,13 +261,137 @@
           materials.forEach((i) => {
             tag += `<div class="dynamic-form-tag">
             <div class="text-2">${i}</div>
-            <span onclick="">&times;</span>
           </div>
 
 `;
           })
           return tag;
         }
+
+
+
+      </script>
+
+      <script>
+        let locations = [];
+
+        document.addEventListener('DOMContentLoaded', function () {
+          let locationIndex = 0;
+          document.getElementById("add-location-btn").addEventListener('click', function () {
+            locationIndex++;
+
+            console.log('add clicked')
+            var locationFormTemplate = document.getElementById('location-form-template');
+            // console.log(dynamicFormTemplate)
+            var locationFormClone = locationFormTemplate.cloneNode(true);
+
+            locationFormClone.setAttribute('id', 'location_form_' + locationIndex);
+
+            locationFormClone.style.display = 'block';
+
+
+            locationFormClone.querySelectorAll('input, textarea').forEach(function (input) {
+              var originalLName = input.getAttribute('name')
+              if (originalLName) {
+                input.setAttribute('name', originalLName + '_' + locationIndex)
+              }
+            });
+
+            locationFormClone.querySelectorAll('button').forEach(function (input) {
+              var buttonLId = input.getAttribute('id')
+              if (buttonLId) {
+                input.setAttribute('id', buttonLId + '_' + locationIndex)
+              }
+            });
+
+
+            document.getElementById('location-form-container').appendChild(locationFormClone);
+          });
+
+          document.addEventListener('click', function (event) {
+
+            if (event.target.classList.contains('add-location-button')) {
+
+              addLocationButtonClicked(event.target);
+            }
+          });
+
+
+
+        });
+
+        function addLocationButtonClicked(button) {
+          console.log("Location Add button clicked!");
+          var locationForm = button.parentNode.parentNode;
+          console.log(locationForm)
+          var townCityInput = locationForm.querySelector(`.input[id="town/city"]`);
+          var contactInput = locationForm.querySelector(`.input[id="contact"]`);
+          var addressInput = locationForm.querySelector(`.input[id="address"]`);
+
+          var errorMessages = locationForm.querySelectorAll('.form-invalid');
+          errorMessages.forEach(function (errorMessage) {
+            errorMessage.textContent = '';
+          });
+
+          var isValid = true;
+
+          // Validate item name
+          if (!townCityInput.value.trim()) {
+            townCityInput.nextElementSibling.textContent = 'Fill the above field';
+            isValid = false
+          }
+
+          // Validate number of units required
+          if (!contactInput.value.trim()) {
+            contactInput.nextElementSibling.textContent = 'Fill the above field';
+            isValid = false;
+          } else if (!/^0\d{9}$/.test(contactInput.value.trim())) {
+            contactInput.nextElementSibling.textContent = 'Provide a valid phone number';
+            isValid = false;
+          }
+
+          // Validate description
+          if (!addressInput.value.trim()) {
+            addressInput.nextElementSibling.textContent = 'Provide the address of the location';
+            isValid = false;
+          }
+
+
+
+          // If all fields are valid, proceed with adding the item
+          if (isValid) {
+            console.log(locations)
+            console.log("lkk")
+
+            locations.push(townCityInput.value.trim())
+            locationForm.style.display = 'none';
+            console.log(locations)
+
+            var elements = document.getElementById("location-form-tag-con");
+
+            elements.style.display = 'grid';
+
+
+            document.getElementById("location-form-tag-con").innerHTML = location_tag_show()
+          }
+
+
+
+        }
+
+        function location_tag_show() {
+          var tagL = "";
+          locations.forEach((i) => {
+            tagL += `<div class="dynamic-form-tag">
+            <div class="text-2">${i}</div>
+          </div>
+
+`;
+          })
+          return tagL;
+        }
+
+
 
 
 
@@ -298,13 +405,19 @@
         // console.log("DD");
         const materialCheckbox = document.getElementById('material');
         const materialForm = document.querySelector('.material-form');
+        const locationTForm = document.querySelector('.location-form');
+        const mapContainer = document.querySelector('#map-container')
 
         // Function to show or hide the child form based on checkbox state
         function toggleMaterialForm() {
           if (materialCheckbox.checked) {
             materialForm.style.display = 'block';
+            locationTForm.style.display = 'block';
+            mapContainer.style.display = 'block';
           } else {
             materialForm.style.display = 'none';
+            locationTForm.style.display = 'none';
+            mapContainer.style.display = 'none';
           }
         }
 
@@ -316,12 +429,75 @@
       });
 
     </script>
+    <script>
+      let map;
+      let latCoor = [];
+      let lngCoor = [];
+
+      function initMap() {
+
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 9.8,
+          center: { lat: 6.9271, lng: 79.8612 },
+        });
+        map.addListener("click", function (event) {
+          addMarker(event.latLng);
+        });
+      }
 
 
+
+      function addMarker(position) {
+        const marker = new google.maps.Marker({
+          position,
+          map,
+
+        });
+        const lat = position.lat()
+        const lng = position.lng()
+        latCoor.push(lat);
+        lngCoor.push(lat);
+        const latitudes = document.getElementById('latitude');
+        const longitudes = document.getElementById('longitude');
+
+        latitudes.value = JSON.stringify(latCoor);
+        longitudes.value = JSON.stringify(lngCoor);
+
+        google.maps.event.addListener(marker, 'dblclick', function () {
+          marker.setMap(null);
+
+        const index = latCoor.indexOf(lat)
+
+          if (index !== -1) {
+            latCoor.splice(index, 1);
+            lngCoor.splice(index, 1);
+          }
+          latitudes.value = JSON.stringify(latCoor);
+          longitudes.value = JSON.stringify(lngCoor);
+
+          console.log(latitudes.value)
+        })
+      }
+
+
+      window.initMap = initMap;
+    </script>
+    <?php
+    if ($_SESSION['userType'] == 'organisation') { ?>
+      <div class="js-next-prev-button">
+        <div class="js-prev" onclick="prevStep()">Previous</div>
+        <div class="js-next" onclick="nextStep(4)">Next</div>
+      </div>
+    <?php } else if ($_SESSION['userType'] == 'individual') { ?>
+        <div class="js-next-prev-button">
+          <div class="js-prev" onclick="prevStep()">Previous</div>
+          <button class="js-next" onclick="nextStep(3)" type="submit">Submit</button>
+        </div>
+    <?php } ?>
+
+  </fieldset>
 </div>
-<div class="js-next-prev-button">
-  <div class="js-prev" onclick="prevStep()">Previous</div>
-  <button class="js-next" onclick="nextStep(3)" type="submit">Submit</button>
-</div>
-</fieldset>
-</div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap&v=weekly" defer>
+  </script>

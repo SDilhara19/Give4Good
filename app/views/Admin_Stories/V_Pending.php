@@ -65,8 +65,10 @@
                                             data-popup-id="<?php echo $story->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
-                                    <a href="<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>" class="action-icons">
-                                        <i class="fa-solid fa-play"></i>
+                                    <a class="action-icons">                                                                   
+                                        <i class="fa-solid fa-play" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $story->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>");
+}'></i>
                                     </a>
                                     <a href="" class="action-icons">
                                         <i class="fa-solid fa-lock"></i>
