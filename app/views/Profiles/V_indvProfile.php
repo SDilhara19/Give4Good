@@ -25,13 +25,62 @@
       </div>
     </div>
     
-    <div class="dashDetails">
+<?php if ($_SESSION['userLevel']==2) { 
+  echo '<div class="dashDetails">
       <section class="section">
         <div class="card">
           <div class="left-container">
-            <img class="pbook_img" src="<?php echo URLROOT . $data[0]->profile_image; ?>">
-            <h4 class="gradienttext-h4">User Name : <?php echo $data[0]->username; ?></h4>
-            <h4 class="gradienttext-h4">User ID : <?php echo $data[0]->id; ?></h4>
+            <img class="pbook_img" src=" '. URLROOT . $data[0]->profile_image . '">
+            <h4 class="gradienttext-h4">User Name : ' . $data[0]->username . '</h4>
+            <h4 class="gradienttext-h4">User ID : ' . $data[0]->id . '</h4>
+          </div>
+          <div class="right-container">
+            <h3 class="gradienttext">Profile Details</h3>
+            <table class="table-profile">
+              <tr>
+                <td>Full Name :</td>
+                <td>
+                  '. $data[0]->fullname . '
+                </td>
+              </tr>
+              <td>
+              Date Of Birth :</td>
+                <td>
+                  '. $data[0]->dob . '
+                </td>
+                </tr>
+              <tr>
+                <td>Mobile :</td>
+                <td>
+                 '.$data[0]->phone . '
+                </td>
+              </tr>
+              <tr>
+                <td>Email :</td>
+                <td>
+                ' . $data[0]->email . '
+                </td>
+              </tr>
+              <tr>
+                <td>Address :</td>
+                <td>
+                ' . $data[0]->username . '
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+      </section>
+      </div>';
+}else if($_SESSION['userLevel']==1){ 
+    echo '<div class="dashDetails">
+      <section class="section">
+        <div class="card">
+          <div class="left-container">
+            <img class="pbook_img" src="' . URLROOT . $data[0]->profile_image . '">
+            <h4 class="gradienttext-h4">User Name : ' .$data[0]->username . '</h4>
+            <h4 class="gradienttext-h4">User ID : ' .$data[0]->id . '</h4>
           </div>
           <div class="right-container">
             <h3 class="gradienttext">Profile Details</h3>
@@ -39,25 +88,31 @@
               <tr>
                 <td>Name :</td>
                 <td>
-                  <?php echo $data[0]->username; ?>
+                  ' .$data[0]->username . '
                 </td>
               </tr>
+              <td>
+              Date Of Birth :</td>
+                <td>
+                  '. $data[0]->dob . '
+                </td>
+                </tr>
               <tr>
                 <td>Mobile :</td>
                 <td>
-                <?php echo $data[0]->phone; ?>
+                '. $data[0]->phone . '
                 </td>
               </tr>
               <tr>
                 <td>Email :</td>
                 <td>
-                <?php echo $data[0]->email; ?>
+                ' . $data[0]->email . '
                 </td>
               </tr>
               <tr>
                 <td>Address :</td>
                 <td>
-                <?php echo $data[0]->username; ?>
+                 ' . $data[0]->Address . '
                 </td>
               </tr>
             </table>
@@ -69,38 +124,50 @@
         <div class="card">
           <div class="left-container">
             <h4 class="gradienttext-h4">Bank Passbook</h4>
-            <img class="pbook_img" src="<?php echo URLROOT . $data[0]->bank_pbook; ?>">
+            <img class="pbook_img" src=" ' .URLROOT . $data[0]->bank_pbook . '">
           </div>
           <div class="right-container">
             <h3 class="gradienttext">Bank Details</h3>
             <table class="table-profile">
               <tr>
                 <td>Account Name :</td>
-                <td><?php echo $data[0]->acc_holder; ?></td>
+                <td>' .$data[0]->acc_holder .' </td>
               </tr>
               <tr>
                 <td>Account No :</td>
-                <td><?php echo $data[0]->account_no; ?></td>
+                <td>
+                ' . $data[0]->account_no .'
+                </td>
               </tr>
               <tr>
                 <td>NIC No :</td>
-                <td><?php echo $data[0]->nic_no; ?></td>
+                <td>
+                ' .  $data[0]->nic_no . '
+                </td>
               </tr>
               <tr>
                 <td>Bank Name :</td>
-                <td><?php echo $data[0]->bank_name; ?></td>
+                <td>
+                ' .$data[0]->bank_name . '
+                </td>
               </tr>
               <tr>
                 <td>Bank Code :</td>
-                <td><?php echo $data[0]->bank_code; ?></td>
+                <td>
+                ' . $data[0]->bank_code . '
+                </td>
               </tr>
               <tr>
                 <td>Branch Name :</td>
-                <td><?php echo $data[0]->branch_name; ?></td>
+                <td>
+                ' . $data[0]->branch_name . '
+                </td>
               </tr>
               <tr>
                 <td>Branch Code :</td>
-                <td><?php echo $data[0]->branch_code; ?></td>
+                <td>
+                ' . $data[0]->branch_code . '
+                </td>
               </tr>
 
             </table>
@@ -108,43 +175,10 @@
           </div>
         </div>
       </section>
-      <section class="section">
-        <div class="card">
-          <div class="left-container">
-            <div class="nic-front">
-              <h4 class="gradienttext-h4">NIC - Front</h4>
-              <img class="nic_img" src="<?php echo URLROOT . $data[0]->nic_front; ?>">
-            </div>
-            <div class="nic-back">
-              <h4 class="gradienttext-h4">NIC - Back</h4>
-              <img class="nic_img" src="<?php echo URLROOT . $data[0]->nic_back; ?>">
-            </div>
-          </div>
-          <div class="right-container">
-            <h3 class="gradienttext">NIC Details</h3>
-            <table class="table-profile">
-              <tr>
-                <td>Name :</td>
-                <td>John Doe</td>
-              </tr>
-              <tr>
-                <td>NIC No :</td>
-                <td><?php echo $data[0]->nic_no; ?></td>
-              </tr>
-              <tr>
-                <td>Address :</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Reg. Date :</td>
-                <td></td>
-              </tr>
-            </table>
-
-          </div>
-        </div>
-      </section>
-    </div>
+      
+    </div>';
+    } 
+?> 
   </div>
   <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>

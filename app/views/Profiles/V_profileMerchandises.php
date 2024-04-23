@@ -12,24 +12,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
-  <?php if ($_SESSION['userType'] == 'individual') {
-    require APPROOT . '/views/includes/indvProfileSideBar.php';
-  } else if ($_SESSION['userType'] == 'organisation') {
-    require APPROOT . '/views/includes/orgProfileSideBar.php';
-  }
-  ?>
-
+  <?php require APPROOT . '/views/includes/orgProfileSideBar.php' ?>
 
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <i class="fa-solid fa-bars"></i>
-        <span>Your Complaints</span>
+        <span>Your Merchandises</span>
       </div>
       <div class="user--info">
         <div class="search--box">
@@ -44,24 +37,35 @@
           <table>
             <thead>
               <tr>
-                <th>Fundraiser Title</th>
-                <th>Reason</th>
-                <th>Others</th>
-                <th>Actions</th>
-              </tr>
+                <th><a href="Fundraiser/fundraiser">Fundraiser</a></th>
+                <th>Price</th>
+                <th>Initial Stock</th>
+                <th>Current Stock</th>
+                <th>Amount for fund</th>
+                <th>Description</th>
+                <th>Colors</th>
+                <th>Actions</ </tr>
             </thead>
             <tbody>
               <?php
-              foreach ($data as $profileComplaints) {
+              foreach ($data as $profileMerchandises) {
                 ?>
                 <tr>
-                  <td><?php echo $profileComplaints->fundraiser_name; ?></td>
-                  <td><?php echo $profileComplaints->reason; ?></td>
-                  <td><?php echo $profileComplaints->others; ?></td>
+                  <td><?php echo $profileMerchandises->fundraiser; ?></td>
+                  <td><?php echo $profileMerchandises->price; ?></td>
+                  <td><?php echo $profileMerchandises->initial_stock; ?></td>
+                  <td><?php echo $profileMerchandises->current_stock; ?></td>
+                  <td><?php echo $profileMerchandises->amount_for_fund; ?></td>
+                  <td><?php echo $profileMerchandises->description; ?></td>
                   <td>
+                    <?php echo $profileMerchandises->colour1; ?>
+                    <?php echo $profileMerchandises->colour2; ?>
+                    <?php echo $profileMerchandises->colour3; ?>
+                    <?php echo $profileMerchandises->colour4; ?>
+                  </td>
                   <td>
                     <div class="submit-button-div">
-                      <button class="button-1-green">View</button>
+                      <button class="button-1-green" type="submit">View</button>
                     </div>
                   </td>
                 </tr>
@@ -73,7 +77,7 @@
         </div>
       </div>
     </div>
+    <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
-<?php require APPROOT . '/views/includes/footer.php' ?>
 
 </html>
