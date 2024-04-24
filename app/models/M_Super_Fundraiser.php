@@ -35,7 +35,7 @@ class M_Super_Fundraiser
             $category_id = $data[0]->category_id;
 
 
-            $this->db->query('SELECT document, description, document_name FROM individual_fundraiser_documents WHERE category_id= :category_id');
+            $this->db->query('SELECT document, description, document_name FROM individual_fundraiser_documents WHERE category_id= :category_id AND deleted_doc=0' );
 
             $this->db->bind(':category_id', $category_id);
 
@@ -62,7 +62,7 @@ class M_Super_Fundraiser
             $category_id = $data[0]->category_id;
 
 
-            $this->db->query('SELECT document, description, document_name FROM organisation_fundraiser_documents WHERE category_id= :category_id');
+            $this->db->query('SELECT document, description, document_name FROM organisation_fundraiser_documents WHERE category_id= :category_id AND deleted_doc=0');
 
             $this->db->bind(':category_id', $category_id);
 

@@ -99,7 +99,7 @@ class M_Fundraiser {
 
     public function getMerchandise($id){
         try{
-            $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id");
+            $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id AND status = 'Active'");
             $this->db->bind(':fundraiser_id', $id);
 
         $row = $this->db->resultSet();
