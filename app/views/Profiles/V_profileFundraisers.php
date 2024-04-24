@@ -29,12 +29,12 @@
       <div class="header--title">
         <span>Your Fundraisers</span>
       </div>
-      <div class="user--info">
+      <!-- <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search Name" />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="dashDetails">
       <div class="container">
