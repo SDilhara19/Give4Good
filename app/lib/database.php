@@ -108,6 +108,21 @@ class Database {
         }
     }
 
+    public function selectOne3($table, $what, $field, $value, $user_id, $limit = 1){
+        $this->query("SELECT $what FROM $table WHERE $field = :value AND user_id = :user_id ORDER BY created_date DESC LIMIT $limit");
+        $this->bind(':value', $value);
+        $this->bind(':user_id', $user_id);
+
+        $row = $this->single(); 
+
+        //Check row
+        if ($this->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
     // public function register($data){
     //     $this->db->query('INSERT INTO individualdonor (username, email, password, type, status) 
     //     VALUES (:username, :email, :password, :type, :status)');

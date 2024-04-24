@@ -150,6 +150,7 @@ class Fundraisersuper extends controller
                 if (!isset($_POST['merchandise'])) {
                     $obj->data['merchandise'] = 0;
                 } else {
+
                     $obj->validate('merchandise', ['CHECKBOX']);
                     $merchandiseCount = $obj->countKeys('merch_name_', $_POST);
                     $obj->data['merchandiseCount'] = $merchandiseCount;
@@ -168,12 +169,14 @@ class Fundraisersuper extends controller
 
 
             if ($obj->flag == 1) {
-                print_r($obj->data);
-                if ($_SESSION['userType' == 'individual']) {
+                
+                if ($_SESSION['userType'] == 'individual') {;
+
                     $obj->data['documents'] = $this->superFundraiserModel->iFindDocuments($category);
                     $this->view('Fundraisers/V_Start_Individual', $obj->data);
                 } else if
-                ($_SESSION['userType' == 'organisation']) {
+                ($_SESSION['userType'] == 'organisation') {
+                    
                     $obj->data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
                     $this->view('Fundraisers/V_Start_Organisation', $obj->data);
                 }
@@ -181,8 +184,8 @@ class Fundraisersuper extends controller
             } else {
 
                 if ($this->superFundraiserModel->fundraiserStart($obj->data)) {
-                    $this->view('test', $obj);
-                    //     // redirect(URLROOT . '/Index');
+                    // $this->view('test', $obj);
+                        redirect(URLROOT . '/Index');
                     //     //  $this->view('test', $obj->data);
                     //     // var_dump($obj->data);
                 } else {

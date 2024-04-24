@@ -22,8 +22,8 @@ class M_Donations
     public function createDonationPayment()
     {
         try {
-            $this->db->query('INSERT INTO donationPayments (user_id, fundraiser_id, donated_amount, contribution_amount, payment_date) 
-        VALUES ("38", "2", "2133", "32", "2023-12-12")');
+            $this->db->query('INSERT INTO donationpayments (user_id, fundraiser_id, donated_amount, contribution_amount, payment_date) 
+        VALUES ("60", "2", "2133", "32", "2023-12-12")');
 
             // Bind values
             // $this->db->bind(':user_id', $data['user_id']);

@@ -30,11 +30,17 @@ class Fundraiser extends controller
             $data['merchandise'] = $this->fundraiserModel->getMerchandise($id);
             $data['materials'] = $this->fundraiserModel->getMaterials($id);
             $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
+            $data['map_locations'] = $this->fundraiserModel->getMapLocation($id);
 
             $progress = $data['fundraiser'][0]->amount_collected;
             $total = $data['fundraiser'][0]->amount;
             $data['fundraiser'][0]->progress = ($progress / $total) * 100;
 
+            foreach ($data['merchandise'] as $merch){
+            $amount_for_fund = $merch->amount_for_fund;
+            $price = $merch->price;
+            $merch->percent_for_fund = round(($amount_for_fund / $price) * 100, 2);
+            }
             $newViews = $data['fundraiser'][0]->view_counts + 1;
             $data['fundraiser'][0]->view_counts = $newViews;
             if ($this->fundraiserModel->updateViews($newViews, $data['fundraiser'][0]->fundraiser_id)) {
