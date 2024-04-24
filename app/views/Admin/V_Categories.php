@@ -23,57 +23,88 @@
 
 
     <main class="admin-category">
-        <h1 class="margin-bottom-0">Category</h1>
+        <h1 class="margin-bottom-0" style="margin-bottom: 0;">Organisation Category</h1>
+        <p class="text-2">Add or remove required documents when starting a fundraiser by an Organisation</p>
+        <div class="category-container">
+        <div class="category-row-1 pd-lf">
+                <div class="category-row">
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/education">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/sport">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/health">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/housing">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="category-row-2 pd-rt">
+                <div class="category-row">
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/animals">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/animals.png" alt="">
 
-        <div class="category-row-1">
-            <div class="category-row">
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/education">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
-                    </a>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/disasters">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/disasters.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/environment">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/environment.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/organisation/community">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/community.png" alt="">
+                        </a>
+                    </div>
                 </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/sport">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/health">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/housing">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
-                    </a>
-                </div>
+
             </div>
         </div>
-        <div class="category-row-2">
-            <div class="category-row">
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/animals">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/animals.png" alt="">
-
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/disasters">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/disasters.png" alt="">
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/environment">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/environment.png" alt="">
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="<?php echo URLROOT ?>/Admin/documents/community">
-                        <img src="<?php echo URLROOT ?>/public/Assets/images/categories/community.png" alt="">
-                    </a>
+        <h1 class="margin-bottom-0" style="margin-bottom: 0;">Individual Category</h1>
+        <p class="text-2">Add or remove required documents when starting a fundraiser by an Individual</p>
+        <div class="category-container">
+        <div class="category-row-1 pd-lf">
+                <div class="category-row">
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/individual/education">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/individual/sport">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/individual/health">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="<?php echo URLROOT ?>/Admin/documents/individual/housing">
+                            <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
-
+           
         </div>
 
 
