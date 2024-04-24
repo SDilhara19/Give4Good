@@ -1,17 +1,20 @@
 <?php
-class M_Admin_Individual {
+class M_Admin_Individual
+{
     private $db;
-    public function __construct() 
+    public function __construct()
     {
         $this->db = new Database;
     }
 
-    public function viewPending(){
-        $this->db->query('SELECT super_individual.*, users.*
+    public function viewPending()
+    {
+        $this->db->query('SELECT super_individual.*, users.* , bank_details.*
         FROM super_individual
         JOIN users ON super_individual.user_id = users.id
+        LEFT JOIN bank_details ON super_individual.user_id = bank_details.user_id
         WHERE super_individual.status = "pending";');
-        
+
         $row = $this->db->resultSet();
 
         //Check row
@@ -22,10 +25,12 @@ class M_Admin_Individual {
         }
     }
 
-    public function viewActive(){
-        $this->db->query('SELECT super_individual.*, users.*
+    public function viewActive()
+    {
+        $this->db->query('SELECT super_individual.*, users.*, bank_details.*
         FROM super_individual 
-        JOIN users ON super_individual.user_id = users.id 
+        JOIN users ON super_individual.user_id = users.id
+        LEFT JOIN bank_details ON super_individual.user_id = bank_details.user_id
         WHERE super_individual.status = "active";');
 
         //Check row
@@ -36,12 +41,14 @@ class M_Admin_Individual {
         } else {
             return false;
         }
-    } 
+    }
 
-    public function viewDeactive(){
-        $this->db->query('SELECT super_individual.*, users.*
+    public function viewDeactive()
+    {
+        $this->db->query('SELECT super_individual.*, users.* , bank_details.*
         FROM super_individual 
         JOIN users ON super_individual.user_id = users.id 
+        LEFT JOIN bank_details ON super_individual.user_id = bank_details.user_id
         WHERE super_individual.status = "deactive";');
 
         //Check row
@@ -52,12 +59,14 @@ class M_Admin_Individual {
         } else {
             return false;
         }
-    } 
+    }
 
-    public function viewAll(){
-        $this->db->query('SELECT super_individual.*, users.*
+    public function viewAll()
+    {
+        $this->db->query('SELECT super_individual.*, users.* ,bank_details.*
         FROM super_individual 
-        JOIN users ON super_individual.user_id = users.id;');
+        JOIN users ON super_individual.user_id = users.id
+        LEFT JOIN bank_details ON super_individual.user_id = bank_details.user_id;');
 
         //Check row
         $row = $this->db->resultSet();
@@ -69,33 +78,36 @@ class M_Admin_Individual {
         }
     }
 
-    public function activateSuperIndividual($id){
+    public function activateSuperIndividual($id)
+    {
         $this->db->query('UPDATE super_individual SET status = "Active"
         WHERE id = :id;');
 
         $this->db->bind(':id', $id);
 
-        if($this->db->execute()){
+        if ($this->db->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public function deactivateSuperIndividual($id){
+    public function deactivateSuperIndividual($id)
+    {
         $this->db->query('UPDATE super_individual SET status = "Deactive"
         WHERE id = :id;');
 
         $this->db->bind(':id', $id);
 
-        if($this->db->execute()){
+        if ($this->db->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public function viewIndividuals(){
+    public function viewIndividuals()
+    {
         $this->db->query('SELECT users_individual.*, users.*
         FROM users_individual
         JOIN users ON users_individual.user_id = users.id;');

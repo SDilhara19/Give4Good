@@ -5,13 +5,12 @@ class M_Admin_Fundraiser{
         $this->db = new Database;
     }
     public function viewPending(){
-        $this->db->query('SELECT fundraiser.*, users.username, users.type
+        $this->db->query('SELECT fundraiser.*, users.username, users.type, merchandise.product_name
         FROM fundraiser
         JOIN users ON fundraiser.user_id = users.id
+        LEFT JOIN merchandise ON fundraiser.fundraiser_id = merchandise.fundraiser_id
         WHERE fundraiser.status = "Pending";');
-
-        $row = $this->db->resultSet();
-
+    
         //Check row
         $row = $this->db->resultSet();
         if ($this->db->rowCount() > 0) {
@@ -22,11 +21,12 @@ class M_Admin_Fundraiser{
     }
 
     public function viewActive(){
-        $this->db->query('SELECT fundraiser.*, users.username, users.type
-    FROM fundriaser
-    JOIN users ON fundraiser.user_id = users.id
-    WHERE fundraiser.status = "Active";');
-
+        $this->db->query('SELECT fundraiser.*, users.username, users.type, merchandise.product_name
+        FROM fundraiser
+        JOIN users ON fundraiser.user_id = users.id
+        LEFT JOIN merchandise ON fundraiser.fundraiser_id = merchandise.fundraiser_id
+        WHERE fundraiser.status = "Active";');
+    
         //Check row
         $row = $this->db->resultSet();
         if ($this->db->rowCount() > 0) {
@@ -34,9 +34,8 @@ class M_Admin_Fundraiser{
         } else {
             return false;
         }
-
     }
-
+    
 
     // public function makeActive(){
     //     $this->db->query('SELECT stories.*, users.username, users.type
@@ -58,8 +57,8 @@ class M_Admin_Fundraiser{
     public function getAllFundraisers(){
         $this->db->query('SELECT fundraiser.*, users.username, users.type 
         FROM fundraiser 
-        JOIN users ON fundraiser.user_id = users.id;
-        ');
+        JOIN users ON fundraiser.user_id = users.id
+        LEFT JOIN merchandise ON fundraiser.fundraiser_id = merchandise.fundraiser_id;');
 
         $row = $this->db->resultSet();
 
@@ -72,11 +71,12 @@ class M_Admin_Fundraiser{
     }
 
     public function viewDeactivated(){
-        $this->db->query('SELECT fundraiser.*, users.username, users.type
-        FROM fundriaser
-        JOIN users ON fundraiser.user_id = users.id
-        WHERE fundraiser.status = "Deactive";');
-
+        $this->db->query('SELECT fundraiser.*, users.username, users.type, merchandise.product_name
+            FROM fundraiser
+            JOIN users ON fundraiser.user_id = users.id
+            LEFT JOIN merchandise ON fundraiser.fundraiser_id = merchandise.fundraiser_id
+            WHERE fundraiser.status = "Deactive";');
+    
         //Check row
         $row = $this->db->resultSet();
         if ($this->db->rowCount() > 0) {
@@ -84,25 +84,10 @@ class M_Admin_Fundraiser{
         } else {
             return false;
         }
-
     }
     
+    
 
-public function getActiveFundraisers() {
-        $this->db->query('SELECT fundraiser.*, users.username, users.type
-        FROM fundraiser
-        JOIN users ON fundraiser.user_id = users.id
-        WHERE fundraiser.status = "Active";');
-
-        $row = $this->db->resultSet();
-
-        //Check row
-        if ($this->db->rowCount() > 0) {
-            return $row;
-        } else {
-            return false;
-        }
-    }
 
     public function activateFundraiser($id){
         try{

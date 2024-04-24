@@ -24,8 +24,6 @@ class Admin_Fundraisers extends controller
 
     public function active(){
         $data = $this->AdminFundraisersModel -> viewActive();
-
-
         $this->view('Admin_Fundraisers/V_Active', $data);
     }
 
@@ -37,10 +35,6 @@ class Admin_Fundraisers extends controller
 
     public function pending(){
         $data = $this->AdminFundraisersModel -> viewPending();
-        $this->view('Admin_Fundraisers/V_Pending');
-
-        $data = $this->AdminFundraisersModel -> viewPending();
-
         $this->view('Admin_Fundraisers/V_Pending', $data);
     }
 
