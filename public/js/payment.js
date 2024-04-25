@@ -24,8 +24,8 @@ function paymentGateway() {
             // Payment completed. It can be a successful failure.
             payhere.onCompleted = function onCompleted(orderId) {
                 console.log("Payment completed. OrderID:" + orderId);
-                showLoading(); 
-                successOrder(obj["order_id"], obj["amount"]);
+                showLoading();
+                successOrder(obj["amount"], obj["order_id"]);
                 console.log("success");
                 // Note: validate the payment and show success or failure page to the customer
             };
@@ -94,22 +94,24 @@ function showLoading() {
     document.body.appendChild(loadingOverlay);
 }
 
-function successOrder() {
+function successOrder(totalPrice, orderId) {
     // AJAX request to call the controller function
-        var successXhttp = new XMLHttpRequest();
-        // var successParams = `total_price=${totalPrice}&order_id=${orderId}`;
+    // console.log(obj)
+    var successXhttp = new XMLHttpRequest();
+    var successParams = `total_price=${totalPrice}&order_id=${orderId}`;
 
-        successXhttp.onreadystatechange = function () {
-            if (successXhttp.readyState == 4 && successXhttp.status == 200) {
-                window.location = '../../Donate/paydone'
-                // Handle any additional logic after successful order
-            }
-        };
-        // AJAX request to handle successful order
-        successXhttp.open("POST", "<?php echo URLROOT; ?>/Donate/paydone", true);
-        successXhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-        // successXhttp.send(successParams);
-    }
+    console.log("params")
+    console.log(successParams)
+    successXhttp.onreadystatechange = function () {
+        if (successXhttp.readyState == 4 && successXhttp.status == 200) {
+            window.location = '../../Donate/paydone'
+            // Handle any additional logic after successful order
+        }
+    };
+    // AJAX request to handle successful order
+    successXhttp.open("POST", "http://localhost/give4good/Donate/paydone", true);
+    successXhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    successXhttp.send(successParams);
+}
 
 
