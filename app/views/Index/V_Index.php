@@ -17,7 +17,7 @@
 
 <body>
 
-  <?php require APPROOT . '/views/includes/header.php' ?>
+  <?php require APPROOT . '/views/includes/headerwithoutsearchbar.php' ?>
   <div class="under-header">
     <?php require APPROOT . '/views/includes/side-bar.php' ?>
 
