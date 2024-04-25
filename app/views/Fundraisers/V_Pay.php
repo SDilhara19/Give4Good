@@ -44,7 +44,7 @@
                         <div class="form-row" id='g4g' stye="display:none;">
                             <div class="form-input-title2 text-2">Give4Good
                             </div>
-                            <input type="text" name="contribute" id="contribute" class="input" placeholder="">
+                            <input type="text" name="contribute" id="contribute" class="input" placeholder="" value=0>
 
                         </div>
 

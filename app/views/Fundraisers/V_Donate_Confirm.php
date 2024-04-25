@@ -44,8 +44,13 @@
                 </div>
             </div>
             <div class="payment-container-bottom">
-                <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
-                <button id ="donateBtn" class="main-color-button" type="submit" onclick="paymentGateway()">Donate</button>
+           
+               
+                <button id ="donateBtn" class="main-color-button" type="button">Thank You!</button>
+                <div >
+                    <div class="form-input-title2 text-2" style="text-align: center;">We value your effort</div>
+             
+                </div>
             </div>
         </div>
     </main>
