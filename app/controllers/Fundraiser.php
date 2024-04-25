@@ -32,6 +32,11 @@ class Fundraiser extends controller
             $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
             $data['map_locations'] = $this->fundraiserModel->getMapLocation($id);
 
+            if ($data['fundraiser']->parent_funding==1){
+                $data['child'] = $this->fundraiserModel->getChildDetails($id);
+
+            }
+
             $progress = $data['fundraiser'][0]->amount_collected;
             $total = $data['fundraiser'][0]->amount;
             $data['fundraiser'][0]->progress = ($progress / $total) * 100;

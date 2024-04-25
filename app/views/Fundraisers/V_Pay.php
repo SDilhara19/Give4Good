@@ -28,6 +28,8 @@
                 </div>
                 <div class="payment-form-container">
                     <form action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="fundraiser_id" id="fundraiser_id" value=<?php echo $data->fundraiser_id ?> >
+
                         <div class="form-row">
                             <div class="form-input-title2 text-2">Donate
                             </div>

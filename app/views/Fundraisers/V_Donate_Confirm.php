@@ -22,35 +22,31 @@
         <div class="payment-container">
             <div class="payment-container-top">
                 <div class="payment-heading">
-                    <p class="text-7">Donate</p>
-                    <h2><?php echo $data->title; ?></h2>
-                    <p class="text-4">Small to difference to change their life for the better</p>
+                    <p class="text-7">Payment id: <?php echo $data['payment_id']; ?></p>
+                    <h2><?php echo $data['fundraiser_title']; ?></h2>
+                    <p class="text-4" style="margin-bottom: 1rem;">Small difference to change their life for the better</p>
                 </div>
                 <div class="payment-form-container">
-                <div class="story-contact">
-                    <table>
-                        <tr>
-                            <th>Donation Amount:</th>
-                            <td class="text-3"><?php echo $data->donate; ?></td>
-                            <!-- <td class="text-3">23</td> -->
-                        </tr>
-                        <tr>
-                            <th>Contribution Amount:</th>
-                            <td class="text-3"><?php echo $data->contribute; ?></td>
-                            <!-- <td class="text-3">32</td> -->
-                        </tr>
-                    </table>
+                <div class="fundraiser-count-row">
+                    <div class="form-input-title2 text-2">Donated Amount:</div>
+                    <div class="text-1" id="total"><?php echo $data['donated_amount']; ?></div>
+                </div>
+                <div class="fundraiser-count-row">
+                    <div class="form-input-title2 text-2">Contributed to Give4Good:</div>
+                    <div class="text-1" id="total"><?php echo $data['contribution_amount']; ?></div>
                 </div>
                 </div>
             </div>
             <div class="payment-container-bottom">
            
                
-                <button id ="donateBtn" class="main-color-button" type="button">Thank You!</button>
+                <button id ="donateBtn" class="main-color-button" type="button">Donation Successful!</button>
                 <div >
+                    <div class="form-input-title2 text-2" style="text-align: center;">Thank you!</div>
                     <div class="form-input-title2 text-2" style="text-align: center;">We value your effort</div>
              
                 </div>
+                <div class="go-back text-3" onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $data['fundraiser_id']; ?>'" style="cursor: pointer; display: flex; align-items: center; gap:1rem;"><i class="fa-solid fa-angles-left"></i><div> Go Back</div></div>
             </div>
         </div>
     </main>
