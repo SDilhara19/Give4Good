@@ -16,51 +16,78 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="share.js" defer></script>
     <style>
-      .share-btn{
-         background: var(--dark-gradient);
-          /* border: none; */
-          color: var(--white-color);
-          /* position:; */
-          /* border-radius: 50%; */
-          /* width: 60px; */
-          /* height: 60px; */
-          /* font-size: 30px;
+        * {
+            /* colours */
+            --primary-color: #36CF97;
+            /* --primary-color: #4EB790; */
+            --secondary-color: #CFF5E7;
+            --dark-green: #0E6F4B;
+            --black-sub: #2E353E;
+            --white-color: #FFFFFF;
+            --red-color: #FC0606;
+            --border-grey: #e1e4e8;
+            --grey-color: #b0b1b2;
+            --yellow-color: #D09705;
+            --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+            --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+            --new-blue: #0C3461;
+            /* text colors */
+            --text-color: #2E353E;
+        }
+
+        .share-btn {
+            background: var(--dark-gradient);
+            /* border: none; */
+            color: var(--white-color);
+            /* position:; */
+            /* border-radius: 50%; */
+            /* width: 60px; */
+            /* height: 60px; */
+            /* font-size: 30px;
           padding-top: 2.5px;
           padding-right: 3px; */
-          cursor: pointer;
-          z-index: 2;
-          /* font: var(--large-font-size); */
-  font-weight: 700;
-  border-radius: 100px;
-  /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
-  margin: 1rem;
-  width: 100%;
-  letter-spacing: 0.02rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-      }
+            cursor: pointer;
+            z-index: 2;
+            /* font: var(--large-font-size); */
+            font-weight: 700;
+            border-radius: 100px;
+            /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
+            margin: 1rem;
+            width: 100%;
+            letter-spacing: 0.02rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border: none;
+        }
+
         .share-options {
             position: absolute;
             bottom: 0%;
             left: 70%;
+            z-index: 2500;
+            transform: translate(-50%, -50%);
             width: auto;
             height: auto;
             transform-origin: border;
-            transform:scale(0);
+            transform: scale(0);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            background: #cff5e7;
+            background: var(--secondary-color);
             padding: 20px;
-            font-family: 'roboto';
             transition: .5s;
             transition-delay: .5s;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        
+            /* bottom: -8%; */
+           
+           height: 280px; }
+
+        .share-options.active {
+            transform: scale(1);
+            transition-delay: 0s;
         }
-        .share-options.active{
-          transform:scale(1);
-          transition-delay:0s;
-        } 
 
         .title {
             /* opacity:0;
@@ -73,19 +100,21 @@
             padding: 0 20px 3px 0
         }
 
-        .social-media{
+        .social-media {
             /* opacity:0;
             transition:.5s;
             transition-delay:0s ; */
-            width:250px;
+            width: 100%;
             height: 120px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             margin: 10px 0;
+            justify-content: center;
+
         }
 
-        .social-media-btn{
+        .social-media-btn {
             border: none;
             width: 50px;
             height: 50px;
@@ -95,17 +124,21 @@
             line-height: 50px;
             font-size: 25px;
             cursor: pointer;
-            margin: 3px;
+            margin: 10px;
             text-align: center;
+
+
         }
-        .social-media-btn:nth-child(1){
+
+        .social-media-btn:nth-child(1) {
             background: #25D366;
         }
-        .social-media-btn:nth-child(2){
+
+        .social-media-btn:nth-child(2) {
             background: #1877F2;
         }
-        
-        .link-container{
+
+        .link-container {
             /* opacity:0;
             transition:.5s;
             transition-delay:0s ; */
@@ -118,33 +151,37 @@
             background-color: #fff;
             overflow: hidden;
             padding: 0 10px;
+            border: 1px solid var(--border-grey);
         }
-        .link{
+
+        .link {
             width: 80%;
-            height:100%;
+            height: 100%;
             line-height: 40px;
-            color: #000;
+            color: #2E353E;
+
         }
-        .copy-btn{
+
+        .copy-btn {
             position: absolute;
             right: 0;
             cursor: pointer;
-            background: #000;
-            color: #fff;
+            background: #2E353E;
+            color: #ffffff;
             border: none;
-            height:100%;
+            height: 100%;
             width: 30%;
             text-transform: capitalize;
             font-size: 16px;
         }
+
         .share-option.active .title,
         .share-option.active .social-media,
-        .share-option.active .link-container{
-            opacity:1;
-            transition:.5s;
-            transition-delay:.5s ;
+        .share-option.active .link-container {
+            opacity: 1;
+            transition: .5s;
+            transition-delay: .5s;
         }
-
     </style>
 </head>
 
@@ -184,19 +221,20 @@
                 <div class="fundraiser-donee">
                     <?php if ($data['fundraiser'][0]->anonymous == 1) { ?>
                         <div class="fundraiser-donee-name">
-                        <i class="fas fa-user-secret"></i>
+                            <i class="fas fa-user-secret"></i>
 
                             <p class="text-2">Anonymous </p>
                         </div>
-            <?php        } else { ?>
+                    <?php } else { ?>
                         <div class="fundraiser-donee-name">
-                            <?php if ($data['fundraiser'][0]->type == 'organisation'){ ?>
-                            <i class="fa-solid fa-building"></i>
+                            <?php if ($data['fundraiser'][0]->type == 'organisation') { ?>
+                                <i class="fa-solid fa-building"></i>
 
-                            <?php } if ($data['fundraiser'][0]->type == 'individual'){ ?>
-                            <i class="fa-solid fa-user"></i>
+                            <?php }
+                            if ($data['fundraiser'][0]->type == 'individual') { ?>
+                                <i class="fa-solid fa-user"></i>
 
-                            <?php }?>
+                            <?php } ?>
                             <p class="text-2">
                                 <?php echo $data['fundraiser'][0]->username; ?>
                             </p>
@@ -248,23 +286,29 @@
                     <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
                         Buy Merch
                     </button>
-                    
+
                     <button class="share-btn" id="shareButton">
                         Share
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
-                   <div class="share-options">
-                           <p class="title">Share</p>
-                           <div class ="social-media">
-                           <button class="social-media-btn"><a href="https://api.whatsapp.com/send?phone=&text=Check out this link and help please... http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>" onclick='shareViaWhatsApp()'><i class="fa-brands fa-whatsapp"></i></a></button>
-                           <button class="social-media-btn"><a href="https://www.facebook.com/sharer.php?u=http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>" onclick='shareViaFacebook()'><i class="fa-brands fa-facebook"></i></a></button>
-                           
-                       </div>
-                       <div class="link-container">
-                       <p class="link">http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?></p>
-                       <button class="copy-btn" onclick='copyUrl()'>Copy</button>
-                       </div>
-                   </div>
+                    <div class="share-options">
+                        <p class="title">Share</p>
+                        <div class="social-media">
+                            <button class="social-media-btn"><a
+                                    href="https://api.whatsapp.com/send?phone=&text=Check out this link and help please... http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>"
+                                    onclick='shareViaWhatsApp()'><i class="fa-brands fa-whatsapp"></i></a></button>
+                            <button class="social-media-btn"><a
+                                    href="https://www.facebook.com/sharer.php?u=http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>"
+                                    onclick='shareViaFacebook()'><i class="fa-brands fa-facebook"></i></a></button>
+
+                        </div>
+                        <div class="link-container">
+                            <p class="link">
+                                http://localhost/give4good/Fundraiser/fundraiser/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>
+                            </p>
+                            <button class="copy-btn" onclick='copyUrl()'>Copy</button>
+                        </div>
+                    </div>
 
 
                     <!-- <script src="share.js">

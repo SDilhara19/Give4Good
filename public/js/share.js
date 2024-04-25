@@ -44,6 +44,20 @@ shareBtn.addEventListener('click',()=>{
     shareOptions.classList.toggle('active');
 });
 
+// document.addEventListener('click', function(event) {
+//   var shareOption = document.querySelector('.share-options'); 
+//   var clickedElement = event.target;
+
+//  if (shareOption.classList.contains('active')){
+//   if (!shareOption.contains(clickedElement)) {
+      
+//     shareOption.classList.remove('active');
+
+//   }
+//  }
+  
+// });
+
 function shareViaWhatsApp() {
   var message = encodeURIComponent('Check out this link and help:');
   var url = encodeURIComponent('https://medium.com/@gsplugins/how-do-i-add-social-media-sharing-buttons-to-my-wordpress-posts-3b198d5d6135');
