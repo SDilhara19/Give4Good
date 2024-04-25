@@ -116,6 +116,7 @@ public function getActiveFundraisers() {
         }else{
             return false;
         }
+
        } 
        catch(Exception $e){
            return "Error" . $e->getMessage();
@@ -123,6 +124,7 @@ public function getActiveFundraisers() {
        
     }
     // public function viewMerch(){
+
 
     //     $this->db->bind(':id', $id);
 
@@ -157,5 +159,4 @@ public function getActiveFundraisers() {
     //  public function viewFundDoc(){
 
     //   }    
-
 }

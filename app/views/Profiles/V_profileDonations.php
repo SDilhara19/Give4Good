@@ -28,12 +28,12 @@ require APPROOT . '/views/includes/orgProfileSideBar.php';
         <i class="fa-solid fa-bars"></i>
         <span>Your Donations</span>
       </div>
-      <div class="user--info">
+      <!-- <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search Name"/>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="dashDetails">
       <div class="container">
@@ -42,9 +42,10 @@ require APPROOT . '/views/includes/orgProfileSideBar.php';
             <thead>
               <tr>
                 <th>Date</th>
-                <a href="Fundraiser/fundraiser"><th>Fundraiser Title</th></a>
+                <th>Fundraiser Title</th>
                 <th>Donated Amount</th>
                 <th>Contribution Amount</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -56,6 +57,11 @@ require APPROOT . '/views/includes/orgProfileSideBar.php';
                 <td><?php echo $profileDonations->title; ?></td>
                 <td><?php echo $profileDonations->donated_amount; ?></td>
                 <td><?php echo $profileDonations->contribution_amount; ?></td>
+                <td>
+                <div class="submit-button-div">
+                    <button class="button-1-green" type="submit">View</button>
+                </div>
+                </td>
                  </tr>
               <?php
          }

@@ -9,6 +9,7 @@
     define('URLROOT', 'http://localhost/give4good');
     define('SITENAME', 'Give4Good');
     define('MERCHANT_SECRET', 'Mzg3MTExODE5MTc1Mzk3NDM4MTM0MzIwNTAzMzUyNjg3ODgwMDA=');
+    define('GOOGLE_MAP', 'AIzaSyBYRJuaVhwRfxUypDKqltzRxHR_6bI90iU');
 
 
 // Visa : 4916217501611292

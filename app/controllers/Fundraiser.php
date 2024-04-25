@@ -30,11 +30,17 @@ class Fundraiser extends controller
             $data['merchandise'] = $this->fundraiserModel->getMerchandise($id);
             $data['materials'] = $this->fundraiserModel->getMaterials($id);
             $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
+            $data['map_locations'] = $this->fundraiserModel->getMapLocation($id);
 
             $progress = $data['fundraiser'][0]->amount_collected;
             $total = $data['fundraiser'][0]->amount;
             $data['fundraiser'][0]->progress = ($progress / $total) * 100;
 
+            foreach ($data['merchandise'] as $merch){
+            $amount_for_fund = $merch->amount_for_fund;
+            $price = $merch->price;
+            $merch->percent_for_fund = round(($amount_for_fund / $price) * 100, 2);
+            }
             $newViews = $data['fundraiser'][0]->view_counts + 1;
             $data['fundraiser'][0]->view_counts = $newViews;
             if ($this->fundraiserModel->updateViews($newViews, $data['fundraiser'][0]->fundraiser_id)) {
@@ -47,41 +53,7 @@ class Fundraiser extends controller
             echo "Error: " . $e->getMessage();
         }
     }
-
-  
-
-    private function paymentHash()
-    {
-        try {
-            $merchant_id = 1226076;
-            $order_id = 2;
-            $amount = 100;
-            $currency = "LKR";
-            $merchant_secret = "Mzg3MTExODE5MTc1Mzk3NDM4MTM0MzIwNTAzMzUyNjg3ODgwMDA=";
-            $hash = strtoupper(
-                md5(
-                    $merchant_id .
-                    $order_id .
-                    number_format($amount, 2, '.', '') .
-                    $currency .
-                    strtoupper(md5($merchant_secret))
-                )
-            ); 
-            return $hash;
-        } catch (Exception $e) {
-            return $e;
-        }
-
-    }
-
-    public function pay($id)
-    {
-        $data['details'] = $this->fundraiserModel->payForm($id);
-        $data['hash'] = $this->paymentHash();
-    
-        $this->view('Fundraisers/V_Pay');
-    }
-
+ 
     public function complaints(){
 
     $this->view('Fundraisers/V_complaint');

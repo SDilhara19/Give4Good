@@ -26,22 +26,22 @@
         <div class="category-row-1 pd-lf">
                 <div class="category-row">
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/education">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/education">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/sport">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/sport">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/health">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/health">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/housing">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/housing">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
                         </a>
                     </div>
@@ -50,23 +50,23 @@
             <div class="category-row-2 pd-rt">
                 <div class="category-row">
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/animals">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/animals">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/animals.png" alt="">
 
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/disasters">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/disasters">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/disasters.png" alt="">
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/environment">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/environment">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/environment.png" alt="">
                         </a>
                     </div>
                     <div class="category">
-                        <a href="<?php echo URLROOT ?>/Admin/documents/community">
+                        <a href="<?php echo URLROOT ?>/Fundraisersuper/ostart/community">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/community.png" alt="">
                         </a>
                     </div>

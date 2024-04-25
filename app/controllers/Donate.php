@@ -35,6 +35,7 @@ class Donate extends controller
 
             // Decode the JSON data
             $jsonData = json_decode($postData);
+           
 
             // Access the "donateAmount" and "contributeAmount" properties from the JSON data
             $donationAmount = $_POST['donationAmount'];
@@ -42,7 +43,7 @@ class Donate extends controller
             $merchant_id = 1226076;
             $order_id = uniqid();
             $amount = $donationAmount + $contributionAmount;
-            ;
+        
             $currency = "LKR";
             $merchant_secret = MERCHANT_SECRET;
             $hash = strtoupper(
@@ -79,52 +80,10 @@ class Donate extends controller
 
     public function paydone()
     {
-
-        $merchant_id = $_POST['merchant_id'];
-        $order_id = $_POST['order_id'];
-        $payhere_amount = $_POST['payhere_amount'];
-        $payhere_currency = $_POST['payhere_currency'];
-        $status_code = $_POST['status_code'];
-        $md5sig = $_POST['md5sig'];
-
-        $merchant_secret = MERCHANT_SECRET; // Replace with your Merchant Secret
-
-        $local_md5sig = strtoupper(
-            md5(
-                $merchant_id .
-                $order_id .
-                $payhere_amount .
-                $payhere_currency .
-                $status_code .
-                strtoupper(md5($merchant_secret))
-            )
-        );
-
-        if (($local_md5sig === $md5sig) and ($status_code == 2)) {
-            $this->donationModel->createDonationPayment();
-        }
-        else{
-            $this->donationModel->createDonationPayment();
-            
-        }
-
-
-
-        // $paymentData = [
-        //     'user_id' => $_SESSION['userId'],
-        //     'fundraiser_id' => $obj->data['fundraiser_id'], // Replace with the actual fundraiser_id
-        //     'donated_amount' => $obj->data['donationAmount'],
-        //     'contribution_amount' => $obj->data['contributeAmount'],
-        //     'payment_date' => date('Y-m-d H:i:s'), // Assuming you want to use the current date and time
-        // ];
-
-        // if ($this->donationModel->createDonationPayment($paymentData)) {
-        //     // Redirect or handle success
-        //     redirect(URLROOT . '/Index');
-        // } else {
-        //     // Handle failure
-        //     die("Something went wrong");
-        // }
+        print_r("ds");
+        $this->donationModel->createDonationPayment();
+       
+       
     }
 
 }

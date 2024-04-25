@@ -79,6 +79,7 @@ class Users extends controller
     $_SESSION['userType'] = $user->type;
     $_SESSION['userLevel'] = $user->user_level;
     $_SESSION['userImage'] = URLROOT . $user->profile_image;
+    $_SESSION['userContact'] = $user->phonee;
 
 
     redirect(URLROOT . '/Index');

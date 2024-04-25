@@ -164,13 +164,13 @@ class M_user
                 return false;
             }
 
-            if ($data['username']){
+            if ($data['username']) {
                 $this->db->query('UPDATE users SET username = :username WHERE id=:user_id');
-    
+
                 //bind values
                 $this->db->bind(':user_id', $data['user_id']);
                 $this->db->bind(':username', $data['username']);
-    
+
                 if (!$this->db->execute()) {
                     // Rollback the transaction if the first INSERT fails
                     $this->db->rollBack();
@@ -178,13 +178,13 @@ class M_user
                 }
             }
 
-            if ($data['profile_image']){
+            if ($data['profile_image']) {
                 $this->db->query('UPDATE users SET profile_image = :profile_image WHERE id=:user_id');
-    
+
                 //bind values
                 $this->db->bind(':user_id', $data['user_id']);
                 $this->db->bind(':profile_image', $data['profile_image']);
-    
+
                 if (!$this->db->execute()) {
                     // Rollback the transaction if the first INSERT fails
                     $this->db->rollBack();
@@ -235,7 +235,7 @@ class M_user
             $this->db->bind(':user_id', $data['user_id']);
             $this->db->bind(':regNo', $data['regNo']);
             $this->db->bind(':about', $data['about']);
-            
+
 
             if (!$this->db->execute()) {
                 // Rollback the transaction if the first INSERT fails
@@ -301,7 +301,7 @@ class M_user
             $this->db->bind(':contact', $data['ex-contact']);
             $this->db->bind(':nic_front', $data['ex-nic_front_image']);
             $this->db->bind(':nic_back', $data['ex-nic_back_image']);
-            
+
 
             if (!$this->db->execute()) {
                 // Rollback the transaction if the second INSERT fails
@@ -321,7 +321,7 @@ class M_user
             $this->db->bind(':contact', $data['tr-contact']);
             $this->db->bind(':nic_front', $data['tr-nic_front_image']);
             $this->db->bind(':nic_back', $data['tr-nic_back_image']);
-            
+
 
             if (!$this->db->execute()) {
                 // Rollback the transaction if the second INSERT fails
@@ -332,30 +332,30 @@ class M_user
             $this->db->query('INSERT INTO secretary (user_id, fullname, designation, nic_no, address, email, contact, nic_front, nic_back)
             VALUES (:user_id, :fullname, :designation, :nic_no, :address, :email, :contact, :nic_front, :nic_back)');
 
-$this->db->bind(':user_id', $data['user_id']);
-$this->db->bind(':fullname', $data['sec-fullname']);
-$this->db->bind(':designation', $data['sec-designation']);
-$this->db->bind(':nic_no', $data['sec-nicNo']);
-$this->db->bind(':address', $data['sec-address']);
-$this->db->bind(':email', $data['sec-email']);
-$this->db->bind(':contact', $data['sec-contact']);
-$this->db->bind(':nic_front', $data['sec-nic_front_image']);
-$this->db->bind(':nic_back', $data['sec-nic_back_image']);
+            $this->db->bind(':user_id', $data['user_id']);
+            $this->db->bind(':fullname', $data['sec-fullname']);
+            $this->db->bind(':designation', $data['sec-designation']);
+            $this->db->bind(':nic_no', $data['sec-nicNo']);
+            $this->db->bind(':address', $data['sec-address']);
+            $this->db->bind(':email', $data['sec-email']);
+            $this->db->bind(':contact', $data['sec-contact']);
+            $this->db->bind(':nic_front', $data['sec-nic_front_image']);
+            $this->db->bind(':nic_back', $data['sec-nic_back_image']);
 
 
-if (!$this->db->execute()) {
-    // Rollback the transaction if the second INSERT fails
-    $this->db->rollBack();
-    return false;
-}
+            if (!$this->db->execute()) {
+                // Rollback the transaction if the second INSERT fails
+                $this->db->rollBack();
+                return false;
+            }
 
-            if ($data['username']){
+            if ($data['username']) {
                 $this->db->query('UPDATE users SET username = :username WHERE id=:user_id');
-    
+
                 //bind values
                 $this->db->bind(':user_id', $data['user_id']);
                 $this->db->bind(':username', $data['username']);
-    
+
                 if (!$this->db->execute()) {
                     // Rollback the transaction if the first INSERT fails
                     $this->db->rollBack();
@@ -363,13 +363,13 @@ if (!$this->db->execute()) {
                 }
             }
 
-            if ($data['logo']){
+            if ($data['logo']) {
                 $this->db->query('UPDATE users SET profile_image = :logo WHERE id=:user_id');
-    
+
                 //bind values
                 $this->db->bind(':user_id', $data['user_id']);
                 $this->db->bind(':logo', $data['logo']);
-    
+
                 if (!$this->db->execute()) {
                     // Rollback the transaction if the first INSERT fails
                     $this->db->rollBack();
@@ -412,7 +412,7 @@ if (!$this->db->execute()) {
             return false;
         }
 
-       
+
 
     }
 
@@ -430,25 +430,25 @@ if (!$this->db->execute()) {
             // Rollback the transaction if the first INSERT fails
             $this->db->rollBack();
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
 
-    public function basicData($user_id){
-        try{
+    public function basicData($user_id)
+    {
+        try {
             $this->db->query("SELECT ui.dob, ui.fullname, u.Address, u.phone
             FROM users_individual ui
             JOIN users u ON ui.user_id = u.id
             WHERE u.id = :user_id;
             ");
-    
+
             $this->db->bind(':user_id', $user_id);
             // $rows = $this->db->resultSet();
-    
+
             $row = $this->db->resultSet();
-    
+
             //Check row
             if ($this->db->rowCount() > 0) {
                 return $row;
@@ -456,7 +456,7 @@ if (!$this->db->execute()) {
                 return false;
             }
         } catch (Exception $e) {
-            
+
             error_log('Error in getAFundraiser: ' . $e->getMessage());
             $err = "Error: " . $e->getMessage();
             return $err;
@@ -464,19 +464,20 @@ if (!$this->db->execute()) {
     }
 
 
-    public function basicDataOrg($user_id){
-        try{
+    public function basicDataOrg($user_id)
+    {
+        try {
             $this->db->query("SELECT uo.about, uo.regno, u.Address, u.phone
             FROM users_organisation uo
             JOIN users u ON uo.user_id = u.id
             WHERE u.id = :user_id;
             ");
-    
+
             $this->db->bind(':user_id', $user_id);
             // $rows = $this->db->resultSet();
-    
+
             $row = $this->db->resultSet();
-    
+
             //Check row
             if ($this->db->rowCount() > 0) {
                 return $row;
@@ -484,7 +485,7 @@ if (!$this->db->execute()) {
                 return false;
             }
         } catch (Exception $e) {
-            
+
             error_log('Error in getAFundraiser: ' . $e->getMessage());
             $err = "Error: " . $e->getMessage();
             return $err;
