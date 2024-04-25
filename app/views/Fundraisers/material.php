@@ -38,16 +38,25 @@
                                 <?php echo $material->units; ?>
                             </p>
                         </div>
+                        <div class="donee-name text-8">
+                            <i class='bx bxs-info-circle'></i>
+                            <span style="font-size: 0.65rem;">Required amount can vary. Its best to contact for updated
+                                details</span>
+                        </div>
                         <div>
                             <p class="text-2">Contact information for more details</p>
                             <table class="material-table">
                                 <tr>
                                     <th>email</th>
-                                    <td class="text-3">dialog@gmail.com</td>
+                                    <td class="text-3">
+                                        <?php echo $data['fundraiser'][0]->email; ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>phone</th>
-                                    <td class="text-3">+9470 5643233</td>
+                                    <td class="text-3">
+                                        <?php echo $data['fundraiser'][0]->phone; ?>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -68,70 +77,68 @@
 </div>
 
 <div class="send-donations">
+
     <h1>Send Donations</h1>
-    <div class="send-donation-card-container">
-        <div class="send-donation-card">
-            <div class="send-donation-img-container">
-                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-            </div>
-            <div class="send-donation-text">
-                <p class="text-2">Colombo 7</p>
-                <div class="send-donation-details">
-                    <p class="text-1">Contact: </p>
-                    <p class="text-3">+9470 3420012</p>
-                    <p class="text-1">Location: </p>
-                    <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="send-donation-card">
-            <div class="send-donation-img-container">
-                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-            </div>
-            <div class="send-donation-text">
-                <p class="text-2">Colombo 7</p>
-                <div class="send-donation-details">
-                    <p class="text-1">Contact: </p>
-                    <p class="text-3">+9470 3420012</p>
-                    <p class="text-1">Location: </p>
-                    <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="send-donation-card">
-            <div class="send-donation-img-container">
-                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-            </div>
-            <div class="send-donation-text">
-                <p class="text-2">Colombo 7</p>
-                <div class="send-donation-details">
-                    <p class="text-1">Contact: </p>
-                    <p class="text-3">+9470 3420012</p>
-                    <p class="text-1">Location: </p>
-                    <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="send-donation-card">
-            <div class="send-donation-img-container">
-                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-            </div>
-            <div class="send-donation-text">
-                <p class="text-2">Colombo 7</p>
-                <div class="send-donation-details">
-                    <p class="text-1">Contact: </p>
-                    <p class="text-3">+9470 3420012</p>
-                    <p class="text-1">Location: </p>
-                    <p class="text-3">No.21, Dharmapala Rd, Dematagoda</p>
-
-                </div>
-            </div>
-        </div>
+    <div class="map" id="map">
 
     </div>
 
+    <div class="send-donation-card-container">
+        <?php foreach ($data['locations'] as $location) { ?>
+            <div class="send-donation-card">
+                <div class="send-donation-text">
+                    <p class="text-2">
+                        <?php echo $location->area; ?>
+                    </p>
+                    <div class="send-donation-details">
+                        <p class="text-1">Contact: </p>
+                        <p class="text-3"><?php echo $location->contact; ?></p>
+                        <p class="text-1">Location: </p>
+                        <p class="text-3"> <?php echo $location->address; ?></p>
 
+                    </div>
+                </div>
+            </div>
+
+        <?php } ?>
+    </div>
+
+
+    <script>
+        // Initialize and add the map
+        let map;
+
+        async function initMap() {
+            // The location of the center of the map
+            const center = { lat: <?php echo $data['map_locations'][0]->latitude ?>, lng: <?php echo $data['map_locations'][0]->longitude ?> };
+
+            // The map, centered at the specified location
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 9.8,
+                center: center,
+                mapId: "DEMO_MAP_ID",
+            });
+
+            // Sample set of coordinates (latitude and longitude)
+            const coordinates = [
+                <?php foreach ($data['map_locations'] as $location) { ?>
+                { lat: <?php echo $location->latitude ?>, lng: <?php echo $location->longitude ?> },
+                <?php } ?>
+            ];
+            // Loop through the coordinates and add a marker for each one
+            coordinates.forEach(coord => {
+                new google.maps.Marker({
+                    position: coord,
+                    map: map,
+                    title: "Marker"
+                });
+            });
+        }
+
+        // Initialize the map when the page loads
+        initMap();
+    </script>
+    <!-- Include the Google Maps JavaScript API with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap" async
+        defer></script>
 </div>

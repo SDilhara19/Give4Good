@@ -35,7 +35,7 @@ class M_Super_Fundraiser
             $category_id = $data[0]->category_id;
 
 
-            $this->db->query('SELECT document, description, document_name FROM individual_fundraiser_documents WHERE category_id= :category_id');
+            $this->db->query('SELECT document, description, document_name FROM individual_fundraiser_documents WHERE category_id= :category_id AND deleted_doc=0' );
 
             $this->db->bind(':category_id', $category_id);
 
@@ -62,7 +62,7 @@ class M_Super_Fundraiser
             $category_id = $data[0]->category_id;
 
 
-            $this->db->query('SELECT document, description, document_name FROM organisation_fundraiser_documents WHERE category_id= :category_id');
+            $this->db->query('SELECT document, description, document_name FROM organisation_fundraiser_documents WHERE category_id= :category_id AND deleted_doc=0');
 
             $this->db->bind(':category_id', $category_id);
 
@@ -110,7 +110,7 @@ class M_Super_Fundraiser
                 return false;
             } 
 
-            $data['fundraiser_id'] = $this->db->selectOne2('fundraiser', 'fundraiser_id', 'title', $data['title']);
+            $data['fundraiser_id'] = $this->db->selectOne3('fundraiser', 'fundraiser_id', 'title', $data['title'], $data['user_id']);
 
 
             // image of fundraiser
@@ -228,7 +228,7 @@ class M_Super_Fundraiser
 
                     $map_location_count = count($longitudeArray);
 
-                    for ($i = 0; $i <= $map_location_count; $i++) {
+                    for ($i = 0; $i < $map_location_count; $i++) {
                         $this->db->query($query6);
 
                         $this->db->bind(':fundraiser_id', $data['fundraiser_id']->fundraiser_id);
@@ -271,6 +271,8 @@ class M_Super_Fundraiser
                     }
                 }
             }
+
+            return true;
 
            
 

@@ -55,7 +55,7 @@ class M_Fundraiser {
     {
 
         try{
-        $this->db->query("SELECT fundraiser.*, users.username, users.type, users.address FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+        $this->db->query("SELECT fundraiser.*, users.username, users.type, users.address, users.email, users.phone FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
 
         $this->db->bind(':fundraiser_id', $id);
         // $rows = $this->db->resultSet();
@@ -99,7 +99,7 @@ class M_Fundraiser {
 
     public function getMerchandise($id){
         try{
-            $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id");
+            $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id AND status = 'Active'");
             $this->db->bind(':fundraiser_id', $id);
 
         $row = $this->db->resultSet();
@@ -140,6 +140,26 @@ class M_Fundraiser {
     public function getMaterialLocation($id){
         try{
             $this->db->query("SELECT * FROM material_location WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
+
+    public function getMapLocation($id){
+        try{
+            $this->db->query("SELECT * FROM material_map_location WHERE fundraiser_id = :fundraiser_id");
             $this->db->bind(':fundraiser_id', $id);
 
         $row = $this->db->resultSet();

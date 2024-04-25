@@ -24,6 +24,9 @@ function paymentGateway() {
             // Payment completed. It can be a successful failure.
             payhere.onCompleted = function onCompleted(orderId) {
                 console.log("Payment completed. OrderID:" + orderId);
+                showLoading(); 
+                successOrder(obj["order_id"], obj["amount"]);
+                console.log("success");
                 // Note: validate the payment and show success or failure page to the customer
             };
 
@@ -81,8 +84,32 @@ function paymentGateway() {
 //   paymentGateway(donateAmount, contributeAmount);
 // });
 
+function showLoading() {
+    var loadingOverlay = document.createElement('div');
+    loadingOverlay.setAttribute('id', 'loading-overlay');
+    var loadingMessage = document.createElement('div');
+    loadingMessage.setAttribute('id', 'loading-message');
+    loadingMessage.textContent = 'Redirecting...';
+    loadingOverlay.appendChild(loadingMessage);
+    document.body.appendChild(loadingOverlay);
+}
 
+function successOrder() {
+    // AJAX request to call the controller function
+        var successXhttp = new XMLHttpRequest();
+        // var successParams = `total_price=${totalPrice}&order_id=${orderId}`;
 
+        successXhttp.onreadystatechange = function () {
+            if (successXhttp.readyState == 4 && successXhttp.status == 200) {
+                window.location = '../../Donate/paydone'
+                // Handle any additional logic after successful order
+            }
+        };
+        // AJAX request to handle successful order
+        successXhttp.open("POST", "<?php echo URLROOT; ?>/Donate/paydone", true);
+        successXhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+        // successXhttp.send(successParams);
+    }
 
 
