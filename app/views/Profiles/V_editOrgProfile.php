@@ -25,108 +25,142 @@
             </div>
 
         </div>
-        <div class="dashDetails">
+        <?php if ($_SESSION['userLevel']==2) { 
+    echo '<div class="dashDetails">
             <section class="section">
                 <div class="card">
                     <div class="left-container">
-                        <img class="logo_img" src="<?php echo URLROOT ?>/public/Assets/images/LogoBlack.png" alt="">
+                        <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->profile_image . '">
                     </div>
                     <div class="right-container">
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="username">Name:</label>
-                                <input type="text" id="username" name="username" placeholder=<?php echo $data['other'][0]->username; ?>>
+                                <input type="text" id="username" name="username" placeholder="' . $data['other'][0]->username . '">
                             </div>
                             <div class="form-group">
                                 <label for="regno">Name:</label>
-                                <input type="text" id="regno" name="regno" placeholder=<?php echo $data['other'][0]->regno; ?>>
+                                <input type="text" id="regno" name="regno" placeholder="' . $data['other'][0]->regno . '">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" placeholder=<?php echo $data['other'][0]->email; ?>>
+                                <input type="email" id="email" name="email" placeholder="' . $data['other'][0]->email . '">
                             </div>
                             <div class="form-group">
                                 <label for="contact">Contact No:</label>
-                                <input type="text" id="contact" name="contact" placeholder=<?php echo $data['other'][0]->phone; ?>>
+                                <input type="text" id="contact" name="contact" placeholder="' . $data['other'][0]->phone . '">
                             </div>
                             <div class="form-group">
                                 <label for="address">Address:</label>
-                                <input type="text" id="address" name="address" placeholder=<?php echo $data['other'][0]->Address; ?>>
+                                <input type="text" id="address" name="address" placeholder="' . $data['other'][0]->Address . '">
                             </div>
                         </div>
                     </div>
             </section>
-
+            </div>';
+           }else if($_SESSION['userLevel']==1) {
+           echo '<div class="dashDetails">
             <section class="section">
                 <div class="card">
+                    <div class="left-container">
+                        <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->profile_image . '">
+                    </div>
                     <div class="right-container">
-                        <h3 class="gradienttext">President's Details</h3>
+                        <div class="profile-data">
+                            <div class="form-group">
+                                <label for="username">Name:</label>
+                                <input type="text" id="username" name="username" placeholder="' . $data['other'][0]->username . '">
+                            </div>
+                            <div class="form-group">
+                                <label for="regno">Name:</label>
+                                <input type="text" id="regno" name="regno" placeholder="' . $data['other'][0]->regno . '">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="' . $data['other'][0]->email . '">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">Contact No:</label>
+                                <input type="text" id="contact" name="contact" placeholder="' . $data['other'][0]->phone . '">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" placeholder="' . $data['other'][0]->Address . '">
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            </div>
+             <section class="section">
+                <div class="card">
+                    <div class="right-container">
+                        <h3 class="gradienttext">President-Details</h3>
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="presidentname">Name : </label>
-                                <input type="text" id="presidentname" name="presidentname" placeholder=<?php echo $data['executive'][0]->executive_fullname; ?>>
+                                <input type="text" id="presidentname" name="presidentname" placeholder="' . $data['executive'][0]->executive_fullname . '">
                             </div>
                             <div class="form-group">
                                 <label for="presidentdest">Designation : </label>
-                                <input type="text" id="presidentdest" name="presidentdest" placeholder=<?php echo $data['executive'][0]->executive_designation; ?>>
+                                <input type="text" id="presidentdest" name="presidentdest" placeholder="' . $data['executive'][0]->executive_designation . '">
                             </div>
                             <div class="form-group">
                                 <label for="presidentnic">NIC No : </label>
-                                <input type="text" id="presidentnic" name="presidentnic" placeholder=<?php echo $data['executive'][0]->executive_nic_no; ?>>
+                                <input type="text" id="presidentnic" name="presidentnic" placeholder="' . $data['executive'][0]->executive_nic_no . '">
                             </div>
                             <div class="form-group">
                                 <label for="presidentemail">Email : </label>
-                                <input type="email" id="presidentemail" name="presidentemail" placeholder=<?php echo $data['executive'][0]->executive_email; ?>>
+                                <input type="email" id="presidentemail" name="presidentemail" placeholder="' . $data['executive'][0]->executive_email . '">
                             </div>
                             <div class="form-group">
                                 <label for="presidentcontact">Contact No : </label>
-                                <input type="text" id="presidentcontact" name="presidentcontact" placeholder=<?php echo $data['executive'][0]->executive_contact; ?>>
+                                <input type="text" id="presidentcontact" name="presidentcontact" placeholder="' .  $data['executive'][0]->executive_contact . '">
                             </div>
                         </div>
-                        <h3 class="gradienttext">Secretary's Details</h3>
+                        <h3 class="gradienttext">Secretary-Details</h3>
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="secretaryname">Name : </label>
-                                <input type="text" id="secretaryname" name="secretaryname" placeholder=<?php echo $data['secretary'][0]->secretary_fullname; ?>>
+                                <input type="text" id="secretaryname" name="secretaryname" placeholder="' . $data['secretary'][0]->secretary_fullname . '">
                             </div>
                             <div class="form-group">
                                 <label for="secretarydest">Designation:  </label>
-                                <input type="text" id="secretarydest" name="secretarydest" placeholder=<?php echo $data['secretary'][0]->secretary_designation; ?>>
+                                <input type="text" id="secretarydest" name="secretarydest" placeholder="' . $data['secretary'][0]->secretary_designation . '">
                             </div>
                             <div class="form-group">
                                 <label for="secretarynic">NIC No : </label>
-                                <input type="text" id="secretarynic" name="secretarynic" placeholder=<?php echo $data['secretary'][0]->secretary_nic_no; ?>>
+                                <input type="text" id="secretarynic" name="secretarynic" placeholder="' . $data['secretary'][0]->secretary_nic_no . '">
                             </div>
                             <div class="form-group">
                                 <label for="secretaryemail">Email : </label>
-                                <input type="email" id="secretaryemail" name="secretaryemail" placeholder=<?php echo $data['secretary'][0]->secretary_email; ?>>
+                                <input type="email" id="secretaryemail" name="secretaryemail" placeholder="' . $data['secretary'][0]->secretary_email . '">
                             </div>
                             <div class="form-group">
                                 <label for="secretarycontact">Contact No : </label>
-                                <input type="text" id="secretarycontact" name="secretarycontact" placeholder=<?php echo $data['secretary'][0]->secretary_contact; ?>>
+                                <input type="text" id="secretarycontact" name="secretarycontact" placeholder="' . $data['secretary'][0]->secretary_contact . '">
                             </div>
                         </div>
-                        <h3 class="gradienttext">Treasurer's Details</h3>
+                        <h3 class="gradienttext">Treasurer-Details</h3>
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="treasurername">Name : </label>
-                                <input type="text" id="treasurername" name="treasurername" placeholder=<?php echo $data['treasurer'][0]->treasurer_fullname; ?>>
+                                <input type="text" id="treasurername" name="treasurername" placeholder="' . $data['treasurer'][0]->treasurer_fullname . '">
                             </div>
                             <div class="form-group">
                                 <label for="treasurerdest">Designation : </label>
-                                <input type="text" id="treasurerdest" name="treasurerdest" placeholder=<?php echo $data['treasurer'][0]->treasurer_designation; ?>>
+                                <input type="text" id="treasurerdest" name="treasurerdest" placeholder="' . $data['treasurer'][0]->treasurer_designation . '">
                             </div>
                             <div class="form-group">
                                 <label for="treasurernic">NIC No : </label>
-                                <input type="text" id="treasurernic" name="treasurernic" placeholder=<?php echo $data['treasurer'][0]->treasurer_nic_no; ?>>
+                                <input type="text" id="treasurernic" name="treasurernic" placeholder="' . $data['treasurer'][0]->treasurer_nic_no . '">
                             </div>
                             <div class="form-group">
                                 <label for="treasureremail">Email : </label>
-                                <input type="email" id="treasureremail" name="treasureremail" placeholder=<?php echo $data['treasurer'][0]->treasurer_email; ?>>
+                                <input type="email" id="treasureremail" name="treasureremail" placeholder="' . $data['treasurer'][0]->treasurer_email . '">
                             </div>
                             <div class="form-group">
                                 <label for="treasurercontact">Contact No : </label>
-                                <input type="text" id="treasurercontact" name="treasurercontact" placeholder=<?php echo $data['treasurer'][0]->treasurer_contact; ?>>
+                                <input type="text" id="treasurercontact" name="treasurercontact" placeholder="' . $data['treasurer'][0]->treasurer_contact . '">
                             </div>
                         </div>
                     </div>
@@ -144,32 +178,35 @@
                         <table class="table-profile">
                             <tr>
                                 <td>Account Name :</td>
-                                <td><?php echo $data['other'][0]->acc_holder; ?></td>
+                                <td>"' . $data['other'][0]->acc_holder . '"></td>
                             </tr>
                             <tr>
                                 <td>Account No :</td>
-                                <td><?php echo $data['other'][0]->account_no; ?></td>
+                                <td>"' . $data['other'][0]->account_no . '"></td>
                             </tr>
                             <tr>
                                 <td>Bank Name  :</td>
-                                <td><?php echo $data['other'][0]->bank_name; ?></td>
+                                <td>"' . $data['other'][0]->bank_name . '"></td>
                             </tr>
                             <tr>
                                 <td>Bank Code  :</td>
-                                <td><?php echo $data['other'][0]->bank_code; ?></td>
+                                <td>"' . $data['other'][0]->bank_code . '"></td>
                             </tr>
                             <tr>
                                 <td>Branch Name :</td>
-                                <td><?php echo $data['other'][0]->branch_name; ?></td>
+                                <td>"' . $data['other'][0]->branch_name . '"></td>
                             </tr>
                             <tr>
                                 <td>Branch Code :</td>
-                                <td><?php echo $data['other'][0]->branch_code; ?></td>
+                                <td>"' . $data['other'][0]->branch_code . '"></td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </section>
+            </div>';
+            }
+            ?>
             <div class="form-group">
                 <div class="button-set">
                     <input type="submit" value="Save">
