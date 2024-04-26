@@ -53,11 +53,20 @@
                 <span class="nav-item-side-bar">Super User</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-        <li onclick="window.location.href = '<?php echo URLROOT ?>/#">
+        <?php if($_SESSION['userType'] == 'individual'){ ?>
+            <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
             <i class='bx bxs-user bx-sm'></i>
                 <span class="nav-item-side-bar">Profile</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
+     <?php   }  else if($_SESSION['userType'] == 'organisation'){ ?>
+            <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/orgProfile/<?php echo $_SESSION['userId'] ?>'">
+            <i class='bx bxs-user bx-sm'></i>
+                <span class="nav-item-side-bar">Profile</span>
+           
+        </li>
+     <?php   } ?>
+        
         <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
             <!-- <a href="<? //php echo URLROOT?>/users/logout"> -->
             <i class='bx bxs-exit bx-sm'></i>

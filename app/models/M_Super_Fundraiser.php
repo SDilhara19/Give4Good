@@ -90,7 +90,7 @@ class M_Super_Fundraiser
             $query5 = 'INSERT INTO material_location (fundraiser_id, area, address, contact) VALUES (:fundraiser_id, :area, :address, :contact);';
             $query6 = 'INSERT INTO material_map_location (fundraiser_id, latitude, longitude) VALUES (:fundraiser_id, :latitude, :longitude);';
             $query7 = 'INSERT INTO uploaded_documents (fundraiser_id, document_name, document_image) VALUES (:fundraiser_id, :document_name, :document_image);';
-            $query8 = 'INSERT INTO merchandise (fundraiser_id, product_name, price, amount_for_fund, stock, description, merch_image) VALUES (:fundraiser_id, :product_name, :price, :amount_for_fund, :stock, :description, :merch_image);';
+            $query8 = 'INSERT INTO merchandise (fundraiser_id, product_name, price, amount_for_fund, total_quantity, description, merch_image) VALUES (:fundraiser_id, :product_name, :price, :amount_for_fund, :total_quantity, :description, :merch_image);';
 
 
             $this->db->query($query1);
@@ -258,7 +258,7 @@ class M_Super_Fundraiser
                         $this->db->bind(':product_name', $data['merch_name_' . $i]);
                         $this->db->bind(':price', $data['merch_price_' . $i]);
                         $this->db->bind(':amount_for_fund', $data['amount_to_fund_' . $i]);
-                        $this->db->bind(':stock', $data['stock_' . $i]);
+                        $this->db->bind(':total_quantity', $data['stock_' . $i]);
                         $this->db->bind(':description', $data['merch_description_' . $i]);
                         $this->db->bind(':merch_image', $data['merch_image_' . $i]);
 
