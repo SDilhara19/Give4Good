@@ -80,9 +80,9 @@
       <section class="section">
         <div class="card">
           <div class="left-container">
-            <img class="logo_img" src=" ' .URLROOT . $data['executive'][0]->profile_image . ' ">
-            <h4 class="gradienttext-h4">User Name : ' . $data['executive'][0]->username . '</h4>
-            <h4 class="gradienttext-h4">User ID : ' . $data['executive'][0]->id . '</h4>
+            <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->profile_image . ' ">
+            <h4 class="gradienttext-h4">User Name : ' . $data['other'][0]->username . '</h4>
+            <h4 class="gradienttext-h4">User ID : ' . $data['other'][0]->id . '</h4>
           </div>
           <div class="right-container">
             <h3 class="gradienttext">Profile Details</h3>
@@ -250,7 +250,7 @@
       <section class="section">
         <div class="card">
         <div class="left-container">
-            <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
+            <img class="bank_pbook" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
             </div>
           <div class="right-container">
             <h3 class="gradianttext">Bank Details</h3>

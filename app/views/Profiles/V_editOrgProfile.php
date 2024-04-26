@@ -171,7 +171,8 @@
                 <div class="card">
                     <div class="left-container">
                         <h4 class="gradienttext-h4">Bank Passbook</h4>
-                        <img class="pbook_img" src="<?php echo URLROOT . $data['other'][0]->bank_pbook; ?>">
+                       <img class="bank_pbook" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
+
                     </div>
                     <div class="right-container">
                         <h3 class="gradienttext">Bank Details</h3>
