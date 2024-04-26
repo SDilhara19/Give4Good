@@ -541,9 +541,12 @@ width: 100%;
 }
 
 .child-note{
-  border: 1px solid var(--border-grey);
+  border: 2px solid var(--primary-color);
   min-height: 80px;
-  border-radius: 30px;
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-align: justify;
 }
 
 

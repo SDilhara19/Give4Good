@@ -281,7 +281,7 @@
                 </div>
                 <div class="fundriaser-description">
                     <p class="text-1">
-                        <?php echo $data['fundraiser'][0]->story; ?>
+                        <?php echo ucfirst($data['fundraiser'][0]->story); ?>
                     </p>
                 </div>
 
@@ -295,7 +295,7 @@
                     <div class="child-note">
 
                     <p class="text-1">
-                        <?php echo $data['child'][0]->dependent_note; ?>
+                        <?php echo ucfirst($data['child'][0]->dependent_note); ?>
                     </p>
                 </div>
 <?php  }?>

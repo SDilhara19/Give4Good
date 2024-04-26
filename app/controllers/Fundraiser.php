@@ -27,7 +27,7 @@ class Fundraiser extends controller
             $data['locations'] = $this->fundraiserModel->getMaterialLocation($id);
             $data['map_locations'] = $this->fundraiserModel->getMapLocation($id);
 
-            if ($data['fundraiser']->parent_funding == 1) {
+            if ($data['fundraiser'][0]->parent_funding == 1) {
                 $data['child'] = $this->fundraiserModel->getChildDetails($id);
 
             }
@@ -45,7 +45,6 @@ class Fundraiser extends controller
             $data['fundraiser'][0]->view_counts = $newViews;
             if ($this->fundraiserModel->updateViews($newViews, $data['fundraiser'][0]->fundraiser_id)) {
                 $this->view('Fundraisers/V_Fundraiser', $data);
-                // var_dump($data['images'][0]);
             }
 
         } catch (Exception $e) {
