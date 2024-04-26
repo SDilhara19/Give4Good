@@ -63,7 +63,7 @@
                         </tr>
                         <tr>
                             <th>Contact:</th>
-                            <td class="text-3"><?php echo $story->phone; ?></td>
+                            <td class="text-3"><?php echo $story->contact; ?></td>
                         </tr>
                     </table>
                 </div>

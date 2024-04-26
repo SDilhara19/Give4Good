@@ -25,7 +25,7 @@
       </div>
     </div>
     
-<?php if ($_SESSION['userLevel']==2) { 
+<?php if ($_SESSION['userLevel']==1) { 
   echo '<div class="dashDetails">
       <section class="section">
         <div class="card">
@@ -64,7 +64,7 @@
               <tr>
                 <td>Address :</td>
                 <td>
-                ' . $data[0]->username . '
+                ' . $data[0]->Address . '
                 </td>
               </tr>
             </table>
@@ -73,12 +73,12 @@
         </div>
       </section>
       </div>';
-}else if($_SESSION['userLevel']==1){ 
+}else if($_SESSION['userLevel']==2){ 
     echo '<div class="dashDetails">
       <section class="section">
         <div class="card">
           <div class="left-container">
-            <img class="pbook_img" src="' . URLROOT . $data[0]->profile_image . '">
+            <img class="profile_img" src="' . URLROOT . $data[0]->profile_image . '">
             <h4 class="gradienttext-h4">User Name : ' .$data[0]->username . '</h4>
             <h4 class="gradienttext-h4">User ID : ' .$data[0]->id . '</h4>
           </div>
@@ -124,7 +124,7 @@
         <div class="card">
           <div class="left-container">
             <h4 class="gradienttext-h4">Bank Passbook</h4>
-            <img class="pbook_img" src=" ' .URLROOT . $data[0]->bank_pbook . '">
+            <img class="pbook_img" src="' . URLROOT . $data[0]->bank_pbook. '">
           </div>
           <div class="right-container">
             <h3 class="gradienttext">Bank Details</h3>

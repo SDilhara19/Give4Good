@@ -3,7 +3,7 @@
       <img src="LogoBlack.png" alt="" class="LOGO-img">
     </a> -->
     <ul class="nav-links">
-      <li><a href="<?php echo URLROOT?>/Profile/orgProfile/<?php echo $_SESSION['userId'] ?>"><i class="fa-brands fa-windows"></i><p>Organisational Info</p></a></li>
+      <li><a href="<?php echo URLROOT?>/Profile/index/<?php echo $_SESSION['userId'] ?>"><i class="fa-brands fa-windows"></i><p>Organisational Info</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/edit_org/<?php echo $_SESSION['userId'] ?>"><i class="fa-regular fa-pen-to-square"></i><p>Edit profile</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/donations/<?php echo $_SESSION['userId'] ?>"><i class="fa-light fa-handshake-angle"></i><p>Donations</p></a></li>
       <li><a href="<?php echo URLROOT?>/Profile/fundraisers/<?php echo $_SESSION['userId'] ?>"><i class="fa-light fa-hand-holding-dollar"></i><p>Fundraisers</p></a></li>
