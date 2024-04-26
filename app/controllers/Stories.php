@@ -44,7 +44,10 @@ class Stories extends controller
       $obj->validate('phone', ['EMPTY']);
       $obj->validate('email', ['EMPTY', 'EMAIL']);
     }
-    
+    else if ($obj->data['contact'] == 'option1') {
+      $obj->data['phone']=$_SESSION['userContact'];
+      $obj->data['email']=$_SESSION['userEmail'];
+    }
 
 
     $obj->imageUpload('Stories', $_FILES['story_image'], $obj->data['story_title'], 'story_image');

@@ -131,6 +131,7 @@ class Individual extends controller
                 // $this->view('test', $obj);
 
             if ($obj->flag == 1) {
+                // print_r($obj);
                 $this->view('Individual/V_Super_Signup', $obj->data);
             } else {
 

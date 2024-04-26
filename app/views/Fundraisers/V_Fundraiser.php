@@ -189,9 +189,17 @@
     <?php require APPROOT . '/views/includes/header.php' ?>
     <?php require APPROOT . '/views/includes/side-bar.php' ?>
     <main>
-        <h1>
+        <?php if ($data['fundraiser'][0]->parent_funding==1){ ?>
+            <img class='bg-img' src="<?php echo URLROOT ?>/public/Assets/images/parent_fundiing.png" alt="">
+            <h1 style="margin-bottom: 0;">
+            <?php echo $data['fundraiser'][0]->title; ?></h1>
+            <div class="text-2" stlye="margin-top: 0; margin-bottom: 3rem;">Parent Fundraising</div>
+        <?php }  else {?>
+            <h1>
             <?php echo $data['fundraiser'][0]->title; ?>
         </h1>
+            <?php } ?>
+       
         <div class="fundraiser-container">
             <div class="fundraiser-left">
                 <div class="fundraiser-image-container">
@@ -225,7 +233,31 @@
 
                             <p class="text-2">Anonymous </p>
                         </div>
-                    <?php } else { ?>
+                    <?php } else  if ($data['fundraiser'][0]->parent_funding==1){ ?>
+                        <div class="fundraiser-count-row">
+                        <div class="fundraiser-donee-name">
+                                <i class="fa-solid fa-user"></i>
+                            <p class="text-2">
+                                <?php echo $data['fundraiser'][0]->username; ?>
+                            </p>
+                            
+                        </div>
+                       
+                        <div class="fundraiser-donee-name">
+                        <p class="text-2">
+                                <?php echo $data['child'][0]->child_fullname; ?>
+                            </p>
+                        <i class="fa-solid fa-child"></i>
+                          
+                            
+                        </div>
+                        </div>
+                        
+                        <p class="text-3">
+                            <?php echo $data['fundraiser'][0]->address; ?>
+                        </p>
+            <?php } 
+                    else { ?>
                         <div class="fundraiser-donee-name">
                             <?php if ($data['fundraiser'][0]->type == 'organisation') { ?>
                                 <i class="fa-solid fa-building"></i>
@@ -252,12 +284,25 @@
                         <?php echo $data['fundraiser'][0]->story; ?>
                     </p>
                 </div>
+
+              
                 <div class="ad-merch-button-list">
                     <button class="button-3-red"
                         onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
                 </div>
+                <?php if ($data['fundraiser'][0]->parent_funding==1){?>
+                    <div class="text-2" style="margin-top: 2rem;">A note from the child</div>
+                    <div class="child-note">
 
+                    <p class="text-1">
+                        <?php echo $data['child'][0]->dependent_note; ?>
+                    </p>
+                </div>
+<?php  }?>
+
+              
             </div>
+
             <div class="fundraiser-right">
                 <div class="fundraiser-progress-bar-container">
                     <div class="fundraiser-progress-bar">
@@ -282,13 +327,16 @@
                         class="main-color-button">
                         Donate
                     </button>
-
-                    <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
+                    <?php
+        if (!empty($data['merchandise'])) {?>
+            <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
                         Buy Merch
                     </button>
+      <?php  }
+        ?>
+                   
 
-                    <button class="share-btn" id="shareButton">
-                        Share
+                    <button class="share-btn" id="shareButton"> Share
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
                     <div class="share-options">
@@ -319,10 +367,14 @@
 
                     </script> -->
 
-
-                    <button class="main-white-button" onclick="window.location.href = '#donations-we-need'">
+                    <?php
+        if (!empty($data['materials'])) { ?>
+            <button class="main-white-button" onclick="window.location.href = '#donations-we-need'">
                         Send Donations
                     </button>
+     <?php   }
+        ?>
+                   
                 </div>
                 <div class="fundraiser-info">
                     <div class="info-box">
