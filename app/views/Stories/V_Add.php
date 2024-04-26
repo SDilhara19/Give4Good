@@ -24,9 +24,9 @@
             <form action="add" method="post" enctype="multipart/form-data">
                 <h1 class="form-topic"> Add your story </h1>
 
-                <fieldset>
+                <fieldset style="width: 800px; margin: auto; margin-top: 0;">
                     <!-- <legend class="text-2"> </legend> -->
-
+                    <div class="form-set" style="margin-top: 0;">
 
                     <div class="form-input-title">STORY TITLE<span class="required">*</span></div>
                     <input type="text" name="story_title" id="story_title" class="input"
@@ -49,19 +49,19 @@
 
                     <div class="contact">
                         <div class="form-input-title">CONTACT<span class="required">*</span></div>
-                        <div class="form-flex">
-                            <div class="form-flex-left">
+                        <div class="form-row form-flex" >
+                            <div class="flx-1">
                                 <input type="radio" id="default_contact" name="contact" value="option1" checked
                                     onchange="toggleFormPart('option1')" />
 
                                 <label for=" default_contact">Default</label>
-                                <div id="formPart1" style="display: block;">
-                                    <p>phone: 007</p>
-                                    <p>phone: 007</p>
+                                <div id="formPart1">
+                                    <div style="margin: 1rem">phone: <?php echo $_SESSION['userContact']?></div>
+                                    <div style="margin: 1rem">email: <?php echo $_SESSION['userEmail']?></div>
                                 </div>
                             </div>
 
-                            <div class="form-flex-right">
+                            <div class="flx-1">
                                 <input type="radio" id="new_contact" name="contact" value="option2" onchange="toggleFormPart('option2')"/>
                             <label for=" new_contact">New</label>
                                 <div id="formPart2" style="display: none;">
@@ -82,7 +82,7 @@
                     <div class="submit-button-div">
                         <button class="button-submit" type="submit">Add Story</button>
                     </div>
-
+                    </div>
                 </fieldset>
             </form>
 
