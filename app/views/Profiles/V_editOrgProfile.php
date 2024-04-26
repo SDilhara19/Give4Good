@@ -25,14 +25,16 @@
             </div>
 
         </div>
-        <?php if ($_SESSION['userLevel']==2) { 
+        <?php if ($_SESSION['userLevel']==1) { 
     echo '<div class="dashDetails">
             <section class="section">
                 <div class="card">
                     <div class="left-container">
                         <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->profile_image . '">
+                        <div><button>Upload Photo</button></div>
                     </div>
                     <div class="right-container">
+                    <h3 class="gradienttext">Profile Details</h3>
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="username">Name:</label>
@@ -58,7 +60,7 @@
                     </div>
             </section>
             </div>';
-           }else if($_SESSION['userLevel']==1) {
+           }else if($_SESSION['userLevel']==2) {
            echo '<div class="dashDetails">
             <section class="section">
                 <div class="card">
@@ -66,6 +68,7 @@
                         <img class="logo_img" src=" ' .URLROOT . $data['other'][0]->profile_image . '">
                     </div>
                     <div class="right-container">
+                    <h3 class="gradienttext">Profile Details</h3>
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="username">Name:</label>
@@ -171,38 +174,42 @@
                 <div class="card">
                     <div class="left-container">
                         <h4 class="gradienttext-h4">Bank Passbook</h4>
-                       <img class="bank_pbook" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
+                       <img class="pbook_img" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
 
                     </div>
                     <div class="right-container">
-                        <h3 class="gradienttext">Bank Details</h3>
-                        <table class="table-profile">
-                            <tr>
-                                <td>Account Name :</td>
-                                <td>"' . $data['other'][0]->acc_holder . '"></td>
-                            </tr>
-                            <tr>
-                                <td>Account No :</td>
-                                <td>"' . $data['other'][0]->account_no . '"></td>
-                            </tr>
-                            <tr>
-                                <td>Bank Name  :</td>
-                                <td>"' . $data['other'][0]->bank_name . '"></td>
-                            </tr>
-                            <tr>
-                                <td>Bank Code  :</td>
-                                <td>"' . $data['other'][0]->bank_code . '"></td>
-                            </tr>
-                            <tr>
-                                <td>Branch Name :</td>
-                                <td>"' . $data['other'][0]->branch_name . '"></td>
-                            </tr>
-                            <tr>
-                                <td>Branch Code :</td>
-                                <td>"' . $data['other'][0]->branch_code . '"></td>
-                            </tr>
-                        </table>
+                       <h3 class="gradienttext">Bank Details</h3>
+                        <div class="profile-data">
+                            <div class="form-group">
+                                <label for="acc_holder">Account Name :</label>
+                                <input type="text" id="tacc_holder" name="acc_holder" placeholder=' . $data['other'][0]->acc_holder . '>
+                            </div>
+                            <div class="form-group">
+                                <label for="account_no">Account No : </label>
+                                <input type="text" id="account_no" name="account_no" placeholder=' . $data['other'][0]->account_no . '>
+                            </div>
+                            <div class="form-group">
+                                <label for="bank_name">Bank Name  :</label>
+                                <input type="text" id="bank_name" name="bank_name" placeholder=' . $data['other'][0]->bank_name . '>
+                            </div>
+                            <div class="form-group">
+                                <label for="bank_code">Bank Code  :</label>
+                                <input type="text" id="bank_code" name="bank_code" placeholder=' . $data['other'][0]->bank_code . '>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch_name">Branch Name : </label>
+                                <input type="text" id="branch_name" name="branch_name" placeholder=' . $data['other'][0]->branch_name . '>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch_code">Branch Code : </label>
+                                <input type="text" id="branch_code" name="branch_code" placeholder=' . $data['other'][0]->branch_code . '>
+                            </div>
+                        </div>
+
+                      
+                        
                     </div>
+
                 </div>
             </section>
             </div>';

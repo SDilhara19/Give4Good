@@ -8,14 +8,35 @@ class Profile extends controller
 
   }
 
-  public function index($id){
-    $data = $this->profileModel->getUserDetails($id);
+  public function index($id)
+  {
+
     // foreach ($data[0] as $key => $value) {
     //   $data[0]->$key = $value ?? ' ';
     // }
     if ($_SESSION['userType'] == 'individual') {
+      $data = $this->profileModel->getUserDetails($id);
       $this->view('Profiles/V_indvProfile', $data);
     } else if ($_SESSION['userType'] == 'organisation') {
+      $data['other'] = $this->profileModel->getOrgDetails($id);
+      $data['executive'] = $this->profileModel->getExecutiveDetails($id);
+      $data['treasurer'] = $this->profileModel->getTreasurerDetails($id);
+      $data['secretary'] = $this->profileModel->getSecretaryDetails($id);
+
+
+      foreach ($data['other'][0] as $key => $value) {
+        $data['other'][0]->$key = $value ?? ' ';
+
+      }
+      foreach ($data['executive'][0] as $key => $value) {
+        $data['executive'][0]->$key = $value ?? ' ';
+      }
+      foreach ($data['secretary'][0] as $key => $value) {
+        $data['secretary'][0]->$key = $value ?? ' ';
+      }
+      foreach ($data['treasurer'][0] as $key => $value) {
+        $data['treasurer'][0]->$key = $value ?? ' ';
+      }
       $this->view('Profiles/V_orgProfile', $data);
     }
   }
@@ -28,29 +49,29 @@ class Profile extends controller
     $this->view('Profiles/V_editIndvProfile', $data);
   }
 
-  public function orgProfile($id)
-  {
-    $data['other'] = $this->profileModel->getOrgDetails($id);
-    $data['executive'] = $this->profileModel->getExecutiveDetails($id);
-    $data['treasurer'] = $this->profileModel->getTreasurerDetails($id);
-    $data['secretary'] = $this->profileModel->getSecretaryDetails($id);
+  // public function orgProfile($id)
+  // {
+  //   $data['other'] = $this->profileModel->getOrgDetails($id);
+  //   $data['executive'] = $this->profileModel->getExecutiveDetails($id);
+  //   $data['treasurer'] = $this->profileModel->getTreasurerDetails($id);
+  //   $data['secretary'] = $this->profileModel->getSecretaryDetails($id);
 
 
-    foreach ($data['other'][0] as $key => $value) {
-      $data['other'][0]->$key = $value ?? ' ';
+  //   foreach ($data['other'][0] as $key => $value) {
+  //     $data['other'][0]->$key = $value ?? ' ';
 
-    }
-    foreach ($data['executive'][0] as $key => $value) {
-      $data['executive'][0]->$key = $value ?? ' ';
-    }
-    foreach ($data['secretary'][0] as $key => $value) {
-      $data['secretary'][0]->$key = $value ?? ' ';
-    }
-    foreach ($data['treasurer'][0] as $key => $value) {
-      $data['treasurer'][0]->$key = $value ?? ' ';
-    }
-    $this->view('Profiles/V_orgProfile', $data);
-  }
+  //   }
+  //   foreach ($data['executive'][0] as $key => $value) {
+  //     $data['executive'][0]->$key = $value ?? ' ';
+  //   }
+  //   foreach ($data['secretary'][0] as $key => $value) {
+  //     $data['secretary'][0]->$key = $value ?? ' ';
+  //   }
+  //   foreach ($data['treasurer'][0] as $key => $value) {
+  //     $data['treasurer'][0]->$key = $value ?? ' ';
+  //   }
+  //   $this->view('Profiles/V_orgProfile', $data);
+  // }
 
   public function edit_org($id)
   {
@@ -87,9 +108,9 @@ class Profile extends controller
   public function fundraisers($id)
   {
     $data = $this->profileModel->getUserFundraisers($id);
-    foreach ($data[0] as $key => $value) {
-      $data[0]->$key = $value ?? ' ';
-    }
+    // foreach ($data[0] as $key => $value) {
+    //   $data[0]->$key = $value ?? ' ';
+    // }
     $this->view('Profiles/V_profileFundraisers', $data);
     //var_dump($data);
   }

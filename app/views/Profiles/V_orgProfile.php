@@ -26,7 +26,7 @@
       </div>
 
     </div>
-    <?php if ($_SESSION['userLevel']==2) { 
+    <?php if ($_SESSION['userLevel']==1) { 
     echo '<div class="dashDetails">
       <section class="section">
         <div class="card">
@@ -75,7 +75,7 @@
         </div>
       </section>
       </div>';
-    }else if($_SESSION['userLevel']==1) {
+    }else if($_SESSION['userLevel']==2) {
       echo '<div class="dashDetails">
       <section class="section">
         <div class="card">
@@ -250,7 +250,7 @@
       <section class="section">
         <div class="card">
         <div class="left-container">
-            <img class="bank_pbook" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
+            <img class="pbook_img" src=" ' .URLROOT . $data['other'][0]->bank_pbook . '">
             </div>
           <div class="right-container">
             <h3 class="gradianttext">Bank Details</h3>
