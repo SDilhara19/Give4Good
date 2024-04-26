@@ -87,6 +87,7 @@ class M_user
 
         try {
             // Start a transaction
+            print_r($data);
             $this->db->beginTransaction();
 
             $this->db->query('UPDATE users SET phone = :phone, address =  :address, user_level = 2 WHERE id=:user_id');

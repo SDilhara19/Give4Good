@@ -38,11 +38,13 @@
                         <div class="profile-data">
                             <div class="form-group">
                                 <label for="username">Name:</label>
+
                                 <input type="text" id="username" name="username" placeholder="' . $data['other'][0]->username . '">
                             </div>
                             <div class="form-group">
                                 <label for="regno">Name:</label>
                                 <input type="text" id="regno" name="regno" placeholder="' . $data['other'][0]->regno . '">
+
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>

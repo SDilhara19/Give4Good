@@ -19,18 +19,41 @@ class M_Donations
         }
     }
 
-    public function createDonationPayment()
+    public function createDonationPayment($data)
     {
         try {
-            $this->db->query('INSERT INTO donationpayments (user_id, fundraiser_id, donated_amount, contribution_amount, payment_date) 
-        VALUES ("60", "2", "2133", "32", "2023-12-12")');
+            $this->db->query('INSERT INTO donationpayments (payment_id, user_id, fundraiser_id, donated_amount, contribution_amount) 
+        VALUES (:payment_id, :user_id, :fundraiser_id, :donated_amount, :contribution_amount)');
 
             // Bind values
-            // $this->db->bind(':user_id', $data['user_id']);
-            // $this->db->bind(':fundraiser_id', $data['fundraiser_id']);
-            // $this->db->bind(':donated_amount', $data['donated_amount']);
-            // $this->db->bind(':contribution_amount', $data['contribution_amount']);
-            // $this->db->bind(':payment_date', $data['payment_date']);
+            $this->db->bind(':payment_id', $data['payment_id']);
+            $this->db->bind(':user_id', $data['user_id']);
+            $this->db->bind(':fundraiser_id', $data['fundraiser_id']);
+            $this->db->bind(':donated_amount', $data['donated_amount']);
+            $this->db->bind(':contribution_amount', $data['contribution_amount']);
+
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Error $e) {
+            echo "Caught exception: " . $e->getMessage();
+        }
+    }
+
+    public function createDonationPayment2($data)
+    {
+        try {
+            $this->db->query('INSERT INTO donationpayments (payment_id, user_id, fundraiser_id, donated_amount, contribution_amount) 
+        VALUES ("2", :user_id, :fundraiser_id, :donated_amount, :contribution_amount)');
+
+            // Bind values
+            $this->db->bind(':payment_id', $data['payment_id']);
+            $this->db->bind(':user_id', $data['user_id']);
+            $this->db->bind(':fundraiser_id', $data['fundraiser_id']);
+            $this->db->bind(':donated_amount', $data['donated_amount']);
+            $this->db->bind(':contribution_amount', $data['contribution_amount']);
 
             if($this->db->execute()){
                 return true;
