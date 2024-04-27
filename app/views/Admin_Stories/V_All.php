@@ -68,10 +68,24 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+                                        
+                                          
+                                        <a class="action-icons">                                                                   
+                                        <i class="fa-solid fa-check" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $stories->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $stories->id ?>");
+}'></i>
+                                    </a>
+                                        
+                                        <a href="" class="action-icons">
+                                            <i class="fa-solid fa-lock" onclick='if (window.confirm("Are you sure you want to deactivate the <?php echo $stories->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $stories->id ?>");
+}'></i>
+                                        </a>
+
                                     </td>
                                     <td>
 
-                                    <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+                                        <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
                                             <span class="close-popup"
                                                 id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
@@ -79,8 +93,7 @@
                                                 <div class="story-card">
                                                     <div class="story-card-left">
                                                         <div class="story-card-img-container">
-                                                            <img src="<?php echo URLROOT . $stories->image; ?>"
-                                                                alt="">
+                                                            <img src="<?php echo URLROOT . $stories->image; ?>" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="story-card-right">
