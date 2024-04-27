@@ -212,7 +212,8 @@
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">District<span class="required">*</span></div>
                                             <select name="district" id="district" class="input">
-                                                <option value="none">None</option>
+                                                <option value="colombo">Colombo</option>
+                                                <option value="kaluthara">Kaluthara</option>
                                             </select>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['district_err']))

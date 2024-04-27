@@ -26,6 +26,21 @@ $this->db->query('SELECT * FROM merchandise WHERE id = :id;');
 
     }
 
+    public function getDeliveryDetails($user_id){
+        $this->db->query('SELECT * FROM location WHERE user_id = :id;');
+        
+        $this->db->bind(':id', $user_id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
     public function merch_buy($data)
     {
         $this->db->query('INSERT INTO merch_sales (user_id, merch_id, quantity, total_amount, payment_time) 
@@ -43,6 +58,32 @@ $this->db->query('SELECT * FROM merchandise WHERE id = :id;');
             return false;
         }
     }
+
+    public function getAFundraiser($id) 
+    {
+
+        try{
+        $this->db->query("SELECT fundraiser.*, users.username, users.type, users.address, users.email, users.phone FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");
+
+        $this->db->bind(':fundraiser_id', $id);
+        // $rows = $this->db->resultSet();
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
+        
+        error_log('Error in getAFundraiser: ' . $e->getMessage());
+        $err = "Error: " . $e->getMessage();
+        return $err;
+    }
+
+    } 
 
 
 
