@@ -54,14 +54,14 @@
                     <span class="fi fi-af"></span>
                   </span>
                   <span>
-                    <?php echo $fundraiser->id; ?>
+                    <?php echo $fundraiser->fundraiser_id; ?>
                   </span>
                 </td>
                 <td>
                   <?php echo $fundraiser->username; ?>
                 </td>
                 <td>
-                  <?php echo $fundraiser->category; ?>
+                  <?php echo $fundraiser->Category; ?>
                 </td>
                 <td>
                   <?php echo $fundraiser->title; ?>
@@ -76,6 +76,9 @@
 
                 <td><a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                 <td>
+                  <?php echo ($fundraiser->product_name) ? $fundraiser->product_name : 'None'; ?>
+                </td>
+                <td>
                   <?php echo $fundraiser->type; ?>
                 </td>
                 <td>
@@ -86,7 +89,7 @@
                     class="action-icons">
                     <i class="fa-solid fa-info"></i>
                   </a>
-                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraise->id ?>"
+                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraiser->id ?>"
                     class="action-icons">
                     <i class="fa-solid fa-lock"></i>
                   </a>
