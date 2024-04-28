@@ -183,11 +183,13 @@ body {
 .header--buttons button {
   background-color: #4EB790;
   color: rgb(0, 0, 0);
-  padding: 15px 30px;
+  padding: 8px 30px;
   border: none;
   cursor: pointer;
   margin-right: 10px;
   border-radius: 20px;
+  width: 150px;
+
 }
 
 .header--buttons :hover {

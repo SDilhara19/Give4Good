@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -50,7 +50,7 @@
                 <div class="form-container">
                     <!-- <h1 class="form-topic"> Super User Sign Up </h1> -->
 
-                    <form action="super" method="post" enctype="multipart/form-data">
+                    <form action="super" method="post" enctype="multipart/form-data" id="siSignupForm">
                         <div class="form-con-topic">
                             <h3>A few steps away from becoming a super user</h3>
                         </div>
@@ -69,23 +69,21 @@
                                             <i class="fa-solid fa-pen-to-square" onclick="document.getElementById('profile_image').click()"></i>
                                         </div>
                                     </div>
-                                    <div class="super-signup-username-con" id = "super-signup-username">
+                                    <div class="super-signup-username-con" id="super-signup-username">
                                         <p class="text-2">
                                             <?php echo $_SESSION["userName"] ?>
                                         </p>
                                         <div class="edit-icon">
-                                            <i class="fa-solid fa-pen-to-square" onclick=usernameEdit()></i>
+                                            <i class="fa-solid fa-pen-to-square" onclick="usernameEdit()"></i>
                                         </div>
-                                        <script>
-                                            function usernameEdit(){
-                                                document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Username"  value="<?php echo $_SESSION["userName"] ?>">'
-                                            }
-                                        </script>
+
                                     </div>
                                     <div class="form-input-title margin-top">Fullname<span class="required">*</span>
                                     </div>
                                     <input type="text" name="fullname" id="fullname" class="input"
-                                        placeholder="Full name as in National Identity Card" value="<?php echo $data['basic-data'][0]->fullname; ?>">
+                                        placeholder="Full name as in National Identity Card"
+                                        value="<?php echo $data['basic-data'][0]->fullname; ?>">
+                                    <span class="form-invalid"></span>
                                     <span class="form-invalid">
                                         <?php if (!empty($data['fullname_err']))
                                             echo $data['fullname_err']; ?>
@@ -107,7 +105,8 @@
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Date of Birth<span class="required">*</span>
                                             </div>
-                                            <input type="date" name="dob" id="dob" class="input" value="<?php echo $data['basic-data'][0]->dob; ?>">
+                                            <input type="date" name="dob" id="dob" class="input"
+                                                value="<?php echo $data['basic-data'][0]->dob; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['dob_err']))
                                                     echo $data['dob_err']; ?>
@@ -170,10 +169,39 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
 
-                                        <div class="js-next" onclick="nextStep(3)">Next</div>
+                                        <div class="js-next" id="submit-1">Next</div>
                                     </div>
                                 </div>
                             </fieldset>
+
+
+                            <script>
+                                function usernameEdit() {
+                                    document.getElementById("super-signup-username").innerHTML = '<input type="text" name="username" id="username" class="input" placeholder="Username" value="<?php echo $_SESSION["userName"] ?>"> <span class="form-invalid" id="username-form-invalid"></span>';
+
+                                    const usernameInput = document.getElementById('username');
+                                    const usernameError = document.getElementById('username-form-invalid');
+                                    usernameInput.addEventListener('input', function () {
+                                        validateUsername(this.value, usernameError);
+                                    });
+
+                                    var nextButton = document.getElementById('submit-1');
+
+                                    nextButton.addEventListener('click', function (event) {
+                                        validateUsername(usernameInput.value, usernameError);
+
+                                        const errorMessage = usernameError.textContent
+                                        if (errorMessage === '') {
+                                            nextStep(3);
+                                        } else {
+                                            console.log('Validation failed. Please check your inputs.');
+                                        }
+                                    });
+                                }
+                            </script>
+
+
+
                         </div>
                         <div class="step-container">
                             <fieldset>
@@ -201,7 +229,7 @@
                                                 <option value="North Western">North Central Province</option>
                                                 <option value="Sabaragamuwa">Sabaragamuwa Province</option>
                                                 <option value="Uva">Uva Province</option>
-                                                
+
                                             </select>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['province_err']))
@@ -212,7 +240,8 @@
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">District<span class="required">*</span></div>
                                             <select name="district" id="district" class="input">
-                                                <option value="none">None</option>
+                                                <option value="colombo">Colombo</option>
+                                                <option value="kaluthara">Kaluthara</option>
                                             </select>
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['district_err']))
@@ -234,7 +263,8 @@
 
                                         <div class="form-flex-right flx-1">
                                             <div class="form-input-title">Contact<span class="required">*</span></div>
-                                            <input type="tel" name="contact" id="contact" class="input" value="<?php echo $data['basic-data'][0]->phone; ?>">
+                                            <input type="tel" name="contact" id="contact" class="input"
+                                                value="<?php echo $data['basic-data'][0]->phone; ?>">
                                             <span class="form-invalid">
                                                 <?php if (!empty($data['contact_err']))
                                                     echo $data['contact_err']; ?>
@@ -249,7 +279,7 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
                                         <div class="js-prev" onclick="prevStep()">Previous</div>
-                                        <div class="js-next" onclick="nextStep(3)">Next</div>
+                                        <div class="js-next" id="submit-2">Next</div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -352,7 +382,8 @@
                                 <div class="step-container-bottom">
                                     <div class="js-next-prev-button">
                                         <div class="js-prev" onclick="prevStep()">Previous</div>
-                                        <button class="js-next" onclick="nextStep(3)" type="submit" >Submit</button>
+                                        <!-- <button class="js-next" type="submit">Submit</button> -->
+                                        <div class="js-next" id="submit-3">Next</div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -370,6 +401,8 @@
     <script src="<?php echo URLROOT ?>/public/js/districts.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/si-signup-validation.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
     <script>
         // setupImagePreview("#form_image", ".form-image-container img");
         setupImagePreview("#nic_front_image", "#nic-front");

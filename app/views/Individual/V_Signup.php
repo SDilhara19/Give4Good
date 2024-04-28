@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-container">
                     <div class="login-form-top">
-                        <form action="Individual" method="post" enctype="multipart/form-data">
+                        <form action="Individual" method="post" enctype="multipart/form-data" id='iSignupform'>
 
 
                             <input type="hidden" name="type" value="individual">
@@ -85,7 +85,10 @@
         </div>
     </div>
 
-    <script src="<?php // echo URLROOT ?>/public/js/form-validation.js"></script>
+
+
+    <script src="<?php echo URLROOT ?>/public/js/i-signup-validation.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
 </body>
 
 </html>

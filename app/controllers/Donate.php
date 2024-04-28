@@ -36,13 +36,15 @@ class Donate extends controller
             // Decode the JSON data
             $jsonData = json_decode($postData);
 
+
             // Access the "donateAmount" and "contributeAmount" properties from the JSON data
             $donationAmount = $_POST['donationAmount'];
             $contributionAmount = $_POST['contributionAmount'];
+            $fundraiser_id = $_POST['fundraiser_id'];
             $merchant_id = 1226076;
             $order_id = uniqid();
             $amount = $donationAmount + $contributionAmount;
-            ;
+
             $currency = "LKR";
             $merchant_secret = MERCHANT_SECRET;
             $hash = strtoupper(
@@ -63,6 +65,7 @@ class Donate extends controller
             $array["currency"] = $currency;
             $array["donateAmount"] = $donationAmount;
             $array["contributeAmount"] = $contributionAmount;
+            $array["fundraiser_id"] = $fundraiser_id;
             $array["hash"] = $hash;
 
 
@@ -79,52 +82,49 @@ class Donate extends controller
 
     public function paydone()
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') { // $postData = file_get_contents("php://input");
+            $data = [];
+            $data['payment_id'] = $_POST['payment_id'];
+            $data['user_id'] = $_SESSION['userId'];
+            $data['fundraiser_id'] = $_POST['fundraiser_id'];
+            $data['donated_amount'] = $_POST['donated_amount'];
+            $data['contribution_amount'] = $_POST['contribution_amount'];
 
-        $merchant_id = $_POST['merchant_id'];
-        $order_id = $_POST['order_id'];
-        $payhere_amount = $_POST['payhere_amount'];
-        $payhere_currency = $_POST['payhere_currency'];
-        $status_code = $_POST['status_code'];
-        $md5sig = $_POST['md5sig'];
+            $this->donationModel->createDonationPayment($data);
 
-        $merchant_secret = MERCHANT_SECRET; // Replace with your Merchant Secret
 
-        $local_md5sig = strtoupper(
-            md5(
-                $merchant_id .
-                $order_id .
-                $payhere_amount .
-                $payhere_currency .
-                $status_code .
-                strtoupper(md5($merchant_secret))
-            )
-        );
 
-        if (($local_md5sig === $md5sig) and ($status_code == 2)) {
-            $this->donationModel->createDonationPayment();
-        }
-        else{
-            $this->donationModel->createDonationPayment();
-            
+
         }
 
 
-
-        // $paymentData = [
-        //     'user_id' => $_SESSION['userId'],
-        //     'fundraiser_id' => $obj->data['fundraiser_id'], // Replace with the actual fundraiser_id
-        //     'donated_amount' => $obj->data['donationAmount'],
-        //     'contribution_amount' => $obj->data['contributeAmount'],
-        //     'payment_date' => date('Y-m-d H:i:s'), // Assuming you want to use the current date and time
-        // ];
-
-        // if ($this->donationModel->createDonationPayment($paymentData)) {
-        //     // Redirect or handle success
-        //     redirect(URLROOT . '/Index');
-        // } else {
-        //     // Handle failure
-        //     die("Something went wrong");
-        // }
     }
 
+    public function payConfirm(){
+        $payment_id = $_GET['payment_id'];
+        $fundraiser_id = $_GET['fundraiser_id'];
+        $donated_amount = $_GET['donated_amount'];
+        $contribution_amount = $_GET['contribution_amount'];
+    
+        $fundraiser_info= $this->donationModel->fundTitle2($fundraiser_id);
+
+        // Now you can use these parameters as needed
+        // For example, you can pass them to the view
+        $data = array(
+            'payment_id' => $payment_id,
+            'fundraiser_title' => $fundraiser_info->title,
+            'fundraiser_id' => $fundraiser_id,
+            'donated_amount' => $donated_amount,
+            'contribution_amount' => $contribution_amount
+
+        );
+
+
+    
+        $this->view('Fundraisers/V_Donate_Confirm', $data);
+        
+    }
 }
+
+
+

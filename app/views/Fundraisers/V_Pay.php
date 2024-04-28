@@ -24,33 +24,82 @@
                 <div class="payment-heading">
                     <p class="text-7">Donate</p>
                     <h2><?php echo $data->title; ?></h2>
-                    <p class="text-4">Small to difference to change their life for the better</p>
+                    <p class="text-4">Small difference to change their life for the better</p>
                 </div>
                 <div class="payment-form-container">
                     <form action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="fundraiser_id" id="fundraiser_id" value=<?php echo $data->fundraiser_id ?> >
+
                         <div class="form-row">
-                            <div class="form-input-title2">Donate
+                            <div class="form-input-title2 text-2">Donate
                             </div>
                             <input type="text" name="donate" id="donate" class="input" placeholder="">
-                           
+
                         </div>
-                        <div class="form-row form-flex">
+                        <div class="form-row form-flex" stye="align-items: baseline;">
                             <div class="form-input-title2">Would you like to contribute to Give4Good</div>
                             <div class="checkbox-wrapper-2">
-                                <input type="checkbox" class="sc-gJwTLC ikxBAC" name="contributeCheck" id="contributeCheck">
+                                <input type="checkbox" class="sc-gJwTLC ikxBAC" name="contributeCheck"
+                                    id="contributeCheck">
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-input-title2">Amount
+                        <div class="form-row" id='g4g' stye="display:none;">
+                            <div class="form-input-title2 text-2">Give4Good
                             </div>
-                            <input type="text" name="contribute" id="contribute" class="input" placeholder="">
-                         
+                            <input type="text" name="contribute" id="contribute" class="input" placeholder="" value=0>
+
                         </div>
 
                     </form>
                 </div>
             </div>
             <div class="payment-container-bottom">
+                <div class="fundraiser-count-row">
+                    <div class="form-input-title2 text-2">Total</div>
+                    <div class="text-1" id="total">0</div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const contributeCheckbox = document.getElementById('contributeCheck');
+                        const contributeForm = document.getElementById('g4g');
+
+                        // Function to show or hide the child form based on checkbox state
+                        function toggleContributeForm() {
+                            if (contributeCheckbox.checked) {
+                                contributeForm.style.display = 'block';
+                            } else {
+                                contributeForm.style.display = 'none';
+                            }
+                        }
+
+                        // Initial state check and toggle
+                        toggleContributeForm();
+
+                        // Add event listener to the checkbox
+                        contributeCheckbox.addEventListener('change', toggleContributeForm);
+                    });
+
+                    document.addEventListener("DOMContentLoaded", function () {
+        const donateInput = document.getElementById("donate");
+        const contributeInput = document.getElementById("contribute");
+        const totalDisplay = document.querySelector(".fundraiser-count-row .text-1");
+
+        // Function to update total
+        function updateTotal() {
+            const donateAmount = parseFloat(donateInput.value) || 0;
+            const contributeAmount = parseFloat(contributeInput.value) || 0;
+            const totalAmount = donateAmount + contributeAmount;
+            totalDisplay.textContent = totalAmount.toFixed(2); // Assuming you want to display total with two decimal places
+        }
+
+        // Add event listeners to donate and contribute inputs
+        donateInput.addEventListener("input", updateTotal);
+        contributeInput.addEventListener("input", updateTotal);
+
+        // Initial update of total
+        updateTotal();
+    });
+                </script>
                 <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
                 <button class="main-color-button" type="submit" onclick="paymentGateway()">Donate</button>
             </div>
