@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-container">
                     <div class="login-form-top">
-                        <form action="Organisation" method="post" enctype="multipart/form-data">
+                        <form action="Organisation" method="post" enctype="multipart/form-data" id="oSignupform">
 
 
                             <input type="hidden" name="type" value="organisation">
@@ -85,6 +85,8 @@
         </div>
     </div>
 
+    <script src="<?php echo URLROOT ?>/public/js/o-signup-validation.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
 
 </body>
 

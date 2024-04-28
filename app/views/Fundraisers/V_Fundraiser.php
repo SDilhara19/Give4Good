@@ -7,7 +7,6 @@
     <title>GIVE4GOOD</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/include-styles/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>

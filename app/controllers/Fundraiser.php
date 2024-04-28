@@ -14,7 +14,7 @@ class Fundraiser extends controller
         $data = $this->fundraiserPriority();
         $this->view('Fundraisers/V_Fundraisers-all', $data);
         // $this->view('temp', $data);
-        
+
     }
 
     public function fundraiser($id)
@@ -32,9 +32,14 @@ class Fundraiser extends controller
 
             }
 
-            $progress = $data['fundraiser'][0]->amount_collected;
+            $amountCollected = $data['fundraiser'][0]->amount_collected;
             $total = $data['fundraiser'][0]->amount;
-            $data['fundraiser'][0]->progress = ($progress / $total) * 100;
+            $progress = ($amountCollected / $total) * 100;
+            if ($progress >= 100) {
+                $data['fundraiser'][0]->progress = 100;
+            } else if ($progress < $total) {
+                $data['fundraiser'][0]->progress = $progress;
+            }
 
             foreach ($data['merchandise'] as $merch) {
                 $amount_for_fund = $merch->amount_for_fund;
@@ -100,7 +105,7 @@ class Fundraiser extends controller
 
         }
 
-        usort($data, array($this,'comparator'));
+        usort($data, array($this, 'comparator'));
 
 
         // $this->view('temp', $data);
@@ -109,9 +114,10 @@ class Fundraiser extends controller
         //score = category_mark * 25/5 + type_mark * 25/25 + parent_funding_mark * 5 + ((amount - amount_collected)/(end_date - created_date)) * 45
     }
 
-    private function comparator($obj1, $obj2) { 
-        return $obj2->score <=> $obj1->score; 
-    } 
+    private function comparator($obj1, $obj2)
+    {
+        return $obj2->score <=> $obj1->score;
+    }
 
 }
 

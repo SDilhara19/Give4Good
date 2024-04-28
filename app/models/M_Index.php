@@ -33,15 +33,15 @@ class M_Index
 
     }
 
-    public function featuredFundraisers()
-    {
-        $all = $this->getAllFundriasers();
-        if ($all !== false) {
-            return array_slice($all, 0, 5);
-        } else {
-            return false;
-        }
-    }
+    // public function featuredFundraisers()
+    // {
+    //     $all = $this->getAllFundriasers();
+    //     if ($all !== false) {
+    //         return array_slice($all, 0, 5);
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     public function getAllStories()
     {
