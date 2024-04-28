@@ -16,10 +16,44 @@ class M_Admin {
 
 
     public function viewDonations() {
-        $this->db->query('SELECT donationpayments.*, users.username 
+        $this->db->query('SELECT donationpayments.*, users.*, fundraiser.*
+                         FROM donationpayments 
+                         JOIN users ON donationpayments.user_id = users.id
+                         JOIN fundraiser ON donationpayments.fundraiser_id = fundraiser.fundraiser_id
+                        ');
+    
+        $row = $this->db->resultSet();
+    
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+    
+    public function viewContributions() {
+        $this->db->query('SELECT donationpayments.*, users.*, fundraiser.*
         FROM donationpayments 
-        JOIN users 
-        ON donationpayments.user_id = users.id;
+        JOIN users ON donationpayments.user_id = users.id
+        JOIN fundraiser ON donationpayments.fundraiser_id = fundraiser.fundraiser_id
+        ');
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public function viewComplaints() {
+        $this->db->query('SELECT fundraiser_complain.*, users.*, fundraiser.*
+        FROM fundraiser_complain 
+        JOIN users ON fundraiser_complain.user_id = users.id 
+        JOIN fundraiser ON fundraiser_complain.fundraiser_id = fundraiser.fundraiser_id;
         ');
 
         $row = $this->db->resultSet();
@@ -32,7 +66,6 @@ class M_Admin {
         }
 
     }
-
     public function addDocument($category, $documentName) 
     {
         $this->db->query('Update tablename');
@@ -48,39 +81,8 @@ class M_Admin {
 
     }
 
-    public function viewComplaints() {
-        $this->db->query('SELECT fundraiser_complain.*, users.*
-        FROM fundraiser_complain 
-        JOIN users 
-        ON fundraiser_complain.user_id = users.id ;
-        ');
+    
 
-        $row = $this->db->resultSet();
-
-        //Check row
-        if ($this->db->rowCount() > 0) {
-            return $row;
-        } else {
-            return false;
-        }
-
-    }
-
-    public function viewContributions() {
-        $this->db->query('SELECT donationpayments.*, users.username 
-        FROM donationpayments 
-        JOIN users 
-        ON donationpayments.user_id = users.id;
-        ');
-
-        $row = $this->db->resultSet();
-
-        //Check row
-        if ($this->db->rowCount() > 0) {
-            return $row;
-        } else {
-            return false;
-        }
-    }
+    
     
 }
