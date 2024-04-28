@@ -105,6 +105,25 @@
     /* overflow: hidden; */
 }
 
+.category-name{
+    position: absolute;
+    bottom: -1.8rem;
+    height: 2rem;
+    /* border: 1px solid var(--primary-color); */
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 11vw;
+
+    /* background-color: var(--primary-color); */
+    /* background-color: var(--dark-green); */
+    color: var(--black-sub);
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 .admin-category .category{
     margin: 0;
     height: 10vw;

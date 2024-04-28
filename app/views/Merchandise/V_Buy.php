@@ -145,6 +145,7 @@
                         <?php echo "Rs. " . $data['merchandise'][0]->price ?>
                         <input type="hidden" id="priceOne" value="<?php echo $data['merchandise'][0]->price; ?>"
                             name="priceOne">
+                    <input type="hidden" name="merch_id" id="merch_id" value=<?php echo $data['merchandise'][0]->id ?> >
                         
                     </p>
                 </div>

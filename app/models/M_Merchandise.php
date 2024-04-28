@@ -26,6 +26,23 @@ $this->db->query('SELECT * FROM merchandise WHERE id = :id;');
 
     }
 
+    public function getAllMerchandise()
+    {
+$this->db->query("SELECT merchandise.*, fundraiser.title AS fundraiser_title
+FROM merchandise
+JOIN fundraiser ON merchandise.fundraiser_id = fundraiser.fundraiser_id
+WHERE merchandise.status = 'Active'");
+
+$row = $this->db->resultSet();
+
+//Check row
+if ($this->db->rowCount() > 0) {
+return $row;
+} else {
+return false;
+    }
+}
+
     public function getDeliveryDetails($user_id){
         $this->db->query('SELECT * FROM location WHERE user_id = :id;');
         
