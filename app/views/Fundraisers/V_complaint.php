@@ -96,6 +96,8 @@
     <script>setupImagePreview("#form_image", ".form-image-container img");</script>
 
     <?php require APPROOT . '/views/includes/footer.php' ?>
+    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+    
 </body>
 
 </html>
