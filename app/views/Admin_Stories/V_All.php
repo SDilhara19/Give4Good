@@ -41,67 +41,67 @@
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($data as $story) {
+                            foreach ($data as $stories) {
                                 ?>
 
                                 <tr>
                                     <td>
-                                        <?php echo $story->id; ?>
+                                        <?php echo $stories->id; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->username; ?>
+                                        <?php echo $stories->username; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->title; ?>
+                                        <?php echo $stories->title; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->contact; ?>
+                                        <?php echo $stories->contact; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->type; ?>
+                                        <?php echo $stories->type; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->status; ?>
+                                        <?php echo $stories->status; ?>
                                     </td>
                                     <td class="action-td">
                                         <span class="action-icons open-story-popup"
-                                            data-popup-id="<?php echo $story->id; ?>">
+                                            data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
                                     </td>
                                     <td>
 
-                                    <dialog class="popup-story" id='story-popup-<?php echo $story->id; ?>'>
+                                    <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
                                             <span class="close-popup"
-                                                id='close-story-popup-<?php echo $story->id; ?>'>&times;</span>
+                                                id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
 
                                                 <div class="story-card">
                                                     <div class="story-card-left">
                                                         <div class="story-card-img-container">
-                                                            <img src="<?php echo URLROOT . $story->image; ?>"
+                                                            <img src="<?php echo URLROOT . $stories->image; ?>"
                                                                 alt="">
                                                         </div>
                                                     </div>
                                                     <div class="story-card-right">
                                                         <div class="story-description">
-                                                            <h1><?php echo $story->title; ?></h1>
+                                                            <h1><?php echo $stories->title; ?></h1>
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
-                                                                <p class="text-4"> <?php echo $story->username; ?></p>
+                                                                <p class="text-4"> <?php echo $stories->username; ?></p>
                                                             </div>
-                                                            <p><?php echo $story->description; ?>
+                                                            <p><?php echo $stories->description; ?>
                                                             </p>
                                                         </div>
                                                         <div class="story-contact">
                                                             <table>
                                                                 <tr>
                                                                     <th>email:</th>
-                                                                    <td class="text-3"><?php echo $story->email; ?></td>
+                                                                    <td class="text-3"><?php echo $stories->email; ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Contact:</th>
-                                                                    <td class="text-3"><?php echo $story->contact; ?></td>
+                                                                    <td class="text-3"><?php echo $stories->contact; ?></td>
                                                                 </tr>
                                                             </table>
                                                         </div>
@@ -114,7 +114,7 @@
                                     </td>
                                     <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
                                     <script>
-                                        setupPopup('.open-story-popup[data-popup-id="<?php echo $story->id; ?>"]', '#story-popup-<?php echo $story->id; ?>', '#close-story-popup-<?php echo $story->id; ?>');
+                                        setupPopup('.open-story-popup[data-popup-id="<?php echo $stories->id; ?>"]', '#story-popup-<?php echo $stories->id; ?>', '#close-story-popup-<?php echo $stories->id; ?>');
                                     </script>
                                 </tr>
                                 <?php

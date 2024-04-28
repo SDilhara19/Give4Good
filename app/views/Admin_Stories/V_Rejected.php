@@ -39,39 +39,39 @@
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($data as $story) {
+                            foreach ($data as $stories) {
                                 ?>
 
                                 <tr>
                                     <td>
-                                        <?php echo $story->id; ?>
+                                        <?php echo $stories->id; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->username; ?>
+                                        <?php echo $stories->username; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->title; ?>
+                                        <?php echo $stories->title; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->contact; ?>
+                                        <?php echo $stories->contact; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->type; ?>
+                                        <?php echo $stories->type; ?>
                                     </td>
                                     <td>
-                                        <?php echo $story->status; ?>
+                                        <?php echo $stories->status; ?>
                                     </td>
                                     <td class="action-td">
                                         <span class="action-icons open-story-popup"
-                                            data-popup-id="<?php echo $story->id; ?>">
+                                            data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
                                     </td>
                                     <td>
 
-                                        <dialog class="popup-story" id='story-popup-<?php echo $story->id; ?>'>
+                                        <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
                                             <span class="close-popup"
-                                                id='close-story-popup-<?php echo $story->id; ?>'>&times;</span>
+                                                id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
 
                                                 <div class="story-card">
@@ -119,7 +119,7 @@
                                     </td>
                                     <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
                                     <script>
-                                        setupPopup('.open-story-popup[data-popup-id="<?php echo $story->id; ?>"]', '#story-popup-<?php echo $story->id; ?>', '#close-story-popup-<?php echo $story->id; ?>');
+                                        setupPopup('.open-story-popup[data-popup-id="<?php echo $stories->id; ?>"]', '#story-popup-<?php echo $stories->id; ?>', '#close-story-popup-<?php echo $stories->id; ?>');
                                     </script>
                                 </tr>
                                 <?php

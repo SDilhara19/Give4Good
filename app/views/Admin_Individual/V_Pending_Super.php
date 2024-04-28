@@ -120,33 +120,33 @@
                       </dialog>
                       <dialog class="popup" id='bank-popup-<?php echo $super_individual->id; ?>'>
                         <span class="close-popup" id="close-bank-popup-<?php echo $super_individual->id; ?>">&times;</span>
-                        <p class="text-2">Bank Details: Youth Society of Thimbirigasyaya</p>
+                        <p class="text-2">Bank Details: <?php echo $super_individual->bank_name; ?></p>
                         <div class="popup-container bank-container">
                           <table class="info-table">
                             <tr>
                               <th>Bank Name</th>
-                              <td class="text-3">Bank of Ceylon</td>
+                              <td class="text-3"><?php echo $super_individual->bank_name; ?></td>
                             </tr>
                             <tr>
                               <th>Bank Code</th>
-                              <td class="text-3">367</td>
+                              <td class="text-3"><?php echo $super_individual->bank_code; ?></td>
                             </tr>
 
                             <tr>
                               <th>Branch Name</th>
-                              <td class="text-3">Thimbirigasyaya</td>
+                              <td class="text-3"><?php echo $super_individual->branch_name; ?></td>
                             </tr>
                             <tr>
                               <th>Branch Code</th>
-                              <td class="text-3">12</td>
+                              <td class="text-3"><?php echo $super_individual->branch_code; ?></td>
                             </tr>
                             <tr>
                               <th>Account holder</th>
-                              <td class="text-3">Youth Society of Thimbirigasyaya</td>
+                              <td class="text-3"><?php echo $super_individual->acc_holder; ?></td>
                             </tr>
                             <tr>
                               <th>Account No</th>
-                              <td class="text-3">5526362</td>
+                              <td class="text-3"><?php echo $super_individual->account_no; ?></td>
                             </tr>
 
                           </table>

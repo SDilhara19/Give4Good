@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIVE4GOOD</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/main-styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/profile_style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +45,6 @@
               <tr>
                 <th>Title</th>
                 <th>Decription</th>
-                <th>Image</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
@@ -56,7 +56,6 @@
                 <tr>
                   <td><?php echo $profileStories->title; ?></td>
                   <td><?php echo $profileStories->description; ?></td>
-                  <td><img src=<?php echo $profileStories->image; ?>></td>
                   <td><?php echo $profileStories->status; ?></td>
                   <td>
                     <div class="submit-button-div">
