@@ -402,7 +402,7 @@
     <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/si-signup-validation.js"></script>
-    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+    <!-- <script src="<?php echo URLROOT ?>/public/js/header.js"></script> -->
     <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
     <script>
         // setupImagePreview("#form_image", ".form-image-container img");

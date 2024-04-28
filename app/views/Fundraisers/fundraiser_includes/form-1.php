@@ -29,7 +29,7 @@
 
           </div>
 
-          <button class="custom-file-input3" type="button" onclick="image_select()">Choose Images
+          <button class="custom-file-input3" type="button" onclick="image_select()" id="chose_images">Choose Images
           </button>
         </div>
         <div class="fund-images-box" id="fund-images-box">
@@ -158,6 +158,5 @@
 
       </script>
 
+    
     </div>
-
-   
