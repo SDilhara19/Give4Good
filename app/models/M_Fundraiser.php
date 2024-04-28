@@ -97,6 +97,27 @@ class M_Fundraiser {
         }
     }
 
+
+
+    public function getChildDetails($id){
+        try{
+            $this->db->query("SELECT * FROM parentfundraising WHERE fundraiser_id = :fundraiser_id");
+            $this->db->bind(':fundraiser_id', $id);
+
+        $row = $this->db->resultSet();
+
+        //Check row
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        } else {
+            return false;
+        }
+        }
+        catch(Exception $e)
+        {
+            return "Error" . $e->getMessage();
+        }
+    }
     public function getMerchandise($id){
         try{
             $this->db->query("SELECT * FROM merchandise WHERE fundraiser_id = :fundraiser_id AND status = 'Active'");
