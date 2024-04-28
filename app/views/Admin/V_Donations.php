@@ -52,7 +52,7 @@
         foreach ($data as $donationpayments) {
             ?>
         <tr>
-            <td><?php echo $donationpayments->payment_date; ?></td>
+            <td><?php echo $donationpayments->payment_time; ?></td>
             <td><?php echo $donationpayments->payment_id; ?></td>
             <td><?php echo $donationpayments->user_id; ?></td>
             <td><?php echo $donationpayments->username; ?></td>
