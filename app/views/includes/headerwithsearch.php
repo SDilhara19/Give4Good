@@ -40,7 +40,7 @@
           ?>
           <i class="fa-solid fa-star star" onclick="window.location.href = '<?php echo URLROOT ?>/Individual/super'"></i>
           <i class="fa-solid fa-bell fa-xl"></i>
-          <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile'">
+          <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
             <div class="user-name">
               <?php echo explode(" ", $_SESSION["userName"])[0]; ?>
             </div>
@@ -56,7 +56,7 @@
           if ($_SESSION['userLevel'] == 2){
             ?>
             <i class="fa-solid fa-bell fa-xl"></i>
-            <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile'">
+            <div class="user" onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
               <div class="user-name">
                 <?php echo explode(" ", $_SESSION["userName"])[0]; ?>
               </div>

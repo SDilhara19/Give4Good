@@ -32,21 +32,29 @@
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/education">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
                         </a>
+                    <div class="category-name">Education</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/sport">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
                         </a>
+                    <div class="category-name">Sport</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/health">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
                         </a>
+                    <div class="category-name">Health</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/housing">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
                         </a>
+                    <div class="category-name">Housing</div>
+
                     </div>
                 </div>
             </div>
@@ -57,21 +65,29 @@
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/animals.png" alt="">
 
                         </a>
+                    <div class="category-name">Animals</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/disasters">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/disasters.png" alt="">
                         </a>
+                    <div class="category-name">Disasters</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/environment">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/environment.png" alt="">
                         </a>
+                    <div class="category-name">Environment</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/organisation/community">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/community.png" alt="">
                         </a>
+                    <div class="category-name">Community</div>
+
                     </div>
                 </div>
 
@@ -86,21 +102,29 @@
                         <a href="<?php echo URLROOT ?>/Admin/documents/individual/education">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/education.png" alt="">
                         </a>
+                    <div class="category-name">Education</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/individual/sport">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/sport.png" alt="">
                         </a>
+                    <div class="category-name">Sport</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/individual/health">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/health.png" alt="">
                         </a>
+                    <div class="category-name">Health</div>
+
                     </div>
                     <div class="category">
                         <a href="<?php echo URLROOT ?>/Admin/documents/individual/housing">
                             <img src="<?php echo URLROOT ?>/public/Assets/images/categories/housing.png" alt="">
                         </a>
+                    <div class="category-name">Housing</div>
+
                     </div>
                 </div>
             </div>

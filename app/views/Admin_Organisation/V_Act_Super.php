@@ -33,15 +33,10 @@
 
                 <th>User ID</th>
                 <th>Username</th>
-                <th>About</th>
-                <th>Contact No</th>
-                <th>Address</th>
-                <th>Identity Verification</th>
-                <th>Logo</th>
                 <th>Bank Details</th>
                 <th>Executive Details</th>
                 <th>Treasurer Details</th>
-                <th>Identity Status</th>
+                <th>Secretary Details</th>
                 <th>Status</th>
                 <th class="action-th">Actions</th>
               </tr>
@@ -60,24 +55,14 @@
                   <td><span>
                       <?php echo $super_organisation->username; ?>
                     </span></td>
-                  <td><span><?php echo $super_organisation->about; ?></span></td>
-                  <td><span>
-                    <?php echo $super_organisation->phone; ?>
-                  </span></td>
-                  <td><span>
-                    <?php echo $super_organisation->Address; ?>
-                  </span></td>
-                  <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-                  <!-- if a popup remember to remove <a> -->
-                  <td><i class="fa-solid fa-image open-logo-popup"
-                      data-popup-id="<?php echo $super_organisation->user_id; ?>"></i></td>
                   <td><button onclick class="data_view open-bank-popup"
                       data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                   <td><button onclick class="data_view open-executive-popup"
                       data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                   <td><button onclick class="data_view open-treasurer-popup"
                       data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
-                  <td><a href=""><i class="fa-solid fa-check"></i></a></td>
+                  <td> <button class="data_view open-secretary-popup"
+                      data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                   <td><?php echo $super_organisation->status; ?></td>
                   <td class="action-td">
                     <span class="action-icons open-info-popup"
@@ -90,33 +75,77 @@
                     <dialog class="popup" id='executive-popup-<?php echo $super_organisation->user_id; ?>'>
                       <span class="close-popup"
                         id="close-executive-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Executive: <?php echo $super_organisation->username; ?><</p>
+                      <p class="text-2">Executive: <?php echo $super_organisation->username; ?>
+                        << /p>
+                          <div class="popup-container nic-container">
+                            <table class="info-table">
+                              <tr>
+                                <th>Name</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_name; ?></td>
+                              </tr>
+                              <tr>
+                                <th>Position</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_designation; ?></td>
+                              </tr>
+
+                              <tr>
+                                <th>NIC No</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_nic; ?></td>
+                              </tr>
+                              <tr>
+                                <th>Address</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_address; ?></td>
+                              </tr>
+                              <tr>
+                                <th>Contact</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_contact; ?></td>
+                              </tr>
+                              <tr>
+                                <th>Email</th>
+                                <td class="text-3"><?php echo $super_organisation->executive_email; ?></td>
+                              </tr>
+
+                            </table>
+                            <div class="nic-front">
+
+                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                            </div>
+                            <div class="nic-back">
+                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+                            </div>
+                          </div>
+
+                    </dialog>
+                    <dialog class="popup" id='treasurer-popup-<?php echo $super_organisation->user_id; ?>'>
+                      <span class="close-popup"
+                        id="close-treasurer-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
+                      <p class="text-2">Treasurer: <?php echo $super_organisation->username; ?></p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
                           <tr>
                             <th>Name</th>
-                            <td class="text-3"><?php echo $super_organisation->fullname; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_name; ?></td>
                           </tr>
                           <tr>
                             <th>Position</th>
-                            <td class="text-3"><?php echo $super_organisation->designation; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_designation; ?></td>
                           </tr>
 
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3"><?php echo $super_organisation->nic_no; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_nic; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3"><?php echo $super_organisation->address; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_address; ?></td>
                           </tr>
                           <tr>
                             <th>Contact</th>
-                            <td class="text-3"><?php echo $super_organisation->contact; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_contact; ?></td>
                           </tr>
                           <tr>
                             <th>Email</th>
-                            <td class="text-3"><?php echo $super_organisation->email; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->treasurer_email; ?></td>
                           </tr>
 
                         </table>
@@ -130,36 +159,37 @@
                       </div>
 
                     </dialog>
-                    <dialog class="popup" id='treasurer-popup-<?php echo $super_organisation->user_id; ?>'>
+
+                    <dialog class="popup" id='secretary-popup-<?php echo $super_organisation->user_id; ?>'>
                       <span class="close-popup"
-                        id="close-treasurer-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Treasurer: <?php echo $super_organisation->username; ?></p>
+                        id="close-secretary-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
+                      <p class="text-2">Secretary: <?php echo $super_organisation->username; ?></p>
                       <div class="popup-container nic-container">
                         <table class="info-table">
                           <tr>
                             <th>Name</th>
-                            <td class="text-3"><?php echo $super_organisation->fullname; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_name; ?></td>
                           </tr>
                           <tr>
                             <th>Position</th>
-                            <td class="text-3"><?php echo $super_organisation->designation; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_designation; ?></td>
                           </tr>
 
                           <tr>
                             <th>NIC No</th>
-                            <td class="text-3"><?php echo $super_organisation->nic_no; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_nic; ?></td>
                           </tr>
                           <tr>
                             <th>Address</th>
-                            <td class="text-3"><?php echo $super_organisation->address; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_address; ?></td>
                           </tr>
                           <tr>
                             <th>Contact</th>
-                            <td class="text-3"><?php echo $super_organisation->contact; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_contact; ?></td>
                           </tr>
                           <tr>
                             <th>Email</th>
-                            <td class="text-3"><?php echo $super_organisation->email; ?></td>
+                            <td class="text-3"><?php echo $super_organisation->secretary_email; ?></td>
                           </tr>
 
                         </table>
@@ -232,7 +262,7 @@
                   setupPopup('.open-executive-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#executive-popup-<?php echo $super_organisation->user_id; ?>', '#close-executive-popup-<?php echo $super_organisation->user_id; ?>');
                   setupPopup('.open-treasurer-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#treasurer-popup-<?php echo $super_organisation->user_id; ?>', '#close-treasurer-popup-<?php echo $super_organisation->user_id; ?>');
                   setupPopup('.open-bank-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#bank-popup-<?php echo $super_organisation->user_id; ?>', '#close-bank-popup-<?php echo $super_organisation->user_id; ?>');
-                  setupPopup('.open-logo-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#logo-popup-<?php echo $super_organisation->user_id; ?>', '#close-logo-popup-<?php echo $super_organisation->user_id; ?>');
+                  setupPopup('.open-secretary-popup[data-popup-id="<?php echo $super_organisation->user_id; ?>"]', '#secretary-popup-<?php echo $super_organisation->user_id; ?>', '#close-secretary-popup-<?php echo $super_organisation->user_id; ?>');
                 </script>
                 <?php
               }
@@ -247,8 +277,9 @@
   <script>
     setupPopup('#open-executive-popup', '#executive-popup', '#close-executive-popup');
     setupPopup('#open-treasurer-popup', '#treasurer-popup', '#close-treasurer-popup');
+    setupPopup('#open-secretary-popup', '#secretary-popup', '#close-secretary-popup');
     setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
-    setupPopup('#open-logo-popup', '#logo-popup', '#close-logo-popup');
+   
   </script>
 </body>
 
