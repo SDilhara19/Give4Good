@@ -40,7 +40,7 @@
                         </div>
                         <div class="donee-name text-8">
                             <i class='bx bxs-info-circle'></i>
-                            <span style="font-size: 0.65rem;">Required amount can vary. Its best to contact for updated
+                            <span style="font-size: 0.65rem;">Required<?php echo URLROOT . $material->image; ?> amount can vary. Its best to contact for updated
                                 details</span>
                         </div>
                         <div>
