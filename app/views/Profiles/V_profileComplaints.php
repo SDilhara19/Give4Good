@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,9 +29,17 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
+      <i class="fa-regular fa-comment-dots"></i>
         <span>Your Complaints</span>
       </div>
+      <div class="search-box">
+        <div class="search-bar">
+          <input type="text"  id="myInput" onkeyup="myFunction()" placeholder="Search Give4Good">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          
+        </div>
+      </div>
+    </form>
       <!-- <div class="user--info">
          <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -41,7 +50,7 @@
     <div class="dashDetails">
       <div class="container">
         <div class="table-wrapper">
-          <table>
+          <table class="myTable">
             <thead>
               <tr>
                 <th>Fundraiser Title</th>
@@ -74,6 +83,39 @@
       </div>
     </div>
 </body>
+
 <?php require APPROOT . '/views/includes/footer.php' ?>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, j, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows
+  for (i = 0; i < tr.length; i++) {
+    // Reset the display of each row to show initially
+    tr[i].style.display = "";
+
+    // Loop through all columns of the current row
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      // Get the text content of the current cell
+      txtValue = td[j].textContent || td[j].innerText;
+
+      // If the text content matches the filter, keep the row visible and exit the loop
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+        break; // Exit the loop if a match is found
+      } else {
+        // If no match is found in the current cell, hide the row
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 </html>

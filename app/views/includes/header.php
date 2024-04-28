@@ -12,7 +12,7 @@
 
 
     <div class="nav-right">
-      <div class="search-box">
+      <!-- <div class="search-box">
         <div class="search-bar">
           <form action="">
             <input type="text" name="" id="" placeholder="Search Give4Good">
@@ -20,7 +20,7 @@
             <i class="fas fa-search"></i>
           </form>
         </div>
-      </div>
+      </div> -->
 
       <ul class="header-nav-links">
         <li>

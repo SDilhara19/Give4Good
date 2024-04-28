@@ -44,15 +44,19 @@ shareBtn.addEventListener('click',()=>{
     shareOptions.classList.toggle('active');
 });
 
-function shareViaWhatsApp() {
-  var message = encodeURIComponent('Check out this link and help:');
-  var url = encodeURIComponent('https://medium.com/@gsplugins/how-do-i-add-social-media-sharing-buttons-to-my-wordpress-posts-3b198d5d6135');
-  var whatsappUrl = 'whatsapp://send?text=' + message + ' ' + url;
-  window.location.href = whatsappUrl;
-}
+// function shareViaWhatsApp() {
+//   var message = encodeURIComponent('Check out this link and help:');
+//   var url = encodeURIComponent('https://medium.com/@gsplugins/how-do-i-add-social-media-sharing-buttons-to-my-wordpress-posts-3b198d5d6135');
+//   var whatsappUrl = 'whatsapp://send?text=' + message + ' ' + url;
+//   window.location.href = whatsappUrl;
+// }
 
 function shareViaFacebook() {
      var url = encodeURIComponent('https://medium.com/@gsplugins/how-do-i-add-social-media-sharing-buttons-to-my-wordpress-posts-3b198d5d6135');
      var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
      window.open(facebookUrl, '_blank', 'width=600,height=400');
+}
+
+function closeShareOptions() {
+    document.querySelector('.share-options').style.display = 'none';
 }
