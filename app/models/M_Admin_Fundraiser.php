@@ -101,6 +101,21 @@ class M_Admin_Fundraiser{
         }else{
             return false;
         }
+        
+        $user = $this->db->selectOne2('user_id', 'fundraiser', 'fundraiser_id', $id);
+        $user_id = $user->user_id;
+        $notification = 'Fundraiser has been activated by Admin.';
+        $this->db->query('INSERT INTO notification ( notification, user_id) VALUES (:notification, :user_id)');
+        //$this->db->bind(':notification_id', $id['notification_id'] );
+        $this->db->bind(':notification', $notification);
+        $this->db->bind(':user_id', $user['user_id']);
+        //$this->db->bind(':status', $id['status']);
+
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
 
        } 
        catch(Exception $e){
