@@ -17,93 +17,57 @@
 </head>
 
 <body>
-<?php require APPROOT . '/views/includes/admin-header.php' ?>
+    <?php require APPROOT . '/views/includes/admin-header.php' ?>
     <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
-   
+
 
     <main class="admin-merchandise">
-        <h1 class="margin-bottom-0">Merchandise: Help us to assist them walk</h1>
+        <h1 class="margin-bottom-0">Merchandise:
+            <?php if (isset($data['fundraiser']) && is_array($data['fundraiser']) && count($data['fundraiser']) > 0 && isset($data['fundraiser'][0]->title)): ?>
+                <h1 class="margin-bottom-0">Merchandise: <?php echo $data['fundraiser'][0]->title; ?></h1>
+            <?php endif; ?>
+        </h1>
         <div class="ad-all-merchs" id="all-merchs">
             <div class="ad-fundraiser-merch">
-                <h2>Black short sleeve t-shirt</h2>
+                <h2><?php echo $data['merchandise'][0]->product_name; ?></h2>
                 <div class="fundraiser-ad-merch-container">
                     <div class="fundraiser-ad-merch-left">
                         <div class="ad-merch-img-container">
-                            <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt.jpeg"
-                                alt="merch-image">
-                        </div>
-                        <div class="ad-merch-image-gallery">
-                            <div class="ad-merch-image">
-                                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt.jpeg" alt="">
-                            </div>
-                            <div class="ad-merch-image">
-                                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Merchandise/tshirt merch.jpeg" alt="">
-                            </div>
-                            <div class="ad-merch-image">
-                                <img src="" alt="">
-                            </div>
+                            <img src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
                         </div>
                     </div>
                     <div class="ad-fundraiser-merch-right">
-                        <div class="ad-merch-right-top">
-                            <div class="ad-merch-sizes">
-                                <p class="text-2">Available Sizes:</p>
-                                <div class="ad-merch-sizes-right">
-                                    <p>XS</p>
-                                    <p>S</p>
-                                    <p>M</p>
-                                    <p>L</p>
-                                    <p>XL</p>
-                                    <p>XXL</p>
-                                    <p>XXXL</p>
-                                </div>
-                            </div>
-                            <div class="ad-merch-colors">
-                                <p class="text-2">Available Colours:</p>
-                                <div class="ad-merch-colors-right">
-                                    <p>Red</p>
-                                    <p>Black</p>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="ad-merch-right-bottom">
                             <div class="ad-merch-price">
-                                <h1>Rs. 2200.00</h1>
-                                <p class="text-4 color-green">12% of this product is for the fundraiser</p>
+                                <h1>Price: <?php echo $data['merchandise'][0]->price; ?></h1>
+                                <p class="text-4 color-green"><?php echo $data['merchandise'][0]->percentage . '%' ?> of
+                                    this product is for the fundraiser</p>
                             </div>
                             <div class="ad-merch-stock">
-                                <p>Initial Stock: 230 units</p>
-                                <p>Current Stock: 210 units</p>
+                                <p>Initial Stock: <?php echo $data['merchandise'][0]->total_quantity; ?></p>
+                                <p>Current Stock: <?php echo $data['merchandise'][0]->current_stock; ?></p>
                             </div>
                             <div class="ad-merch-full-description">
-                                <p class="text-4"> High quality Black and Red short sleeve T-shirt for unisex gender.
-                                    Made from cotton cloth. High quality Black and Red short sleeve T-shirt for unisex
-                                    gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Madw Made from cotton cloth. High quality Black and Red short sleeve T-shirt for
-                                    unisex gender.
-                                    Maddfw</p>
+                                <p class="text-4"> <?php echo $data['merchandise'][0]->description; ?></p>
                             </div>
                             <div class="ad-merch-button-list">
-                                <button class="button-1-green">
-                                    Verify
-                                </button>
-                                <!-- <button class="button-2-yellow" onclick="window.location.href = '#all-merchs'">
-                                    Pending
-                                </button> -->
-                                <button class="button-3-red">
-                                    Reject
-                                </button>
-                               
+                                <?php if ( $data['merchandise'][0]->status == 'Deactive') { ?>
+                                    <button onclick='if(window.confirm("Are you sure you want to verify? <?php echo $data['merchandise'][0]->id ?>")) {
+            window.open("<?php echo URLROOT ?>/Admin_Merchandise/setActive/<?php echo $data['merchandise'][0]->id ?>");
+        }' class="button-1-green">Verify</button>
+                                <?php } elseif ($data['merchandise'][0]->status == 'Active') { ?>
+                                    <button onclick='if(window.confirm("Are you sure you want to verify? <?php echo $data['merchandise'][0]->id ?>")) {
+            window.open("<?php echo URLROOT ?>/Admin_Merchandise/setDeactive/<?php echo $data['merchandise'][0]->id ?>");
+        }' class="button-3-red">Reject</button>
+                                <?php } elseif ($data['merchandise'][0]->status == 'Pending') { ?>
+                                    <button onclick='if(window.confirm("Are you sure you want to verify? <?php echo $data['merchandise'][0]->id ?>")) {
+            window.open("<?php echo URLROOT ?>/Admin_Merchandise/setDeactive/<?php echo $data['merchandise'][0]->id ?>");
+        }' class="button-3-red">Reject</button>
+        <button onclick='if(window.confirm("Are you sure you want to verify? <?php echo $data['merchandise'][0]->id ?>")) {
+            window.open("<?php echo URLROOT ?>/Admin_Merchandise/setActive/<?php echo $data['merchandise'][0]->id ?>");
+        }'' class="button-1-green">Verify</button>
+                                <?php } ?>
                             </div>
-
-
                         </div>
 
                     </div>
