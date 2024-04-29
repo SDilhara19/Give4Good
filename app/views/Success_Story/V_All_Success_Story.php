@@ -21,7 +21,7 @@
     <main>
         <div class="story-heading">
             <h1>Success Stories</h1>
-            <a href="<?php echo URLROOT ?>/SuccessStories/add"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
+            <a href="<?php echo URLROOT ?>/Success_Story/add"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
         </div>
         <div class="stories-container">
             <?php foreach ($data['success_stories'] as $story): ?>
