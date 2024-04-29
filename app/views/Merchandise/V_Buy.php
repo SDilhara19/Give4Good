@@ -218,6 +218,7 @@
     <!-- <script src="<?php // echo URLROOT ?>/public/js/material.js"></script> -->
     <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/districts.js"></script>  
+    <script src="<?php echo URLROOT ?>/public/js/payment.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/merchPayment.js"></script>
 
     <?php require APPROOT . '/views/includes/footer.php' ?>

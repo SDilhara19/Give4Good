@@ -60,6 +60,7 @@ require APPROOT . '/views/includes/orgProfileSideBar.php';
       </section>
     </div>
   </div>
+    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>
 
