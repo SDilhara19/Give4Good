@@ -315,7 +315,7 @@ td {
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 .edit-document-left {
@@ -325,7 +325,10 @@ td {
 .add-container,
 .remove-container {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--border-grey);
+    border-radius: 20px;
+    margin: 1rem;
 }
 
 .edit-document-right {
@@ -333,6 +336,7 @@ td {
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     margin: 8px;
+    margin-top: 80px;
     padding: 1rem;
 }
 

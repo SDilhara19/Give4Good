@@ -9,6 +9,7 @@ class Admin extends controller
     {
         $this->AdminModel = $this->model('M_Admin');
         $this->UserModel = $this->model('M_user');
+        $this->docModel = $this->model('M_Super_Fundraiser');
         $this->checkAdminLogin();
 
     }
@@ -90,12 +91,97 @@ class Admin extends controller
 
     }
 
-    public function documents()
+    public function documents($user, $category)
     {
+        if ($user == 'individual') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_POST['type'] == 'remove') {
+                    if ($this->AdminModel->removedoc($user, $category, $_POST['remove-document'])){
+                        redirect(URLROOT . '/Admin/category');
+                    }
+                } else if ($_POST['type'] == 'add') {
+                    $obj = new Validation($_POST);
+                    $obj->validate('doc_name', ['EMPTY']);
+                    $obj->validate('doc_description', ['EMPTY']);
 
-        $this->view('Admin/V_Edit_Required_Documents');
+                    if ($obj->flag == 1) {
+
+                        $obj->data['document'] = $this->docModel->iFindDocuments($category);
+                        $obj->data['category'] = $category;
+                        $obj->data['user'] = $user;
+                        $this->view('Admin/V_Edit_Required_Documents_Ind', $obj->data);
+                        // $this->view('test', $obj);
+
+                    } else {
+
+                        if ($this->AdminModel->adddoc($user, $category, $obj->data)) {
+
+                            redirect(URLROOT . '/Admin/category');
+
+                        } else {
+                            die("Something went wrong");
+                        }
+                    }
+                    
+                }
+            }
+            else{
+                $data = [];
+                $data['document'] = $this->docModel->iFindDocuments($category);
+                $data['category'] = $category;
+                $data['user'] = $user;
+                $this->view('Admin/V_Edit_Required_Documents_Ind', $data, );
+            }
+
+            
+
+        } else if ($user == 'organisation'){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_POST['type'] == 'remove') {
+                    if ($this->AdminModel->removedoc($user, $category, $_POST['remove-document'])){
+                        redirect(URLROOT . '/Admin/category');
+                    }
+                } else if ($_POST['type'] == 'add') {
+                    $obj = new Validation($_POST);
+                    $obj->validate('doc_name', ['EMPTY']);
+                    $obj->validate('doc_description', ['EMPTY']);
+
+                    if ($obj->flag == 1) {
+
+                        $obj->data['document'] = $this->docModel->oFindDocuments($category);
+                        $obj->data['category'] = $category;
+                        $obj->data['user'] = $user;
+                        $this->view('Admin/V_Edit_Required_Documents_Org', $obj->data);
+                        // $this->view('test', $obj);
+
+                    } else {
+
+                        if ($this->AdminModel->adddoc($user, $category, $obj->data)) {
+
+                            redirect(URLROOT . '/Admin/category');
+
+                        } else {
+                            die("Something went wrong");
+                        }
+                    }
+                    
+                }
+            }
+            else{
+                $data = [];
+                $data['document'] = $this->docModel->oFindDocuments($category);
+                $data['category'] = $category;
+                $data['user'] = $user;
+                $this->view('Admin/V_Edit_Required_Documents_Org', $data, );
+            }
+
+        }
+
+
 
     }
+
+
 
 
     public function signup()

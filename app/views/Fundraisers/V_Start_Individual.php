@@ -16,7 +16,7 @@
 </head>
 
 <body class="fundraiser-form-bg">
-<script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
+  <script src="<?php echo URLROOT ?>/public/js/form-image.js"></script>
 
   <?php require APPROOT . '/views/includes/header.php' ?>
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
@@ -37,12 +37,12 @@
             <div class="progress-step-hori">
               <div class="progress-hori"></div>
               <div class="progress-mark-hori"></div>
-              <p class="progress-text-hori">Residential Details</p>
+              <p class="progress-text-hori">Verification</p>
             </div>
             <div class="progress-step-hori">
               <div class="progress-hori"></div>
               <div class="progress-mark-hori"></div>
-              <p class="progress-text-hori">Bank Details</p>
+              <p class="progress-text-hori">Materials</p>
             </div>
           </div>
         </div>
@@ -53,77 +53,19 @@
       <div class="fundraiser-form">
         <form action="" method="post" enctype="multipart/form-data" id="fundraiser-form">
 
-  <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.php' ?>
-  <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-2.php' ?>
-  <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-3.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.2.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-1.3.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-2.php' ?>
+          <?php require APPROOT . '/views/Fundraisers/fundraiser_includes/form-3.php' ?>
 
-         
-       
+
+
 
         </form>
       </div>
     </div>
   </main>
-  <script type="text/javascript">
-    var images = [];
-
-    function image_select() {
-      console.log("select");
-      var image = document.getElementById('fundraiser_image').files;
-      console.log(image)
-      for (var i = 0; i < image.length; i++) {
-        if (check_duplicate(image[i].name)) {
-          images.push({
-            "name": image[i].name,
-            "url": URL.createObjectURL(image[i]),
-            "file": image[i],
-          });
-        }
-        else {
-          alert(image[i].name + " is already added");
-        }
-
-      }
-      // document.getElementById('input_image').reset();/\
-      console.log(images)
-      document.getElementById('fundraiser_image').value = "";
-      document.getElementById("fund-images-box").innerHTML = image_show()
-      console.log("*****************")
-      console.log(images)
-
-    }
-
-    function image_show() {
-      var image = "";
-      images.forEach((i) => {
-        image += `<div class="fund-images-con">
-                      <img src="`+ i.url + `" alt="">
-                      <span onclick="delete_image(`+ images.indexOf(i) + `)">&times;</span>
-                    </div>`;
-      })
-      return image;
-    }
-
-    function delete_image(e) {
-      images.splice(e, 1);
-      document.getElementById('fund-images-box').innerHTML = image_show();
-    }
-
-    function check_duplicate(name) {
-      var image = true;
-      if (images.length > 0) {
-        for (e = 0; e < images.length; e++) {
-          if (images[e].name == name) {
-            image = false;
-            break;
-          }
-        }
-      }
-      return image
-    }
-  
- 
-</script>
 
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>

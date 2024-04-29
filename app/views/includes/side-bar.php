@@ -64,7 +64,7 @@
                 <span class="nav-item-side-bar">Success Stories</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-        <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
+         <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
             <!-- <a href="<? //php echo URLROOT?>/users/logout"> -->
             <i class='bx bxs-exit bx-sm'></i>
                 <span class="nav-item-side-bar">Logout</span>

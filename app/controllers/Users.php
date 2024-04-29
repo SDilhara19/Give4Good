@@ -79,6 +79,7 @@ class Users extends controller
     $_SESSION['userType'] = $user->type;
     $_SESSION['userLevel'] = $user->user_level;
     $_SESSION['userImage'] = URLROOT . $user->profile_image;
+    $_SESSION['userContact'] = $user->phone;
 
 
     redirect(URLROOT . '/Index');
@@ -92,6 +93,7 @@ class Users extends controller
     unset($_SESSION['userEmail']);
     unset($_SESSION['userType']);
     unset($_SESSION['userLevel']);
+    unset($_SESSION['userContact']);
     unset($_SESSION['userImage']);
 
     session_destroy();

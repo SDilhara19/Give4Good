@@ -80,6 +80,16 @@
 }'></i>
                                         </a>
 
+                                    <a class="action-icons">                                                                   
+                                        <i class="fa-solid fa-play" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $story->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>");
+}'></i>
+
+                                    </a>
+                                    <a href="" class="action-icons">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </a>
+
                                     </td>
                                     <td>
 

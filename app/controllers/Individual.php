@@ -46,6 +46,7 @@ class Individual extends controller
             redirect(URLROOT . '/Users');
         } else {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // var_dump("s");
                 $this->super_signup();
                 // $this->view('test');
 
@@ -106,6 +107,7 @@ class Individual extends controller
             if ($obj->data['username']){
                 $obj->validate('username', ['EMPTY', 'FORMAT']);
             }
+            // print_r($obj->data);
             $obj->validate('fullname', ['EMPTY', 'FORMAT']);
             $obj->validate('nicNo', ['EMPTY']);
             $obj->validate('dob', ['EMPTY']);
@@ -121,16 +123,21 @@ class Individual extends controller
             $obj->validate('branchcode', ['EMPTY']);
             $obj->validate('branch', ['EMPTY']);
 
-            if ($_FILES['profile_image']){
+            if ($_FILES['profile_image']['name']){
                 $obj->imageUpload('Profile-image', $_FILES['profile_image'], $obj->data['profile_image'], 'profile_image');
             }
+            // $this->view('test', $obj);
+
             $obj->imageUpload('NIC-front', $_FILES['nic_front_image'], $obj->data['nic_front_image'], 'nic_front_image');
             $obj->imageUpload('NIC-back', $_FILES['nic_back_image'], $obj->data['nic_back_image'], 'nic_back_image');
             $obj->imageUpload('Bank-passbook', $_FILES['pass_book'], $obj->data['pass_book'], 'pass_book');
 
                 // $this->view('test', $obj);
-
+                // print_r("d");
             if ($obj->flag == 1) {
+                // print_r($_POST);
+                // print_r("ST");
+                // print_r($obj->data);
                 $this->view('Individual/V_Super_Signup', $obj->data);
             } else {
 

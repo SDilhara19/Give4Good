@@ -67,7 +67,7 @@ class Validation
 
   public function imageUpload($Dir, $FileArray, $name, $dataKey)
   {
-    
+
     if (!($FileArray['error'] == UPLOAD_ERR_OK)) {
       $this->data[$dataKey . '_err'] = 'Upload image';
       $this->flag = 1;
@@ -101,6 +101,18 @@ class Validation
     }
 
 
+  }
+
+  public function countKeys($keyName, $arr)
+  {
+    $count = 0;
+
+    foreach ($arr as $key => $value) {
+      if (strpos($key, $keyName) === 0) {
+        $count++;
+      }
+    }
+    return $count;
   }
 
   public function validate($value, $criteria)
