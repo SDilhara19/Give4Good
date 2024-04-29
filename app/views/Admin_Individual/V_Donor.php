@@ -76,7 +76,9 @@
                   ?>
 
                   <td class="action-td">
-                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+                  <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $users_individual->id ?>" class="action-icons">
+                  <i class="fa-solid fa-info"></i>
+                </a>
                   </td>
                 </tr>
                 <?php
