@@ -481,6 +481,33 @@ class M_Profile
 
    }
 
+    public function endFundraiser($fundraiser_id){
+        print_r($fundraiser_id);
+
+        $this->db->query('UPDATE fundraiser SET status = "End" WHERE fundraiser_id = :fundraiser_id');
+        $this->db->bind(':fundraiser_id', $fundraiser_id);
+    
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deactivateFundraiser($fundraiser_id){
+        print_r($fundraiser_id);
+
+        $this->db->query('UPDATE fundraiser SET status = "Deactive" WHERE fundraiser_id = :fundraiser_id');
+        $this->db->bind(':fundraiser_id', $fundraiser_id);
+    
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
    // public function searchForFundraiser($string){
    //      if (empty($string)) {
    //          return []; 

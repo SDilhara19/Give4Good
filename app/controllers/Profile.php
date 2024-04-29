@@ -156,6 +156,35 @@ class Profile extends controller
     $this->view('Profiles/V_ChangePassword');
   }
 
+  public function setEndFundraiser($id){
+    print_r($id);
+       if($this->profileModel -> endFundraiser($id)){
+         echo '<script>alert("Fundraiser ended!");</script>';
+         redirect(URLROOT . '/Profile/V_profileFundraisers');
+       } else {
+
+         // Deactivation failed, handle the error
+         echo '<script>alert("Error deactivating the fundraiser.");</script>';
+       }
+      
+    }
+
+    public function setDeactiveFundraiser($id){
+    print_r($id);
+       if($this->profileModel -> deactivateFundraiser($id)){
+         echo '<script>alert("Fundraiser deactivated!");</script>';
+         redirect(URLROOT . '/Profile/V_profileFundraisers');
+       } else {
+
+         // Deactivation failed, handle the error
+         echo '<script>alert("Error deactivating the fundraiser.");</script>';
+       }
+      
+    }
+
+
+
+
 // public function fundraiserSearch(){
 //         // echo 'dieeee';
 
@@ -177,5 +206,6 @@ class Profile extends controller
 
 //     }
 
+   
 }
 ?>

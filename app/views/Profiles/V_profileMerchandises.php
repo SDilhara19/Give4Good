@@ -69,8 +69,19 @@
                   </td>
                   <td>
                     <div class="submit-button-div">
-                      <button class="button-1-green" type="submit">View</button>
-                    </div>
+                        <button class="button-1-green">
+                          <a
+                            href="http://localhost/give4good/Merchandises/<?php echo $profileMerchandises->fundraiser_id; ?>">View</a>
+                        </button>
+                      <button class="button-2-yellow">
+                          <a
+                            href="<?php echo URLROOT ?>/Profile/setStock/<?php echo $profileMerchandises->fundraiser_id ?>">Edit</a>
+                        </button>
+                        <button class="button-3-red">
+                          <a
+                            href="<?php echo URLROOT ?>/Profile/endMerch/<?php echo $profileMerchandises->fundraiser_id ?>">End</a>
+                        </button>
+                      </div>
                   </td>
                 </tr>
                 <?php

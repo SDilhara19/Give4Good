@@ -22,7 +22,7 @@
     <div class="header--wrapper">
       <div class="header--title">
       <i class="fa-solid fa-file-invoice-dollar"></i>
-        <span>Your Merchandises</span>
+        <span>Your Subscription Payments</span>
       </div>
       <div class="search-box">
         <div class="search-bar">

@@ -8,6 +8,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/styles.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/profile_style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/styles/components/admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,14 +33,15 @@
       <i class="fa-regular fa-comment-dots"></i>
         <span>Your Complaints</span>
       </div>
+   <form>
       <div class="search-box">
         <div class="search-bar">
-          <input type="text"  id="myInput" onkeyup="myFunction()" placeholder="Search Give4Good">
+          <input type="text" name="" id="myInput" onkeyup="searchFun()" placeholder="Search Give4Good" >
           <i class="fa-solid fa-magnifying-glass"></i>
           
         </div>
       </div>
-    </form>
+   </form>
       <!-- <div class="user--info">
          <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -51,14 +53,14 @@
       <div class="container">
         <div class="table-wrapper">
           <table class="myTable">
-            <thead>
+            <!-- <thead> -->
               <tr>
                 <th>Fundraiser Title</th>
                 <th>Reason</th>
                 <th>Others</th>
                 <th>Actions</th>
               </tr>
-            </thead>
+            <!-- </thead> -->
             <tbody>
               <?php
               foreach ($data as $profileComplaints) {
@@ -68,9 +70,11 @@
                   <td><?php echo $profileComplaints->reason; ?></td>
                   <td><?php echo $profileComplaints->others; ?></td>
                   <td>
-                  <td>
-                    <div class="submit-button-div">
-                      <button class="button-1-green">View</button>
+                  <div class="submit-button-div">
+                      <button class="button-1-green">
+                          <a
+                            href="http://localhost/give4good/Fundraiser/fundraiser/<?php echo $profileComplaints->fundraiser_id; ?>">View</a>
+                        </button>
                     </div>
                   </td>
                 </tr>
@@ -86,36 +90,54 @@
 
 <?php require APPROOT . '/views/includes/footer.php' ?>
 <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, j, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
+// function myFunction() {
+//   // Declare variables
+//   var input, filter, table, tr, td, i, j, txtValue;
+//   input = document.getElementById("myInput");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTable");
+//   tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows
-  for (i = 0; i < tr.length; i++) {
-    // Reset the display of each row to show initially
-    tr[i].style.display = "";
+//   // Loop through all table rows
+//   for (i = 0; i < tr.length; i++) {
+//     // Reset the display of each row to show initially
+//     tr[i].style.display = "";
 
-    // Loop through all columns of the current row
-    td = tr[i].getElementsByTagName("td");
-    for (j = 0; j < td.length; j++) {
-      // Get the text content of the current cell
-      txtValue = td[j].textContent || td[j].innerText;
+//     // Loop through all columns of the current row
+//     td = tr[i].getElementsByTagName("td");
+//     for (j = 0; j < td.length; j++) {
+//       // Get the text content of the current cell
+//       txtValue = td[j].textContent || td[j].innerText;
 
-      // If the text content matches the filter, keep the row visible and exit the loop
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-        break; // Exit the loop if a match is found
-      } else {
-        // If no match is found in the current cell, hide the row
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
+//       // If the text content matches the filter, keep the row visible and exit the loop
+//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//         break; // Exit the loop if a match is found
+//       } else {
+//         // If no match is found in the current cell, hide the row
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+//}
+// const searchFun=()=>{
+//   let filter=document.getElementById('myInput').value.toUpperCase();
+//   let myTable=document.getElementById('myTable');
+//   let tr=myTable.getElementsByTagName('tr');
+
+//   for(var i=0; i<tr.length; i++){
+//     let td = tr[i].getElementsByTagName('td')[0];
+
+//     if(td){
+//       let textValue=td.textContent || td.innerText;
+//       if(textValue.toUpperCase().indexOf(filter) > -1){
+//         tr[i].style.display="";
+//       }else{
+//         tr[i].style.display="none";  
+//       }
+//     }
+//   }
+// }
 </script>
 
 </html>
