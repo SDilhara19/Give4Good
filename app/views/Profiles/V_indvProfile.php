@@ -54,7 +54,10 @@
               <tr>
                 <td>Email :</td>
                 <td>
-                ' . $data[0]->email . '
+        if (empty($data[0]->email)) {
+    // profile_image is empty
+    // Handle the case where profile_image is empty
+}        ' . $data[0]->email . '
                 </td>
               </tr>
               <tr>
@@ -74,6 +77,7 @@
       <section class="section">
         <div class="card">
           <div class="left-container">
+          
             <img class="profile_img" src="' . URLROOT . $data[0]->profile_image . '">
             <h4 class="gradienttext-h4">User Name : ' .$data[0]->username . '</h4>
             <h4 class="gradienttext-h4">User ID : ' .$data[0]->id . '</h4>

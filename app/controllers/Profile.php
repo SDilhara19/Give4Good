@@ -86,7 +86,7 @@ class Profile extends controller
     // }
     if (!($data)) {
       $data = [];
-    }
+      } 
     $this->view('Profiles/V_profileFundraisers', $data);
     //var_dump($data);
   }

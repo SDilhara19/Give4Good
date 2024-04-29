@@ -306,7 +306,7 @@
               
                 <div class="ad-merch-button-list">
                     <button class="button-3-red"
-                        onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints'">Report</button>
+                        onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'">Report</button>
                 </div>
                 <?php if ($data['fundraiser'][0]->parent_funding==1){?>
                     <div class="text-2" style="margin-top: 2rem;">A note from the child</div>
@@ -403,7 +403,7 @@
                         </ul>
                     </div>
                     <div class="info-box">
-                        <p class="text-1">Buy Merch</p>
+                        <p class="text-1">Buy Merchandise</p>
                         <ul>
                             <li class="text-3">Buy merch to assist the fundraiser</li>
                             <li class="text-3">Delivery estimated within 5 to 10 business days</li>
