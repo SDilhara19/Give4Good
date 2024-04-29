@@ -78,33 +78,34 @@ class M_Admin_Individual
         }
     }
 
-    public function activateSuperIndividual($id)
+    public function activateSuperIndividual($user_id)
     {
         $this->db->query('UPDATE super_individual SET status = "Active"
-        WHERE id = :id;');
-
-        $this->db->bind(':id', $id);
-
+        WHERE user_id = :user_id;');
+    
+        $this->db->bind(':user_id', $user_id);
+    
         if ($this->db->execute()) {
             return true;
         } else {
             return false;
         }
     }
-
-    public function deactivateSuperIndividual($id)
+    
+    public function deactivateSuperIndividual($user_id)
     {
         $this->db->query('UPDATE super_individual SET status = "Deactive"
-        WHERE id = :id;');
-
-        $this->db->bind(':id', $id);
-
+        WHERE user_id = :user_id;');
+    
+        $this->db->bind(':user_id', $user_id);
+    
         if ($this->db->execute()) {
             return true;
         } else {
             return false;
         }
     }
+    
 
     public function viewIndividuals()
     {
@@ -120,6 +121,49 @@ class M_Admin_Individual
         } else {
             return false;
         }
+    }
+
+    public function viewProfile($id, $userLevel){
+   
+      if ($userLevel == 2) {
+         $this->db->query('SELECT users.*,bank_details.*, users_individual.*,super_individual.*
+       FROM users
+       JOIN bank_details ON users.id=bank_details.user_id
+       JOIN users_individual ON users.id=users_individual.user_id
+       JOIN super_individual ON users.id=super_individual.user_id
+       WHERE users.id=:user_id');
+
+
+         $this->db->bind(':user_id', $id);
+
+         $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+            return $row;
+         } else {
+            return false;
+         }
+      } else if ($userLevel == 1) {
+         $this->db->query('SELECT users.*, users_individual.*
+       FROM users
+       JOIN users_individual ON users.id=users_individual.user_id
+       WHERE users.id=:user_id');
+
+
+         $this->db->bind(':user_id', $id);
+
+         $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+            return $row;
+         } else {
+            return false;
+         }
+      }
+
+
     }
 }
 ?>
