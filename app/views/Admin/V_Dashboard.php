@@ -39,106 +39,191 @@
           <div class="dash_table">
             <table>
               <tbody>
-                <tr>
-                  <td>RotractUOC</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>Friends98</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>SAC</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
+                
+              <?php 
+                  foreach ($data['individual'] as $users) {
+                      ?>
+                  <tr>
+                    
+                      <td><?php echo $users->username; ?></td>
+
+                  </tr>
+                  <?php
+                  }
+                  ?>
+              
               </tbody>
             </table>
             <div class="viewall">
               <button>
-                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/index">View All</a>
+                <a href="<?php echo URLROOT ?>/Admin_Individual/donor">View All</a>
               </button>
             </div>
           </div>
         </div>
+
+
         <div class="dashUnit">
           <span>Organisational Signups<strong> 05</strong></span>
           <div class="dash_table">
             <table>
               <tbody>
-                <tr>
-                  <td>RotractUOC</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>Friends98</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>SAC</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
+                
+              <?php 
+                  foreach ($data['org'] as $users) {
+                      ?>
+                  <tr>
+                    
+                      <td><?php echo $users->username; ?></td>
+
+                  </tr>
+                  <?php
+                  }
+                  ?>
+
+
               </tbody>
             </table>
             <div class="viewall">
               <button>
-                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/index">View All</a>
+                <a href="<?php echo URLROOT ?>/Admin_Organisation/donor">View All</a>
               </button>
             </div>
           </div>
         </div>
-        <div class="dashUnit">
-          <span>Merchandise <strong> 13</strong></span>
-          <div class="dash_table">
-            <table>
-              <tbody>
-                <tr>
-                  <td>SarathWK</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>KDPathma</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>MCGroup</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="viewall">
-              <button>
-                <a href="">View All</a>
-              </button>
-            </div>
-          </div>
-        </div>
+
+
         <div class="dashUnit">
           <span>Fundraisers <strong> 13</strong></span>
           <div class="dash_table">
             <table>
               <tbody>
-                <tr>
-                  <td>Educational help</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>Build a library</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
-                <tr>
-                  <td>Help for building a house</td>
-                  <td><button class="dash_view">View</button></td>
-                </tr>
+                
+              <?php 
+                  foreach ($data['fundraiser'] as $fundraiser) {
+                      ?>
+                  <tr>
+                    
+                      <td><?php echo $fundraiser->title; ?></td>
+
+                  </tr>
+                  <?php
+                  }
+                  ?>
+
+
               </tbody>
             </table>
             <div class="viewall">
               <button>
-                <a href="<?php echo URLROOT ?>/Admin_Fundraisers/pending">View All</a>
+                <a href="<?php echo URLROOT?>/Admin_Fundraisers/pending">View All</a>
               </button>
             </div>
           </div>
         </div>
+
+
         <div class="dashUnit">
+          <span>Merchandise <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                
+              <?php 
+                  foreach ($data['merchandise'] as $merchandise) {
+                      ?>
+                  <tr>
+                    
+                      <td><?php echo $merchandise->product_name; ?></td>
+
+                  </tr>
+                  <?php
+                  }
+                  ?>
+
+
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT?>/Admin_Merchandise/pending">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="dashUnit">
+          <span>Donations <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                
+
+
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT?>/Admin/donations">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="dashUnit">
+          <span>Contribution <strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                
+
+
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT?>/Admin/contributions">View All</a>
+              </button>
+            </div>
+          </div>
+        </div> -->
+
+
+
+        <div class="dashUnit">
+          <span>Stories<strong> 13</strong></span>
+          <div class="dash_table">
+            <table>
+              <tbody>
+                
+              <?php 
+                  foreach ($data['story'] as $story) {
+                      ?>
+                  <tr>
+                    
+                      <td><?php echo $story->title; ?></td>
+
+                  </tr>
+                  <?php
+                  }
+                  ?>
+
+
+              </tbody>
+            </table>
+            <div class="viewall">
+              <button>
+                <a href="<?php echo URLROOT?>/Admin_Stories/pending">View All</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- <div class="dashUnit">
           <span>Stories <strong> 13</strong></span>
           <div class="dash_table">
             <table>
@@ -163,7 +248,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

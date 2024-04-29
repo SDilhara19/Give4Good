@@ -26,7 +26,16 @@ class Admin extends controller
     public function index()
     {
         if (isset($_SESSION['userId'])) {
-            $this->view('Admin/V_Dashboard');
+
+        
+            $data['individual'] = $this->AdminModel->IndSignup();
+            $data['org'] = $this->AdminModel->OrgSignup();
+            $data['fundraiser'] = $this->AdminModel->Fundraiser();
+            $data['merchandise'] = $this->AdminModel->Merch();
+            $data['story'] = $this->AdminModel->Story();
+
+            $this->view('Admin/V_Dashboard', $data);
+            
         } else {
             redirect(URLROOT . '/Admin_Login');
         }

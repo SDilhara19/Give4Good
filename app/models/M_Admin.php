@@ -174,4 +174,84 @@ class M_Admin
         }
     }
 
+    public function IndSignup() {
+        $this->db->query("SELECT users.* FROM users WHERE users.type='individual' AND users.user_level = '1' ORDER BY users.signup_time DESC LIMIT 4");
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+    }
+
+    public function OrgSignup() {
+        $this->db->query("SELECT users.* FROM users WHERE users.type='organisation' AND users.user_level = '1' ORDER BY users.signup_time DESC LIMIT 4");
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+    }
+
+    public function Fundraiser() {
+        $this->db->query("SELECT fundraiser.* FROM fundraiser ORDER BY fundraiser.created_date DESC LIMIT 4");
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+    }
+
+    public function Merch() {
+        $this->db->query("SELECT merchandise.* FROM merchandise LIMIT 4");
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+    }
+
+    public function Donation() {
+        $this->db->query("SELECT merchandise.* FROM merchandise LIMIT 4");
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+    }
+
+    public function Story() {
+        $this->db->query("SELECT stories.* FROM stories WHERE stories.status='Active' LIMIT 4");
+        
+        
+        $row = $this->db->resultSet();
+
+         //Check row
+         if ($this->db->rowCount() > 0) {
+             return $row;
+            } else {
+             return false;
+            }
+        }
+
+
 }
