@@ -80,7 +80,9 @@
 
           <?php
         }
+
         ?>
+        
       </div>
 
       <div class="more-button">
