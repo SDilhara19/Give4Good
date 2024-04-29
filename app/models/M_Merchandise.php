@@ -11,7 +11,11 @@ class M_Merchandise
 
     public function getAMerchandise($id)
     {
-$this->db->query('SELECT * FROM merchandise WHERE id = :id;');
+$this->db->query('SELECT merchandise.*, fundraiser.title AS fundraiser_title
+FROM merchandise
+JOIN fundraiser ON merchandise.fundraiser_id = fundraiser.fundraiser_id
+WHERE merchandise.id = :id;
+');
         
         $this->db->bind(':id', $id);
 
