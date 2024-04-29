@@ -53,12 +53,15 @@
                 <span class="nav-item-side-bar">Super User</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-     
-            <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
-            <i class='bx bxs-user bx-sm'></i>
+     <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId']; ?>'">
+            <i class='bx bxs-user bx-sm' #></i>
                 <span class="nav-item-side-bar">Profile</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
+            <!-- <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId']; ?>'">
+            <i class='bx bxs-user bx-sm'></i>
+                <span class="nav-item-side-bar">Profile</span>
+        </li> -->
     
         
         <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
