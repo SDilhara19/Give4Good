@@ -69,6 +69,9 @@
                                             <i class="fa-solid fa-info"></i>
                                         </span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                         
                                         
                                         <a href="" class="action-icons">
@@ -77,8 +80,11 @@
 }'></i>
                                         </a>
 
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                     </td>
                                     <td>
 

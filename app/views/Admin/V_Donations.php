@@ -50,6 +50,7 @@
     <tbody>
     <?php 
 <<<<<<< HEAD
+<<<<<<< HEAD
         foreach ($data as $donationpayments) {
             ?>
         <tr>
@@ -74,6 +75,19 @@
             <td><?php echo $donations->donated_amount; ?></td>
             <td><?php echo $donations->contribution_amount; ?></td>
 >>>>>>> main
+=======
+        foreach ($data as $donationpayments) {
+            ?>
+        <tr>
+            <td><?php echo $donationpayments->payment_time; ?></td>
+            <td><?php echo $donationpayments->payment_id; ?></td>
+            <td><?php echo $donationpayments->user_id; ?></td>
+            <td><?php echo $donationpayments->username; ?></td>
+            <td><?php echo $donationpayments->fundraiser_id; ?></td>
+            <td><?php echo $donationpayments->title; ?></td>
+            <td><?php echo $donationpayments->donated_amount; ?></td>
+            <td><?php echo $donationpayments->contribution_amount; ?></td>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         </tr>
         <?php
         }

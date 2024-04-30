@@ -28,9 +28,13 @@
                             <tr>
                                 <th>Merch Id</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <th>Fundraiser Id</th>
 =======
 >>>>>>> main
+=======
+                                <th>Fundraiser Id</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 <th>Title</th>
                                 <th>Fundraiser Title</th>
                                 <th>Initial Stock</th>
@@ -38,6 +42,7 @@
                                 <th>Price of Merch</th>
                                 <th>Amount for Fund</th>
                                 <th>Status</th>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <th class="action-th">Actions</th>
                             </tr>
@@ -93,6 +98,41 @@
                                 </td>
                             </tr>
 >>>>>>> main
+=======
+                                <th class="action-th">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($data as $merchandise) { ?>
+                                <tr>
+                                    <td><?php echo $merchandise->id; ?></td>
+                                    <td><?php echo $merchandise->fundraiser_id; ?></td>
+                                    <td><?php echo $merchandise->product_name; ?></td>
+                                    <td><?php echo $merchandise->title; ?></td>
+                                    <td><?php echo $merchandise->total_quantity; ?></td>
+                                    <td><?php echo $merchandise->current_stock; ?></td>
+                                    <td><?php echo $merchandise->price; ?></td>
+                                    <td><?php echo $merchandise->amount; ?></td>
+                                    <td><?php echo $merchandise->status; ?></td>
+                                    <td class="action-td">
+                                        <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id; ?>"
+                                            class="action-icons">
+                                            <i class="fa-solid fa-info"></i>
+                                        </a>
+
+
+                                        <a class="action-icons">
+                                            <i class="fa-solid fa-check" onclick='if(window.confirm("Are you sure you want to activate the <?php echo $merchandise->id; ?>")){
+                                            window.open("<?php echo URLROOT ?>/Admin_Merchandise/setActive/<?php echo $merchandise->id; ?>");
+                                         }'>
+                                            </i>
+                                        </a>
+
+
+                                    </td>
+                                </tr>
+                            <?php } ?>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     </table>
                 </div>
             </div>

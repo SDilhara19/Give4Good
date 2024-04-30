@@ -79,6 +79,7 @@ class M_Admin_Individual
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function activateSuperIndividual($user_id)
     {
         $this->db->query('UPDATE super_individual SET status = "Active"
@@ -95,12 +96,22 @@ class M_Admin_Individual
         $this->db->bind(':id', $id);
 
 >>>>>>> main
+=======
+    public function activateSuperIndividual($user_id)
+    {
+        $this->db->query('UPDATE super_individual SET status = "Active"
+        WHERE user_id = :user_id;');
+    
+        $this->db->bind(':user_id', $user_id);
+    
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         if ($this->db->execute()) {
             return true;
         } else {
             return false;
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     public function deactivateSuperIndividual($user_id)
@@ -120,6 +131,16 @@ class M_Admin_Individual
         $this->db->bind(':id', $id);
 
 >>>>>>> main
+=======
+    
+    public function deactivateSuperIndividual($user_id)
+    {
+        $this->db->query('UPDATE super_individual SET status = "Deactive"
+        WHERE user_id = :user_id;');
+    
+        $this->db->bind(':user_id', $user_id);
+    
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         if ($this->db->execute()) {
             return true;
         } else {
@@ -127,9 +148,13 @@ class M_Admin_Individual
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> main
+=======
+    
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 
     public function viewIndividuals()
     {
@@ -147,6 +172,9 @@ class M_Admin_Individual
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 
     public function viewProfile($id, $userLevel){
    
@@ -190,7 +218,10 @@ class M_Admin_Individual
 
 
     }
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 }
 ?>

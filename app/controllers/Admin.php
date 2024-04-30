@@ -58,12 +58,18 @@ class Admin extends controller
     {
         $data = $this->AdminModel->viewComplaints();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         if(!($data)){
             $data=[];
           }
       
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         $this->view('Admin/V_Complaints', $data);
     }
 
@@ -71,12 +77,18 @@ class Admin extends controller
     {
         $data = $this->AdminModel->viewDonations();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         if(!($data)){
             $data=[];
           }
       
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         $this->view('Admin/V_Donations', $data);
     }
 
@@ -84,12 +96,18 @@ class Admin extends controller
     {
         $data = $this->AdminModel->viewContributions();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         if(!($data)){
             $data=[];
           }
       
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         $this->view('Admin/V_Contributions', $data);
     }
 

@@ -82,12 +82,18 @@
 
                   <td class="action-td">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $users_organisation->id ?>" class="action-icons">
                   <i class="fa-solid fa-info"></i>
                 </a>
 =======
                     <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
 >>>>>>> main
+=======
+                  <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $users_organisation->id ?>" class="action-icons">
+                  <i class="fa-solid fa-info"></i>
+                </a>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   </td>
                 </tr>
                 <?php

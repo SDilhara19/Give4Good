@@ -54,6 +54,7 @@
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <li onclick="window.location.href = '<?php echo URLROOT ?>/#">
             <i class='icon-park-solid--folder-success'></i>
                 <span class="nav-item-side-bar">Profile</span>
@@ -70,13 +71,25 @@
      
             <li onclick="window.location.href = '<?php echo URLROOT ?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
             <i class='bx bxs-user bx-sm'></i>
+=======
+        <li onclick="window.location.href = '<?php echo URLROOT ?>/#">
+            <i class='icon-park-solid--folder-success'></i>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 <span class="nav-item-side-bar">Profile</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-    
         
+<<<<<<< HEAD
         <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
 >>>>>>> main
+=======
+        <li onclick="window.location.href = '<?php echo URLROOT ?>/Success_Story'">
+            <i class='bx bxs-book-heart bx-sm'></i>
+                <span class="nav-item-side-bar">Success Stories</span>
+            <!-- <span class="tooltip">Dashboard</span> -->
+        </li>
+         <li onclick="window.location.href = '<?php echo URLROOT ?>/users/logout'">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
             <!-- <a href="<? //php echo URLROOT?>/users/logout"> -->
             <i class='bx bxs-exit bx-sm'></i>
                 <span class="nav-item-side-bar">Logout</span>

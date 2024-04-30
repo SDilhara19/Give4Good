@@ -37,6 +37,7 @@
                   <th>Contact</th>
                   <th>Email</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <th>NIC Details</th>
                   <th>Bank Details</th>
 =======
@@ -45,6 +46,10 @@
                   <th>Bank Details</th>
                   <th>Identity Status</th>
 >>>>>>> main
+=======
+                  <th>NIC Details</th>
+                  <th>Bank Details</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   <th>Status</th>
                   <th class="action-th">Actions</th>
                 </tr>
@@ -69,6 +74,7 @@
                       <?php echo $super_individual->email; ?>
                     </td>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <td><button onclick class="data_view open-nic-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
                     <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
 =======
@@ -77,11 +83,18 @@
                     <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
                     <td><a href=""><i class="fa-solid fa-check"></i></a></td>
 >>>>>>> main
+=======
+                    <td><button onclick class="data_view open-nic-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
+                    <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     <td>
                       <?php echo $super_individual->status; ?>
                     </td>
                     <td class="action-td">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $super_individual->user_id ?>" class="action-icons">
                   <i class="fa-solid fa-info"></i>
                 </a>
@@ -111,10 +124,13 @@
 
 
 
+<<<<<<< HEAD
 =======
                       <a href="<?php echo URLROOT ?>/Admin_Individual/individual_one/<?php echo $super_individual->id ?>" 
                       class="action-icons"><i class="fa-solid fa-info"></i></a>
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     </td>
 
                     <td>
@@ -135,10 +151,14 @@
                               <th>Name</th>
                               <td class="text-3">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <?php echo  $super_individual->username; ?>
 =======
                                 <?php echo $super_individual->username; ?>
 >>>>>>> main
+=======
+                                <?php echo  $super_individual->username; ?>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                               </td>
                             </tr>
                             <tr>
@@ -151,15 +171,20 @@
                               <th>Address</th>
                               <td class="text-3">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <?php echo $super_individual->Address; ?>
 =======
                                 <?php echo $super_individual->address; ?>
 >>>>>>> main
+=======
+                                <?php echo $super_individual->Address; ?>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                               </td>
                             </tr>
                           </table>
                           <div class="nic-front">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                             <img src="<?php echo URLROOT . $super_individual->nic_front ?>" alt="image">
                           </div>
@@ -171,6 +196,12 @@
                           <div class="nic-back">
                             <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
 >>>>>>> main
+=======
+                            <img src="<?php echo URLROOT . $super_individual->nic_front ?>" alt="image">
+                          </div>
+                          <div class="nic-back">
+                            <img src="<?php echo URLROOT . $super_individual->nic_back ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                           </div>
                         </div>
 
@@ -210,10 +241,14 @@
                           <div class="bank-passbook">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <img src="<?php echo URLROOT . $super_individual->bank_pbook ?>" alt="image">
 =======
                             <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Bank-passbook/1.webp" alt="">
 >>>>>>> main
+=======
+                            <img src="<?php echo URLROOT . $super_individual->bank_pbook ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                           </div>
                         </div>
 

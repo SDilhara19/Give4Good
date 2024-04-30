@@ -28,9 +28,13 @@
                             <tr>
                                 <th>Merch Id</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <th>Fundraiser Id</th>
 =======
 >>>>>>> main
+=======
+                                <th>Fundraiser Id</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 <th>Title</th>
                                 <th>Fundraiser Title</th>
                                 <th>Initial Stock</th>
@@ -43,6 +47,9 @@
                         </thead>
                         <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             <?php foreach ($data as $merchandise) { ?>
                                 <tr>
                                     <td><?php echo $merchandise->id; ?></td>
@@ -92,6 +99,7 @@
                                     </td>
                                 </tr>
                             <?php } ?>
+<<<<<<< HEAD
 =======
                             <tr>
                                 <td>1</td>
@@ -109,6 +117,8 @@
                                 </td>
                             </tr>
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     </table>
                 </div>
             </div>

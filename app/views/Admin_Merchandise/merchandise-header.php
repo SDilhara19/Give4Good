@@ -10,10 +10,15 @@
         <button class="pending-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/pending'">Pending</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <button class="all-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/index'">All</button>
 =======
 >>>>>>> main
+=======
+        <button class="all-button"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/index'">All</button>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     </div>
     <div class="user--info">
         <div class="search--box">

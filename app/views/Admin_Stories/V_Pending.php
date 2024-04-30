@@ -16,9 +16,13 @@
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> main
+=======
+
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 <body>
     <?php require APPROOT . '/views/includes/admin-header.php' ?>
     <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
@@ -32,10 +36,14 @@
                         <thead>
                             <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <th>Story ID</th>
 =======
                         <th>Story ID</th>
 >>>>>>> main
+=======
+                                <th>Story ID</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 <th>Username</th>
                                 <th class="action-th">Title</th>
                                 <th>Contact</th>
@@ -70,6 +78,7 @@
                                     </td>
                                     <td class="action-td">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <span class="action-icons open-story-popup"
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
@@ -91,22 +100,32 @@
                                     </td>
 =======
                                     <span class="action-icons open-story-popup"
+=======
+                                        <span class="action-icons open-story-popup"
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
-
-                                    <a class="action-icons">                                                                   
-                                        <i class="fa-solid fa-play" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $story->title; ?> story?")) {
-  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>");
+                                        
+                                          
+                                        <a class="action-icons">                                                                   
+                                        <i class="fa-solid fa-check" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $stories->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $stories->id ?>");
 }'></i>
-
                                     </a>
-                                    <a href="" class="action-icons">
-                                        <i class="fa-solid fa-lock"></i>
-                                    </a>
+                                        
+                                        <a href="" class="action-icons">
+                                            <i class="fa-solid fa-lock" onclick='if (window.confirm("Are you sure you want to deactivate the <?php echo $stories->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $stories->id ?>");
+}'></i>
+                                        </a>
 
+<<<<<<< HEAD
                                 </td>
 >>>>>>> main
+=======
+                                    </td>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                     <td>
 
                                         <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
@@ -124,6 +143,7 @@
                                                     <div class="story-card-right">
                                                         <div class="story-description">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                             <h1><?php echo $stories->title; ?></h1>
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
@@ -132,10 +152,14 @@
                                                             <p><?php echo $stories->description; ?>
 =======
                                                             <h1>Hard coded Sahurda Wiyamana</h1>
+=======
+                                                            <h1><?php echo $stories->title; ?></h1>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
-                                                                <p class="text-4">LEO Club UOC</p>
+                                                                <p class="text-4"><?php echo $stories->username; ?></p>
                                                             </div>
+<<<<<<< HEAD
                                                             <p>ොළඹ විශ්ව විද්‍යාලයීය ලියෝ සමාජය මගින් සංවිධානය කල සහෘද වියමන
                                                                 අදියර 6කින් යුතු ව්‍යාපෘතියේ දෙවන අදියර ඉතා සාර්ථකව නිමකරන
                                                                 කරන ලදී. එම කටයුතු සාර්ථක කර ගැනීම උදෙසා උපකාර කළ ඔබ සැමට
@@ -145,12 +169,16 @@
 
 
 >>>>>>> main
+=======
+                                                            <p><?php echo $stories->description; ?>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                                             </p>
                                                         </div>
                                                         <div class="story-contact">
                                                             <table>
                                                                 <tr>
                                                                     <th>email:</th>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                                     <td class="text-3"><?php echo $stories->email; ?>m</td>
                                                                 </tr>
@@ -164,6 +192,13 @@
                                                                     <th>Contact:</th>
                                                                     <td class="text-3">+9470 576 0021</td>
 >>>>>>> main
+=======
+                                                                    <td class="text-3"><?php echo $stories->email; ?>m</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Contact:</th>
+                                                                    <td class="text-3"><?php echo $stories->contact; ?></td>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                                                 </tr>
                                                             </table>
                                                         </div>

@@ -27,10 +27,14 @@ class M_Admin
 
         $row = $this->db->resultSet();
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 
 >>>>>>> main
+=======
+    
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         //Check row
         if ($this->db->rowCount() > 0) {
             return $row;
@@ -38,9 +42,12 @@ class M_Admin
             return false;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     }
 
     public function addDocument($category, $documentName)
@@ -56,9 +63,12 @@ class M_Admin
             return false;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     }
 
     public function removedoc($user, $category, $document)
@@ -152,12 +162,17 @@ class M_Admin
         $this->db->query('SELECT fundraiser_complain.*, users.*
         FROM fundraiser_complain 
 <<<<<<< HEAD
+<<<<<<< HEAD
         JOIN users ON fundraiser_complain.user_id = users.id 
         JOIN fundraiser ON fundraiser_complain.fundraiser_id = fundraiser.fundraiser_id;
 =======
         JOIN users 
         ON fundraiser_complain.user_id = users.id ;
 >>>>>>> main
+=======
+        JOIN users ON fundraiser_complain.user_id = users.id 
+        JOIN fundraiser ON fundraiser_complain.fundraiser_id = fundraiser.fundraiser_id;
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         ');
 
         $row = $this->db->resultSet();
@@ -188,9 +203,13 @@ class M_Admin
             return false;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> main
+=======
+
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     }
 
 }
