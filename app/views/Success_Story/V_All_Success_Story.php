@@ -28,12 +28,12 @@
                 <div class="story-card" id="<?php echo $story->successstory_id; ?>">
                     <div class="story-card-left">
                         <div class="story-card-img-container">
-                            <img src="<?php echo URLROOT . $story->story_image; ?>" alt="Story Image">
+                        <img src="<?php echo URLROOT . "../public/Assets/Uploaded-Images/Success-Story/" . $story->story_image; ?>" alt="Story Image">
                         </div>
                     </div>
                     <div class="story-card-right">
                         <div class="story-description">
-                            <h1><?php echo $story->story_title; ?></h1>
+                            <h1><?php echo $story->title; ?></h1>
                             <div class="fundraiser-donee-name">
                                 <?php if ($story->type == "individual"): ?>
                                     <i class="fa-solid fa-user fa-sm text-3"></i>
@@ -41,7 +41,8 @@
                                     <i class="fa-solid fa-building fa-sm text-3"></i>
                                 <?php endif; ?>
                                 <p class="text-4">
-                                    <?php echo ($story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+                                <?php echo (isset($_SESSION['userName']) && $story->username == $_SESSION['userName']) ? 'Mine' : $story->username; ?>
+
                                 </p>
                             </div>
                             <p><?php echo $story->story; ?></p>

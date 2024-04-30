@@ -20,32 +20,35 @@
     <?php require APPROOT . '/views/includes/side-bar.php' ?>
     <main>
         <div class="form-container">
-            <form action="<?php echo URLROOT; ?>/Success_Story/Add" method="post" enctype="multipart/form-data">
+            <form action="<?php echo URLROOT; ?>/Success_Story/add" method="post" enctype="multipart/form-data">
                 <h1 class="form-topic"> Add Success Story </h1>
 
                 <fieldset>
-                    <div class="form-input-title">Fundraiser</div>
-                    <select name="fundraiser_id" id="fundraiser_id" class="input">
-                        <?php foreach ($data['fundraisers'] as $fundraiser) : ?>
-                            <option value="<?php echo $fundraiser->fundraiser_id; ?>"><?php echo $fundraiser->title; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <span class="form-invalid"><?php if (!empty($data['fundraiser_id_err'])) echo $data['fundraiser_id_err']; ?></span>
+                    <div class="form-input-title">STORY TITLE<span class="required">*</span></div>
+                    <input type="text" name="story_title" id="story_title" class="input"
+                        placeholder="Title to be displayed">
+                    <span
+                        class="form-invalid"><?php if (!empty($data['story_title_err']))
+                            echo $data['story_title_err']; ?></span>
 
                     <div class="form-input-title">Success Story<span class="required">*</span></div>
-                    <textarea name="story" id="story" class="story_description" rows="5" maxlength="500" placeholder="Write your success story here"></textarea>
-                    <span class="form-invalid"><?php if (!empty($data['story_err'])) echo $data['story_err']; ?></span>
+                    <textarea name="story" id="story" class="story_description" rows="5" maxlength="500"
+                        placeholder="Write your success story here"></textarea>
+                    <span class="form-invalid"><?php if (!empty($data['story_err']))
+                        echo $data['story_err']; ?></span>
 
                     <div class="form-input-title">Image<span class="required">*</span></div>
                     <input type="file" accept="image/png, image/jpeg" name="story_image" id="story_image">
-                    <span class="form-invalid"><?php if (!empty($data['story_image_err'])) echo $data['story_image_err']; ?></span>
+                    <span
+                        class="form-invalid"><?php if (!empty($data['story_image_err']))
+                            echo $data['story_image_err']; ?></span>
 
                     <br><br>
                     <div class="submit-button-div">
                         <button class="button-submit" type="submit">Add Success Story</button>
                     </div>
-
                 </fieldset>
+
             </form>
         </div>
     </main>
