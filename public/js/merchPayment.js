@@ -55,14 +55,14 @@ function merchPaymentGateway() {
             var payment = {
                 "sandbox": true,
                 "merchant_id": "1226076",    // Replace your Merchant ID
-                "return_url": "http://localhost/give4good/Donate/paydone",     // Important
-                "cancel_url": "http://localhost/give4good/Donate/paydone",     // Important
-                "notify_url": "http://localhost/give4good/Donate/paydone",
+                "return_url": "http://localhost/give4good/Merchandise/paydone",     // Important
+                "cancel_url": "http://localhost/give4good/Merchandise/paydone",     // Important
+                "notify_url": "http://localhost/give4good/Merchandise/paydone",
                 "order_id": obj["order_id"],
                 "items": "Door bell wxireles",
                 "amount": obj["amount"],
                 "currency": obj["currency"],
-                "fundraiser_id": obj["fundraiser_id"],
+                "merch_id": obj["merch_id"],
                 "hash": obj["hash"], // *Replace with generated hash retrieved from backend
                 "first_name": "Saman",
                 "last_name": "Perera",
@@ -76,14 +76,14 @@ function merchPaymentGateway() {
                 "delivery_country": "Sri Lanka",
                 "custom_1": "",
                 "custom_2": "",
-                "donateAmount": obj["donateAmount"],
-                "contributeAmount": obj["contributeAmount"],
+                "price": obj["price"],
+                "quantity": obj["quantity"],
 
             };
             payhere.startPayment(payment);
         }
     }
-    xhttp.open("POST", "http://localhost/give4good/Merch/payment", true);
+    xhttp.open("POST", "http://localhost/give4good/Merchandise/payment", true);
     xhttp.send(formData);
 }
 // // Call the paymentGateway function with the stored values
@@ -101,35 +101,42 @@ function showLoading() {
     document.body.appendChild(loadingOverlay);
 }
 
-function successOrder(payment_id, fundraiser_id, donated_amount, contribution_amount) {
-
+function successMerchOrder(payment_id, merch_id, total, quantity) {
+    console.log("function")
     var successData = new FormData();
 
 
     successData.append('payment_id', payment_id);
-    successData.append('fundraiser_id', fundraiser_id);
-    successData.append('donated_amount', donated_amount);
-    successData.append('contribution_amount', contribution_amount);
+    successData.append('merch_id', merch_id);
+    successData.append('total', total);
+    successData.append('quantity', quantity);
 
     var successXhttp = new XMLHttpRequest();
     // var successParams = `total_price=${totalPrice}&order_id=${orderId}`;
-
+    console.log("1")
+    // debugger;
     successXhttp.onreadystatechange = function () {
         if (successXhttp.readyState == 4 && successXhttp.status == 200) {
-            var payConfirmURL = '../../Donate/payConfirm' +
+            console.log("function")
+            console.log(payment_id)
+            console.log(merch_id)
+            console.log(total)
+            console.log(quantity)
+            var payConfirmURL = '../../Merchandise/payConfirm/' +
                 '?payment_id=' + encodeURIComponent(payment_id) +
-                '&fundraiser_id=' + encodeURIComponent(fundraiser_id) +
-                '&donated_amount=' + encodeURIComponent(donated_amount) +
-                '&contribution_amount=' + encodeURIComponent(contribution_amount);
+                '&merch_id=' + encodeURIComponent(merch_id) +
+                '&total=' + encodeURIComponent(total) +
+                '&quantity=' + encodeURIComponent(quantity);
 
-            // Redirect to the payConfirm page with parameters
+            // Redirect to the payConfirm page with parameter
+            console.log(payConfirmURL)
             window.location.href = payConfirmURL
-            // window.location = '../../Donate/payConfirm'
+
 
         }
     };
     // AJAX request to handle successful order
-    successXhttp.open("POST", "http://localhost/give4good/Donate/paydone", true);
+    successXhttp.open("POST", "http://localhost/give4good/Merchandise/paydone", true);
     // successXhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     successXhttp.send(successData);
 }

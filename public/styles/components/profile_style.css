@@ -27,7 +27,6 @@
 .main--content { 
   background: #f0f2f4;
   padding: 1rem;
-  border: 1px solid black;
 }
 
 .container {
@@ -110,7 +109,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding-bottom: 290px;
+  padding-bottom: 50px;
+  min-height: 370px;
   justify-content: space-between;
   
 }
@@ -444,8 +444,8 @@ margin-top: 70px;
   }
 
   .table-wrapper table td {
-    padding: 10px;
-    min-width: 100px;
+    padding: 2px;
+    min-width: 50px;
   }
   
  .button-set{

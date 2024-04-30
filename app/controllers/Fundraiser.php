@@ -1,5 +1,5 @@
 <?php
-
+require APPROOT . '/lib/validation.php';
 class Fundraiser extends controller
 {
     private $fundraiserModel;
@@ -58,11 +58,67 @@ class Fundraiser extends controller
         }
     }
 
-    public function complaints()
+    public function complaints($id)
     {
+      var_dump($id);
 
-        $this->view('Fundraisers/V_complaint');
+    $this->checkUserLogin();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      var_dump($id);
+      
+    //   $this->process_complaint($id);
+    } else {
+      $data = [];
+      $data=$this->fundraiserModel->getAFundraiser($id);
+        $this->view('Fundraisers/V_complaint', $data);
     }
+       
+        // var_dump($data);
+    }
+
+
+   private function process_complaint($id)
+  {
+    $obj = new Validation($_POST);
+    $obj->data['user_id'] = $_SESSION['userId'];
+    $obj->data['fundraiser_id'] = $id;
+    $obj->validate('reason', ['EMPTY']);
+     if ($obj->data['contact'] == 'option1') {
+      $obj->data['phone']=$_SESSION['userContact'];
+      $obj->data['email']=$_SESSION['userEmail'];
+    }
+
+
+    $obj->imageUpload('Complaints', $_FILES['complaint_image'], '', 'complaint_image');
+    
+
+    if ($obj->flag == 1) {
+        $this->view('Fundraisers/V_complaint', $obj->data);
+       
+    } else {
+        print_r($obj->data);
+      if ($this->fundraiserModel->complaints($obj->data)) {
+            redirect(URLROOT . '/Index');
+          } else {
+            die("Something went wrong");
+          }
+      
+        }
+
+
+    }
+private function checkUserLogin()
+    {
+      if (!isloggedIn()){
+        redirect(URLROOT . '/Users');
+      }
+  else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 'admin')) {
+        logOut();
+        redirect(URLROOT . '/Users');
+
+      }
+
+  }
 
 
     private function fundraiserPriority()

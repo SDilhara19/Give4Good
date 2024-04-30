@@ -81,6 +81,20 @@ function validateEndDate(input, error) {
   // Set hours, minutes, seconds, and milliseconds to 0 to compare dates without time
   today.setHours(0, 0, 0, 0)
 
+  if (inputDate < today) {
+    error.textContent = 'Enter valid date';
+  } else {
+    error.textContent = '';
+  }
+}
+
+function validateRegDate(input, error) {
+  var inputDate = new Date(input);
+
+  var today = new Date();
+  // Set hours, minutes, seconds, and milliseconds to 0 to compare dates without time
+  today.setHours(0, 0, 0, 0)
+
   if (inputDate > today) {
     error.textContent = 'Enter valid date';
   } else {
@@ -173,5 +187,20 @@ function validateBranchcode(input, error) {
     error.textContent = 'Enter valid branch code';
   } else {
     error.textContent = '';
+  }
+}
+
+function validatePrice(price, error) {
+  const priceRegExp = /^\d+(\.\d{1,2})?$/;
+
+  if (!priceRegExp.test(price)) {
+    error.textContent = 'Invalid price format';
+  } else {
+    const numericPrice = parseFloat(price);
+    if (numericPrice < 0 || numericPrice > 5000000) {
+      error.textContent = 'Price must be between 0 and 50 lakhs';
+    } else {
+      error.textContent = '';
+    }
   }
 }

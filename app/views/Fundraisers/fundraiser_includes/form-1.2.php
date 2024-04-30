@@ -44,7 +44,7 @@
           <div class="flx-1">
             <div class="form-input-title2">Educational Institute/Workplace
             </div>
-            <input type="text" name="dependent_edu_ins/work" id="dependent_edu_ins/work" class="input" placeholder="">
+            <input type="text" name="dependent_edu_ins/work" id="dependent_edu_ins_work" class="input" placeholder="">
             <span class="form-invalid">
               <?php  if (!empty($data['dependent_edu_ins/work_err']))
               echo $data['dependent_edu_ins/work_err'];                        ?>

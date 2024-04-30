@@ -42,7 +42,7 @@
 .admin-category .category-container{
     border: 1px solid var(--border-grey);
     border-radius: 20px;
-    padding: 1rem;
+    padding: 2.5rem;
     margin: 1rem;
     height: auto;
     width: auto;
@@ -54,12 +54,14 @@
     flex:1;
     display: flex;
     flex-direction: column;
+    
     /* justify-content: center; */
     /* height: 50%; */
     /* align-items:center; */
 
 
 }
+
 
 .category-row-1
 {
@@ -91,7 +93,8 @@
 .admin-category .category-row{
     display: grid;
     grid-template-columns: repeat(3, 1fr) auto;
-    gap: 2rem;   
+    gap: 2rem;  
+    height: 200px 
 }
 .category {
     height: 12vw;
