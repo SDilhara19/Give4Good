@@ -1,0 +1,403 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+* {
+  /* colours */
+  --primary-color: #36CF97;
+  /* --primary-color: #4EB790; */
+  --secondary-color: #CFF5E7;
+  --tertiary-color: #daf2e9;
+  --dark-green: #0E6F4B;
+  --black-sub: #2E353E;
+  --white-color: #FFFFFF;
+  --red-color: #FC0606;
+  --border-grey: #e1e4e8;
+  --grey-color: #b0b1b2;
+  --yellow-color: #D09705;
+  --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+  --new-blue: #0C3461;
+  /* text colors */
+  --text-color: #2E353E;
+}
+/* .fundraiser-form-bg{
+  background-color: var(--tertiary-color);
+} */
+
+.fundraiser-form-container {
+  margin: auto;
+  width: 80%;
+  /* border: 1px solid black; */
+}
+
+.fundraiser-form-progress-bar {
+  width: 100%;
+  height: 100px;
+  /* border: 1px solid magenta; */
+}
+
+.form-progress-bar-container-hori{
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid black; */
+  margin: auto;
+  position: relative;
+}
+
+.form-inactive-progress-bar-container-hori{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0;
+}
+
+.form-inactive-progress-bar-hori{
+  height: 10px;
+  width: 100%;
+  background-color: var(--border-grey);
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+}
+
+.inactive-progress-mark-hori{
+  background-color: var(--new-blue);
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  left: -25px;
+}
+
+.form-progress-bar-hori{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.progress-step-hori{
+  flex: 1;
+  height: 100%;
+  position: relative; 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* padding-l: 1rem; */
+  color: var(--new-blue);
+}
+
+.progress-step-hori.active{
+  color: var(--new-blue);
+}
+
+.progress-hori{
+  display: none;
+  width: 100%;
+  background-color: var(--new-blue);
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+}
+
+.progress-step-hori.active .progress{
+  display: block;
+  animation: slideFromLeft .5s ease-in-out;
+}
+
+.progress-mark-hori{
+  background-color: var(--border-grey);
+  height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  right: -25px;
+}
+.progress-step-hori.active .progress-mark{
+  background-color: var(--new-blue);
+}
+
+.progress-text-hori{
+  /* display: none; */
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+}
+
+.progress-step-hori.active .progress-text-hori{
+  display: block;
+}
+.fundraiser-form-title {
+  width: 100%;
+  height: 10vh;
+  /* border: 1px solid cadetblue; */
+  position: relative;
+  border-bottom: 2px solid var(--primary-color);
+
+}
+
+.fundraiser-form-title p {
+  position: absolute;
+  bottom: 4px;
+  font-size: 1.5rem;
+}
+
+
+
+.fundraiser-form {
+  width: 100%;
+  /* height: calc(100% - 10rem); */
+  min-height: 80vh;
+  padding: 1.3rem;
+  /* border: 1px solid saddlebrown; */
+}
+
+.form-input-title2 {
+  margin: 0.5rem 0  0;
+  font-size: 0.75rem;
+  color: var(--black-sub);
+}
+
+.fund-images-box,  .merch-images-box{
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #f7feff;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  min-height: 130px;
+
+}
+
+.fund-images-con{
+  width: 180px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  position:relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+}
+
+.fund-images-con img {
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+}
+
+.fund-images-con span, .dynamic-form-tag span{
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  cursor: pointer;
+  color: var(--red-color);
+
+}
+
+.form-row{
+  margin: 1rem 0 1rem 0;
+}
+
+.start-fundraiser-fieldset{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+
+
+.form-set{
+  border: 1px solid var(--new-blue);
+  border-radius: 20px;
+  margin: 3rem 0 3rem 0;
+  padding: 1rem;
+  position: relative;
+  min-height: 200px;
+  max-width: 940px;
+  width: 90%;
+  
+
+}
+
+.form-set p{
+  position: absolute;
+  top: -1.5rem;
+  color: var(--new-blue);
+}
+
+.img-label{ 
+  align-items: center;
+  justify-content: space-between;
+}
+.custom-file-input2{
+  position: relative;
+  cursor: pointer;
+  padding: 0.1rem 0;
+  width: 7rem;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  /* border: 1px solid var(--primary-color); */
+  color: var(--black-sub);
+  margin: 0.5rem 0 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  
+  
+}
+
+.custom-file-input2 span {
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.custom-file-input2 input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-file-input3{
+  position: relative;
+  cursor: pointer;
+  padding: 0.1rem 0;
+  width: 7rem;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  /* border: 1px solid var(--primary-color); */
+  color: var(--black-sub);
+  margin: 0.5rem 0 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  border: none;
+  
+}
+
+
+.document-image-container{
+  /* border: 1px solid var(--border-grey); */
+  position: relative;
+  height: 140px;
+  width: 100%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  overflow: hidden;
+  display: flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid #ececec;
+  margin-top: 1rem;
+
+}
+
+.document-image-container img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* .child-form{
+  display: none;
+} */
+
+
+
+/* material form css */
+
+.material-form, .merchandise-form, .variations-form .location-form{
+  width: 100%;
+}
+.dynamic-form{
+  padding: 1rem;
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  margin: 1rem;
+
+}
+
+.dynamic-form #add-button, .dynamic-form .add-location-button{
+  cursor: pointer;
+}
+
+.dynamic-form #add-button:hover, .dynamic-form .add-location-button:hover{
+  opacity: 0.9;
+}
+.dynamic-form-tag-con{
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  min-height: 1rem;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(6, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 8px;
+  background-color: var(--new-blue);
+  width: 100%; 
+  margin-bottom: 1.5rem;
+}
+
+.dynamic-form-tag{
+  width: 120px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.dynamic-form-tag div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+.add-merchandise-btn, .add-material-btn, .add-button, .add-location-btn{
+cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .fund-images-con{
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+
+
+@media (max-width: 576px) {
+  .fund-images-con{
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+}

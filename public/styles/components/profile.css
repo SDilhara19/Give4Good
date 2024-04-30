@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+* {
+  /* colours */
+  --primary-color: ;
+  --secondary-color: #CFF5E7;
+  --dark-green: #0E6F4B;
+  --black-sub: #2E353E;
+  --white-color: #FFFFFF;
+  --red-color: #FC0606;
+  --grey-color: #6E7175;
+  --yellow-color: #D09705;
+  --border-grey: #e1e4e8;
+  --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+  --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+
+  /* text colors */
+  --text-color: #2E353E;
+}
+
+.profile-side-bar {
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  height: calc(100vh - 70px);
+  width: 200px;
+  background-color: var(--white-color);
+  border: 2px solid var(--border-grey);
+  /* padding: 0.4rem 0.8rem; */
+}
+
+
+
+.profile-list-items{
+  padding: 1rem;
+  color: var(--grey-color);
+}
+
+.profile-list-items:hover {
+  color: var(--primary-color);
+  background: var(--border-grey);
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(255 255 255 0.4);
+}
+.profile-list-items i{
+  display: inline-block;
+}
+
+.profile-list-items p{
+  display: inline-block;
+}
+.profile-list-items.active{
+  color: var(--primary-color);
+}
+
+
+
+
+
+
+.profile-main{
+  margin-left: 250px;
+}
+.profile-section {
+  border: 2px solid var(--border-grey);
+  margin: 2rem;
+  display: none;
+  position: relative;
+    animation: slideFromRight 0.5s ease-in-out;
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+

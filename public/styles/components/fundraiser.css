@@ -1,0 +1,660 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+* {
+    /* colours */
+    --primary-color: #4EB790;
+    --secondary-color: #CFF5E7;
+    --dark-green: #0E6F4B;
+    --black-sub: #2E353E;
+    --white-color: #FFFFFF;
+    --red-color: #FC0606;
+    --grey-color: #6E7175;
+    --yellow-color: #D09705;
+    --light-gradient: linear-gradient(180deg, #4EB790 0%, #20EBA0 100%);
+    --dark-gradient: linear-gradient(180deg, #52BE96 0%, #31946F 53.12%, #0E6F4B 100%);
+    --border-grey: #e1e4e8;
+    /* text colors */
+    --text-color: #2E353E;
+  }
+
+.bg-img{
+  opacity: 0.15;
+    z-index: -200; 
+    position: absolute;
+    width: 80%;
+    right: 0;
+    top: 70px;
+}
+  .fundraiser-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 5rem 0;
+    align-items: start;
+    gap: 3rem;
+
+  }
+
+  .fundraiser-left{
+    flex: 2;
+    padding: 0.5rem;
+  }
+
+ 
+
+  .fundraiser-image-container{
+    width: 100%;
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  
+  .fundraiser-image{
+    height: 100%;
+    width: 80%;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+  }
+
+  .fundraiser-image img{
+    max-width: 100%; 
+  max-height: 100%;
+  object-fit: contain;  
+    border-radius: 0.5rem;
+  }
+
+  .left-arrow, .right-arrow{
+    display: flex;
+    align-items:center;
+  }
+
+  .fundraiser-image-container .left-arrow{
+    justify-content: flex-start;
+  }
+
+  .fundraiser-image-container .right-arrow{
+    justify-content: flex-end;
+  }
+
+  .fundraiser-image-container .right-arrow:hover, .left-arrow:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+
+
+  .fundraiser-count-row{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fundraiser-donee{
+    padding: 5px;
+    border-left: none;
+  border-top: 1px solid var(--grey-color);
+  border-right: none;
+  border-bottom: 1px solid var(--grey-color);
+  margin-bottom: 2rem;
+}
+   
+  .fundraiser-donee-name{
+    display: flex;
+    justify-content:left;
+    align-items:baseline;
+    gap: 0.5rem;
+  }
+
+  .fundraiser-description p::first-letter {
+    font-size: 150%; /* Set the desired larger font size for the first letter */
+    font-weight: bold; 
+}
+
+  .fundriaser-description p{
+    text-align: justify;
+  }
+  
+  .fundraiser-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
+  }
+
+  .fundraiser-amount{
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+
+  .fundraiser-amount .text-2{
+    margin-right: 0.6rem;
+    font-size: 1.5rem;
+  }
+
+  .fundraiser-progress-bar-container{
+    margin: 1rem;
+    height: 30px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+  }
+
+.fundraiser-progress-bar{
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  background-color: var(--border-grey);
+  border-radius: 5px;
+}
+
+.fundraiser-progress{
+  width: 50%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+
+}
+  .fundraiser-button-list{
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items:center;
+    width: 100%;
+    min-height: 300px;
+  }
+
+
+
+  .info-box{
+    margin-bottom: 1rem;
+  }
+  .info-box li{
+    text-align: justify;
+  }
+
+  /* Merch css begin */
+
+  .fundraiser-merch-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    height: 20rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .fundraiser-merch-left{
+    flex: 4;
+    height: 100%;
+  }
+
+  .merch-img-container{
+    
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid var(--grey-color);
+    
+
+  }
+
+  .merch-img-container img{
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain;  
+      border-radius: 0.5rem;
+  }
+
+  .fundraiser-merch-right{
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .merch-right-top{
+    height: 7rem;
+    overflow: hidden;
+  }
+
+  .merch-right-bottom{
+    height: 13rem;
+    overflow: hidden;
+    justify-content: space-between;
+  }
+
+  .merch-sizes, .merch-colors{
+    display: flex;
+    margin-bottom: 1rem;
+
+  }
+
+  .merch-sizes, .merch-colors p{
+    flex-wrap: nowrap;
+    flex: 10%;
+  }
+
+  .merch-sizes-right, .merch-colors-right{
+    flex:50%;
+    display: grid;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .merch-price{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 3rem;
+  }
+
+  .merch-price h1{
+    margin-bottom: -0.5rem;
+  }
+
+.merch-buy-button {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.merch-buy-button button {
+  width: 200px;
+  margin-bottom: 0;
+}
+
+.merch-description{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.merch-full-description{
+  width: 100%;
+  height: 100%;
+}
+
+
+/* material css begin */
+  .material-card-container {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.material-card {
+    padding: 0.5rem;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+
+.material-img-container {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid var(--grey-color);
+    overflow: hidden;
+    padding: 0.5rem;
+
+
+}
+
+.material-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+
+.material-card-below {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.material-card-below button:hover {
+  transform: scale(1.02);
+}
+
+.close-material-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.material-popup{
+  margin: auto;
+  width: 60vw;
+  height: 60vh;
+  padding-bottom: 6rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+}
+.material-popup-container{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap:1rem;
+}
+
+.material-popup-left{
+  flex: 40%;
+  height: 100%;
+}
+.material-popup-img-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid var(--grey-color);
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.material-popup-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.material-popup-right{
+  flex: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.material-popup-right .text-2{
+  margin: 5px 0 5px 0;
+}
+
+.material-popup-right table{
+  width: 100%;
+}
+.material-popup-right td{
+  text-align: right;
+}
+
+.material-popup::backdrop{
+  background: rgb(0 0 0 / 0.4);
+}
+
+/* send d0nation css */
+
+.send-donation-card-container {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.send-donation-card {
+  padding: 0.5rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+
+.map{
+  width: 100%;
+  height: 500px;
+  border: 1px solid var(--border-grey);
+}
+
+
+
+.send-donation-text {
+  padding-left: 0.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.send-donation-img-container:hover {
+  cursor: pointer;
+
+
+}
+
+.send-donation-details{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.payment-container{
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--secondary-color);
+  width: 476px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:  0 2rem 2rem 2rem;
+  align-items: center;
+  
+}
+
+.payment-container-top{
+width: 100%;
+}
+
+.payment-heading{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.payment-heading .text-7{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-heading h2{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-heading .text-4{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-form-container{
+  max-height: 150px;
+}
+.payment-container-bottom{
+width: 100%;
+}
+
+.child-note{
+  border: 2px solid var(--primary-color);
+  min-height: 80px;
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-align: justify;
+}
+
+
+
+  @media (max-width: 992px){
+    .fundraiser-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* margin: 0rem 3rem 0rem 3rem; */
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .fundraiser-left, .fundraiser-right, .fundraiser-merch-left, .fundraiser-merch-right{
+      width: 100%;
+    }
+
+    .fundraiser-merch-right{
+    margin-top: 3rem;
+    }
+
+    .fundraiser-merch-container{
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+    }
+
+    .fundraiser-button-list{
+      display: flex;
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items:center;
+      width: 60%;
+    }
+
+
+    .material-card-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 2rem;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .send-donation-card-container {
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  }
+  
+
+  @media (max-width: 576px){
+    .fundraiser-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* margin: 0rem 3rem 0rem 3rem; */
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .fundraiser-left, .fundraiser-right, .fundraiser-merch-left, .fundraiser-merch-right{
+      width: 100%;
+    }
+
+    .fundraiser-merch-right{
+    margin-top: 3rem;
+    }
+
+    .fundraiser-merch-container{
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+    }
+
+    .material-card-container {
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-bottom: 3rem;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .send-donation-card-container {
+  margin-top: 2rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-bottom: 0rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.payment-container{
+  margin: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  
+}
+  }
+  
