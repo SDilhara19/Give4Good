@@ -114,7 +114,7 @@ function successMerchOrder(payment_id, merch_id, total, quantity) {
     var successXhttp = new XMLHttpRequest();
     // var successParams = `total_price=${totalPrice}&order_id=${orderId}`;
     console.log("1")
-
+    // debugger;
     successXhttp.onreadystatechange = function () {
         if (successXhttp.readyState == 4 && successXhttp.status == 200) {
             console.log("function")
@@ -122,7 +122,7 @@ function successMerchOrder(payment_id, merch_id, total, quantity) {
             console.log(merch_id)
             console.log(total)
             console.log(quantity)
-            var payConfirmURL = '../../../Merchandise/payConfirm/' +
+            var payConfirmURL = '../../Merchandise/payConfirm/' +
                 '?payment_id=' + encodeURIComponent(payment_id) +
                 '&merch_id=' + encodeURIComponent(merch_id) +
                 '&total=' + encodeURIComponent(total) +
