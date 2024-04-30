@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -20,13 +22,13 @@
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
   <main>
     <h1>Buy products to help fundraise..</h1>
-    <div class="home-fundraisers">
+    <div class="home-fundraisers merch">
       <?php
       foreach ($data as $merch) {
         ?>
 
         <article class="home-fundraiser-card"
-          onclick="window.location.href = href='<?php echo URLROOT ?>/Fundraiser/fundraiser/<?php echo $merch->id; ?>'">
+          onclick="window.location.href = href='<?php echo URLROOT ?>/Merchandise/one/<?php echo $merch->id; ?>'">
           <div class="home-fundraiser-img">
             <img src="<?php echo URLROOT . $merch->merch_image ?>" alt="image">
           </div>
@@ -44,14 +46,9 @@
                 <p class="text-1">
                   <?php echo $merch->product_name; ?>
                 </p>
-                <div class="fundraiser-small-progress-bar-container">
-                  <div class="fundraiser-small-progress-bar">
-                    <div class="fundraiser-small-progress" style="width: <?php echo $merch->progress . '%' ?> ">
-                    </div>
-                  </div>
-                </div>
-                <p class="text-1">Rs.
-                  <?php echo $merch->price; ?> raised
+        
+                <p class="text-1" style="color: #4EB790" >Rs.
+                  <?php echo $merch->price; ?> 
                 </p>
               </div>
             </div>

@@ -428,7 +428,7 @@
 
 
         <?php
-        if (!empty($data['materials'])) {
+        if (!empty($data['materials']) || !empty($data['locations']) || !empty($data['map_locations'])) {
             require_once APPROOT . '/views/fundraisers/material.php';
         }
         ?>

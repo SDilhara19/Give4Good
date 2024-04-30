@@ -40,7 +40,7 @@
                         </div>
                         <div class="donee-name text-8">
                             <i class='bx bxs-info-circle'></i>
-                            <span style="font-size: 0.65rem;">Required amount can vary. Its best to contact for updated
+                            <span style="font-size: 0.65rem;">Required<?php echo URLROOT . $material->image; ?> amount can vary. Its best to contact for updated
                                 details</span>
                         </div>
                         <div>
@@ -75,14 +75,22 @@
         } ?>
     </div>
 </div>
-
+<?php
+        if (!empty($data['map_locations']) || !empty($data['locations'])) { ?>
+   
 <div class="send-donations">
 
     <h1>Send Donations</h1>
+    <?php
+        if (!empty($data['map_locations'])) { ?>
     <div class="map" id="map">
 
     </div>
 
+        <?php } ?>
+    <?php
+        if (!empty($data['locations'])) { ?>
+         
     <div class="send-donation-card-container">
         <?php foreach ($data['locations'] as $location) { ?>
             <div class="send-donation-card">
@@ -102,8 +110,8 @@
 
         <?php } ?>
     </div>
-
-
+ 
+      <?php  }?>
     <script>
         // Initialize and add the map
         let map;
@@ -138,7 +146,10 @@
         // Initialize the map when the page loads
         initMap();
     </script>
+
     <!-- Include the Google Maps JavaScript API with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAP ?>&callback=initMap" async
         defer></script>
 </div>
+
+   <?php }?>

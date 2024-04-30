@@ -94,10 +94,13 @@
                   <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> ">
                   </div>
                 </div>
+
+                <p class="smallfont" >Rs.
+                  <?php echo $fundraiser->amount_collected; ?> of Rs. <?php echo $fundraiser->amount; ?> raised
+                </p>
+
               </div>
-              <p class="text-1">Rs.
-                <?php echo $fundraiser->amount; ?> raised
-              </p>
+             
             </div>
           </div>
 

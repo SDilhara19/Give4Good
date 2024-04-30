@@ -14,7 +14,7 @@ emailInput.addEventListener('input', function () {
 });
 
 usernameInput.addEventListener('input', function () {
-    validateUsername(this.value, usernameError);
+    validateName(this.value, usernameError);
 });
 
 passwordInput.addEventListener('input', function () {

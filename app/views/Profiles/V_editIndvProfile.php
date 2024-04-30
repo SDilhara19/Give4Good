@@ -142,6 +142,7 @@
       <input type="submit" value="Cancel">
     </div>
   </div>
+
 </form>
 
     </div>
@@ -153,6 +154,10 @@
         setupImagePreview("#profile_image", "#profile_image_preview");
 
     </script>
+
+    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
+  <?php require APPROOT . '/views/includes/footer.php' ?>
+
 </body>
 
 </html>
