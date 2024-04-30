@@ -209,13 +209,13 @@ class Fundraisersuper extends controller
                     $this->view('test', $obj->data);
 
                     // $obj->data['documents'] = $this->superFundraiserModel->iFindDocuments($category);
-                    // $this->view('Fundraisers/V_Start_Individual', $obj->data);
+                    $this->view('Fundraisers/V_Start_Individual', $obj->data);
                 } else if
                 ($_SESSION['userType'] == 'organisation') {
                     $this->view('test', $obj);
 
                     // $obj->data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
-                    // $this->view('Fundraisers/V_Start_Organisation', $obj->data);
+                    $this->view('Fundraisers/V_Start_Organisation', $obj->data);
                 }
 
             } else {
