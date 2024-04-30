@@ -162,17 +162,17 @@ class Fundraisersuper extends controller
                 $materialCount = $obj->countKeys('material/item_name_', $_POST);
                 $obj->data['materialCount'] = $materialCount;
                 for ($i = 1; $i <= $materialCount; $i++) {
-                    $obj->validate('material/item_name_' . $i, ['EMPTY']);
-                    $obj->validate('no_required_' . $i, ['EMPTY']);
-                    $obj->validate('material_description_' . $i, ['EMPTY']);
-                    $obj->imageUpload('Fundraisers/Materials', $_FILES['material_image_' . $i], $obj->data['title'] . '_' . $i, 'material_image_' . $i);
+                    // $obj->validate('material/item_name_' . $i, ['EMPTY']);
+                    // $obj->validate('no_required_' . $i, ['EMPTY']);
+                    // $obj->validate('material_description_' . $i, ['EMPTY']);
+                    // $obj->imageUpload('Fundraisers/Materials', $_FILES['material_image_' . $i], $obj->data['title'] . '_' . $i, 'material_image_' . $i);
                 }
                 $locationCount = $obj->countKeys('town/city_', $_POST);
                 $obj->data['locationCount'] = $locationCount;
                 for ($i = 1; $i <= $locationCount; $i++) {
-                    $obj->validate('town/city_' . $i, ['EMPTY']);
-                    $obj->validate('contact_' . $i, ['EMPTY']);
-                    $obj->validate('address_' . $i, ['EMPTY']);
+                    // $obj->validate('town/city_' . $i, ['EMPTY']);
+                    // $obj->validate('contact_' . $i, ['EMPTY']);
+                    // $obj->validate('address_' . $i, ['EMPTY']);
                 }
 
                 $obj->validate('latitude', ['EMPTY']);
@@ -189,12 +189,12 @@ class Fundraisersuper extends controller
                     $merchandiseCount = $obj->countKeys('merch_name_', $_POST);
                     $obj->data['merchandiseCount'] = $merchandiseCount;
                     for ($i = 1; $i <= $merchandiseCount; $i++) {
-                        $obj->validate('merch_name_' . $i, ['EMPTY']);
-                        $obj->validate('merch_price_' . $i, ['EMPTY']);
-                        $obj->validate('amount_to_fund_' . $i, ['EMPTY']);
-                        $obj->validate('stock_' . $i, ['EMPTY']);
-                        $obj->validate('merch_description_' . $i, ['EMPTY']);
-                        $obj->imageUpload('Fundraisers/Merchandise', $_FILES['merch_image_' . $i], $obj->data['title'] . '_' . $i, 'merch_image_' . $i);
+                        // $obj->validate('merch_name_' . $i, ['EMPTY']);
+                        // $obj->validate('merch_price_' . $i, ['EMPTY']);
+                        // $obj->validate('amount_to_fund_' . $i, ['EMPTY']);
+                        // $obj->validate('stock_' . $i, ['EMPTY']);
+                        // $obj->validate('merch_description_' . $i, ['EMPTY']);
+                        // $obj->imageUpload('Fundraisers/Merchandise', $_FILES['merch_image_' . $i], $obj->data['title'] . '_' . $i, 'merch_image_' . $i);
                     }
                 }
             }
@@ -206,14 +206,14 @@ class Fundraisersuper extends controller
 
                 if ($_SESSION['userType'] == 'individual') {
                     ;
-                    $this->view('test', $obj->data);
+                    // $this->view('test', $obj->data);
 
                     // $obj->data['documents'] = $this->superFundraiserModel->iFindDocuments($category);
                     $this->view('Fundraisers/V_Start_Individual', $obj->data);
                 } else if
                 ($_SESSION['userType'] == 'organisation') {
-                    $this->view('test', $obj);
-
+                    // $this->view('test', $obj);
+// print_r("2");
                     // $obj->data['documents'] = $this->superFundraiserModel->oFindDocuments($category);
                     $this->view('Fundraisers/V_Start_Organisation', $obj->data);
                 }
