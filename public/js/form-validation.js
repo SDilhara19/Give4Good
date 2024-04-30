@@ -80,7 +80,22 @@ function validateEndDate(input, error) {
   var today = new Date();
   // Set hours, minutes, seconds, and milliseconds to 0 to compare dates without time
   today.setHours(0, 0, 0, 0)
+
   if (inputDate < today) {
+    error.textContent = 'Enter valid date';
+  } else {
+    error.textContent = '';
+  }
+}
+
+function validateRegDate(input, error) {
+  var inputDate = new Date(input);
+
+  var today = new Date();
+  // Set hours, minutes, seconds, and milliseconds to 0 to compare dates without time
+  today.setHours(0, 0, 0, 0)
+
+  if (inputDate > today) {
     error.textContent = 'Enter valid date';
   } else {
     error.textContent = '';
@@ -108,7 +123,7 @@ function validateChild(input, error) {
   var eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
 
-  if ( inputDate < eighteenYearsAgo || inputDate > today) {
+  if ( inputDate > eighteenYearsAgo) {
     error.textContent = 'Child must be below age 18';
   } else {
     error.textContent = '';
@@ -182,7 +197,7 @@ function validatePrice(price, error) {
     error.textContent = 'Invalid price format';
   } else {
     const numericPrice = parseFloat(price);
-    if (numericPrice <= 0 || numericPrice > 5000000) {
+    if (numericPrice < 0 || numericPrice > 5000000) {
       error.textContent = 'Price must be between 0 and 50 lakhs';
     } else {
       error.textContent = '';

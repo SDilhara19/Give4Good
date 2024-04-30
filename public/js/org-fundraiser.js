@@ -27,7 +27,7 @@ const end_dateError = end_dateInput.nextElementSibling;
 
 //title
 titleInput.addEventListener('input', function () {
-    validateName(this.value, titleError);
+    validateNotEmpty(this.value, titleError);
 });
 
 storyInput.addEventListener('input', function () {
@@ -58,7 +58,7 @@ var nextButton = document.getElementById('orgNext');
 nextButton.addEventListener('click', function (event) {
 
     validateNotEmpty(titleInput.value, titleError);
-    validateName(titleInput.value, titleError);
+    // validateName(titleInput.value, titleError);
     validateNotEmpty(storyInput.value, storyError);
     // validateNotEmpty(inputimageInput.value, inputimageError);
     validatePrice(amountInput.value, amountError);

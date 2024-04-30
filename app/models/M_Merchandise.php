@@ -63,13 +63,20 @@ WHERE merchandise.status = 'Active'");
         }
     }
 
-    public function merch_buy($data)
+    public function merch_buy()
     {
-        // $this->db->query('INSERT INTO merch_sales (payment_id, user_id, merch_id, quantity, total_amount) 
-        // VALUES (:payment_id, :user_id, :merch_id, :quantity, :total_amount)');
-         $this->db->query('INSERT INTO merch_sales (payment_id, user_id, merch_id, quantity, total_amount) 
-         VALUES ("ss", "60", "10", "1", "2200")');
-         // Bind values
+        $query = 'INSERT INTO merch_sales (payment_id, user_id, merch_id, quantity, total_amount) 
+        VALUES (:payment_id, :user_id, :merch_id, :quantity, :total_amount)';
+
+        // Bind values to the placeholders
+        $this->db->query($query);
+        $this->db->bind(':payment_id', '127mcks');
+        $this->db->bind(':user_id', 60);
+        $this->db->bind(':merch_id', 10);
+        $this->db->bind(':quantity', 1);
+        $this->db->bind(':total_amount', 2200);
+
+     
         // $this->db->bind(':payment_id', $data['payment_id']);
         // $this->db->bind(':user_id', $data['user_id']);
         // $this->db->bind(':merch_id', $data['merch_id']);

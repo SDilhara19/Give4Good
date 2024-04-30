@@ -114,20 +114,23 @@ class Merchandise extends controller
 
     public function paydone()
     {
-        // if ($_SERVER['REQUEST_METHOD'] === 'POST') { // $postData = file_get_contents("php://input");
-        //     $data = [];
-        //     $data['payment_id'] = $_POST['payment_id'];
-        //     $data['user_id'] = $_SESSION['userId'];
-        //     $data['merch_id'] = $_POST['merch_id'];
-        //     $data['quantity'] = $_POST['quantity'];
-        //     $data['total'] = $_POST['total'];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') { // $postData = file_get_contents("php://input");
+        $this->MerchandiseModel->merch_buy();
 
-        //     $this->MerchandiseModel->merch_buy($data);
+            $data = [];
+            $data['payment_id'] = $_POST['payment_id'];
+            $data['user_id'] = $_SESSION['userId'];
+            $data['merch_id'] = $_POST['merch_id'];
+            $data['quantity'] = $_POST['quantity'];
+            $data['total'] = $_POST['total'];
+
+           
 
 
 
 
-        // }
+        $this->MerchandiseModel->merch_buy();
+        }
 
 
     }
