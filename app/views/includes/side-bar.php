@@ -53,15 +53,11 @@
                 <span class="nav-item-side-bar">Super User</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-
-            
-     <li onclick="window.location.href = '<?php echo URLROOT?>/Profile/index/<?php echo $_SESSION['userId'] ?>'">
-            <i class='bx bxs-user bx-sm'></i>
+        <li onclick="window.location.href = '<?php echo URLROOT ?>/#">
+            <i class='icon-park-solid--folder-success'></i>
                 <span class="nav-item-side-bar">Profile</span>
             <!-- <span class="tooltip">Dashboard</span> -->
         </li>
-           
-
         
         <li onclick="window.location.href = '<?php echo URLROOT ?>/Success_Story'">
             <i class='bx bxs-book-heart bx-sm'></i>

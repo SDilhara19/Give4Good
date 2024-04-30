@@ -290,9 +290,7 @@
     align-items: center;
 
 }
-.home-story-below .smallfont{
-    font-size: 0.75rem;
-}
+
 
 @media (max-width: 992px) {
 
@@ -327,9 +325,6 @@
         grid-row: auto;
         height: auto;
         font-size: inherit;
-    }
-    .home-fundraiser-card:first-child .smallfont {
-        font-size: 1.2rem;
     }
 
     .home-fundraiser-below-container {

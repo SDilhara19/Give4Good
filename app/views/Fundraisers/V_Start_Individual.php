@@ -70,8 +70,6 @@
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
   <script src="<?php echo URLROOT ?>/public/js/multistep-form.js"></script>
-    <script src="<?php echo URLROOT ?>/public/js/indv-fundraiser.js"></script>
-    <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
   <script>setupImagePreview("#birth_certificate", "#birth_certificate_preview");</script>
 </body>
 

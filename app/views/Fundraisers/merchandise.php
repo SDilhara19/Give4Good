@@ -21,7 +21,7 @@
                             </p>
                         </div>
                         <div class="merch-buy-button">
-                            <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Merchandise/one/<?php echo $merch->id?>'">
+                            <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Merchandise/buy/<?php echo $merch->id?>/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'">
                                 Buy NOW!
                             </button>
                             <?php if ($merch->stock == 0) { ?>

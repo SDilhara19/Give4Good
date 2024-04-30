@@ -212,7 +212,7 @@ nextButton.addEventListener('click', function (event)  {
     
     const errorMessages = [nameError.textContent, accountNoError.textContent, bankcodeError.textContent, bankError.textContent, branchcodeError.textContent, branchError.textContent, passBookImageError.textContent]
     if (errorMessages.every(message => message === '')) {
-        // console.log("okv")
+        console.log("okv")
         form.submit();
     } else {
         console.log('Validation failed. Please check your inputs.');

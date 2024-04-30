@@ -40,7 +40,7 @@
             <div class="payment-container-bottom">
            
                
-                <div class="success-btn">Donation Successful!</div>
+                <button id ="donateBtn" class="main-color-button" type="button">Donation Successful!</button>
                 <div >
                     <div class="form-input-title2 text-2" style="text-align: center;">Thank you!</div>
                     <div class="form-input-title2 text-2" style="text-align: center;">We value your effort</div>

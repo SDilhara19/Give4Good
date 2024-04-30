@@ -838,9 +838,6 @@
 
     </script>
 
-<!-- <script src="<?php echo URLROOT ?>/public/js/header.js"></script> -->
-<script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
-<script src="<?php echo URLROOT ?>/public/js/so-signup-validation.js"></script>
 
 </body>
 

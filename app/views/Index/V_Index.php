@@ -17,7 +17,7 @@
 
 <body>
 
-  <?php require APPROOT . '/views/includes/header.php' ?>
+  <?php require APPROOT . '/views/includes/headerwithoutsearchbar.php' ?>
   <div class="under-header">
     <?php require APPROOT . '/views/includes/side-bar.php' ?>
 
@@ -70,8 +70,8 @@
                     </div>
                   </div>
                 </div>
-                <p class="smallfont" >Rs.
-                  <?php echo $fundraiser->amount_collected; ?> of Rs. <?php echo $fundraiser->amount; ?> raised
+                <p class="text-1">Rs.
+                  <?php echo $fundraiser->amount; ?> raised
                 </p>
               </div>
             </div>
@@ -80,9 +80,7 @@
 
           <?php
         }
-
         ?>
-        
       </div>
 
       <div class="more-button">

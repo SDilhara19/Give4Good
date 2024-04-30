@@ -21,18 +21,9 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-      <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-bars"></i>
         <span>Notifications</span>
       </div>
-      <div class="search-box">
-        <div class="search-bar">
-          <input type="text" name="search" placeholder="Search Give4Good">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          
-        </div>
-      </div>
-
-    </form>
       <!-- <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>

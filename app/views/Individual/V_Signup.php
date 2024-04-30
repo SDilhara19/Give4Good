@@ -88,7 +88,6 @@
 
 
     <script src="<?php echo URLROOT ?>/public/js/i-signup-validation.js"></script>
-    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
     <script src="<?php echo URLROOT ?>/public/js/form-validation.js"></script>
 </body>
 

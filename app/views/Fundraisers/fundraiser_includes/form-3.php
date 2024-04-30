@@ -459,7 +459,7 @@
         const lat = position.lat()
         const lng = position.lng()
         latCoor.push(lat);
-        lngCoor.push(lng);
+        lngCoor.push(lat);
         const latitudes = document.getElementById('latitude');
         const longitudes = document.getElementById('longitude');
 
@@ -478,7 +478,7 @@
           latitudes.value = JSON.stringify(latCoor);
           longitudes.value = JSON.stringify(lngCoor);
 
-          // console.log(latitudes.value)
+          console.log(latitudes.value)
         })
       }
 

@@ -62,7 +62,6 @@
 
 
     </main>
-    <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
 
 </body>
 

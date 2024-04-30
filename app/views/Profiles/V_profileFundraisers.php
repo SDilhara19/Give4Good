@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,18 +27,8 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-hands-holding"></i>
         <span>Your Fundraisers</span>
       </div>
-      <div class="search-box">
-        <div class="search-bar">
-          <input type="text" name="search" placeholder="Search Give4Good">
-          <i class="fa-solid fa-magnifying-glass"></i>
-
-        </div>
-      </div>
-
-      </form>
       <!-- <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -54,6 +43,7 @@
             <thead>
               <tr>
                 <th>Title</th>
+                <th>Story</th>
                 <th>Category</th>
                 <th>Amount</th>
                 <th>Amount Collected</th>
@@ -67,58 +57,23 @@
                 ?>
                 <tr>
                   <td><?php echo $profileFundraisers->title; ?></td>
+                  <td><?php echo $profileFundraisers->story; ?></td>
                   <td><?php echo $profileFundraisers->Category; ?></td>
                   <td><?php echo $profileFundraisers->amount; ?></td>
                   <td><?php echo $profileFundraisers->amount_collected; ?></td>
                   <td><?php echo $profileFundraisers->status; ?></td>
-                  <td>
-                    <?php if ($profileFundraisers->status == "Active"): ?>
-                      <div class="submit-button-div">
-                        <button class="button-1-green">
-                          <a
-                            href="http://localhost/give4good/Fundraiser/fundraiser/<?php echo $profileFundraisers->fundraiser_id; ?>">View</a>
-                        </button>
+                  <td><div class="submit-button-div">
+                        <!-- <button class="button-1-green" type="submit">View
                       
-                        <button class="button-3-red">
-                          <a
-                            href="<?php echo URLROOT ?>/Profile/setEndFundraiser/<?php echo $profileFundraisers->fundraiser_id ?>">End</a>
-                        </button>
-                      </div>
-                    <?php elseif ($profileFundraisers->status == "End"): ?>
-                      <div class="submit-button-div">
-                        <button class="button-1-green">
-                          <a
-                            href="http://localhost/give4good/Fundraiser/fundraiser/<?php echo $profileFundraisers->fundraiser_id; ?>">View</a>
-                        </button>
-                      
-                        <button class="button-2-yellow">
-                          <a
-                            href="<?php echo URLROOT ?>/Profile/addSuccessStory/<?php echo $profileFundraisers->fundraiser_id ?>">Add
-                            Success Story</a>
-                        </button>
-                      </div>
-                    <?php elseif ($profileFundraisers->status == "Pending"): ?>
-                      <div class="submit-button-div">
-                        <button class="button-1-green">
-                          <a
-                            href="http://localhost/give4good/Fundraiser/fundraiser/<?php echo $profileFundraisers->fundraiser_id; ?>">View</a>
-                        </button>
-                      
-                        <button class="button-3-red">
-                          <a
-                            href="<?php echo URLROOT ?>/Profile/setDeactiveFundraiser/<?php echo $profileFundraisers->fundraiser_id ?>">End</a>
-                        </button>
-                      </div>
-                    <?php else: ?>
-                      <div class="submit-button-div">
-                        <button class="button-1-green">
-                          <a
-                            href="http://localhost/give4good/Fundraiser/fundraiser/<?php echo $profileFundraisers->fundraiser_id; ?>">View</a>
-                        </button>
-                      </div>
-                    <?php endif; ?>
-
-                  </td>
+                        </button> -->
+                        <button class="button-1-green">View</button>
+                </div>
+                        </div>
+                        
+                        <div class="submit-button-div">
+                        <button class="button-3-red" type="submit">End</button>
+                    </div>
+                    </td>
                 </tr>
                 <?php
               }
@@ -131,4 +86,5 @@
     <?php require APPROOT . '/views/includes/footer.php' ?>
 
 </body>
+
 </html>

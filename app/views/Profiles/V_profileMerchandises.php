@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -22,18 +21,15 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-      <i class='bx bxs-t-shirt bx-sm'></i>
+        <i class="fa-solid fa-bars"></i>
         <span>Your Merchandises</span>
       </div>
-      <div class="search-box">
-        <div class="search-bar">
-          <input type="text" name="search" placeholder="Search Give4Good">
+      <div class="user--info">
+        <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          
+          <input type="text" placeholder="Search Name" />
         </div>
       </div>
-
-    </form>
     </div>
     <div class="dashDetails">
       <div class="container">
@@ -69,19 +65,8 @@
                   </td>
                   <td>
                     <div class="submit-button-div">
-                        <button class="button-1-green">
-                          <a
-                            href="http://localhost/give4good/Merchandises/<?php echo $profileMerchandises->fundraiser_id; ?>">View</a>
-                        </button>
-                      <button class="button-2-yellow">
-                          <a
-                            href="<?php echo URLROOT ?>/Profile/setStock/<?php echo $profileMerchandises->fundraiser_id ?>">Edit</a>
-                        </button>
-                        <button class="button-3-red">
-                          <a
-                            href="<?php echo URLROOT ?>/Profile/endMerch/<?php echo $profileMerchandises->fundraiser_id ?>">End</a>
-                        </button>
-                      </div>
+                      <button class="button-1-green" type="submit">View</button>
+                    </div>
                   </td>
                 </tr>
                 <?php
