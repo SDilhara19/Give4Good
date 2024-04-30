@@ -21,9 +21,18 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
-        <span>Your Merchandises</span>
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+        <span>Your Subscription Payments</span>
       </div>
+      <div class="search-box">
+        <div class="search-bar">
+          <input type="text" name="search" placeholder="Search Give4Good">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          
+        </div>
+      </div>
+
+    </form>
       <!-- <div class="user--info">
         <div class="search--box">
           <i class="fa-solid fa-magnifying-glass"></i>

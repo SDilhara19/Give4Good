@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-user"></i>
         <span>Your Profile</span>
       </div>
     </div>
@@ -30,7 +31,7 @@
       <section class="section">
         <div class="card">
           <div class="left-container">
-            <img class="pbook_img" src=" '. URLROOT . $data[0]->profile_image . '">
+            <img class="profile_img" src=" '. URLROOT . $data[0]->profile_image . '">
             <h4 class="gradienttext-h4">User Name : ' . $data[0]->username . '</h4>
             <h4 class="gradienttext-h4">User ID : ' . $data[0]->id . '</h4>
           </div>
@@ -38,17 +39,12 @@
             <h3 class="gradienttext">Profile Details</h3>
             <table class="table-profile">
               <tr>
-                <td>Full Name :</td>
+                <td>User Name :</td>
                 <td>
-                  '. $data[0]->fullname . '
+                  '. $data[0]->username . '
                 </td>
               </tr>
-              <td>
-              Date Of Birth :</td>
-                <td>
-                  '. $data[0]->dob . '
-                </td>
-                </tr>
+              
               <tr>
                 <td>Mobile :</td>
                 <td>
@@ -58,7 +54,10 @@
               <tr>
                 <td>Email :</td>
                 <td>
-                ' . $data[0]->email . '
+        if (empty($data[0]->email)) {
+    // profile_image is empty
+    // Handle the case where profile_image is empty
+}        ' . $data[0]->email . '
                 </td>
               </tr>
               <tr>
@@ -78,6 +77,7 @@
       <section class="section">
         <div class="card">
           <div class="left-container">
+          
             <img class="profile_img" src="' . URLROOT . $data[0]->profile_image . '">
             <h4 class="gradienttext-h4">User Name : ' .$data[0]->username . '</h4>
             <h4 class="gradienttext-h4">User ID : ' .$data[0]->id . '</h4>

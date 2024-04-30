@@ -12,14 +12,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .search-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(237, 237, 237);
 
+      /* margin-bottom: 20px;  */
+    }
+
+    .search-box {
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      margin-bottom: 8px;
+      margin-left: auto;
+    }
+
+    .search-box i:hover {
+      transform: scale(1.2);
+    }
+
+    .search-box input {
+      border: 1px solid rgb(237, 237, 237);
+    }
+  </style>
 </head>
 
 <body>
   <?php require APPROOT . '/views/includes/header.php' ?>
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
   <main>
-    <h1>Featured Topics..</h1>
+    <h1>Featured Topics... </h1>
+
+    <form>
+      <div class="search-box">
+        <div class="search-bar">
+          <input type="text" name="search" placeholder="Search Give4Good">
+          <i class="fa-solid fa-magnifying-glass fa-l"></i>
+          
+        </div>
+      </div>
+
+    </form>
+
+
+
+
     <div class="home-fundraisers">
       <?php
       foreach ($data as $fundraiser) {
@@ -31,42 +73,56 @@
             <img src="<?php echo URLROOT . $fundraiser->img ?>" alt="image">
           </div>
           <div class="home-fundraiser-below">
-              <div class="right-fade-effect"> </div>
-              <div class="home-fundraiser-below-container">
-                <div class="fundraiser-donee-name">
-                  <?php
-                  if ($fundraiser->type == "individual") { ?>
-                    <i class="fa-solid fa-user fa-sm text-3"></i>
-                  <?php } elseif ($fundraiser->type == "organisation") { ?>
-                    <i class="fa-solid fa-building fa-sm text-3"></i>
-                  <?php } ?>
-                  <p class="text-4">
-                    <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
-                  </p>
-                </div>
-                <p class="text-1">
-                  <?php echo $fundraiser->title; ?>
+            <div class="right-fade-effect"> </div>
+            <div class="home-fundraiser-below-container">
+              <div class="fundraiser-donee-name">
+                <?php
+                if ($fundraiser->type == "individual") { ?>
+                  <i class="fa-solid fa-user fa-sm text-3"></i>
+                <?php } elseif ($fundraiser->type == "organisation") { ?>
+                  <i class="fa-solid fa-building fa-sm text-3"></i>
+                <?php } ?>
+                <p class="text-4">
+                  <?php echo ($fundraiser->username == $_SESSION['userName']) ? 'Mine' : $fundraiser->username; ?>
                 </p>
-                <div class="fundraiser-small-progress-bar-container">
-                  <div class="fundraiser-small-progress-bar">
-                    <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> ">
-                    </div>
+              </div>
+              <p class="text-1">
+                <?php echo $fundraiser->title; ?>
+              </p>
+              <div class="fundraiser-small-progress-bar-container">
+                <div class="fundraiser-small-progress-bar">
+                  <div class="fundraiser-small-progress" style="width: <?php echo $fundraiser->progress . '%' ?> ">
                   </div>
                 </div>
+
                 <p class="smallfont" >Rs.
                   <?php echo $fundraiser->amount_collected; ?> of Rs. <?php echo $fundraiser->amount; ?> raised
                 </p>
+
               </div>
+             
             </div>
+          </div>
 
         </article>
         <?php
       }
       ?>
-   
+
 
     </div>
   </main>
+  <!-- <script>
+    var searchInput = document.getElementById("search");
+
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+      if (searchInput.value.trim() === "") {
+        event.preventDefault(); // Prevent form submission
+        window.location.reload(); // Reload the page
+      }
+    });
+  </script> -->
+  
   <?php require APPROOT . '/views/includes/footer.php' ?>
   <script src="<?php echo URLROOT ?>/public/js/header.js"></script>
 
