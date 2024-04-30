@@ -35,10 +35,17 @@
                   <th>Username</th>
                   <th>Contact</th>
                   <th>Email</th>
+<<<<<<< HEAD
                   
                   <th>NIC Details</th>
                   <th>Bank Details</th>
                  
+=======
+                  <th>Identity Verification</th>
+                  <th>NIC Details</th>
+                  <th>Bank Details</th>
+                  <th>Identity Status</th>
+>>>>>>> main
                   <th>Status</th>
                   <th class="action-th">Actions</th>
                 </tr>
@@ -62,12 +69,20 @@
                     <td>
                       <?php echo $super_individual->email; ?>
                     </td>
+<<<<<<< HEAD
                     <td><button onclick class="data_view open-nic-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
                     <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
+=======
+                    <td><a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    <td><button onclick class="data_view open-nic-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
+                    <td><button onclick class="data_view open-bank-popup" data-popup-id="<?php echo $super_individual->id; ?>">View</button></td>
+                    <td><a href=""><i class="fa-solid fa-check"></i></a></td>
+>>>>>>> main
                     <td>
                       <?php echo $super_individual->status; ?>
                     </td>
                     <td class="action-td">
+<<<<<<< HEAD
                     <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $super_individual->user_id ?>" class="action-icons">
                   <i class="fa-solid fa-info"></i>
                 </a>
@@ -78,6 +93,10 @@
                     }'>
                     </i>
                     </a>
+=======
+                      <a href="<?php echo URLROOT ?>/Admin_Individual/individual_one/<?php echo $super_individual->id ?>" 
+                      class="action-icons"><i class="fa-solid fa-info"></i></a>
+>>>>>>> main
                     </td>
 
                     <td>
@@ -109,16 +128,27 @@
                             <tr>
                               <th>Address</th>
                               <td class="text-3">
+<<<<<<< HEAD
                                 <?php echo $super_individual->Address; ?>
+=======
+                                <?php echo $super_individual->address; ?>
+>>>>>>> main
                               </td>
                             </tr>
                           </table>
                           <div class="nic-front">
 
+<<<<<<< HEAD
                             <img src="<?php echo URLROOT . $super_individual->nic_front ?>" alt="image">
                           </div>
                           <div class="nic-back">
                           <img src="<?php echo URLROOT . $super_individual->nic_back ?>" alt="image">
+=======
+                            <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                          </div>
+                          <div class="nic-back">
+                            <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+>>>>>>> main
                           </div>
                         </div>
 
@@ -157,7 +187,11 @@
                           </table>
                           <div class="bank-passbook">
 
+<<<<<<< HEAD
                             <img src="<?php echo URLROOT . $super_individual->bank_pbook ?>" alt="image">
+=======
+                            <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Bank-passbook/1.webp" alt="">
+>>>>>>> main
                           </div>
                         </div>
 

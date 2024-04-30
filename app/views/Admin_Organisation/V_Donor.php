@@ -81,9 +81,13 @@
                   ?>
 
                   <td class="action-td">
+<<<<<<< HEAD
                   <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $users_organisation->id ?>" class="action-icons">
                   <i class="fa-solid fa-info"></i>
                 </a>
+=======
+                    <a href="" class="action-icons"><i class="fa-solid fa-info"></i></a>
+>>>>>>> main
                   </td>
                 </tr>
                 <?php

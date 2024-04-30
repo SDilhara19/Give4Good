@@ -1,10 +1,17 @@
 <?php
 class Admin_Merchandise extends controller
 {
+<<<<<<< HEAD
     private $AdminMerchandiseModel;
     public function __construct()
     {
         $this->AdminMerchandiseModel = $this->model('M_Admin_Merchandise');
+=======
+    // private $prototypeModel;
+    public function __construct()
+    {
+        // $this->prototypeModel = $this->model('M_model');
+>>>>>>> main
         $this->checkAdminLogin();
   
     }
@@ -18,6 +25,7 @@ class Admin_Merchandise extends controller
     }
   }
     public function index(){
+<<<<<<< HEAD
       $data = $this->AdminMerchandiseModel->getAllMerch();
       foreach ($data as $merchandise) {
         $total_quantity = $merchandise->total_quantity;
@@ -28,10 +36,15 @@ class Admin_Merchandise extends controller
       $data=[];
     }
         $this->view('Admin_Merchandise/V_All',$data);
+=======
+        
+        $this->view('Admin_Merchandise/V_All');
+>>>>>>> main
 
   }
 
   public function pending(){
+<<<<<<< HEAD
     $data = $this->AdminMerchandiseModel->viewPending();
     if(!($data)){
       $data=[];
@@ -127,5 +140,32 @@ public function info($id){
   }
  }
 
+=======
+
+    $this->view('Admin_Merchandise/V_Pending');
+
+}
+public function active(){
+
+    $this->view('Admin_Merchandise/V_Active');
+
+}
+public function rejected(){
+
+    $this->view('Admin_Merchandise/V_Rejected');
+
+}
+public function fundmerchs(){
+    // $data;
+    $this->view('Admin_Merchandise/V_Fundraiser_All');
+
+}
+
+public function info(){
+
+    $this->view('Admin_Merchandise/V_Admin_Merchandise_One');
+
+}
+>>>>>>> main
 }
 ?>

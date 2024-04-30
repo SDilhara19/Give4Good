@@ -49,6 +49,7 @@
     </thead>
     <tbody>
     <?php 
+<<<<<<< HEAD
         foreach ($data as $donationpayments) {
             ?>
         <tr>
@@ -60,6 +61,19 @@
             <td><?php echo $donationpayments->title; ?></td>
             <td><?php echo $donationpayments->donated_amount; ?></td>
             <td><?php echo $donationpayments->contribution_amount; ?></td>
+=======
+        foreach ($data as $donations) {
+            ?>
+        <tr>
+            <td>23/02/2024</td>
+            <td><?php echo $donations->payment_id; ?></td>
+            <td><?php echo $donations->user_id; ?></td>
+            <td><?php echo $donations->username; ?></td>
+            <td><?php echo $donations->fundraiser_id; ?></td>
+            <td><?php echo $donations->title; ?></td>
+            <td><?php echo $donations->donated_amount; ?></td>
+            <td><?php echo $donations->contribution_amount; ?></td>
+>>>>>>> main
         </tr>
         <?php
         }

@@ -66,6 +66,7 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+<<<<<<< HEAD
                                         
                                           
                                         <a class="action-icons">                                                                   
@@ -79,6 +80,12 @@
                                     <td>
 
                                     <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+=======
+                                    </td>
+                                    <td>
+
+                                        <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+>>>>>>> main
                                             <span class="close-popup"
                                                 id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
@@ -92,23 +99,47 @@
                                                     </div>
                                                     <div class="story-card-right">
                                                         <div class="story-description">
+<<<<<<< HEAD
                                                             <h1><?php echo $stories->title; ?></h1>
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
                                                                 <p class="text-4"><?php echo $stories->username; ?></p>
                                                             </div>
                                                             <p><?php echo $stories->description; ?>
+=======
+                                                            <h1>Sahurda Wiyamana</h1>
+                                                            <div class="fundraiser-donee-name">
+                                                                <i class="fa-solid fa-building fa-sm text-3"></i>
+                                                                <p class="text-4">LEO Club UOC</p>
+                                                            </div>
+                                                            <p>ොළඹ විශ්ව විද්‍යාලයීය ලියෝ සමාජය මගින් සංවිධානය කල සහෘද වියමන
+                                                                අදියර 6කින් යුතු ව්‍යාපෘතියේ දෙවන අදියර ඉතා සාර්ථකව නිමකරන
+                                                                කරන ලදී. එම කටයුතු සාර්ථක කර ගැනීම උදෙසා උපකාර කළ ඔබ සැමට
+                                                                ස්තූතියි.❤
+
+                                                                Facebook: https://bit.ly/3udizp5
+
+
+>>>>>>> main
                                                             </p>
                                                         </div>
                                                         <div class="story-contact">
                                                             <table>
                                                                 <tr>
                                                                     <th>email:</th>
+<<<<<<< HEAD
                                                                     <td class="text-3"><?php echo $stories->email; ?>m</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Contact:</th>
                                                                     <td class="text-3"><?php echo $stories->contact; ?></td>
+=======
+                                                                    <td class="text-3">leos@gmail.com</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Contact:</th>
+                                                                    <td class="text-3">+9470 576 0021</td>
+>>>>>>> main
                                                                 </tr>
                                                             </table>
                                                         </div>

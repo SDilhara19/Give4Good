@@ -39,8 +39,14 @@
           <table>
             <thead>
               <tr>
+<<<<<<< HEAD
                 <!-- <th>Date</th> -->
                 <th>Complaint ID</th>
+=======
+                <th>Date</th>
+                <th>Complaint ID</th>
+                <th>Reporter ID</th>
+>>>>>>> main
                 <th>Reporter Username</th>
                 <th>Fundraiser ID</th>
                 <th>Fundraiser Title</th>
@@ -57,9 +63,15 @@
               foreach ($data as $complaints) {
                 ?>
                 <tr>
+<<<<<<< HEAD
                   <!-- <td>
 
                   </td> -->
+=======
+                  <td>
+                  hhhg
+                  </td>
+>>>>>>> main
                   <td>
                     <?php echo $complaints->complaint_id; ?>
                   </td>
@@ -85,16 +97,28 @@
                     <?php echo $complaints->others; ?>
                   </td>
                   <td class="action-td">
+<<<<<<< HEAD
                     <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $complaints->user_id ?>"
+=======
+                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>"
+>>>>>>> main
                       class="action-icons">
                       <i class="fa-solid fa-info"></i>
                     </a>
                   </td>
                   <td>
+<<<<<<< HEAD
                   <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $complaints->fundraiser_id ?>"
                       class="action-icons">
                       <i class="fa-solid fa-info"></i>
                     </a>
+=======
+                    <a href="<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+
+>>>>>>> main
                   </td>
                 </tr>
                 <?php

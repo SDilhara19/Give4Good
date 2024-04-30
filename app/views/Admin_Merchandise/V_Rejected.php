@@ -27,7 +27,10 @@
                         <thead>
                             <tr>
                                 <th>Merch Id</th>
+<<<<<<< HEAD
                                 <th>Fundraiser Id</th>
+=======
+>>>>>>> main
                                 <th>Title</th>
                                 <th>Fundraiser Title</th>
                                 <th>Initial Stock</th>
@@ -35,6 +38,7 @@
                                 <th>Price of Merch</th>
                                 <th>Amount for Fund</th>
                                 <th>Status</th>
+<<<<<<< HEAD
                                 <th class="action-th">Actions</th>
                             </tr>
                         </thead>
@@ -68,6 +72,27 @@
                                     </td>
                                 </tr>
                             <?php } ?>
+=======
+                                <th class="action-td">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Cotton Navy T-shirt</td>
+                                <td>Help John travel for work</td>
+                                <td>300</td>
+                                <td>232</td>
+                                <td>2000</td>
+                                <td>250</td>
+                                <td>Rejected</td>
+                                <td class="action-td">
+                                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>" class="action-icons">
+                                        <i class="fa-solid fa-info"></i>
+                                    </a>
+                                </td>
+                            </tr>
+>>>>>>> main
                     </table>
                 </div>
             </div>

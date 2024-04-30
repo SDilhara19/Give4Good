@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login-container {
     display: flex;
     height: 100vh;
@@ -85,4 +86,93 @@
   .login__forgot:hover {
     text-decoration: underline;
   }
+=======
+.login-container {
+    display: flex;
+    height: 100vh;
+    margin: 0px;
+  }
+  
+  .left-col {
+    flex: 1;
+    height: 100%;
+  }
+  
+  .horizontal-border {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, rgb(33, 228, 186) 0%, #000000 50.31%, rgb(33, 228, 186) 100%);
+  }
+  
+  .container2 {
+    display: flex;
+  }
+  
+  .login-image {
+    flex: 1;
+    background-image: url('../../Assets/images/login-image.png');
+    background-size: 100% 100%;
+    height: calc(100vh - 20px);
+  }
+  
+  .vertical-border {
+    width: 10px;
+    height: calc(100vh - 20px);
+    background: linear-gradient(180deg, rgb(33, 228, 186) 0%, #000000 50.31%, rgb(33, 228, 186) 100%);
+  
+  }
+  
+  .right-col {
+    flex: 1;
+    background-color: white;
+    border-radius: 40px 0px 0px 40px;
+    margin-left: -40px;
+     align-items: center;   
+      justify-content: center; 
+    
+   
+  }
+   
+  @media only screen and (max-width: 600px) {
+    .left-col{
+        display: none;
+    }
+  }
+  
+  
+  
+  .login__check,
+  .login__check-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .login__check {
+    margin-bottom: 0.5rem;
+  }
+  
+  .login__check-label,
+  .login__forgot,
+  .login__register {
+    font-size: var(--small-font-size);
+  }
+  
+  .login__check-group {
+    column-gap: 0.5rem;
+  }
+  
+  .login__check-input {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .login__forgot {
+    color: var(--black-color);
+  }
+  
+  .login__forgot:hover {
+    text-decoration: underline;
+  }
+>>>>>>> main
   

@@ -29,30 +29,40 @@ class Admin_Individual extends controller
   public function active()
   {
     $data = $this->AdminIndividualModel->viewActive();
+<<<<<<< HEAD
     if(!($data)){
       $data=[];
     }
+=======
+>>>>>>> main
     $this->view('Admin_Individual/V_Act_Super', $data);
     //var_dump($data);
   }
 
   public function deactive()
   {
+<<<<<<< HEAD
     
     $data = $this->AdminIndividualModel->viewDeactive();
     if(!($data)){
       $data=[];
     }
+=======
+    $data = $this->AdminIndividualModel->viewDeactive();
+>>>>>>> main
     $this->view('Admin_Individual/V_Deact_Super', $data);
   }
 
   public function pending()
   {
     $data = $this->AdminIndividualModel->viewPending();
+<<<<<<< HEAD
     if(!($data)){
       $data=[];
     }
 
+=======
+>>>>>>> main
     $this->view('Admin_Individual/V_Pending_Super', $data);
   }
 
@@ -63,6 +73,7 @@ class Admin_Individual extends controller
     //var_dump($data);
   }
 
+<<<<<<< HEAD
   public function setDeactive($user_id)
 {
     if ($this->AdminIndividualModel->deactivateSuperIndividual($user_id)) {
@@ -116,5 +127,28 @@ public function setReactive($user_id)
     }
 
     }
+=======
+  public function setDeactive($id)
+  {
+    if ($this->AdminIndividualModel->viewDeactivate($id)) {
+      echo '<script>alert(".................");</script>';
+    } else {
+      // Deactivation failed, handle the error
+      echo '<script>alert("................");</script>';
+    }
+    redirect(URLROOT . '/Admin_Individual/index');
+  }
+
+  public function setReactive($id)
+  {
+    if ($this->AdminIndividualModel->viewReactivate($id)) {
+      echo '<script>alert("Story deactivated successfully!");</script>';
+    } else {
+      // Deactivation failed, handle the error
+      echo '<script>alert("Error deactivating the story.");</script>';
+    }
+    redirect(URLROOT . '/Admin_Individual/index');
+  }
+>>>>>>> main
 }
 ?>

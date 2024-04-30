@@ -20,27 +20,37 @@ private function checkAdminLogin()
     }
     
     public function active(){
+<<<<<<< HEAD
 
         $data = $this->AdminStoryModel -> getActiveStories();
         if(!($data)){
           $data=[];
         }
+=======
+        $data = $this->AdminStoryModel -> getActiveStories();
+>>>>>>> main
         $this->view('Admin_Stories/V_Active', $data);
     }
 
     public function reject(){
        $data = $this->AdminStoryModel -> viewRejected();
+<<<<<<< HEAD
        if(!($data)){
         $data=[];
       }
+=======
+>>>>>>> main
        $this->view('Admin_Stories/V_Rejected', $data);
     }
 
     public function pending(){
        $data = $this->AdminStoryModel -> viewPending();
+<<<<<<< HEAD
        if(!($data)){
         $data=[];
       }
+=======
+>>>>>>> main
        $this->view('Admin_Stories/V_Pending',$data);
     }
 

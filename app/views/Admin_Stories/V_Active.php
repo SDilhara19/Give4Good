@@ -68,6 +68,7 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+<<<<<<< HEAD
                                         
                                         
                                         <a href="" class="action-icons">
@@ -76,6 +77,8 @@
 }'></i>
                                         </a>
 
+=======
+>>>>>>> main
                                     </td>
                                     <td>
 

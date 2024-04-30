@@ -68,6 +68,7 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+<<<<<<< HEAD
                                         
                                           
                                         <a class="action-icons">                                                                   
@@ -86,6 +87,12 @@
                                     <td>
 
                                         <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+=======
+                                    </td>
+                                    <td>
+
+                                    <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+>>>>>>> main
                                             <span class="close-popup"
                                                 id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
@@ -93,7 +100,12 @@
                                                 <div class="story-card">
                                                     <div class="story-card-left">
                                                         <div class="story-card-img-container">
+<<<<<<< HEAD
                                                             <img src="<?php echo URLROOT . $stories->image; ?>" alt="">
+=======
+                                                            <img src="<?php echo URLROOT . $stories->image; ?>"
+                                                                alt="">
+>>>>>>> main
                                                         </div>
                                                     </div>
                                                     <div class="story-card-right">

@@ -89,17 +89,27 @@ class M_Admin_Fundraiser{
     
 
 
+<<<<<<< HEAD
     public function activateFundraiser($fundraiser_id){
         $this->db->query('UPDATE fundraiser SET status = "Active" 
         WHERE fundraiser_id = :fundraiser_id;');
 
         $this->db->bind(':fundraiser_id', $fundraiser_id);
+=======
+    public function activateFundraiser($id){
+        try{
+        $this->db->query('UPDATE fundraiser SET status = "Active" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+>>>>>>> main
 
         if($this->db->execute()){
             return true;
         }else{
             return false;
         }
+<<<<<<< HEAD
        
     }
 
@@ -225,10 +235,41 @@ class M_Admin_Fundraiser{
             }
         } catch (Exception $e) {
             error_log('Error in getDocImages: ' . $e->getMessage());
+=======
+
+       } 
+       catch(Exception $e){
+           return "Error" . $e->getMessage();
+       }
+       
+    }
+    // public function viewMerch(){
+
+
+    //     $this->db->bind(':id', $id);
+
+    //     if($this->db->execute()){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+
+    public function deactivateFundraiser($id){
+        $this->db->query('UPDATE fundraiser SET status = "Deactive" 
+        WHERE id = :id;');
+
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+>>>>>>> main
             return false;
         }
     }
 
+<<<<<<< HEAD
      public function getMaterialImages($id){
         try{
             $this->db->query("SELECT * FROM material WHERE fundraiser_id = :fundraiser_id");
@@ -314,3 +355,17 @@ class M_Admin_Fundraiser{
 
 }
 ?>
+=======
+    //  public function viewMerch(){
+
+    //  }
+
+    //  public function viewFundOne(){
+
+    //  }
+
+    //  public function viewFundDoc(){
+
+    //   }    
+}
+>>>>>>> main

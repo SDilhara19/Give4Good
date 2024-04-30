@@ -57,30 +57,39 @@ class Admin extends controller
     public function complaints()
     {
         $data = $this->AdminModel->viewComplaints();
+<<<<<<< HEAD
         if(!($data)){
             $data=[];
           }
       
+=======
+>>>>>>> main
         $this->view('Admin/V_Complaints', $data);
     }
 
     public function donations()
     {
         $data = $this->AdminModel->viewDonations();
+<<<<<<< HEAD
         if(!($data)){
             $data=[];
           }
       
+=======
+>>>>>>> main
         $this->view('Admin/V_Donations', $data);
     }
 
     public function contributions()
     {
         $data = $this->AdminModel->viewContributions();
+<<<<<<< HEAD
         if(!($data)){
             $data=[];
           }
       
+=======
+>>>>>>> main
         $this->view('Admin/V_Contributions', $data);
     }
 

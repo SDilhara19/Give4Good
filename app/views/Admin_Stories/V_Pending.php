@@ -15,7 +15,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9e9a03ae37.js" crossorigin="anonymous"></script>
 </head>
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 <body>
     <?php require APPROOT . '/views/includes/admin-header.php' ?>
     <?php require APPROOT . '/views/includes/admin-dashboard.php' ?>
@@ -28,7 +31,11 @@
                     <table>
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th>Story ID</th>
+=======
+                        <th>Story ID</th>
+>>>>>>> main
                                 <th>Username</th>
                                 <th class="action-th">Title</th>
                                 <th>Contact</th>
@@ -62,6 +69,7 @@
                                         <?php echo $stories->status; ?>
                                     </td>
                                     <td class="action-td">
+<<<<<<< HEAD
                                         <span class="action-icons open-story-popup"
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
@@ -81,6 +89,24 @@
                                         </a>
 
                                     </td>
+=======
+                                    <span class="action-icons open-story-popup"
+                                            data-popup-id="<?php echo $stories->id; ?>">
+                                            <i class="fa-solid fa-info"></i>
+                                        </span>
+
+                                    <a class="action-icons">                                                                   
+                                        <i class="fa-solid fa-play" onclick='if (window.confirm("Are you sure you want to activate the <?php echo $story->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setActive/<?php echo $story->id ?>");
+}'></i>
+
+                                    </a>
+                                    <a href="" class="action-icons">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </a>
+
+                                </td>
+>>>>>>> main
                                     <td>
 
                                         <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
@@ -97,23 +123,47 @@
                                                     </div>
                                                     <div class="story-card-right">
                                                         <div class="story-description">
+<<<<<<< HEAD
                                                             <h1><?php echo $stories->title; ?></h1>
                                                             <div class="fundraiser-donee-name">
                                                                 <i class="fa-solid fa-building fa-sm text-3"></i>
                                                                 <p class="text-4"><?php echo $stories->username; ?></p>
                                                             </div>
                                                             <p><?php echo $stories->description; ?>
+=======
+                                                            <h1>Hard coded Sahurda Wiyamana</h1>
+                                                            <div class="fundraiser-donee-name">
+                                                                <i class="fa-solid fa-building fa-sm text-3"></i>
+                                                                <p class="text-4">LEO Club UOC</p>
+                                                            </div>
+                                                            <p>ොළඹ විශ්ව විද්‍යාලයීය ලියෝ සමාජය මගින් සංවිධානය කල සහෘද වියමන
+                                                                අදියර 6කින් යුතු ව්‍යාපෘතියේ දෙවන අදියර ඉතා සාර්ථකව නිමකරන
+                                                                කරන ලදී. එම කටයුතු සාර්ථක කර ගැනීම උදෙසා උපකාර කළ ඔබ සැමට
+                                                                ස්තූතියි.❤
+
+                                                                Facebook: https://bit.ly/3udizp5
+
+
+>>>>>>> main
                                                             </p>
                                                         </div>
                                                         <div class="story-contact">
                                                             <table>
                                                                 <tr>
                                                                     <th>email:</th>
+<<<<<<< HEAD
                                                                     <td class="text-3"><?php echo $stories->email; ?>m</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Contact:</th>
                                                                     <td class="text-3"><?php echo $stories->contact; ?></td>
+=======
+                                                                    <td class="text-3">leos@gmail.com</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Contact:</th>
+                                                                    <td class="text-3">+9470 576 0021</td>
+>>>>>>> main
                                                                 </tr>
                                                             </table>
                                                         </div>
