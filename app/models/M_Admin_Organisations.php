@@ -17,18 +17,25 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
-                                secretary.email AS secretary_email
+                                secretary.email AS secretary_email,
+                                secretary.nic_front secretary_nic_front,
+                                secretary.nic_front secretary_nic_back
+
                             FROM 
                                 super_organisation
                             JOIN 
@@ -66,18 +73,24 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
-                                secretary.email AS secretary_email
+                                secretary.email AS secretary_email,
+                                secretary.nic_front secretary_nic_front,
+                                secretary.nic_front secretary_nic_back
                             FROM 
                                 super_organisation
                             JOIN 
@@ -117,18 +130,25 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
-                                secretary.email AS secretary_email
+                                secretary.email AS secretary_email,
+                                secretary.nic_front secretary_nic_front,
+                                secretary.nic_front secretary_nic_back
+
                             FROM 
                                 super_organisation
                             JOIN 
@@ -165,18 +185,26 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
-                                secretary.email AS secretary_email
+                                secretary.email AS secretary_email,
+                                secretary.nic_front secretary_nic_front,
+                                secretary.nic_front secretary_nic_back
+
+                                
                             FROM 
                                 super_organisation
                             JOIN 
@@ -200,11 +228,11 @@ class M_Admin_Organisations {
         }
     }
     
-    public function activateSuperOrganisation($id){
+    public function activateSuperOrganisation($user_id){
         $this->db->query('UPDATE super_organisation SET status = "Active"
-        WHERE id = :id;');
+        WHERE user_id = :user_id;');
 
-        $this->db->bind(':id', $id);
+        $this->db->bind(':user_id', $user_id);
 
         if($this->db->execute()){
             return true;
@@ -212,11 +240,11 @@ class M_Admin_Organisations {
             return false;
         }
     }
-    public function deactivateSuperOrganisation($id){
+    public function deactivateSuperOrganisation($user_id){
         $this->db->query('UPDATE super_organisation SET status = "Deactive"
-        WHERE id = :id;');
+        WHERE user_id = :user_id;');
 
-        $this->db->bind(':id', $id);
+        $this->db->bind(':user_id', $user_id);
 
         if($this->db->execute()){
             return true;
@@ -224,6 +252,8 @@ class M_Admin_Organisations {
             return false;
         }
     }
+
+    public function viewProfile(){}
 
     public function viewOrganisations(){
         $this->db->query('SELECT users_organisation.*, users.*

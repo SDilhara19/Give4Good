@@ -36,8 +36,6 @@
                                 <th>Created Date</th>
                                 <th>Modified Date</th>
                                 <th>Requirement End Date</th>
-                                <th>Features Used</th>
-                                <th>Merchs</th>
                                 <th>User Type</th>
                                 <th>Status</th>
                                 <th class="action-th">Actions</th>
@@ -73,13 +71,6 @@
                                     <td><?php echo $fundraiser->created_date; ?></td>
                                     <td><?php echo $fundraiser->modified_date; ?></td>
                                     <td><?php echo $fundraiser->end_date; ?></td>
-
-                                    <td><a
-                                            href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>"><i
-                                                class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-                                    <td>
-                                        <?php echo ($fundraiser->product_name) ? $fundraiser->product_name : 'None'; ?>
-                                    </td>
                                     <td>
                                         <?php echo $fundraiser->type; ?>
                                     </td>
@@ -87,14 +78,23 @@
                                         <?php echo $fundraiser->status; ?>
                                     </td>
                                     <td class="action-td">
-                                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->id ?>"
-                                            class="action-icons">
-                                            <i class="fa-solid fa-info"></i>
-                                        </a>
-                                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraiser->id ?>"
-                                            class="action-icons">
-                                            <i class="fa-solid fa-lock"></i>
-                                        </a>
+                                    <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->fundraiser_id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+                    <a class="action-icons">
+                        <i class="fa-solid fa-lock" onclick='if(window.confirm("Are you sure you want to deactivate the <?php echo $fundraiser->fundraiser_id ?>")){
+     window.open("<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraiser->fundraiser_id ?>");
+   }'>
+                        </i>
+                      </a>
+
+                      <a class="action-icons">
+                        <i class="fa-solid fa-check" onclick='if(window.confirm("Are you sure you want to activate the <?php echo $fundraiser->fundraiser_id ?>")){
+     window.open("<?php echo URLROOT ?>/Admin_Fundraisers/setActive/<?php echo $fundraiser->fundraiser_id ?>");
+   }'>
+                        </i>
+                      </a>
                                     </td>
                                 </tr>
                                 <?php

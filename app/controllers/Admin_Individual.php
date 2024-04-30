@@ -29,19 +29,30 @@ class Admin_Individual extends controller
   public function active()
   {
     $data = $this->AdminIndividualModel->viewActive();
+    if(!($data)){
+      $data=[];
+    }
     $this->view('Admin_Individual/V_Act_Super', $data);
     //var_dump($data);
   }
 
   public function deactive()
   {
+    
     $data = $this->AdminIndividualModel->viewDeactive();
+    if(!($data)){
+      $data=[];
+    }
     $this->view('Admin_Individual/V_Deact_Super', $data);
   }
 
   public function pending()
   {
     $data = $this->AdminIndividualModel->viewPending();
+    if(!($data)){
+      $data=[];
+    }
+
     $this->view('Admin_Individual/V_Pending_Super', $data);
   }
 
@@ -52,26 +63,58 @@ class Admin_Individual extends controller
     //var_dump($data);
   }
 
-  public function setDeactive($id)
-  {
-    if ($this->AdminIndividualModel->viewDeactivate($id)) {
-      echo '<script>alert(".................");</script>';
+  public function setDeactive($user_id)
+{
+    if ($this->AdminIndividualModel->deactivateSuperIndividual($user_id)) {
+        echo '<script>alert("User deactivated successfully!");</script>';
     } else {
-      // Deactivation failed, handle the error
-      echo '<script>alert("................");</script>';
+        echo '<script>alert("Error deactivating the user.");</script>';
     }
     redirect(URLROOT . '/Admin_Individual/index');
-  }
+}
 
-  public function setReactive($id)
-  {
-    if ($this->AdminIndividualModel->viewReactivate($id)) {
-      echo '<script>alert("Story deactivated successfully!");</script>';
+public function setReactive($user_id)
+{
+    if ($this->AdminIndividualModel->activateSuperIndividual($user_id)) {
+        echo '<script>alert("User reactivated successfully!");</script>';
     } else {
-      // Deactivation failed, handle the error
-      echo '<script>alert("Error deactivating the story.");</script>';
+        echo '<script>alert("Error reactivating the user.");</script>';
     }
     redirect(URLROOT . '/Admin_Individual/index');
-  }
+}
+
+
+  public function profile($id)
+    {
+      // foreach ($data[0] as $key => $value) {
+    //   $data[0]->$key = $value ?? ' ';
+    // }
+    if ($_SESSION['userType'] == 'individual') {
+      $data = $this->AdminIndividualModel->viewProfile($id, $_SESSION['userLevel']);
+      $this->view('Admin_Individual/V_Profile',$data);
+        } else if ($_SESSION['userType'] == 'organisation') {
+      $data['other'] = $this->AdminIndividualModel->getOrgDetails($id,$_SESSION['userLevel']);
+      $data['executive'] = $this->AdminIndividualModel->getExecutiveDetails($id);
+      $data['treasurer'] = $this->AdminIndividualModel->getTreasurerDetails($id);
+      $data['secretary'] = $this->AdminIndividualModel->getSecretaryDetails($id);
+
+
+      foreach ($data['other'][0] as $key => $value) {
+        $data['other'][0]->$key = $value ?? ' ';
+
+      }
+      foreach ($data['executive'][0] as $key => $value) {
+        $data['executive'][0]->$key = $value ?? ' ';
+      }
+      foreach ($data['secretary'][0] as $key => $value) {
+        $data['secretary'][0]->$key = $value ?? ' ';
+      }
+      foreach ($data['treasurer'][0] as $key => $value) {
+        $data['treasurer'][0]->$key = $value ?? ' ';
+      }
+      $this->view('Profiles/V_orgProfile', $data);
+    }
+
+    }
 }
 ?>

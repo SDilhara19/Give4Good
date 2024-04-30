@@ -26,14 +26,13 @@ class M_Admin
         ');
 
         $row = $this->db->resultSet();
-
+    
         //Check row
         if ($this->db->rowCount() > 0) {
             return $row;
         } else {
             return false;
         }
-
     }
 
     public function addDocument($category, $documentName)
@@ -48,7 +47,6 @@ class M_Admin
         } else {
             return false;
         }
-
     }
 
     public function removedoc($user, $category, $document)
@@ -141,8 +139,8 @@ class M_Admin
     {
         $this->db->query('SELECT fundraiser_complain.*, users.*
         FROM fundraiser_complain 
-        JOIN users 
-        ON fundraiser_complain.user_id = users.id ;
+        JOIN users ON fundraiser_complain.user_id = users.id 
+        JOIN fundraiser ON fundraiser_complain.fundraiser_id = fundraiser.fundraiser_id;
         ');
 
         $row = $this->db->resultSet();
@@ -172,6 +170,7 @@ class M_Admin
         } else {
             return false;
         }
+
     }
 
 }

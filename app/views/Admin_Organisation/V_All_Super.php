@@ -67,10 +67,49 @@
                       data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                   <td><?php echo $super_organisation->status; ?></td>
                   <td class="action-td">
-                    <span class="action-icons open-info-popup"
-                      data-popup-id="<?php echo $super_organisation->user_id; ?>">
-                      <i class="fa-solid fa-info"></i>
-                    </span>
+                 
+                  <a href="<?php echo URLROOT ?>/Admin_Profile/profile/<?php echo $super_organisation->user_id ?>" class="action-icons">
+                  <i class="fa-solid fa-info"></i>
+                </a>
+
+                    <?php if($super_organisation->status == 'Active'){ ?>
+                    <a href="" class="action-icons">
+                    <i class= "fa-solid fa-lock" onclick = 'if(window.confirm("Are you sure you want to deactivate the <?php echo $super_organisation->user_id ?>")){
+                      window.open("<?php echo URLROOT ?>/Admin_Organisation/setDeactive/<?php echo $super_organisation->user_id ?>");
+                    }'>
+                    </i>
+                    </a>
+                    <?php } ?>
+
+                    <?php if($super_organisation->status == 'Deactive'){ ?>
+                    <a href="" class="action-icons">
+                    <i class= "fa-solid fa-check" onclick = 'if(window.confirm("Are you sure you want to activate the <?php echo $super_organisation->user_id ?>")){
+                      window.open("<?php echo URLROOT ?>/Admin_Organisation/setReactive/<?php echo $super_organisation->user_id ?>");
+                    }'>
+                    </i>
+                    </a>
+
+                    <?php } ?>
+
+                    <?php if($super_organisation->status == 'Pending'){ ?>
+                      <a href="" class="action-icons">
+                    <i class= "fa-solid fa-lock" onclick = 'if(window.confirm("Are you sure you want to deactivate the <?php echo $super_organisation->user_id ?>")){
+                      window.open("<?php echo URLROOT ?>/Admin_Organisation/setDeactive/<?php echo $super_organisation->user_id ?>");
+                    }'>
+                    </i>
+                    </a>
+
+                    <a href="" class="action-icons">
+                    <i class= "fa-solid fa-check" onclick = 'if(window.confirm("Are you sure you want to activate the <?php echo $super_organisation->user_id ?>")){
+                      window.open("<?php echo URLROOT ?>/Admin_Organisation/setReactive/<?php echo $super_organisation->user_id ?>");
+                    }'>
+                    </i>
+                    </a>
+
+
+                    <?php } ?>
+
+                    </td>
                   </td>
 
                   <td>
@@ -78,11 +117,12 @@
                       <span class="close-popup"
                         id="close-executive-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                       <p class="text-2">Executive: <?php echo $super_organisation->username; ?>
-                        << /p>
                           <div class="popup-container nic-container">
                             <table class="info-table">
                               <tr>
                                 <th>Name</th>
+                                
+
                                 <td class="text-3"><?php echo $super_organisation->executive_name; ?></td>
                               </tr>
                               <tr>
@@ -110,10 +150,10 @@
                             </table>
                             <div class="nic-front">
 
-                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                            <img src="<?php echo URLROOT . $super_organisation->executive_nic_front ?>" alt="image">
                             </div>
                             <div class="nic-back">
-                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+                            <img src="<?php echo URLROOT . $super_organisation->executive_nic_back ?>" alt="image">
                             </div>
                           </div>
 
@@ -153,10 +193,10 @@
                         </table>
                         <div class="nic-front">
 
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                        <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_front ?>" alt="image">
                         </div>
                         <div class="nic-back">
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+                        <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_back ?>" alt="image">
                         </div>
                       </div>
 
@@ -197,10 +237,10 @@
                         </table>
                         <div class="nic-front">
 
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                        <img src="<?php echo URLROOT . $super_organisation->secretary_nic_front ?>" alt="image">
                         </div>
                         <div class="nic-back">
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+                        <img src="<?php echo URLROOT . $super_organisation->secretary_nic_back ?>" alt="image">
                         </div>
                       </div>
 
@@ -213,6 +253,7 @@
                         <table class="info-table">
                           <tr>
                             <th>Bank Name</th>
+                            <!-- <?php echo URLROOT . $super_organisation->bank_pbook ?> -->
                             <td class="text-3"><?php echo $super_organisation->bank_name; ?></td>
                           </tr>
                           <tr>
@@ -240,23 +281,12 @@
                         </table>
                         <div class="bank-passbook">
 
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Bank-passbook/1.webp" alt="">
+                        <img src="<?php echo URLROOT . $super_organisation->bank_pbook ?>" alt="image">
                         </div>
                       </div>
 
                     </dialog>
 
-                    <dialog class="popup-2" id='logo-popup-<?php echo $super_organisation->user_id; ?>'>
-                      <span class="close-popup-2"
-                        id="close-logo-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
-                      <p class="text-2">Logo: Youth Society of Thimbirigasyaya</p>
-                      <div class="popup-2-container organisation-logo-container">
-                        <div class="organisation-logo">
-                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Organisation-logo/1.avif" alt="">
-                        </div>
-                      </div>
-
-                    </dialog>
                   </td>
 
                 </tr>

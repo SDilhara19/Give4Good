@@ -9,6 +9,8 @@
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/rejected'">Rejected</button>
         <button class="pending-button"
             onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/pending'">Pending</button>
+        <button class="all-button"
+            onclick="window.location.href = '<?php echo URLROOT ?>/Admin_Merchandise/index'">All</button>
     </div>
     <div class="user--info">
         <div class="search--box">

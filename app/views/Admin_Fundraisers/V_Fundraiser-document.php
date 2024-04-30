@@ -22,34 +22,31 @@
    
 
     <main class="admin-document">
-        <h1>Medical Report: Help us to assist them walk</h1>
-       <div class="document-container">
-            <div class="document-left">
-                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp" alt="">
+    <div class="document-container">
+        <div class="document-left">
+            <img src="<?php echo URLROOT . $data['image'][0]->img; ?>" alt="image">
+        </div>
+        <div class="document-right">
+            <div class="info-box">
+                <table class="info-table">
+                    <tr>
+                        <th>Created date</th>
+                        <td class="text-3"><?php echo $data['fundraiser']->created_date; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Modified date</th>
+                        <td class="text-3"><?php echo $data['fundraiser']->modified_date; ?></td>
+                    </tr>
+                    <tr>
+                        <th>End date</th>
+                        <td class="text-3"><?php echo $data['fundraiser']->end_date; ?></td>
+                    </tr>
+                </table>
             </div>
-            <div class="document-right">
-                <div class="info-box">
-                    <table class="info-table">
-                        <tr>
-                            <th>Created date</th>
-                            <td class="text-3">23-02-2023</td>
-                        </tr>
-                        <tr>
-                            <th>Modified date</th>
-                            <td class="text-3">23-02-2023</td>
-                        </tr>
-                        <tr>
-                            <th>End date</th>
-                            <td class="text-3">23-02-2024</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-       </div>
+        </div>
+    </div>
+</main>
 
-
-
-    </main>
     <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
     <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>

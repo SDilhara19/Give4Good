@@ -68,6 +68,14 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+                                        
+                                        
+                                        <a href="" class="action-icons">
+                                            <i class="fa-solid fa-lock" onclick='if (window.confirm("Are you sure you want to deactivate the <?php echo $stories->title; ?> story?")) {
+  window.open("<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $stories->id ?>");
+}'></i>
+                                        </a>
+
                                     </td>
                                     <td>
 
