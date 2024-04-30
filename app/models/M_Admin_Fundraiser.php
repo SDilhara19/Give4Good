@@ -212,7 +212,7 @@ class M_Admin_Fundraiser{
 
     public function getDocImages($id){
         try {
-            $this->db->query("SELECT * FROM uploaded_documents WHERE fundraiser_id = :fundraiser_id");
+            $this->db->query("SELECT uploaded_documents.document_image FROM uploaded_documents WHERE fundraiser_id = :fundraiser_id");
             $this->db->bind(':fundraiser_id', $id);
     
             $row = $this->db->resultSet();
