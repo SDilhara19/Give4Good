@@ -27,7 +27,14 @@
                         <thead>
                             <tr>
                                 <th>Merch Id</th>
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 <th>Fundraiser Id</th>
+=======
+>>>>>>> main
+=======
+                                <th>Fundraiser Id</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 <th>Title</th>
                                 <th>Fundraiser Title</th>
                                 <th>Initial Stock</th>
@@ -39,6 +46,10 @@
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             <?php foreach ($data as $merchandise) { ?>
                                 <tr>
                                     <td><?php echo $merchandise->id; ?></td>
@@ -73,6 +84,32 @@
                                     </td>
                                 </tr>
                             <?php } ?>
+<<<<<<< HEAD
+=======
+                            <tr>
+                                <td>1</td>
+                                <td>Cotton Navy T-shirt</td>
+                                <td>Help John travel for work</td>
+                                <td>300</td>
+                                <td>232</td>
+                                <td>2000</td>
+                                <td>250</td>
+                                <td>Pending</td>
+                                <td class="action-td">
+                                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $merchandise->id ?>" class="action-icons">
+                                        <i class="fa-solid fa-info"></i>
+                                    </a>
+                                    <a href="" class="action-icons">
+                                        <i class="fa-solid fa-play"></i>
+                                    </a>
+                                    <a href="" class="action-icons">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </a>
+                                </td>
+                            </tr>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                     </table>
                 </div>
             </div>

@@ -48,17 +48,40 @@
     </thead>
     <tbody>
     <?php 
+<<<<<<< HEAD
+<<<<<<< HEAD
         foreach ($data as $donationpayments) {
+=======
+        foreach ($data as $contributions) {
+>>>>>>> main
+=======
+        foreach ($data as $donationpayments) {
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
             ?>
         <tr>
 
              <td>23/02/2024</td> 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
             <td><?php echo $donationpayments->payment_id; ?></td>
             <td><?php echo $donationpayments->user_id; ?></td>
             <td><?php echo $donationpayments->username; ?></td>
             <td><?php echo $donationpayments->fundraiser_id; ?></td>
             <td><?php echo $donationpayments->title; ?></td>
             <td><?php echo $donationpayments->contribution_amount; ?></td>
+<<<<<<< HEAD
+=======
+            <td><?php echo $contributions->payment_id; ?></td>
+            <td><?php echo $contributions->user_id; ?></td>
+            <td><?php echo $contributions->username; ?></td>
+            <td><?php echo $contributions->fundraiser_id; ?></td>
+            <td><?php echo $contributions->title; ?></td>
+            <td><?php echo $contributions->contribution_amount; ?></td>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         </tr>
         <?php
         }

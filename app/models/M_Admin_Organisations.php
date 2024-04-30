@@ -17,25 +17,51 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 executive.nic_front AS executive_nic_front,
                                 executive.nic_back AS executive_nic_back,
+=======
+>>>>>>> main
+=======
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 treasurer.nic_front AS treasurer_nic_front,
                                 treasurer.nic_back AS treasurer_nic_back,
+=======
+>>>>>>> main
+=======
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.email AS secretary_email,
                                 secretary.nic_front secretary_nic_front,
                                 secretary.nic_front secretary_nic_back
 
+<<<<<<< HEAD
+=======
+                                secretary.email AS secretary_email
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             FROM 
                                 super_organisation
                             JOIN 
@@ -73,24 +99,50 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 executive.nic_front AS executive_nic_front,
                                 executive.nic_back AS executive_nic_back,
+=======
+>>>>>>> main
+=======
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 treasurer.nic_front AS treasurer_nic_front,
                                 treasurer.nic_back AS treasurer_nic_back,
+=======
+>>>>>>> main
+=======
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 secretary.email AS secretary_email,
                                 secretary.nic_front secretary_nic_front,
                                 secretary.nic_front secretary_nic_back
+=======
+                                secretary.email AS secretary_email
+>>>>>>> main
+=======
+                                secretary.email AS secretary_email,
+                                secretary.nic_front secretary_nic_front,
+                                secretary.nic_front secretary_nic_back
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             FROM 
                                 super_organisation
                             JOIN 
@@ -130,25 +182,51 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 executive.nic_front AS executive_nic_front,
                                 executive.nic_back AS executive_nic_back,
+=======
+>>>>>>> main
+=======
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 treasurer.nic_front AS treasurer_nic_front,
                                 treasurer.nic_back AS treasurer_nic_back,
+=======
+>>>>>>> main
+=======
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.email AS secretary_email,
                                 secretary.nic_front secretary_nic_front,
                                 secretary.nic_front secretary_nic_back
 
+<<<<<<< HEAD
+=======
+                                secretary.email AS secretary_email
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             FROM 
                                 super_organisation
                             JOIN 
@@ -185,26 +263,52 @@ class M_Admin_Organisations {
                                 executive.address AS executive_address,
                                 executive.contact AS executive_contact,
                                 executive.email AS executive_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 executive.nic_front AS executive_nic_front,
                                 executive.nic_back AS executive_nic_back,
+=======
+>>>>>>> main
+=======
+                                executive.nic_front AS executive_nic_front,
+                                executive.nic_back AS executive_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 treasurer.fullname AS treasurer_name, 
                                 treasurer.designation AS treasurer_designation,
                                 treasurer.nic_no AS treasurer_nic,
                                 treasurer.address AS treasurer_address,
                                 treasurer.contact AS treasurer_contact,
                                 treasurer.email AS treasurer_email,
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 treasurer.nic_front AS treasurer_nic_front,
                                 treasurer.nic_back AS treasurer_nic_back,
+=======
+>>>>>>> main
+=======
+                                treasurer.nic_front AS treasurer_nic_front,
+                                treasurer.nic_back AS treasurer_nic_back,
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.fullname AS secretary_name, 
                                 secretary.designation AS secretary_designation,
                                 secretary.nic_no AS secretary_nic,
                                 secretary.address AS secretary_address,
                                 secretary.contact AS secretary_contact,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 secretary.email AS secretary_email,
                                 secretary.nic_front secretary_nic_front,
                                 secretary.nic_front secretary_nic_back
 
                                 
+<<<<<<< HEAD
+=======
+                                secretary.email AS secretary_email
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             FROM 
                                 super_organisation
                             JOIN 
@@ -228,11 +332,27 @@ class M_Admin_Organisations {
         }
     }
     
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function activateSuperOrganisation($user_id){
         $this->db->query('UPDATE super_organisation SET status = "Active"
         WHERE user_id = :user_id;');
 
         $this->db->bind(':user_id', $user_id);
+=======
+    public function activateSuperOrganisation($id){
+=======
+    public function activateSuperOrganisation($user_id){
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
+        $this->db->query('UPDATE super_organisation SET status = "Active"
+        WHERE user_id = :user_id;');
+
+<<<<<<< HEAD
+        $this->db->bind(':id', $id);
+>>>>>>> main
+=======
+        $this->db->bind(':user_id', $user_id);
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 
         if($this->db->execute()){
             return true;
@@ -240,11 +360,27 @@ class M_Admin_Organisations {
             return false;
         }
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function deactivateSuperOrganisation($user_id){
         $this->db->query('UPDATE super_organisation SET status = "Deactive"
         WHERE user_id = :user_id;');
 
         $this->db->bind(':user_id', $user_id);
+=======
+    public function deactivateSuperOrganisation($id){
+=======
+    public function deactivateSuperOrganisation($user_id){
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
+        $this->db->query('UPDATE super_organisation SET status = "Deactive"
+        WHERE user_id = :user_id;');
+
+<<<<<<< HEAD
+        $this->db->bind(':id', $id);
+>>>>>>> main
+=======
+        $this->db->bind(':user_id', $user_id);
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 
         if($this->db->execute()){
             return true;
@@ -253,8 +389,16 @@ class M_Admin_Organisations {
         }
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function viewProfile(){}
 
+=======
+>>>>>>> main
+=======
+    public function viewProfile(){}
+
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     public function viewOrganisations(){
         $this->db->query('SELECT users_organisation.*, users.*
         FROM users_organisation

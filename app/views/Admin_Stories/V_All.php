@@ -68,6 +68,10 @@
                                             data-popup-id="<?php echo $stories->id; ?>">
                                             <i class="fa-solid fa-info"></i>
                                         </span>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                         
                                           
                                         <a class="action-icons">                                                                   
@@ -82,10 +86,23 @@
 }'></i>
                                         </a>
 
+<<<<<<< HEAD
                                     </td>
                                     <td>
 
                                         <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+=======
+                                    </td>
+                                    <td>
+
+                                    <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+>>>>>>> main
+=======
+                                    </td>
+                                    <td>
+
+                                        <dialog class="popup-story" id='story-popup-<?php echo $stories->id; ?>'>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                             <span class="close-popup"
                                                 id='close-story-popup-<?php echo $stories->id; ?>'>&times;</span>
                                             <div class="popup-container story-popup-container">
@@ -93,7 +110,16 @@
                                                 <div class="story-card">
                                                     <div class="story-card-left">
                                                         <div class="story-card-img-container">
+<<<<<<< HEAD
+<<<<<<< HEAD
                                                             <img src="<?php echo URLROOT . $stories->image; ?>" alt="">
+=======
+                                                            <img src="<?php echo URLROOT . $stories->image; ?>"
+                                                                alt="">
+>>>>>>> main
+=======
+                                                            <img src="<?php echo URLROOT . $stories->image; ?>" alt="">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                                         </div>
                                                     </div>
                                                     <div class="story-card-right">
