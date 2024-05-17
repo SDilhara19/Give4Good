@@ -107,11 +107,12 @@ class Admin_Fundraisers extends controller
   }
 
 
-  public function fundraiser_doc($id){
+  public function fundraiser_doc($id, $fund_id){
     try {
-        $data['fundraiser'] = $this->AdminFundraisersModel->getFundOne($id);
-        $data['image'] = $this->AdminFundraisersModel->getDocImages($id);
-
+        $data['fundraiser'] = $this->AdminFundraisersModel->getFundOne($fund_id);
+        // print_r($data['fundraiser']->created_date); 
+        $data['image'] = $this->AdminFundraisersModel->viewFundDocOne($id, $fund_id);
+// print_r($data);
         $this->view('Admin_Fundraisers/V_Fundraiser-document', $data);
     } catch (Exception $e) {
         error_log('Error in fundraiser_doc: ' . $e->getMessage());

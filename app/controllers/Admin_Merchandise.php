@@ -116,7 +116,7 @@ public function info($id){
           $amount_for_fund = $data['merchandise'][0]->amount_for_fund;
 
           if($price != 0) {
-              $data['merchandise'][0]->percentage = ($amount_for_fund / $price) * 100;
+              $data['merchandise'][0]->percentage = round(($amount_for_fund / $price) * 100, 2);
           }
       }
 

@@ -86,6 +86,15 @@
                             </span>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-input-title2">Discount to be given when quantity greater than 5<span class="required">*</span>
+                        </div>
+                        <input type="text" name="discount" id="discount" class="input" placeholder="">
+                        <span class="form-invalid">
+                            <?php if (!empty($data['discount_err']))
+                                echo $data['discount_err']; ?>
+                        </span>
+                    </div>
                     <div class="form-row form-flex">
                         <div class="flx-1">
                             <div class="form-input-title2">Description<span class="required">*</span></div>
@@ -312,6 +321,7 @@
                     var merchForm = button.parentNode.parentNode;
                     var productNameInput = merchForm.querySelector(`.input[id="merch_name"]`);
                     var priceInput = merchForm.querySelector(`.input[id="merch_price"]`);
+                    var discountInput = merchForm.querySelector(`.input[id="discount"]`);
                     var amountForFundInput = merchForm.querySelector(`.input[id="amount_to_fund"]`);
                     var stockInput = merchForm.querySelector(`.input[id="stock"]`);
                     var merchDescriptionInput = merchForm.querySelector(`.fund_story[id="merch_description"]`);
@@ -341,12 +351,28 @@
                         isValid = false;
                     }
 
+                     // Validate discount
+                     if (!discountInput.value.trim()) {
+                        discountInput.nextElementSibling.textContent = 'Fill the above field';
+                        isValid = false;
+                    } else if (isNaN(discountInput.value.trim())) {
+                        discountInput.nextElementSibling.textContent = 'Provide a valid price';
+                        isValid = false;
+                    }else if ((discountInput.value.trim() > priceInput.value.trim())) {
+                        discountInput.nextElementSibling.textContent = 'Discount should be less than the price';
+                        isValid = false;
+                    }
+
+                    
+
 
                     // Validate amount for fund
                     if (!amountForFundInput.value.trim()) {
                         amountForFundInput.nextElementSibling.textContent = 'Fill the above field';
                         isValid = false;
                     }
+
+                    
                     else if (isNaN(amountForFundInput.value.trim())) {
                         amountForFundInput.nextElementSibling.textContent = 'Provide a valid amount';
                         isValid = false;

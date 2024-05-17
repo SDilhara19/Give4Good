@@ -89,15 +89,15 @@
                         <table class="info-table">
                             <tr>
                                 <th>Created date</th>
-                                <td class="text-3"><?php echo $data['fundraiser'][0]->created_date; ?></td>
+                                <td class="text-3"><?php echo $data['fundraiser']->created_date; ?></td>
                             </tr>
                             <tr>
                                 <th>Modified date</th>
-                                <td class="text-3"><?php echo $data['fundraiser'][0]->modified_date; ?></td>
+                                <td class="text-3"><?php echo $data['fundraiser']->modified_date; ?></td>
                             </tr>
                             <tr>
                                 <th>End date</th>
-                                <td class="text-3"><?php echo $data['fundraiser'][0]->end_date; ?></td>
+                                <td class="text-3"><?php echo $data['fundraiser']->end_date; ?></td>
                             </tr>
                         </table>
                     </div>
@@ -113,15 +113,15 @@
                 <?php foreach($data['image'] as $doc){?>
                 <div class="report-container">
                     <div class="report-container-top">
-                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_doc/<?php echo $doc -> id?>" >
+                        <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_doc/<?php echo $doc -> id?>/<?php echo $doc->fundraiser_id ?>">
                             <div class="report-image-container">
-                            <img src="<?php echo URLROOT . $data['image'][0]->img?>" alt="image">
+                            <img src="<?php echo URLROOT . $doc->document_image?>" alt="image">
 
                             </div>
                         </a>
                     </div>
                     <div class="report-container-bottom">
-                        <p>Medical Report</p>
+                        <p><?php $doc->document_name ?></p>
                     </div>
                 </div>
                 <?php }?>
@@ -130,38 +130,79 @@
         <div class="donations-we-need" id="donations-we-need">
             <h1>Donations Expected</h1>
             <div class="material-card-container">
-                <div class="material-card">
-                    <div class="material-img-container">
-                    <img src="<?php echo URLROOT . $data['mImage'][0]->img?>" alt="image">
-                    </div>
-                    <div class="material-card-below">
-                        <p class="text-1"><?php echo $data['materials'][0]->name; ?></p>
-                        <button class="button-3" id="open-material-popup">View Details</button>
-                    </div>
+        <?php
+        foreach ($data['materials'] as $material) { ?>
+            <div class="material-card">
+                <div class="material-img-container">
+                    <img src="<?php echo URLROOT . $material->image; ?>">
+                    <!-- <p><?php // echo URLROOT . $material->image;  ?></p> -->
                 </div>
-
-
-                <div class="material-card">
-                    <div class="material-img-container">
-                    <img src="<?php echo URLROOT . $data['mImage'][0]->img?>" alt="image">
-                    </div>
-                    <div class="material-card-below">
-                        <p class="text-1"> <?php echo $data['materials'][0]->name; ?></p>
-                        <button class="button-3">View Details</button>
-                    </div>
+                <div class="material-card-below">
+                    <p class="text-1">
+                        <?php echo $material->name; ?>
+                    </p>
+                    <button class="button-3 open-material-popup" data-popup-id="<?php echo $material->material_id; ?>">View
+                        Details</button>
                 </div>
-                <div class="material-card">
-                    <div class="material-img-container">
-                    <img src="<?php echo URLROOT . $data['mImage'][0]->img?>" alt="image">
-                    </div>
-                    <div class="material-card-below">
-                        <p class="text-1"><?php echo $data['materials'][0]->name; ?></p>
-                        <button class="button-3">View Details</button>
-                    </div>
-                </div>
-
-
             </div>
+            <dialog class="material-popup" id='material-popup-<?php echo $material->material_id; ?>'>
+                <span class="close-popup" id='close-material-popup-<?php echo $material->material_id; ?>'>&times;</span>
+                <h2>
+                    <?php echo $material->name; ?>
+                </h2>
+                <div class="material-popup-container">
+                    <div class="material-popup-left">
+                        <div class="material-popup-img-container">
+                            <img src="<?php echo URLROOT . $material->image; ?>" alt="">
+                        </div>
+                    </div>
+                    <div class="material-popup-right">
+                        <div>
+                            <p class="text-2">Description</p>
+                            <p class="text-3">
+                                <?php echo $material->description; ?>
+                            </p>
+                            <p class="text-2">Number of units required</p>
+                            <p class="text-3">
+                                <?php echo $material->units; ?>
+                            </p>
+                        </div>
+                        <div class="donee-name text-8">
+                            <i class='bx bxs-info-circle'></i>
+                            <span style="font-size: 0.65rem;">Required amount can vary. Its best to contact for updated
+                                details</span>
+                        </div>
+                        <div>
+                            <p class="text-2">Contact information for more details</p>
+                            <table class="material-table">
+                                <tr>
+                                    <th>email</th>
+                                    <td class="text-3">
+                                        <?php echo $data['fundraiser'][0]->email; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>phone</th>
+                                    <td class="text-3">
+                                        <?php echo $data['fundraiser'][0]->phone; ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </dialog>
+            <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>
+
+            <script>
+                setupPopup('.open-material-popup[data-popup-id="<?php echo $material->material_id; ?>"]', '#material-popup-<?php echo $material->material_id; ?>', '#close-material-popup-<?php echo $material->material_id; ?>');
+            </script>
+            <?php
+        } ?>
+    </div>
         </div>
 
         <dialog class="material-popup">
@@ -195,74 +236,7 @@
 
         </dialog>
 
-        <div class="send-donations">
-            <h1>Locations</h1>
-            <div class="send-donation-card-container">
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                    <img src="<?php echo URLROOT . $data['mImage'][0]->img?>" alt="image">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2"> <?php echo $data['locations'][0]->area; ?></p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->contact; ?></p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->address; ?></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2"><?php echo $data['locations'][0]->area; ?></p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->contact; ?></p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->address; ?></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2"><?php echo $data['locations'][0]->area; ?></p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->contact; ?></p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->address; ?></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="send-donation-card">
-                    <div class="send-donation-img-container">
-                        <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/map.png" alt="">
-                    </div>
-                    <div class="send-donation-text">
-                        <p class="text-2"><?php echo $data['locations'][0]->area; ?></p>
-                        <div class="send-donation-details">
-                            <p class="text-1">Contact: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->contact; ?></p>
-                            <p class="text-1">Location: </p>
-                            <p class="text-3"><?php echo $data['locations'][0]->address; ?></p>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
+   
 
     </main>
     <script src="<?php echo URLROOT ?>/public/js/popup.js"></script>

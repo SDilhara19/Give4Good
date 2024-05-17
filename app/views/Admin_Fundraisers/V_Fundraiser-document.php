@@ -22,16 +22,17 @@
    
 
     <main class="admin-document">
+        <h1><?php echo $data['fundraiser']->title?></h1>
     <div class="document-container">
         <div class="document-left">
-            <img src="<?php echo URLROOT . $data['image'][0]->img; ?>" alt="image">
+            <img style="object-fit: contain; max-width: 100%; max-height: 100%; display: block;" src="<?php echo URLROOT . $data['image'][0]->document_image; ?>" alt="image">
         </div>
         <div class="document-right">
             <div class="info-box">
                 <table class="info-table">
                     <tr>
                         <th>Created date</th>
-                        <td class="text-3"><?php echo $data['fundraiser']->created_date; ?></td>
+                        <td class="text-3"><?php echo $data['fundraiser']->created_date ?></td>
                     </tr>
                     <tr>
                         <th>Modified date</th>

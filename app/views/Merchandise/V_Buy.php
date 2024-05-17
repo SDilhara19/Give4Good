@@ -157,6 +157,8 @@
                         1
                     </p>
                 </div>
+                
+                <div id="discount" style="color: #D09705; text-align: center; font-size: 0.75rem;"><?php echo $data['merchandise'][0]->discount_to_fund . "%"?> provided for quantity greate than 5</div>
                 <hr>
                 <div class="fundraiser-count-row" style="justify-content: space-between">
                     <div class="text-2">
@@ -166,6 +168,8 @@
                         <?php echo "Rs. " . $data['merchandise'][0]->price ?>
                     </div>
                 </div>
+                <input id="discount_amount" type="hidden" value="<?php echo $data['merchandise'][0]->discount ?>">
+                <!-- <div id="discount_amount"> <?php // echo $data['merchandise'][0]->discount ?></div> -->
                 <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
                 <button  type="submit" onclick="merchPaymentGateway()" class="main-color-button">
@@ -179,17 +183,32 @@
                 const quantityInput = document.getElementById("theInput");
                 const quantityFinal = document.getElementById("quantity-final");
                 const price = document.getElementById("priceOne");
+                const discount =document.getElementById("discount_amount")
                 const totalDisplay = document.querySelector("#totalAmount");
-
+// console.log(discount);
                 // Function to update total
                 function updateTotal() {
                     const quantity = parseFloat(quantityInput.value) || 0;
                     quantityFinal.textContent = quantity;
-                    const priceN = parseFloat(price.value);
-                    console.log(priceN); // Debugging line
-                    console.log(price.textContent)
-                    const totalAmount = quantity * priceN;
+                    var priceN = parseFloat(price.value);
+                    var discountN = parseFloat(discount.value);
+                    // const discountN = discount.value;
+                    console.log(discountN); // Debugging line
+                    // console.log(price.textContent)
+                    if (quantity>= 5){
+                        priceN =priceN - discountN
+                        var totalAmount = (quantity * priceN) 
+                    // discounttext.textContent = "5% discount applied!";
+                    }
+                    else{
+                        var totalAmount = quantity * priceN;
+                        // discounttext.style(display: none;)
+                    }
+                    // const totalAmount = quantity * priceN;
+
                     totalDisplay.textContent = totalAmount.toFixed(2);
+
+
                 }
 
                 // Add event listeners to donate and contribute inputs

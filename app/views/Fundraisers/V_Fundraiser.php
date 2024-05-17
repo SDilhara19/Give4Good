@@ -304,10 +304,10 @@
                 </div>
 
               
-                <div class="ad-merch-button-list">
+                <!-- <div class="ad-merch-button-list">
                     <button class="button-3-red"
                         onclick="window.location.href = '<?php echo URLROOT ?>/Fundraiser/complaints/<?php echo $data['fundraiser'][0]->fundraiser_id; ?>'">Report</button>
-                </div>
+                </div> -->
                 <?php if ($data['fundraiser'][0]->parent_funding==1){?>
                     <div class="text-2" style="margin-top: 2rem;">A note from the child</div>
                     <div class="child-note">

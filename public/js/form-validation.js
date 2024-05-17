@@ -123,7 +123,7 @@ function validateChild(input, error) {
   var eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
 
-  if ( inputDate > eighteenYearsAgo) {
+  if ( inputDate < eighteenYearsAgo) {
     error.textContent = 'Child must be below age 18';
   } else {
     error.textContent = '';

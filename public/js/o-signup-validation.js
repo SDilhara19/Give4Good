@@ -29,7 +29,7 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     validateEmail(emailInput.value, emailError);
-    validateUsername(usernameInput.value, usernameError);
+    validateName(usernameInput.value, usernameError);
     validatePassword(passwordInput.value, passwordError);
     validateConfirmPassword(confirmpasswordInput.value, confirmpasswordError);
 

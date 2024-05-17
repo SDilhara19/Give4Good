@@ -51,16 +51,19 @@ class Merchandise extends controller
                 logOut();
                 redirect(URLROOT . '/Users');
             } else {
-
                 $data['merchandise'] = $this->MerchandiseModel->getAMerchandise($id);
                 $data['fundraiser'] = $this->MerchandiseModel->getAFundraiser($fundraiser);
                 $data['location'] = $this->MerchandiseModel->getDeliveryDetails($_SESSION['userId']);
 
                 $amount_for_fund = $data['merchandise'][0]->amount_for_fund;
                 $price = $data['merchandise'][0]->price;
+                $discount = $data['merchandise'][0]->discount;
                 $data['merchandise'][0]->percent_for_fund = round(($amount_for_fund / $price) * 100, 2);
+                $data['merchandise'][0]->discount_to_fund = round(($discount / $price) * 100, 2);
 
-                // print_r($merch[0]->product_name);
+                // // print_r($merch[0]->product_name);
+// print_r($data['merchandise'][0]->discount_to_fund);
+
                 $this->view('Merchandise/V_Buy', $data);
             }
         } catch (PDOException $e) {
@@ -121,7 +124,7 @@ class Merchandise extends controller
 
     }
 
-    public function paydone()
+    public function paid()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') { // $postData = file_get_contents("php://input");
         $this->MerchandiseModel->merch_buy();

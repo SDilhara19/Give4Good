@@ -23,7 +23,7 @@ function merchPaymentGateway() {
 
 
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            alert(xhttp.responseText);
+            // alert(xhttp.responseText);
             var obj = JSON.parse(xhttp.responseText);
 
             console.log("PayJS Open")
@@ -59,7 +59,7 @@ function merchPaymentGateway() {
                 "cancel_url": "http://localhost/give4good/Merchandise/paydone",     // Important
                 "notify_url": "http://localhost/give4good/Merchandise/paydone",
                 "order_id": obj["order_id"],
-                "items": "Door bell wxireles",
+                "items": "",
                 "amount": obj["amount"],
                 "currency": obj["currency"],
                 "merch_id": obj["merch_id"],
@@ -122,7 +122,7 @@ function successMerchOrder(payment_id, merch_id, total, quantity) {
             console.log(merch_id)
             console.log(total)
             console.log(quantity)
-            var payConfirmURL = '../../Merchandise/payConfirm/' +
+            var payConfirmURL = '../../../Merchandise/payConfirm/' +
                 '?payment_id=' + encodeURIComponent(payment_id) +
                 '&merch_id=' + encodeURIComponent(merch_id) +
                 '&total=' + encodeURIComponent(total) +
@@ -136,7 +136,7 @@ function successMerchOrder(payment_id, merch_id, total, quantity) {
         }
     };
     // AJAX request to handle successful order
-    successXhttp.open("POST", "http://localhost/give4good/Merchandise/paydone", true);
+    successXhttp.open("POST", "http://localhost/give4good/Merchandise/paid", true);
     // successXhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     successXhttp.send(successData);
 }

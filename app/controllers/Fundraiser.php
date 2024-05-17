@@ -45,6 +45,16 @@ class Fundraiser extends controller
                 $amount_for_fund = $merch->amount_for_fund;
                 $price = $merch->price;
                 $merch->percent_for_fund = round(($amount_for_fund / $price) * 100, 2);
+
+                
+            }
+
+            foreach ($data['merchandise'] as $merch) {
+                $discount = $merch->discount;
+                $price = $merch->price;
+                $merch->percent_of_discount = round(($discount / $price) * 100, 2);
+
+                
             }
             $newViews = $data['fundraiser'][0]->view_counts + 1;
             $data['fundraiser'][0]->view_counts = $newViews;

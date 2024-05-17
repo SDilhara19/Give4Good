@@ -43,7 +43,7 @@
 
                     <div class="form-input-title">DESCRIPTION<span class="required">*</span></div>
                     <textarea name="story_description" id="story_description" class="story_description" rows="3"
-                        maxlength="500" placeholder="Description to be displayed"></textarea>
+                        maxlength="400" placeholder="Description to be displayed"></textarea>
                     <span class="form-invalid"><?php if(!empty($data['story_description_err']))echo $data['story_description_err']; ?></span>
 
 

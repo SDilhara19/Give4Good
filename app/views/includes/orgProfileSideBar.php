@@ -17,4 +17,4 @@
     </ul>
   </div>
 
-<script src="<?php echo URLROOT ?>/public/js/admin-header.js"></script>
+<!-- <script src="<?php echo URLROOT ?>/public/js/admin-header.js"></script> -->

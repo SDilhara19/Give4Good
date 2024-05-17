@@ -56,7 +56,7 @@ function paymentGateway() {
                 "cancel_url": "http://localhost/give4good/Donate/paydone",     // Important
                 "notify_url": "http://localhost/give4good/Donate/paydone",
                 "order_id": obj["order_id"],
-                "items": "Door bell wxireles",
+                "items": " ",
                 "amount": obj["amount"],
                 "currency": obj["currency"],
                 "fundraiser_id": obj["fundraiser_id"],

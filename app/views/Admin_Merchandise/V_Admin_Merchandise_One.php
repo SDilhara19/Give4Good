@@ -33,7 +33,7 @@
                 <div class="fundraiser-ad-merch-container">
                     <div class="fundraiser-ad-merch-left">
                         <div class="ad-merch-img-container">
-                            <img src="<?php echo URLROOT . $data['images'][0]->img ?>" alt="image">
+                            <img src="<?php echo URLROOT . $data['images'][0]->merch_image ?>" alt="image">
                         </div>
                     </div>
                     <div class="ad-fundraiser-merch-right">

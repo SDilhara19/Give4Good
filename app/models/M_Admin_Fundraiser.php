@@ -269,6 +269,27 @@ class M_Admin_Fundraiser{
         }
       } 
 
+      public function viewFundDocOne($id, $fund_id){
+        try{
+           $this->db->query("SELECT uploaded_documents.* FROM uploaded_documents WHERE uploaded_documents.fundraiser_id = :fund_id AND uploaded_documents.id = :id");
+           $this->db->bind(':fund_id', $fund_id);
+           $this->db->bind(':id', $id);
+
+       $row = $this->db->resultSet();
+
+       //Check row
+       if ($this->db->rowCount() > 0) {
+           return $row;
+       } else {
+           return false;
+       }
+       }
+       catch(Exception $e)
+       {
+           return "Error" . $e->getMessage();
+       }
+     } 
+
       public function getFundOne($id){
         try {
             $this->db->query("SELECT fundraiser.*, users.* FROM fundraiser JOIN users ON fundraiser.user_id = users.id WHERE fundraiser.fundraiser_id = :fundraiser_id");

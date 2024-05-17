@@ -24,9 +24,9 @@
                             <button class="main-color-button" onclick="window.location.href = '<?php echo URLROOT ?>/Merchandise/one/<?php echo $merch->id?>'">
                                 Buy NOW!
                             </button>
-                            <?php if ($merch->stock == 0) { ?>
+                            <?php if (($merch->total_quantity - $merch->sold) == 0) { ?>
                                 <p class="text-4 color-red"> Stock not Available</p>
-                            <?php } else if ($merch->stock <= 20) { ?>
+                            <?php } else if ((($merch->total_quantity - $merch->sold)) <= 20) { ?>
                                     <p class="text-4 color-yellow"> Limited stock Available</p>
                             <?php } ?>
 
