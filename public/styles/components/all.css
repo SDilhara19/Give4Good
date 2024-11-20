@@ -121,23 +121,30 @@ body {
   gap: 1rem;
 }
 
-.search--box {
+.search-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   background-color: rgb(237, 237, 237);
+
+    /* margin-bottom: 20px;  */
+}
+
+.search-box {
   border-radius: 15px;
-  color: rgba(113, 99, 186, 255);
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 4px 12px;
   margin-bottom: 8px;
-  margin-left: 200px;
+  margin-left: auto; 
 }
 
-.search--box i:hover {
+.search-box i:hover {
   transform: scale(1.2);
 }
 
-.search--box input {
+.search-box input {
   border: 1px solid rgb(237, 237, 237);
 }
 
