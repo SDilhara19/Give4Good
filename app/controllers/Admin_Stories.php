@@ -20,27 +20,55 @@ private function checkAdminLogin()
     }
     
     public function active(){
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
 
         $data = $this->AdminStoryModel -> getActiveStories();
         if(!($data)){
           $data=[];
         }
+<<<<<<< HEAD
+=======
+        $data = $this->AdminStoryModel -> getActiveStories();
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
         $this->view('Admin_Stories/V_Active', $data);
     }
 
     public function reject(){
        $data = $this->AdminStoryModel -> viewRejected();
+<<<<<<< HEAD
+<<<<<<< HEAD
        if(!($data)){
         $data=[];
       }
+=======
+>>>>>>> main
+=======
+       if(!($data)){
+        $data=[];
+      }
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
        $this->view('Admin_Stories/V_Rejected', $data);
     }
 
     public function pending(){
        $data = $this->AdminStoryModel -> viewPending();
+<<<<<<< HEAD
+<<<<<<< HEAD
        if(!($data)){
         $data=[];
       }
+=======
+>>>>>>> main
+=======
+       if(!($data)){
+        $data=[];
+      }
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
        $this->view('Admin_Stories/V_Pending',$data);
     }
 

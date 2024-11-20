@@ -26,7 +26,15 @@
     <div class="dashDetails">
       <div class="container">
         <div class="table-wrapper">
+<<<<<<< HEAD
+<<<<<<< HEAD
           <table class="tablemain">
+=======
+        <table class="tablemain">
+>>>>>>> main
+=======
+          <table class="tablemain">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
             <thead>
 
               <tr>
@@ -65,6 +73,10 @@
                       data-popup-id="<?php echo $super_organisation->user_id; ?>">View</button></td>
                   <td><?php echo $super_organisation->status; ?></td>
                   <td class="action-td">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   <a href="<?php echo URLROOT ?>/Admin_Organisation/profile/<?php echo $super_organisation->user_id ?>" class="action-icons">
                   <i class="fa-solid fa-info"></i>
                 </a>
@@ -76,6 +88,15 @@
                     }'>
                     </i>
                     </a>
+<<<<<<< HEAD
+=======
+                    <span class="action-icons open-info-popup"
+                      data-popup-id="<?php echo $super_organisation->user_id; ?>">
+                      <i class="fa-solid fa-info"></i>
+                    </span>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   </td>
 
                   <td>
@@ -83,12 +104,27 @@
                       <span class="close-popup"
                         id="close-executive-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
                       <p class="text-2">Executive: <?php echo $super_organisation->username; ?>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                        << /p>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                           <div class="popup-container nic-container">
                             <table class="info-table">
                               <tr>
                                 <th>Name</th>
+<<<<<<< HEAD
+<<<<<<< HEAD
                                 
 
+=======
+>>>>>>> main
+=======
+                                
+
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                                 <td class="text-3"><?php echo $super_organisation->executive_name; ?></td>
                               </tr>
                               <tr>
@@ -116,10 +152,24 @@
                             </table>
                             <div class="nic-front">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
                             <img src="<?php echo URLROOT . $super_organisation->executive_nic_front ?>" alt="image">
                             </div>
                             <div class="nic-back">
                             <img src="<?php echo URLROOT . $super_organisation->executive_nic_back ?>" alt="image">
+=======
+                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                            </div>
+                            <div class="nic-back">
+                              <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+>>>>>>> main
+=======
+                            <img src="<?php echo URLROOT . $super_organisation->executive_nic_front ?>" alt="image">
+                            </div>
+                            <div class="nic-back">
+                            <img src="<?php echo URLROOT . $super_organisation->executive_nic_back ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             </div>
                           </div>
 
@@ -159,10 +209,24 @@
                         </table>
                         <div class="nic-front">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
                         <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_front ?>" alt="image">
                         </div>
                         <div class="nic-back">
                         <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_back ?>" alt="image">
+=======
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                        </div>
+                        <div class="nic-back">
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+>>>>>>> main
+=======
+                        <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_front ?>" alt="image">
+                        </div>
+                        <div class="nic-back">
+                        <img src="<?php echo URLROOT . $super_organisation->treasurer_nic_back ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                         </div>
                       </div>
 
@@ -203,10 +267,24 @@
                         </table>
                         <div class="nic-front">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
                         <img src="<?php echo URLROOT . $super_organisation->secretary_nic_front ?>" alt="image">
                         </div>
                         <div class="nic-back">
                         <img src="<?php echo URLROOT . $super_organisation->secretary_nic_back ?>" alt="image">
+=======
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-front/1.jpg" alt="">
+                        </div>
+                        <div class="nic-back">
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/NIC-back/1.jpg" alt="">
+>>>>>>> main
+=======
+                        <img src="<?php echo URLROOT . $super_organisation->secretary_nic_front ?>" alt="image">
+                        </div>
+                        <div class="nic-back">
+                        <img src="<?php echo URLROOT . $super_organisation->secretary_nic_back ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                         </div>
                       </div>
 
@@ -219,7 +297,14 @@
                         <table class="info-table">
                           <tr>
                             <th>Bank Name</th>
+<<<<<<< HEAD
+<<<<<<< HEAD
                             <!-- <?php echo URLROOT . $super_organisation->bank_pbook ?> -->
+=======
+>>>>>>> main
+=======
+                            <!-- <?php echo URLROOT . $super_organisation->bank_pbook ?> -->
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                             <td class="text-3"><?php echo $super_organisation->bank_name; ?></td>
                           </tr>
                           <tr>
@@ -247,12 +332,37 @@
                         </table>
                         <div class="bank-passbook">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
                         <img src="<?php echo URLROOT . $super_organisation->bank_pbook ?>" alt="image">
+=======
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Bank-passbook/1.webp" alt="">
+>>>>>>> main
+=======
+                        <img src="<?php echo URLROOT . $super_organisation->bank_pbook ?>" alt="image">
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                         </div>
                       </div>
 
                     </dialog>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                    <dialog class="popup-2" id='logo-popup-<?php echo $super_organisation->user_id; ?>'>
+                      <span class="close-popup-2"
+                        id="close-logo-popup-<?php echo $super_organisation->user_id; ?>">&times;</span>
+                      <p class="text-2">Logo: Youth Society of Thimbirigasyaya</p>
+                      <div class="popup-2-container organisation-logo-container">
+                        <div class="organisation-logo">
+                          <img src="<?php echo URLROOT; ?>/Assets/Uploaded-images/Organisation-logo/1.avif" alt="">
+                        </div>
+                      </div>
+
+                    </dialog>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   </td>
 
                 </tr>
@@ -277,7 +387,15 @@
     setupPopup('#open-treasurer-popup', '#treasurer-popup', '#close-treasurer-popup');
     setupPopup('#open-secretary-popup', '#secretary-popup', '#close-secretary-popup');
     setupPopup('#open-bank-popup', '#bank-popup', '#close-bank-popup');
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> main
+=======
+
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
   </script>
 </body>
 

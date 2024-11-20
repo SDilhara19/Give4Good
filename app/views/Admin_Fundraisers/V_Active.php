@@ -36,6 +36,14 @@
                 <th>Created Date</th>
                 <th>Modified Date</th>
                 <th>Requirement End Date</th>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                <th>Features Used</th>
+                <th>Merchs</th>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 <th>User Type</th>
                 <th>Status</th>
                 <th class="action-th">Actions</th>
@@ -71,6 +79,17 @@
                 <td><?php echo $fundraiser->created_date; ?></td>
                 <td><?php echo $fundraiser->modified_date; ?></td>
                 <td><?php echo $fundraiser->end_date; ?></td>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+                <td><a href="<?php echo URLROOT ?>/Admin_Merchandise/fundmerchs/<?php echo $fundraiser->id ?>"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                <td>
+                  <?php echo ($fundraiser->product_name) ? $fundraiser->product_name : 'None'; ?>
+                </td>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 <td>
                   <?php echo $fundraiser->type; ?>
                 </td>
@@ -78,6 +97,10 @@
                   <?php echo $fundraiser->status; ?>
                 </td>
                 <td class="action-td">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->fundraiser_id ?>"
                       class="action-icons">
                       <i class="fa-solid fa-info"></i>
@@ -88,6 +111,19 @@
    }'>
                         </i>
                       </a>
+<<<<<<< HEAD
+=======
+                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $fundraiser->id ?>"
+                    class="action-icons">
+                    <i class="fa-solid fa-info"></i>
+                  </a>
+                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/setDeactive/<?php echo $fundraiser->id ?>"
+                    class="action-icons">
+                    <i class="fa-solid fa-lock"></i>
+                  </a>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 </td>
               </tr>
               <?php

@@ -22,6 +22,10 @@
    
 
     <main class="admin-document">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     <div class="document-container">
         <div class="document-left">
             <img src="<?php echo URLROOT . $data['image'][0]->img; ?>" alt="image">
@@ -42,11 +46,31 @@
                         <td class="text-3"><?php echo $data['fundraiser']->end_date; ?></td>
                     </tr>
                 </table>
+<<<<<<< HEAD
             </div>
         </div>
     </div>
 </main>
 
+=======
+        <h1>Medical Report: Help us to assist them walk</h1>
+       <div class="document-container">
+            <div class="document-left">
+                <img src="<?php echo URLROOT ?>/public/Assets/Uploaded-Images/Fundraisers/Documents-Medical/1_Medical.webp" alt="">
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
+            </div>
+        </div>
+    </div>
+</main>
+
+<<<<<<< HEAD
+
+
+    </main>
+>>>>>>> main
+=======
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
     <script src="<?php echo URLROOT ?>/public/js/material.js"></script>
     <?php require APPROOT . '/views/includes/footer.php' ?>
 </body>

@@ -39,8 +39,19 @@
           <table>
             <thead>
               <tr>
+<<<<<<< HEAD
+<<<<<<< HEAD
                 <!-- <th>Date</th> -->
                 <th>Complaint ID</th>
+=======
+                <th>Date</th>
+                <th>Complaint ID</th>
+                <th>Reporter ID</th>
+>>>>>>> main
+=======
+                <!-- <th>Date</th> -->
+                <th>Complaint ID</th>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                 <th>Reporter Username</th>
                 <th>Fundraiser ID</th>
                 <th>Fundraiser Title</th>
@@ -57,9 +68,21 @@
               foreach ($data as $complaints) {
                 ?>
                 <tr>
+<<<<<<< HEAD
+<<<<<<< HEAD
                   <!-- <td>
 
                   </td> -->
+=======
+                  <td>
+                  hhhg
+                  </td>
+>>>>>>> main
+=======
+                  <!-- <td>
+
+                  </td> -->
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   <td>
                     <?php echo $complaints->complaint_id; ?>
                   </td>
@@ -85,16 +108,39 @@
                     <?php echo $complaints->others; ?>
                   </td>
                   <td class="action-td">
+<<<<<<< HEAD
+<<<<<<< HEAD
                     <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $complaints->user_id ?>"
+=======
+                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $merchandise->id ?>"
+>>>>>>> main
+=======
+                    <a href="<?php echo URLROOT ?>/Admin_Merchandise/info/<?php echo $complaints->user_id ?>"
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                       class="action-icons">
                       <i class="fa-solid fa-info"></i>
                     </a>
                   </td>
                   <td>
+<<<<<<< HEAD
+<<<<<<< HEAD
                   <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $complaints->fundraiser_id ?>"
                       class="action-icons">
                       <i class="fa-solid fa-info"></i>
                     </a>
+=======
+                    <a href="<?php echo URLROOT ?>/Admin_Stories/setDeactive/<?php echo $story->id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+
+>>>>>>> main
+=======
+                  <a href="<?php echo URLROOT ?>/Admin_Fundraisers/fundraiser_one/<?php echo $complaints->fundraiser_id ?>"
+                      class="action-icons">
+                      <i class="fa-solid fa-info"></i>
+                    </a>
+>>>>>>> 507039d45abbbefb9d3eaae99553f41235372f2d
                   </td>
                 </tr>
                 <?php
