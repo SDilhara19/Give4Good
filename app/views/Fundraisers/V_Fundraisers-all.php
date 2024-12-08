@@ -46,16 +46,11 @@
   <?php require APPROOT . '/views/includes/header.php' ?>
   <?php require APPROOT . '/views/includes/side-bar.php' ?>
   <main>
-    <h1>Featured Topics... </h1>
+    <h1>Fundraisers </h1>
+    <div class="text-2" style="margin-bottom: 2rem;">Help to make their life better</div>
 
     <form>
-      <div class="search-box">
-        <div class="search-bar">
-          <input type="text" name="search" placeholder="Search Give4Good">
-          <i class="fa-solid fa-magnifying-glass fa-l"></i>
-          
-        </div>
-      </div>
+     
 
     </form>
 
@@ -95,12 +90,12 @@
                   </div>
                 </div>
 
-                <p class="smallfont" >Rs.
-                  <?php echo $fundraiser->amount_collected; ?> of Rs. <?php echo $fundraiser->amount; ?> raised
-                </p>
+                
 
               </div>
-             
+              <p class="smallfont" >Rs.
+                  <?php echo $fundraiser->amount_collected; ?> of Rs. <?php echo $fundraiser->amount; ?> raised
+                </p>
             </div>
           </div>
 

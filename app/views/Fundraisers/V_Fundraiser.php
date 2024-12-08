@@ -348,7 +348,7 @@
                     <?php
         if (!empty($data['merchandise'])) {?>
             <button class="main-dark-button" onclick="window.location.href = '#all-merchs'">
-                        Buy Merch
+                        Buy Merchandise
                     </button>
       <?php  }
         ?>
